@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { google } from '@ai-toolkit/google';
 import { isStepCount, streamText, tool } from 'ai';
 import fs from 'node:fs/promises';
 import path from 'node:path';

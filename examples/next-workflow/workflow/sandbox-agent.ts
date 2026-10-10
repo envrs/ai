@@ -2,7 +2,7 @@ import {
   createModelCallToUIChunkTransform,
   WorkflowAgent,
   type ModelCallStreamPart,
-} from '@ai-sdk/workflow';
+} from '@ai-toolkit/workflow';
 import {
   convertToModelMessages,
   tool,

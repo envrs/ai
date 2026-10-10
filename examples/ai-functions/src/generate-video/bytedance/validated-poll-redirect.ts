@@ -1,4 +1,4 @@
-import { createByteDance } from '@ai-sdk/bytedance';
+import { createByteDance } from '@ai-toolkit/bytedance';
 import { DownloadError, experimental_generateVideo as generateVideo } from 'ai';
 import { run } from '../../lib/run';
 

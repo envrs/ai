@@ -1,4 +1,4 @@
-import { xai } from '@ai-sdk/xai';
+import { xai } from '@ai-toolkit/xai';
 import { ToolLoopAgent, type InferAgentUIMessage } from 'ai';
 
 export const xaiImageGenerationAgent = new ToolLoopAgent({

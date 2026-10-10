@@ -1,5 +1,5 @@
-import { googleVertex as vertexNode } from '@ai-sdk/google-vertex';
-import { googleVertex as vertexEdge } from '@ai-sdk/google-vertex/edge';
+import { googleVertex as vertexNode } from '@ai-toolkit/google-vertex';
+import { googleVertex as vertexEdge } from '@ai-toolkit/google-vertex/edge';
 import {
   defaultSettingsMiddleware,
   wrapLanguageModel,

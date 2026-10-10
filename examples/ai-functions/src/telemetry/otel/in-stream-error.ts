@@ -1,4 +1,4 @@
-import { LegacyOpenTelemetry } from '@ai-sdk/otel';
+import { LegacyOpenTelemetry } from '@ai-toolkit/otel';
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import { ConsoleSpanExporter } from '@opentelemetry/sdk-trace-node';
 import { registerTelemetry, streamText } from 'ai';

@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { generateText, Output } from 'ai';
 import { run } from '../../lib/run';
 import * as z from 'zod/v4';

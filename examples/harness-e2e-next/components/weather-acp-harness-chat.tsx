@@ -6,7 +6,7 @@ import { useChatId } from '@/components/chat-id-provider';
 import ChatInput from '@/components/chat-input';
 import DynamicToolView from '@/components/tool/dynamic-tool-view';
 import WeatherView from '@/components/tool/weather-tool-view';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import {
   DefaultChatTransport,
   lastAssistantMessageIsCompleteWithApprovalResponses,

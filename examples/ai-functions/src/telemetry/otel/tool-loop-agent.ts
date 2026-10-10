@@ -1,5 +1,5 @@
-import { openai } from '@ai-sdk/openai';
-import { LegacyOpenTelemetry } from '@ai-sdk/otel';
+import { openai } from '@ai-toolkit/openai';
+import { LegacyOpenTelemetry } from '@ai-toolkit/otel';
 import { getNodeAutoInstrumentations } from '@opentelemetry/auto-instrumentations-node';
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import { ConsoleSpanExporter } from '@opentelemetry/sdk-trace-node';

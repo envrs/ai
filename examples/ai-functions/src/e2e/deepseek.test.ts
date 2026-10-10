@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { expect } from 'vitest';
-import { deepSeek as provider, type DeepSeekErrorData } from '@ai-sdk/deepseek';
+import { deepSeek as provider, type DeepSeekErrorData } from '@ai-toolkit/deepseek';
 import type { APICallError } from 'ai';
 import {
   createFeatureTestSuite,

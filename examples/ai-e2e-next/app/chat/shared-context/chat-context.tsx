@@ -6,7 +6,7 @@ import React, {
   useState,
   type ReactNode,
 } from 'react';
-import { Chat } from '@ai-sdk/react';
+import { Chat } from '@ai-toolkit/react';
 import { DefaultChatTransport, type UIMessage } from 'ai';
 interface ChatContextValue {
   // replace with your custom message type

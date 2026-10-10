@@ -9,8 +9,8 @@ import {
   HarnessAgent,
   createFileReporter,
   createTraceTreeReporter,
-} from '@ai-sdk/harness/agent';
-import { cursor } from '@ai-sdk/harness-cursor';
+} from '@ai-toolkit/harness/agent';
+import { cursor } from '@ai-toolkit/harness-cursor';
 import type { InferUITools, UIMessage } from 'ai';
 
 export const weatherApprovalCursorHarnessAgent = new HarnessAgent({

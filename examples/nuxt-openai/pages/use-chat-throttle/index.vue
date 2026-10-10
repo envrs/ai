@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useChat } from '@ai-sdk/vue';
+import { useChat } from '@ai-toolkit/vue';
 import { computed, ref } from 'vue';
 
 const input = ref('');

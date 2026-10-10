@@ -1,7 +1,7 @@
 import {
   createCline as createClineHarness,
   type ClineHarnessSettings,
-} from '@ai-sdk/harness-cline';
+} from '@ai-toolkit/harness-cline';
 
 export function createCline(
   settings: ClineHarnessSettings = {},

@@ -1,5 +1,5 @@
-import type { MoonshotAILanguageModelOptions } from '@ai-sdk/moonshotai';
-import { gateway } from '@ai-sdk/gateway';
+import type { MoonshotAILanguageModelOptions } from '@ai-toolkit/moonshotai';
+import { gateway } from '@ai-toolkit/gateway';
 import { isStepCount, streamText } from 'ai';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

@@ -1,5 +1,5 @@
 import { sandboxShellTool } from '@/tool/sandbox-shell-tool';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { ToolLoopAgent, type InferAgentUIMessage } from 'ai';
 
 export const sandboxAgent = new ToolLoopAgent({

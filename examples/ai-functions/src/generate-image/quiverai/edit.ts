@@ -2,7 +2,7 @@ import {
   prepareQuiverAIImageReference,
   quiverai,
   type QuiverAIImageModelOptions,
-} from '@ai-sdk/quiverai';
+} from '@ai-toolkit/quiverai';
 import { generateImage } from 'ai';
 import { run } from '../../lib/run';
 

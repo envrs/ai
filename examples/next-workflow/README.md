@@ -4,7 +4,7 @@ This example demonstrates using the AI SDK's `WorkflowAgent` with the Workflow D
 
 ## Features
 
-- **Durable Agent**: Uses `WorkflowAgent` from `@ai-sdk/workflow` for fault-tolerant AI agent execution
+- **Durable Agent**: Uses `WorkflowAgent` from `@ai-toolkit/workflow` for fault-tolerant AI agent execution
 - **Tool Calling**: Includes weather lookup and calculator tools implemented as durable steps
 - **`toModelOutput`**: The `getWeather` tool sends the model a compact one-line summary while the UI keeps the full structured result
 - **Streaming**: Real-time streaming responses via `getWritable()` and `createUIMessageStreamResponse`

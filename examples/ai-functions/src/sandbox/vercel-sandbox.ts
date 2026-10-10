@@ -3,7 +3,7 @@ import { Readable } from 'node:stream';
 import {
   extractLines,
   type Experimental_SandboxProcess,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { type Experimental_SandboxSession as SandboxSession } from 'ai';
 import type { Command, Sandbox as VercelSandboxSDK } from '@vercel/sandbox';
 import {

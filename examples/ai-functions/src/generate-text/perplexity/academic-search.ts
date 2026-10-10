@@ -1,7 +1,7 @@
 import {
   perplexity,
   type PerplexityLanguageModelOptions,
-} from '@ai-sdk/perplexity';
+} from '@ai-toolkit/perplexity';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

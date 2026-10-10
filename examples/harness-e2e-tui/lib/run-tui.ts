@@ -1,12 +1,12 @@
 import { existsSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import type { HarnessAgent, HarnessAgentSession } from '@ai-sdk/harness/agent';
+import type { HarnessAgent, HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import {
   runAgentTUI,
   type AgentTUIAgent,
   type RunAgentTUIOptions,
-} from '@ai-sdk/tui';
+} from '@ai-toolkit/tui';
 import { config } from 'dotenv';
 
 type TUIHarnessAgent = HarnessAgent<any, any, any>;

@@ -1,5 +1,5 @@
-import { azure } from '@ai-sdk/azure';
-import type { OpenAILanguageModelResponsesOptions } from '@ai-sdk/openai';
+import { azure } from '@ai-toolkit/azure';
+import type { OpenAILanguageModelResponsesOptions } from '@ai-toolkit/openai';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

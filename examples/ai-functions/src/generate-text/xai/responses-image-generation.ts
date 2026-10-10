@@ -1,4 +1,4 @@
-import { xai } from '@ai-sdk/xai';
+import { xai } from '@ai-toolkit/xai';
 import { generateText } from 'ai';
 import { convertBase64ToUint8Array } from '../../lib/convert-base64';
 import { presentImages } from '../../lib/present-image';

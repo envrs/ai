@@ -39,7 +39,7 @@ try {
   process.env.TYPESAFE_AI_BASE_URL = `http://127.0.0.1:${address.port}/v1/`;
 
   // The default provider reads TYPESAFE_AI_BASE_URL when its module is loaded.
-  const { typeSafeAi } = await import('@ai-sdk/typesafe-ai');
+  const { typeSafeAi } = await import('@ai-toolkit/typesafe-ai');
 
   const result = await experimental_decide({
     model: typeSafeAi.decisionModel('jev-latest'),

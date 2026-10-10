@@ -1,4 +1,4 @@
-import { createJustBashNetworkSandboxSession } from '@ai-sdk/sandbox-just-bash';
+import { createJustBashNetworkSandboxSession } from '@ai-toolkit/sandbox-just-bash';
 import { run } from '../../lib/run';
 import { sandboxAgent } from './sandbox-agent';
 

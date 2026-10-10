@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-toolkit/amazon-bedrock';
 import { generateImage } from 'ai';
 import { presentImages } from '../../lib/present-image';
 import { run } from '../../lib/run';

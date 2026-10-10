@@ -1,5 +1,5 @@
-import { OpenTelemetry } from '@ai-sdk/otel';
-import { typeSafeAi } from '@ai-sdk/typesafe-ai';
+import { OpenTelemetry } from '@ai-toolkit/otel';
+import { typeSafeAi } from '@ai-toolkit/typesafe-ai';
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import { ConsoleSpanExporter } from '@opentelemetry/sdk-trace-node';
 import { experimental_decide, registerTelemetry } from 'ai';

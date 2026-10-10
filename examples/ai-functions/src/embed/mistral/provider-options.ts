@@ -1,4 +1,4 @@
-import { mistral, type MistralEmbeddingModelOptions } from '@ai-sdk/mistral';
+import { mistral, type MistralEmbeddingModelOptions } from '@ai-toolkit/mistral';
 import { embed } from 'ai';
 import { run } from '../../lib/run';
 

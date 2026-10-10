@@ -4,7 +4,7 @@ import {
   azure,
   type AzureResponsesReasoningProviderMetadata,
   type OpenAILanguageModelResponsesOptions,
-} from '@ai-sdk/azure';
+} from '@ai-toolkit/azure';
 run(async () => {
   const result = await generateText({
     model: azure('gpt-5'),

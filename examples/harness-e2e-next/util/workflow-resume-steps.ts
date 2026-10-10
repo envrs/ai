@@ -1,5 +1,5 @@
-import type { HarnessV1ResumeSessionState } from '@ai-sdk/harness';
-import { safeParseJSON } from '@ai-sdk/provider-utils';
+import type { HarnessV1ResumeSessionState } from '@ai-toolkit/harness';
+import { safeParseJSON } from '@ai-toolkit/provider-utils';
 
 /*
  * Cross-user-turn resume persistence for the harness *workflow* routes, as

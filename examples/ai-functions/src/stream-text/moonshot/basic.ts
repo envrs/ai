@@ -1,4 +1,4 @@
-import { moonshotai } from '@ai-sdk/moonshotai';
+import { moonshotai } from '@ai-toolkit/moonshotai';
 import { streamText } from 'ai';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

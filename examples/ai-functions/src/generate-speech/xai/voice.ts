@@ -1,4 +1,4 @@
-import { xai } from '@ai-sdk/xai';
+import { xai } from '@ai-toolkit/xai';
 import { generateSpeech } from 'ai';
 import { saveAudioFile } from '../../lib/save-audio';
 import { run } from '../../lib/run';

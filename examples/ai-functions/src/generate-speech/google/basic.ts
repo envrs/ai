@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { google } from '@ai-toolkit/google';
 import { generateSpeech } from 'ai';
 import { saveAudioFile } from '../../lib/save-audio';
 import { run } from '../../lib/run';

@@ -1,8 +1,8 @@
 'use client';
 
 import ChatInput from '@/components/chat-input';
-import { zodSchema } from '@ai-sdk/provider-utils';
-import { useChat, type UIMessage } from '@ai-sdk/react';
+import { zodSchema } from '@ai-toolkit/provider-utils';
+import { useChat, type UIMessage } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 import { z } from 'zod';
 

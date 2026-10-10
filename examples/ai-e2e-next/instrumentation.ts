@@ -1,5 +1,5 @@
 import { registerTelemetry } from 'ai';
-import { LegacyOpenTelemetry } from '@ai-sdk/otel';
+import { LegacyOpenTelemetry } from '@ai-toolkit/otel';
 import { LangfuseSpanProcessor, type ShouldExportSpan } from '@langfuse/otel';
 import { NodeTracerProvider } from '@opentelemetry/sdk-trace-node';
 

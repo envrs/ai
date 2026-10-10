@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { createServer } from 'node:http';
 import { WebSocket, WebSocketServer } from 'ws';
 import { relayLiveConnection } from './live-relay-connection';

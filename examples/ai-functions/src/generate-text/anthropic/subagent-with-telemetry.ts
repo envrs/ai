@@ -1,6 +1,6 @@
-import { anthropic } from '@ai-sdk/anthropic';
+import { anthropic } from '@ai-toolkit/anthropic';
 import { generateText, ToolLoopAgent, registerTelemetry } from 'ai';
-import { OpenTelemetry } from '@ai-sdk/otel';
+import { OpenTelemetry } from '@ai-toolkit/otel';
 import { LangfuseSpanProcessor } from '@langfuse/otel';
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import { run } from '../../lib/run';

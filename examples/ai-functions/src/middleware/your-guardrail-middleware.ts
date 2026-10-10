@@ -1,7 +1,7 @@
 import type {
   LanguageModelV3Content,
   LanguageModelV3Middleware,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 export const yourGuardrailMiddleware: LanguageModelV3Middleware = {
   specificationVersion: 'v3',

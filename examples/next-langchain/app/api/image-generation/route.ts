@@ -2,7 +2,7 @@ import { createUIMessageStreamResponse, type UIMessage } from 'ai';
 import { NextResponse } from 'next/server';
 
 import { ChatOpenAI, tools } from '@langchain/openai';
-import { toBaseMessages, toUIMessageStream } from '@ai-sdk/langchain';
+import { toBaseMessages, toUIMessageStream } from '@ai-toolkit/langchain';
 
 /**
  * Allow streaming responses up to 120 seconds for image generation
@@ -39,7 +39,7 @@ When a user asks you to create, draw, generate, or visualize something:
 1. Use the image generation tool to create the image
 2. Describe what you created in a brief, friendly response
 
-Be creative and artistic in your interpretations. If the user's request is vague, 
+Be creative and artistic in your interpretations. If the user's request is vague,
 add interesting details to make the image more compelling.
 
 For non-image requests, respond helpfully as a normal assistant.`;

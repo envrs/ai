@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { Ratelimit } from '@upstash/ratelimit';
 import { kv } from '@vercel/kv';
 import {

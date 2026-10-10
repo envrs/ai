@@ -1,12 +1,12 @@
 import {
   harnessV1QuestionsToolOutputSchema,
   type HarnessV1QuestionsToolInput,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import type {
   ACPAskUserQuestionsSettings,
   ACPToolCall,
-} from '@ai-sdk/harness-acp';
-import type { ToolResultPart } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness-acp';
+import type { ToolResultPart } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 const claudeQuestionInputSchema = z.object({

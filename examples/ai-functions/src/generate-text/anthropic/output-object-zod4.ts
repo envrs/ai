@@ -1,4 +1,4 @@
-import { anthropic } from '@ai-sdk/anthropic';
+import { anthropic } from '@ai-toolkit/anthropic';
 import { generateText, Output } from 'ai';
 import { z as z4 } from 'zod/v4';
 import { print } from '../../lib/print';

@@ -12,12 +12,12 @@
 import {
   HarnessAgent,
   type HarnessAgentResumeSessionState,
-} from '@ai-sdk/harness/agent';
+} from '@ai-toolkit/harness/agent';
 import { createCodex } from './_create';
 import {
   createVercelNetworkSandboxSession,
   resumeVercelNetworkSandboxSession,
-} from '@ai-sdk/sandbox-vercel';
+} from '@ai-toolkit/sandbox-vercel';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';
 

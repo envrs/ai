@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { Sandbox } from '@vercel/sandbox';
 import { ToolLoopAgent, type InferAgentUIMessage } from 'ai';
 // warning: this is a demo sandbox that is shared across chats on localhost

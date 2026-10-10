@@ -2,7 +2,7 @@ import {
   anthropic,
   forwardAnthropicContainerIdFromLastStep,
   type AnthropicLanguageModelOptions,
-} from '@ai-sdk/anthropic';
+} from '@ai-toolkit/anthropic';
 import { generateText, isStepCount, tool } from 'ai';
 import { z } from 'zod';
 import { run } from '../../lib/run';

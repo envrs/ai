@@ -1,4 +1,4 @@
-import { xai } from '@ai-sdk/xai';
+import { xai } from '@ai-toolkit/xai';
 import { transcribe } from 'ai';
 import { readFile } from 'fs/promises';
 import { run } from '../../lib/run';

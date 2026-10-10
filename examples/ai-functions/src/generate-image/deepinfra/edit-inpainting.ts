@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { deepInfra, type DeepInfraImageModelOptions } from '@ai-sdk/deepinfra';
+import { deepInfra, type DeepInfraImageModelOptions } from '@ai-toolkit/deepinfra';
 import { generateImage } from 'ai';
 import { presentImages } from '../../lib/present-image';
 import { run } from '../../lib/run';

@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { google } from '@ai-toolkit/google';
 import { generateText, isStepCount, tool } from 'ai';
 import fs from 'node:fs/promises';
 import path from 'node:path';

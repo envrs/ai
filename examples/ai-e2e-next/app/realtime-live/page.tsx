@@ -3,8 +3,8 @@
 import {
   openai,
   type Experimental_OpenAIRealtimeModelLiveOptions as OpenAIRealtimeModelLiveOptions,
-} from '@ai-sdk/openai';
-import { experimental_useRealtime as useRealtime } from '@ai-sdk/react';
+} from '@ai-toolkit/openai';
+import { experimental_useRealtime as useRealtime } from '@ai-toolkit/react';
 import { useMemo, useRef, useState } from 'react';
 
 // Keep the model stable: changing model/config identity replaces the session.

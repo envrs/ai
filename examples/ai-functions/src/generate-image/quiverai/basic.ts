@@ -1,4 +1,4 @@
-import { quiverai } from '@ai-sdk/quiverai';
+import { quiverai } from '@ai-toolkit/quiverai';
 import { generateImage } from 'ai';
 import { presentImages } from '../../lib/present-image';
 import { run } from '../../lib/run';

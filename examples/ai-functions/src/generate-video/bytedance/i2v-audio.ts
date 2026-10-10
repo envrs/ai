@@ -1,4 +1,4 @@
-import { byteDance, type ByteDanceVideoModelOptions } from '@ai-sdk/bytedance';
+import { byteDance, type ByteDanceVideoModelOptions } from '@ai-toolkit/bytedance';
 import { experimental_generateVideo as generateVideo } from 'ai';
 import { presentVideos } from '../../lib/present-video';
 import { run } from '../../lib/run';

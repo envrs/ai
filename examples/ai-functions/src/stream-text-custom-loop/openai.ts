@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import {
   experimental_streamLanguageModelCall as streamLanguageModelCall,
   type Experimental_LanguageModelStreamPart as LanguageModelStreamPart,

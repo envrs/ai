@@ -1,5 +1,5 @@
-import { cartesia } from '@ai-sdk/cartesia';
-import { openai } from '@ai-sdk/openai';
+import { cartesia } from '@ai-toolkit/cartesia';
+import { openai } from '@ai-toolkit/openai';
 import {
   experimental_streamTranscribe as streamTranscribe,
   generateSpeech,

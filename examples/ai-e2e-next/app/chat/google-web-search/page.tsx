@@ -3,7 +3,7 @@
 import { Response } from '@/components/ai-elements/response';
 import ChatInput from '@/components/chat-input';
 import SourcesView from '@/components/sources-view';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 
 export default function GoogleWebSearch() {

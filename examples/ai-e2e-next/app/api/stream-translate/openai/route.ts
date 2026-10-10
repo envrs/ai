@@ -1,5 +1,5 @@
-import { openai } from '@ai-sdk/openai';
-import { getErrorMessage } from '@ai-sdk/provider-utils';
+import { openai } from '@ai-toolkit/openai';
+import { getErrorMessage } from '@ai-toolkit/provider-utils';
 import {
   experimental_streamTranslate as streamTranslate,
   generateSpeech,

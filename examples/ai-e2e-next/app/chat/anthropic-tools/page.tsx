@@ -4,7 +4,7 @@ import type { AnthropicToolsAgentMessage } from '@/agent/anthropic/tools-agent';
 import { Response } from '@/components/ai-elements/response';
 import ChatInput from '@/components/chat-input';
 import WeatherView from '@/components/tool/weather-view';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 
 export default function TestAnthropicCodeExecution() {

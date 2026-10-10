@@ -1,6 +1,6 @@
 'use client';
 
-import type { openai } from '@ai-sdk/openai';
+import type { openai } from '@ai-toolkit/openai';
 import type { UIToolInvocation } from 'ai';
 import { parseDiffForVisualization } from '@/lib/apply-diff';
 

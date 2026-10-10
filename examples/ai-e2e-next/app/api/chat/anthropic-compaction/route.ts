@@ -1,7 +1,7 @@
 import {
   anthropic,
   type AnthropicLanguageModelOptions,
-} from '@ai-sdk/anthropic';
+} from '@ai-toolkit/anthropic';
 import {
   consumeStream,
   convertToModelMessages,

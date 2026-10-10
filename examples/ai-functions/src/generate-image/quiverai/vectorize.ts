@@ -1,4 +1,4 @@
-import { quiverai, type QuiverAIImageModelOptions } from '@ai-sdk/quiverai';
+import { quiverai, type QuiverAIImageModelOptions } from '@ai-toolkit/quiverai';
 import { generateImage } from 'ai';
 import fs from 'node:fs/promises';
 import { presentImages } from '../../lib/present-image';

@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { perplexity } from '@ai-sdk/perplexity';
+import { perplexity } from '@ai-toolkit/perplexity';
 import {
   APICallError,
   generateText,

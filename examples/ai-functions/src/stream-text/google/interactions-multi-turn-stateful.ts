@@ -1,7 +1,7 @@
 import {
   google,
   type GoogleLanguageModelInteractionsOptions,
-} from '@ai-sdk/google';
+} from '@ai-toolkit/google';
 import { streamText } from 'ai';
 import { run } from '../../lib/run';
 

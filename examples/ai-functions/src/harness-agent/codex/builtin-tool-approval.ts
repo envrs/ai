@@ -1,4 +1,4 @@
-import { HarnessAgent } from '@ai-sdk/harness/agent';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { createCodex } from './_create';
 import { run } from '../../lib/run';
 

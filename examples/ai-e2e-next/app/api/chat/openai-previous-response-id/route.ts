@@ -2,7 +2,7 @@ import {
   openai,
   type OpenaiResponsesProviderMetadata,
   type OpenAILanguageModelResponsesOptions,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import {
   convertToModelMessages,
   createUIMessageStream,

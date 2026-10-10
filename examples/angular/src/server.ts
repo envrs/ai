@@ -1,4 +1,4 @@
-import type { OpenAILanguageModelResponsesOptions } from '@ai-sdk/openai';
+import type { OpenAILanguageModelResponsesOptions } from '@ai-toolkit/openai';
 import {
   convertToModelMessages,
   Output,

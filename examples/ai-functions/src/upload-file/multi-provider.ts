@@ -1,5 +1,5 @@
-import { anthropic } from '@ai-sdk/anthropic';
-import { openai } from '@ai-sdk/openai';
+import { anthropic } from '@ai-toolkit/anthropic';
+import { openai } from '@ai-toolkit/openai';
 import { generateText, uploadFile } from 'ai';
 import fs from 'node:fs';
 import { run } from '../lib/run';

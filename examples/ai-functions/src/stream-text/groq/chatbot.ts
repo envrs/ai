@@ -1,4 +1,4 @@
-import { groq } from '@ai-sdk/groq';
+import { groq } from '@ai-toolkit/groq';
 import { isStepCount, streamText, tool, type ModelMessage } from 'ai';
 import * as readline from 'node:readline/promises';
 import { z } from 'zod';

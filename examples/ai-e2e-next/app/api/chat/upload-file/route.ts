@@ -1,7 +1,7 @@
-import { anthropic } from '@ai-sdk/anthropic';
-import { google } from '@ai-sdk/google';
-import { openai } from '@ai-sdk/openai';
-import { xai } from '@ai-sdk/xai';
+import { anthropic } from '@ai-toolkit/anthropic';
+import { google } from '@ai-toolkit/google';
+import { openai } from '@ai-toolkit/openai';
+import { xai } from '@ai-toolkit/xai';
 import {
   consumeStream,
   convertToModelMessages,

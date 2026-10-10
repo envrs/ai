@@ -1,6 +1,6 @@
-import { createACP, type ACPPermissionModeMapping } from '@ai-sdk/harness-acp';
-import { createCredentialRequestTransformation } from '@ai-sdk/harness/utils';
-import { secureJsonParse } from '@ai-sdk/provider-utils';
+import { createACP, type ACPPermissionModeMapping } from '@ai-toolkit/harness-acp';
+import { createCredentialRequestTransformation } from '@ai-toolkit/harness/utils';
+import { secureJsonParse } from '@ai-toolkit/provider-utils';
 import { z } from 'zod';
 import { codexACPBuiltinTools } from './builtin-tools';
 

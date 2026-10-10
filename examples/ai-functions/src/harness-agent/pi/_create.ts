@@ -1,7 +1,7 @@
 import {
   createPi as createPiHarness,
   type PiHarnessSettings,
-} from '@ai-sdk/harness-pi';
+} from '@ai-toolkit/harness-pi';
 
 export function createPi(
   settings: PiHarnessSettings = {},

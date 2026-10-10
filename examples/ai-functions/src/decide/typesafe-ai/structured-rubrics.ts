@@ -1,4 +1,4 @@
-import { typeSafeAi } from '@ai-sdk/typesafe-ai';
+import { typeSafeAi } from '@ai-toolkit/typesafe-ai';
 import { experimental_decide } from 'ai';
 import { run } from '../../lib/run';
 

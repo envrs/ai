@@ -1,5 +1,5 @@
-import { anthropic } from '@ai-sdk/anthropic';
-import { OpenTelemetry } from '@ai-sdk/otel';
+import { anthropic } from '@ai-toolkit/anthropic';
+import { OpenTelemetry } from '@ai-toolkit/otel';
 import { LangfuseSpanProcessor } from '@langfuse/otel';
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import { generateText, isStepCount, registerTelemetry } from 'ai';

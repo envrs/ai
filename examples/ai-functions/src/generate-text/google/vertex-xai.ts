@@ -1,4 +1,4 @@
-import { googleVertexXai } from '@ai-sdk/google-vertex/xai';
+import { googleVertexXai } from '@ai-toolkit/google-vertex/xai';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

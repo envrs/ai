@@ -1,4 +1,4 @@
-import { fal } from '@ai-sdk/fal';
+import { fal } from '@ai-toolkit/fal';
 import { transcribe } from 'ai';
 import { run } from '../../lib/run';
 

@@ -2,7 +2,7 @@ import { isAbsolute, join } from 'node:path';
 import {
   extractLines,
   type Experimental_SandboxProcess,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { type Experimental_SandboxSession as SandboxSession } from 'ai';
 import {
   type SandboxCommand,

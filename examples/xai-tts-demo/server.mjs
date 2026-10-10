@@ -1,8 +1,8 @@
 // Minimal local app to test xAI text-to-speech and speech-to-text through
-// @ai-sdk/xai. The API key remains on this server and is never sent to the
+// @ai-toolkit/xai. The API key remains on this server and is never sent to the
 // browser.
 import { createServer } from 'node:http';
-import { xai } from '@ai-sdk/xai';
+import { xai } from '@ai-toolkit/xai';
 import { generateSpeech, transcribe } from 'ai';
 
 const PORT = Number(process.env.PORT) || 5051;
@@ -133,7 +133,7 @@ const page = `<!doctype html>
 <body>
   <main>
     <h1>xAI Voice Demo</h1>
-    <p>Text-to-speech and speech-to-text via <code>@ai-sdk/xai</code>.</p>
+    <p>Text-to-speech and speech-to-text via <code>@ai-toolkit/xai</code>.</p>
 
     <section>
       <h2>Text-to-Speech</h2>

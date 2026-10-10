@@ -1,4 +1,4 @@
-import { typeSafeAi } from '@ai-sdk/typesafe-ai';
+import { typeSafeAi } from '@ai-toolkit/typesafe-ai';
 import { tracingChannel } from 'node:diagnostics_channel';
 import {
   AI_SDK_TELEMETRY_TRACING_CHANNEL,

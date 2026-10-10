@@ -1,4 +1,4 @@
-import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-toolkit/amazon-bedrock';
 import { generateText, type ModelMessage } from 'ai';
 import * as readline from 'node:readline/promises';
 import { weatherTool } from '../../tools/weather-tool';

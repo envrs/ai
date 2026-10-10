@@ -2,7 +2,7 @@ import { createUIMessageStreamResponse, type UIMessage } from 'ai';
 import { NextResponse } from 'next/server';
 
 import { ChatOpenAI } from '@langchain/openai';
-import { toBaseMessages, toUIMessageStream } from '@ai-sdk/langchain';
+import { toBaseMessages, toUIMessageStream } from '@ai-toolkit/langchain';
 
 /**
  * Allow streaming responses up to 60 seconds for image analysis
@@ -32,7 +32,7 @@ export async function POST(req: Request) {
     /**
      * Convert AI SDK UIMessages to LangChain messages
      * This now properly handles multimodal content (images, files) thanks to
-     * the updated convertUserContent function in @ai-sdk/langchain
+     * the updated convertUserContent function in @ai-toolkit/langchain
      */
     const langchainMessages = await toBaseMessages(messages);
 

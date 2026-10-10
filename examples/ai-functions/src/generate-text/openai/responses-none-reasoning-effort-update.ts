@@ -2,7 +2,7 @@ import {
   openai,
   type OpenAILanguageModelResponsesOptions,
   type OpenAIResponsesSystemMessageOptions,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import { generateText, type ModelMessage } from 'ai';
 import { run } from '../../lib/run';
 

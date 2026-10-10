@@ -13,7 +13,7 @@
  * route through `agent/action/decision`, varying only in how `toInput` derives
  * the logical action. Swap the mock model for a real provider in one line.
  */
-import { jsonSchema } from '@ai-sdk/provider-utils';
+import { jsonSchema } from '@ai-toolkit/provider-utils';
 import { generateText, isStepCount, tool } from 'ai';
 import { MockLanguageModelV3 } from 'ai/test';
 import { httpPolicyClient } from '../../src/opa/http-policy-client';

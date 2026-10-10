@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { customProvider, experimental_decide } from 'ai';
 import { run } from '../../lib/run';
 

@@ -2,7 +2,7 @@ import {
   openai,
   type OpenAILanguageModelResponsesOptions,
   type OpenaiResponsesProviderMetadata,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import { streamText } from 'ai';
 import { run } from '../../lib/run';
 

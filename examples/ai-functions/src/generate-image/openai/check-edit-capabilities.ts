@@ -1,6 +1,6 @@
-import { openai } from '@ai-sdk/openai';
-import { prodia } from '@ai-sdk/prodia';
-import type { ImageModelV4 } from '@ai-sdk/provider';
+import { openai } from '@ai-toolkit/openai';
+import { prodia } from '@ai-toolkit/prodia';
+import type { ImageModelV4 } from '@ai-toolkit/provider';
 
 const candidates: Array<{ name: string; model: ImageModelV4 }> = [
   { name: 'OpenAI GPT Image', model: openai.image('gpt-image-1') },

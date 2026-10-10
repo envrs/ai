@@ -1,6 +1,6 @@
-import { HarnessAgent } from '@ai-sdk/harness/agent';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { createDeepAgents } from './_create';
-import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
+import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import { tool } from 'ai';
 import { z } from 'zod';
 import { printFullStream } from '../../lib/print-full-stream';

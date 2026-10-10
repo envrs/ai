@@ -1,4 +1,4 @@
-import { deepSeek } from '@ai-sdk/deepseek';
+import { deepSeek } from '@ai-toolkit/deepseek';
 import { InvalidArgumentError, uploadFile } from 'ai';
 import { readFile } from 'node:fs/promises';
 import { run } from '../../lib/run';

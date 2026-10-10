@@ -11,8 +11,8 @@
     "lint": "ultracite check"
   },
   "dependencies": {
-    "@ai-sdk/langchain": "workspace:*",
-    "@ai-sdk/react": "workspace:*",
+    "@ai-toolkit/langchain": "workspace:*",
+    "@ai-toolkit/react": "workspace:*",
     "@langchain/core": "^1.2.3",
     "@langchain/langgraph": "^1.4.15",
     "@langchain/langgraph-cli": "^1.2.1",

@@ -1,6 +1,6 @@
-import { HarnessAgent, type HarnessAgentSession } from '@ai-sdk/harness/agent';
+import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import { createOpenCode } from './_create';
-import { createVercelNetworkSandboxSessionFromNativeSandbox } from '@ai-sdk/sandbox-vercel';
+import { createVercelNetworkSandboxSessionFromNativeSandbox } from '@ai-toolkit/sandbox-vercel';
 import { Sandbox } from '@vercel/sandbox';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

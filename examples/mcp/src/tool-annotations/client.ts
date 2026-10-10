@@ -1,5 +1,5 @@
-import { createMCPClient, type McpProviderMetadata } from '@ai-sdk/mcp';
-import { openai } from '@ai-sdk/openai';
+import { createMCPClient, type McpProviderMetadata } from '@ai-toolkit/mcp';
+import { openai } from '@ai-toolkit/openai';
 import {
   generateText,
   isStepCount,

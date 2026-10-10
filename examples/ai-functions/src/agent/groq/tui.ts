@@ -1,5 +1,5 @@
-import { groq } from '@ai-sdk/groq';
-import { runAgentTUI } from '@ai-sdk/tui';
+import { groq } from '@ai-toolkit/groq';
+import { runAgentTUI } from '@ai-toolkit/tui';
 import { ToolLoopAgent } from 'ai';
 import { run } from '../../lib/run';
 

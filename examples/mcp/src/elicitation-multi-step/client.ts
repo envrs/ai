@@ -1,5 +1,5 @@
-import { createMCPClient, ElicitationRequestSchema } from '@ai-sdk/mcp';
-import { openai } from '@ai-sdk/openai';
+import { createMCPClient, ElicitationRequestSchema } from '@ai-toolkit/mcp';
+import { openai } from '@ai-toolkit/openai';
 import { generateText, isStepCount } from 'ai';
 import { createInterface } from 'node:readline/promises';
 import { stdin, stdout } from 'node:process';

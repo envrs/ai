@@ -9,12 +9,12 @@
     "lint": "ultracite check"
   },
   "dependencies": {
-    "@ai-sdk/anthropic": "workspace:*",
-    "@ai-sdk/devtools": "workspace:*",
-    "@ai-sdk/fal": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*",
-    "@ai-sdk/react": "workspace:*",
-    "@ai-sdk/workflow": "workspace:*",
+    "@ai-toolkit/anthropic": "workspace:*",
+    "@ai-toolkit/devtools": "workspace:*",
+    "@ai-toolkit/fal": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*",
+    "@ai-toolkit/react": "workspace:*",
+    "@ai-toolkit/workflow": "workspace:*",
     "ai": "workspace:*",
     "next": "^16.3.6",
     "react": "^18.3.1",

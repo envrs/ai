@@ -1,7 +1,7 @@
 import { generateText, type ModelMessage } from 'ai';
 import * as readline from 'node:readline/promises';
 import { weatherTool } from '../../tools/weather-tool';
-import { cohere } from '@ai-sdk/cohere';
+import { cohere } from '@ai-toolkit/cohere';
 import { run } from '../../lib/run';
 
 const terminal = readline.createInterface({

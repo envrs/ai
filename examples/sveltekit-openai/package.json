@@ -13,9 +13,9 @@
   },
   "type": "module",
   "devDependencies": {
-    "@ai-sdk/openai": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*",
-    "@ai-sdk/svelte": "workspace:*",
+    "@ai-toolkit/openai": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*",
+    "@ai-toolkit/svelte": "workspace:*",
     "@sveltejs/adapter-vercel": "^6.3.3",
     "@sveltejs/kit": "^2.70.2",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",

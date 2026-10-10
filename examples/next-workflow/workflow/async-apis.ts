@@ -1,4 +1,4 @@
-import { createFal, type FalVideoModelOptions } from '@ai-sdk/fal';
+import { createFal, type FalVideoModelOptions } from '@ai-toolkit/fal';
 import { experimental_generateVideo as generateVideo } from 'ai';
 import { createWebhook, getWritable, sleep } from 'workflow';
 

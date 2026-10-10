@@ -9,8 +9,8 @@
     "lint": "ultracite check"
   },
   "dependencies": {
-    "@ai-sdk/openai": "workspace:*",
-    "@ai-sdk/react": "workspace:*",
+    "@ai-toolkit/openai": "workspace:*",
+    "@ai-toolkit/react": "workspace:*",
     "@upstash/ratelimit": "^0.4.4",
     "@vercel/kv": "^0.2.4",
     "ai": "workspace:*",

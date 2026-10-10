@@ -1,7 +1,7 @@
 import {
   openai,
   type OpenAILanguageModelResponsesOptions,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import { ToolLoopAgent, type ModelMessage, type InferAgentUIMessage } from 'ai';
 import { readFileSync } from 'fs';
 import { join } from 'path';

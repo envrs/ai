@@ -1,7 +1,7 @@
 import {
   amazonBedrock,
   type AmazonBedrockImageModelOptions,
-} from '@ai-sdk/amazon-bedrock';
+} from '@ai-toolkit/amazon-bedrock';
 import { generateImage } from 'ai';
 import { presentImages } from '../../lib/present-image';
 import { run } from '../../lib/run';

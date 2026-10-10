@@ -1,4 +1,4 @@
-import { createMCPClient, mcpAppClientCapabilities } from '@ai-sdk/mcp';
+import { createMCPClient, mcpAppClientCapabilities } from '@ai-toolkit/mcp';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 
 export function createLocalMCPAppsClient(origin: string) {

@@ -1,5 +1,5 @@
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { grokBuild } from '@ai-sdk/harness-grok-build';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { grokBuild } from '@ai-toolkit/harness-grok-build';
 import type { InferUITools, UIMessage } from 'ai';
 import {
   aiSdkCodingSandboxBootstrapHash,

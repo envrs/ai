@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { Sandbox } from '@vercel/sandbox';
 import { ToolLoopAgent, type InferAgentUIMessage } from 'ai';
 import { readFileSync } from 'fs';

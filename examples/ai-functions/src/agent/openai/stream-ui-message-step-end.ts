@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { createAgentUIStream, tool, ToolLoopAgent } from 'ai';
 import { z } from 'zod/v4';
 import { run } from '../../lib/run';

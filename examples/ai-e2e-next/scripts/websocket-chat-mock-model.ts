@@ -1,4 +1,4 @@
-import type { LanguageModelV4StreamPart } from '@ai-sdk/provider';
+import type { LanguageModelV4StreamPart } from '@ai-toolkit/provider';
 import { generateId, simulateReadableStream } from 'ai';
 import { MockLanguageModelV4 } from 'ai/test';
 

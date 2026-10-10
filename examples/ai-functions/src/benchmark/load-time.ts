@@ -5,7 +5,7 @@ const moduleName = process.argv[2];
 
 if (!moduleName) {
   console.error(
-    'Please provide a module name as an argument, e.g., "@ai-sdk/anthropic"',
+    'Please provide a module name as an argument, e.g., "@ai-toolkit/anthropic"',
   );
   process.exit(1);
 }

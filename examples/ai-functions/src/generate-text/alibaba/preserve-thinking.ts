@@ -1,4 +1,4 @@
-import { alibaba, type AlibabaLanguageModelChatOptions } from '@ai-sdk/alibaba';
+import { alibaba, type AlibabaLanguageModelChatOptions } from '@ai-toolkit/alibaba';
 import { generateText, type ModelMessage } from 'ai';
 import { run } from '../../lib/run';
 

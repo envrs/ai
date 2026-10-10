@@ -1,7 +1,7 @@
 import {
   fishAudio,
   type FishAudioTranscriptionModelOptions,
-} from '@ai-sdk/fish-audio';
+} from '@ai-toolkit/fish-audio';
 import { transcribe } from 'ai';
 import { readFile } from 'node:fs/promises';
 import { run } from '../../lib/run';

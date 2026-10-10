@@ -1,4 +1,4 @@
-import { deepInfra } from '@ai-sdk/deepinfra';
+import { deepInfra } from '@ai-toolkit/deepinfra';
 import { Output, streamText } from 'ai';
 import { z } from 'zod';
 import { run } from '../../lib/run';

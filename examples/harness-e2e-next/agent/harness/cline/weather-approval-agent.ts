@@ -9,8 +9,8 @@ import {
   HarnessAgent,
   createFileReporter,
   createTraceTreeReporter,
-} from '@ai-sdk/harness/agent';
-import { cline } from '@ai-sdk/harness-cline';
+} from '@ai-toolkit/harness/agent';
+import { cline } from '@ai-toolkit/harness-cline';
 import type { InferUITools, UIMessage } from 'ai';
 
 export const weatherApprovalClineHarnessAgent = new HarnessAgent({

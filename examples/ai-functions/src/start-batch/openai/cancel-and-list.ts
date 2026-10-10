@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import {
   experimental_cancelBatch as cancelBatch,
   experimental_getBatchStatus as getBatchStatus,

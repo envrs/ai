@@ -1,4 +1,4 @@
-import { createOpenResponses } from '@ai-sdk/open-responses';
+import { createOpenResponses } from '@ai-toolkit/open-responses';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

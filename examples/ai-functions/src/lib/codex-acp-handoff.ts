@@ -3,14 +3,14 @@ import { readFile, unlink, writeFile } from 'node:fs/promises';
 import type {
   HarnessAgentContinueTurnState,
   HarnessAgentResumeSessionState,
-} from '@ai-sdk/harness/agent';
-import { classifyDiskLog } from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness/agent';
+import { classifyDiskLog } from '@ai-toolkit/harness/utils';
 import {
   isRecord,
   parseJSON,
   type Experimental_SandboxSession,
-} from '@ai-sdk/provider-utils';
-import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
+} from '@ai-toolkit/provider-utils';
+import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 
 type HandoffPhase = 'start' | 'resume';
 

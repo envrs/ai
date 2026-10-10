@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { ToolLoopAgent, type InferAgentUIMessage } from 'ai';
 export const openaiMCPApprovalAgent = new ToolLoopAgent({
   model: openai.responses('gpt-6-astra'),

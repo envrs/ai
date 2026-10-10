@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import ChatInput from '@/components/chat-input';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 import type { ToolTimeoutMessage } from '@/app/api/chat/tool-timeout/route';
 

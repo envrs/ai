@@ -1,4 +1,4 @@
-import { xai } from '@ai-sdk/xai';
+import { xai } from '@ai-toolkit/xai';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

@@ -1,5 +1,5 @@
-import { getHarnessErrorMessage } from '@ai-sdk/harness/agent';
-import { getErrorMessage } from '@ai-sdk/provider-utils';
+import { getHarnessErrorMessage } from '@ai-toolkit/harness/agent';
+import { getErrorMessage } from '@ai-toolkit/provider-utils';
 
 const genericHarnessErrorMessage = getHarnessErrorMessage(undefined);
 

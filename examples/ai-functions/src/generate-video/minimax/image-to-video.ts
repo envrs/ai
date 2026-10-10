@@ -1,4 +1,4 @@
-import { minimax, type MiniMaxVideoModelOptions } from '@ai-sdk/minimax';
+import { minimax, type MiniMaxVideoModelOptions } from '@ai-toolkit/minimax';
 import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 import { presentVideos } from '../../lib/present-video';

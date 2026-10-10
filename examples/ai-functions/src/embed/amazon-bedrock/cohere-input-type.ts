@@ -1,7 +1,7 @@
 import {
   amazonBedrock,
   type AmazonBedrockEmbeddingModelOptions,
-} from '@ai-sdk/amazon-bedrock';
+} from '@ai-toolkit/amazon-bedrock';
 import { embed } from 'ai';
 import { run } from '../../lib/run';
 

@@ -1,7 +1,7 @@
 'use client';
 
 import ChatInput from '@/components/chat-input';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 import type { XaiMcpServerMessage } from '@/agent/xai/mcp-server-agent';
 

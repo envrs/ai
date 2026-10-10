@@ -9,7 +9,7 @@ import {
   type MCPAppRendererProps,
   type MCPAppResource,
   type MCPAppSandboxConfig,
-} from '@ai-sdk/react';
+} from '@ai-toolkit/react';
 import { DefaultChatTransport, isToolUIPart } from 'ai';
 
 const chatTransport = new DefaultChatTransport({ api: '/chat/mcp-apps/chat' });

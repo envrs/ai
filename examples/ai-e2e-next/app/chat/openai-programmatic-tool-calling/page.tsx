@@ -4,7 +4,7 @@ import type { OpenAIProgrammaticToolCallingMessage } from '@/agent/openai/progra
 import { Response } from '@/components/ai-elements/response';
 import ChatInput from '@/components/chat-input';
 import OpenAIProgrammaticToolCallingView from '@/components/tool/openai-programmatic-tool-calling-view';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 
 export default function ChatOpenAIProgrammaticToolCalling() {

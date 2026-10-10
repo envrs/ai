@@ -1,4 +1,4 @@
-import { deepgram } from '@ai-sdk/deepgram';
+import { deepgram } from '@ai-toolkit/deepgram';
 import { generateSpeech } from 'ai';
 import fs from 'node:fs';
 import path from 'node:path';

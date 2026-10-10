@@ -1,4 +1,4 @@
-import { googleVertex } from '@ai-sdk/google-vertex/edge';
+import { googleVertex } from '@ai-toolkit/google-vertex/edge';
 import { generateText } from 'ai';
 
 export const runtime = 'edge';

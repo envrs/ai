@@ -1,5 +1,5 @@
-import { moonshotai } from '@ai-sdk/moonshotai';
-import type { JSONSchema7 } from '@ai-sdk/provider';
+import { moonshotai } from '@ai-toolkit/moonshotai';
+import type { JSONSchema7 } from '@ai-toolkit/provider';
 import { generateText, jsonSchema, Output } from 'ai';
 import { print } from '../../lib/print';
 import { run } from '../../lib/run';

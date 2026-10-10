@@ -1,4 +1,4 @@
-import { cerebras } from '@ai-sdk/cerebras';
+import { cerebras } from '@ai-toolkit/cerebras';
 import {
   streamText,
   type ModelMessage,

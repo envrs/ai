@@ -1,4 +1,4 @@
-import { anthropic } from '@ai-sdk/anthropic';
+import { anthropic } from '@ai-toolkit/anthropic';
 import { streamText, tool, isStepCount } from 'ai';
 import { z } from 'zod';
 import { run } from '../../lib/run';

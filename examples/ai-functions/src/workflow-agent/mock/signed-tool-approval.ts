@@ -1,5 +1,5 @@
-import type { LanguageModelV4StreamPart } from '@ai-sdk/provider';
-import { WorkflowAgent, type ModelCallStreamPart } from '@ai-sdk/workflow';
+import type { LanguageModelV4StreamPart } from '@ai-toolkit/provider';
+import { WorkflowAgent, type ModelCallStreamPart } from '@ai-toolkit/workflow';
 import { convertArrayToReadableStream, MockLanguageModelV4 } from 'ai/test';
 import { z } from 'zod';
 import { run } from '../../lib/run';

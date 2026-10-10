@@ -1,4 +1,4 @@
-import { zai } from '@ai-sdk/zai';
+import { zai } from '@ai-toolkit/zai';
 import { streamText } from 'ai';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

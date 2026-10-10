@@ -1,4 +1,4 @@
-import { fishAudio } from '@ai-sdk/fish-audio';
+import { fishAudio } from '@ai-toolkit/fish-audio';
 import { transcribe } from 'ai';
 import { readFile } from 'node:fs/promises';
 import { run } from '../../lib/run';

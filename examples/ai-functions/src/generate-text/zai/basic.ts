@@ -1,4 +1,4 @@
-import { zai } from '@ai-sdk/zai';
+import { zai } from '@ai-toolkit/zai';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

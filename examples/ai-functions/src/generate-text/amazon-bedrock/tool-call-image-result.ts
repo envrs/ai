@@ -1,4 +1,4 @@
-import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-toolkit/amazon-bedrock';
 import { generateText, isStepCount, tool } from 'ai';
 import { z } from 'zod';
 import { run } from '../../lib/run';

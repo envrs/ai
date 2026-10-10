@@ -2,7 +2,7 @@ import {
   google,
   type GoogleLanguageModelInteractionsOptions,
   type GoogleInteractionsVideoOptions,
-} from '@ai-sdk/google';
+} from '@ai-toolkit/google';
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,

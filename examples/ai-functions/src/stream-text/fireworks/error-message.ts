@@ -1,5 +1,5 @@
-import { createFireworks } from '@ai-sdk/fireworks';
-import { APICallError } from '@ai-sdk/provider';
+import { createFireworks } from '@ai-toolkit/fireworks';
+import { APICallError } from '@ai-toolkit/provider';
 import { streamText } from 'ai';
 import { run } from '../../lib/run';
 

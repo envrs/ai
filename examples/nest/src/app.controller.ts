@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { Controller, Post, Res } from '@nestjs/common';
 import {
   createUIMessageStream,

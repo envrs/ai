@@ -1,4 +1,4 @@
-import { heygen } from '@ai-sdk/heygen';
+import { heygen } from '@ai-toolkit/heygen';
 import { experimental_generateVideo as generateVideo } from 'ai';
 import { presentVideos } from '../../lib/present-video';
 import { run } from '../../lib/run';

@@ -1,4 +1,4 @@
-import { anthropic } from '@ai-sdk/anthropic';
+import { anthropic } from '@ai-toolkit/anthropic';
 import { ToolLoopAgent, type InferAgentUIMessage } from 'ai';
 
 export const anthropicAdvisor20260301Agent = new ToolLoopAgent({

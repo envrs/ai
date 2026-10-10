@@ -1,4 +1,4 @@
-import { baseten } from '@ai-sdk/baseten';
+import { baseten } from '@ai-toolkit/baseten';
 import { generateText, Output } from 'ai';
 import { z } from 'zod';
 import { run } from '../../lib/run';

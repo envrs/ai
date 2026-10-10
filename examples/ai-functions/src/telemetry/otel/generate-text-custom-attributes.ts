@@ -1,5 +1,5 @@
-import { openai } from '@ai-sdk/openai';
-import { OpenTelemetry } from '@ai-sdk/otel';
+import { openai } from '@ai-toolkit/openai';
+import { OpenTelemetry } from '@ai-toolkit/otel';
 import { generateText, registerTelemetry, tool } from 'ai';
 import { z } from 'zod';
 import { weatherTool } from '../../tools/weather-tool';

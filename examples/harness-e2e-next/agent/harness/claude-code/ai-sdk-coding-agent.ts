@@ -1,5 +1,5 @@
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { claudeCode } from '@ai-sdk/harness-claude-code';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { claudeCode } from '@ai-toolkit/harness-claude-code';
 import type { InferUITools, UIMessage } from 'ai';
 import {
   aiSdkCodingSandboxBootstrapHash,

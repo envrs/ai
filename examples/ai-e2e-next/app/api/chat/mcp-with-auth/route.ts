@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import {
   convertToModelMessages,
   isStepCount,
@@ -13,7 +13,7 @@ import {
   type OAuthClientInformation,
   type OAuthClientMetadata,
   type OAuthTokens,
-} from '@ai-sdk/mcp';
+} from '@ai-toolkit/mcp';
 import { createServer } from 'node:http';
 
 type AuthGlobalState = {

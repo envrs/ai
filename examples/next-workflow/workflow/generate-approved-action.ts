@@ -1,4 +1,4 @@
-import { WorkflowAgent } from '@ai-sdk/workflow';
+import { WorkflowAgent } from '@ai-toolkit/workflow';
 import { tool, type ModelMessage } from 'ai';
 import { z } from 'zod/v4';
 

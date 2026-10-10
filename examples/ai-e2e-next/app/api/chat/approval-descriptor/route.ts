@@ -1,4 +1,4 @@
-import { delay } from '@ai-sdk/provider-utils';
+import { delay } from '@ai-toolkit/provider-utils';
 import { createUIMessageStream, createUIMessageStreamResponse } from 'ai';
 
 const approvalDescriptor = {

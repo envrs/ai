@@ -1,4 +1,4 @@
-import { minimax } from '@ai-sdk/minimax';
+import { minimax } from '@ai-toolkit/minimax';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

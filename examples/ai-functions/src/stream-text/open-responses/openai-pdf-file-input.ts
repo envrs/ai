@@ -1,4 +1,4 @@
-import { createOpenResponses } from '@ai-sdk/open-responses';
+import { createOpenResponses } from '@ai-toolkit/open-responses';
 import { streamText } from 'ai';
 import { run } from '../../lib/run';
 import { saveRawChunks } from '../../lib/save-raw-chunks';

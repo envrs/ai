@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { generateText, type ModelMessage } from 'ai';
 import * as readline from 'node:readline/promises';
 import { weatherTool } from '../../tools/weather-tool';

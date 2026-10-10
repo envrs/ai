@@ -1,4 +1,4 @@
-import { googleVertexXai } from '@ai-sdk/google-vertex/xai';
+import { googleVertexXai } from '@ai-toolkit/google-vertex/xai';
 import { Output, streamText } from 'ai';
 import { z } from 'zod';
 import { run } from '../../lib/run';

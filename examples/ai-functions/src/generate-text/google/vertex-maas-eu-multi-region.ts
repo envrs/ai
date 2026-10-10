@@ -1,4 +1,4 @@
-import { createVertexMaas } from '@ai-sdk/google-vertex/maas';
+import { createVertexMaas } from '@ai-toolkit/google-vertex/maas';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

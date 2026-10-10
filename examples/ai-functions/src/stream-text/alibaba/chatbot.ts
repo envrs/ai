@@ -1,4 +1,4 @@
-import { alibaba } from '@ai-sdk/alibaba';
+import { alibaba } from '@ai-toolkit/alibaba';
 import { isStepCount, streamText, tool, type ModelMessage } from 'ai';
 import * as readline from 'node:readline/promises';
 import { z } from 'zod';

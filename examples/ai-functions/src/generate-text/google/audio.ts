@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { google } from '@ai-toolkit/google';
 import { generateText } from 'ai';
 import fs from 'node:fs';
 import { run } from '../../lib/run';

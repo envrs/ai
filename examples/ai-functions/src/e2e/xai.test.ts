@@ -1,11 +1,11 @@
 import 'dotenv/config';
 import { expect } from 'vitest';
-import { xai as provider } from '@ai-sdk/xai';
+import { xai as provider } from '@ai-toolkit/xai';
 import {
   createFeatureTestSuite,
   createLanguageModelWithCapabilities,
 } from './feature-test-suite';
-import type { APICallError } from '@ai-sdk/provider';
+import type { APICallError } from '@ai-toolkit/provider';
 
 const createLanguageModel = (modelId: string) =>
   createLanguageModelWithCapabilities(provider(modelId));

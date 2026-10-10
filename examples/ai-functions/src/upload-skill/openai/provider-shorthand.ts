@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { uploadSkill } from 'ai';
 import { readFileSync } from 'fs';
 import { deleteUploadedOpenAISkill } from '../../lib/delete-uploaded-skill';

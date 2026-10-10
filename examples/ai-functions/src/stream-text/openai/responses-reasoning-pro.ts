@@ -1,7 +1,7 @@
 import {
   openai,
   type OpenAILanguageModelResponsesOptions,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import { streamText } from 'ai';
 import { performance } from 'node:perf_hooks';
 import { run } from '../../lib/run';

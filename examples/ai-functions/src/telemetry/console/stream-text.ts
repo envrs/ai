@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { streamText, registerTelemetry } from 'ai';
 import { run } from '../../lib/run';
 import { consoleTelemetry } from './console-telemetry';

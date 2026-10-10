@@ -1,4 +1,4 @@
-import type { xai } from '@ai-sdk/xai';
+import type { xai } from '@ai-toolkit/xai';
 import type { UIToolInvocation } from 'ai';
 
 export default function XaiImageGenerationView({

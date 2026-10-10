@@ -1,6 +1,6 @@
 'use client';
 
-import { useObject } from '@ai-sdk/react';
+import { useObject } from '@ai-toolkit/react';
 import { notificationSchema } from '../api/use-object-valibot/schema';
 
 export default function Page() {

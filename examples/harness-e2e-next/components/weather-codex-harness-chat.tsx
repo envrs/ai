@@ -8,7 +8,7 @@ import DynamicToolView from '@/components/tool/dynamic-tool-view';
 import HarnessBashToolView from '@/components/tool/harness-bash-tool-view';
 import HarnessToolView from '@/components/tool/harness-tool-view';
 import WeatherView from '@/components/tool/weather-tool-view';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import {
   DefaultChatTransport,
   lastAssistantMessageIsCompleteWithApprovalResponses,

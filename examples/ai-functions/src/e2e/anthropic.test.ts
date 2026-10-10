@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { expect } from 'vitest';
-import { anthropic as provider } from '@ai-sdk/anthropic';
+import { anthropic as provider } from '@ai-toolkit/anthropic';
 import type { APICallError } from 'ai';
 import {
   createFeatureTestSuite,

@@ -1,4 +1,4 @@
-import { fal } from '@ai-sdk/fal';
+import { fal } from '@ai-toolkit/fal';
 import { generateSpeech } from 'ai';
 import { saveAudioFile } from '../../lib/save-audio';
 import { run } from '../../lib/run';

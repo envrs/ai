@@ -1,4 +1,4 @@
-import { deepSeek, DeepSeekLanguageModelChatOptions } from '@ai-sdk/deepseek';
+import { deepSeek, DeepSeekLanguageModelChatOptions } from '@ai-toolkit/deepseek';
 import { generateText } from 'ai';
 import { print } from '../../lib/print';
 import { run } from '../../lib/run';

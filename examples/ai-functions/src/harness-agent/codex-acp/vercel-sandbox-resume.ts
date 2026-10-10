@@ -1,5 +1,5 @@
-import { HarnessAgent, type HarnessAgentSession } from '@ai-sdk/harness/agent';
-import { resumeVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
+import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
+import { resumeVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import {
   createACPHandoffSandbox,
   getACPHandoffArguments,

@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import assert from 'node:assert/strict';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';

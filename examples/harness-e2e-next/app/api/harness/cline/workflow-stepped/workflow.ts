@@ -6,7 +6,7 @@ import {
   createHarnessWorkflowState,
   finalizeHarnessWorkflow,
   type HarnessWorkflowInput,
-} from '@ai-sdk/workflow-harness';
+} from '@ai-toolkit/workflow-harness';
 import { agentStep } from './agent-step';
 
 export async function agentWorkflow(

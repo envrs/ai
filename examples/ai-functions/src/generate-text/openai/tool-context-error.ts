@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { generateText, tool } from 'ai';
 import { z } from 'zod';
 

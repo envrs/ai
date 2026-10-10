@@ -6,12 +6,12 @@
 import {
   HarnessAgent,
   type HarnessAgentResumeSessionState,
-} from '@ai-sdk/harness/agent';
+} from '@ai-toolkit/harness/agent';
 import { createGrokBuild } from './_create';
 import {
   createVercelNetworkSandboxSession,
   resumeVercelNetworkSandboxSession,
-} from '@ai-sdk/sandbox-vercel';
+} from '@ai-toolkit/sandbox-vercel';
 import { run } from '../../lib/run';
 
 const grokBuild = createGrokBuild();

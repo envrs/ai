@@ -2,7 +2,7 @@
 
 import { Fragment, useState } from 'react';
 import type { AI } from './ai';
-import { useActions, useAIState, useUIState } from '@ai-sdk/rsc';
+import { useActions, useAIState, useUIState } from '@ai-toolkit/rsc';
 import { generateId } from 'ai';
 import { Message } from './message';
 

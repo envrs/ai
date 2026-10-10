@@ -1,6 +1,6 @@
 'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 import { useState, useRef, useEffect, useCallback } from 'react';
 import {
@@ -183,7 +183,7 @@ export default function MultimodalPage() {
         </h1>
         <div className="text-sm text-[var(--foreground-secondary)] leading-relaxed">
           Send images to <strong>GPT-4o</strong> for analysis. This example
-          demonstrates multimodal input using the <code>@ai-sdk/langchain</code>{' '}
+          demonstrates multimodal input using the <code>@ai-toolkit/langchain</code>{' '}
           adapter, which properly converts images and files to LangChain&apos;s
           multimodal content format.
         </div>
@@ -237,7 +237,7 @@ export default function MultimodalPage() {
 
                   {/* Label overlay */}
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+                    className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent
                                 flex flex-col justify-end p-3"
                   >
                     <div className="flex items-center gap-1.5 text-white text-sm font-medium">
@@ -248,7 +248,7 @@ export default function MultimodalPage() {
 
                   {/* Hover indicator */}
                   <div
-                    className="absolute inset-0 bg-[var(--accent)]/0 group-hover:bg-[var(--accent)]/10 
+                    className="absolute inset-0 bg-[var(--accent)]/0 group-hover:bg-[var(--accent)]/10
                                 transition-colors duration-300 flex items-center justify-center"
                   >
                     <div
@@ -291,7 +291,7 @@ export default function MultimodalPage() {
               />
               <button
                 onClick={clearImage}
-                className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full 
+                className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full
                          flex items-center justify-center text-white hover:bg-red-600 transition-colors"
               >
                 <X className="w-4 h-4" />
@@ -321,7 +321,7 @@ export default function MultimodalPage() {
           <button
             onClick={() => fileInputRef.current?.click()}
             disabled={isLoading}
-            className="flex-shrink-0 w-12 h-12 rounded-xl border border-[var(--border)] 
+            className="flex-shrink-0 w-12 h-12 rounded-xl border border-[var(--border)]
                      bg-[var(--background-secondary)] hover:bg-[var(--background-tertiary)]
                      flex items-center justify-center text-[var(--foreground-secondary)]
                      hover:text-[var(--accent)] transition-all duration-200
@@ -356,7 +356,7 @@ export default function MultimodalPage() {
           <button
             onClick={handleSubmit}
             disabled={isLoading || (!input.trim() && !selectedImage)}
-            className="flex-shrink-0 w-12 h-12 rounded-xl bg-[var(--accent)] 
+            className="flex-shrink-0 w-12 h-12 rounded-xl bg-[var(--accent)]
                      hover:bg-[var(--accent-hover)] text-white
                      flex items-center justify-center transition-all duration-200
                      disabled:opacity-50 disabled:cursor-not-allowed"

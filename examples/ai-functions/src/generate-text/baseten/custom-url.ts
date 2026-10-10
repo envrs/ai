@@ -1,4 +1,4 @@
-import { createBaseten } from '@ai-sdk/baseten';
+import { createBaseten } from '@ai-toolkit/baseten';
 import { generateText } from 'ai';
 import { requireEnv } from '../../lib/require-env';
 import { run } from '../../lib/run';

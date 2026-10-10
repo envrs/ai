@@ -1,4 +1,4 @@
-import { huggingFace } from '@ai-sdk/huggingface';
+import { huggingFace } from '@ai-toolkit/huggingface';
 import { Output, streamText } from 'ai';
 import { z } from 'zod/v4';
 import { run } from '../../lib/run';

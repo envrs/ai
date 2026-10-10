@@ -6,7 +6,7 @@ import {
   Validators,
   type FormGroup,
 } from '@angular/forms';
-import { Chat } from '@ai-sdk/angular';
+import { Chat } from '@ai-toolkit/angular';
 import {
   isToolUIPart,
   type DataUIPart,

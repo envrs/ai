@@ -1,5 +1,5 @@
-import { commonTool } from '@ai-sdk/harness';
-import type { ToolSet } from '@ai-sdk/provider-utils';
+import { commonTool } from '@ai-toolkit/harness';
+import type { ToolSet } from '@ai-toolkit/provider-utils';
 import { z } from 'zod';
 
 const webSearchActionSchema = z.discriminatedUnion('type', [

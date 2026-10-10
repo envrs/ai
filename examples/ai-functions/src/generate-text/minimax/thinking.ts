@@ -1,4 +1,4 @@
-import { minimax, type MiniMaxLanguageModelOptions } from '@ai-sdk/minimax';
+import { minimax, type MiniMaxLanguageModelOptions } from '@ai-toolkit/minimax';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

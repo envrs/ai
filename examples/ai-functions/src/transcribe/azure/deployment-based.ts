@@ -1,4 +1,4 @@
-import { createAzure } from '@ai-sdk/azure';
+import { createAzure } from '@ai-toolkit/azure';
 import { transcribe } from 'ai';
 import { readFile } from 'fs/promises';
 import { run } from '../../lib/run';

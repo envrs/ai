@@ -1,7 +1,7 @@
 import {
   createCursor as createCursorHarness,
   type CursorHarnessSettings,
-} from '@ai-sdk/harness-cursor';
+} from '@ai-toolkit/harness-cursor';
 
 export function createCursor(
   settings: CursorHarnessSettings = {},

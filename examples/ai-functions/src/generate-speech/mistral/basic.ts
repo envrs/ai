@@ -1,4 +1,4 @@
-import { mistral } from '@ai-sdk/mistral';
+import { mistral } from '@ai-toolkit/mistral';
 import { generateSpeech } from 'ai';
 import { saveAudioFile } from '../../lib/save-audio';
 import { run } from '../../lib/run';

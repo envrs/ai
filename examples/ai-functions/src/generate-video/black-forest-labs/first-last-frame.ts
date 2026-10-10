@@ -1,4 +1,4 @@
-import { blackForestLabs } from '@ai-sdk/black-forest-labs';
+import { blackForestLabs } from '@ai-toolkit/black-forest-labs';
 import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 import { presentVideos } from '../../lib/present-video';

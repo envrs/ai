@@ -4,7 +4,7 @@ import {
   openai,
   type OpenAILanguageModelResponsesOptions,
   type OpenaiResponsesReasoningProviderMetadata,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 run(async () => {
   const result = await generateText({
     model: openai('gpt-6-astra'),

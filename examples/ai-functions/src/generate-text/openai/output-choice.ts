@@ -1,7 +1,7 @@
 import {
   openai,
   type OpenAILanguageModelResponsesOptions,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import { generateText, Output, isStepCount } from 'ai';
 import { print } from '../../lib/print';
 import { run } from '../../lib/run';

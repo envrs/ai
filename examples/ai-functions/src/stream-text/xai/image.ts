@@ -1,4 +1,4 @@
-import { xai } from '@ai-sdk/xai';
+import { xai } from '@ai-toolkit/xai';
 import { streamText } from 'ai';
 import fs from 'node:fs';
 import { run } from '../../lib/run';

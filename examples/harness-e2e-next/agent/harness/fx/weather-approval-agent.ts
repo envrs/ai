@@ -9,8 +9,8 @@ import {
   HarnessAgent,
   createFileReporter,
   createTraceTreeReporter,
-} from '@ai-sdk/harness/agent';
-import { fx } from '@ai-sdk/harness-fx';
+} from '@ai-toolkit/harness/agent';
+import { fx } from '@ai-toolkit/harness-fx';
 import type { InferUITools, UIMessage } from 'ai';
 
 export const weatherApprovalFxHarnessAgent = new HarnessAgent({

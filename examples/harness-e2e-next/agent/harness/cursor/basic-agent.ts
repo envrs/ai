@@ -2,8 +2,8 @@ import {
   HarnessAgent,
   createFileReporter,
   createTraceTreeReporter,
-} from '@ai-sdk/harness/agent';
-import { cursor } from '@ai-sdk/harness-cursor';
+} from '@ai-toolkit/harness/agent';
+import { cursor } from '@ai-toolkit/harness-cursor';
 import { getUserNameTool } from '@/lib/tools/get-user-name-tool';
 import type { InferUITools, UIMessage } from 'ai';
 

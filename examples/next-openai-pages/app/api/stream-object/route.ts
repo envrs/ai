@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { createTextStreamResponse, Output, streamText, toTextStream } from 'ai';
 import { z } from 'zod';
 

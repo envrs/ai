@@ -1,4 +1,4 @@
-import { createModelCallToUIChunkTransform } from '@ai-sdk/workflow';
+import { createModelCallToUIChunkTransform } from '@ai-toolkit/workflow';
 import { createUIMessageStreamResponse } from 'ai';
 import type { NextRequest } from 'next/server';
 import { getRun } from 'workflow/api';

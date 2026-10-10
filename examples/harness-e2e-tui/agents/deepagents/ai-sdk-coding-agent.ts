@@ -1,6 +1,6 @@
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { deepAgents } from '@ai-sdk/harness-deepagents';
-import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { deepAgents } from '@ai-toolkit/harness-deepagents';
+import { createVercelSandbox } from '@ai-toolkit/sandbox-vercel';
 import type { InferUITools, UIMessage } from 'ai';
 import {
   aiSdkCodingSandboxBootstrapHash,

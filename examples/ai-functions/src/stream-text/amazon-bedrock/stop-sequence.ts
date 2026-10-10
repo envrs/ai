@@ -1,4 +1,4 @@
-import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-toolkit/amazon-bedrock';
 import { streamText } from 'ai';
 import { run } from '../../lib/run';
 

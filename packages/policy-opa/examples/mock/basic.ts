@@ -1,5 +1,5 @@
 /**
- * Runnable end-to-end demo of `@ai-sdk/policy-opa` with the AI SDK's mock model.
+ * Runnable end-to-end demo of `@ai-toolkit/policy-opa` with the AI SDK's mock model.
  *
  * Run from the package directory:
  *   pnpm tsx examples/mock/basic.ts
@@ -19,7 +19,7 @@
  * construction with one line, e.g. `model: anthropic('claude-sonnet-4-5')`.
  * Everything else (tools, toolApproval, policy) is provider-agnostic.
  */
-import { jsonSchema } from '@ai-sdk/provider-utils';
+import { jsonSchema } from '@ai-toolkit/provider-utils';
 import { generateText, isStepCount, tool } from 'ai';
 import { MockLanguageModelV3 } from 'ai/test';
 import type { PolicyClient } from '../../src/policy-client';

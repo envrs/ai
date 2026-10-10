@@ -1,5 +1,5 @@
-import { createOpenAI } from '@ai-sdk/openai';
-import { parseJSON } from '@ai-sdk/provider-utils';
+import { createOpenAI } from '@ai-toolkit/openai';
+import { parseJSON } from '@ai-toolkit/provider-utils';
 import assert from 'node:assert/strict';
 import { generateText, tool } from 'ai';
 import { z } from 'zod';

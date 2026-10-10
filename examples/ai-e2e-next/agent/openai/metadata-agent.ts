@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { ToolLoopAgent, type InferAgentUIMessage } from 'ai';
 import { z } from 'zod';
 

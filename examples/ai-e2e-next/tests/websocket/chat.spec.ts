@@ -1,5 +1,5 @@
 import { expect, test, type Page, type WebSocket } from '@playwright/test';
-import { safeParseJSON } from '@ai-sdk/provider-utils';
+import { safeParseJSON } from '@ai-toolkit/provider-utils';
 
 async function sendMessage(page: Page, text: string) {
   await page.getByLabel('Message', { exact: true }).fill(text);

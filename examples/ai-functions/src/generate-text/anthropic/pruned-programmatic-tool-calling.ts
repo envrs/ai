@@ -1,4 +1,4 @@
-import { anthropic } from '@ai-sdk/anthropic';
+import { anthropic } from '@ai-toolkit/anthropic';
 import { convertToModelMessages, generateText, pruneMessages, tool } from 'ai';
 import assert from 'node:assert/strict';
 import { z } from 'zod/v4';

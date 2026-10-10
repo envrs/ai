@@ -1,7 +1,7 @@
 import {
   createMCPClient,
   experimental_createMCPEventWebhook,
-} from '@ai-sdk/mcp';
+} from '@ai-toolkit/mcp';
 import { eventStore } from './event-store';
 import { startWebhookServer } from './webhook-server';
 

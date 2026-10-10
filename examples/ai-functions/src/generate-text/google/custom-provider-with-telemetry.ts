@@ -1,6 +1,6 @@
-import { createGoogle } from '@ai-sdk/google';
+import { createGoogle } from '@ai-toolkit/google';
 import { generateText, registerTelemetry } from 'ai';
-import { LegacyOpenTelemetry } from '@ai-sdk/otel';
+import { LegacyOpenTelemetry } from '@ai-toolkit/otel';
 
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import { ConsoleSpanExporter } from '@opentelemetry/sdk-trace-node';

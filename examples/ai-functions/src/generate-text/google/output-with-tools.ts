@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { google } from '@ai-toolkit/google';
 import { generateText, isStepCount, Output, streamText, tool } from 'ai';
 import * as z from 'zod/v4';
 import { run } from '../../lib/run';

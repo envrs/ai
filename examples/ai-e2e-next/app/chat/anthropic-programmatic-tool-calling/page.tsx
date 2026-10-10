@@ -4,7 +4,7 @@ import type { AnthropicProgrammaticToolCallingMessage } from '@/agent/anthropic/
 import { Response } from '@/components/ai-elements/response';
 import ChatInput from '@/components/chat-input';
 import AnthropicCodeExecution20260120View from '@/components/tool/anthropic-code-execution-20260120-view';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 
 export default function ChatAnthropicProgrammaticToolCalling() {

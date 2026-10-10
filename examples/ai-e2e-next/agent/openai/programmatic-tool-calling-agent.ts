@@ -2,7 +2,7 @@ import {
   openai,
   type OpenAILanguageModelResponsesOptions,
   type OpenAIToolOptions,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import { tool, ToolLoopAgent, type InferAgentUIMessage } from 'ai';
 import { z } from 'zod';
 

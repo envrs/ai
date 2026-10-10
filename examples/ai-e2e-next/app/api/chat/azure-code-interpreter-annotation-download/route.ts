@@ -2,7 +2,7 @@ import {
   azure,
   type AzureResponsesSourceDocumentProviderMetadata,
   type OpenAILanguageModelResponsesOptions,
-} from '@ai-sdk/azure';
+} from '@ai-toolkit/azure';
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,

@@ -3,8 +3,8 @@ import { expect } from 'vitest';
 import {
   fireworks as provider,
   type FireworksErrorData,
-} from '@ai-sdk/fireworks';
-import type { APICallError } from '@ai-sdk/provider';
+} from '@ai-toolkit/fireworks';
+import type { APICallError } from '@ai-toolkit/provider';
 import {
   createEmbeddingModelWithCapabilities,
   createFeatureTestSuite,

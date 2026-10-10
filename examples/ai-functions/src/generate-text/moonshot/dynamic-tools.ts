@@ -1,7 +1,7 @@
 import {
   moonshotai,
   type MoonshotAISystemMessageProviderOptions,
-} from '@ai-sdk/moonshotai';
+} from '@ai-toolkit/moonshotai';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

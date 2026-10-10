@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { generateText, tool } from 'ai';
 import { z as z4 } from 'zod/v4';
 import { print } from '../../lib/print';

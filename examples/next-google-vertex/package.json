@@ -9,7 +9,7 @@
     "lint": "ultracite check"
   },
   "dependencies": {
-    "@ai-sdk/google-vertex": "workspace:*",
+    "@ai-toolkit/google-vertex": "workspace:*",
     "ai": "workspace:*",
     "geist": "^1.7.0",
     "next": "^16.3.6",

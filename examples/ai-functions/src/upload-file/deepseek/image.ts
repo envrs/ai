@@ -1,4 +1,4 @@
-import { deepSeek, type DeepSeekFilesOptions } from '@ai-sdk/deepseek';
+import { deepSeek, type DeepSeekFilesOptions } from '@ai-toolkit/deepseek';
 import { generateText, uploadFile } from 'ai';
 import fs from 'node:fs';
 import { run } from '../../lib/run';

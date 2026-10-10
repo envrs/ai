@@ -1,4 +1,4 @@
-import { byteDance } from '@ai-sdk/bytedance';
+import { byteDance } from '@ai-toolkit/bytedance';
 import { APICallError, experimental_generateVideo as generateVideo } from 'ai';
 import { run } from '../../lib/run';
 import { withSpinner } from '../../lib/spinner';

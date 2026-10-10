@@ -1,4 +1,4 @@
-import { moonshotai } from '@ai-sdk/moonshotai';
+import { moonshotai } from '@ai-toolkit/moonshotai';
 import { generateText, isStepCount } from 'ai';
 import { run } from '../../lib/run';
 import { weatherTool } from '../../tools/weather-tool';

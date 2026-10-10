@@ -1,4 +1,4 @@
-import { perplexity } from '@ai-sdk/perplexity';
+import { perplexity } from '@ai-toolkit/perplexity';
 import { streamText } from 'ai';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { saveChat } from '@util/chat-store';
 import {
   convertToModelMessages,

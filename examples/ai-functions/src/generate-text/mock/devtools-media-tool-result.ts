@@ -1,4 +1,4 @@
-import { DevToolsTelemetry } from '@ai-sdk/devtools';
+import { DevToolsTelemetry } from '@ai-toolkit/devtools';
 import { generateText, registerTelemetry, tool } from 'ai';
 import { MockLanguageModelV4 } from 'ai/test';
 import { z } from 'zod';
@@ -76,6 +76,6 @@ run(async () => {
 
   console.log(`Captured ${result.toolResults.length} tool result.`);
   console.log(
-    'Run `npx @ai-sdk/devtools@latest` and inspect the captureScreenshot tool result to view the image preview.',
+    'Run `npx @ai-toolkit/devtools@latest` and inspect the captureScreenshot tool result to view the image preview.',
   );
 });

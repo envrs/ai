@@ -9,8 +9,8 @@ import {
   HarnessAgent,
   createFileReporter,
   createTraceTreeReporter,
-} from '@ai-sdk/harness/agent';
-import { codex } from '@ai-sdk/harness-codex';
+} from '@ai-toolkit/harness/agent';
+import { codex } from '@ai-toolkit/harness-codex';
 import type { InferUITools, UIMessage } from 'ai';
 
 export const weatherCodexHarnessAgent = new HarnessAgent({

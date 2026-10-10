@@ -9,9 +9,9 @@ import {
   HarnessAgent,
   createFileReporter,
   createTraceTreeReporter,
-} from '@ai-sdk/harness/agent';
-import { codex } from '@ai-sdk/harness-codex';
-import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
+} from '@ai-toolkit/harness/agent';
+import { codex } from '@ai-toolkit/harness-codex';
+import { createVercelSandbox } from '@ai-toolkit/sandbox-vercel';
 import type { InferUITools, UIMessage } from 'ai';
 
 export const weatherApprovalCodexHarnessAgent = new HarnessAgent({

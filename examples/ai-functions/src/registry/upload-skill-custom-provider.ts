@@ -1,4 +1,4 @@
-import { anthropic } from '@ai-sdk/anthropic';
+import { anthropic } from '@ai-toolkit/anthropic';
 import { customProvider, uploadSkill } from 'ai';
 import { readFileSync } from 'fs';
 import { deleteUploadedAnthropicSkill } from '../lib/delete-uploaded-skill';

@@ -12,7 +12,7 @@ import { grokBuildTimedWorkflow } from './workflow';
 /*
  * Durable, multi-turn GrokBuild ACP chat via the Vercel Workflow DevKit. The
  * `'use workflow'` orchestration lives in `./workflow` (kept `ai`-free so the
- * DevKit's generated step/flow routes don't pull in `@ai-sdk/gateway`); this
+ * DevKit's generated step/flow routes don't pull in `@ai-toolkit/gateway`); this
  * file is the plain POST handler.
  */
 export async function POST(request: Request) {

@@ -1,4 +1,4 @@
-import { anthropic } from '@ai-sdk/anthropic';
+import { anthropic } from '@ai-toolkit/anthropic';
 import { generateText, isStepCount } from 'ai';
 import { run } from '../../lib/run';
 import { LocalSandboxSession } from '../../sandbox/local-sandbox';

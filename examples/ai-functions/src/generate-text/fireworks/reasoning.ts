@@ -1,4 +1,4 @@
-import { fireworks } from '@ai-sdk/fireworks';
+import { fireworks } from '@ai-toolkit/fireworks';
 import {
   extractReasoningMiddleware,
   generateText,

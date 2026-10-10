@@ -1,9 +1,9 @@
 import type {
   HarnessV1QuestionsToolInput,
   HarnessV1QuestionsToolOutput,
-} from '@ai-sdk/harness';
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
+} from '@ai-toolkit/harness';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import { createClaudeCode } from './_create';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

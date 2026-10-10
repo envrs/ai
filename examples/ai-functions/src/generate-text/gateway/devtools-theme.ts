@@ -1,4 +1,4 @@
-import { DevToolsTelemetry } from '@ai-sdk/devtools';
+import { DevToolsTelemetry } from '@ai-toolkit/devtools';
 import { generateText, registerTelemetry } from 'ai';
 import { run } from '../../lib/run';
 
@@ -16,6 +16,6 @@ run(async () => {
   console.log(text);
   console.log();
   console.log(
-    'Run `npx @ai-sdk/devtools@latest`, then use the theme button in the viewer header to switch between dark and light themes.',
+    'Run `npx @ai-toolkit/devtools@latest`, then use the theme button in the viewer header to switch between dark and light themes.',
   );
 });

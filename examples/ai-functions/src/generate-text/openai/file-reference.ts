@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { generateText, uploadFile } from 'ai';
 import { readFile } from 'node:fs/promises';
 import { run } from '../../lib/run';

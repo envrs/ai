@@ -1,4 +1,4 @@
-import { createMCPClient } from '@ai-sdk/mcp';
+import { createMCPClient } from '@ai-toolkit/mcp';
 import { z } from 'zod';
 import 'dotenv/config';
 

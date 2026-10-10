@@ -1,7 +1,7 @@
 'use client';
 
 import ChatInput from '@/components/chat-input';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import {
   DefaultChatTransport,
   getToolName,
@@ -9,7 +9,7 @@ import {
   type DynamicToolUIPart,
   type ToolUIPart,
 } from 'ai';
-import type { McpProviderMetadata } from '@ai-sdk/mcp';
+import type { McpProviderMetadata } from '@ai-toolkit/mcp';
 export default function Chat() {
   const { error, status, sendMessage, messages, regenerate, stop } = useChat({
     transport: new DefaultChatTransport({ api: '/chat/mcp/chat' }),

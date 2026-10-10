@@ -1,4 +1,4 @@
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { streamText } from 'ai';
 import { run } from '../../lib/run';
 

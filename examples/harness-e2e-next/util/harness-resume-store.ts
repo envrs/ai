@@ -1,12 +1,12 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import type { HarnessV1NetworkSandboxSession } from '@ai-sdk/harness';
+import type { HarnessV1NetworkSandboxSession } from '@ai-toolkit/harness';
 import type {
   HarnessAgent,
   HarnessAgentResumeSessionState,
   HarnessAgentSession,
-} from '@ai-sdk/harness/agent';
-import { safeParseJSON } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/agent';
+import { safeParseJSON } from '@ai-toolkit/provider-utils';
 import { acquireHarnessSandboxSession } from './harness-sandbox-session';
 
 /*

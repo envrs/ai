@@ -32,7 +32,7 @@ PASS: 11/11
 ## Run the parser tests
 
 ```sh
-pnpm --filter @ai-sdk/policy-opa test:node parse-git-invocation
+pnpm --filter @ai-toolkit/policy-opa test:node parse-git-invocation
 ```
 
 ## Run the end-to-end demo

@@ -1,7 +1,7 @@
 import {
   DIRECT_TOOL_CALL,
   experimental_codeModeTool as codeModeTool,
-} from '@ai-sdk/code-mode';
+} from '@ai-toolkit/code-mode';
 import { isStepCount, streamText, tool } from 'ai';
 import { z } from 'zod';
 import { printFullStream } from '../../lib/print-full-stream';

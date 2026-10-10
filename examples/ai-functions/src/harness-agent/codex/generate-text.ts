@@ -1,7 +1,7 @@
-import { HarnessAgent, type HarnessAgentSession } from '@ai-sdk/harness/agent';
+import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import { createCodex } from './_create';
 import { run } from '../../lib/run';
-import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
+import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 
 const codex = createCodex();
 

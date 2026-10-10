@@ -7,8 +7,8 @@ import type {
 import { Response } from '@/components/ai-elements/response';
 import ChatInput from '@/components/chat-input';
 import { ReasoningView } from '@/components/reasoning-view';
-import type { OpenaiResponsesProviderMetadata } from '@ai-sdk/openai';
-import { useChat } from '@ai-sdk/react';
+import type { OpenaiResponsesProviderMetadata } from '@ai-toolkit/openai';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 import { useRef } from 'react';
 

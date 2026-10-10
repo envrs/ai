@@ -1,4 +1,4 @@
-import { mistral } from '@ai-sdk/mistral';
+import { mistral } from '@ai-toolkit/mistral';
 import { generateText, type ModelMessage } from 'ai';
 import { print } from '../../lib/print';
 import { run } from '../../lib/run';

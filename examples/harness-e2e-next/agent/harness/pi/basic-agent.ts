@@ -2,8 +2,8 @@ import {
   HarnessAgent,
   createFileReporter,
   createTraceTreeReporter,
-} from '@ai-sdk/harness/agent';
-import { pi } from '@ai-sdk/harness-pi';
+} from '@ai-toolkit/harness/agent';
+import { pi } from '@ai-toolkit/harness-pi';
 import { getUserNameTool } from '@/lib/tools/get-user-name-tool';
 import type { InferUITools, UIMessage } from 'ai';
 

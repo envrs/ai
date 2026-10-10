@@ -1,5 +1,5 @@
 // anthropic-microsoft-agent.ts
-import { createAnthropic } from '@ai-sdk/anthropic';
+import { createAnthropic } from '@ai-toolkit/anthropic';
 import { ToolLoopAgent, type InferAgentUIMessage } from 'ai';
 export function createAnthropicMicrosoftAgent() {
   const resourceName = process.env.ANTHROPIC_MICROSOFT_RESOURCE_NAME;

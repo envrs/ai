@@ -1,4 +1,4 @@
-import { voyage } from '@ai-sdk/voyage';
+import { voyage } from '@ai-toolkit/voyage';
 import { rerank } from 'ai';
 import { run } from '../lib/run';
 import { print } from '../lib/print';

@@ -1,6 +1,6 @@
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { claudeCode } from '@ai-sdk/harness-claude-code';
-import { createVercelSandbox } from '@ai-sdk/sandbox-vercel';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { claudeCode } from '@ai-toolkit/harness-claude-code';
+import { createVercelSandbox } from '@ai-toolkit/sandbox-vercel';
 import type { InferUITools, UIMessage } from 'ai';
 import {
   aiSdkCodingSandboxBootstrapHash,

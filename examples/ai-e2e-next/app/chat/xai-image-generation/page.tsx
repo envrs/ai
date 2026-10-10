@@ -3,7 +3,7 @@
 import type { XaiImageGenerationMessage } from '@/agent/xai/image-generation-agent';
 import ChatInput from '@/components/chat-input';
 import XaiImageGenerationView from '@/components/tool/xai-image-generation-view';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 
 export default function TestXaiImageGeneration() {

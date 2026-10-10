@@ -1,4 +1,4 @@
-import { anthropicAws } from '@ai-sdk/anthropic-aws';
+import { anthropicAws } from '@ai-toolkit/anthropic-aws';
 import { generateText } from 'ai';
 import { print } from '../../lib/print';
 import { run } from '../../lib/run';

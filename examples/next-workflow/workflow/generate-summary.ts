@@ -1,4 +1,4 @@
-import { WorkflowAgent } from '@ai-sdk/workflow';
+import { WorkflowAgent } from '@ai-toolkit/workflow';
 
 /** Start with start(generateSummary, [modelId, text]) and await run.returnValue. */
 export async function generateSummary(modelId: string, text: string) {

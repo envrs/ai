@@ -3,7 +3,7 @@ import {
   type OpenaiResponsesProviderMetadata,
   type OpenAILanguageModelResponsesOptions,
   type OpenAIToolOptions,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import { streamText, tool } from 'ai';
 import { z } from 'zod';
 import { printFullStream } from '../../lib/print-full-stream';

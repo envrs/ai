@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { google } from '@ai-toolkit/google';
 import { generateText, isStepCount, type ModelMessage } from 'ai';
 import { weatherTool } from '../../tools/weather-tool';
 import { run } from '../../lib/run';

@@ -1,4 +1,4 @@
-import type { HarnessAgentSkill } from '@ai-sdk/harness/agent';
+import type { HarnessAgentSkill } from '@ai-toolkit/harness/agent';
 
 export const weatherInstructions =
   'You are a weather-focused assistant. Be concise, accurate, and explicit about when you are using the local weather tool.';

@@ -1,7 +1,7 @@
 import {
   createGitHubCopilot as createGitHubCopilotHarness,
   type GitHubCopilotHarnessSettings,
-} from '@ai-sdk/harness-github-copilot';
+} from '@ai-toolkit/harness-github-copilot';
 
 export function createGitHubCopilot(
   settings: GitHubCopilotHarnessSettings = {},

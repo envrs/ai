@@ -1,6 +1,6 @@
-import { readMCPAppResource, splitMCPAppTools } from '@ai-sdk/mcp';
-import { isJSONObject, type JSONObject } from '@ai-sdk/provider';
-import { safeParseJSON } from '@ai-sdk/provider-utils';
+import { readMCPAppResource, splitMCPAppTools } from '@ai-toolkit/mcp';
+import { isJSONObject, type JSONObject } from '@ai-toolkit/provider';
+import { safeParseJSON } from '@ai-toolkit/provider-utils';
 import { createLocalMCPAppsClient } from '../mcp-client';
 
 export async function POST(req: Request) {

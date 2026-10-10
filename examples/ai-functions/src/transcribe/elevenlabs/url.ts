@@ -1,4 +1,4 @@
-import { elevenLabs } from '@ai-sdk/elevenlabs';
+import { elevenLabs } from '@ai-toolkit/elevenlabs';
 import { transcribe } from 'ai';
 import { run } from '../../lib/run';
 

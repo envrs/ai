@@ -1,4 +1,4 @@
-import type { GoogleProviderMetadata } from '@ai-sdk/google';
+import type { GoogleProviderMetadata } from '@ai-toolkit/google';
 import type {
   EmbeddingModelV3,
   EmbeddingModelV4,
@@ -6,7 +6,7 @@ import type {
   ImageModelV4,
   LanguageModelV3,
   LanguageModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   APICallError,
   embed,

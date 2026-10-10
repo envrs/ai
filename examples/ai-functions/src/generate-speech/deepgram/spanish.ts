@@ -1,4 +1,4 @@
-import { deepgram } from '@ai-sdk/deepgram';
+import { deepgram } from '@ai-toolkit/deepgram';
 import { generateSpeech } from 'ai';
 import { saveAudioFile } from '../../lib/save-audio';
 import { run } from '../../lib/run';

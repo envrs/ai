@@ -1,6 +1,6 @@
 import { Output, createTextStreamResponse, streamText, toTextStream } from 'ai';
 import { notificationSchema } from '../../structured-object/schema.js';
-import { createOpenAI } from '@ai-sdk/openai';
+import { createOpenAI } from '@ai-toolkit/openai';
 import { env } from '$env/dynamic/private';
 
 const openai = createOpenAI({

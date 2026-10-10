@@ -1,4 +1,4 @@
-import { gladia } from '@ai-sdk/gladia';
+import { gladia } from '@ai-toolkit/gladia';
 import { transcribe } from 'ai';
 import { readFile } from 'fs/promises';
 import { run } from '../../lib/run';

@@ -1,4 +1,4 @@
-import { WorkflowAgent } from '@ai-sdk/workflow';
+import { WorkflowAgent } from '@ai-toolkit/workflow';
 import { isStepCount, tool, toolSearch } from 'ai';
 import { z } from 'zod/v4';
 import { run } from '../../lib/run';

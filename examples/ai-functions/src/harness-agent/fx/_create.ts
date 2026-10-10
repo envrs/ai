@@ -1,7 +1,7 @@
 import {
   createFx as createFxHarness,
   type FxHarnessSettings,
-} from '@ai-sdk/harness-fx';
+} from '@ai-toolkit/harness-fx';
 
 export function createFx(
   settings: FxHarnessSettings = {},

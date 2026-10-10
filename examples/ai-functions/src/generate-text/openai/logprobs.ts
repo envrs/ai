@@ -2,7 +2,7 @@ import {
   openai,
   type OpenAILanguageModelChatOptions,
   type OpenaiResponsesProviderMetadata,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

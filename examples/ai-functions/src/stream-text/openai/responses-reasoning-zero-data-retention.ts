@@ -1,7 +1,7 @@
 import {
   openai,
   type OpenAILanguageModelResponsesOptions,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import { APICallError, streamText, type UserModelMessage } from 'ai';
 import { run } from '../../lib/run';
 

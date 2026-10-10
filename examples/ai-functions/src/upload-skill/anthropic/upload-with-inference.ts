@@ -1,7 +1,7 @@
 import {
   anthropic,
   type AnthropicLanguageModelOptions,
-} from '@ai-sdk/anthropic';
+} from '@ai-toolkit/anthropic';
 import { generateText, uploadSkill } from 'ai';
 import { readFileSync } from 'fs';
 import { deleteUploadedAnthropicSkill } from '../../lib/delete-uploaded-skill';

@@ -1,6 +1,6 @@
 import { streamText, tool } from 'ai';
 import { z } from 'zod';
-import { mistral, type MistralLanguageModelChatOptions } from '@ai-sdk/mistral';
+import { mistral, type MistralLanguageModelChatOptions } from '@ai-toolkit/mistral';
 import { run } from '../../lib/run';
 
 run(async () => {

@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { generateText, isStepCount, tool } from 'ai';
 import * as mathjs from 'mathjs';
 import { z } from 'zod';

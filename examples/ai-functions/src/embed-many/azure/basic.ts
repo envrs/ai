@@ -1,4 +1,4 @@
-import { azure } from '@ai-sdk/azure';
+import { azure } from '@ai-toolkit/azure';
 import { embedMany } from 'ai';
 import { run } from '../../lib/run';
 

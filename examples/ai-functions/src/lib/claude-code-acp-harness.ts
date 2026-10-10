@@ -3,9 +3,9 @@ import {
   type ACPAuthenticationMode,
   type ACPPermissionModeMapping,
   type ACPSource,
-} from '@ai-sdk/harness-acp';
-import type { HarnessV1PortEndpoint } from '@ai-sdk/harness';
-import { createCredentialRequestTransformation } from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness-acp';
+import type { HarnessV1PortEndpoint } from '@ai-toolkit/harness';
+import { createCredentialRequestTransformation } from '@ai-toolkit/harness/utils';
 import { claudeCodeACPAskUserQuestions } from './claude-code-acp-question-tool';
 
 const CLAUDE_CODE_ACP_SOURCE = {

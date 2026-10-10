@@ -2,7 +2,7 @@ import {
   createAzure,
   type AzureOpenAIProviderSettings,
   type AzureTranscriptionModelOptions,
-} from '@ai-sdk/azure';
+} from '@ai-toolkit/azure';
 import {
   experimental_streamTranscribe as streamTranscribe,
   generateSpeech,

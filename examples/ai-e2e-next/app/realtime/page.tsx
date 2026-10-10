@@ -1,9 +1,9 @@
 'use client';
 
-import { experimental_useRealtime } from '@ai-sdk/react';
-import { openai } from '@ai-sdk/openai';
-import { google } from '@ai-sdk/google';
-import { xai } from '@ai-sdk/xai';
+import { experimental_useRealtime } from '@ai-toolkit/react';
+import { openai } from '@ai-toolkit/openai';
+import { google } from '@ai-toolkit/google';
+import { xai } from '@ai-toolkit/xai';
 import { useState, useRef, useEffect, useMemo } from 'react';
 
 type Provider = 'openai' | 'google' | 'xai';

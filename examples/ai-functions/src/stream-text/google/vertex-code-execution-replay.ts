@@ -1,4 +1,4 @@
-import { createGoogleVertex } from '@ai-sdk/google-vertex';
+import { createGoogleVertex } from '@ai-toolkit/google-vertex';
 import { streamText, tool } from 'ai';
 import { z } from 'zod/v4';
 import { print } from '../../lib/print';

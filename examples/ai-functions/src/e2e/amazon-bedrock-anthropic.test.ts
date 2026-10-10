@@ -1,8 +1,8 @@
 import {
   bedrockAnthropic,
   createBedrockAnthropic,
-} from '@ai-sdk/amazon-bedrock/anthropic';
-import type { LanguageModelV3, LanguageModelV4 } from '@ai-sdk/provider';
+} from '@ai-toolkit/amazon-bedrock/anthropic';
+import type { LanguageModelV3, LanguageModelV4 } from '@ai-toolkit/provider';
 import { generateText, isStepCount, type APICallError } from 'ai';
 import 'dotenv/config';
 import fs from 'fs';

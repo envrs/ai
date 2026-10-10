@@ -3,10 +3,10 @@ import {
   type ACPAuthenticationMode,
   type ACPPermissionModeMapping,
   type ACPSource,
-} from '@ai-sdk/harness-acp';
-import { commonTool, type HarnessV1PortEndpoint } from '@ai-sdk/harness';
-import { createCredentialRequestTransformation } from '@ai-sdk/harness/utils';
-import { secureJsonParse } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness-acp';
+import { commonTool, type HarnessV1PortEndpoint } from '@ai-toolkit/harness';
+import { createCredentialRequestTransformation } from '@ai-toolkit/harness/utils';
+import { secureJsonParse } from '@ai-toolkit/provider-utils';
 import { z } from 'zod';
 import { codexACPAskUserQuestions } from './codex-acp-question-tool';
 

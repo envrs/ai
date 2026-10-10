@@ -1,4 +1,4 @@
-import type { GoogleLanguageModelInteractionsOptions } from '@ai-sdk/google';
+import type { GoogleLanguageModelInteractionsOptions } from '@ai-toolkit/google';
 
 const BASE_URL = 'https://generativelanguage.googleapis.com/v1beta';
 

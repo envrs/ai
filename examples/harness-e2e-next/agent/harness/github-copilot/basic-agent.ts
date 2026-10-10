@@ -2,8 +2,8 @@ import {
   HarnessAgent,
   createFileReporter,
   createTraceTreeReporter,
-} from '@ai-sdk/harness/agent';
-import { githubCopilot } from '@ai-sdk/harness-github-copilot';
+} from '@ai-toolkit/harness/agent';
+import { githubCopilot } from '@ai-toolkit/harness-github-copilot';
 import { getUserNameTool } from '@/lib/tools/get-user-name-tool';
 import type { InferUITools, UIMessage } from 'ai';
 

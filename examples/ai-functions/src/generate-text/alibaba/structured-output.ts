@@ -1,4 +1,4 @@
-import { alibaba } from '@ai-sdk/alibaba';
+import { alibaba } from '@ai-toolkit/alibaba';
 import { generateText, Output } from 'ai';
 import { z } from 'zod';
 import { run } from '../../lib/run';

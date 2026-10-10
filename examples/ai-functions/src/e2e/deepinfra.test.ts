@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { deepInfra as provider } from '@ai-sdk/deepinfra';
+import { deepInfra as provider } from '@ai-toolkit/deepinfra';
 import {
   createEmbeddingModelWithCapabilities,
   createFeatureTestSuite,

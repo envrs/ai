@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { streamText } from 'ai';
 import { readFileSync } from 'fs';
 import { join, dirname } from 'path';

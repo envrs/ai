@@ -1,4 +1,4 @@
-import { cartesia } from '@ai-sdk/cartesia';
+import { cartesia } from '@ai-toolkit/cartesia';
 import { transcribe } from 'ai';
 import { readFile } from 'fs/promises';
 import { run } from '../../lib/run';

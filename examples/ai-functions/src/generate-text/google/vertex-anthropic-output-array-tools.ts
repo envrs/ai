@@ -1,4 +1,4 @@
-import { vertexAnthropic } from '@ai-sdk/google-vertex/anthropic';
+import { vertexAnthropic } from '@ai-toolkit/google-vertex/anthropic';
 import { generateText, Output, isStepCount } from 'ai';
 import { z } from 'zod';
 import { print } from '../../lib/print';

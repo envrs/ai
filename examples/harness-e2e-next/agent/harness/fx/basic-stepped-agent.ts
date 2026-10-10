@@ -2,8 +2,8 @@ import {
   HarnessAgent,
   createFileReporter,
   createTraceTreeReporter,
-} from '@ai-sdk/harness/agent';
-import { fx } from '@ai-sdk/harness-fx';
+} from '@ai-toolkit/harness/agent';
+import { fx } from '@ai-toolkit/harness-fx';
 import { getUserNameTool } from '@/lib/tools/get-user-name-tool';
 import { isStepCount } from 'ai';
 

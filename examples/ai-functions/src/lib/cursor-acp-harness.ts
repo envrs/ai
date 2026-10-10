@@ -1,5 +1,5 @@
-import { createACP, type ACPSource } from '@ai-sdk/harness-acp';
-import type { HarnessV1PortEndpoint } from '@ai-sdk/harness';
+import { createACP, type ACPSource } from '@ai-toolkit/harness-acp';
+import type { HarnessV1PortEndpoint } from '@ai-toolkit/harness';
 
 const CURSOR_ACP_SOURCE = {
   type: 'install-command',

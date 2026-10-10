@@ -1,7 +1,7 @@
 import {
   google,
   type GoogleLanguageModelInteractionsOptions,
-} from '@ai-sdk/google';
+} from '@ai-toolkit/google';
 import { streamText } from 'ai';
 import { randomUUID } from 'node:crypto';
 import { cancelOnSigint } from '../../lib/cancel-on-sigint';

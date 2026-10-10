@@ -1,7 +1,7 @@
 import {
   fishAudio,
   type FishAudioSpeechModelOptions,
-} from '@ai-sdk/fish-audio';
+} from '@ai-toolkit/fish-audio';
 import { generateSpeech } from 'ai';
 import { run } from '../../lib/run';
 import { saveAudioFile } from '../../lib/save-audio';

@@ -1,4 +1,4 @@
-import { cohere } from '@ai-sdk/cohere';
+import { cohere } from '@ai-toolkit/cohere';
 import { streamText } from 'ai';
 import fs from 'node:fs';
 import { run } from '../../lib/run';

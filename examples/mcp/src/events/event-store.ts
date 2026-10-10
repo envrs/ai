@@ -1,7 +1,7 @@
 import type {
   Experimental_MCPEventStore as MCPEventStore,
   Experimental_MCPEventSubscription as MCPEventSubscription,
-} from '@ai-sdk/mcp';
+} from '@ai-toolkit/mcp';
 import { readFile, rename, writeFile } from 'node:fs/promises';
 import { randomUUID } from 'node:crypto';
 import { deserialize, serialize } from 'node:v8';

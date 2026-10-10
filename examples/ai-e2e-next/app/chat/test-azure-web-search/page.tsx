@@ -4,7 +4,7 @@ import { Response } from '@/components/ai-elements/response';
 import ChatInput from '@/components/chat-input';
 import { ReasoningView } from '@/components/reasoning-view';
 import SourcesView from '@/components/sources-view';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 import type { AzureWebSearchMessage } from '@/app/api/chat/azure-web-search/route';
 import AzureWebSearchView from '@/components/tool/azure-web-search-view';

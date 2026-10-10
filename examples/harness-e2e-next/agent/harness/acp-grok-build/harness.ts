@@ -1,5 +1,5 @@
-import { createACP } from '@ai-sdk/harness-acp';
-import { createCredentialRequestTransformation } from '@ai-sdk/harness/utils';
+import { createACP } from '@ai-toolkit/harness-acp';
+import { createCredentialRequestTransformation } from '@ai-toolkit/harness/utils';
 import { grokBuildACPBuiltinTools } from './builtin-tools';
 
 const harnessId = 'acp-grok-build';

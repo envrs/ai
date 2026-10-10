@@ -1,4 +1,4 @@
-import { createModelCallToUIChunkTransform } from '@ai-sdk/workflow';
+import { createModelCallToUIChunkTransform } from '@ai-toolkit/workflow';
 import { createUIMessageStreamResponse, type UIMessage } from 'ai';
 import { start } from 'workflow/api';
 import { chat, type ChatRequestContext } from '@/workflow/agent-chat';

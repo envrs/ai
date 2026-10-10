@@ -1,4 +1,4 @@
-import type { CodeModeTool } from '@ai-sdk/code-mode';
+import type { CodeModeTool } from '@ai-toolkit/code-mode';
 import type { UIToolInvocation } from 'ai';
 
 type CodeModeInvocation = UIToolInvocation<CodeModeTool>;

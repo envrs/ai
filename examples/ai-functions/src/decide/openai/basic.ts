@@ -1,4 +1,4 @@
-import { openai, type OpenAIDecisionModelOptions } from '@ai-sdk/openai';
+import { openai, type OpenAIDecisionModelOptions } from '@ai-toolkit/openai';
 import { experimental_decide } from 'ai';
 import { run } from '../../lib/run';
 

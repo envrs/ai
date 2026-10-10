@@ -1,4 +1,4 @@
-import { deepgram } from '@ai-sdk/deepgram';
+import { deepgram } from '@ai-toolkit/deepgram';
 import { transcribe } from 'ai';
 import { readFile } from 'fs/promises';
 import { run } from '../../lib/run';

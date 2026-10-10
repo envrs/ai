@@ -1,4 +1,4 @@
-import { fal } from '@ai-sdk/fal';
+import { fal } from '@ai-toolkit/fal';
 import { customProvider, experimental_generateVideo } from 'ai';
 import { presentVideos } from '../lib/present-video';
 import { run } from '../lib/run';

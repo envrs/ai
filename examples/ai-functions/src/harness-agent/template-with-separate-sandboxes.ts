@@ -4,8 +4,8 @@ import {
   createHarnessSandboxTemplate,
   type HarnessAgentAdapter,
   type HarnessAgentSandboxConfig,
-} from '@ai-sdk/harness/agent';
-import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
+} from '@ai-toolkit/harness/agent';
+import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import { createClaudeCode } from './claude-code/_create';
 import { createCline } from './cline/_create';
 import { createCodex } from './codex/_create';

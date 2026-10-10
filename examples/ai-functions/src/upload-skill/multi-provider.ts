@@ -1,8 +1,8 @@
 import {
   anthropic,
   type AnthropicLanguageModelOptions,
-} from '@ai-sdk/anthropic';
-import { openai } from '@ai-sdk/openai';
+} from '@ai-toolkit/anthropic';
+import { openai } from '@ai-toolkit/openai';
 import { generateText, uploadSkill } from 'ai';
 import { readFileSync } from 'fs';
 import {

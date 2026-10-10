@@ -2,7 +2,7 @@
 
 import type { BedrockInvalidToolCallMessage } from '@/app/api/chat/bedrock-invalid-tool-call/route';
 import ChatInput from '@/components/chat-input';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 
 export default function Chat() {

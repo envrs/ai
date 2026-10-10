@@ -1,7 +1,7 @@
 import {
   elevenLabs,
   type ElevenLabsSpeechModelOptions,
-} from '@ai-sdk/elevenlabs';
+} from '@ai-toolkit/elevenlabs';
 import { generateSpeech } from 'ai';
 import { saveAudioFile } from '../../lib/save-audio';
 import { run } from '../../lib/run';

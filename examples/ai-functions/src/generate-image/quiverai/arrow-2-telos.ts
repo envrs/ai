@@ -1,4 +1,4 @@
-import { quiverai, type QuiverAIImageModelOptions } from '@ai-sdk/quiverai';
+import { quiverai, type QuiverAIImageModelOptions } from '@ai-toolkit/quiverai';
 import { generateImage } from 'ai';
 import { presentImages } from '../../lib/present-image';
 import { run } from '../../lib/run';

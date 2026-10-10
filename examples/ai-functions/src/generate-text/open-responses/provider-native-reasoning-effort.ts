@@ -1,7 +1,7 @@
 import {
   createOpenResponses,
   type OpenResponsesLanguageModelOptions,
-} from '@ai-sdk/open-responses';
+} from '@ai-toolkit/open-responses';
 import assert from 'node:assert/strict';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';

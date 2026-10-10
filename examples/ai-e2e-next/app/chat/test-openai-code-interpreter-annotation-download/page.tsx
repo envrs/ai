@@ -1,6 +1,6 @@
 'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 import ChatInput from '@/components/chat-input';
 import type { OpenAICodeInterpreterMessage } from '@/app/api/chat/openai-code-interpreter-annotation-download/route';

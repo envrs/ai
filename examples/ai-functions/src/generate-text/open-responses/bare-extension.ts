@@ -1,7 +1,7 @@
 import {
   createOpenResponses,
   type Experimental_OpenResponsesBareExtension,
-} from '@ai-sdk/open-responses';
+} from '@ai-toolkit/open-responses';
 import { generateText, tool, type ModelMessage } from 'ai';
 import { z } from 'zod';
 import { run } from '../../lib/run';

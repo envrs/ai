@@ -1,7 +1,7 @@
 import {
   mistral,
   type MistralTranscriptionModelOptions,
-} from '@ai-sdk/mistral';
+} from '@ai-toolkit/mistral';
 import { transcribe } from 'ai';
 import { readFile } from 'node:fs/promises';
 import { run } from '../../lib/run';

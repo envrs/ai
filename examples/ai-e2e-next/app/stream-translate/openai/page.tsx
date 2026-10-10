@@ -1,6 +1,6 @@
 'use client';
 
-import { parseJSON } from '@ai-sdk/provider-utils';
+import { parseJSON } from '@ai-toolkit/provider-utils';
 import { useEffect, useRef, useState } from 'react';
 import type { TranslationEvent } from './translation-event';
 

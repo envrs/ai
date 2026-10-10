@@ -2,7 +2,7 @@ import {
   isRecord,
   safeParseJSON,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 /**
  * Creates a fetch wrapper that sends an alias model ID to the provider while

@@ -1,4 +1,4 @@
-import { createBaseten } from '@ai-sdk/baseten';
+import { createBaseten } from '@ai-toolkit/baseten';
 import { PerformanceClient } from '@basetenlabs/performance-client';
 import { embed } from 'ai';
 import { requireEnv } from '../../lib/require-env';

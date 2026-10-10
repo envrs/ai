@@ -1,8 +1,8 @@
 import {
   createElevenLabs,
   type ElevenLabsProviderSettings,
-} from '@ai-sdk/elevenlabs';
-import { openai } from '@ai-sdk/openai';
+} from '@ai-toolkit/elevenlabs';
+import { openai } from '@ai-toolkit/openai';
 import {
   experimental_streamTranscribe as streamTranscribe,
   generateSpeech,

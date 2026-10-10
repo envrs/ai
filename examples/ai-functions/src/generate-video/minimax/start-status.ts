@@ -1,5 +1,5 @@
-import { minimax } from '@ai-sdk/minimax';
-import { parseJSON } from '@ai-sdk/provider-utils';
+import { minimax } from '@ai-toolkit/minimax';
+import { parseJSON } from '@ai-toolkit/provider-utils';
 import {
   experimental_getVideoStatus as getVideoStatus,
   experimental_startVideo as startVideo,

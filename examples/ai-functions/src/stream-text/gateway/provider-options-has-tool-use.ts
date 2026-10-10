@@ -1,4 +1,4 @@
-import type { GatewayProviderOptions } from '@ai-sdk/gateway';
+import type { GatewayProviderOptions } from '@ai-toolkit/gateway';
 import { isStepCount, streamText } from 'ai';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

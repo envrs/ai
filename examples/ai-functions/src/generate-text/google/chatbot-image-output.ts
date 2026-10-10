@@ -1,4 +1,4 @@
-import { google, type GoogleLanguageModelOptions } from '@ai-sdk/google';
+import { google, type GoogleLanguageModelOptions } from '@ai-toolkit/google';
 import { generateText, type ModelMessage } from 'ai';
 import * as readline from 'node:readline/promises';
 import { presentImages } from '../../lib/present-image';

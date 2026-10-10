@@ -4,7 +4,7 @@ import HarnessToolView from '@/components/tool/harness-tool-view';
 import type {
   HarnessV1QuestionsTool,
   HarnessV1QuestionsToolOutput,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import { useRef, useState, type FormEvent } from 'react';
 import type { UIToolInvocation } from 'ai';
 

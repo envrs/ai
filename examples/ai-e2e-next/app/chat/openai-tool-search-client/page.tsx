@@ -4,7 +4,7 @@ import type { OpenAIToolSearchClientMessage } from '@/agent/openai/tool-search-c
 import { Response } from '@/components/ai-elements/response';
 import ChatInput from '@/components/chat-input';
 import OpenAIToolSearchView from '@/components/tool/openai-tool-search-view';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 
 export default function TestOpenAIToolSearchClient() {

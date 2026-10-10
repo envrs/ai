@@ -4,7 +4,7 @@ import type { AnthropicCodeExecutionFileUploadMessage } from '@/agent/anthropic/
 import { Response } from '@/components/ai-elements/response';
 import ChatInput from '@/components/chat-input';
 import AnthropicCodeExecutionView from '@/components/tool/anthropic-code-execution-view';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport, type FileUIPart } from 'ai';
 import { useRef, useState } from 'react';
 

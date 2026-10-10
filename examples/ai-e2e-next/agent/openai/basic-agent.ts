@@ -1,7 +1,7 @@
 import {
   openai,
   type OpenAILanguageModelResponsesOptions,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import { ToolLoopAgent, type InferAgentUIMessage } from 'ai';
 export const openaiBasicAgent = new ToolLoopAgent({
   model: openai('gpt-6-luna'),

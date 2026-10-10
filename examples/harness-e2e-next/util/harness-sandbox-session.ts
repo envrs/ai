@@ -1,13 +1,13 @@
-import type { HarnessV1NetworkSandboxSession } from '@ai-sdk/harness';
+import type { HarnessV1NetworkSandboxSession } from '@ai-toolkit/harness';
 import type {
   HarnessAgent,
   HarnessAgentContinueTurnState,
   HarnessAgentResumeSessionState,
-} from '@ai-sdk/harness/agent';
+} from '@ai-toolkit/harness/agent';
 import {
   createVercelNetworkSandboxSession,
   resumeVercelNetworkSandboxSession,
-} from '@ai-sdk/sandbox-vercel';
+} from '@ai-toolkit/sandbox-vercel';
 
 export async function acquireHarnessSandboxSession({
   agent,

@@ -1,10 +1,10 @@
 'use client';
 
-import { experimental_useRealtime } from '@ai-sdk/react';
+import { experimental_useRealtime } from '@ai-toolkit/react';
 import {
   google,
   type Experimental_GoogleRealtimeModelOptions as GoogleRealtimeModelOptions,
-} from '@ai-sdk/google';
+} from '@ai-toolkit/google';
 import { Activity, Languages, Mic, Pause, Power } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
@@ -346,7 +346,7 @@ export default function LiveTranslatePage() {
             </h1>
           </div>
           <p className="text-[13px] leading-5 text-zinc-500">
-            Speech-to-speech via <CodeBadge>@ai-sdk/google</CodeBadge> and{' '}
+            Speech-to-speech via <CodeBadge>@ai-toolkit/google</CodeBadge> and{' '}
             <CodeBadge>.experimental_realtime()</CodeBadge> through{' '}
             <CodeBadge>gemini-3.5-live-translate-preview</CodeBadge>.
           </p>

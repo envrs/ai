@@ -1,4 +1,4 @@
-import { createBedrockMantle } from '@ai-sdk/amazon-bedrock/mantle';
+import { createBedrockMantle } from '@ai-toolkit/amazon-bedrock/mantle';
 import { streamText } from 'ai';
 import { run } from '../../lib/run';
 

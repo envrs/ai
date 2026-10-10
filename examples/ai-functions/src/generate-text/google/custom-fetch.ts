@@ -1,4 +1,4 @@
-import { createGoogle } from '@ai-sdk/google';
+import { createGoogle } from '@ai-toolkit/google';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

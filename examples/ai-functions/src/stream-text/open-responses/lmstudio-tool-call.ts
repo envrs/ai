@@ -1,4 +1,4 @@
-import { createOpenResponses } from '@ai-sdk/open-responses';
+import { createOpenResponses } from '@ai-toolkit/open-responses';
 import { streamText } from 'ai';
 import { weatherTool } from '../../tools/weather-tool';
 import { run } from '../../lib/run';

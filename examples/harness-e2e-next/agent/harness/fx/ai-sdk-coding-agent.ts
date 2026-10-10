@@ -1,5 +1,5 @@
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { fx } from '@ai-sdk/harness-fx';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { fx } from '@ai-toolkit/harness-fx';
 import type { InferUITools, UIMessage } from 'ai';
 import {
   aiSdkCodingSandboxBootstrapHash,

@@ -9,8 +9,8 @@
     "lint": "ultracite check"
   },
   "dependencies": {
-    "@ai-sdk/openai": "workspace:*",
-    "@ai-sdk/react": "workspace:*",
+    "@ai-toolkit/openai": "workspace:*",
+    "@ai-toolkit/react": "workspace:*",
     "@vercel/blob": "^0.26.0",
     "ai": "workspace:*",
     "next": "^16.3.6",

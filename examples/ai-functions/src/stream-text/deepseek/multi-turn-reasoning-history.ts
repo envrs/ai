@@ -1,4 +1,4 @@
-import { deepSeek } from '@ai-sdk/deepseek';
+import { deepSeek } from '@ai-toolkit/deepseek';
 import { isStepCount, streamText, type ModelMessage } from 'ai';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

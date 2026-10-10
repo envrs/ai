@@ -1,5 +1,5 @@
 import { StreamProviderError, streamText } from 'ai';
-import type { LanguageModelV4StreamPart } from '@ai-sdk/provider';
+import type { LanguageModelV4StreamPart } from '@ai-toolkit/provider';
 import { convertArrayToReadableStream, MockLanguageModelV4 } from 'ai/test';
 import { run } from '../../lib/run';
 

@@ -1,5 +1,5 @@
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { githubCopilot } from '@ai-sdk/harness-github-copilot';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { githubCopilot } from '@ai-toolkit/harness-github-copilot';
 import type { InferUITools, UIMessage } from 'ai';
 import {
   aiSdkCodingSandboxBootstrapHash,

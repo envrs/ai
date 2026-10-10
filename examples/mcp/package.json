@@ -37,7 +37,7 @@
     "type-check": "tsc --build"
   },
   "dependencies": {
-    "@ai-sdk/openai": "workspace:*",
+    "@ai-toolkit/openai": "workspace:*",
     "@modelcontextprotocol/node": "^2.0.0",
     "@modelcontextprotocol/sdk": "^1.32.0",
     "@modelcontextprotocol/server": "^2.0.0",
@@ -47,7 +47,7 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
-    "@ai-sdk/mcp": "workspace:*",
+    "@ai-toolkit/mcp": "workspace:*",
     "@types/express": "5.0.0",
     "@types/node": "22.19.19",
     "tsx": "4.23.12",

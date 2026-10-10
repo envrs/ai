@@ -1,4 +1,4 @@
-import { topaz, type TopazVideoModelOptions } from '@ai-sdk/topaz';
+import { topaz, type TopazVideoModelOptions } from '@ai-toolkit/topaz';
 import { experimental_generateVideo as generateVideo } from 'ai';
 import { presentVideos } from '../../lib/present-video';
 import { run } from '../../lib/run';

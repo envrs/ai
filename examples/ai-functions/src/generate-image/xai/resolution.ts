@@ -1,4 +1,4 @@
-import { xai, type XaiImageModelOptions } from '@ai-sdk/xai';
+import { xai, type XaiImageModelOptions } from '@ai-toolkit/xai';
 import { generateImage } from 'ai';
 import { presentImages } from '../../lib/present-image';
 import { run } from '../../lib/run';

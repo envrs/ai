@@ -1,4 +1,4 @@
-import { createMistral } from '@ai-sdk/mistral';
+import { createMistral } from '@ai-toolkit/mistral';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

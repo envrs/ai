@@ -2,8 +2,8 @@ import {
   HarnessAgent,
   createFileReporter,
   createTraceTreeReporter,
-} from '@ai-sdk/harness/agent';
-import { grokBuild } from '@ai-sdk/harness-grok-build';
+} from '@ai-toolkit/harness/agent';
+import { grokBuild } from '@ai-toolkit/harness-grok-build';
 import { getUserNameTool } from '@/lib/tools/get-user-name-tool';
 import { isStepCount } from 'ai';
 

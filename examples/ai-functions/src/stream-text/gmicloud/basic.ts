@@ -1,4 +1,4 @@
-import { gmicloud } from '@ai-sdk/gmicloud';
+import { gmicloud } from '@ai-toolkit/gmicloud';
 import { streamText } from 'ai';
 import { run } from '../../lib/run';
 

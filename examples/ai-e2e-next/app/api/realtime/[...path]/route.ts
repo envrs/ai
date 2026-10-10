@@ -1,6 +1,6 @@
-import { openai } from '@ai-sdk/openai';
-import { google } from '@ai-sdk/google';
-import { xai } from '@ai-sdk/xai';
+import { openai } from '@ai-toolkit/openai';
+import { google } from '@ai-toolkit/google';
+import { xai } from '@ai-toolkit/xai';
 import {
   experimental_getRealtimeToolDefinitions as getRealtimeToolDefinitions,
   gateway,

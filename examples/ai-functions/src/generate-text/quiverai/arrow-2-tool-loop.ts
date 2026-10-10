@@ -1,4 +1,4 @@
-import { quiverai, type QuiverAILanguageModelOptions } from '@ai-sdk/quiverai';
+import { quiverai, type QuiverAILanguageModelOptions } from '@ai-toolkit/quiverai';
 import { generateText, isStepCount, tool } from 'ai';
 import { z } from 'zod';
 import { presentImages } from '../../lib/present-image';

@@ -4,7 +4,7 @@ import {
   type Experimental_MCPEventOperations as MCPEventOperations,
   type Experimental_MCPEventAdapter as MCPEventAdapter,
   type Experimental_ManagedSubscribeInput as ManagedSubscribeInput,
-} from '@ai-sdk/mcp';
+} from '@ai-toolkit/mcp';
 
 /**
  * Integrate a managed backend without an AI SDK event store.

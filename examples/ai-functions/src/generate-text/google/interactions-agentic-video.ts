@@ -1,4 +1,4 @@
-import { google, type GoogleInteractionsVideoOptions } from '@ai-sdk/google';
+import { google, type GoogleInteractionsVideoOptions } from '@ai-toolkit/google';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

@@ -1,7 +1,7 @@
 import {
   google,
   type GoogleLanguageModelInteractionsOptions,
-} from '@ai-sdk/google';
+} from '@ai-toolkit/google';
 import { generateText } from 'ai';
 import { cancelOnSigint } from '../../lib/cancel-on-sigint';
 import { run } from '../../lib/run';

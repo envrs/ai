@@ -1,5 +1,5 @@
-import { anthropic } from '@ai-sdk/anthropic';
-import { WorkflowAgent, type ModelCallStreamPart } from '@ai-sdk/workflow';
+import { anthropic } from '@ai-toolkit/anthropic';
+import { WorkflowAgent, type ModelCallStreamPart } from '@ai-toolkit/workflow';
 import {
   convertToModelMessages,
   type UIMessage,

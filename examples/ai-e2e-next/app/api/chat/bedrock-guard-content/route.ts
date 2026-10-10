@@ -1,4 +1,4 @@
-import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-toolkit/amazon-bedrock';
 import {
   convertToModelMessages,
   streamText,

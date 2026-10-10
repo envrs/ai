@@ -1,10 +1,10 @@
-import { HarnessAgent, type HarnessAgentSession } from '@ai-sdk/harness/agent';
+import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import { createClaudeCode } from './_create';
 import { tool } from 'ai';
 import { z } from 'zod';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';
-import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
+import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 
 const claudeCode = createClaudeCode();
 

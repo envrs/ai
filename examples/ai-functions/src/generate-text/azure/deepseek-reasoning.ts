@@ -1,4 +1,4 @@
-import { createAzure } from '@ai-sdk/azure';
+import { createAzure } from '@ai-toolkit/azure';
 import { generateText } from 'ai';
 import { print } from '../../lib/print';
 import { run } from '../../lib/run';

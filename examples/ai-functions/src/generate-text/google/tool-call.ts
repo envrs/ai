@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { google } from '@ai-toolkit/google';
 import { generateText, tool } from 'ai';
 import { z } from 'zod';
 import { weatherTool } from '../../tools/weather-tool';

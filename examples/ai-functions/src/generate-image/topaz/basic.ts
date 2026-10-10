@@ -1,4 +1,4 @@
-import { topaz, type TopazImageModelOptions } from '@ai-sdk/topaz';
+import { topaz, type TopazImageModelOptions } from '@ai-toolkit/topaz';
 import { generateImage } from 'ai';
 import { presentImages } from '../../lib/present-image';
 import { run } from '../../lib/run';

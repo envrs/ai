@@ -1,4 +1,4 @@
-import { cohere } from '@ai-sdk/cohere';
+import { cohere } from '@ai-toolkit/cohere';
 import { embed } from 'ai';
 import { run } from '../../lib/run';
 

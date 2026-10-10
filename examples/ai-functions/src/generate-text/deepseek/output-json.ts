@@ -1,4 +1,4 @@
-import { deepSeek } from '@ai-sdk/deepseek';
+import { deepSeek } from '@ai-toolkit/deepseek';
 import { generateText, Output, isStepCount } from 'ai';
 import { print } from '../../lib/print';
 import { run } from '../../lib/run';

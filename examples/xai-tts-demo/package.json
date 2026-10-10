@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Local browser demo for xAI text-to-speech and speech-to-text via @ai-sdk/xai.",
+  "description": "Local browser demo for xAI text-to-speech and speech-to-text via @ai-toolkit/xai.",
   "scripts": {
-    "prestart": "pnpm --filter ai... --filter @ai-sdk/xai... build",
+    "prestart": "pnpm --filter ai... --filter @ai-toolkit/xai... build",
     "start": "node --env-file-if-exists=.env server.mjs"
   },
   "dependencies": {
-    "@ai-sdk/xai": "workspace:*",
+    "@ai-toolkit/xai": "workspace:*",
     "ai": "workspace:*"
   }
 }

@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { Output, createTextStreamResponse, streamText, toTextStream } from 'ai';
 import { notificationSchema } from './schema';
 

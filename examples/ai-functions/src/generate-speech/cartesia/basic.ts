@@ -1,4 +1,4 @@
-import { cartesia } from '@ai-sdk/cartesia';
+import { cartesia } from '@ai-toolkit/cartesia';
 import { generateSpeech } from 'ai';
 import { saveAudioFile } from '../../lib/save-audio';
 import { run } from '../../lib/run';

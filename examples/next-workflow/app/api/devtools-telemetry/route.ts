@@ -1,4 +1,4 @@
-import { DevToolsTelemetry } from '@ai-sdk/devtools';
+import { DevToolsTelemetry } from '@ai-toolkit/devtools';
 import type { Telemetry } from 'ai';
 
 const INTEGRATION_KEY = '__nextWorkflowDevToolsIntegration';

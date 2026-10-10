@@ -1,11 +1,11 @@
 import {
   HarnessAgent,
   type HarnessAgentResumeSessionState,
-} from '@ai-sdk/harness/agent';
+} from '@ai-toolkit/harness/agent';
 import {
   createVercelNetworkSandboxSession,
   resumeVercelNetworkSandboxSession,
-} from '@ai-sdk/sandbox-vercel';
+} from '@ai-toolkit/sandbox-vercel';
 import { createCursorACP } from './_create';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

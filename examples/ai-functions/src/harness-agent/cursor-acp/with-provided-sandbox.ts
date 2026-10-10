@@ -1,5 +1,5 @@
-import { HarnessAgent, type HarnessAgentSession } from '@ai-sdk/harness/agent';
-import { createVercelNetworkSandboxSessionFromNativeSandbox } from '@ai-sdk/sandbox-vercel';
+import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
+import { createVercelNetworkSandboxSessionFromNativeSandbox } from '@ai-toolkit/sandbox-vercel';
 import { Sandbox } from '@vercel/sandbox';
 import { createCursorACP } from './_create';
 import { printFullStream } from '../../lib/print-full-stream';

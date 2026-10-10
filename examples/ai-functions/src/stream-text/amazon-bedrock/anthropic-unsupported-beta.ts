@@ -1,7 +1,7 @@
-import { createBedrockAnthropic } from '@ai-sdk/amazon-bedrock/anthropic';
+import { createBedrockAnthropic } from '@ai-toolkit/amazon-bedrock/anthropic';
 import { streamText } from 'ai';
 import 'dotenv/config';
-import type { AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
+import type { AnthropicLanguageModelOptions } from '@ai-toolkit/anthropic';
 
 const bedrockAnthropic = createBedrockAnthropic();
 

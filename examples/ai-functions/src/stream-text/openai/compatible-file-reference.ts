@@ -1,5 +1,5 @@
-import { openai } from '@ai-sdk/openai';
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { openai } from '@ai-toolkit/openai';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { streamText, uploadFile } from 'ai';
 import { readFile } from 'node:fs/promises';
 import { printFullStream } from '../../lib/print-full-stream';

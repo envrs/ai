@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { experimental_decide } from 'ai';
 import { readFileSync } from 'node:fs';
 import { run } from '../../lib/run';

@@ -9,7 +9,7 @@ import {
   type WorkflowAgentOnStepStartCallback,
   type WorkflowAgentOnToolExecutionEndCallback,
   type WorkflowAgentOnToolExecutionStartCallback,
-} from '@ai-sdk/workflow';
+} from '@ai-toolkit/workflow';
 import {
   convertToModelMessages,
   tool,

@@ -1,4 +1,4 @@
-import { perplexity } from '@ai-sdk/perplexity';
+import { perplexity } from '@ai-toolkit/perplexity';
 import { embed } from 'ai';
 import { run } from '../../lib/run';
 

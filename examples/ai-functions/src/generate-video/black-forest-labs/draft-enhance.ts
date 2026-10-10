@@ -1,7 +1,7 @@
 import {
   blackForestLabs,
   type BlackForestLabsVideoModelOptions,
-} from '@ai-sdk/black-forest-labs';
+} from '@ai-toolkit/black-forest-labs';
 import { experimental_generateVideo as generateVideo } from 'ai';
 import { presentVideos } from '../../lib/present-video';
 import { run } from '../../lib/run';

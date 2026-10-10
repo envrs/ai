@@ -6,9 +6,9 @@ import {
   pruneMessages,
 } from 'ai';
 import { run } from '../../lib/run';
-import { anthropic } from '@ai-sdk/anthropic';
-import { createJustBashNetworkSandboxSession } from '@ai-sdk/sandbox-just-bash';
-import { openai } from '@ai-sdk/openai';
+import { anthropic } from '@ai-toolkit/anthropic';
+import { createJustBashNetworkSandboxSession } from '@ai-toolkit/sandbox-just-bash';
+import { openai } from '@ai-toolkit/openai';
 
 const COMPACTION_THRESHOLD = 8000;
 const estimateTokens = (messages: ModelMessage[]) => {

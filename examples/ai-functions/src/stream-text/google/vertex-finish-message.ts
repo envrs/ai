@@ -1,4 +1,4 @@
-import { googleVertex } from '@ai-sdk/google-vertex';
+import { googleVertex } from '@ai-toolkit/google-vertex';
 import { jsonSchema, streamText, tool } from 'ai';
 import { run } from '../../lib/run';
 

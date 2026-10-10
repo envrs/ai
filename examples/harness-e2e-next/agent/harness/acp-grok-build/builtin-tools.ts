@@ -1,5 +1,5 @@
-import { commonTool, type HarnessV1BuiltinTool } from '@ai-sdk/harness';
-import { tool } from '@ai-sdk/provider-utils';
+import { commonTool, type HarnessV1BuiltinTool } from '@ai-toolkit/harness';
+import { tool } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 const nullableString = z.string().nullable().optional();

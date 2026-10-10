@@ -1,4 +1,4 @@
-import { anthropic } from '@ai-sdk/anthropic';
+import { anthropic } from '@ai-toolkit/anthropic';
 import { streamText } from 'ai';
 import fs from 'node:fs';
 import { run } from '../../lib/run';

@@ -1,4 +1,4 @@
-import { fireworks, type FireworksImageModelOptions } from '@ai-sdk/fireworks';
+import { fireworks, type FireworksImageModelOptions } from '@ai-toolkit/fireworks';
 import { generateImage } from 'ai';
 import { presentImages } from '../../lib/present-image';
 import { run } from '../../lib/run';

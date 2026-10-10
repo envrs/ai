@@ -1,4 +1,4 @@
-import { moonshotai } from '@ai-sdk/moonshotai';
+import { moonshotai } from '@ai-toolkit/moonshotai';
 import { generateText } from 'ai';
 import fs from 'node:fs';
 import { run } from '../../lib/run';

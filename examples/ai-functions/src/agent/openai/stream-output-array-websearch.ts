@@ -1,7 +1,7 @@
 import {
   openai,
   type OpenAILanguageModelResponsesOptions,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import { Output, ToolLoopAgent } from 'ai';
 import { z } from 'zod';
 import { print } from '../../lib/print';

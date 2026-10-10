@@ -1,5 +1,5 @@
-import { vertexAnthropic } from '@ai-sdk/google-vertex/anthropic';
-import type { AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
+import { vertexAnthropic } from '@ai-toolkit/google-vertex/anthropic';
+import type { AnthropicLanguageModelOptions } from '@ai-toolkit/anthropic';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

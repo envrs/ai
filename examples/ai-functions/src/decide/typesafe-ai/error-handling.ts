@@ -1,5 +1,5 @@
-import { typeSafeAi } from '@ai-sdk/typesafe-ai';
-import { APICallError } from '@ai-sdk/provider';
+import { typeSafeAi } from '@ai-toolkit/typesafe-ai';
+import { APICallError } from '@ai-toolkit/provider';
 import { experimental_decide } from 'ai';
 import { run } from '../../lib/run';
 

@@ -1,4 +1,4 @@
-import type { openai } from '@ai-sdk/openai';
+import type { openai } from '@ai-toolkit/openai';
 import type { ChatAddToolApproveResponseFunction, UIToolInvocation } from 'ai';
 
 export default function ShellView({

@@ -1,4 +1,4 @@
-import { googleVertex } from '@ai-sdk/google-vertex';
+import { googleVertex } from '@ai-toolkit/google-vertex';
 import { generateImage } from 'ai';
 import fs from 'node:fs';
 import { presentImages } from '../../lib/present-image';

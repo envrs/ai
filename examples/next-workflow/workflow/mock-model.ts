@@ -1,7 +1,7 @@
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { convertArrayToReadableStream, MockLanguageModelV4 } from 'ai/test';
 
 export type MockResponseDescriptor =

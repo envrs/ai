@@ -2,8 +2,8 @@ import {
   HarnessAgent,
   createFileReporter,
   createTraceTreeReporter,
-} from '@ai-sdk/harness/agent';
-import { openCode } from '@ai-sdk/harness-opencode';
+} from '@ai-toolkit/harness/agent';
+import { openCode } from '@ai-toolkit/harness-opencode';
 import { getUserNameTool } from '@/lib/tools/get-user-name-tool';
 import { isStepCount } from 'ai';
 

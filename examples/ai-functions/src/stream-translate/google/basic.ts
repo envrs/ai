@@ -1,5 +1,5 @@
-import { google } from '@ai-sdk/google';
-import { openai } from '@ai-sdk/openai';
+import { google } from '@ai-toolkit/google';
+import { openai } from '@ai-toolkit/openai';
 import {
   experimental_streamTranslate as streamTranslate,
   generateSpeech,

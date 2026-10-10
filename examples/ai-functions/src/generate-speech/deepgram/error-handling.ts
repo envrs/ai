@@ -1,5 +1,5 @@
-import { createDeepgram } from '@ai-sdk/deepgram';
-import { APICallError } from '@ai-sdk/provider';
+import { createDeepgram } from '@ai-toolkit/deepgram';
+import { APICallError } from '@ai-toolkit/provider';
 import { generateSpeech } from 'ai';
 import { run } from '../../lib/run';
 

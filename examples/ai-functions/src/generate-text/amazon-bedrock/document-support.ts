@@ -1,4 +1,4 @@
-import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
+import { amazonBedrock } from '@ai-toolkit/amazon-bedrock';
 import { generateText } from 'ai';
 import { readFileSync } from 'fs';
 import { join } from 'path';

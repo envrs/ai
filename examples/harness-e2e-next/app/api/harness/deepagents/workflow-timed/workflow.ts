@@ -6,10 +6,10 @@ import {
   createHarnessWorkflowState,
   finalizeHarnessWorkflow,
   type HarnessWorkflowInput,
-} from '@ai-sdk/workflow-harness';
+} from '@ai-toolkit/workflow-harness';
 import { timeSliceStep } from './time-slice-step';
 
-// The `'use workflow'` function lives in its own `ai`-free module (not `route.ts`) so the DevKit's generated step/flow bundle doesn't pull in `@ai-sdk/gateway`/`@vercel/oidc` and crash. See the claude-code workflow module for the full rationale.
+// The `'use workflow'` function lives in its own `ai`-free module (not `route.ts`) so the DevKit's generated step/flow bundle doesn't pull in `@ai-toolkit/gateway`/`@vercel/oidc` and crash. See the claude-code workflow module for the full rationale.
 export async function timeSliceWorkflow(
   input: Pick<HarnessWorkflowInput, 'messages' | 'sessionId'>,
 ) {

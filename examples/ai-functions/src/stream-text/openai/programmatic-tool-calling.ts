@@ -1,4 +1,4 @@
-import { openai, type OpenAIToolOptions } from '@ai-sdk/openai';
+import { openai, type OpenAIToolOptions } from '@ai-toolkit/openai';
 import { isStepCount, streamText, tool } from 'ai';
 import { z } from 'zod';
 import { run } from '../../lib/run';

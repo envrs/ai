@@ -1,4 +1,4 @@
-import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
+import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import { run } from '../lib/run';
 
 const echoHost = 'httpbin.org';

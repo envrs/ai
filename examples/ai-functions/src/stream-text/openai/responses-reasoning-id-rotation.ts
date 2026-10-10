@@ -1,5 +1,5 @@
 import { createServer } from 'node:http';
-import { createOpenAI } from '@ai-sdk/openai';
+import { createOpenAI } from '@ai-toolkit/openai';
 import { streamText } from 'ai';
 import { run } from '../../lib/run';
 

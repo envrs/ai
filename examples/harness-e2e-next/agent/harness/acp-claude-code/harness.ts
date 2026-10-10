@@ -1,5 +1,5 @@
-import { createACP, type ACPPermissionModeMapping } from '@ai-sdk/harness-acp';
-import { createCredentialRequestTransformation } from '@ai-sdk/harness/utils';
+import { createACP, type ACPPermissionModeMapping } from '@ai-toolkit/harness-acp';
+import { createCredentialRequestTransformation } from '@ai-toolkit/harness/utils';
 import { claudeCodeACPBuiltinTools } from './builtin-tools';
 import { claudeCodeACPAskUserQuestions } from './question-tool';
 

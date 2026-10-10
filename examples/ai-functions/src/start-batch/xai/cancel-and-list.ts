@@ -1,4 +1,4 @@
-import { xai } from '@ai-sdk/xai';
+import { xai } from '@ai-toolkit/xai';
 import {
   experimental_cancelBatch as cancelBatch,
   experimental_getBatchStatus as getBatchStatus,

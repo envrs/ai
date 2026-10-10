@@ -1,5 +1,5 @@
 // Deterministic public-API integration reproduction; no live provider calls.
-import type { LanguageModelV4File } from '@ai-sdk/provider';
+import type { LanguageModelV4File } from '@ai-toolkit/provider';
 import {
   generateText,
   simulateReadableStream,
@@ -144,7 +144,7 @@ async function main() {
   // as tools/setup-download-fetch.node.js does for the SDK's fixture tests.
   // Resolve from provider-utils: the example may use a different Undici version.
   const undiciPath = createRequire(
-    import.meta.resolve('@ai-sdk/provider-utils/package.json'),
+    import.meta.resolve('@ai-toolkit/provider-utils/package.json'),
   ).resolve('undici');
   const { default: undici } = (await import(
     pathToFileURL(undiciPath).href

@@ -1,7 +1,7 @@
 import {
   runHarnessAgentTimeSlice,
   type HarnessWorkflowState,
-} from '@ai-sdk/workflow-harness';
+} from '@ai-toolkit/workflow-harness';
 
 /*
  * The slice step lives in its own step-only module and the agent is imported

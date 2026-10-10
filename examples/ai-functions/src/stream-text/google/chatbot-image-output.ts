@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { google } from '@ai-toolkit/google';
 import { streamText, type ModelMessage } from 'ai';
 import * as readline from 'node:readline/promises';
 import { presentImages } from '../../lib/present-image';

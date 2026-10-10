@@ -1,4 +1,4 @@
-import { gateway } from '@ai-sdk/gateway';
+import { gateway } from '@ai-toolkit/gateway';
 import {
   experimental_cancelBatch as cancelBatch,
   experimental_getBatchResults as getBatchResults,

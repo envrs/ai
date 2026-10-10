@@ -1,4 +1,4 @@
-import { openai, type OpenAITranscriptionModelOptions } from '@ai-sdk/openai';
+import { openai, type OpenAITranscriptionModelOptions } from '@ai-toolkit/openai';
 import { transcribe } from 'ai';
 import { readFile } from 'fs/promises';
 import { run } from '../../lib/run';

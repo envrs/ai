@@ -1,7 +1,7 @@
 import {
   runHarnessAgentStep,
   type HarnessWorkflowState,
-} from '@ai-sdk/workflow-harness';
+} from '@ai-toolkit/workflow-harness';
 
 export async function runCursorStep(
   state: HarnessWorkflowState,

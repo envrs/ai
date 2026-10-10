@@ -31,7 +31,7 @@ handlers; signed verification and webhook delivery are implemented in the demo.
 Build the MCP package from the repository root:
 
 ```sh
-pnpm --filter @ai-sdk/mcp build
+pnpm --filter @ai-toolkit/mcp build
 ```
 
 Run these in two terminals from `examples/mcp`:

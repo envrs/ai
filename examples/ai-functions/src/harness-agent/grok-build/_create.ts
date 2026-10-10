@@ -1,7 +1,7 @@
 import {
   createGrokBuild as createGrokBuildHarness,
   type GrokBuildHarnessSettings,
-} from '@ai-sdk/harness-grok-build';
+} from '@ai-toolkit/harness-grok-build';
 
 export function createGrokBuild(
   settings: GrokBuildHarnessSettings = {},

@@ -1,7 +1,7 @@
 import {
   togetherai,
   type TogetherAIImageModelOptions,
-} from '@ai-sdk/togetherai';
+} from '@ai-toolkit/togetherai';
 import { generateImage } from 'ai';
 import { presentImages } from '../../lib/present-image';
 import { run } from '../../lib/run';

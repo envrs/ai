@@ -1,5 +1,5 @@
 import { anthropicProgrammaticToolCallingAgent } from '@/agent/anthropic/programmatic-tool-calling-agent';
-import { AnthropicMessageMetadata } from '@ai-sdk/anthropic';
+import { AnthropicMessageMetadata } from '@ai-toolkit/anthropic';
 import {
   createAgentUIStreamResponse,
   validateUIMessages,

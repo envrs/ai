@@ -1,5 +1,5 @@
-import { anthropic } from '@ai-sdk/anthropic';
-import { valibotSchema } from '@ai-sdk/valibot';
+import { anthropic } from '@ai-toolkit/anthropic';
+import { valibotSchema } from '@ai-toolkit/valibot';
 import { generateText, Output } from 'ai';
 import * as v from 'valibot';
 import { run } from '../../lib/run';

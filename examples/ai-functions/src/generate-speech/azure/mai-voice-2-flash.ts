@@ -1,4 +1,4 @@
-import { createAzure, type AzureSpeechModelOptions } from '@ai-sdk/azure';
+import { createAzure, type AzureSpeechModelOptions } from '@ai-toolkit/azure';
 import { generateSpeech } from 'ai';
 import { run } from '../../lib/run';
 import { saveAudioFile } from '../../lib/save-audio';

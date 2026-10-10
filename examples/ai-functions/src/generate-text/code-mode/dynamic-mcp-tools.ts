@@ -1,8 +1,8 @@
 import {
   experimental_codeModeTool as codeModeTool,
   type CodeModeToolSet,
-} from '@ai-sdk/code-mode';
-import { createMCPClient } from '@ai-sdk/mcp';
+} from '@ai-toolkit/code-mode';
+import { createMCPClient } from '@ai-toolkit/mcp';
 import { generateText, isStepCount, type ModelMessage } from 'ai';
 import { run } from '../../lib/run';
 

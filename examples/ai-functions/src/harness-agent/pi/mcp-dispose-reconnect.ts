@@ -1,7 +1,7 @@
 import { createServer } from 'node:http';
 import type { AddressInfo } from 'node:net';
-import { HarnessAgent, type HarnessAgentSession } from '@ai-sdk/harness/agent';
-import { createJustBashNetworkSandboxSession } from '@ai-sdk/sandbox-just-bash';
+import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
+import { createJustBashNetworkSandboxSession } from '@ai-toolkit/sandbox-just-bash';
 import { tool } from 'ai';
 import { z } from 'zod/v4';
 import { run } from '../../lib/run';

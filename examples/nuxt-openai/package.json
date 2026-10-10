@@ -10,8 +10,8 @@
     "clean": "del-cli .nuxt"
   },
   "dependencies": {
-    "@ai-sdk/openai": "workspace:*",
-    "@ai-sdk/vue": "workspace:*",
+    "@ai-toolkit/openai": "workspace:*",
+    "@ai-toolkit/vue": "workspace:*",
     "ai": "workspace:*",
     "zod": "3.25.76"
   },

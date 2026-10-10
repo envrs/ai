@@ -1,7 +1,7 @@
 import {
   createCodex as createCodexHarness,
   type CodexHarnessSettings,
-} from '@ai-sdk/harness-codex';
+} from '@ai-toolkit/harness-codex';
 
 export function createCodex(
   settings: CodexHarnessSettings = {},

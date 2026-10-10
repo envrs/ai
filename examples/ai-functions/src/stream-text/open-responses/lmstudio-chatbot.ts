@@ -1,4 +1,4 @@
-import { createOpenResponses } from '@ai-sdk/open-responses';
+import { createOpenResponses } from '@ai-toolkit/open-responses';
 import { isStepCount, streamText, APICallError, type ModelMessage } from 'ai';
 import * as readline from 'node:readline/promises';
 import { run } from '../../lib/run';

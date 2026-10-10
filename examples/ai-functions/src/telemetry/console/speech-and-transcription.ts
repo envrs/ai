@@ -2,7 +2,7 @@ import type {
   Experimental_TranscriptionModelV4StreamPart as TranscriptionModelV4StreamPart,
   SpeechModelV4,
   TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { LangfuseSpanProcessor } from '@langfuse/otel';
 import { LangfuseVercelAiSdkIntegration } from '@langfuse/khulnasoft-ai-sdk';
 import { NodeSDK } from '@opentelemetry/sdk-node';
@@ -14,7 +14,7 @@ import {
 } from 'ai';
 import { run } from '../../lib/run';
 import { consoleTelemetry } from './console-telemetry';
-import { OpenTelemetry } from '@ai-sdk/otel';
+import { OpenTelemetry } from '@ai-toolkit/otel';
 
 // Set LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY, and LANGFUSE_BASE_URL in .env.
 // These mock models exercise telemetry without requiring a provider API key.

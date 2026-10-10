@@ -1,5 +1,5 @@
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { cline } from '@ai-sdk/harness-cline';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { cline } from '@ai-toolkit/harness-cline';
 import type { InferUITools, UIMessage } from 'ai';
 import {
   aiSdkCodingSandboxBootstrapHash,

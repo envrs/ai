@@ -1,4 +1,4 @@
-import { anthropicAws } from '@ai-sdk/anthropic-aws';
+import { anthropicAws } from '@ai-toolkit/anthropic-aws';
 import { generateText, tool, stepCountIs } from 'ai';
 import { z } from 'zod';
 import { weatherTool } from '../../tools/weather-tool';

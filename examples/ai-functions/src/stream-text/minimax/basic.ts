@@ -1,4 +1,4 @@
-import { minimax } from '@ai-sdk/minimax';
+import { minimax } from '@ai-toolkit/minimax';
 import { streamText } from 'ai';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

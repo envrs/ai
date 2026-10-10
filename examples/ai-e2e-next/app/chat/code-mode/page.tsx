@@ -4,7 +4,7 @@ import type { CodeModeMessage } from '@/agent/code-mode/code-mode-agent';
 import { Response } from '@/components/ai-elements/response';
 import ChatInput from '@/components/chat-input';
 import CodeModeView from '@/components/tool/code-mode-view';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 
 export default function ChatCodeMode() {

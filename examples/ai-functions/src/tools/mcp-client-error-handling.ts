@@ -1,5 +1,5 @@
 import { createServer } from 'node:http';
-import { createMCPClient, MCPClientError } from '@ai-sdk/mcp';
+import { createMCPClient, MCPClientError } from '@ai-toolkit/mcp';
 import { run } from '../lib/run';
 import { print } from '../lib/print';
 

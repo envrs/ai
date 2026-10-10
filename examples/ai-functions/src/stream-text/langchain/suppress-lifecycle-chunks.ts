@@ -1,4 +1,4 @@
-import { toUIMessageStream } from '@ai-sdk/langchain';
+import { toUIMessageStream } from '@ai-toolkit/langchain';
 import { AIMessageChunk } from '@langchain/core/messages';
 import { createUIMessageStream } from 'ai';
 

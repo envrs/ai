@@ -1,9 +1,9 @@
 import {
   DIRECT_TOOL_CALL,
   experimental_codeModeTool as codeModeTool,
-} from '@ai-sdk/code-mode';
+} from '@ai-toolkit/code-mode';
 import { generateText, isStepCount, tool } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { z } from 'zod';
 import { run } from '../../lib/run';
 

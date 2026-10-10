@@ -1,6 +1,6 @@
 import { createServer } from 'node:http';
-import { openai } from '@ai-sdk/openai';
-import { safeParseJSON } from '@ai-sdk/provider-utils';
+import { openai } from '@ai-toolkit/openai';
+import { safeParseJSON } from '@ai-toolkit/provider-utils';
 import {
   convertToModelMessages,
   generateId,

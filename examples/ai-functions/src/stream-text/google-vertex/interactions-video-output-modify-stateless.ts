@@ -1,5 +1,5 @@
-import { type GoogleLanguageModelInteractionsOptions } from '@ai-sdk/google';
-import { createGoogleVertex } from '@ai-sdk/google-vertex';
+import { type GoogleLanguageModelInteractionsOptions } from '@ai-toolkit/google';
+import { createGoogleVertex } from '@ai-toolkit/google-vertex';
 import { streamText, type GeneratedFile, type ModelMessage } from 'ai';
 import { presentVideos } from '../../lib/present-video';
 import { run } from '../../lib/run';

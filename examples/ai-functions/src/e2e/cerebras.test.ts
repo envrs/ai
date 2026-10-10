@@ -1,11 +1,11 @@
 import 'dotenv/config';
 import { expect } from 'vitest';
-import { cerebras as provider, type CerebrasErrorData } from '@ai-sdk/cerebras';
+import { cerebras as provider, type CerebrasErrorData } from '@ai-toolkit/cerebras';
 import {
   createFeatureTestSuite,
   createLanguageModelWithCapabilities,
 } from './feature-test-suite';
-import type { APICallError } from '@ai-sdk/provider';
+import type { APICallError } from '@ai-toolkit/provider';
 
 const createChatModel = (modelId: string) =>
   createLanguageModelWithCapabilities(provider.chat(modelId), [

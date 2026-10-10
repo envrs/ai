@@ -1,4 +1,4 @@
-import { klingai } from '@ai-sdk/klingai';
+import { klingai } from '@ai-toolkit/klingai';
 import { experimental_generateVideo as generateVideo } from 'ai';
 import { presentVideos } from '../../lib/present-video';
 import { run } from '../../lib/run';

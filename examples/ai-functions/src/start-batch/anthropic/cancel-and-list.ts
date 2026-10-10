@@ -1,4 +1,4 @@
-import { anthropic } from '@ai-sdk/anthropic';
+import { anthropic } from '@ai-toolkit/anthropic';
 import {
   experimental_cancelBatch as cancelBatch,
   experimental_getBatchStatus as getBatchStatus,

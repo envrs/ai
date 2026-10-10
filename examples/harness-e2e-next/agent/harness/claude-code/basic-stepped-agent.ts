@@ -2,8 +2,8 @@ import {
   HarnessAgent,
   createFileReporter,
   createTraceTreeReporter,
-} from '@ai-sdk/harness/agent';
-import { claudeCode } from '@ai-sdk/harness-claude-code';
+} from '@ai-toolkit/harness/agent';
+import { claudeCode } from '@ai-toolkit/harness-claude-code';
 import { getUserNameTool } from '@/lib/tools/get-user-name-tool';
 import { isStepCount } from 'ai';
 

@@ -1,8 +1,8 @@
 import type {
   GoogleLanguageModelOptions,
   GoogleProviderMetadata,
-} from '@ai-sdk/google';
-import { googleVertex } from '@ai-sdk/google-vertex';
+} from '@ai-toolkit/google';
+import { googleVertex } from '@ai-toolkit/google-vertex';
 import { streamText } from 'ai';
 import { run } from '../../lib/run';
 

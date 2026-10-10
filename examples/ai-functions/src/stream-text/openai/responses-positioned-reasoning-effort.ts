@@ -1,7 +1,7 @@
 import {
   openai,
   type OpenAIResponsesSystemMessageOptions,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import { streamText, type ModelMessage } from 'ai';
 import { run } from '../../lib/run';
 

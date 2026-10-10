@@ -1,4 +1,4 @@
-import { moonshotai } from '@ai-sdk/moonshotai';
+import { moonshotai } from '@ai-toolkit/moonshotai';
 import { generateText, isStepCount, jsonSchema, tool } from 'ai';
 import { z } from 'zod';
 import { print } from '../../lib/print';

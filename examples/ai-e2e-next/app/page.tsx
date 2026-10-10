@@ -1,6 +1,6 @@
 'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import ChatInput from '@/components/chat-input';
 import Link from 'next/link';
 

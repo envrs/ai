@@ -2,7 +2,7 @@
 
 import type { SandboxAgentUIMessage } from '@/agent/openai/sandbox-agent';
 import SandboxShellView from '@/components/tool/sandbox-shell-view';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import {
   DefaultChatTransport,
   lastAssistantMessageIsCompleteWithApprovalResponses,

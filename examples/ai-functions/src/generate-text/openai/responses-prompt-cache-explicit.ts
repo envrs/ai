@@ -1,7 +1,7 @@
 import {
   openai,
   type OpenAILanguageModelResponsesOptions,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import { generateText } from 'ai';
 import { randomUUID } from 'node:crypto';
 import { setTimeout } from 'node:timers/promises';

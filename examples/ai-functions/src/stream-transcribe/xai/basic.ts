@@ -1,5 +1,5 @@
-import { openai } from '@ai-sdk/openai';
-import { createXai, type XaiProviderSettings } from '@ai-sdk/xai';
+import { openai } from '@ai-toolkit/openai';
+import { createXai, type XaiProviderSettings } from '@ai-toolkit/xai';
 import {
   experimental_streamTranscribe as streamTranscribe,
   generateSpeech,

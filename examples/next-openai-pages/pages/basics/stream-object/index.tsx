@@ -1,4 +1,4 @@
-import { useObject } from '@ai-sdk/react';
+import { useObject } from '@ai-toolkit/react';
 import { z } from 'zod';
 
 export default function Page() {

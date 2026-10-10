@@ -3,7 +3,7 @@ import {
   anthropic,
   forwardAnthropicContainerIdFromLastStep,
   type AnthropicLanguageModelOptions,
-} from '@ai-sdk/anthropic';
+} from '@ai-toolkit/anthropic';
 import { ToolLoopAgent, type InferAgentUIMessage } from 'ai';
 import { z } from 'zod';
 

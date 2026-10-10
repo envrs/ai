@@ -2,7 +2,7 @@ import {
   azure,
   type AzureResponsesReasoningProviderMetadata,
   type OpenAILanguageModelResponsesOptions,
-} from '@ai-sdk/azure';
+} from '@ai-toolkit/azure';
 import { streamText } from 'ai';
 import { run } from '../../lib/run';
 

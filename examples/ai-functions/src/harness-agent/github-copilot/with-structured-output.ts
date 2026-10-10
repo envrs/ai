@@ -1,5 +1,5 @@
-import { HarnessAgent, type HarnessAgentSession } from '@ai-sdk/harness/agent';
-import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
+import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
+import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import { Output } from 'ai';
 import { z } from 'zod';
 import { createGitHubCopilot } from './_create';

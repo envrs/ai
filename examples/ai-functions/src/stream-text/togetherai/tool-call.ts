@@ -1,4 +1,4 @@
-import { togetherai } from '@ai-sdk/togetherai';
+import { togetherai } from '@ai-toolkit/togetherai';
 import {
   streamText,
   type ModelMessage,

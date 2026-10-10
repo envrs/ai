@@ -9,8 +9,8 @@ import {
   HarnessAgent,
   createFileReporter,
   createTraceTreeReporter,
-} from '@ai-sdk/harness/agent';
-import { openCode } from '@ai-sdk/harness-opencode';
+} from '@ai-toolkit/harness/agent';
+import { openCode } from '@ai-toolkit/harness-opencode';
 import type { InferUITools, UIMessage } from 'ai';
 
 export const weatherApprovalOpenCodeHarnessAgent = new HarnessAgent({

@@ -1,5 +1,5 @@
-import { openai } from '@ai-sdk/openai';
-import { runAgentTUI } from '@ai-sdk/tui';
+import { openai } from '@ai-toolkit/openai';
+import { runAgentTUI } from '@ai-toolkit/tui';
 import { ToolLoopAgent } from 'ai';
 import { run } from '../../lib/run';
 import { weatherTool } from '../../tools/weather-tool';

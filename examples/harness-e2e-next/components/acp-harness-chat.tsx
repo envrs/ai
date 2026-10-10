@@ -8,7 +8,7 @@ import DynamicToolView from '@/components/tool/dynamic-tool-view';
 import GetUserNameToolView from '@/components/tool/get-user-name-tool-view';
 import HarnessBashToolView from '@/components/tool/harness-bash-tool-view';
 import HarnessFileToolView from '@/components/tool/harness-file-tool-view';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import {
   DefaultChatTransport,
   lastAssistantMessageIsCompleteWithToolCalls,

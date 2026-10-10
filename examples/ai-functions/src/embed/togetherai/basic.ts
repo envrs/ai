@@ -1,4 +1,4 @@
-import { togetherai } from '@ai-sdk/togetherai';
+import { togetherai } from '@ai-toolkit/togetherai';
 import { embed } from 'ai';
 import { run } from '../../lib/run';
 

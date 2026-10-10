@@ -1,4 +1,4 @@
-import { xai, type XaiSpeechModelOptions } from '@ai-sdk/xai';
+import { xai, type XaiSpeechModelOptions } from '@ai-toolkit/xai';
 import { generateSpeech } from 'ai';
 import { saveAudioFile } from '../../lib/save-audio';
 import { run } from '../../lib/run';

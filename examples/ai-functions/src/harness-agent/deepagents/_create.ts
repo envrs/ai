@@ -1,7 +1,7 @@
 import {
   createDeepAgents as createDeepAgentsHarness,
   type DeepAgentsHarnessSettings,
-} from '@ai-sdk/harness-deepagents';
+} from '@ai-toolkit/harness-deepagents';
 
 export function createDeepAgents(
   settings: DeepAgentsHarnessSettings = {},

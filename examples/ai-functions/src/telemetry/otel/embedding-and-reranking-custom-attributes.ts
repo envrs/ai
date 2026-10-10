@@ -1,5 +1,5 @@
-import { cohere } from '@ai-sdk/cohere';
-import { OpenTelemetry } from '@ai-sdk/otel';
+import { cohere } from '@ai-toolkit/cohere';
+import { OpenTelemetry } from '@ai-toolkit/otel';
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import { ConsoleSpanExporter } from '@opentelemetry/sdk-trace-node';
 import { embed, embedMany, registerTelemetry, rerank } from 'ai';

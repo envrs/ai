@@ -1,7 +1,7 @@
 import {
   runHarnessAgentTimeSlice,
   type HarnessWorkflowState,
-} from '@ai-sdk/workflow-harness';
+} from '@ai-toolkit/workflow-harness';
 
 // Slice step in its own module; the agent is dynamically imported so its `@vercel/sandbox` deps stay out of the workflow bundle. See the claude-code slice step for the full rationale.
 

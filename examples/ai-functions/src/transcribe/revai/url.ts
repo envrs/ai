@@ -1,4 +1,4 @@
-import { revai } from '@ai-sdk/revai';
+import { revai } from '@ai-toolkit/revai';
 import { transcribe } from 'ai';
 import { run } from '../../lib/run';
 

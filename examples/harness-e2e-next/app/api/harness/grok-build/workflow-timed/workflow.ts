@@ -6,7 +6,7 @@ import {
   createHarnessWorkflowState,
   finalizeHarnessWorkflow,
   type HarnessWorkflowInput,
-} from '@ai-sdk/workflow-harness';
+} from '@ai-toolkit/workflow-harness';
 import { runGrokBuildSlice } from './run-slice-step';
 
 /*
@@ -14,10 +14,10 @@ import { runGrokBuildSlice } from './run-slice-step';
  * `route.ts` — on purpose. The Workflow DevKit bundles the module graph reachable
  * from the directive into its generated `flow`/`step` routes. `route.ts` imports
  * `ai` (`convertToModelMessages` / `createUIMessageStreamResponse`) for its POST
- * handler, and `ai` pulls in `@ai-sdk/gateway` → a lazy `@vercel/oidc` require
+ * handler, and `ai` pulls in `@ai-toolkit/gateway` → a lazy `@vercel/oidc` require
  * that webpack compiles into an unresolvable context module — which crashes the
  * generated step route on load. Keeping the directive in an `ai`-free module
- * (only `@ai-sdk/workflow-harness` + the step modules) keeps the DevKit bundle
+ * (only `@ai-toolkit/workflow-harness` + the step modules) keeps the DevKit bundle
  * clean, while `route.ts` stays a normal Next route where `ai` works fine.
  *
  * Each user message is one workflow run: load the prior turn's resume handle (so

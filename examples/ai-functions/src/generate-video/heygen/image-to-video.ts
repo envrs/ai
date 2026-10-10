@@ -1,4 +1,4 @@
-import { heygen, type HeyGenVideoModelOptions } from '@ai-sdk/heygen';
+import { heygen, type HeyGenVideoModelOptions } from '@ai-toolkit/heygen';
 import { experimental_generateVideo as generateVideo } from 'ai';
 import { readFile } from 'node:fs/promises';
 import { presentVideos } from '../../lib/present-video';

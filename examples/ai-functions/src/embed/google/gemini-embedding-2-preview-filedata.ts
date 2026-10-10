@@ -1,4 +1,4 @@
-import { google, type GoogleEmbeddingModelOptions } from '@ai-sdk/google';
+import { google, type GoogleEmbeddingModelOptions } from '@ai-toolkit/google';
 import { embed } from 'ai';
 import { run } from '../../lib/run';
 

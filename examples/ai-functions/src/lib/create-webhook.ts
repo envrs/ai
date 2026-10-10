@@ -1,4 +1,4 @@
-import { type Experimental_VideoModelV4OperationWebhook as VideoModelV4OperationWebhook } from '@ai-sdk/provider';
+import { type Experimental_VideoModelV4OperationWebhook as VideoModelV4OperationWebhook } from '@ai-toolkit/provider';
 import { EventSource } from 'eventsource';
 
 /**

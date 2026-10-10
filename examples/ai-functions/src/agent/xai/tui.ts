@@ -1,5 +1,5 @@
-import { runAgentTUI } from '@ai-sdk/tui';
-import { xai } from '@ai-sdk/xai';
+import { runAgentTUI } from '@ai-toolkit/tui';
+import { xai } from '@ai-toolkit/xai';
 import { ToolLoopAgent } from 'ai';
 import { run } from '../../lib/run';
 

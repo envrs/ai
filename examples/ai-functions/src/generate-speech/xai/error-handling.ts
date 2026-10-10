@@ -1,5 +1,5 @@
-import { createXai } from '@ai-sdk/xai';
-import { APICallError } from '@ai-sdk/provider';
+import { createXai } from '@ai-toolkit/xai';
+import { APICallError } from '@ai-toolkit/provider';
 import { generateSpeech } from 'ai';
 import { run } from '../../lib/run';
 

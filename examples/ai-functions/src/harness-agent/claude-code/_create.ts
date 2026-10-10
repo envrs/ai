@@ -1,7 +1,7 @@
 import {
   createClaudeCode as createClaudeCodeHarness,
   type ClaudeCodeHarnessSettings,
-} from '@ai-sdk/harness-claude-code';
+} from '@ai-toolkit/harness-claude-code';
 
 export function createClaudeCode(
   settings: ClaudeCodeHarnessSettings = {},

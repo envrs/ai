@@ -9,7 +9,7 @@ import {
   HarnessAgent,
   createFileReporter,
   createTraceTreeReporter,
-} from '@ai-sdk/harness/agent';
+} from '@ai-toolkit/harness/agent';
 import { codexACPHarness } from './harness';
 import type { InferUITools, UIMessage } from 'ai';
 

@@ -1,5 +1,5 @@
-import { createBaseten } from '@ai-sdk/baseten';
-import { APICallError } from '@ai-sdk/provider';
+import { createBaseten } from '@ai-toolkit/baseten';
+import { APICallError } from '@ai-toolkit/provider';
 import { streamText } from 'ai';
 import { requireEnv } from '../../lib/require-env';
 import { run } from '../../lib/run';

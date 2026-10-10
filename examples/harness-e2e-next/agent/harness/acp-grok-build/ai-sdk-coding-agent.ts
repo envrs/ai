@@ -1,4 +1,4 @@
-import { HarnessAgent } from '@ai-sdk/harness/agent';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { grokBuildACPHarness } from './harness';
 import type { InferUITools, UIMessage } from 'ai';
 import {

@@ -1,7 +1,7 @@
 import {
   openai,
   type Experimental_OpenAIRealtimeModelLiveOptions as OpenAIRealtimeModelLiveOptions,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 import type { Experimental_RealtimeSessionConfig } from 'ai';
 
 // This local example needs application authentication before deployment.

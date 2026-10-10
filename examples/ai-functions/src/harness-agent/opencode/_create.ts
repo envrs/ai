@@ -1,7 +1,7 @@
 import {
   createOpenCode as createOpenCodeHarness,
   type OpenCodeHarnessSettings,
-} from '@ai-sdk/harness-opencode';
+} from '@ai-toolkit/harness-opencode';
 
 export function createOpenCode(
   settings: OpenCodeHarnessSettings = {},

@@ -1,4 +1,4 @@
-import { anthropic } from '@ai-sdk/anthropic';
+import { anthropic } from '@ai-toolkit/anthropic';
 import { generateText, uploadFile } from 'ai';
 import { run } from '../../lib/run';
 import * as fs from 'fs';

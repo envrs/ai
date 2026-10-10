@@ -1,6 +1,6 @@
 'use client';
 
-import { useObject } from '@ai-sdk/react';
+import { useObject } from '@ai-toolkit/react';
 import {
   expenseSchema,
   type Expense,

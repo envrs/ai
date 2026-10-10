@@ -4,7 +4,7 @@ import {
   type OAuthClientMetadata,
   type OAuthClientProvider,
   type OAuthTokens,
-} from '@ai-sdk/mcp';
+} from '@ai-toolkit/mcp';
 import { createServer } from 'node:http';
 
 /**

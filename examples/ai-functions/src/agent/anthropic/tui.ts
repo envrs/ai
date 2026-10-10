@@ -1,5 +1,5 @@
-import { anthropic } from '@ai-sdk/anthropic';
-import { runAgentTUI } from '@ai-sdk/tui';
+import { anthropic } from '@ai-toolkit/anthropic';
+import { runAgentTUI } from '@ai-toolkit/tui';
 import { ToolLoopAgent } from 'ai';
 import { run } from '../../lib/run';
 import { weatherTool } from '../../tools/weather-tool';

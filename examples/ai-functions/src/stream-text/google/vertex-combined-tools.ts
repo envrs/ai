@@ -1,4 +1,4 @@
-import { googleVertex } from '@ai-sdk/google-vertex';
+import { googleVertex } from '@ai-toolkit/google-vertex';
 import { isStepCount, streamText, tool } from 'ai';
 import { z } from 'zod';
 import { print } from '../../lib/print';

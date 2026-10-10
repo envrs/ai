@@ -1,6 +1,6 @@
 'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport, isDataUIPart } from 'ai';
 import { useState, useEffect, useRef } from 'react';
 import {

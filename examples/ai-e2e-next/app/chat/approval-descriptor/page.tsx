@@ -1,6 +1,6 @@
 'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport, isToolUIPart } from 'ai';
 
 function formatDescriptor(descriptor: unknown) {

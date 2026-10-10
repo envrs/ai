@@ -1,4 +1,4 @@
-import { createAzure, type AzureImageModelOptions } from '@ai-sdk/azure';
+import { createAzure, type AzureImageModelOptions } from '@ai-toolkit/azure';
 import { generateImage } from 'ai';
 import fs from 'node:fs';
 import { presentImages } from '../../lib/present-image';

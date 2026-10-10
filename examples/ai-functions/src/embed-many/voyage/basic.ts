@@ -1,4 +1,4 @@
-import { voyage } from '@ai-sdk/voyage';
+import { voyage } from '@ai-toolkit/voyage';
 import { embedMany } from 'ai';
 import { run } from '../../lib/run';
 

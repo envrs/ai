@@ -1,11 +1,11 @@
-import { HarnessAgent, type HarnessAgentSession } from '@ai-sdk/harness/agent';
+import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import { createCursor } from './_create';
 import { tool, type ToolApprovalRequestOutput } from 'ai';
 import { z } from 'zod';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';
 import { createToolApprovalResponseMessages } from '../../lib/harness-tool-approval';
-import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
+import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 
 const cursor = createCursor();
 

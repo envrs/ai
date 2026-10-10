@@ -1,4 +1,4 @@
-import { groq } from '@ai-sdk/groq';
+import { groq } from '@ai-toolkit/groq';
 import { generateText, isStepCount, Output, streamText, tool } from 'ai';
 import * as z from 'zod/v4';
 import { run } from '../../lib/run';

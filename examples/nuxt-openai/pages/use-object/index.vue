@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useObject } from '@ai-sdk/vue';
+import { useObject } from '@ai-toolkit/vue';
 import { notificationSchema } from '~/shared/notification-schema';
 
 const { submit, isLoading, object, stop, error, clear } = useObject({

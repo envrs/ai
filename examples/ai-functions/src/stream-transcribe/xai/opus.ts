@@ -1,4 +1,4 @@
-import { createXai, type XaiProviderSettings } from '@ai-sdk/xai';
+import { createXai, type XaiProviderSettings } from '@ai-toolkit/xai';
 import { experimental_streamTranscribe as streamTranscribe } from 'ai';
 import { readFile } from 'node:fs/promises';
 import { setTimeout as delay } from 'node:timers/promises';

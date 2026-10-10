@@ -1,7 +1,7 @@
 import {
   safeParseJSON,
   type WebSocketConstructor,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   readUIMessageStream,
   safeValidateWebSocketChatTransportRequest,

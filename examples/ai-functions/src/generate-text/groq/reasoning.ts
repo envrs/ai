@@ -1,4 +1,4 @@
-import { groq, type GroqLanguageModelChatOptions } from '@ai-sdk/groq';
+import { groq, type GroqLanguageModelChatOptions } from '@ai-toolkit/groq';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 

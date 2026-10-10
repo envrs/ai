@@ -1,7 +1,7 @@
 import {
   amazonBedrock,
   type AmazonBedrockLanguageModelChatOptions,
-} from '@ai-sdk/amazon-bedrock';
+} from '@ai-toolkit/amazon-bedrock';
 import { generateText, Output } from 'ai';
 import { z } from 'zod';
 import { run } from '../../lib/run';
