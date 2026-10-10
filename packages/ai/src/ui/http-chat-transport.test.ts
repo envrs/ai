@@ -1,5 +1,5 @@
-import { APICallError, EmptyResponseBodyError } from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { APICallError, EmptyResponseBodyError } from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { InvalidArgumentError } from '../error/invalid-argument-error';
 import type { UIMessageChunk } from '../ui-message-stream/ui-message-chunks';

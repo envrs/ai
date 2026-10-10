@@ -1,4 +1,4 @@
-import type { Experimental_SandboxSession as SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import { describe, expect, it, vi } from 'vitest';
 import type { HarnessV1Bootstrap } from '../../v1';
 import { hashHarnessBootstrap } from './bootstrap-recipe';
@@ -83,8 +83,8 @@ describe('validateSandboxBootstrapSettings', () => {
   });
 
   it('normalizes workDir values that stay inside the default cwd', () => {
-    expect(normalizeSandboxWorkDir('repo/../ai-sdk')).toBe('ai-sdk');
-    expect(normalizeSandboxWorkDir('./ai-sdk')).toBe('ai-sdk');
+    expect(normalizeSandboxWorkDir('repo/../ai-toolkit')).toBe('ai-toolkit');
+    expect(normalizeSandboxWorkDir('./ai-toolkit')).toBe('ai-toolkit');
     expect(normalizeSandboxWorkDir('.')).toBe('.');
   });
 });
@@ -166,9 +166,9 @@ describe('resolveSessionWorkDir', () => {
         defaultWorkingDirectory: '/work',
         harnessId: 'mock',
         sessionId: 's1',
-        workDir: 'ai-sdk',
+        workDir: 'ai-toolkit',
       }),
-    ).toBe('/work/ai-sdk');
+    ).toBe('/work/ai-toolkit');
   });
 
   it('uses the sandbox default working directory for workDir dot', () => {
@@ -193,13 +193,13 @@ describe('runSandboxBootstrap', () => {
       session,
       recipe,
       recipeIdentity,
-      workDir: 'ai-sdk',
+      workDir: 'ai-toolkit',
       onBootstrap: onSandboxBootstrap,
     });
 
     expect(onSandboxBootstrap).toHaveBeenCalledWith({
       session,
-      workDir: '/work/ai-sdk',
+      workDir: '/work/ai-toolkit',
       abortSignal: undefined,
     });
     expect(run.mock.calls.map(([args]) => args.command)).toEqual([
@@ -211,12 +211,12 @@ describe('runSandboxBootstrap', () => {
     ]);
     expect(readTextFile).toHaveBeenCalledWith({
       path: expect.stringMatching(
-        /^\/home\/agent\/\.ai-sdk-harness\/\.harness-bootstrap\/demo\/\.bootstrap-[0-9a-f]{16}\.ok$/,
+        /^\/home\/agent\/\.ai-toolkit-harness\/\.harness-bootstrap\/demo\/\.bootstrap-[0-9a-f]{16}\.ok$/,
       ),
       abortSignal: undefined,
     });
     expect(writeTextFile).toHaveBeenCalledWith({
-      path: '/home/agent/.ai-sdk-harness/.harness-bootstrap/demo/a.txt',
+      path: '/home/agent/.ai-toolkit-harness/.harness-bootstrap/demo/a.txt',
       content: 'one',
       abortSignal: undefined,
     });

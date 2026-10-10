@@ -179,7 +179,7 @@ const renderResult = ({ result }: { result: EventPlanningResult }) => {
 /**
  * Simulated multi-step event planning: the model chains contact, calendar,
  * and venue lookups before proposing an event (ported from the legacy
- * ai-sdk.dev app; remote avatars replaced with initials).
+ * ai-toolkit.dev app; remote avatars replaced with initials).
  */
 export const EventPlanningSimulation = ({
   isPlaying = false,

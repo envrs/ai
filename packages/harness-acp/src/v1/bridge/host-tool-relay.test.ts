@@ -12,7 +12,7 @@ describe('startHostToolRelay', () => {
       tools: [{ name: 'weather', inputSchema: { type: 'object' } }],
     });
     const authorization = createHostToolRelayAuthorization({
-      serverName: 'ai-sdk-harness-tools',
+      serverName: 'ai-toolkit-harness-tools',
       toolNames: ['weather'],
       ttlMs: 20,
     });
@@ -63,7 +63,7 @@ describe('startHostToolRelay', () => {
           sessionUpdate: 'tool_call',
           toolCallId: 'model-call',
           title: 'Weather',
-          name: 'mcp__ai-sdk-harness-tools__weather',
+          name: 'mcp__ai-toolkit-harness-tools__weather',
           rawInput: { city: 'Lima' },
           status: 'in_progress',
         },
@@ -97,7 +97,7 @@ describe('startHostToolRelay', () => {
       tools: [{ name: 'calculator', inputSchema: { type: 'object' } }],
     });
     const authorization = createHostToolRelayAuthorization({
-      serverName: 'ai-sdk-harness-tools',
+      serverName: 'ai-toolkit-harness-tools',
       toolNames: ['calculator'],
       ttlMs: 250,
     });
@@ -132,7 +132,7 @@ describe('startHostToolRelay', () => {
         update: {
           sessionUpdate: 'tool_call',
           toolCallId: 'partial-input',
-          title: 'mcp__ai-sdk-harness-tools__calculator',
+          title: 'mcp__ai-toolkit-harness-tools__calculator',
           rawInput: {},
           status: 'pending',
         },
@@ -209,7 +209,7 @@ describe('startHostToolRelay', () => {
     expect(emitToolResult).not.toHaveBeenCalled();
     expect(registerCorrelationInvocation).toHaveBeenCalledWith({
       token: expect.stringMatching(/^[a-f0-9]{64}$/),
-      serverName: 'ai-sdk-harness-tools',
+      serverName: 'ai-toolkit-harness-tools',
       toolName: 'weather',
       input: { city: 'Lima' },
       order: 1,
@@ -521,7 +521,7 @@ async function createRelay({
 }) {
   return startHostToolRelay({
     tools,
-    serverName: 'ai-sdk-harness-tools',
+    serverName: 'ai-toolkit-harness-tools',
   });
 }
 

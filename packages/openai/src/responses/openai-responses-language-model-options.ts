@@ -2,7 +2,7 @@ import {
   lazySchema,
   zodSchema,
   type InferSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 /**
@@ -157,7 +157,7 @@ export type OpenAIResponsesModelId =
   | 'o4-mini-2025-04-16'
   | (string & {});
 
-// TODO AI SDK 6: use optional here instead of nullish
+// TODO ai-toolkit 6: use optional here instead of nullish
 export const openaiLanguageModelResponsesOptionsSchema = lazySchema(() =>
   zodSchema(
     z.object({

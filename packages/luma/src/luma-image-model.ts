@@ -3,7 +3,7 @@ import {
   type ImageModelV4,
   type ImageModelV4File,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createBinaryResponseHandler,
@@ -20,7 +20,7 @@ import {
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { lumaImageModelOptionsSchema } from './luma-image-model-options';
 import type { LumaReferenceType } from './luma-image-settings';
 import { z } from 'zod/v4';

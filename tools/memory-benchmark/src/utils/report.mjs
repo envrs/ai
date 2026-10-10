@@ -52,7 +52,7 @@ export function formatMiB(bytes) {
 
 export function renderMarkdown(report) {
   const lines = [
-    '# AI SDK application memory baseline',
+    '# ai-toolkit application memory baseline',
     '',
     `Generated: ${report.generatedAt}`,
     '',

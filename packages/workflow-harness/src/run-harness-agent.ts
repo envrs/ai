@@ -2,8 +2,8 @@ import type {
   HarnessV1ContinueTurnState,
   HarnessV1Prompt,
   HarnessV1ResumeSessionState,
-} from '@ai-sdk/harness';
-import type { HarnessAgent, HarnessAgentSession } from '@ai-sdk/harness/agent';
+} from '@ai-toolkit/harness';
+import type { HarnessAgent, HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import type {
   HarnessWorkflowModelMessage,
   HarnessWorkflowSerializedChunk,

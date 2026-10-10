@@ -1,4 +1,4 @@
-import type { JSONValue } from '@ai-sdk/provider';
+import type { JSONValue } from '@ai-toolkit/provider';
 
 /**
  * Metadata for an asynchronous AI Gateway job.

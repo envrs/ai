@@ -1,6 +1,6 @@
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
 import { GatewayBatch } from './gateway-batch';
 import { createGateway } from './gateway-provider';
 import type { GatewayConfig } from './gateway-config';

@@ -1,5 +1,5 @@
-import type { APICallError } from '@ai-sdk/provider';
-import type { FetchFunction, ResponseHandler } from '@ai-sdk/provider-utils';
+import type { APICallError } from '@ai-toolkit/provider';
+import type { FetchFunction, ResponseHandler } from '@ai-toolkit/provider-utils';
 import type { OpenResponsesExtensionRegistry } from '../open-responses-extension';
 import type { ResponseError } from './open-responses-api';
 

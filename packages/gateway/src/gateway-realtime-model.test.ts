@@ -1,4 +1,4 @@
-import type { Experimental_RealtimeModelV4ClientEvent as RealtimeClientEvent } from '@ai-sdk/provider';
+import type { Experimental_RealtimeModelV4ClientEvent as RealtimeClientEvent } from '@ai-toolkit/provider';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { GatewayAuthenticationError } from './errors';
 import {
@@ -8,9 +8,9 @@ import {
 } from './gateway-realtime-auth';
 import { GatewayRealtimeModel } from './gateway-realtime-model';
 import { createGateway } from './gateway-provider';
-import { getVercelOidcToken } from './vercel-environment';
+import { getVercelOidcToken } from './khulnasoft-environment';
 
-vi.mock('./vercel-environment', () => ({
+vi.mock('./khulnasoft-environment', () => ({
   getVercelOidcToken: vi.fn(),
   getVercelRequestId: vi.fn(),
 }));
@@ -21,7 +21,7 @@ const serverOnlyIt = typeof globalThis.window === 'undefined' ? it : it.skip;
 
 const createTestModel = (
   modelId = 'openai/gpt-realtime',
-  baseURL = 'https://ai-gateway.vercel.sh/v4/ai',
+  baseURL = 'https://ai-gateway.khulnasoft.sh/v4/ai',
   token = 'vcst_test-secret',
   teamIdOrSlug?: string,
 ) =>
@@ -45,7 +45,7 @@ describe('GatewayRealtimeModel', () => {
       const result = await createTestModel().doCreateClientSecret();
       expect(result.token).toBe('vcst_test-secret');
       expect(result.url).toBe(
-        'wss://ai-gateway.vercel.sh/v4/ai/realtime-model?ai-model-id=openai%2Fgpt-realtime',
+        'wss://ai-gateway.khulnasoft.sh/v4/ai/realtime-model?ai-model-id=openai%2Fgpt-realtime',
       );
     });
 
@@ -64,7 +64,7 @@ describe('GatewayRealtimeModel', () => {
         await createTestModel('gpt-realtime-2').doCreateClientSecret();
       // No client-side `openai/` prefixing — mirrors the non-realtime routes.
       expect(result.url).toBe(
-        'wss://ai-gateway.vercel.sh/v4/ai/realtime-model?ai-model-id=gpt-realtime-2',
+        'wss://ai-gateway.khulnasoft.sh/v4/ai/realtime-model?ai-model-id=gpt-realtime-2',
       );
     });
 
@@ -75,7 +75,7 @@ describe('GatewayRealtimeModel', () => {
       }));
       const model = new GatewayRealtimeModel('openai/gpt-realtime-2', {
         provider: 'gateway.realtime',
-        baseURL: 'https://ai-gateway.vercel.sh/v4/ai',
+        baseURL: 'https://ai-gateway.khulnasoft.sh/v4/ai',
         createClientSecret,
       });
 
@@ -101,10 +101,10 @@ describe('GatewayRealtimeModel', () => {
     it('smuggles the bearer token through the subprotocol (browser has no header channel)', () => {
       const config = createTestModel().getWebSocketConfig({
         token: 'vck_test-token',
-        url: 'wss://ai-gateway.vercel.sh/v4/ai/realtime-model?ai-model-id=openai%2Fgpt-realtime',
+        url: 'wss://ai-gateway.khulnasoft.sh/v4/ai/realtime-model?ai-model-id=openai%2Fgpt-realtime',
       });
       expect(config.url).toBe(
-        'wss://ai-gateway.vercel.sh/v4/ai/realtime-model?ai-model-id=openai%2Fgpt-realtime',
+        'wss://ai-gateway.khulnasoft.sh/v4/ai/realtime-model?ai-model-id=openai%2Fgpt-realtime',
       );
       expect(config.protocols).toEqual([
         GATEWAY_REALTIME_SUBPROTOCOL,
@@ -115,12 +115,12 @@ describe('GatewayRealtimeModel', () => {
     it('smuggles optional team scoping through the subprotocol', () => {
       const config = createTestModel(
         'openai/gpt-realtime',
-        'https://ai-gateway.vercel.sh/v4/ai',
+        'https://ai-gateway.khulnasoft.sh/v4/ai',
         'vck_test-token',
         'team_123',
       ).getWebSocketConfig({
         token: 'vck_test-token',
-        url: 'wss://ai-gateway.vercel.sh/v4/ai/realtime-model?ai-model-id=openai%2Fgpt-realtime',
+        url: 'wss://ai-gateway.khulnasoft.sh/v4/ai/realtime-model?ai-model-id=openai%2Fgpt-realtime',
       });
 
       expect(getGatewayRealtimeTeamIdOrSlug(config.protocols?.join(', '))).toBe(
@@ -199,10 +199,10 @@ describe('gateway.experimental_realtime', () => {
       expect(result.token).toBe('vcst_minted');
       expect(result.expiresAt).toBe(1_700_000_060);
       expect(result.url).toBe(
-        'wss://ai-gateway.vercel.sh/v4/ai/realtime-model?ai-model-id=openai%2Fgpt-realtime',
+        'wss://ai-gateway.khulnasoft.sh/v4/ai/realtime-model?ai-model-id=openai%2Fgpt-realtime',
       );
       expect(capturedMintUrl).toBe(
-        'https://ai-gateway.vercel.sh/v1/realtime/client-secrets',
+        'https://ai-gateway.khulnasoft.sh/v1/realtime/client-secrets',
       );
 
       // The request body forwarded the model and the TTL. `routeKind` is
@@ -255,7 +255,7 @@ describe('gateway.experimental_realtime', () => {
       const model = scopedGateway.experimental_realtime('openai/gpt-realtime');
       const config = model.getWebSocketConfig?.({
         token: 'vcst_test-secret',
-        url: 'wss://ai-gateway.vercel.sh/v4/ai/realtime-model?ai-model-id=openai%2Fgpt-realtime',
+        url: 'wss://ai-gateway.khulnasoft.sh/v4/ai/realtime-model?ai-model-id=openai%2Fgpt-realtime',
       });
 
       expect(

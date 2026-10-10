@@ -89,7 +89,7 @@ const installCommandImplementation = {
 } as const satisfies ACPImplementation;
 
 const clientApp = {
-  name: 'ai-sdk-harness-acp',
+  name: 'ai-toolkit-harness-acp',
   version: '0.0.0-test',
 } as const satisfies ACPClientApp;
 

@@ -1,4 +1,4 @@
-import { createSitemapMarkdownRoute } from '@vercel/geistdocs/routes/sitemap';
+import { createSitemapMarkdownRoute } from '@khulnasoft/geistdocs/routes/sitemap';
 import { config } from '@/lib/geistdocs/config';
 import {
   cookbookV7Source,
@@ -13,7 +13,7 @@ const sitemapRoute = createSitemapMarkdownRoute({
     { source: providersV7Source, title: 'Providers' },
     { source: cookbookV7Source, title: 'Cookbook' },
   ],
-  title: 'AI SDK documentation',
+  title: 'ai-toolkit documentation',
 });
 
 export const GET = sitemapRoute.GET;

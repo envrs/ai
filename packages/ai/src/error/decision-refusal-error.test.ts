@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
-  AISDKError,
+  ai-toolkitError,
   Experimental_DecisionRefusalError as DecisionRefusalError,
 } from './index';
 
@@ -15,7 +15,7 @@ describe('DecisionRefusalError', () => {
     const error = new DecisionRefusalError(options);
 
     expect(error).toBeInstanceOf(Error);
-    expect(AISDKError.isInstance(error)).toBe(true);
+    expect(ai-toolkitError.isInstance(error)).toBe(true);
     expect(DecisionRefusalError.isInstance(error)).toBe(true);
     expect(error).toMatchObject({
       ...options,
@@ -39,7 +39,7 @@ describe('DecisionRefusalError', () => {
   it('recognizes the marker across package copies', () => {
     expect(
       DecisionRefusalError.isInstance({
-        [Symbol.for('vercel.ai.error.AI_DecisionRefusalError')]: true,
+        [Symbol.for('khulnasoft.ai.error.AI_DecisionRefusalError')]: true,
       }),
     ).toBe(true);
   });

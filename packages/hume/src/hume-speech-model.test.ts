@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { HumeSpeechModel } from './hume-speech-model';
 import { createHume } from './hume-provider';
 import { describe, it, expect, vi } from 'vitest';
@@ -38,13 +38,13 @@ describe('doGenerate', () => {
     prepareAudioResponse();
 
     await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
     });
 
     expect(await server.calls[0].requestBodyJson).toMatchObject({
       utterances: [
         {
-          text: 'Hello from the AI SDK!',
+          text: 'Hello from the ai-toolkit!',
           voice: {
             id: 'd8ab67c6-953d-4bd8-9370-8fa53a0f1453',
             provider: 'HUME_AI',
@@ -68,7 +68,7 @@ describe('doGenerate', () => {
     });
 
     await provider.speech().doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       headers: {
         'Custom-Request-Header': 'request-header-value',
       },
@@ -81,7 +81,7 @@ describe('doGenerate', () => {
       'custom-request-header': 'request-header-value',
     });
     expect(server.calls[0].requestUserAgent).toContain(
-      `ai-sdk-hume/0.0.0-test`,
+      `ai-toolkit-hume/0.0.0-test`,
     );
   });
 
@@ -89,7 +89,7 @@ describe('doGenerate', () => {
     prepareAudioResponse();
 
     await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       voice: 'test-voice',
       outputFormat: 'mp3',
       speed: 1.5,
@@ -98,7 +98,7 @@ describe('doGenerate', () => {
     expect(await server.calls[0].requestBodyJson).toMatchObject({
       utterances: [
         {
-          text: 'Hello from the AI SDK!',
+          text: 'Hello from the ai-toolkit!',
           voice: {
             id: 'test-voice',
             provider: 'HUME_AI',
@@ -123,7 +123,7 @@ describe('doGenerate', () => {
     });
 
     const result = await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       outputFormat: 'mp3',
     });
 
@@ -149,7 +149,7 @@ describe('doGenerate', () => {
     });
 
     const result = await customModel.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
     });
 
     expect(result.response).toMatchObject({
@@ -176,7 +176,7 @@ describe('doGenerate', () => {
     });
 
     const result = await customModel.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
     });
 
     expect(result.response.timestamp.getTime()).toEqual(testDate.getTime());
@@ -190,7 +190,7 @@ describe('doGenerate', () => {
       const audio = prepareAudioResponse({ format });
 
       const result = await model.doGenerate({
-        text: 'Hello from the AI SDK!',
+        text: 'Hello from the ai-toolkit!',
       });
 
       expect(result.audio).toStrictEqual(audio);
@@ -201,7 +201,7 @@ describe('doGenerate', () => {
     prepareAudioResponse();
 
     const result = await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
     });
 
     expect(result.warnings).toEqual([]);

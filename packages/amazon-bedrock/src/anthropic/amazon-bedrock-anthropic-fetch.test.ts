@@ -1,7 +1,7 @@
 import { createAmazonBedrockAnthropicFetch } from './amazon-bedrock-anthropic-fetch';
 import { EventStreamCodec } from '@smithy/eventstream-codec';
 import { toUtf8, fromUtf8 } from '@smithy/util-utf8';
-import { convertUint8ArrayToBase64 } from '@ai-sdk/provider-utils';
+import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
 import { describe, it, expect, vi } from 'vitest';
 
 describe('createAmazonBedrockAnthropicFetch', () => {

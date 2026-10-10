@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, it, expect, vi } from 'vitest';
 import { GoogleVertexCloudTTSSpeechModel } from './google-vertex-cloud-tts-speech-model';
 import { createGoogleVertex } from './google-vertex-provider-base';
@@ -39,7 +39,7 @@ describe('doGenerate', () => {
   it('should target the Cloud Text-to-Speech synthesize endpoint', async () => {
     prepareJsonResponse();
 
-    await model.doGenerate({ text: 'Hello from the AI SDK!' });
+    await model.doGenerate({ text: 'Hello from the ai-toolkit!' });
 
     expect(server.calls[0].requestUrl).toBe(url);
   });
@@ -47,10 +47,10 @@ describe('doGenerate', () => {
   it('should send text, a default voice and LINEAR16 audio config', async () => {
     prepareJsonResponse();
 
-    await model.doGenerate({ text: 'Hello from the AI SDK!' });
+    await model.doGenerate({ text: 'Hello from the ai-toolkit!' });
 
     expect(await server.calls[0].requestBodyJson).toStrictEqual({
-      input: { text: 'Hello from the AI SDK!' },
+      input: { text: 'Hello from the ai-toolkit!' },
       voice: { languageCode: 'en-US', name: 'en-US-Chirp3-HD-Kore' },
       audioConfig: { audioEncoding: 'LINEAR16' },
     });
@@ -200,7 +200,7 @@ describe('doGenerate', () => {
       'custom-request-header': 'request-header-value',
     });
     expect(server.calls[0].requestUserAgent).toContain(
-      'ai-sdk-google-vertex/0.0.0-test',
+      'ai-toolkit-google-vertex/0.0.0-test',
     );
   });
 

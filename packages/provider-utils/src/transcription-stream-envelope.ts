@@ -1,14 +1,14 @@
 import type {
   Experimental_TranscriptionModelV4StreamPart as TranscriptionModelV4StreamPart,
   JSONObject,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { isRecord } from './is-record';
 import { secureJsonParse } from './secure-json-parse';
 
 /**
  * Experimental transcription-stream WebSocket envelope (v1): the standard
  * serialization of `TranscriptionModelV4.doStream` over a WebSocket. Clients
- * (e.g. the `@ai-sdk/gateway` provider) encode with this module and servers
+ * (e.g. the `@ai-toolkit/gateway` provider) encode with this module and servers
  * (e.g. AI Gateway) decode with it, so the two sides cannot drift.
  *
  * Envelope rules:

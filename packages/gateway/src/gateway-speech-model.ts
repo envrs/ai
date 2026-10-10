@@ -2,7 +2,7 @@ import type {
   SharedV4ProviderMetadata,
   SharedV4Warning,
   SpeechModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createJsonErrorResponseHandler,
@@ -11,7 +11,7 @@ import {
   postJsonToApi,
   resolve,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from './zod';
 import { asGatewayError } from './errors';
 import { parseAuthMethod } from './errors/parse-auth-method';

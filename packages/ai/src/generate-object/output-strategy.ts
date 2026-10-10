@@ -6,14 +6,14 @@ import {
   type JSONObject,
   type JSONSchema7,
   type JSONValue,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   asSchema,
   safeValidateTypes,
   type FlexibleSchema,
   type Schema,
   type ValidationResult,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { NoObjectGeneratedError } from '../error/no-object-generated-error';
 import type {
   FinishReason,

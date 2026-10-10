@@ -5,7 +5,7 @@ import {
   Experimental_DecisionUnsupportedQuestionTypeError as DecisionUnsupportedQuestionTypeError,
   type Experimental_DecisionModelV4Result as DecisionModelV4Result,
   type Experimental_DecisionModelV4Question as DecisionQuestion,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { InvalidArgumentError } from '../error/invalid-argument-error';
 import { UnsupportedModelVersionError } from '../error/unsupported-model-version-error';
@@ -61,7 +61,7 @@ it('decides answers to mixed questions in one call and preserves distributions a
   const timestamp = new Date('2026-09-16T12:00:00Z');
   const providerMetadata = { test: { confidence: 0.8 } };
   const logger = vi.fn();
-  vi.stubGlobal('AI_SDK_LOG_WARNINGS', logger);
+  vi.stubGlobal('ai-toolkit_LOG_WARNINGS', logger);
   const { model, doDecide } = setup({
     answers,
     warnings: [warning],

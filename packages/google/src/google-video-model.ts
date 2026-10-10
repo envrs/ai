@@ -1,5 +1,5 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4CallOptions as VideoModelV4CallOptions,
   type Experimental_VideoModelV4File as VideoModelV4File,
@@ -7,7 +7,7 @@ import {
   type Experimental_VideoModelV4OperationStatusResult as VideoModelV4OperationStatusResult,
   type SharedV4ProviderMetadata,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertUint8ArrayToBase64,
@@ -19,7 +19,7 @@ import {
   resolve,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { googleFailedResponseHandler } from './google-error';
 import {
@@ -285,7 +285,7 @@ export class GoogleVideoModel implements VideoModelV4 {
       !response?.generateVideoResponse?.generatedSamples ||
       response.generateVideoResponse.generatedSamples.length === 0
     ) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'GOOGLE_VIDEO_GENERATION_ERROR',
         message: `No videos in response. Response: ${JSON.stringify(finalOperation)}`,
       });
@@ -321,7 +321,7 @@ export class GoogleVideoModel implements VideoModelV4 {
     }
 
     if (videos.length === 0) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'GOOGLE_VIDEO_GENERATION_ERROR',
         message: 'No valid videos in response',
       });
@@ -371,7 +371,7 @@ export class GoogleVideoModel implements VideoModelV4 {
 
     const operationName = operation.name;
     if (!operationName) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'GOOGLE_VIDEO_GENERATION_ERROR',
         message: 'No operation name returned from API',
       });

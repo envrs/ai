@@ -1,4 +1,4 @@
-import type { SandboxChannelReconnectOptions } from '@ai-sdk/harness/utils';
+import type { SandboxChannelReconnectOptions } from '@ai-toolkit/harness/utils';
 import { expectTypeOf, test } from 'vitest';
 import { createDeepAgents, type DeepAgentsHarnessSettings } from './index';
 

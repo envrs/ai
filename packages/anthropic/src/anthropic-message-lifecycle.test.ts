@@ -1,5 +1,5 @@
-import { InvalidResponseDataError } from '@ai-sdk/provider';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
+import { InvalidResponseDataError } from '@ai-toolkit/provider';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
 import fs from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { createAnthropic } from './anthropic-provider';

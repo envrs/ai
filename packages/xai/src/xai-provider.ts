@@ -10,7 +10,7 @@ import {
   type ProviderV4,
   type SpeechModelV4,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   generateId,
   loadApiKey,
@@ -18,7 +18,7 @@ import {
   withUserAgentSuffix,
   type FetchFunction,
   type WebSocketConstructor,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { XaiImageModel } from './xai-image-model';
 import type { XaiImageModelId } from './xai-image-settings';
 import { XaiBatch } from './xai-batch';
@@ -158,7 +158,7 @@ export function createXai(options: XaiProviderSettings = {}): XaiProvider {
         })}`,
         ...options.headers,
       },
-      `ai-sdk-xai/${VERSION}`,
+      `ai-toolkit-xai/${VERSION}`,
     );
 
   const createResponsesLanguageModel = (modelId: XaiResponsesModelId) => {

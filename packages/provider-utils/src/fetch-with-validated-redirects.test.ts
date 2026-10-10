@@ -449,7 +449,7 @@ describe('fetchWithValidatedRedirects', () => {
       headers: {
         authorization: 'Bearer secret',
         'x-key': 'provider-api-key',
-        'user-agent': 'ai-sdk/test',
+        'user-agent': 'ai-toolkit/test',
       },
       fetch: crossOrigin,
     });
@@ -457,7 +457,7 @@ describe('fetchWithValidatedRedirects', () => {
     const secondHop = crossOrigin.mock.calls[1][1].headers as Headers;
     expect(secondHop.get('authorization')).toBeNull();
     expect(secondHop.get('x-key')).toBeNull();
-    expect(secondHop.get('user-agent')).toBe('ai-sdk/test');
+    expect(secondHop.get('user-agent')).toBe('ai-toolkit/test');
 
     // same-origin: caller headers are preserved across the hop.
     const sameOrigin = vi

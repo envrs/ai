@@ -1,10 +1,10 @@
-![hero illustration](https://github.com/vercel/ai/blob/HEAD/assets/hero.gif)
+![hero illustration](https://github.com/khulnasoft/ai/blob/HEAD/assets/hero.gif)
 
-# AI SDK
+# ai-toolkit
 
-The [AI SDK](https://ai-sdk.dev/docs) is a provider-agnostic TypeScript toolkit designed to help you build AI-powered applications and agents using popular UI frameworks like Next.js, React, Svelte, Vue, Angular, and runtimes like Node.js.
+The [ai-toolkit](https://ai-toolkit.dev/docs) is a provider-agnostic TypeScript toolkit designed to help you build AI-powered applications and agents using popular UI frameworks like Next.js, React, Svelte, Vue, Angular, and runtimes like Node.js.
 
-To learn more about how to use the AI SDK, check out our [API Reference](https://ai-sdk.dev/docs/reference) and [Documentation](https://ai-sdk.dev/docs).
+To learn more about how to use the ai-toolkit, check out our [API Reference](https://ai-toolkit.dev/docs/reference) and [Documentation](https://ai-toolkit.dev/docs).
 
 ## Installation
 
@@ -16,17 +16,17 @@ npm install ai
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Unified Provider Architecture
 
-The AI SDK provides a [unified API](https://ai-sdk.dev/docs/foundations/providers-and-models) to interact with model providers like [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai), [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic), [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google), and [more](https://ai-sdk.dev/providers/ai-sdk-providers).
+The ai-toolkit provides a [unified API](https://ai-toolkit.dev/docs/foundations/providers-and-models) to interact with model providers like [OpenAI](https://ai-toolkit.dev/providers/ai-toolkit-providers/openai), [Anthropic](https://ai-toolkit.dev/providers/ai-toolkit-providers/anthropic), [Google](https://ai-toolkit.dev/providers/ai-toolkit-providers/google), and [more](https://ai-toolkit.dev/providers/ai-toolkit-providers).
 
-By default, the AI SDK uses the [Vercel AI Gateway](https://vercel.com/docs/ai-gateway) to give you access to all major providers out of the box. Just pass a model string for any supported model:
+By default, the ai-toolkit uses the [khulnasoft AI Gateway](https://khulnasoft.com/docs/ai-gateway) to give you access to all major providers out of the box. Just pass a model string for any supported model:
 
 ```ts
 const result = await generateText({
@@ -38,11 +38,11 @@ const result = await generateText({
 You can also connect to providers directly using their SDK packages:
 
 ```shell
-npm install @ai-sdk/openai @ai-sdk/anthropic @ai-sdk/google
+npm install @ai-toolkit/openai @ai-toolkit/anthropic @ai-toolkit/google
 ```
 
 ```ts
-import { anthropic } from '@ai-sdk/anthropic';
+import { anthropic } from '@ai-toolkit/anthropic';
 
 const result = await generateText({
   model: anthropic('claude-opus-5-5'), // or openai('gpt-6-astra'), google('gemini-3.8-flash'), etc.
@@ -58,7 +58,7 @@ const result = await generateText({
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'openai/gpt-6-astra', // use Vercel AI Gateway
+  model: 'openai/gpt-6-astra', // use khulnasoft AI Gateway
   prompt: 'What is an agent?',
 });
 ```
@@ -98,7 +98,7 @@ const sandboxAgent = new ToolLoopAgent({
     shell: openai.tools.localShell({
       execute: async ({ action }) => {
         const [cmd, ...args] = action.command;
-        const sandbox = await getSandbox(); // Vercel Sandbox
+        const sandbox = await getSandbox(); // khulnasoft Sandbox
         const command = await sandbox.runCommand({ cmd, args });
         return { output: await command.stdout() };
       },
@@ -109,18 +109,18 @@ const sandboxAgent = new ToolLoopAgent({
 
 ### UI Integration
 
-The [AI SDK UI](https://ai-sdk.dev/docs/ai-sdk-ui/overview) module provides a set of hooks that help you build chatbots and generative user interfaces. These hooks are framework agnostic, so they can be used in Next.js, React, Svelte, and Vue.
+The [ai-toolkit UI](https://ai-toolkit.dev/docs/ai-toolkit-ui/overview) module provides a set of hooks that help you build chatbots and generative user interfaces. These hooks are framework agnostic, so they can be used in Next.js, React, Svelte, and Vue.
 
 You need to install the package for your framework, e.g.:
 
 ```shell
-npm install @ai-sdk/react
+npm install @ai-toolkit/react
 ```
 
 #### Agent @/agent/image-generation-agent.ts
 
 ```ts
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { ToolLoopAgent, InferAgentUIMessage } from 'ai';
 
 export const imageGenerationAgent = new ToolLoopAgent({
@@ -156,7 +156,7 @@ export async function POST(req: Request) {
 #### UI Component for Tool @/component/image-generation-view.tsx
 
 ```tsx
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { UIToolInvocation } from 'ai';
 
 export default function ImageGenerationView({
@@ -180,7 +180,7 @@ export default function ImageGenerationView({
 
 import { ImageGenerationAgentMessage } from '@/agent/image-generation-agent';
 import ImageGenerationView from '@/component/image-generation-view';
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 
 export default function Page() {
   const { messages, status, sendMessage } =
@@ -223,16 +223,16 @@ export default function Page() {
 
 ## Templates
 
-We've built [templates](https://ai-sdk.dev/docs/introduction#templates) that include AI SDK integrations for different use cases, providers, and frameworks. You can use these templates to get started with your AI-powered application.
+We've built [templates](https://ai-toolkit.dev/docs/introduction#templates) that include ai-toolkit integrations for different use cases, providers, and frameworks. You can use these templates to get started with your AI-powered application.
 
 ## Community
 
-The AI SDK community can be found on [the Vercel Community](https://community.vercel.com/c/ai-sdk/62) where you can ask questions, voice ideas, and share your projects with other people.
+The ai-toolkit community can be found on [the khulnasoft Community](https://community.khulnasoft.com/c/ai-toolkit/62) where you can ask questions, voice ideas, and share your projects with other people.
 
 ## Contributing
 
-Contributions to the AI SDK are welcome and highly appreciated. However, before you jump right into it, we would like you to review our [Contribution Guidelines](https://github.com/vercel/ai/blob/main/CONTRIBUTING.md) to make sure you have smooth experience contributing to AI SDK.
+Contributions to the ai-toolkit are welcome and highly appreciated. However, before you jump right into it, we would like you to review our [Contribution Guidelines](https://github.com/khulnasoft/ai/blob/main/CONTRIBUTING.md) to make sure you have smooth experience contributing to ai-toolkit.
 
 ## Authors
 
-This library is created by [Vercel](https://vercel.com) and [Next.js](https://nextjs.org) team members, with contributions from the [Open Source Community](https://github.com/vercel/ai/graphs/contributors).
+This library is created by [khulnasoft](https://khulnasoft.com) and [Next.js](https://nextjs.org) team members, with contributions from the [Open Source Community](https://github.com/khulnasoft/ai/graphs/contributors).

@@ -1,5 +1,5 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   APICallError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4CallOptions as VideoModelV4CallOptions,
@@ -7,7 +7,7 @@ import {
   type Experimental_VideoModelV4OperationStartResult as VideoModelV4OperationStartResult,
   type Experimental_VideoModelV4OperationStatusResult as VideoModelV4OperationStatusResult,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertUint8ArrayToBase64,
@@ -20,7 +20,7 @@ import {
   safeParseJSON,
   type FetchFunction,
   type ResponseHandler,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { xaiFailedResponseHandler } from './xai-error';
 import {
@@ -606,7 +606,7 @@ export class XaiVideoModel implements VideoModelV4 {
 
     const requestId = createResponse.request_id;
     if (!requestId) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'XAI_VIDEO_GENERATION_ERROR',
         message: `No request_id returned from xAI API.`,
       });

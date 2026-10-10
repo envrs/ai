@@ -6,7 +6,7 @@ import {
   tool,
   type SystemModelMessage,
   type Tool,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { describe, expectTypeOf, test } from 'vitest';
 import { z } from 'zod/v4';
 

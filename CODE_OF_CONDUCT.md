@@ -1,3 +1,3 @@
-# Vercel Community Code of Conduct
+# khulnasoft Community Code of Conduct
 
-Please see https://community.vercel.com/guidelines for the latest version.
+Please see https://community.khulnasoft.com/guidelines for the latest version.

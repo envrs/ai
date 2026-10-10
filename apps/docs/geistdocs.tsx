@@ -1,20 +1,20 @@
-import { LogoAiSdk } from '@vercel/geistdocs/assets/logos/logo-ai-sdk';
-import type { GeistdocsConfig } from '@vercel/geistdocs/config';
+import { Logoai-toolkit } from '@khulnasoft/geistdocs/assets/logos/logo-ai-toolkit';
+import type { GeistdocsConfig } from '@khulnasoft/geistdocs/config';
 
-export const title = 'AI SDK';
+export const title = 'ai-toolkit';
 
 /**
  * Label for events sent to the Geistdocs platform (feedback issues and
  * markdown-request tracking).
  */
-export const siteId = 'ai-sdk';
+export const siteId = 'ai-toolkit';
 
 // The logo SVG is aria-hidden; the visually hidden text keeps an
 // accessible name on the wordmark link.
 export const Logo = () => (
   <>
-    <LogoAiSdk />
-    <span className="sr-only">AI SDK</span>
+    <Logoai-toolkit />
+    <span className="sr-only">ai-toolkit</span>
   </>
 );
 
@@ -30,7 +30,7 @@ export const nav: NonNullable<GeistdocsConfig['nav']> = [
     ],
   },
   { label: 'Providers', href: '/providers' },
-  { label: 'Playground', href: 'https://playground.ai-sdk.dev' },
+  { label: 'Playground', href: 'https://playground.ai-toolkit.dev' },
 ];
 
 export const content: NonNullable<GeistdocsConfig['content']> = [

@@ -5,7 +5,7 @@ import { dirname, join, resolve } from 'node:path';
 import type {
   HarnessV1RequestTransformation,
   HarnessV1RequestTransformationSources,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   createCredentialRequestTransformation,
   isAccessTokenExpiringSoon,
@@ -14,8 +14,8 @@ import {
   readMacOSKeychainPassword,
   refreshOAuthAccessToken,
   shouldResolveNativeSubscription,
-} from '@ai-sdk/harness/utils';
-import { isRecord, safeParseJSON } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/utils';
+import { isRecord, safeParseJSON } from '@ai-toolkit/provider-utils';
 import {
   resolveClaudeCodeEnv,
   type ClaudeCodeAuthenticationMode,

@@ -2,10 +2,10 @@ import type {
   TranscriptionModelV2,
   TranscriptionModelV3,
   TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 /**
- * Transcription model that is used by the AI SDK.
+ * Transcription model that is used by the ai-toolkit.
  */
 export type TranscriptionModel =
   | string

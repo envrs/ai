@@ -1,10 +1,10 @@
-import { InvalidResponseDataError } from '@ai-sdk/provider';
+import { InvalidResponseDataError } from '@ai-toolkit/provider';
 import {
   createIdGenerator,
   type Context,
   withUserAgentSuffix,
   type ProviderOptions,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { logWarnings } from '../logger/log-warnings';
 import { getEmbeddingModelMaxInputBytesPerCall } from '../model/get-embedding-model-max-input-bytes-per-call';
 import { getEmbeddingModelProviderOptionsTransformer } from '../model/get-embedding-model-provider-options-transformer';
@@ -54,7 +54,7 @@ const originalGenerateCallId = createIdGenerator({
  * @param runtimeContext - User-defined runtime context passed to callbacks and, when explicitly included, telemetry.
  *
  * @param providerOptions - Additional provider-specific options. They are passed through
- * to the provider from the AI SDK and enable provider-specific
+ * to the provider from the ai-toolkit and enable provider-specific
  * functionality that can be fully encapsulated in the provider.
  *
  * @returns A result object that contains the embeddings, the value, and additional information.
@@ -131,7 +131,7 @@ export async function embedMany<RUNTIME_CONTEXT extends Context = Context>({
 
   /**
    * Additional provider-specific options. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: ProviderOptions;

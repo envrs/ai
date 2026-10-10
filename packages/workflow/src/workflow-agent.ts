@@ -4,7 +4,7 @@ import type {
   LanguageModelV4StreamPart,
   LanguageModelV4ToolResultPart,
   SharedV4ProviderOptions,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   getErrorMessage,
   isAbortError,
@@ -15,7 +15,7 @@ import {
   type InferToolInput,
   type InferToolOutput,
   type InferToolSetContext,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   Output,
   isStepCount,
@@ -79,7 +79,7 @@ export type { CompatibleLanguageModel } from './types.js';
 
 /**
  * Callback function to be called after each step completes.
- * Alias for the AI SDK's GenerateTextOnStepEndCallback, using
+ * Alias for the ai-toolkit's GenerateTextOnStepEndCallback, using
  * WorkflowAgent-consistent naming.
  */
 export type WorkflowAgentOnStepEndCallback<
@@ -147,7 +147,7 @@ export interface OutputSpecification<OUTPUT, PARTIAL> {
 type DefaultWorkflowAgentOutput<OUTPUT> = 0 extends 1 & OUTPUT ? never : OUTPUT;
 
 /**
- * Provider-specific options type. This is equivalent to SharedV4ProviderOptions from @ai-sdk/provider.
+ * Provider-specific options type. This is equivalent to SharedV4ProviderOptions from @ai-toolkit/provider.
  */
 export type ProviderOptions = SharedV4ProviderOptions;
 
@@ -181,7 +181,7 @@ export type StreamTextTransform<TTools extends ToolSet> = (options: {
 
 /**
  * Function to repair a tool call that failed to parse.
- * Re-exported from the AI SDK core.
+ * Re-exported from the ai-toolkit core.
  */
 export type { ToolCallRepairFunction } from 'ai';
 
@@ -282,7 +282,7 @@ export interface GenerationSettings {
 
   /**
    * Additional provider-specific options. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: ProviderOptions;
@@ -485,7 +485,7 @@ export type WorkflowAgentOptions<
     /**
      * The model provider to use for the agent.
      *
-     * This should be a string compatible with the Vercel AI Gateway (e.g., 'anthropic/claude-opus'),
+     * This should be a string compatible with the khulnasoft AI Gateway (e.g., 'anthropic/claude-opus'),
      * or a LanguageModelV4 instance from a provider.
      */
     model: LanguageModel;
@@ -958,7 +958,7 @@ export type WorkflowAgentCallOptions<
       }
     | {
         /**
-         * The conversation messages to process. Should follow the AI SDK's ModelMessage format.
+         * The conversation messages to process. Should follow the ai-toolkit's ModelMessage format.
          *
          * You can either use `prompt` or `messages` but not both.
          */
@@ -1218,7 +1218,7 @@ export type WorkflowAgentStreamOptions<
    * coupling WorkflowAgent to UIMessageChunk format.
    *
    * Convert to UIMessageChunks at the response boundary using
-   * `createUIMessageChunkTransform()` from `@ai-sdk/workflow`.
+   * `createUIMessageChunkTransform()` from `@ai-toolkit/workflow`.
    *
    * @example
    * ```typescript
@@ -1239,7 +1239,7 @@ export type WorkflowAgentStreamOptions<
   /**
    * Whether to include raw chunks from the provider in the stream.
    * When enabled, you will receive raw chunks with type 'raw' that contain the unprocessed data from the provider.
-   * This allows access to cutting-edge provider features not yet wrapped by the AI SDK.
+   * This allows access to cutting-edge provider features not yet wrapped by the ai-toolkit.
    * Defaults to false.
    */
   includeRawChunks?: boolean;
@@ -1302,7 +1302,7 @@ type DefaultGenerateOutput<OUTPUT> = [
   : OUTPUT;
 
 /**
- * A tool call made by the model. Matches the AI SDK's tool call shape.
+ * A tool call made by the model. Matches the ai-toolkit's tool call shape.
  */
 export interface ToolCall {
   /** Discriminator for content part arrays */
@@ -1316,7 +1316,7 @@ export interface ToolCall {
 }
 
 /**
- * A tool result from executing a tool. Matches the AI SDK's tool result shape.
+ * A tool result from executing a tool. Matches the ai-toolkit's tool result shape.
  */
 export interface ToolResult {
   /** Discriminator for content part arrays */
@@ -1453,7 +1453,7 @@ export interface WorkflowAgentStreamResult<
    * );
    * ```
    *
-   * This matches the AI SDK's `GenerateTextResult.toolCalls` behavior.
+   * This matches the ai-toolkit's `GenerateTextResult.toolCalls` behavior.
    */
   toolCalls: ToolCall[];
 
@@ -1462,7 +1462,7 @@ export interface WorkflowAgentStreamResult<
    * Only includes results for tools that were actually executed (server-side or provider-executed).
    * Tools without an `execute` function will NOT have entries here.
    *
-   * This matches the AI SDK's `GenerateTextResult.toolResults` behavior.
+   * This matches the ai-toolkit's `GenerateTextResult.toolResults` behavior.
    */
   toolResults: ToolResult[];
 
@@ -1497,7 +1497,7 @@ export interface WorkflowAgentStreamResult<
  *
  * WorkflowAgent enables you to create AI-powered agents that can maintain state
  * across workflow steps, call tools, and gracefully handle interruptions and resumptions.
- * It integrates seamlessly with the AI SDK and the Workflow DevKit for
+ * It integrates seamlessly with the ai-toolkit and the Workflow DevKit for
  * production-grade reliability.
  *
  * @example
@@ -1926,7 +1926,7 @@ export class WorkflowAgent<
     // This mirrors how stream-text.ts handles tool-approval-response parts:
     // approved tools are executed, denied tools get denial results, and
     // approval parts are stripped from the messages.
-    // Use the AI SDK core collector so this path cannot drift from the
+    // Use the ai-toolkit core collector so this path cannot drift from the
     // hardened generateText/streamText implementation. The collected approvals
     // are mapped to the flat shape used below; the original (nested) approval
     // is carried on `collected` for re-validation.
@@ -2221,11 +2221,11 @@ export class WorkflowAgent<
     };
 
     // tag the outgoing request so usage can be attributed to WorkflowAgent.
-    // chains with the `ai/<version>` and `ai-sdk/<provider>/<version>` suffixes
+    // chains with the `ai/<version>` and `ai-toolkit/<provider>/<version>` suffixes
     // added downstream by the model run and the provider.
     mergedGenerationSettings.headers = withUserAgentSuffix(
       mergedGenerationSettings.headers ?? {},
-      'ai-sdk-agent/workflow',
+      'ai-toolkit-agent/workflow',
     );
 
     // Merge constructor + stream callbacks (constructor first, then stream)
@@ -2694,7 +2694,7 @@ export class WorkflowAgent<
 
           // If there are paused tool calls (client-side or needing approval),
           // stop the loop and return them.
-          // This matches AI SDK behavior: tools without execute or needing
+          // This matches ai-toolkit behavior: tools without execute or needing
           // approval pause the agent loop.
           const providerApprovalRequests =
             step?.content
@@ -3623,7 +3623,7 @@ async function executeTool(
   } catch (error) {
     // Convert tool errors to error-text results sent back to the model,
     // allowing the agent to recover rather than killing the entire stream.
-    // This aligns with AI SDK's streamText behavior for individual tool failures.
+    // This aligns with ai-toolkit's streamText behavior for individual tool failures.
     const errorMessage = getErrorMessage(error);
     return {
       modelResult: {

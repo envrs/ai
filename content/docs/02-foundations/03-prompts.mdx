@@ -1,6 +1,6 @@
 ---
 title: Prompts
-description: Learn about the Prompt structure used in the AI SDK.
+description: Learn about the Prompt structure used in the ai-toolkit.
 ---
 
 # Prompts
@@ -11,7 +11,7 @@ It's like when you ask someone for directions; the clearer your question, the be
 Many LLM providers offer complex interfaces for specifying prompts. They involve different roles and message types.
 While these interfaces are powerful, they can be hard to use and understand.
 
-In order to simplify prompting, the AI SDK supports text, message, and system prompts.
+In order to simplify prompting, the ai-toolkit supports text, message, and system prompts.
 
 ## Text Prompts
 
@@ -19,7 +19,7 @@ Text prompts are strings.
 They are ideal for simple generation use cases,
 e.g. repeatedly generating content for variants of the same prompt text.
 
-You can set text prompts using the `prompt` property made available by AI SDK functions like [`streamText`](/docs/reference/ai-sdk-core/stream-text) or [`generateText`](/docs/reference/ai-sdk-core/generate-text).
+You can set text prompts using the `prompt` property made available by ai-toolkit functions like [`streamText`](/docs/reference/ai-toolkit-core/stream-text) or [`generateText`](/docs/reference/ai-toolkit-core/generate-text).
 You can structure the text in any way and inject variables, e.g. using a template literal.
 
 ```ts highlight="3"
@@ -101,7 +101,7 @@ You can pass through additional provider-specific metadata to enable provider-sp
 
 #### Function Call Level
 
-Functions like [`streamText`](/docs/reference/ai-sdk-core/stream-text#provider-options) or [`generateText`](/docs/reference/ai-sdk-core/generate-text#provider-options) accept a `providerOptions` property.
+Functions like [`streamText`](/docs/reference/ai-toolkit-core/stream-text#provider-options) or [`generateText`](/docs/reference/ai-toolkit-core/generate-text#provider-options) accept a `providerOptions` property.
 
 Adding provider options at the function call level should be used when you do not need granular control over where the provider options are applied.
 
@@ -156,7 +156,7 @@ const messages: ModelMessage[] = [
       {
         type: 'file',
         mediaType: 'image',
-        data: 'https://github.com/vercel/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
+        data: 'https://github.com/khulnasoft/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
         // Sets image detail configuration for image part:
         providerOptions: {
           openai: { imageDetail: 'low' },
@@ -168,12 +168,12 @@ const messages: ModelMessage[] = [
 ```
 
 <Note type="warning">
-  AI SDK UI hooks like [`useChat`](/docs/reference/ai-sdk-ui/use-chat) return
+  ai-toolkit UI hooks like [`useChat`](/docs/reference/ai-toolkit-ui/use-chat) return
   arrays of `UIMessage` objects, which do not support provider options. We
   recommend using the
-  [`convertToModelMessages`](/docs/reference/ai-sdk-ui/convert-to-model-messages)
+  [`convertToModelMessages`](/docs/reference/ai-toolkit-ui/convert-to-model-messages)
   function to convert `UIMessage` objects to
-  [`ModelMessage`](/docs/reference/ai-sdk-core/model-message) objects before
+  [`ModelMessage`](/docs/reference/ai-toolkit-core/model-message) objects before
   applying or appending message(s) or message parts with `providerOptions`.
 </Note>
 
@@ -273,7 +273,7 @@ const result = await generateText({
         {
           type: 'file',
           mediaType: 'image',
-          data: 'https://github.com/vercel/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
+          data: 'https://github.com/khulnasoft/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
         },
       ],
     },
@@ -285,11 +285,11 @@ const result = await generateText({
 
 <Note type="warning">
   Only a few providers and models currently support file parts: [Google
-  Generative AI](/providers/ai-sdk-providers/google), [Google Vertex
-  AI](/providers/ai-sdk-providers/google-vertex),
-  [OpenAI](/providers/ai-sdk-providers/openai) (for `wav` and `mp3` audio with
-  `gpt-4o-audio-preview`), [Anthropic](/providers/ai-sdk-providers/anthropic),
-  [OpenAI](/providers/ai-sdk-providers/openai) (for `pdf`).
+  Generative AI](/providers/ai-toolkit-providers/google), [Google Vertex
+  AI](/providers/ai-toolkit-providers/google-vertex),
+  [OpenAI](/providers/ai-toolkit-providers/openai) (for `wav` and `mp3` audio with
+  `gpt-4o-audio-preview`), [Anthropic](/providers/ai-toolkit-providers/anthropic),
+  [OpenAI](/providers/ai-toolkit-providers/openai) (for `pdf`).
 </Note>
 
 User messages can include file parts. A file can be one of the following:
@@ -310,7 +310,7 @@ You need to specify the MIME type of the file you are sending.
 ##### Example: PDF file from Buffer
 
 ```ts highlight="12-15"
-import { google } from '@ai-sdk/google';
+import { google } from '@ai-toolkit/google';
 import { generateText } from 'ai';
 
 const result = await generateText({
@@ -335,7 +335,7 @@ const result = await generateText({
 ##### Example: mp3 audio file from Buffer
 
 ```ts highlight="12-14"
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { generateText } from 'ai';
 
 const result = await generateText({

@@ -1,7 +1,7 @@
 import type {
   WebSocketConstructor,
   WebSocketLike,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { UIMessageChunk } from '../ui-message-stream/ui-message-chunks';
 import { AbstractChat, type ChatInit, type ChatState } from './chat';

@@ -2,12 +2,12 @@ import {
   NoSuchModelError,
   type SpeechModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { HumeSpeechModel } from './hume-speech-model';
 import { VERSION } from './version';
 
@@ -54,7 +54,7 @@ export function createHume(options: HumeProviderSettings = {}): HumeProvider {
         }),
         ...options.headers,
       },
-      `ai-sdk-hume/${VERSION}`,
+      `ai-toolkit-hume/${VERSION}`,
     );
 
   const createSpeechModel = () =>

@@ -8,7 +8,7 @@ import { createToolModelOutput } from '../prompt/create-tool-model-output';
 import { getOwn } from '../util/get-own';
 import { isDeepEqualData } from '../util/is-deep-equal-data';
 import type { ContentPart } from './content-part';
-import type { ToolSet } from '@ai-sdk/provider-utils';
+import type { ToolSet } from '@ai-toolkit/provider-utils';
 import { getToolCallInputSchemaInput } from './tool-call';
 
 /**

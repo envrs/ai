@@ -1,12 +1,12 @@
 import type { Citation } from '../types/citation';
-import type { JSONObject } from '@ai-sdk/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 import type {
   InferToolInput,
   InferToolOutput,
   Tool,
   ToolCall,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { ProviderMetadata } from '../types/provider-metadata';
 import type { ProviderReference } from '../types/provider-reference';
 import type { DeepPartial } from '../util/deep-partial';
@@ -40,7 +40,7 @@ export type InferUITools<TOOLS extends ToolSet> = {
 export type UITools = Record<string, UITool>;
 
 /**
- * AI SDK UI Messages. They are used in the client and to communicate between the frontend and the API routes.
+ * ai-toolkit UI Messages. They are used in the client and to communicate between the frontend and the API routes.
  */
 export interface UIMessage<
   METADATA = unknown,
@@ -195,7 +195,7 @@ export type FileUIPart = {
    *
    * `*`-subtype wildcards (e.g. `image/*`) are normalized as equivalent to the
    * top-level segment alone (e.g. `image`). Providers can use the helpers in
-   * `@ai-sdk/provider-utils` (`isFullMediaType`, `getTopLevelMediaType`,
+   * `@ai-toolkit/provider-utils` (`isFullMediaType`, `getTopLevelMediaType`,
    * `detectMediaType`) to resolve the field according to their API
    * requirements.
    *

@@ -23,7 +23,7 @@ export function createDefaultStopCondition(
           message:
             `The tool loop stopped because it reached the default stopWhen condition, isStepCount(${stepCount}). ` +
             'To allow more steps, set stopWhen to isStepCount(...) with a higher limit or provide a custom stop condition. ' +
-            'Learn more: https://ai-sdk.dev/docs/agents/loop-control',
+            'Learn more: https://ai-toolkit.dev/docs/agents/loop-control',
         },
       ],
     });

@@ -8,7 +8,7 @@ export {
   type GatewayAsyncJobMetadata,
   type GatewayModelId,
   type GatewayProviderMetadata,
-} from '@ai-sdk/gateway';
+} from '@ai-toolkit/gateway';
 export {
   asSchema,
   createIdGenerator,
@@ -34,7 +34,7 @@ export {
   type ToolExecuteFunction,
   type ToolExecutionOptions,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 // directory exports
 export * from './agent';

@@ -1,5 +1,5 @@
-import type { FetchFunction } from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it } from 'vitest';
 import { FalVideoModel } from './fal-video-model';
 

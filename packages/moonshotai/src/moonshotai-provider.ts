@@ -2,13 +2,13 @@ import {
   NoSuchModelError,
   type LanguageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { MoonshotAIChatLanguageModel } from './moonshotai-chat-language-model';
 import type { MoonshotAIChatModelId } from './moonshotai-chat-options';
 import { VERSION } from './version';
@@ -77,7 +77,7 @@ export function createMoonshotAI(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-moonshotai/${VERSION}`,
+      `ai-toolkit-moonshotai/${VERSION}`,
     );
 
   const createChatModel = (modelId: MoonshotAIChatModelId) => {

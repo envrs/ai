@@ -3,7 +3,7 @@ import type {
   InferToolSetContext,
   ModelMessage,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { ToolApprovalConfiguration } from 'ai';
 import type { PolicyClient } from '../policy-client';
 import { evaluatePolicy } from './evaluate-policy';
@@ -29,8 +29,8 @@ export interface DefaultOpaInput {
  * `toolApproval` on `generateText` / `streamText` / `ToolLoopAgent`.
  *
  * ```ts
- * import { wasmPolicyClient } from '@ai-sdk/policy-opa';
- * import { opaPolicy } from '@ai-sdk/policy-opa';
+ * import { wasmPolicyClient } from '@ai-toolkit/policy-opa';
+ * import { opaPolicy } from '@ai-toolkit/policy-opa';
  *
  * const client = await wasmPolicyClient({ wasm });
  * const toolApproval = opaPolicy({ client, path: 'agent/call/decision' });
@@ -114,7 +114,7 @@ function errorMessage(cause: unknown): string {
  *
  * ```ts
  * import { readFile } from 'node:fs/promises';
- * import { optionalOpaPolicy, wasmPolicyClient } from '@ai-sdk/policy-opa';
+ * import { optionalOpaPolicy, wasmPolicyClient } from '@ai-toolkit/policy-opa';
  *
  * const wasm = process.env.POLICY_WASM_PATH
  *   ? await readFile(process.env.POLICY_WASM_PATH)

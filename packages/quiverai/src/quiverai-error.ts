@@ -1,5 +1,5 @@
-import { createJsonErrorResponseHandler } from '@ai-sdk/provider-utils';
-import type { OpenResponsesProviderSettings } from '@ai-sdk/open-responses';
+import { createJsonErrorResponseHandler } from '@ai-toolkit/provider-utils';
+import type { OpenResponsesProviderSettings } from '@ai-toolkit/open-responses';
 import { z } from 'zod/v4';
 
 const quiveraiErrorSchema = z.object({

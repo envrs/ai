@@ -1,4 +1,4 @@
-import type { Experimental_SandboxSession as SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import { expectTypeOf, test } from 'vitest';
 import type {
   HarnessV1NetworkPolicy,

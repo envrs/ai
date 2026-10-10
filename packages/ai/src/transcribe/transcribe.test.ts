@@ -1,4 +1,4 @@
-import type { JSONObject, TranscriptionModelV4 } from '@ai-sdk/provider';
+import type { JSONObject, TranscriptionModelV4 } from '@ai-toolkit/provider';
 import {
   afterEach,
   beforeEach,

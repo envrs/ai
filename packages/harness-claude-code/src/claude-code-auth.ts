@@ -6,12 +6,12 @@ import type {
   HarnessV1Authentication,
   HarnessV1RequestTransformation,
   HarnessV1RequestTransformationSources,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   createCredentialRequestTransformation,
   getAiGatewayAuthFromEnv,
   isHarnessAuthenticationEnvironment,
-} from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness/utils';
 
 export const CLAUDE_CODE_CREDENTIAL_ENVIRONMENT_VARIABLES = [
   'AI_GATEWAY_API_KEY',
@@ -74,7 +74,7 @@ export type ClaudeCodeAuthenticationMode = HarnessV1Authentication;
 
 /**
  * Resolve the environment-variable blob the bridge needs to authenticate
- * with Anthropic (directly or via the Vercel AI Gateway). Precedence:
+ * with Anthropic (directly or via the khulnasoft AI Gateway). Precedence:
  *
  *   1. An explicit authentication mode pins the selected route.
  *   2. Auto-detect from the host process env: gateway first

@@ -1,9 +1,9 @@
-import type { LanguageModelV4File } from '@ai-sdk/provider';
-import { DownloadError } from '@ai-sdk/provider-utils';
+import type { LanguageModelV4File } from '@ai-toolkit/provider';
+import { DownloadError } from '@ai-toolkit/provider-utils';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { MockLanguageModelV4 } from '../test/mock-language-model-v4';
 import { generateText } from './generate-text';

@@ -1,4 +1,4 @@
-import type { SharedV4ProviderOptions } from '@ai-sdk/provider';
+import type { SharedV4ProviderOptions } from '@ai-toolkit/provider';
 
 /**
  * Symbol for exposing the UTF-8 input byte budget of an embedding model.
@@ -7,7 +7,7 @@ import type { SharedV4ProviderOptions } from '@ai-sdk/provider';
  * embedding model specification.
  */
 export const EMBEDDING_MODEL_MAX_INPUT_BYTES_PER_CALL = Symbol.for(
-  'vercel.ai.embeddingModel.maxInputBytesPerCall',
+  'khulnasoft.ai.embeddingModel.maxInputBytesPerCall',
 );
 
 /**
@@ -18,7 +18,7 @@ export const EMBEDDING_MODEL_MAX_INPUT_BYTES_PER_CALL = Symbol.for(
  * embedding model specification.
  */
 export const EMBEDDING_MODEL_PROVIDER_OPTIONS_TRANSFORMER = Symbol.for(
-  'vercel.ai.embeddingModel.providerOptionsTransformer',
+  'khulnasoft.ai.embeddingModel.providerOptionsTransformer',
 );
 
 export type EmbeddingModelProviderOptionsTransformer = (options: {

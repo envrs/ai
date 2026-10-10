@@ -6,7 +6,7 @@ import type {
   ModelMessage,
   Experimental_SandboxSession as SandboxSession,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { TimeoutConfiguration } from '../prompt/request-options';
 import type { Telemetry, TelemetryDispatcher } from '../telemetry/telemetry';
 import { getOwn } from '../util/get-own';

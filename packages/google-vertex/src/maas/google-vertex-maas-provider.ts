@@ -1,8 +1,8 @@
-import { InvalidArgumentError } from '@ai-sdk/provider';
+import { InvalidArgumentError } from '@ai-toolkit/provider';
 import {
   createOpenAICompatible,
   type OpenAICompatibleProvider,
-} from '@ai-sdk/openai-compatible';
+} from '@ai-toolkit/openai-compatible';
 import {
   isValidHostnamePart,
   loadOptionalSetting,
@@ -10,7 +10,7 @@ import {
   withoutTrailingSlash,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { GoogleVertexMaasModelId } from './google-vertex-maas-options';
 
 const maxOutputTokensByModel: Record<string, number | undefined> = {

@@ -1,4 +1,4 @@
-import type { LanguageModelV4FunctionTool } from '@ai-sdk/provider';
+import type { LanguageModelV4FunctionTool } from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { prepareGoogleInteractionsTools } from './prepare-google-interactions-tools';
 
@@ -34,7 +34,7 @@ describe('prepareGoogleInteractionsTools', () => {
     });
   });
 
-  it('maps an AI SDK function tool to an Interactions function tool with passthrough JSON Schema', () => {
+  it('maps an ai-toolkit function tool to an Interactions function tool with passthrough JSON Schema', () => {
     const result = prepareGoogleInteractionsTools({
       tools: [FUNCTION_TOOL],
     });

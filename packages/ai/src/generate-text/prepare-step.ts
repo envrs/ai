@@ -5,7 +5,7 @@ import type {
   ModelMessage,
   ProviderOptions,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { Instructions } from '../prompt';
 import type { LanguageModelCallOptions } from '../prompt/language-model-call-options';
 import type { LanguageModel, ToolChoice } from '../types/language-model';

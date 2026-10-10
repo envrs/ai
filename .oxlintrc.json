@@ -5,7 +5,7 @@
     "./node_modules/ultracite/config/oxlint/react/.oxlintrc.json",
     "./node_modules/ultracite/config/oxlint/next/.oxlintrc.json"
   ],
-  "jsPlugins": ["./tools/oxlint-plugin-ai-sdk/index.mjs"],
+  "jsPlugins": ["./tools/oxlint-plugin-ai-toolkit/index.mjs"],
   "overrides": [
     {
       "files": ["packages/codemod/src/test/__testfixtures__/**"],
@@ -35,7 +35,7 @@
     }
   ],
   "rules": {
-    "ai-sdk/require-validate-url": "error",
+    "ai-toolkit/require-validate-url": "error",
     "accessor-pairs": "off",
     "array-callback-return": "off",
     "arrow-body-style": "off",

@@ -1,4 +1,4 @@
-import { InvalidResponseDataError } from '@ai-sdk/provider';
+import { InvalidResponseDataError } from '@ai-toolkit/provider';
 import {
   DefaultGeneratedFile,
   type GeneratedFile,

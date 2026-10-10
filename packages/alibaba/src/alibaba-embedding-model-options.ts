@@ -22,7 +22,7 @@ export const alibabaEmbeddingModelOptions = z.object({
   /**
    * The output vector type. Defaults to `dense`.
    *
-   * Sparse-only output is not supported by the AI SDK embedding interface,
+   * Sparse-only output is not supported by the ai-toolkit embedding interface,
    * which requires dense number arrays.
    */
   outputType: z.enum(['dense', 'sparse', 'dense&sparse']).optional(),

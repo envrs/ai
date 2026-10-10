@@ -4,8 +4,8 @@ import type {
   ImageModelV4,
   ImageModelV4CallOptions,
   ImageModelV4Result,
-} from '@ai-sdk/provider';
-import { asArray } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { asArray } from '@ai-toolkit/provider-utils';
 import { asImageModelV4 } from '../model/as-image-model-v4';
 import type { ImageModelMiddleware } from '../types';
 

@@ -14,9 +14,9 @@
     "type": "update",
     "value": {
       "toolCallId": "call-6bd6e7a9-c8d6-46be-be0b-0de55e7f8ffc-2\nfc_p4RbajK-3LYxF7-709d3d62-aws_ue1_0",
-      "title": "ai-sdk-harness-tools: get_weather",
+      "title": "ai-toolkit-harness-tools: get_weather",
       "rawInput": {
-        "providerIdentifier": "ai-sdk-harness-tools",
+        "providerIdentifier": "ai-toolkit-harness-tools",
         "toolName": "get_weather",
         "args": {
           "city": "Austin"
@@ -41,7 +41,7 @@
         "toolCallId": "call-6bd6e7a9-c8d6-46be-be0b-0de55e7f8ffc-2\nfc_p4RbajK-3LYxF7-709d3d62-aws_ue1_0",
         "kind": "other",
         "status": "pending",
-        "title": "ai-sdk-harness-tools-get_weather: get_weather",
+        "title": "ai-toolkit-harness-tools-get_weather: get_weather",
         "content": [
           {
             "content": {

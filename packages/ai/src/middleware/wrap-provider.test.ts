@@ -1,4 +1,4 @@
-import type { FilesV4, ProviderV4, SkillsV4 } from '@ai-sdk/provider';
+import type { FilesV4, ProviderV4, SkillsV4 } from '@ai-toolkit/provider';
 import { MockLanguageModelV2 } from '../test/mock-language-model-v2';
 import { MockLanguageModelV4 } from '../test/mock-language-model-v4';
 import { MockImageModelV4 } from '../test/mock-image-model-v4';

@@ -2,7 +2,7 @@ import type {
   TranscriptionModelV2,
   TranscriptionModelV3,
   TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { asTranscriptionModelV3 } from './as-transcription-model-v3';
 
 export function asTranscriptionModelV4(

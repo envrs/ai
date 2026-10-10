@@ -1,11 +1,11 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4File as VideoModelV4File,
   type Experimental_VideoModelV4OperationStartResult as VideoModelV4OperationStartResult,
   type Experimental_VideoModelV4OperationStatusResult as VideoModelV4OperationStatusResult,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertImageModelFileToDataUri,
@@ -19,7 +19,7 @@ import {
   resolve,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import {
   minimaxVideoModelOptionsSchema,
@@ -57,7 +57,7 @@ type MiniMaxVideoStatusResult =
   | Exclude<VideoModelV4OperationStatusResult, { status: 'error' }>
   | {
       status: 'error';
-      error: AISDKError;
+      error: ai-toolkitError;
       response: VideoModelV4OperationStatusResult['response'];
     };
 
@@ -604,7 +604,7 @@ export class MiniMaxVideoModel implements VideoModelV4 {
 
     const taskId = createResponse.task_id;
     if (!taskId) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'MINIMAX_VIDEO_GENERATION_ERROR',
         message: `No task_id returned from the MiniMax API. Response: ${JSON.stringify(createResponse)}`,
       });
@@ -664,7 +664,7 @@ export class MiniMaxVideoModel implements VideoModelV4 {
       case 'succeeded': {
         const url = task.content?.url;
         if (!url) {
-          throw new AISDKError({
+          throw new ai-toolkitError({
             name: 'MINIMAX_VIDEO_GENERATION_ERROR',
             message: `MiniMax video generation completed but no video URL was returned. Task ID: ${taskId}`,
           });
@@ -709,7 +709,7 @@ export class MiniMaxVideoModel implements VideoModelV4 {
         return {
           status: 'error',
           response,
-          error: new AISDKError({
+          error: new ai-toolkitError({
             name: 'MINIMAX_VIDEO_GENERATION_FAILED',
             message: `MiniMax video generation failed${
               task.error?.message ? `: ${task.error.message}` : ''
@@ -722,7 +722,7 @@ export class MiniMaxVideoModel implements VideoModelV4 {
         return {
           status: 'error',
           response,
-          error: new AISDKError({
+          error: new ai-toolkitError({
             name: 'MINIMAX_VIDEO_GENERATION_CANCELLED',
             message: `MiniMax video generation was cancelled. Task ID: ${taskId}`,
           }),
@@ -733,7 +733,7 @@ export class MiniMaxVideoModel implements VideoModelV4 {
         return {
           status: 'error',
           response,
-          error: new AISDKError({
+          error: new ai-toolkitError({
             name: 'MINIMAX_VIDEO_GENERATION_EXPIRED',
             message: `MiniMax video generation request expired. Task ID: ${taskId}`,
           }),
@@ -766,7 +766,7 @@ export class MiniMaxVideoModel implements VideoModelV4 {
       await delay(pollIntervalMs, { abortSignal: options.abortSignal });
 
       if (Date.now() - startTime > pollTimeoutMs) {
-        throw new AISDKError({
+        throw new ai-toolkitError({
           name: 'MINIMAX_VIDEO_GENERATION_TIMEOUT',
           message: `MiniMax video generation timed out after ${pollTimeoutMs}ms. Task ID: ${operation.taskId}`,
         });

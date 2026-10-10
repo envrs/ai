@@ -1,17 +1,17 @@
 ---
 name: develop-ai-functions-example
-description: Develop examples for AI SDK functions. Use when creating, running, or modifying examples under examples/ai-functions/src to validate provider support, demonstrate features, or create test fixtures.
+description: Develop examples for ai-toolkit functions. Use when creating, running, or modifying examples under examples/ai-functions/src to validate provider support, demonstrate features, or create test fixtures.
 metadata:
   internal: true
 ---
 
 ## AI Functions Examples
 
-The `examples/ai-functions/` directory contains scripts for validating, testing, and iterating on AI SDK functions across providers.
+The `examples/ai-functions/` directory contains scripts for validating, testing, and iterating on ai-toolkit functions across providers.
 
 ## Example Categories
 
-Examples are organized by AI SDK function in `examples/ai-functions/src/`:
+Examples are organized by ai-toolkit function in `examples/ai-functions/src/`:
 
 | Directory          | Purpose                                              |
 | ------------------ | ---------------------------------------------------- |
@@ -56,7 +56,7 @@ All examples use the `run()` wrapper from `lib/run.ts` which:
 ### Basic Template
 
 ```typescript
-import { providerName } from '@ai-sdk/provider-name';
+import { providerName } from '@ai-toolkit/provider-name';
 import { generateText } from 'ai';
 import { run } from '../../lib/run';
 
@@ -75,7 +75,7 @@ run(async () => {
 ### Streaming Template
 
 ```typescript
-import { providerName } from '@ai-sdk/provider-name';
+import { providerName } from '@ai-toolkit/provider-name';
 import { streamText } from 'ai';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';
@@ -93,7 +93,7 @@ run(async () => {
 ### Tool Calling Template
 
 ```typescript
-import { providerName } from '@ai-sdk/provider-name';
+import { providerName } from '@ai-toolkit/provider-name';
 import { generateText, tool } from 'ai';
 import { z } from 'zod';
 import { run } from '../../lib/run';
@@ -122,7 +122,7 @@ run(async () => {
 ### Structured Output Template
 
 ```typescript
-import { providerName } from '@ai-sdk/provider-name';
+import { providerName } from '@ai-toolkit/provider-name';
 import { generateObject } from 'ai';
 import { z } from 'zod';
 import { run } from '../../lib/run';

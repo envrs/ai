@@ -2,12 +2,12 @@ import {
   APICallError,
   InvalidArgumentError,
   type LanguageModelV4Prompt,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertReadableStreamToArray,
   mockId,
-} from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { PerplexityLanguageModel } from './perplexity-language-model';
@@ -328,7 +328,7 @@ describe('doGenerate', () => {
     );
   });
 
-  it('passes Agent API provider options and AI SDK function tools', async () => {
+  it('passes Agent API provider options and ai-toolkit function tools', async () => {
     prepareJsonResponse();
 
     await model.doGenerate({

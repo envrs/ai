@@ -1,10 +1,10 @@
-import type { LanguageModelV4Content } from '@ai-sdk/provider';
+import type { LanguageModelV4Content } from '@ai-toolkit/provider';
 import {
   convertLanguageModelContent,
   DefaultStepResult,
   calculateTokensPerSecond,
 } from 'ai/internal';
-import type { Context } from '@ai-sdk/provider-utils';
+import type { Context } from '@ai-toolkit/provider-utils';
 import {
   DefaultGeneratedFile,
   type LanguageModelUsage,

@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4StreamPart,
   LanguageModelV4Usage,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { SpanStatusCode } from '@opentelemetry/api';
 import {
   BasicTracerProvider,

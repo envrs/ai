@@ -1,5 +1,5 @@
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { XaiResponsesLanguageModel } from './responses/xai-responses-language-model';
 import { createXai } from './xai-provider';
@@ -59,7 +59,7 @@ function batchResponse(
 ): Record<string, unknown> {
   return {
     batch_id: 'batch_123',
-    name: 'ai-sdk-text-batch',
+    name: 'ai-toolkit-text-batch',
     create_time: '2026-08-25T12:00:00Z',
     expire_time: '2099-08-26T12:00:00Z',
     cancel_time: null,
@@ -308,7 +308,7 @@ describe('xAI batch', () => {
       },
     ]);
     expect(await server.calls[1].requestBodyJson).toEqual({
-      name: 'ai-sdk-text-batch',
+      name: 'ai-toolkit-text-batch',
       input_file_id: 'file_123',
     });
     for (const call of server.calls) {
@@ -345,7 +345,7 @@ describe('xAI batch', () => {
     // xAI rejects uploads where expires_after arrives after the file part
     expect(Object.keys(multipart ?? {})).toEqual(['expires_after', 'file']);
     expect(await server.calls[1].requestBodyJson).toEqual({
-      name: 'ai-sdk-text-batch',
+      name: 'ai-toolkit-text-batch',
       input_file_id: 'file_123',
     });
     expect(result.providerMetadata).toEqual({
@@ -881,7 +881,7 @@ describe('xAI batch', () => {
                             type: 'function',
                             function: {
                               name: 'web_search',
-                              arguments: '{"query":"Vercel"}',
+                              arguments: '{"query":"khulnasoft"}',
                             },
                           },
                         ],
@@ -899,7 +899,7 @@ describe('xAI batch', () => {
                             type: 'function',
                             function: {
                               name: 'web_search',
-                              arguments: '{"query":"Vercel"}',
+                              arguments: '{"query":"khulnasoft"}',
                             },
                           },
                         ],
@@ -980,7 +980,7 @@ describe('xAI batch', () => {
               type: 'tool-call',
               toolCallId: 'web-search-1',
               toolName: 'web_search',
-              input: '{"query":"Vercel"}',
+              input: '{"query":"khulnasoft"}',
               providerExecuted: true,
               dynamic: true,
             },

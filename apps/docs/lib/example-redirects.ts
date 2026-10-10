@@ -1,6 +1,6 @@
 /**
  * Legacy /examples redirects ported verbatim, in order, from the
- * production ai-sdk.dev app. Deep example URLs chain to their cookbook
+ * production ai-toolkit.dev app. Deep example URLs chain to their cookbook
  * (or docs) replacements exactly as they do on the live site; docs
  * content still links to many of these paths.
  */
@@ -370,17 +370,17 @@ export const exampleRedirects: {
   },
   {
     source: '/examples/next/state-management',
-    destination: '/docs/ai-sdk-ui/chatbot-message-persistence',
+    destination: '/docs/ai-toolkit-ui/chatbot-message-persistence',
     permanent: false,
   },
   {
     source: '/examples/next/state-management/save-messages',
-    destination: '/docs/ai-sdk-ui/chatbot-message-persistence',
+    destination: '/docs/ai-toolkit-ui/chatbot-message-persistence',
     permanent: false,
   },
   {
     source: '/examples/next/state-management/restore-messages',
-    destination: '/docs/ai-sdk-ui/chatbot-message-persistence',
+    destination: '/docs/ai-toolkit-ui/chatbot-message-persistence',
     permanent: false,
   },
   {
@@ -580,7 +580,7 @@ export const exampleRedirects: {
   },
   {
     source: '/examples/rsc/state-management/ai-ui-states',
-    destination: '/docs/ai-sdk-rsc/generative-ui-state#what-is-ai-and-ui-state',
+    destination: '/docs/ai-toolkit-rsc/generative-ui-state#what-is-ai-and-ui-state',
     permanent: false,
   },
   {

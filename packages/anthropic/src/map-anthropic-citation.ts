@@ -1,4 +1,4 @@
-import type { LanguageModelV4Citation } from '@ai-sdk/provider';
+import type { LanguageModelV4Citation } from '@ai-toolkit/provider';
 import type { Citation } from './anthropic-api';
 
 export type CitationDocument = {

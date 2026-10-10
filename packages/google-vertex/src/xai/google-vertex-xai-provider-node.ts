@@ -1,4 +1,4 @@
-import { resolve, type FetchFunction } from '@ai-sdk/provider-utils';
+import { resolve, type FetchFunction } from '@ai-toolkit/provider-utils';
 import type { GoogleAuthOptions } from 'google-auth-library';
 import { createAuthTokenGenerator } from '../google-vertex-auth-google-auth-library';
 import {

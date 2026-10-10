@@ -1,6 +1,6 @@
-import type { Experimental_TextBatchV4Request as TextBatchV4Request } from '@ai-sdk/provider';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import type { Experimental_TextBatchV4Request as TextBatchV4Request } from '@ai-toolkit/provider';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { createGoogle } from './google-provider';
 
@@ -65,7 +65,7 @@ function operation(
     metadata: {
       name: 'batches/batch-123',
       model: 'models/gemini-2.5-flash',
-      displayName: 'ai-sdk-batch-test-id',
+      displayName: 'ai-toolkit-batch-test-id',
       state: 'BATCH_STATE_SUCCEEDED',
       createTime: '2026-08-04T12:34:56.123Z',
       batchStats: {
@@ -308,7 +308,7 @@ describe('GoogleBatch', () => {
     });
     expect(await server.calls[0].requestBodyJson).toEqual({
       batch: {
-        displayName: 'ai-sdk-batch-test-id',
+        displayName: 'ai-toolkit-batch-test-id',
         webhookConfig: {
           uris: ['https://example.com/google-batch-webhook'],
         },
@@ -379,7 +379,7 @@ describe('GoogleBatch', () => {
 
     expect(await server.calls[0].requestBodyJson).toEqual({
       batch: {
-        displayName: 'ai-sdk-batch-test-id',
+        displayName: 'ai-toolkit-batch-test-id',
         inputConfig: {
           requests: {
             requests: [
@@ -555,7 +555,7 @@ describe('GoogleBatch', () => {
     });
     const inlineBody = (largePrompt: string) => ({
       batch: {
-        displayName: 'ai-sdk-batch-test-id',
+        displayName: 'ai-toolkit-batch-test-id',
         webhookConfig: {
           uris: ['https://example.com/google-batch-webhook'],
         },
@@ -631,7 +631,7 @@ describe('GoogleBatch', () => {
     );
     expect(await server.calls[2].requestBodyJson).toEqual({
       batch: {
-        displayName: 'ai-sdk-batch-test-id',
+        displayName: 'ai-toolkit-batch-test-id',
         webhookConfig: {
           uris: ['https://example.com/google-batch-webhook'],
         },

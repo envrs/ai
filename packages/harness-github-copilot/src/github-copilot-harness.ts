@@ -7,14 +7,14 @@ import {
   type HarnessV1PortEndpoint,
   type HarnessV1RequestTransformation,
   type HarnessV1MintBridgeTokenCallback,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   createCredentialRequestTransformation,
   isSandboxCredentialPlaceholder,
   type SandboxChannelReconnectOptions,
-} from '@ai-sdk/harness/utils';
-import { createACP, type ACPAuthenticationMode } from '@ai-sdk/harness-acp';
-import { tool } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/utils';
+import { createACP, type ACPAuthenticationMode } from '@ai-toolkit/harness-acp';
+import { tool } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import {
   normalizeGitHubHost,
@@ -27,7 +27,7 @@ declare const __GITHUB_COPILOT_IMPLEMENTATION_PNPM_LOCK_YAML__: string;
 declare const __GITHUB_COPILOT_IMPLEMENTATION_PNPM_WORKSPACE_YAML__: string;
 
 const GITHUB_COPILOT_CLIENT_APP = {
-  name: 'ai-sdk-harness-github-copilot',
+  name: 'ai-toolkit-harness-github-copilot',
   version: VERSION,
 } as const;
 const GITHUB_COPILOT_IMPLEMENTATION_PACKAGE_JSON =
@@ -42,7 +42,7 @@ const GITHUB_COPILOT_TOKEN_ENVIRONMENT_VARIABLES = new Set([
   'GITHUB_TOKEN',
 ]);
 const GITHUB_OAUTH_TOKEN_BODY_LENGTH = 36;
-const GITHUB_OAUTH_SANDBOX_CREDENTIAL_MARKER = 'aisdkhc';
+const GITHUB_OAUTH_SANDBOX_CREDENTIAL_MARKER = 'ai-toolkithc';
 
 export type GitHubCopilotAuthenticationMode = ACPAuthenticationMode;
 

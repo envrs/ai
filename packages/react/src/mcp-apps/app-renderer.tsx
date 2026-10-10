@@ -1,4 +1,4 @@
-import type { MCPAppResource } from '@ai-sdk/mcp';
+import type { MCPAppResource } from '@ai-toolkit/mcp';
 import { useEffect, useState } from 'react';
 import { MCPAppFrame } from './app-frame';
 import type { MCPAppMetadata, MCPAppRendererProps } from './types';

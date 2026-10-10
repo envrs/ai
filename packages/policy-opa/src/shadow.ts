@@ -3,7 +3,7 @@ import type {
   ModelMessage,
   Tool,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { ToolApprovalConfiguration } from 'ai';
 import type { PolicyDecision } from './policy-decision';
 
@@ -50,8 +50,8 @@ export interface PolicyDecisionEvent {
  *
  * @example
  * ```ts
- * import { shadow } from '@ai-sdk/policy-opa';
- * import { opaPolicy, wasmPolicyClient } from '@ai-sdk/policy-opa';
+ * import { shadow } from '@ai-toolkit/policy-opa';
+ * import { opaPolicy, wasmPolicyClient } from '@ai-toolkit/policy-opa';
  *
  * const client = await wasmPolicyClient({ wasm });
  *

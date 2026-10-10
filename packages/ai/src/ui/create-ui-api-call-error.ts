@@ -1,4 +1,4 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 
 export async function createUIApiCallError({
   response,

@@ -1,5 +1,5 @@
-import type { HarnessV1 } from '@ai-sdk/harness';
-import { HarnessAgent } from '@ai-sdk/harness/agent';
+import type { HarnessV1 } from '@ai-toolkit/harness';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { jsonSchema, Output } from 'ai';
 import { expectTypeOf, test } from 'vitest';
 import {

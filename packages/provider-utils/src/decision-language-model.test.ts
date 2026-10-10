@@ -5,7 +5,7 @@ import {
   type Experimental_DecisionModelV4CallOptions as DecisionModelV4CallOptions,
   type LanguageModelV4,
   type LanguageModelV4GenerateResult,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { WORKFLOW_DESERIALIZE, WORKFLOW_SERIALIZE } from '@workflow/serde';
 import { expect, it, vi } from 'vitest';
 import { DecisionLanguageModel } from './decision-language-model';

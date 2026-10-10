@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4CallOptions,
   LanguageModelV4Middleware,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { PolicyClient } from '../policy-client';
 import { evaluatePolicy } from './evaluate-policy';
 
@@ -39,7 +39,7 @@ export interface DefaultOpaCapabilityInput {
  * @example
  * ```ts
  * import { wrapLanguageModel } from 'ai';
- * import { wasmPolicyClient, opaCapabilityMiddleware } from '@ai-sdk/policy-opa';
+ * import { wasmPolicyClient, opaCapabilityMiddleware } from '@ai-toolkit/policy-opa';
  *
  * const client = await wasmPolicyClient({ wasm });
  *

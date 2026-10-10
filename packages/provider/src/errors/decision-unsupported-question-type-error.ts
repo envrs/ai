@@ -1,13 +1,13 @@
-import { AISDKError } from './ai-sdk-error';
+import { ai-toolkitError } from './ai-toolkit-error';
 
 const name = 'AI_DecisionUnsupportedQuestionTypeError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
 /**
  * A decision model does not support the type of a requested question.
  */
-export class DecisionUnsupportedQuestionTypeError extends AISDKError {
+export class DecisionUnsupportedQuestionTypeError extends ai-toolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly questionId: string;
@@ -39,6 +39,6 @@ export class DecisionUnsupportedQuestionTypeError extends AISDKError {
   static isInstance(
     error: unknown,
   ): error is DecisionUnsupportedQuestionTypeError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }

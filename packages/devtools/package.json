@@ -1,6 +1,6 @@
 {
-  "name": "@ai-sdk/devtools",
-  "version": "1.0.40",
+  "name": "@ai-toolkit/devtools",
+  "version": "2.0.1",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "dev": "concurrently -k \"pnpm dev:api\" \"pnpm dev:client\"",
-    "dev:api": "AI_SDK_DEVTOOLS_DEV=true tsx src/viewer/server.ts",
+    "dev:api": "ai-toolkit_DEVTOOLS_DEV=true tsx src/viewer/server.ts",
     "dev:client": "vite",
     "example": "tsx examples/basic/index.ts",
     "start": "node dist/viewer/server.js",
@@ -39,7 +39,7 @@
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {
-    "@ai-sdk/provider": "workspace:*",
+    "@ai-toolkit/provider": "workspace:*",
     "@hono/node-server": "^1.19.15",
     "ai": "workspace:*",
     "hono": "^4.13.7"
@@ -53,7 +53,7 @@
     "@types/node": "22.19.19",
     "@types/react": "^18.3.28",
     "@types/react-dom": "^18.3.7",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "@vitejs/plugin-react": "^4.7.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -77,14 +77,14 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/devtools"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "license": "Apache-2.0",
   "sideEffects": false,

@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@vercel/geistdocs/utils';
+import { cn } from '@khulnasoft/geistdocs/utils';
 import { motion } from 'motion/react';
 import { HERO_EXAMPLES } from '@/lib/home/code-examples';
 

@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
 import { createOpenAI } from './openai-provider';
 
 const prompt: LanguageModelV4Prompt = [

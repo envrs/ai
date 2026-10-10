@@ -5,7 +5,7 @@ import {
   type LanguageModelV4StreamPart,
   type LanguageModelV4ToolChoice,
   type SharedV4Headers,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   createIdGenerator,
   type Arrayable,
@@ -15,7 +15,7 @@ import {
   type ModelMessage,
   type ProviderOptions,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { ToolCallNotFoundForApprovalError } from '../error/tool-call-not-found-for-approval-error';
 import { resolveLanguageModel } from '../model/resolve-model';
 import { getOwn } from '../util/get-own';

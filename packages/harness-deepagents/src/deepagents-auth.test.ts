@@ -36,7 +36,7 @@ describe('resolveDeepAgentsEnv', () => {
     });
     expect(env.AI_GATEWAY_API_KEY).toBe('gw-key');
     expect(env.ANTHROPIC_API_KEY).toBe('gw-key');
-    expect(env.ANTHROPIC_BASE_URL).toBe('https://ai-gateway.vercel.sh');
+    expect(env.ANTHROPIC_BASE_URL).toBe('https://ai-gateway.khulnasoft.sh');
   });
 
   it('trims a trailing slash from a custom gateway base url', () => {
@@ -59,7 +59,7 @@ describe('resolveDeepAgentsEnv', () => {
     });
     expect(env.AI_GATEWAY_API_KEY).toBe('ambient-gw');
     expect(env.ANTHROPIC_API_KEY).toBe('ambient-gw');
-    expect(env.ANTHROPIC_BASE_URL).toBe('https://ai-gateway.vercel.sh');
+    expect(env.ANTHROPIC_BASE_URL).toBe('https://ai-gateway.khulnasoft.sh');
   });
 
   it('falls back to ambient OIDC token as the gateway key', () => {
@@ -138,7 +138,7 @@ describe('resolveDeepAgentsEnv', () => {
     ).toEqual({
       AI_GATEWAY_API_KEY: 'gw-mode',
       ANTHROPIC_API_KEY: 'gw-mode',
-      ANTHROPIC_BASE_URL: 'https://ai-gateway.vercel.sh',
+      ANTHROPIC_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
     });
   });
 });

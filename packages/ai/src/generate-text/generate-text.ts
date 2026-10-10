@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4GenerateResult,
   LanguageModelV4ToolCall,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   asArray,
   createIdGenerator,
@@ -14,7 +14,7 @@ import {
   type InferToolSetContext,
   type ProviderOptions,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { ToolChoiceViolationError } from '../error';
 import { logWarnings } from '../logger/log-warnings';
 import { resolveLanguageModel } from '../model/resolve-model';
@@ -322,7 +322,7 @@ export async function generateText<
 
     /**
      * Additional provider-specific options. They are passed through
-     * to the provider from the AI SDK and enable provider-specific
+     * to the provider from the ai-toolkit and enable provider-specific
      * functionality that can be fully encapsulated in the provider.
      */
     providerOptions?: ProviderOptions;
@@ -1302,7 +1302,7 @@ export async function generateText<
               }
 
               // insert error tool outputs for invalid tool calls:
-              // TODO AI SDK 6: invalid inputs should not require output parts
+              // TODO ai-toolkit 6: invalid inputs should not require output parts
               const invalidToolCalls = stepToolCalls.filter(
                 toolCall =>
                   toolCall.invalid &&

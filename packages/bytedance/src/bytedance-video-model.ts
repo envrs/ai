@@ -1,12 +1,12 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4CallOptions as VideoModelV4CallOptions,
   type Experimental_VideoModelV4File as VideoModelV4File,
   type Experimental_VideoModelV4OperationStartResult as VideoModelV4OperationStartResult,
   type Experimental_VideoModelV4OperationStatusResult as VideoModelV4OperationStatusResult,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertImageModelFileToDataUri,
@@ -17,7 +17,7 @@ import {
   parseProviderOptions,
   postJsonToApi,
   resolve,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { ByteDanceConfig } from './bytedance-config';
 import {
@@ -198,7 +198,7 @@ export class ByteDanceVideoModel implements VideoModelV4 {
       schema: byteDanceVideoModelOptionsSchema,
     })) as ByteDanceVideoModelOptions | undefined;
 
-    // Polling is orchestrated by the AI SDK core via doStart/doStatus, so the
+    // Polling is orchestrated by the ai-toolkit core via doStart/doStatus, so the
     // legacy provider-level poll options no longer have any effect.
     for (const setting of ['pollIntervalMs', 'pollTimeoutMs'] as const) {
       if (byteDanceOptions?.[setting] != null) {
@@ -206,7 +206,7 @@ export class ByteDanceVideoModel implements VideoModelV4 {
           type: 'deprecated',
           setting,
           message:
-            `\`${setting}\` is ignored. Polling is orchestrated by the AI SDK: ` +
+            `\`${setting}\` is ignored. Polling is orchestrated by the ai-toolkit: ` +
             'pass `poll: { intervalMs, timeoutMs }` to `generateVideo` instead.',
         });
       }
@@ -377,7 +377,7 @@ export class ByteDanceVideoModel implements VideoModelV4 {
     const taskId = createResponse.id;
 
     if (!taskId) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'BYTEDANCE_VIDEO_GENERATION_ERROR',
         message: 'No task ID returned from API',
       });
@@ -420,7 +420,7 @@ export class ByteDanceVideoModel implements VideoModelV4 {
       const videoUrl = statusResponse.content?.video_url;
 
       if (!videoUrl) {
-        throw new AISDKError({
+        throw new ai-toolkitError({
           name: 'BYTEDANCE_VIDEO_GENERATION_ERROR',
           message: `No video URL in response. Task ID: ${taskId}`,
         });

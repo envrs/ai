@@ -1,4 +1,4 @@
-import type { BridgeTurn } from '@ai-sdk/harness/bridge';
+import type { BridgeTurn } from '@ai-toolkit/harness/bridge';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import type { StartMessage } from '../codex-bridge-protocol';
@@ -262,7 +262,7 @@ export function createCodexAppServerRuntime(): {
       if (initialized) {
         await raceWithProcess({
           operation: runningClient.initialize({
-            clientName: 'ai-sdk-harness-codex',
+            clientName: 'ai-toolkit-harness-codex',
             clientVersion: '1',
           }),
         });
@@ -492,7 +492,7 @@ export function createDynamicTools(
         .update(tool.name)
         .digest('hex')
         .slice(0, 16);
-      const base = `ai_sdk_tool_${digest}`;
+      const base = `ai-toolkit_tool_${digest}`;
       alias = base;
       let suffix = index;
       while (usedAliases.has(alias) || validOriginalNames.has(alias)) {

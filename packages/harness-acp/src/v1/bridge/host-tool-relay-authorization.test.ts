@@ -2,7 +2,7 @@ import type { SessionUpdate, ToolCallUpdate } from '@agentclientprotocol/sdk';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { createHostToolRelayAuthorization } from './host-tool-relay-authorization';
 
-const serverName = 'ai-sdk-harness-tools';
+const serverName = 'ai-toolkit-harness-tools';
 const weather = { toolName: 'weather', input: { city: 'Lima' } };
 
 function authorizer({ ttlMs }: { ttlMs?: number } = {}) {

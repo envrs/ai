@@ -24,7 +24,7 @@ describe('mergeObservedToolCall', () => {
           "city": "Austin",
         },
         "status": "in_progress",
-        "title": "ai-sdk-harness-tools-get_weather",
+        "title": "ai-toolkit-harness-tools-get_weather",
         "toolCallId": "call_Hiiu3DojfZiulcj6OujlcpEq",
       }
     `);
@@ -33,11 +33,11 @@ describe('mergeObservedToolCall', () => {
   it('retains null names and titles but clears other explicit null fields', () => {
     const previous = {
       ...capturedCall(),
-      name: 'mcp__ai-sdk-harness-tools__get_weather',
+      name: 'mcp__ai-toolkit-harness-tools__get_weather',
       content: [],
       locations: [],
       rawOutput: { temperature: 72 },
-      _meta: { serverName: 'ai-sdk-harness-tools' },
+      _meta: { serverName: 'ai-toolkit-harness-tools' },
     };
     expect(
       mergeObservedToolCall({
@@ -61,11 +61,11 @@ describe('mergeObservedToolCall', () => {
         "content": undefined,
         "kind": undefined,
         "locations": undefined,
-        "name": "mcp__ai-sdk-harness-tools__get_weather",
+        "name": "mcp__ai-toolkit-harness-tools__get_weather",
         "rawInput": null,
         "rawOutput": null,
         "status": undefined,
-        "title": "ai-sdk-harness-tools-get_weather",
+        "title": "ai-toolkit-harness-tools-get_weather",
         "toolCallId": "call_Hiiu3DojfZiulcj6OujlcpEq",
       }
     `);

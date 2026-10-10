@@ -1,4 +1,4 @@
-import type { LanguageModelV4Source } from '@ai-sdk/provider';
+import type { LanguageModelV4Source } from '@ai-toolkit/provider';
 import type {
   GoogleInteractionsAnnotation,
   GoogleInteractionsBuiltinToolResultContent,

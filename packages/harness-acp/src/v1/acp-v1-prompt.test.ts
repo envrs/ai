@@ -1,7 +1,7 @@
 import {
   HarnessCapabilityUnsupportedError,
   type HarnessV1Prompt,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import { describe, expect, it } from 'vitest';
 import {
   convertHarnessPromptToACPTextBlocks,

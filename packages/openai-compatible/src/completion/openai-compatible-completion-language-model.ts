@@ -8,7 +8,7 @@ import type {
   LanguageModelV4StreamPart,
   LanguageModelV4StreamResult,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createEventSourceResponseHandler,
@@ -22,7 +22,7 @@ import {
   type FetchFunction,
   type ParseResult,
   type ResponseHandler,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import {
   toCamelCase,

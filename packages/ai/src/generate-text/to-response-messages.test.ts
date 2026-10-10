@@ -1,4 +1,4 @@
-import { tool } from '@ai-sdk/provider-utils';
+import { tool } from '@ai-toolkit/provider-utils';
 import z from 'zod/v4';
 import { DefaultGeneratedFile } from './generated-file';
 import { parseToolCall } from './parse-tool-call';

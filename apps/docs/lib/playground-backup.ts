@@ -22,7 +22,7 @@ export function createPlaygroundBackup(storage: Storage, sourceOrigin: string) {
   }
 
   const backup = JSON.stringify({
-    type: 'ai-sdk-playground-browser-state',
+    type: 'ai-toolkit-playground-browser-state',
     version: 1,
     sourceOrigin,
     createdAt: new Date().toISOString(),

@@ -20,7 +20,7 @@ import {
   type SharedV4ProviderMetadata,
   type SharedV4Warning,
   type ImageModelV4Result,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertImageModelFileToDataUri,
@@ -38,7 +38,7 @@ import {
   safeValidateTypes,
   zodSchema,
   type InferSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { getResponseMetadata } from './get-response-metadata';
 import { mapXaiFinishReason } from './map-xai-finish-reason';
@@ -54,7 +54,7 @@ import type { XaiImageModelId } from './xai-image-settings';
 import { xaiImageModelOptions } from './xai-image-model-options';
 
 const xaiBatchEndpoint = '/v1/responses';
-const xaiBatchName = 'ai-sdk-text-batch';
+const xaiBatchName = 'ai-toolkit-text-batch';
 const xaiBatchResultsPageSize = 1000;
 
 const xaiBatchProviderOptionsSchema = lazySchema(() =>

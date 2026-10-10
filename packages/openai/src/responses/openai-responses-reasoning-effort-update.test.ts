@@ -3,9 +3,9 @@ import {
   type LanguageModelV4Prompt,
   type SharedV4ProviderOptions,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it } from 'vitest';
 import { OpenAIResponsesLanguageModel } from './openai-responses-language-model';
 import type {

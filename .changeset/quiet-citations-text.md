@@ -1,5 +1,5 @@
 ---
-'@ai-sdk/provider': patch
+'@ai-toolkit/provider': patch
 'ai': patch
 ---
 

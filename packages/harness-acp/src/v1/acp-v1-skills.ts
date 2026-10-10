@@ -2,7 +2,7 @@ import path from 'node:path';
 import {
   harnessSessionDataDirectoryPath,
   type HarnessV1Skill,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 
 export const ACP_SKILL_NAME_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 export const DEFAULT_ACP_SKILLS_DIRECTORY = '.agents/skills';

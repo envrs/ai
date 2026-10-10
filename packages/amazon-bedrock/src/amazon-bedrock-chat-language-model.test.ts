@@ -1,21 +1,21 @@
-import type * as AnthropicInternal from '@ai-sdk/anthropic/internal';
+import type * as AnthropicInternal from '@ai-toolkit/anthropic/internal';
 import type {
   LanguageModelV4Prompt,
   SharedV4ProviderOptions,
-} from '@ai-sdk/provider';
-import { safeValidateTypes } from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider';
+import { safeValidateTypes } from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
 import { AmazonBedrockChatLanguageModel } from './amazon-bedrock-chat-language-model';
 import { beforeEach, describe, expect, vi, it } from 'vitest';
 import { injectFetchHeaders } from './inject-fetch-headers';
-import { anthropicTools, prepareTools } from '@ai-sdk/anthropic/internal';
+import { anthropicTools, prepareTools } from '@ai-toolkit/anthropic/internal';
 import { z } from 'zod/v4';
 import fs from 'node:fs';
 
 const mockPrepareAnthropicTools = vi.mocked(prepareTools);
 
-vi.mock('@ai-sdk/anthropic/internal', async importOriginal => {
+vi.mock('@ai-toolkit/anthropic/internal', async importOriginal => {
   const original = await importOriginal<typeof AnthropicInternal>();
   return {
     ...original,
@@ -4905,7 +4905,7 @@ describe('doGenerate', () => {
     `);
   });
 
-  // https://github.com/vercel/ai/issues/11371
+  // https://github.com/khulnasoft/ai/issues/11371
   it('should handle stop_sequence: null when stopReason is tool_use', async () => {
     server.urls[generateUrl].response = {
       type: 'json-value',

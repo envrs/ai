@@ -4,13 +4,13 @@ import {
   type Experimental_VideoModelV4,
   type LanguageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { AlibabaChatLanguageModel } from './alibaba-chat-language-model';
 import type { AlibabaChatModelId } from './alibaba-chat-language-model-options';
 import { AlibabaEmbeddingModel } from './alibaba-embedding-model';
@@ -131,7 +131,7 @@ export function createAlibaba(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-alibaba/${VERSION}`,
+      `ai-toolkit-alibaba/${VERSION}`,
     );
 
   const createLanguageModel = (modelId: AlibabaChatModelId) =>

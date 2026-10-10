@@ -188,7 +188,7 @@ jobs:
       # The docs build peaks above the standard runner's 16 GB of RAM
       # (every versioned content family is compiled into one app), which
       # OOM-kills the runner agent mid-compile. Swap absorbs the peak, the
-      # same way Vercel's build machines handle it.
+      # same way khulnasoft's build machines handle it.
       - name: Add swap space
         if: steps.docs-changes.outputs.changed == 'true'
         run: |
@@ -200,7 +200,7 @@ jobs:
 
       - name: Test and build docs
         if: steps.docs-changes.outputs.changed == 'true'
-        run: pnpm --filter ai-sdk-docs validate:site
+        run: pnpm --filter ai-toolkit-docs validate:site
 
   build-packages:
     name: 'Build Packages'
@@ -671,13 +671,13 @@ jobs:
         include:
           - module: 'ai'
             max-load-time: 110
-          - module: '@ai-sdk/openai'
+          - module: '@ai-toolkit/openai'
             max-load-time: 90
-          - module: '@ai-sdk/openai-compatible'
+          - module: '@ai-toolkit/openai-compatible'
             max-load-time: 70
-          - module: '@ai-sdk/anthropic'
+          - module: '@ai-toolkit/anthropic'
             max-load-time: 75
-          - module: '@ai-sdk/google'
+          - module: '@ai-toolkit/google'
             max-load-time: 70
     steps:
       - name: Checkout

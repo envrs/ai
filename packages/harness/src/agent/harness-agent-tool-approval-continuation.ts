@@ -3,12 +3,12 @@ import type {
   ModelMessage,
   ToolApprovalRequest,
   ToolApprovalResponse,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 /**
  * Extract approval decisions that should continue a suspended harness turn.
  *
- * AI SDK clients send approval decisions as a trailing `role: "tool"` message
+ * ai-toolkit clients send approval decisions as a trailing `role: "tool"` message
  * containing `tool-approval-response` parts. The response only carries the
  * approval id, so the harness has to recover the matching approval request
  * locally to find the original tool call before it can resume the paused turn.

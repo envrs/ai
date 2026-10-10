@@ -6,12 +6,12 @@ import {
   type LanguageModelV4FunctionTool,
   type SharedV4ProviderReference,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   resolveProviderReference,
   validateTypes,
   type ToolNameMapping,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { codeInterpreterArgsSchema } from '../tool/code-interpreter';
 import { fileSearchArgsSchema } from '../tool/file-search';
 import { imageGenerationArgsSchema } from '../tool/image-generation';

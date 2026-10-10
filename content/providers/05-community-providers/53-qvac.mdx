@@ -7,7 +7,7 @@ description: Learn how to use the QVAC provider.
 
 [QVAC](https://qvac.tether.io) is an open-source, cross-platform runtime for local-first, peer-to-peer AI — LLMs, embeddings, transcription, translation, speech, and image generation, all running on the user's own hardware.
 
-[`@qvac/ai-sdk-provider`](https://www.npmjs.com/package/@qvac/ai-sdk-provider) is a branded wrapper around [`@ai-sdk/openai-compatible`](https://www.npmjs.com/package/@ai-sdk/openai-compatible) that points at a local `qvac serve openai` HTTP server and re-exports QVAC's typed model metadata.
+[`@qvac/ai-toolkit-provider`](https://www.npmjs.com/package/@qvac/ai-toolkit-provider) is a branded wrapper around [`@ai-toolkit/openai-compatible`](https://www.npmjs.com/package/@ai-toolkit/openai-compatible) that points at a local `qvac serve openai` HTTP server and re-exports QVAC's typed model metadata.
 
 <Note>
   This provider talks to a local OpenAI-compatible server. Install
@@ -17,43 +17,43 @@ description: Learn how to use the QVAC provider.
 
 ## Setup
 
-The QVAC provider is available in the `@qvac/ai-sdk-provider` module. You can install it with:
+The QVAC provider is available in the `@qvac/ai-toolkit-provider` module. You can install it with:
 
 <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
   <Tab>
     <Snippet
-      text="pnpm add @qvac/ai-sdk-provider ai @ai-sdk/openai-compatible"
+      text="pnpm add @qvac/ai-toolkit-provider ai @ai-toolkit/openai-compatible"
       dark
     />
   </Tab>
   <Tab>
     <Snippet
-      text="npm install @qvac/ai-sdk-provider ai @ai-sdk/openai-compatible"
+      text="npm install @qvac/ai-toolkit-provider ai @ai-toolkit/openai-compatible"
       dark
     />
   </Tab>
   <Tab>
     <Snippet
-      text="yarn add @qvac/ai-sdk-provider ai @ai-sdk/openai-compatible"
+      text="yarn add @qvac/ai-toolkit-provider ai @ai-toolkit/openai-compatible"
       dark
     />
   </Tab>
   <Tab>
     <Snippet
-      text="bun add @qvac/ai-sdk-provider ai @ai-sdk/openai-compatible"
+      text="bun add @qvac/ai-toolkit-provider ai @ai-toolkit/openai-compatible"
       dark
     />
   </Tab>
 </Tabs>
 
-`ai` and `@ai-sdk/openai-compatible` are peer dependencies — install them alongside.
+`ai` and `@ai-toolkit/openai-compatible` are peer dependencies — install them alongside.
 
 ## Provider Instance
 
-Import `createQvac` from `@qvac/ai-sdk-provider` and create a provider instance pointing at your running `qvac serve openai`:
+Import `createQvac` from `@qvac/ai-toolkit-provider` and create a provider instance pointing at your running `qvac serve openai`:
 
 ```ts
-import { createQvac } from '@qvac/ai-sdk-provider';
+import { createQvac } from '@qvac/ai-toolkit-provider';
 
 const qvac = createQvac({
   baseURL: 'http://127.0.0.1:11434/v1', // match your `qvac serve` port
@@ -66,7 +66,7 @@ const qvac = createQvac({
 You can create models by passing a `qvac serve` alias to the provider instance:
 
 ```ts
-import { createQvac } from '@qvac/ai-sdk-provider';
+import { createQvac } from '@qvac/ai-toolkit-provider';
 import { generateText } from 'ai';
 
 const qvac = createQvac({
@@ -85,4 +85,4 @@ console.log(text);
 ## Additional Resources
 
 - [QVAC](https://qvac.tether.io)
-- [npm Package](https://www.npmjs.com/package/@qvac/ai-sdk-provider)
+- [npm Package](https://www.npmjs.com/package/@qvac/ai-toolkit-provider)

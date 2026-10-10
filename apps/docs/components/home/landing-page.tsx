@@ -1,5 +1,5 @@
-import { Badge } from '@vercel/geistdocs/components/badge';
-import { Button } from '@vercel/geistdocs/components/button';
+import { Badge } from '@khulnasoft/geistdocs/components/badge';
+import { Button } from '@khulnasoft/geistdocs/components/button';
 import {
   CommandPromptContent,
   CommandPromptCopy,
@@ -10,18 +10,18 @@ import {
   CommandPromptTrigger,
   CommandPromptTriggerDivider,
   CommandPromptViewport,
-} from '@vercel/geistdocs/components/command-prompt';
-import { LogoIconAngularSvg } from '@vercel/geistdocs/assets/logos/logo-icon-angular-svg';
-import { LogoIconNuxtSvg } from '@vercel/geistdocs/assets/logos/logo-icon-nuxt-svg';
-import { LogoIconReactSvg } from '@vercel/geistdocs/assets/logos/logo-icon-react-svg';
-import { LogoIconSolidstartSvg } from '@vercel/geistdocs/assets/logos/logo-icon-solidstart-svg';
-import { LogoIconSvelteSvg } from '@vercel/geistdocs/assets/logos/logo-icon-svelte-svg';
-import { LogoIconVueSvg } from '@vercel/geistdocs/assets/logos/logo-icon-vue-svg';
-import { LogoNextJs } from '@vercel/geistdocs/assets/logos/logo-next-js';
-import { IconArrowDown } from '@vercel/geistdocs/assets/icons/icon-arrow-down';
-import { IconRoute } from '@vercel/geistdocs/assets/icons/icon-route';
-import { IconShieldCheck } from '@vercel/geistdocs/assets/icons/icon-shield-check';
-import { IconToggleOn } from '@vercel/geistdocs/assets/icons/icon-toggle-on';
+} from '@khulnasoft/geistdocs/components/command-prompt';
+import { LogoIconAngularSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-angular-svg';
+import { LogoIconNuxtSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-nuxt-svg';
+import { LogoIconReactSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-react-svg';
+import { LogoIconSolidstartSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-solidstart-svg';
+import { LogoIconSvelteSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-svelte-svg';
+import { LogoIconVueSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-vue-svg';
+import { LogoNextJs } from '@khulnasoft/geistdocs/assets/logos/logo-next-js';
+import { IconArrowDown } from '@khulnasoft/geistdocs/assets/icons/icon-arrow-down';
+import { IconRoute } from '@khulnasoft/geistdocs/assets/icons/icon-route';
+import { IconShieldCheck } from '@khulnasoft/geistdocs/assets/icons/icon-shield-check';
+import { IconToggleOn } from '@khulnasoft/geistdocs/assets/icons/icon-toggle-on';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { PROMPT_TEMPLATES } from '@/lib/home/prompt-templates';
@@ -65,23 +65,23 @@ const features = [
 ];
 const integrations = [
   {
-    title: 'Vercel AI Gateway',
+    title: 'khulnasoft AI Gateway',
     description:
       'Access 100+ models with no markup or having to manage multiple API keys.',
-    href: 'https://vercel.com/ai-gateway',
+    href: 'https://khulnasoft.com/ai-gateway',
     command: 'npm i ai',
   },
   {
-    title: 'Vercel Sandbox',
+    title: 'khulnasoft Sandbox',
     description: 'Run agent-generated code securely and at scale.',
-    href: 'https://vercel.com/sandbox',
-    command: 'npm i @vercel/sandbox',
+    href: 'https://khulnasoft.com/sandbox',
+    command: 'npm i @khulnasoft/sandbox',
   },
   {
     title: 'Workflows',
     description:
       'Build long-running AI agents and apps that can suspend, resume, and survive function timeouts.',
-    href: 'https://vercel.com/workflow',
+    href: 'https://khulnasoft.com/workflow',
     command: 'npm i workflow',
     badge: 'NEW',
   },
@@ -89,21 +89,21 @@ const integrations = [
     title: 'AI Elements',
     description:
       'A UI component library and custom registry built to build AI-native applications faster.',
-    href: 'https://elements.ai-sdk.dev',
+    href: 'https://elements.ai-toolkit.dev',
     command: 'npx ai-elements',
   },
 ];
 const testimonials = [
   {
     quote:
-      'We built a full AI agent with 40+ tools, resumable streams, and multi-step reasoning on AI SDK. Every hard problem we’d solved with duct tape before, streaming, tool call repair, message management, tool based UI, they already had a clean API for.',
+      'We built a full AI agent with 40+ tools, resumable streams, and multi-step reasoning on ai-toolkit. Every hard problem we’d solved with duct tape before, streaming, tool call repair, message management, tool based UI, they already had a clean API for.',
     name: 'Adir Duchan',
     role: 'Senior AI Engineer',
     company: 'Elementor',
     Logo: LogoElementor,
   },
   {
-    quote: 'OpenCode uses AI SDK.',
+    quote: 'OpenCode uses ai-toolkit.',
     name: 'Dax Raad',
     role: 'CEO & Founder',
     company: 'OpenCode',
@@ -113,7 +113,7 @@ const testimonials = [
 
 const sectionHeading = 'text-heading-32 lg:text-heading-48';
 
-/** Linked card with a copy snippet, styled after the Chat SDK and vercel.com. */
+/** Linked card with a copy snippet, styled after the Chat SDK and khulnasoft.com. */
 function LinkCard({
   title,
   description,
@@ -170,7 +170,7 @@ export function LandingPage() {
           </h1>
           <p className="mt-5 max-w-2xl text-pretty text-center text-copy-16 text-gray-900 md:text-copy-18 lg:text-copy-20">
             A unified TypeScript SDK for building AI apps with modern streaming,
-            fallbacks, and multi-model support—powered by Vercel
+            fallbacks, and multi-model support—powered by khulnasoft
           </p>
           <CommandPromptRoot
             className="mt-8 flex w-full flex-col items-center gap-2"
@@ -192,7 +192,7 @@ export function LandingPage() {
                   npm install ai
                 </CommandPromptContent>
                 <CommandPromptContent value="agents">
-                  npx skills add vercel/ai
+                  npx skills add khulnasoft/ai
                 </CommandPromptContent>
               </CommandPromptViewport>
               <CommandPromptCopy aria-label="Copy install command" />
@@ -231,7 +231,7 @@ export function LandingPage() {
             ))}
           </ul>
         </section>
-        <section aria-label="AI SDK features" className="py-12 md:py-20">
+        <section aria-label="ai-toolkit features" className="py-12 md:py-20">
           <ul className="grid gap-10 md:grid-cols-2 md:gap-x-8 lg:grid-cols-4">
             {features.map(({ title, description, Icon }) => (
               <li className="flex flex-col gap-3" key={title}>
@@ -253,7 +253,7 @@ export function LandingPage() {
               Scale with confidence
             </h2>
             <p className="text-pretty text-copy-18 text-gray-900 lg:col-span-5 lg:col-start-8">
-              Plug the AI SDK into an entire ecosystem designed for modern AI
+              Plug the ai-toolkit into an entire ecosystem designed for modern AI
               applications that scale.
             </p>
           </div>
@@ -265,16 +265,16 @@ export function LandingPage() {
             ))}
           </div>
         </section>
-        {/* Pull-out quotes, styled like the quote on vercel.com/ai-sdk. */}
+        {/* Pull-out quotes, styled like the quote on khulnasoft.com/ai-toolkit. */}
         <section
           aria-labelledby="home-testimonials"
           className="grid gap-24 py-24 lg:grid-cols-2 lg:gap-x-24"
         >
           <h2 className="sr-only" id="home-testimonials">
-            What builders say about the AI SDK
+            What builders say about the ai-toolkit
           </h2>
           {testimonials.map(item => (
-            // Left-aligned like the compact pull-out quote on vercel.com, with
+            // Left-aligned like the compact pull-out quote on khulnasoft.com, with
             // the opening mark hung in the margin so the text edge stays flush.
             <figure
               className="m-0 flex flex-col justify-between gap-6 md:gap-9"
@@ -302,7 +302,7 @@ export function LandingPage() {
         <section aria-labelledby="home-get-started" className="py-12 md:py-20">
           <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
             <div>
-              {/* "SDK" is a CSS pill sized in ems, as in the vercel.com/ai-sdk
+              {/* "SDK" is a CSS pill sized in ems, as in the khulnasoft.com/ai-toolkit
                   and /ai-gateway headings, so "AI" keeps the heading's weight. */}
               <h2 className={sectionHeading} id="home-get-started">
                 Build with the AI{' '}
@@ -312,7 +312,7 @@ export function LandingPage() {
                 today
               </h2>
               <p className="mt-4 max-w-md text-copy-18 text-gray-900">
-                Get started with the AI SDK by using our recipes or templates.
+                Get started with the ai-toolkit by using our recipes or templates.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3">

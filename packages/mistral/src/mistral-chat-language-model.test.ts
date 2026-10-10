@@ -1,9 +1,9 @@
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
 import {
   convertReadableStreamToArray,
   mockId,
-} from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import fs from 'node:fs';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { createMistral } from './mistral-provider';
@@ -228,7 +228,7 @@ describe('doGenerate', () => {
       'custom-request-header': 'request-header-value',
     });
     expect(server.calls[0].requestUserAgent).toContain(
-      `ai-sdk-mistral/0.0.0-test`,
+      `ai-toolkit-mistral/0.0.0-test`,
     );
   });
 
@@ -1247,7 +1247,7 @@ describe('doStream', () => {
       'custom-request-header': 'request-header-value',
     });
     expect(server.calls[0].requestUserAgent).toContain(
-      `ai-sdk-mistral/0.0.0-test`,
+      `ai-toolkit-mistral/0.0.0-test`,
     );
   });
 

@@ -1,20 +1,20 @@
 ---
 title: TopxAI
-description: Use the TopxAI OpenAI compatible API with the AI SDK.
+description: Use the TopxAI OpenAI compatible API with the ai-toolkit.
 ---
 
 # TopxAI Provider
 
 [TopxAI](https://ai.topxea.com/) is an API gateway that provides access to
 models from multiple AI providers through an OpenAI-compatible API. You can use
-its Chat Completions endpoint with the AI SDK through the
-`@ai-sdk/openai-compatible` module.
+its Chat Completions endpoint with the ai-toolkit through the
+`@ai-toolkit/openai-compatible` module.
 
 ## Setup
 
 Install the OpenAI Compatible provider:
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+<InstallPackages packages="@ai-toolkit/openai-compatible" />
 
 Create a [TopxAI API key](https://ai.topxea.com/keys), choose a route that
 includes the models you want to use, and set the key as a server-side
@@ -32,7 +32,7 @@ for details.
 Create a TopxAI provider instance with `createOpenAICompatible`:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 
 const topxai = createOpenAICompatible({
   name: 'topxai',
@@ -58,7 +58,7 @@ const model = topxai('kimi-k3');
 Use `generateText` to generate text with the model:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { generateText } from 'ai';
 
 const topxai = createOpenAICompatible({
@@ -121,13 +121,13 @@ const topxai = createOpenAICompatible({
 ```
 
 This guide covers TopxAI's OpenAI-compatible Chat Completions endpoint. TopxAI
-also documents using the AI SDK OpenAI and Anthropic providers with its
+also documents using the ai-toolkit OpenAI and Anthropic providers with its
 Responses and Messages APIs.
 
 ## Resources
 
-- [TopxAI AI SDK guide](https://ai.topxea.com/docs/use-topxai-with-vercel-ai-sdk)
+- [TopxAI ai-toolkit guide](https://ai.topxea.com/docs/use-topxai-with-khulnasoft-ai-toolkit)
 - [TopxAI API reference](https://ai.topxea.com/docs/api-reference)
 - [TopxAI API key guide](https://ai.topxea.com/docs/create-an-api-key-and-choose-a-route)
 - [TopxAI model and pricing catalog](https://ai.topxea.com/pricing)
-- [AI SDK OpenAI Compatible provider](/providers/openai-compatible-providers)
+- [ai-toolkit OpenAI Compatible provider](/providers/openai-compatible-providers)

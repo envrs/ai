@@ -4,7 +4,7 @@ import type {
   ToolApprovalResponse,
   ToolResultPart,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { InvalidToolApprovalError } from '../error/invalid-tool-approval-error';
 import { ToolCallNotFoundForApprovalError } from '../error/tool-call-not-found-for-approval-error';
 import type { TypedToolCall } from './tool-call';

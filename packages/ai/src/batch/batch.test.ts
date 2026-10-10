@@ -4,12 +4,12 @@ import {
   type Experimental_BatchV4OperationOptions as BatchV4OperationOptions,
   type LanguageModelV4GenerateResult,
   type LanguageModelV4Usage,
-} from '@ai-sdk/provider';
-import { jsonSchema } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { jsonSchema } from '@ai-toolkit/provider-utils';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { InvalidArgumentError } from '../error/invalid-argument-error';
 import { MockProviderV4 } from '../test/mock-provider-v4';
@@ -251,7 +251,7 @@ describe('startBatch', () => {
         return { batchId: 'batch-123', status: 'pending', warnings: [] };
       },
     });
-    globalThis.AI_SDK_DEFAULT_PROVIDER = Object.assign(new MockProviderV4(), {
+    globalThis.ai-toolkit_DEFAULT_PROVIDER = Object.assign(new MockProviderV4(), {
       experimental_batch: () => batchApi,
     });
 
@@ -267,7 +267,7 @@ describe('startBatch', () => {
         ],
       });
     } finally {
-      delete globalThis.AI_SDK_DEFAULT_PROVIDER;
+      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
     }
 
     expect(calls[0]).toMatchObject({
@@ -474,7 +474,7 @@ describe('startBatch', () => {
 
   it('logs request warnings with the request model', async () => {
     const warningLogger = vi.fn();
-    globalThis.AI_SDK_LOG_WARNINGS = warningLogger;
+    globalThis.ai-toolkit_LOG_WARNINGS = warningLogger;
     const batchApi = createMockBatchApi({
       doStartBatch: async () => ({
         batchId: 'batch-123',
@@ -513,7 +513,7 @@ describe('startBatch', () => {
         model: 'override-model',
       });
     } finally {
-      delete globalThis.AI_SDK_LOG_WARNINGS;
+      delete globalThis.ai-toolkit_LOG_WARNINGS;
     }
   });
 

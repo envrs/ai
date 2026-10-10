@@ -1,4 +1,4 @@
-import type { JSONValue, JSONObject } from '@ai-sdk/provider';
+import type { JSONValue, JSONObject } from '@ai-toolkit/provider';
 import type { FlexibleSchema } from '../schema';
 import type { ToolResultOutput } from './content-part';
 import type { Context } from './context';
@@ -75,7 +75,7 @@ type BaseTool<
 
   /**
    * Additional provider-specific metadata. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: ProviderOptions;
@@ -224,7 +224,7 @@ type BaseFunctionTool<
 };
 
 /**
- * Tool with user-defined input and output schemas that is executed by the AI SDK.
+ * Tool with user-defined input and output schemas that is executed by the ai-toolkit.
  */
 export type FunctionTool<
   INPUT extends JSONValue | unknown | never = any,
@@ -318,7 +318,7 @@ export type ProviderExecutedTool<
    * triggers a client-executed tool, and the server tool's result is deferred
    * until the client tool is resolved).
    *
-   * This flag allows the AI SDK to handle tool results that arrive without
+   * This flag allows the ai-toolkit to handle tool results that arrive without
    * a matching tool call in the current response.
    *
    * @default false
@@ -331,7 +331,7 @@ export type ProviderExecutedTool<
  *
  * It contains the schemas and metadata needed for the language model to call
  * the tool and can include an execute function for tools that are executed by
- * the AI SDK.
+ * the ai-toolkit.
  */
 export type Tool<
   INPUT extends JSONValue | unknown | never = any,

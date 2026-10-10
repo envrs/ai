@@ -6,7 +6,7 @@ import {
   type ProviderV2,
   type SpeechModelV2,
   type TranscriptionModelV2,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 export class MockProviderV2 implements ProviderV2 {
   languageModel: ProviderV2['languageModel'];
   textEmbeddingModel: ProviderV2['textEmbeddingModel'];

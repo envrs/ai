@@ -1,4 +1,4 @@
-import type { ToolSet } from '@ai-sdk/provider-utils';
+import type { ToolSet } from '@ai-toolkit/provider-utils';
 import type { TextStreamPart } from '../generate-text/stream-text-result';
 
 /**

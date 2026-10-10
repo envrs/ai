@@ -1,35 +1,35 @@
-# AI SDK - Gateway Provider
+# ai-toolkit - Gateway Provider
 
-The Gateway provider for the [AI SDK](https://ai-sdk.dev/docs) allows the use of a wide variety of AI models and providers.
+The Gateway provider for the [ai-toolkit](https://ai-toolkit.dev/docs) allows the use of a wide variety of AI models and providers.
 
 ## Setup
 
-The Gateway provider is available in the `@ai-sdk/gateway` module. You can install it with
+The Gateway provider is available in the `@ai-toolkit/gateway` module. You can install it with
 
 ```bash
-npm i @ai-sdk/gateway
+npm i @ai-toolkit/gateway
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `gateway` from `@ai-sdk/gateway`:
+You can import the default provider instance `gateway` from `@ai-toolkit/gateway`:
 
 ```ts
-import { gateway } from '@ai-sdk/gateway';
+import { gateway } from '@ai-toolkit/gateway';
 ```
 
 ## Example
 
 ```ts
-import { gateway } from '@ai-sdk/gateway';
+import { gateway } from '@ai-toolkit/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -41,4 +41,4 @@ const { text } = await generateText({
 
 ## Documentation
 
-Please check out the [AI SDK documentation](https://ai-sdk.dev/docs) for more information.
+Please check out the [ai-toolkit documentation](https://ai-toolkit.dev/docs) for more information.

@@ -8,9 +8,9 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
-# AI SDK docs app (Geistdocs)
+# ai-toolkit docs app (Geistdocs)
 
-This app is a package-backed Geistdocs consumer: `@vercel/geistdocs` owns the
+This app is a package-backed Geistdocs consumer: `@khulnasoft/geistdocs` owns the
 docs runtime (page renderer, navbar/sidebar, search, Ask AI, Markdown routes,
 proxy negotiation); this app owns content, configuration, and thin adapters.
 
@@ -18,9 +18,9 @@ proxy negotiation); this app owns content, configuration, and thin adapters.
   `createDocsMarkdownRoute`, `createLlmsRoute`, `createSitemapMarkdownRoute`,
   `createAgentsRoute`, `createChatRoute`, `createSearchRoute`, `createProxy`)
   instead of copying package internals. Do not deep-import
-  `@vercel/geistdocs/dist`.
+  `@khulnasoft/geistdocs/dist`.
 - When package behavior is unclear, read the installed package docs in
-  `node_modules/@vercel/geistdocs/docs/` (start with `agents.md` and
+  `node_modules/@khulnasoft/geistdocs/docs/` (start with `agents.md` and
   `sitemap.md` there).
 - Keep `createGeistdocs` as the `next.config.ts` wrapper and keep
   `cacheComponents: true` and `partialPrefetching: true`. Do not export

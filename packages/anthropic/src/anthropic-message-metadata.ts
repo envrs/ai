@@ -1,4 +1,4 @@
-import type { JSONObject } from '@ai-sdk/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 import type { AnthropicSafeguardResult } from './anthropic-api';
 
 /**

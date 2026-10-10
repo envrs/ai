@@ -1,4 +1,4 @@
-import { UnsupportedFunctionalityError } from '@ai-sdk/provider';
+import { UnsupportedFunctionalityError } from '@ai-toolkit/provider';
 import type { FilePart } from './types/content-part';
 import { convertBase64ToUint8Array } from './uint8-utils';
 

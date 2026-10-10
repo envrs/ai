@@ -1,4 +1,4 @@
-import { MCP_APP_MIME_TYPE, type MCPAppResource } from '@ai-sdk/mcp';
+import { MCP_APP_MIME_TYPE, type MCPAppResource } from '@ai-toolkit/mcp';
 import { cleanup, render } from '@testing-library/react';
 import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest';
 import { MCPAppFrame } from './app-frame';

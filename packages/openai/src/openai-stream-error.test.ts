@@ -1,4 +1,4 @@
-import type { ParseResult } from '@ai-sdk/provider-utils';
+import type { ParseResult } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import {
   createOpenAIProviderStreamError,

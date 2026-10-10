@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
-  AISDKError,
+  ai-toolkitError,
   Experimental_DecisionUnsupportedQuestionTypeError as DecisionUnsupportedQuestionTypeError,
 } from './index';
 
@@ -16,7 +16,7 @@ describe('DecisionUnsupportedQuestionTypeError', () => {
     const error = new DecisionUnsupportedQuestionTypeError(options);
 
     expect(error).toBeInstanceOf(Error);
-    expect(AISDKError.isInstance(error)).toBe(true);
+    expect(ai-toolkitError.isInstance(error)).toBe(true);
     expect(DecisionUnsupportedQuestionTypeError.isInstance(error)).toBe(true);
     expect(error).toMatchObject({
       ...options,
@@ -40,7 +40,7 @@ describe('DecisionUnsupportedQuestionTypeError', () => {
   it('recognizes the marker across package copies', () => {
     expect(
       DecisionUnsupportedQuestionTypeError.isInstance({
-        [Symbol.for('vercel.ai.error.AI_DecisionUnsupportedQuestionTypeError')]:
+        [Symbol.for('khulnasoft.ai.error.AI_DecisionUnsupportedQuestionTypeError')]:
           true,
       }),
     ).toBe(true);
@@ -53,7 +53,7 @@ describe('DecisionUnsupportedQuestionTypeError', () => {
     new Error('Unrelated error'),
     { name: 'AI_DecisionUnsupportedQuestionTypeError' },
     {
-      [Symbol.for('vercel.ai.error.AI_DecisionUnsupportedQuestionTypeError')]:
+      [Symbol.for('khulnasoft.ai.error.AI_DecisionUnsupportedQuestionTypeError')]:
         false,
     },
   ])('rejects values without the marker: %s', value => {

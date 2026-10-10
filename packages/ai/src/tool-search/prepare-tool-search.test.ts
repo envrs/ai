@@ -3,7 +3,7 @@ import {
   experimental_toolCaller,
   tool,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { describe, expect, it, vi } from 'vitest';
 import { z } from 'zod/v4';
 import { createToolSearchState } from './prepare-tool-search';
@@ -441,15 +441,15 @@ describe('deferred tool search', () => {
   it.each<ResolvedToolCallers | undefined>([
     undefined,
     {},
-    { search: ['AI_SDK_DIRECT_TOOL_CALL'] },
-    { getWeather: ['AI_SDK_DIRECT_TOOL_CALL'] },
+    { search: ['ai-toolkit_DIRECT_TOOL_CALL'] },
+    { getWeather: ['ai-toolkit_DIRECT_TOOL_CALL'] },
     {
-      search: ['AI_SDK_DIRECT_TOOL_CALL'],
-      getWeather: ['AI_SDK_DIRECT_TOOL_CALL'],
+      search: ['ai-toolkit_DIRECT_TOOL_CALL'],
+      getWeather: ['ai-toolkit_DIRECT_TOOL_CALL'],
     },
     {
-      search: ['code', 'AI_SDK_DIRECT_TOOL_CALL'],
-      getWeather: ['AI_SDK_DIRECT_TOOL_CALL'],
+      search: ['code', 'ai-toolkit_DIRECT_TOOL_CALL'],
+      getWeather: ['ai-toolkit_DIRECT_TOOL_CALL'],
     },
   ])('discovers directly callable tools with routing %j', async routing => {
     const prepare = createToolSearchState({ tools, toolCallers: routing });

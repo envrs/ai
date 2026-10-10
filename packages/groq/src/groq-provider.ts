@@ -3,13 +3,13 @@ import {
   type LanguageModelV4,
   type ProviderV4,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { GroqChatLanguageModel } from './groq-chat-language-model';
 import type { GroqChatModelId } from './groq-chat-language-model-options';
 import type { GroqTranscriptionModelId } from './groq-transcription-model-options';
@@ -84,7 +84,7 @@ export function createGroq(options: GroqProviderSettings = {}): GroqProvider {
         })}`,
         ...options.headers,
       },
-      `ai-sdk-groq/${VERSION}`,
+      `ai-toolkit-groq/${VERSION}`,
     );
 
   const createChatModel = (modelId: GroqChatModelId) =>

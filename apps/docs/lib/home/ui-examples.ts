@@ -10,7 +10,7 @@ export const UI_EXAMPLES: CodeExample[] = [
     'chat.tsx',
     `'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 import { useState } from 'react';
 
@@ -54,7 +54,7 @@ export default function Chat() {
     'completion.tsx',
     `'use client';
 
-import { useCompletion } from '@ai-sdk/react';
+import { useCompletion } from '@ai-toolkit/react';
 
 export default function Completion() {
   const {
@@ -86,7 +86,7 @@ export default function Completion() {
 
 import {
   experimental_useObject as useObject,
-} from '@ai-sdk/react';
+} from '@ai-toolkit/react';
 import { z } from 'zod/v4';
 
 const notificationSchema = z.object({
@@ -126,7 +126,7 @@ export default function Notifications() {
     'chat-tools.tsx',
     `'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 import { useState } from 'react';
 
@@ -167,7 +167,7 @@ export default function Chat() {
     'generative-ui.tsx',
     `'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport, type UIMessage } from 'ai';
 import { useState } from 'react';
 
@@ -239,7 +239,7 @@ export default function Chat() {
     'streaming-data.tsx',
     `'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport, type UIMessage } from 'ai';
 
 type DataMessage = UIMessage<unknown, {
@@ -285,7 +285,7 @@ export default function Chat() {
     'chat-persistence.tsx',
     `'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport, type UIMessage } from 'ai';
 import { useState } from 'react';
 
@@ -334,7 +334,7 @@ export default function Chat({
     'stream-status.tsx',
     `'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 import { useState } from 'react';
 

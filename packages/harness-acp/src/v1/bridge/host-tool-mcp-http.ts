@@ -2,7 +2,7 @@ import { randomUUID } from 'node:crypto';
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
 import { isInitializeRequest } from '@modelcontextprotocol/sdk/types.js';
-import type { HarnessV1BridgeToolWire } from '@ai-sdk/harness';
+import type { HarnessV1BridgeToolWire } from '@ai-toolkit/harness';
 import {
   createHostToolMCPServer,
   type HostToolMCPInvocationResult,

@@ -1,14 +1,14 @@
-import { AISDKError } from './ai-sdk-error';
+import { ai-toolkitError } from './ai-toolkit-error';
 
 const name = 'AI_InvalidPromptError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
 /**
  * A prompt is invalid. This error should be thrown by providers when they cannot
  * process a prompt.
  */
-export class InvalidPromptError extends AISDKError {
+export class InvalidPromptError extends ai-toolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly prompt: unknown;
@@ -28,6 +28,6 @@ export class InvalidPromptError extends AISDKError {
   }
 
   static isInstance(error: unknown): error is InvalidPromptError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }

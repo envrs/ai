@@ -1,4 +1,4 @@
-import { safeValidateTypes, type InferSchema } from '@ai-sdk/provider-utils';
+import { safeValidateTypes, type InferSchema } from '@ai-toolkit/provider-utils';
 import { describe, expect, expectTypeOf, it } from 'vitest';
 import {
   openaiResponsesChunkSchema,

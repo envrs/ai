@@ -1,11 +1,11 @@
-import type { SkillsV4, SharedV4Warning } from '@ai-sdk/provider';
+import type { SkillsV4, SharedV4Warning } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertInlineFileDataToUint8Array,
   createJsonResponseHandler,
   postFormDataToApi,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { openaiFailedResponseHandler } from '../openai-error';
 import { openaiSkillResponseSchema } from './openai-skills-api';
 

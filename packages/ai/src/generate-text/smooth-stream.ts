@@ -1,8 +1,8 @@
-import { delay as originalDelay, type ToolSet } from '@ai-sdk/provider-utils';
+import { delay as originalDelay, type ToolSet } from '@ai-toolkit/provider-utils';
 import {
   InvalidArgumentError,
   type SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { TextStreamPart } from './stream-text-result';
 
 const CHUNKING_REGEXPS = {

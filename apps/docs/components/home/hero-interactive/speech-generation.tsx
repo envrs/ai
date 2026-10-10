@@ -1,9 +1,9 @@
 'use client';
 
-import { IconForward10Seconds10 } from '@vercel/geistdocs/assets/icons/icon-forward-10-seconds-10';
-import { IconPause } from '@vercel/geistdocs/assets/icons/icon-pause';
-import { IconPlayFill } from '@vercel/geistdocs/assets/icons/icon-play-fill';
-import { IconRewind10Seconds } from '@vercel/geistdocs/assets/icons/icon-rewind-10-seconds';
+import { IconForward10Seconds10 } from '@khulnasoft/geistdocs/assets/icons/icon-forward-10-seconds-10';
+import { IconPause } from '@khulnasoft/geistdocs/assets/icons/icon-pause';
+import { IconPlayFill } from '@khulnasoft/geistdocs/assets/icons/icon-play-fill';
+import { IconRewind10Seconds } from '@khulnasoft/geistdocs/assets/icons/icon-rewind-10-seconds';
 import { type RefObject, useCallback, useEffect, useState } from 'react';
 import { SPEECH_AUDIO_SRC } from '../media-assets';
 

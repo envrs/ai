@@ -2,8 +2,8 @@ import {
   TooManyEmbeddingValuesForCallError,
   UnsupportedFunctionalityError,
   type EmbeddingModelV4Embedding,
-} from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, it, expect, vi } from 'vitest';
 import { createAlibaba } from './alibaba-provider';
 
@@ -254,7 +254,7 @@ describe('doEmbed', () => {
       'custom-request-header': 'request-header-value',
     });
     expect(server.calls[0].requestUserAgent).toContain(
-      'ai-sdk-alibaba/0.0.0-test',
+      'ai-toolkit-alibaba/0.0.0-test',
     );
   });
 });

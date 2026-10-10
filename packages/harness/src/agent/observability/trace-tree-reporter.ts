@@ -5,7 +5,7 @@ import type { Telemetry } from 'ai';
  * turn's span lifecycle (turn → steps → tools) to a stream at turn end. It is a
  * `Telemetry` integration — register it in `telemetry.integrations`. Useful for
  * zero-setup local debugging when no OTel collector is wired up; a real OTel
- * backend (via `@ai-sdk/otel`) is a strict superset.
+ * backend (via `@ai-toolkit/otel`) is a strict superset.
  */
 export interface TraceTreeReporterOptions {
   /** Where to write the rendered tree. Default `process.stderr.write`. */

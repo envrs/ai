@@ -9,7 +9,7 @@ import {
   type Experimental_DecisionModelV4Result as DecisionModelV4Result,
   type JSONSchema7,
   type LanguageModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { WORKFLOW_DESERIALIZE, WORKFLOW_SERIALIZE } from '@workflow/serde';
 import { getTopLevelMediaType } from './detect-media-type';
 import { safeParseJSON } from './parse-json';

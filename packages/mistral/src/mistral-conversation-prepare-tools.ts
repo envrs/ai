@@ -2,9 +2,9 @@ import {
   UnsupportedFunctionalityError,
   type LanguageModelV4CallOptions,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { MistralToolChoice } from './mistral-chat-prompt';
-import { createToolNameMapping } from '@ai-sdk/provider-utils';
+import { createToolNameMapping } from '@ai-toolkit/provider-utils';
 
 type MistralTool =
   | { type: 'web_search' | 'web_search_premium' }

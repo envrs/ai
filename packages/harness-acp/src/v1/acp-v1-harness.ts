@@ -13,8 +13,8 @@ import {
   type HarnessV1StreamPart,
   type HarnessV1ToolSpec,
   harnessStateDirectoryPath,
-} from '@ai-sdk/harness';
-import { HarnessBridgeCapabilityUnsupportedError } from '@ai-sdk/harness/bridge';
+} from '@ai-toolkit/harness';
+import { HarnessBridgeCapabilityUnsupportedError } from '@ai-toolkit/harness/bridge';
 import {
   applyCredentialForwarding,
   createBridgeToken,
@@ -35,14 +35,14 @@ import {
   writeInstructions,
   writeSkills,
   type SandboxChannelReconnectOptions,
-} from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness/utils';
 import {
   asSchema,
   type Experimental_SandboxProcess,
   type Experimental_SandboxSession as SandboxSession,
   type ToolResultPart,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { WebSocket } from 'ws';
 import {
   createACPAuthenticationProfileIdentity,
@@ -158,11 +158,11 @@ export function createACPV1<TBuiltinTools extends ToolSet = {}>({
     settings.mcpServers != null &&
     Object.prototype.hasOwnProperty.call(
       settings.mcpServers,
-      'ai-sdk-harness-tools',
+      'ai-toolkit-harness-tools',
     )
   ) {
     throw new Error(
-      'ACP MCP server name "ai-sdk-harness-tools" is reserved for HarnessAgent tools.',
+      'ACP MCP server name "ai-toolkit-harness-tools" is reserved for HarnessAgent tools.',
     );
   }
   if (!HARNESS_ID_REGEXP.test(settings.harnessId)) {
@@ -367,8 +367,8 @@ export function createACPV1<TBuiltinTools extends ToolSet = {}>({
         sandboxProviderAuthenticationEnvironment = Object.fromEntries(
           Object.entries(resolvedProviderAuthentication.env).filter(
             ([key]) =>
-              key !== 'AI_SDK_ACP_GATEWAY_API_KEY' &&
-              key !== 'AI_SDK_ACP_GATEWAY_BASE_URL',
+              key !== 'ai-toolkit_ACP_GATEWAY_API_KEY' &&
+              key !== 'ai-toolkit_ACP_GATEWAY_BASE_URL',
           ),
         );
       }
@@ -594,7 +594,7 @@ export function createACPV1<TBuiltinTools extends ToolSet = {}>({
           },
           credentialEnvironmentVariables: [
             ...credentialForwardingEnvironmentVariables,
-            'AI_SDK_ACP_GATEWAY_API_KEY',
+            'ai-toolkit_ACP_GATEWAY_API_KEY',
           ],
         });
       }
@@ -883,11 +883,11 @@ function resolveProviderEnvironment({
     gateway: {
       apiKey: requireResolvedEnvironmentValue({
         environment: resolvedProviderAuthentication.env,
-        name: 'AI_SDK_ACP_GATEWAY_API_KEY',
+        name: 'ai-toolkit_ACP_GATEWAY_API_KEY',
       }),
       baseUrl: requireResolvedEnvironmentValue({
         environment: resolvedProviderAuthentication.env,
-        name: 'AI_SDK_ACP_GATEWAY_BASE_URL',
+        name: 'ai-toolkit_ACP_GATEWAY_BASE_URL',
       }),
       clientAppName: clientApp.name,
       clientAppVersion: clientApp.version,

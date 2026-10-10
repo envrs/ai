@@ -1,4 +1,4 @@
-import type { Experimental_TranscriptionModelV4StreamPart } from '@ai-sdk/provider';
+import type { Experimental_TranscriptionModelV4StreamPart } from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import {
   parseTranscriptionStreamClientFrame,

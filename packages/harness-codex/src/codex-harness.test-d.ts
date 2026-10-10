@@ -1,5 +1,5 @@
-import type { SandboxChannelReconnectOptions } from '@ai-sdk/harness/utils';
-import type { InferToolInput } from '@ai-sdk/provider-utils';
+import type { SandboxChannelReconnectOptions } from '@ai-toolkit/harness/utils';
+import type { InferToolInput } from '@ai-toolkit/provider-utils';
 import { expectTypeOf, test } from 'vitest';
 import { createCodex, type CodexHarnessSettings } from './codex-harness';
 

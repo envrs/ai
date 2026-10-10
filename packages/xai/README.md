@@ -1,38 +1,38 @@
-# AI SDK - xAI Grok Provider
+# ai-toolkit - xAI Grok Provider
 
-The **[xAI Grok provider](https://ai-sdk.dev/providers/ai-sdk-providers/xai)** for the [AI SDK](https://ai-sdk.dev/docs)
+The **[xAI Grok provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/xai)** for the [ai-toolkit](https://ai-toolkit.dev/docs)
 contains language model support for the xAI chat and completion APIs.
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access xAI (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access xAI (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The xAI Grok provider is available in the `@ai-sdk/xai` module. You can install it with
+The xAI Grok provider is available in the `@ai-toolkit/xai` module. You can install it with
 
 ```bash
-npm i @ai-sdk/xai
+npm i @ai-toolkit/xai
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `xai` from `@ai-sdk/xai`:
+You can import the default provider instance `xai` from `@ai-toolkit/xai`:
 
 ```ts
-import { xai } from '@ai-sdk/xai';
+import { xai } from '@ai-toolkit/xai';
 ```
 
 ## Example
 
 ```ts
-import { xai } from '@ai-sdk/xai';
+import { xai } from '@ai-toolkit/xai';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -43,4 +43,4 @@ const { text } = await generateText({
 
 ## Documentation
 
-Please check out the **[xAI Grok provider documentation](https://ai-sdk.dev/providers/ai-sdk-providers/xai)** for more information.
+Please check out the **[xAI Grok provider documentation](https://ai-toolkit.dev/providers/ai-toolkit-providers/xai)** for more information.

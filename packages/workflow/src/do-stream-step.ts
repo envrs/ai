@@ -2,8 +2,8 @@ import type {
   LanguageModelV4Prompt,
   LanguageModelV4StreamPart,
   SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
-import { asArray, isAbortError } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { asArray, isAbortError } from '@ai-toolkit/provider-utils';
 import {
   experimental_streamLanguageModelCall as streamModelCall,
   gateway,

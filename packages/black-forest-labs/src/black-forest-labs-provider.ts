@@ -3,13 +3,13 @@ import {
   type Experimental_VideoModelV4,
   type ImageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { BlackForestLabsImageModel } from './black-forest-labs-image-model';
 import type { BlackForestLabsImageModelId } from './black-forest-labs-image-settings';
 import { BlackForestLabsVideoModel } from './black-forest-labs-video-model';
@@ -94,7 +94,7 @@ export function createBlackForestLabs(
         }),
         ...options.headers,
       },
-      `ai-sdk-black-forest-labs/${VERSION}`,
+      `ai-toolkit-black-forest-labs/${VERSION}`,
     );
 
   const createImageModel = (modelId: BlackForestLabsImageModelId) =>

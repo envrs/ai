@@ -1,4 +1,4 @@
-import { loadOptionalSetting, resolve } from '@ai-sdk/provider-utils';
+import { loadOptionalSetting, resolve } from '@ai-toolkit/provider-utils';
 import {
   createGoogleVertex as createGoogleVertexOriginal,
   type GoogleVertexProvider,

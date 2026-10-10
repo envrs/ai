@@ -67,7 +67,7 @@ const WeatherCardSkeleton = ({ temperature, condition }: Weather) => (
 
 /**
  * Weather card rendered inside simulated chat replies in docs and cookbook
- * demos (ported from the legacy ai-sdk.dev app). Shows a skeleton for 300ms
+ * demos (ported from the legacy ai-toolkit.dev app). Shows a skeleton for 300ms
  * after mounting to mimic a streamed component resolving.
  */
 export const WeatherCard = ({ content }: { content: { weather: Weather } }) => {

@@ -1,4 +1,4 @@
-import type { SharedV4Warning, SpeechModelV4 } from '@ai-sdk/provider';
+import type { SharedV4Warning, SpeechModelV4 } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createJsonResponseHandler,
@@ -8,7 +8,7 @@ import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { mistralFailedResponseHandler } from './mistral-error';
 import {

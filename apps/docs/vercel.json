@@ -1,41 +1,41 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "$schema": "https://openapi.khulnasoft.sh/khulnasoft.json",
   "buildCommand": "pnpm build:site",
   "redirects": [
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "v5.ai-sdk.dev" }],
-      "destination": "https://ai-sdk.dev/v5",
+      "has": [{ "type": "host", "value": "v5.ai-toolkit.dev" }],
+      "destination": "https://ai-toolkit.dev/v5",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "v5.ai-sdk.dev" }],
-      "destination": "https://ai-sdk.dev/v5/:path*",
+      "has": [{ "type": "host", "value": "v5.ai-toolkit.dev" }],
+      "destination": "https://ai-toolkit.dev/v5/:path*",
       "permanent": true
     },
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "v6.ai-sdk.dev" }],
-      "destination": "https://ai-sdk.dev/v6",
+      "has": [{ "type": "host", "value": "v6.ai-toolkit.dev" }],
+      "destination": "https://ai-toolkit.dev/v6",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "v6.ai-sdk.dev" }],
-      "destination": "https://ai-sdk.dev/v6/:path*",
+      "has": [{ "type": "host", "value": "v6.ai-toolkit.dev" }],
+      "destination": "https://ai-toolkit.dev/v6/:path*",
       "permanent": true
     },
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "v7.ai-sdk.dev" }],
-      "destination": "https://ai-sdk.dev/docs/introduction",
+      "has": [{ "type": "host", "value": "v7.ai-toolkit.dev" }],
+      "destination": "https://ai-toolkit.dev/docs/introduction",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "v7.ai-sdk.dev" }],
-      "destination": "https://ai-sdk.dev/:path*",
+      "has": [{ "type": "host", "value": "v7.ai-toolkit.dev" }],
+      "destination": "https://ai-toolkit.dev/:path*",
       "permanent": true
     }
   ],

@@ -1,38 +1,38 @@
-# AI SDK - Black Forest Labs Provider
+# ai-toolkit - Black Forest Labs Provider
 
-The **[Black Forest Labs provider](https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs)** for the [AI SDK](https://ai-sdk.dev/docs) adds image and video model support for the [Black Forest Labs API](https://docs.bfl.ai/).
+The **[Black Forest Labs provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/black-forest-labs)** for the [ai-toolkit](https://ai-toolkit.dev/docs) adds image and video model support for the [Black Forest Labs API](https://docs.bfl.ai/).
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access Black Forest Labs (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access Black Forest Labs (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The Black Forest Labs provider is available in the `@ai-sdk/black-forest-labs` module. You can install it with
+The Black Forest Labs provider is available in the `@ai-toolkit/black-forest-labs` module. You can install it with
 
 ```bash
-pnpm add @ai-sdk/black-forest-labs
+pnpm add @ai-toolkit/black-forest-labs
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `blackForestLabs` from `@ai-sdk/black-forest-labs`:
+You can import the default provider instance `blackForestLabs` from `@ai-toolkit/black-forest-labs`:
 
 ```ts
-import { blackForestLabs } from '@ai-sdk/black-forest-labs';
+import { blackForestLabs } from '@ai-toolkit/black-forest-labs';
 ```
 
 ## Image Generation Example
 
 ```ts
 import fs from 'node:fs';
-import { blackForestLabs } from '@ai-sdk/black-forest-labs';
+import { blackForestLabs } from '@ai-toolkit/black-forest-labs';
 import { generateImage } from 'ai';
 
 const { image } = await generateImage({
@@ -48,7 +48,7 @@ console.log(`Image saved to ${filename}`);
 ## Video Generation Example
 
 ```ts
-import { blackForestLabs } from '@ai-sdk/black-forest-labs';
+import { blackForestLabs } from '@ai-toolkit/black-forest-labs';
 import { experimental_generateVideo as generateVideo } from 'ai';
 
 const { video } = await generateVideo({
@@ -67,7 +67,7 @@ If you want to pass additional inputs to the model besides the prompt, use the `
 import {
   blackForestLabs,
   type BlackForestLabsImageProviderOptions,
-} from '@ai-sdk/black-forest-labs';
+} from '@ai-toolkit/black-forest-labs';
 import { generateImage } from 'ai';
 
 const { image } = await generateImage({
@@ -87,7 +87,7 @@ const { image } = await generateImage({
 By default, the provider uses `https://api.bfl.ai/v1`. You can override this to use regional or legacy endpoints:
 
 ```ts
-import { createBlackForestLabs } from '@ai-sdk/black-forest-labs';
+import { createBlackForestLabs } from '@ai-toolkit/black-forest-labs';
 
 const blackForestLabs = createBlackForestLabs({
   baseURL: 'https://api.eu.bfl.ai/v1',
@@ -100,7 +100,7 @@ const blackForestLabs = createBlackForestLabs({
 You can customize how often the client polls for completion and how long it waits before timing out. The defaults differ by model type: 500ms / 60s for images, and 2s / 10 minutes for video.
 
 ```ts
-import { createBlackForestLabs } from '@ai-sdk/black-forest-labs';
+import { createBlackForestLabs } from '@ai-toolkit/black-forest-labs';
 
 const blackForestLabs = createBlackForestLabs({
   apiKey: process.env.BFL_API_KEY,
@@ -113,7 +113,7 @@ const blackForestLabs = createBlackForestLabs({
 You can also override these polling settings per request via `providerOptions.blackForestLabs`:
 
 ```ts
-import { blackForestLabs } from '@ai-sdk/black-forest-labs';
+import { blackForestLabs } from '@ai-toolkit/black-forest-labs';
 import { generateImage } from 'ai';
 
 const { image } = await generateImage({
@@ -130,4 +130,4 @@ const { image } = await generateImage({
 
 ## Documentation
 
-See the [Black Forest Labs provider](https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs) for more information.
+See the [Black Forest Labs provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/black-forest-labs) for more information.

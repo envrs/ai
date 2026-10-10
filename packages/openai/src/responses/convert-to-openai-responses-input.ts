@@ -6,7 +6,7 @@ import {
   type SharedV4ProviderOptions,
   type LanguageModelV4ToolApprovalResponsePart,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertToBase64,
   getTopLevelMediaType,
@@ -18,7 +18,7 @@ import {
   safeValidateTypes,
   validateTypes,
   type ToolNameMapping,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { openaiResponsesSystemMessageOptionsSchema } from './openai-responses-language-model-options';
 import {

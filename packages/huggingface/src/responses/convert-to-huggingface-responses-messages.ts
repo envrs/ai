@@ -2,11 +2,11 @@ import {
   UnsupportedFunctionalityError,
   type SharedV4Warning,
   type LanguageModelV4Prompt,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   getTopLevelMediaType,
   resolveFullMediaType,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 export async function convertToHuggingFaceResponsesMessages({
   prompt,

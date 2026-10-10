@@ -2,12 +2,12 @@ import {
   delay,
   tool,
   type Experimental_SandboxSession as SandboxSession,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
   mockId,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { mockSandboxSessionFileStubs } from '../test/mock-sandbox';
 import { z } from 'zod/v4';

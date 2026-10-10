@@ -2,7 +2,7 @@ import {
   UnsupportedFunctionalityError,
   type LanguageModelV4FilePart,
   type LanguageModelV4Prompt,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type {
   MistralAssistantMessageContent,
   MistralPrompt,
@@ -11,7 +11,7 @@ import {
   convertToBase64,
   getTopLevelMediaType,
   resolveFullMediaType,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 function formatFileUrl({ part }: { part: LanguageModelV4FilePart }): string {
   if (part.data.type === 'url') {

@@ -6,7 +6,7 @@ import {
   type InferToolSetContext,
   type ModelMessage,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { InvalidToolApprovalSignatureError } from '../error/invalid-tool-approval-signature-error';
 import { InvalidToolInputError } from '../error/invalid-tool-input-error';
 import { getOwn } from '../util/get-own';

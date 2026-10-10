@@ -17,7 +17,7 @@ This is especially noticeable when using `experimental_download` to process imag
 
 ## Background
 
-When enabled with the `include` option, the AI SDK includes the full request messages plus request and response bodies in the step results. When processing images, the request messages and request body can contain base64-encoded image data, which can be very large (a single image can be 1MB+ when base64 encoded). If you process many images and keep references to the results, this data accumulates in memory.
+When enabled with the `include` option, the ai-toolkit includes the full request messages plus request and response bodies in the step results. When processing images, the request messages and request body can contain base64-encoded image data, which can be very large (a single image can be 1MB+ when base64 encoded). If you process many images and keep references to the results, this data accumulates in memory.
 
 For example, processing 100 images of 500KB each would include ~50MB+ of request body data in memory.
 
@@ -27,7 +27,7 @@ Use the `include` option to disable inclusion of request messages and/or request
 
 ```ts
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 
 const result = await generateText({
   model: openai('gpt-6-astra'),
@@ -76,7 +76,7 @@ When you disable body inclusion:
 
 ```ts
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 
 const imageUrls = [
   /* array of image URLs */
@@ -107,5 +107,5 @@ for (const imageUrl of imageUrls) {
 
 ## Learn more
 
-- [`generateText` API Reference](/docs/reference/ai-sdk-core/generate-text)
-- [`streamText` API Reference](/docs/reference/ai-sdk-core/stream-text)
+- [`generateText` API Reference](/docs/reference/ai-toolkit-core/generate-text)
+- [`streamText` API Reference](/docs/reference/ai-toolkit-core/stream-text)

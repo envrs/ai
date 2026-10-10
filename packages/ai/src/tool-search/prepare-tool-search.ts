@@ -3,7 +3,7 @@ import {
   type ToolSet,
   type InferToolSetContext,
   type Experimental_SandboxSession as SandboxSession,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { InvalidArgumentError } from '../error/invalid-argument-error';
 import {
   DIRECT_TOOL_CALL,

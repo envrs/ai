@@ -7,7 +7,7 @@ import {
   type LanguageModelV4,
   type ProviderV4,
   type SkillsV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   generateId,
   loadApiKey,
@@ -16,8 +16,8 @@ import {
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
-import { Experimental_DecisionLanguageModel as DecisionLanguageModel } from '@ai-sdk/provider-utils/experimental-decision';
+} from '@ai-toolkit/provider-utils';
+import { Experimental_DecisionLanguageModel as DecisionLanguageModel } from '@ai-toolkit/provider-utils/experimental-decision';
 import { AnthropicFiles } from './anthropic-files';
 import { AnthropicLanguageModel } from './anthropic-language-model';
 import { AnthropicBatch } from './anthropic-batch';
@@ -174,7 +174,7 @@ export function createAnthropic(
         ...authHeaders,
         ...options.headers,
       },
-      `ai-sdk-anthropic/${VERSION}`,
+      `ai-toolkit-anthropic/${VERSION}`,
     );
   };
 

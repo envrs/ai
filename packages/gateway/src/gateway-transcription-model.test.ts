@@ -1,8 +1,8 @@
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   GatewayAuthenticationError,
@@ -420,7 +420,7 @@ describe('GatewayTranscriptionModel', () => {
         headers: () => ({
           Authorization: 'Bearer test-token',
           'ai-gateway-auth-method': 'api-key',
-          'x-vercel-ai-gateway-team': 'my-team',
+          'x-khulnasoft-ai-gateway-team': 'my-team',
         }),
       });
 
@@ -442,7 +442,7 @@ describe('GatewayTranscriptionModel', () => {
         headers: () => ({
           AUTHORIZATION: 'Bearer test-token',
           'ai-gateway-auth-method': 'api-key',
-          'X-Vercel-AI-Gateway-Team': 'team1',
+          'X-khulnasoft-ai-Gateway-Team': 'team1',
         }),
       });
 
@@ -1045,10 +1045,10 @@ describe('gateway.experimental_transcription', () => {
       expect(result.token).toBe('vcst_minted');
       expect(result.expiresAt).toBe(1_700_000_060);
       expect(result.url).toBe(
-        'wss://ai-gateway.vercel.sh/v4/ai/transcription-model?ai-model-id=openai%2Fgpt-realtime-whisper',
+        'wss://ai-gateway.khulnasoft.sh/v4/ai/transcription-model?ai-model-id=openai%2Fgpt-realtime-whisper',
       );
       expect(capturedMintUrl).toBe(
-        'https://ai-gateway.vercel.sh/v1/realtime/client-secrets',
+        'https://ai-gateway.khulnasoft.sh/v1/realtime/client-secrets',
       );
 
       // The body binds the token to the transcription surface.

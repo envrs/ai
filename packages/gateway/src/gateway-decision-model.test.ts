@@ -1,6 +1,6 @@
-import type { Experimental_DecisionModelV4State as DecisionModelV4State } from '@ai-sdk/provider';
+import type { Experimental_DecisionModelV4State as DecisionModelV4State } from '@ai-toolkit/provider';
 import { describe, it, expect } from 'vitest';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { createGateway } from './gateway-provider';
 import { GatewayDecisionModel } from './gateway-decision-model';
 import type { GatewayConfig } from './gateway-config';

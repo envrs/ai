@@ -1,5 +1,5 @@
-import { NoSuchModelError } from '@ai-sdk/provider';
-import type { FetchFunction } from '@ai-sdk/provider-utils';
+import { NoSuchModelError } from '@ai-toolkit/provider';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { createTopaz } from './topaz-provider';
 import { VERSION } from './version';
@@ -75,7 +75,7 @@ describe('createTopaz', () => {
     expect(requests[0].headers.get('x-api-key')).toBe('test-key');
     expect(requests[0].headers.get('x-custom')).toBe('custom-value');
     expect(requests[0].headers.get('user-agent')).toContain(
-      `ai-sdk-topaz/${VERSION}`,
+      `ai-toolkit-topaz/${VERSION}`,
     );
   });
 

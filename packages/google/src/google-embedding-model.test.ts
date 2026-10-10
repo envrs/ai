@@ -1,6 +1,6 @@
-import type { EmbeddingModelV4Embedding } from '@ai-sdk/provider';
-import { EXPERIMENTAL_EMBEDDING_MODEL_PROVIDER_OPTIONS_TRANSFORMER } from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import type { EmbeddingModelV4Embedding } from '@ai-toolkit/provider';
+import { EXPERIMENTAL_EMBEDDING_MODEL_PROVIDER_OPTIONS_TRANSFORMER } from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { GoogleEmbeddingModel } from './google-embedding-model';
 import { createGoogle } from './google-provider';
 import { describe, it, expect, vi } from 'vitest';
@@ -295,7 +295,7 @@ describe('GoogleEmbeddingModel', () => {
       }
     `);
     expect(server.calls[0].requestUserAgent).toContain(
-      `ai-sdk-google/0.0.0-test`,
+      `ai-toolkit-google/0.0.0-test`,
     );
   });
 

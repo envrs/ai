@@ -2,9 +2,9 @@ import { ToolLoopAgent } from '../agent/tool-loop-agent';
 import type {
   LanguageModelV4CallOptions,
   LanguageModelV4Usage,
-} from '@ai-sdk/provider';
-import { experimental_toolCaller, tool } from '@ai-sdk/provider-utils';
-import { convertArrayToReadableStream } from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider';
+import { experimental_toolCaller, tool } from '@ai-toolkit/provider-utils';
+import { convertArrayToReadableStream } from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it, vi } from 'vitest';
 import { z } from 'zod/v4';
 import { InvalidArgumentError } from '../error/invalid-argument-error';

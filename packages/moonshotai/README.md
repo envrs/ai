@@ -1,37 +1,37 @@
-# AI SDK - Moonshot AI Provider
+# ai-toolkit - Moonshot AI Provider
 
-The **[Moonshot AI provider](https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai)** for the [AI SDK](https://ai-sdk.dev/docs) contains language model support for the [Kimi API Platform](https://platform.kimi.ai/docs), including the Kimi model series.
+The **[Moonshot AI provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/moonshotai)** for the [ai-toolkit](https://ai-toolkit.dev/docs) contains language model support for the [Kimi API Platform](https://platform.kimi.ai/docs), including the Kimi model series.
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access Moonshot AI (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access Moonshot AI (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The Moonshot AI provider is available in the `@ai-sdk/moonshotai` module. You can install it with
+The Moonshot AI provider is available in the `@ai-toolkit/moonshotai` module. You can install it with
 
 ```bash
-npm i @ai-sdk/moonshotai
+npm i @ai-toolkit/moonshotai
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `moonshotai` from `@ai-sdk/moonshotai`:
+You can import the default provider instance `moonshotai` from `@ai-toolkit/moonshotai`:
 
 ```ts
-import { moonshotai } from '@ai-sdk/moonshotai';
+import { moonshotai } from '@ai-toolkit/moonshotai';
 ```
 
 ## Language Model Example
 
 ```ts
-import { moonshotai } from '@ai-sdk/moonshotai';
+import { moonshotai } from '@ai-toolkit/moonshotai';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -46,7 +46,7 @@ const { text } = await generateText({
 import {
   moonshotai,
   type MoonshotAILanguageModelOptions,
-} from '@ai-sdk/moonshotai';
+} from '@ai-toolkit/moonshotai';
 import { generateText } from 'ai';
 
 const { text, reasoningText } = await generateText({
@@ -74,7 +74,7 @@ reasoning history in multi-turn conversations:
 import {
   moonshotai,
   type MoonshotAILanguageModelOptions,
-} from '@ai-sdk/moonshotai';
+} from '@ai-toolkit/moonshotai';
 import { generateText } from 'ai';
 
 const { text, reasoningText } = await generateText({
@@ -94,4 +94,4 @@ console.log(text);
 
 ## Documentation
 
-Please check out the **[Moonshot AI provider](https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai)** for more information.
+Please check out the **[Moonshot AI provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/moonshotai)** for more information.

@@ -3,10 +3,10 @@ import type {
   EmbeddingModelV3,
   EmbeddingModelV4,
   EmbeddingModelV4Embedding,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 /**
- * Embedding model that is used by the AI SDK.
+ * Embedding model that is used by the ai-toolkit.
  */
 export type EmbeddingModel =
   | string

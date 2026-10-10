@@ -308,7 +308,7 @@ describeIfGateway('code mode e2e with Claude Haiku 4.5', () => {
           execute: async ({ region }) => {
             const normalizedRegion = region.toLowerCase();
             return {
-              carrier: 'Vercel Freight',
+              carrier: 'khulnasoft Freight',
               etaDays: normalizedRegion === 'us-west' ? 3 : 5,
               costCents: normalizedRegion === 'us-west' ? 4200 : 6900,
               warehouseId: 'west-1',
@@ -412,7 +412,7 @@ describeIfGateway('code mode e2e with Claude Haiku 4.5', () => {
           quantity: 4,
           totalCents: 99800,
           delivery: {
-            carrier: 'Vercel Freight',
+            carrier: 'khulnasoft Freight',
             etaDays: 3,
           },
         },

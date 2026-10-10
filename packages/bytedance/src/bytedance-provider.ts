@@ -3,12 +3,12 @@ import {
   type Experimental_VideoModelV4,
   type ImageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { ByteDanceImageModel } from './bytedance-image-model';
 import type { ByteDanceImageModelId } from './bytedance-image-settings';
 import { ByteDanceVideoModel } from './bytedance-video-model';

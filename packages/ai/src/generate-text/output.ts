@@ -3,14 +3,14 @@ import {
   type JSONSchema7,
   type JSONValue,
   type LanguageModelV4CallOptions,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   asSchema,
   resolve,
   safeParseJSON,
   safeValidateTypes,
   type FlexibleSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { InvalidArgumentError } from '../error/invalid-argument-error';
 import { NoObjectGeneratedError } from '../error/no-object-generated-error';
 import type { FinishReason } from '../types/language-model';

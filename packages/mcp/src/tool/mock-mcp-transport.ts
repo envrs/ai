@@ -1,4 +1,4 @@
-import { delay } from '@ai-sdk/provider-utils';
+import { delay } from '@ai-toolkit/provider-utils';
 import type { JSONRPCMessage } from './json-rpc-message';
 import type { MCPTransport } from './mcp-transport';
 import {

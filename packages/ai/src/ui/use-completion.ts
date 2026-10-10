@@ -1,4 +1,4 @@
-import type { FetchFunction } from '@ai-sdk/provider-utils';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 
 export type CompletionRequestOptions<BODY extends object = object> = {
   /**

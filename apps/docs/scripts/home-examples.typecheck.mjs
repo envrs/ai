@@ -1,6 +1,6 @@
 // Displayed code is stored as strings, so the normal app type check cannot
 // validate it. Check every selectable example against the workspace SDK.
-// Run from the repository root: pnpm --filter ai-sdk-docs exec node scripts/home-examples.typecheck.mjs
+// Run from the repository root: pnpm --filter ai-toolkit-docs exec node scripts/home-examples.typecheck.mjs
 import { fileURLToPath } from 'node:url';
 import ts from 'typescript';
 import { CORE_EXAMPLES, providersFor } from '../lib/home/code-examples.ts';
@@ -31,7 +31,7 @@ const options = {
   baseUrl: root,
   paths: {
     ai: ['packages/ai/src/index.ts'],
-    '@ai-sdk/*': ['packages/*/src/index.ts'],
+    '@ai-toolkit/*': ['packages/*/src/index.ts'],
     react: ['apps/docs/node_modules/@types/react/index.d.ts'],
     'react/jsx-runtime': ['apps/docs/node_modules/@types/react/jsx-runtime.d.ts'],
   },

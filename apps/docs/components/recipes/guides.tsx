@@ -66,7 +66,7 @@ const collapsedClass = (index: number) => {
 
 /**
  * Featured guide book covers on the /resources/recipes landing page
- * (ported from the legacy ai-sdk.dev app).
+ * (ported from the legacy ai-toolkit.dev app).
  */
 export const Guides = ({ versionPrefix = '' }: { versionPrefix?: string }) => {
   const [isExpanded, setIsExpanded] = useState(false);

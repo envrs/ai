@@ -2,7 +2,7 @@ import {
   createProviderExecutedToolFactory,
   lazySchema,
   zodSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 /**
@@ -94,7 +94,7 @@ const factory = createProviderExecutedToolFactory<
  *
  * @example
  * ```ts
- * import { anthropicTools } from '@ai-sdk/anthropic';
+ * import { anthropicTools } from '@ai-toolkit/anthropic';
  *
  * const tools = {
  *   toolSearch: anthropicTools.toolSearchRegex_20251119(),

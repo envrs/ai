@@ -1,13 +1,13 @@
 ---
 title: FriendliAI
-description: Learn how to use the FriendliAI Provider for the AI SDK.
+description: Learn how to use the FriendliAI Provider for the ai-toolkit.
 ---
 
 # FriendliAI Provider
 
 The [FriendliAI](https://friendli.ai/) provider supports both open-source LLMs via [Friendli Serverless Endpoints](https://friendli.ai/products/serverless-endpoints) and custom models via [Dedicated Endpoints](https://friendli.ai/products/dedicated-endpoints).
 
-It creates language model objects that can be used with the `generateText` and `streamText` functions, and supports structured data generation with [`Output`](/docs/reference/ai-sdk-core/output).
+It creates language model objects that can be used with the `generateText` and `streamText` functions, and supports structured data generation with [`Output`](/docs/reference/ai-toolkit-core/output).
 
 ## Setup
 
@@ -189,8 +189,8 @@ const { text } = await generateText({
 console.log(text);
 ```
 
-FriendliAI language models can also be used in the `streamText` function and support structured data generation with [`Output`](/docs/reference/ai-sdk-core/output)
-(see [AI SDK Core](/docs/ai-sdk-core)).
+FriendliAI language models can also be used in the `streamText` function and support structured data generation with [`Output`](/docs/reference/ai-toolkit-core/output)
+(see [ai-toolkit Core](/docs/ai-toolkit-core)).
 
 ### Model Capabilities
 
@@ -209,10 +209,10 @@ FriendliAI language models can also be used in the `streamText` function and sup
 
 ### OpenAI Compatibility
 
-You can also use `@ai-sdk/openai` as the APIs are OpenAI-compatible.
+You can also use `@ai-toolkit/openai` as the APIs are OpenAI-compatible.
 
 ```ts
-import { createOpenAI } from '@ai-sdk/openai';
+import { createOpenAI } from '@ai-toolkit/openai';
 
 const friendli = createOpenAI({
   baseURL: 'https://api.friendli.ai/serverless/v1',
@@ -223,7 +223,7 @@ const friendli = createOpenAI({
 If you are using dedicated endpoints
 
 ```ts
-import { createOpenAI } from '@ai-sdk/openai';
+import { createOpenAI } from '@ai-toolkit/openai';
 
 const friendli = createOpenAI({
   baseURL: 'https://api.friendli.ai/dedicated/v1',

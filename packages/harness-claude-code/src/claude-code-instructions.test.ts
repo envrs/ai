@@ -3,8 +3,8 @@ import type {
   HarnessV1NetworkSandboxSession,
   HarnessV1ResumeSessionState,
   HarnessV1Session,
-} from '@ai-sdk/harness';
-import type * as HarnessUtils from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness';
+import type * as HarnessUtils from '@ai-toolkit/harness/utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 /*
@@ -18,7 +18,7 @@ const openCalls: Array<{ resume?: boolean } | undefined> = [];
 let listenerAttachmentsStarted = 0;
 let listenerAttachmentsFinished = 0;
 
-vi.mock('@ai-sdk/harness/utils', async importOriginal => {
+vi.mock('@ai-toolkit/harness/utils', async importOriginal => {
   const actual = await importOriginal<typeof HarnessUtils>();
   class FakeSandboxChannel {
     async open(opts?: { resume?: boolean }): Promise<void> {
@@ -76,7 +76,7 @@ function fakeNetworkSandboxSession(): HarnessV1NetworkSandboxSession {
   const session = {
     run: async ({ command }: { command: string }) => ({
       exitCode: 0,
-      stdout: command === 'printf "%s" "$HOME"' ? '/home/vercel-sandbox' : '',
+      stdout: command === 'printf "%s" "$HOME"' ? '/home/khulnasoft-sandbox' : '',
       stderr: '',
     }),
     readTextFile: async () => null,

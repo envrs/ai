@@ -1,8 +1,8 @@
 import type {
   HarnessV1NetworkSandboxSession,
   HarnessV1SandboxProvider,
-} from '@ai-sdk/harness';
-import type { Experimental_SandboxSession as SandboxSession } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness';
+import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import { Sandbox } from 'just-bash';
 import { JustBashNetworkSandboxSession } from './just-bash-network-sandbox-session';
 import { ensureRealpath } from './utils';
@@ -48,7 +48,7 @@ export function createJustBashSandbox(
 /**
  * `HarnessV1SandboxProvider` implementation backed by `just-bash`. Useful for
  * non-bridge harness flows and for handing a local `Experimental_SandboxSession`
- * to AI SDK tools — use `provider.createSession()` then
+ * to ai-toolkit tools — use `provider.createSession()` then
  * `sandboxSession.restricted()` to get the latter.
  *
  * Note: just-bash cannot expose ports, so bridge-backed harness adapters

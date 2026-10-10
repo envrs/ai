@@ -2,7 +2,7 @@ import type {
   InferToolContext,
   ModelMessage,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { Callback } from '../util/callback';
 import type { DynamicToolCall, StaticToolCall } from './tool-call';
 import type { ToolOutput } from './tool-output';

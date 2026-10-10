@@ -1,4 +1,4 @@
-import type { ToolResultPart } from '@ai-sdk/provider-utils';
+import type { ToolResultPart } from '@ai-toolkit/provider-utils';
 
 /**
  * Bidirectional control surface returned by `doPromptTurn`.

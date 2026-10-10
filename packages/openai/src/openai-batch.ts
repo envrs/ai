@@ -17,7 +17,7 @@ import {
   type LanguageModelV4GenerateResult,
   type SharedV4ProviderMetadata,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertAsyncIteratorToReadableStream,
@@ -32,7 +32,7 @@ import {
   safeValidateTypes,
   zodSchema,
   type InferSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import {
   openaiErrorDataSchema,
@@ -243,7 +243,7 @@ export class OpenAIBatch implements BatchV4<OpenAIBatchModelIds> {
               type: 'unsupported',
               feature: `batch result conversion for tool "${tool.name}"`,
               details:
-                'OpenAI may return output for this tool that AI SDK text batches cannot currently convert.',
+                'OpenAI may return output for this tool that ai-toolkit text batches cannot currently convert.',
             },
           });
         }
@@ -874,7 +874,7 @@ async function convertOpenAIBatchResult(
           error: {
             message:
               `OpenAI returned an unsupported "${part.type}" output item ` +
-              'in an AI SDK text batch.',
+              'in an ai-toolkit text batch.',
             code: 'unsupported_content',
           },
         };

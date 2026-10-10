@@ -1,8 +1,8 @@
 import type {
   Experimental_VideoModelV4OperationStatusResult,
   JSONValue,
-} from '@ai-sdk/provider';
-import { withUserAgentSuffix } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { withUserAgentSuffix } from '@ai-toolkit/provider-utils';
 import { resolveVideoModel } from '../model/resolve-model';
 import type { VideoModel } from '../types/video-model';
 import { prepareRetries } from '../util/prepare-retries';

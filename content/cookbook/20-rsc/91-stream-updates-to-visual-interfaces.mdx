@@ -1,6 +1,6 @@
 ---
 title: Stream Updates to Visual Interfaces
-description: Learn how to generate text using the AI SDK and React Server Components.
+description: Learn how to generate text using the ai-toolkit and React Server Components.
 tags: ['rsc', 'streaming', 'generative user interface']
 ---
 
@@ -15,7 +15,7 @@ In our previous example we've been streaming react components from the server to
 
 import { useState } from 'react';
 import { ClientMessage } from './actions';
-import { useActions, useUIState } from '@ai-sdk/rsc';
+import { useActions, useUIState } from '@ai-toolkit/rsc';
 import { generateId } from 'ai';
 
 // Allow streaming responses up to 30 seconds
@@ -72,7 +72,7 @@ export default function Home() {
 ```tsx filename='app/actions.tsx'
 'use server';
 
-import { getMutableAIState, streamUI } from '@ai-sdk/rsc';
+import { getMutableAIState, streamUI } from '@ai-toolkit/rsc';
 import { ReactNode } from 'react';
 import { z } from 'zod';
 import { generateId } from 'ai';
@@ -110,11 +110,11 @@ export async function continueConversation(
     },
     tools: {
       deploy: {
-        description: 'Deploy repository to vercel',
+        description: 'Deploy repository to khulnasoft',
         inputSchema: z.object({
           repositoryName: z
             .string()
-            .describe('The name of the repository, example: vercel/ai-chatbot'),
+            .describe('The name of the repository, example: khulnasoft/ai-chatbot'),
         }),
         generate: async function* ({ repositoryName }) {
           yield <div>Cloning repository {repositoryName}...</div>; // [!code highlight:5]
@@ -136,7 +136,7 @@ export async function continueConversation(
 ```
 
 ```typescript filename='app/ai.ts'
-import { createAI } from '@ai-sdk/rsc';
+import { createAI } from '@ai-toolkit/rsc';
 import { ServerMessage, ClientMessage, continueConversation } from './actions';
 
 export const AI = createAI<ServerMessage[], ClientMessage[]>({

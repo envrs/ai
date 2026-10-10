@@ -1,4 +1,4 @@
-import { convertArrayToReadableStream } from '@ai-sdk/provider-utils/test';
+import { convertArrayToReadableStream } from '@ai-toolkit/provider-utils/test';
 import { createMockServerResponse } from '../test/mock-server-response';
 import type { TextStreamPart } from '../generate-text/stream-text-result';
 import { pipeUIMessageStreamToResponse } from './pipe-ui-message-stream-to-response';
@@ -60,7 +60,7 @@ describe('pipeUIMessageStreamToResponse', () => {
         "content-type": "text/event-stream",
         "custom-header": "test",
         "x-accel-buffering": "no",
-        "x-vercel-ai-ui-message-stream": "v1",
+        "x-khulnasoft-ai-ui-message-stream": "v1",
       }
     `);
 

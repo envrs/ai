@@ -1,12 +1,12 @@
-import { convertUint8ArrayToBase64 } from '@ai-sdk/provider-utils';
+import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
 import type { MCPAppResource } from './mcp-apps';
 
 const encoder = new TextEncoder();
 
 // canonicalJSON/toBase64url/the digest below mirror
-// packages/ai/src/util/canonical-hash.ts, which `@ai-sdk/mcp` can't import
+// packages/ai/src/util/canonical-hash.ts, which `@ai-toolkit/mcp` can't import
 // (wrong dependency direction, not exported). Keep them identical; if a third
-// consumer appears, hoist into @ai-sdk/provider-utils instead.
+// consumer appears, hoist into @ai-toolkit/provider-utils instead.
 
 /**
  * Deterministic JSON serialization: object keys are sorted so two

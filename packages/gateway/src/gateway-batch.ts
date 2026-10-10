@@ -12,7 +12,7 @@ import {
   type LanguageModelV4CallOptions,
   type SharedV4ProviderMetadata,
   type SharedV4ProviderOptions,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertAsyncIteratorToReadableStream,
@@ -23,7 +23,7 @@ import {
   normalizeBatchRequestCounts,
   postJsonToApi,
   resolve,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from './zod';
 import type { GatewayChatConfig } from './gateway-language-model';
 import type { GatewayModelId } from './gateway-language-model-settings';
@@ -403,7 +403,7 @@ function omitGatewayIdempotencyKey(
 /**
  * Matches cancellation errors (`AbortError`/`TimeoutError`), which
  * `asGatewayError` would otherwise wrap into a retryable Gateway 500. Kept
- * local because `isAbortError` is not exported from `@ai-sdk/provider-utils`;
+ * local because `isAbortError` is not exported from `@ai-toolkit/provider-utils`;
  * `DOMException` does not extend `Error`, so both must be checked.
  */
 function isAbortOrTimeoutError(error: unknown): boolean {

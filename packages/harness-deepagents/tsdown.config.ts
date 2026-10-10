@@ -17,12 +17,12 @@ export default defineConfig(
       entry: { 'bridge/index': 'src/bridge/index.ts' },
       outExtensions: () => ({ js: '.mjs' }),
       dts: false,
-      // The shared bridge runtime (`@ai-sdk/harness/bridge`) must be INLINED —
+      // The shared bridge runtime (`@ai-toolkit/harness/bridge`) must be INLINED —
       // the sandbox only installs the bridge's own deps (src/bridge/package.json),
       // so a bare import would not resolve there. The runtime SDKs the bridge
       // imports are installed in-sandbox and stay external.
       deps: {
-        alwaysBundle: [/^@ai-sdk\/harness(?:\/|$)/],
+        alwaysBundle: [/^@ai-toolkit\/harness(?:\/|$)/],
         neverBundle: true,
       },
       define: {

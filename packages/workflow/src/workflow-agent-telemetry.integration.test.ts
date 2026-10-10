@@ -1,17 +1,17 @@
 /**
  * Integration tests for WorkflowAgent telemetry with globally registered
- * integrations (https://github.com/vercel/ai/issues/22378).
+ * integrations (https://github.com/khulnasoft/ai/issues/22378).
  *
  * Run with: pnpm test:integration
  */
-import { OpenTelemetry } from '@ai-sdk/otel';
+import { OpenTelemetry } from '@ai-toolkit/otel';
 import { trace } from '@opentelemetry/api';
 import {
   BasicTracerProvider,
   InMemorySpanExporter,
   SimpleSpanProcessor,
 } from '@opentelemetry/sdk-trace-base';
-import { AI_SDK_TELEMETRY_TRACING_CHANNEL, registerTelemetry } from 'ai';
+import { ai-toolkit_TELEMETRY_TRACING_CHANNEL, registerTelemetry } from 'ai';
 import { tracingChannel } from 'node:diagnostics_channel';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { start } from 'workflow/api';
@@ -47,7 +47,7 @@ registerTelemetry(new OpenTelemetry(), {
   },
 });
 
-tracingChannel(AI_SDK_TELEMETRY_TRACING_CHANNEL).subscribe({
+tracingChannel(ai-toolkit_TELEMETRY_TRACING_CHANNEL).subscribe({
   start: message =>
     void tracingChannelEvents.push((message as { type: string }).type),
   end: () => {},

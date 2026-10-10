@@ -1,5 +1,5 @@
-import type { LanguageModelV4Content } from '@ai-sdk/provider';
-import type { ToolSet } from '@ai-sdk/provider-utils';
+import type { LanguageModelV4Content } from '@ai-toolkit/provider';
+import type { ToolSet } from '@ai-toolkit/provider-utils';
 import { ToolCallNotFoundForApprovalError } from '../error/tool-call-not-found-for-approval-error';
 import { getOwn } from '../util/get-own';
 import type { ContentPart } from './content-part';

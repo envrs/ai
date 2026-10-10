@@ -1,4 +1,4 @@
-import { UnsupportedFunctionalityError } from '@ai-sdk/provider';
+import { UnsupportedFunctionalityError } from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { convertToPerplexityInput } from './convert-to-perplexity-input';
 

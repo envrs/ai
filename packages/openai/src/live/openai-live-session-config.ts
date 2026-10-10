@@ -2,7 +2,7 @@ import {
   InvalidArgumentError,
   UnsupportedFunctionalityError,
   type Experimental_RealtimeModelV4SessionConfig as RealtimeModelV4SessionConfig,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { z } from 'zod/v4';
 import { openaiRealtimeModelLiveOptionsSchema } from './openai-realtime-model-live-options';
 

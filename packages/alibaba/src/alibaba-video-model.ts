@@ -1,5 +1,5 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4CallOptions as VideoModelV4CallOptions,
   type Experimental_VideoModelV4File as VideoModelV4File,
@@ -7,7 +7,7 @@ import {
   type Experimental_VideoModelV4OperationStatusResult as VideoModelV4OperationStatusResult,
   type SharedV4ProviderMetadata,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertImageModelFileToDataUri,
@@ -20,7 +20,7 @@ import {
   resolve,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import {
   alibabaVideoModelOptionsSchema,
@@ -550,7 +550,7 @@ export class AlibabaVideoModel implements VideoModelV4 {
     const videoUrl = statusResponse.output?.video_url;
 
     if (!videoUrl) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'ALIBABA_VIDEO_GENERATION_ERROR',
         message: `No video URL in response. Task ID: ${taskId}`,
       });
@@ -638,7 +638,7 @@ export class AlibabaVideoModel implements VideoModelV4 {
 
     const taskId = createResponse.output?.task_id;
     if (!taskId) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'ALIBABA_VIDEO_GENERATION_ERROR',
         message: `No task_id returned from Alibaba API. Response: ${JSON.stringify(createResponse)}`,
       });

@@ -1,4 +1,4 @@
-import type { LanguageModelV4StreamPart } from '@ai-sdk/provider';
+import type { LanguageModelV4StreamPart } from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { convertJsonResponseToolStream } from './convert-json-response-tool-stream';
 import { createNullLanguageModelUsage } from './create-null-language-model-usage';

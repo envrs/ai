@@ -1,5 +1,5 @@
 import { z } from 'zod/v4';
-import { tool, type ToolSet } from '@ai-sdk/provider-utils';
+import { tool, type ToolSet } from '@ai-toolkit/provider-utils';
 import type { ChatInit } from './chat';
 import type {
   InferUITools,

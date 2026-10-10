@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { absoluteUrl, siteUrl } from '@/lib/geistdocs/site-url';
 
-const PRODUCTION_ORIGIN = 'https://ai-sdk.dev';
+const PRODUCTION_ORIGIN = 'https://ai-toolkit.dev';
 
 export default function robots(): MetadataRoute.Robots {
   const isProduction =

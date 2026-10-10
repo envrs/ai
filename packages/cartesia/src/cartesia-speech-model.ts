@@ -1,4 +1,4 @@
-import type { SpeechModelV4, SharedV4Warning } from '@ai-sdk/provider';
+import type { SpeechModelV4, SharedV4Warning } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createBinaryResponseHandler,
@@ -7,7 +7,7 @@ import {
   serializeModelOptions,
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { CartesiaConfig } from './cartesia-config';
 import { cartesiaFailedResponseHandler } from './cartesia-error';
 import { cartesiaSpeechModelOptionsSchema } from './cartesia-speech-model-options';

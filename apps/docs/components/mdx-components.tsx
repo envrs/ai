@@ -1,5 +1,5 @@
-import { createMdxComponents } from '@vercel/geistdocs/mdx';
-import { LogoIconVercelSvg } from '@vercel/geistdocs/assets/logos';
+import { createMdxComponents } from '@khulnasoft/geistdocs/mdx';
+import { LogoIconVercelSvg } from '@khulnasoft/geistdocs/assets/logos';
 import type { MDXComponents } from 'mdx/types';
 import type { ComponentProps, ComponentType, JSX } from 'react';
 import { ExampleLinks } from '@/components/docs/example-links';

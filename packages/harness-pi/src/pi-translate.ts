@@ -1,6 +1,6 @@
 import { randomBytes } from 'node:crypto';
-import type { HarnessV1StreamPart } from '@ai-sdk/harness';
-import { secureJsonParse } from '@ai-sdk/provider-utils';
+import type { HarnessV1StreamPart } from '@ai-toolkit/harness';
+import { secureJsonParse } from '@ai-toolkit/provider-utils';
 import {
   extractAssistantText,
   getPiTerminalError,

@@ -1,8 +1,8 @@
-import { lazySchema, zodSchema } from '@ai-sdk/provider-utils';
+import { lazySchema, zodSchema } from '@ai-toolkit/provider-utils';
 import type { ZodType } from 'zod/v4';
 import { z } from './zod';
 
-// https://vercel.com/docs/ai-gateway/provider-options
+// https://khulnasoft.com/docs/ai-gateway/provider-options
 export const DECISION_FALLBACK_MAX_CONDITION_DEPTH = 5;
 export const DECISION_FALLBACK_MAX_CONDITIONS_PER_LIST = 20;
 export const DECISION_FALLBACK_MAX_QUESTION_LENGTH = 256;

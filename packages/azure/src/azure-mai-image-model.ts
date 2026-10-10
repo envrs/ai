@@ -3,7 +3,7 @@ import type {
   ImageModelV4File,
   ImageModelV4Usage,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -13,7 +13,7 @@ import {
   postFormDataToApi,
   postJsonToApi,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { AzureImageModelMaiOptions } from './azure-mai-image-model-options';
 

@@ -4,8 +4,8 @@ import type {
   HarnessV1ResumeSessionState,
   HarnessV1Session,
   HarnessV1ToolSpec,
-} from '@ai-sdk/harness';
-import type * as HarnessUtils from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness';
+import type * as HarnessUtils from '@ai-toolkit/harness/utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 /*
@@ -19,7 +19,7 @@ const runCommands: Array<string> = [];
 const spawnEnvs: Array<Record<string, string | undefined>> = [];
 const writes: Array<{ path: string; content: string }> = [];
 
-vi.mock('@ai-sdk/harness/utils', async importOriginal => {
+vi.mock('@ai-toolkit/harness/utils', async importOriginal => {
   const actual = await importOriginal<typeof HarnessUtils>();
   class FakeSandboxChannel {
     async open(opts?: { resume?: boolean }): Promise<void> {
@@ -78,7 +78,7 @@ function fakeNetworkSandboxSession(): HarnessV1NetworkSandboxSession {
     run: async (input: { command: string }) => {
       runCommands.push(input.command);
       if (input.command === 'printf "%s" "$HOME"') {
-        return { exitCode: 0, stdout: '/home/vercel-sandbox', stderr: '' };
+        return { exitCode: 0, stdout: '/home/khulnasoft-sandbox', stderr: '' };
       }
       return { exitCode: 0, stdout: '', stderr: '' };
     },
@@ -577,27 +577,27 @@ describe('codex adapter — skills', () => {
       emit: () => {},
     });
 
-    expect(runCommands).not.toContain("mkdir -p '/home/vercel-sandbox/.codex'");
+    expect(runCommands).not.toContain("mkdir -p '/home/khulnasoft-sandbox/.codex'");
     expect(runCommands).toContain(
-      "mkdir -p '/home/vercel-sandbox/.agents/skills'",
+      "mkdir -p '/home/khulnasoft-sandbox/.agents/skills'",
     );
     const skillWrites = writes.filter(write => write.path.includes('/demo/'));
     const bridgeMetaWrite = writes.find(write =>
       write.path.endsWith('/bridge-meta.json'),
     );
     expect(bridgeMetaWrite).toEqual({
-      path: '/home/vercel-sandbox/.ai-sdk-harness/.agent-runs/s1/bridge/bridge-meta.json',
+      path: '/home/khulnasoft-sandbox/.ai-toolkit-harness/.agent-runs/s1/bridge/bridge-meta.json',
       content: JSON.stringify({ type: 'codex', state: 'starting' }),
     });
     expect(skillWrites).toEqual(
       expect.arrayContaining([
         {
-          path: '/home/vercel-sandbox/.agents/skills/demo/SKILL.md',
+          path: '/home/khulnasoft-sandbox/.agents/skills/demo/SKILL.md',
           content:
             '---\nname: demo\ndescription: Demo skill.\n---\n\nUse reference.md.',
         },
         {
-          path: '/home/vercel-sandbox/.agents/skills/demo/reference.md',
+          path: '/home/khulnasoft-sandbox/.agents/skills/demo/reference.md',
           content: '# Reference',
         },
       ]),

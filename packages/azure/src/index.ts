@@ -1,4 +1,4 @@
-import type { DeepSeekLanguageModelChatOptions } from '@ai-sdk/deepseek';
+import type { DeepSeekLanguageModelChatOptions } from '@ai-toolkit/deepseek';
 
 export type AzureDeepSeekLanguageModelOptions = Omit<
   DeepSeekLanguageModelChatOptions,
@@ -14,7 +14,7 @@ export type {
   OpenAILanguageModelChatOptions,
   /** @deprecated Use `OpenAILanguageModelChatOptions` instead. */
   OpenAILanguageModelChatOptions as OpenAIChatLanguageModelOptions,
-} from '@ai-sdk/openai';
+} from '@ai-toolkit/openai';
 
 export { azure, createAzure } from './azure-openai-provider';
 export type {

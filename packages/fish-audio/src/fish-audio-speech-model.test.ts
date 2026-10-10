@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { createFishAudio } from './fish-audio-provider';
 import { FishAudioSpeechModel } from './fish-audio-speech-model';
@@ -377,7 +377,7 @@ describe('FishAudioSpeechModel', () => {
       await model.doGenerate({ text: 'Hello, world!' });
 
       expect(server.calls[0].requestUserAgent).toContain(
-        'ai-sdk-fish-audio/0.0.0-test',
+        'ai-toolkit-fish-audio/0.0.0-test',
       );
     });
 

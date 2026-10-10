@@ -19,7 +19,7 @@ jobs:
     # guard here so a successful no-op run in a fork does not try to download a
     # manifest that was never created.
     if: >-
-      github.repository_owner == 'vercel' &&
+      github.repository_owner == 'khulnasoft' &&
       github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:

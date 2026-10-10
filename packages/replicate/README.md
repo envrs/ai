@@ -1,29 +1,29 @@
-# AI SDK - Replicate Provider
+# ai-toolkit - Replicate Provider
 
-The **[Replicate provider](https://ai-sdk.dev/providers/ai-sdk-providers/replicate)** for the [AI SDK](https://ai-sdk.dev/docs) contains image model support for the Replicate API.
+The **[Replicate provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/replicate)** for the [ai-toolkit](https://ai-toolkit.dev/docs) contains image model support for the Replicate API.
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access Replicate (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access Replicate (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The Replicate provider is available in the `@ai-sdk/replicate` module. You can install it with
+The Replicate provider is available in the `@ai-toolkit/replicate` module. You can install it with
 
 ```bash
-npm i @ai-sdk/replicate
+npm i @ai-toolkit/replicate
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Usage
 
 ```ts
-import { replicate } from '@ai-sdk/replicate';
+import { replicate } from '@ai-toolkit/replicate';
 import { generateImage } from 'ai';
 
 const { image } = await generateImage({
@@ -53,4 +53,4 @@ const { image } = await generateImage({
 
 ## Documentation
 
-Please check out the **[Replicate provider](https://ai-sdk.dev/providers/ai-sdk-providers/replicate)** for more information.
+Please check out the **[Replicate provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/replicate)** for more information.

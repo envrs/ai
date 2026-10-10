@@ -2,7 +2,7 @@ import {
   UnsupportedFunctionalityError,
   type LanguageModelV4CallOptions,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { GoogleModelId } from './google-language-model-options';
 import { getGoogleModelCapabilities } from './google-model-capabilities';
 

@@ -1,4 +1,4 @@
-import { convertArrayToReadableStream } from '@ai-sdk/provider-utils/test';
+import { convertArrayToReadableStream } from '@ai-toolkit/provider-utils/test';
 import type { TextStreamPart } from '../generate-text/stream-text-result';
 import { createMockServerResponse } from '../test/mock-server-response';
 import { pipeTextStreamToResponse } from './pipe-text-stream-to-response';

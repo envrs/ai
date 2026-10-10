@@ -12,9 +12,9 @@ import {
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { promisify } from 'node:util';
-import { shellQuote } from '@ai-sdk/harness/utils';
-import type { Experimental_SandboxSession } from '@ai-sdk/provider-utils';
-import { createJustBashNetworkSandboxSession } from '@ai-sdk/sandbox-just-bash';
+import { shellQuote } from '@ai-toolkit/harness/utils';
+import type { Experimental_SandboxSession } from '@ai-toolkit/provider-utils';
+import { createJustBashNetworkSandboxSession } from '@ai-toolkit/sandbox-just-bash';
 import { describe, expect, it, vi } from 'vitest';
 import { createPiPathMapper } from './pi-paths';
 import {
@@ -132,7 +132,7 @@ function makeOps(behaviors: Parameters<typeof makeMockSandbox>[0]) {
   const paths = createPiPathMapper({
     hostWorkDir,
     sandboxWorkDir,
-    readableRoots: [{ sandboxDir: '/home/vercel-sandbox/.agents/skills' }],
+    readableRoots: [{ sandboxDir: '/home/khulnasoft-sandbox/.agents/skills' }],
   });
   const ops = createPiRemoteOps({ sandbox: env.sandbox, paths });
   return { ...env, paths, ops };
@@ -611,7 +611,7 @@ describe('createPiRemoteOps.readBuffer', () => {
 
   it('reads configured sandbox skill roots', async () => {
     const skillPath =
-      '/home/vercel-sandbox/.agents/skills/weather-codes/SKILL.md';
+      '/home/khulnasoft-sandbox/.agents/skills/weather-codes/SKILL.md';
     const env = makeOps({
       readBinary: p =>
         p === skillPath ? new TextEncoder().encode('skill') : null,
@@ -621,7 +621,7 @@ describe('createPiRemoteOps.readBuffer', () => {
   });
 
   it('rejects workspace symlinks that resolve outside readable roots', async () => {
-    const outsideSecretPath = '/home/vercel-sandbox/CODEX_API_KEY';
+    const outsideSecretPath = '/home/khulnasoft-sandbox/CODEX_API_KEY';
     const env = makeOps({
       realpath: p =>
         p === `${sandboxWorkDir}/repo-controlled-secret-link`
@@ -765,7 +765,7 @@ describe('createPiRemoteOps.writeFile', () => {
   });
 
   it('rejects workspace symlinks that resolve outside the workspace', async () => {
-    const outsideConfigPath = '/home/vercel-sandbox/victim-config.json';
+    const outsideConfigPath = '/home/khulnasoft-sandbox/victim-config.json';
     const env = makeOps({
       realpath: p =>
         p === `${sandboxWorkDir}/repo-controlled-write-link`
@@ -971,7 +971,7 @@ describe('createPiRemoteOps.grepFiles', () => {
   });
 
   it('rejects workspace symlinks before running grep outside readable roots', async () => {
-    const outsideSecretPath = '/home/vercel-sandbox/CODEX_API_KEY';
+    const outsideSecretPath = '/home/khulnasoft-sandbox/CODEX_API_KEY';
     const env = makeOps({
       realpath: p =>
         p === `${sandboxWorkDir}/repo-controlled-secret-link`

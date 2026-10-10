@@ -1,5 +1,5 @@
-import { UnsupportedFunctionalityError } from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { UnsupportedFunctionalityError } from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { AnthropicFiles } from './anthropic-files';
 

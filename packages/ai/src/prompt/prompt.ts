@@ -1,4 +1,4 @@
-import type { ModelMessage, SystemModelMessage } from '@ai-sdk/provider-utils';
+import type { ModelMessage, SystemModelMessage } from '@ai-toolkit/provider-utils';
 
 /**
  * Instructions to include in the prompt. Can be used with `prompt` or `messages`.

@@ -5,13 +5,13 @@ import {
   type TranscriptionModelV4,
   type SpeechModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withUserAgentSuffix,
   type FetchFunction,
   type WebSocketConstructor,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { CartesiaTranscriptionModel } from './cartesia-transcription-model';
 import type { CartesiaTranscriptionModelId } from './cartesia-transcription-options';
 import { CartesiaSpeechModel } from './cartesia-speech-model';
@@ -100,7 +100,7 @@ export function createCartesia(
         'Cartesia-Version': options.version ?? CARTESIA_API_VERSION,
         ...options.headers,
       },
-      `ai-sdk-cartesia/${VERSION}`,
+      `ai-toolkit-cartesia/${VERSION}`,
     );
 
   const createTranscriptionModel = (modelId: CartesiaTranscriptionModelId) =>

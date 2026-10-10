@@ -1,4 +1,4 @@
-import type { ImageModelV4ProviderMetadata } from '@ai-sdk/provider';
+import type { ImageModelV4ProviderMetadata } from '@ai-toolkit/provider';
 import type { GeneratedFile } from '../generate-text';
 import type { ImageModelProviderMetadata } from '../types/image-model';
 import type { ImageModelResponseMetadata } from '../types/image-model-response-metadata';
@@ -68,7 +68,7 @@ export interface GenerateImageResult {
   readonly responses: Array<ImageModelResponseMetadata>;
 
   /**
-   * Provider-specific metadata. They are passed through from the provider to the AI SDK and enable provider-specific
+   * Provider-specific metadata. They are passed through from the provider to the ai-toolkit and enable provider-specific
    * results that can be fully encapsulated in the provider.
    *
    * @deprecated Use the provider metadata in `calls` or on individual `images` to preserve its scope.

@@ -1,10 +1,10 @@
-import { jsonSchema, tool, type Tool } from '@ai-sdk/provider-utils';
+import { jsonSchema, tool, type Tool } from '@ai-toolkit/provider-utils';
 import { InvalidArgumentError } from '../error/invalid-argument-error';
 
-const toolSearchSymbol = Symbol.for('vercel.ai.toolSearch');
-const toolSearchFunctionSymbol = Symbol.for('vercel.ai.toolSearch.search');
+const toolSearchSymbol = Symbol.for('khulnasoft.ai.toolSearch');
+const toolSearchFunctionSymbol = Symbol.for('khulnasoft.ai.toolSearch.search');
 const toolSearchMaxResultsSymbol = Symbol.for(
-  'vercel.ai.toolSearch.maxResults',
+  'khulnasoft.ai.toolSearch.maxResults',
 );
 
 type ToolSearchFunction = (options: {
@@ -78,7 +78,7 @@ export function toolSearch({
         additionalProperties: false,
       }),
       execute: () => {
-        throw new Error('toolSearch must be bound by an AI SDK generation.');
+        throw new Error('toolSearch must be bound by an ai-toolkit generation.');
       },
     }),
     {

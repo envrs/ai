@@ -1,8 +1,8 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { MockLanguageModelV4 } from 'ai/test';
 import { getStepMetadata, getWritable } from 'workflow';
 

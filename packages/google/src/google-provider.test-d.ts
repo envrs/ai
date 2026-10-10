@@ -1,7 +1,7 @@
 import type {
   Experimental_BatchV4 as BatchV4,
   LanguageModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { expectTypeOf, it } from 'vitest';
 import { google } from './google-provider';
 import type { GoogleModelId } from './google-language-model-options';

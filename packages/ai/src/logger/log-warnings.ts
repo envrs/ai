@@ -4,11 +4,11 @@ import { getDeprecationCode } from './deprecations';
 /**
  * A function for logging warnings.
  *
- * You can assign it to the `AI_SDK_LOG_WARNINGS` global variable to use it as the default warning logger.
+ * You can assign it to the `ai-toolkit_LOG_WARNINGS` global variable to use it as the default warning logger.
  *
  * @example
  * ```ts
- * globalThis.AI_SDK_LOG_WARNINGS = (options) => {
+ * globalThis.ai-toolkit_LOG_WARNINGS = (options) => {
  *   console.log('WARNINGS:', options.warnings, options.provider, options.model);
  * };
  * ```
@@ -31,7 +31,7 @@ export type LogWarningsFunction = (options: {
 }) => void;
 
 /**
- * Formats a warning object into a human-readable string with clear AI SDK branding.
+ * Formats a warning object into a human-readable string with clear ai-toolkit branding.
  *
  * @param options - The options for formatting the warning.
  * @param options.warning - The warning to format.
@@ -50,7 +50,7 @@ function formatWarning({
 }): string {
   const scope =
     provider != null && model != null ? ` (${provider} / ${model})` : '';
-  const prefix = `AI SDK Warning${scope}:`;
+  const prefix = `ai-toolkit Warning${scope}:`;
 
   switch (warning.type) {
     case 'unsupported': {
@@ -85,7 +85,7 @@ function formatWarning({
 }
 
 export const FIRST_WARNING_INFO_MESSAGE =
-  'AI SDK Warning System: To turn off warning logging, set the AI_SDK_LOG_WARNINGS global to false.';
+  'ai-toolkit Warning System: To turn off warning logging, set the ai-toolkit_LOG_WARNINGS global to false.';
 
 let hasLoggedBefore = false;
 const emittedDeprecationCodes = new Set<string>();
@@ -112,7 +112,7 @@ function emitWarning({
 /**
  * Logs warnings to the console or uses a custom logger if configured.
  *
- * The behavior can be customized via the `AI_SDK_LOG_WARNINGS` global variable:
+ * The behavior can be customized via the `ai-toolkit_LOG_WARNINGS` global variable:
  * - If set to `false`, warnings are suppressed.
  * - If set to a function, that function is called with the warnings.
  * - Otherwise, warnings use `process.emitWarning` when available, falling back
@@ -130,7 +130,7 @@ export const logWarnings: LogWarningsFunction = options => {
     return;
   }
 
-  const logger = globalThis.AI_SDK_LOG_WARNINGS;
+  const logger = globalThis.ai-toolkit_LOG_WARNINGS;
 
   // if the logger is set to false, do nothing
   if (logger === false) {

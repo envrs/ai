@@ -5,7 +5,7 @@ import type { JSONObject } from '../../json-value';
 /**
  * A tool has a name, a description, and a set of parameters.
  *
- * Note: this is **not** the user-facing tool definition. The AI SDK methods will
+ * Note: this is **not** the user-facing tool definition. The ai-toolkit methods will
  * map the user-facing tool definitions to this format.
  */
 export type LanguageModelV3FunctionTool = {

@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4CallOptions,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 export type ReasoningLevel = Exclude<
   LanguageModelV4CallOptions['reasoning'],

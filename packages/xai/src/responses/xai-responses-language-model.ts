@@ -8,7 +8,7 @@ import type {
   LanguageModelV4StreamResult,
   LanguageModelV4Usage,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createEventSourceResponseHandler,
@@ -24,7 +24,7 @@ import {
   type FetchFunction,
   type InferSchema,
   type ParseResult,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { z } from 'zod/v4';
 import { getResponseMetadata } from '../get-response-metadata';
 import { supportsReasoningEffort } from '../supports-reasoning-effort';

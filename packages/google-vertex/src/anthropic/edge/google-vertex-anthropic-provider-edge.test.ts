@@ -1,4 +1,4 @@
-import { resolve } from '@ai-sdk/provider-utils';
+import { resolve } from '@ai-toolkit/provider-utils';
 import * as edgeAuth from '../../edge/google-vertex-auth-edge';
 import { createGoogleVertexAnthropic as createVertexAnthropicOriginal } from '../google-vertex-anthropic-provider';
 import { createGoogleVertexAnthropic as createVertexAnthropicEdge } from './google-vertex-anthropic-provider-edge';

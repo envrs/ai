@@ -2,7 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { env } from 'node:process';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
-import type { HarnessV1BridgeToolWire } from '@ai-sdk/harness';
+import type { HarnessV1BridgeToolWire } from '@ai-toolkit/harness';
 import {
   createHostToolMCPServer,
   type HostToolMCPInvocationResult,
@@ -10,13 +10,13 @@ import {
 import { postHostToolRelay } from './host-tool-relay-client';
 
 const catalogPath = requireEnvironmentVariable({
-  name: 'AI_SDK_ACP_HOST_TOOLS_FILE',
+  name: 'ai-toolkit_ACP_HOST_TOOLS_FILE',
 });
 const relayUrl = requireEnvironmentVariable({
-  name: 'AI_SDK_ACP_HOST_TOOL_RELAY_URL',
+  name: 'ai-toolkit_ACP_HOST_TOOL_RELAY_URL',
 });
 const relayCredential = requireEnvironmentVariable({
-  name: 'AI_SDK_ACP_HOST_TOOL_RELAY_CREDENTIAL',
+  name: 'ai-toolkit_ACP_HOST_TOOL_RELAY_CREDENTIAL',
 });
 const tools = await readToolCatalog({ path: catalogPath });
 const hostToolServer = createHostToolMCPServer({

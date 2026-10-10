@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import {
   convertArrayToReadableStream,
   convertAsyncIterableToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import {
   context,
   SpanKind,
@@ -900,7 +900,7 @@ describe('OpenTelemetry', () => {
               toolCallId: 'tc1',
               toolName: 'mcp.ask_question',
               input: { question: 'What is this repository?' },
-              output: { answer: 'An AI SDK repository.' },
+              output: { answer: 'An ai-toolkit repository.' },
               providerExecuted: true,
               dynamic: true,
             },
@@ -929,7 +929,7 @@ describe('OpenTelemetry', () => {
                 {
                   "id": "tc1",
                   "response": {
-                    "answer": "An AI SDK repository.",
+                    "answer": "An ai-toolkit repository.",
                   },
                   "type": "tool_call_response",
                 },
@@ -963,7 +963,7 @@ describe('OpenTelemetry', () => {
           },
           "name": "execute_tool mcp.ask_question",
           "runtimeAttributes": {
-            "gen_ai.tool.call.result": "{"answer":"An AI SDK repository."}",
+            "gen_ai.tool.call.result": "{"answer":"An ai-toolkit repository."}",
           },
         }
       `);
@@ -1023,14 +1023,14 @@ describe('OpenTelemetry', () => {
               type: 'tool-call' as const,
               toolCallId: 'tc1',
               toolName: 'web_search',
-              input: { query: 'AI SDK' },
+              input: { query: 'ai-toolkit' },
               providerExecuted: true,
             },
             {
               type: 'tool-error' as const,
               toolCallId: 'tc1',
               toolName: 'web_search',
-              input: { query: 'AI SDK' },
+              input: { query: 'ai-toolkit' },
               error,
               providerExecuted: true,
               dynamic: true,
@@ -1875,7 +1875,7 @@ describe('OpenTelemetry', () => {
       `);
     });
 
-    it('emits supplemental AI SDK attributes on existing spans when enabled', () => {
+    it('emits supplemental ai-toolkit attributes on existing spans when enabled', () => {
       integration = new OpenTelemetry({
         tracer,
         usage: true,

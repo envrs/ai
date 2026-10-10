@@ -5,14 +5,14 @@ import {
   type HarnessV1CredentialForwarding,
   type HarnessV1MintBridgeTokenCallback,
   type HarnessV1PortEndpoint,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   createCredentialRequestTransformation,
   isHarnessAuthenticationEnvironment,
   type SandboxChannelReconnectOptions,
-} from '@ai-sdk/harness/utils';
-import { createACP, type ACPAuthenticationMode } from '@ai-sdk/harness-acp';
-import { tool } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/utils';
+import { createACP, type ACPAuthenticationMode } from '@ai-toolkit/harness-acp';
+import { tool } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { VERSION } from './version';
 import {
@@ -22,8 +22,8 @@ import {
   resolveFxSubscriptionEnvironment,
 } from './fx-subscription';
 
-const FX_CLIENT_APP = `ai-sdk-harness-fx/${VERSION}`;
-const DEFAULT_AI_GATEWAY_BASE_URL = 'https://ai-gateway.vercel.sh';
+const FX_CLIENT_APP = `ai-toolkit-harness-fx/${VERSION}`;
+const DEFAULT_AI_GATEWAY_BASE_URL = 'https://ai-gateway.khulnasoft.sh';
 
 export type FxAuthenticationMode = ACPAuthenticationMode;
 

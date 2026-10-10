@@ -3,9 +3,9 @@ import type {
   LanguageModelV4FunctionTool,
   LanguageModelV4Prompt,
   LanguageModelV4ProviderTool,
-} from '@ai-sdk/provider';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import * as fs from 'node:fs';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { createGoogle } from '../google-provider';

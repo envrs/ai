@@ -80,7 +80,7 @@ export async function resolveACPInstructionConfiguration({
 
 /*
  * The bridge runs in an isolated runtime whose dependencies are limited to the
- * ones declared in this directory's package.json, so AI SDK JSON helpers are
+ * ones declared in this directory's package.json, so ai-toolkit JSON helpers are
  * unavailable here. Schema validation plus a guarded `JSON.parse` provides the
  * same guarantee: nothing but a validated serializable record escapes.
  */

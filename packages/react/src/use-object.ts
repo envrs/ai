@@ -7,7 +7,7 @@ import {
   type FlexibleSchema,
   type InferSchema,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   asSchema,
   isDeepEqualData,

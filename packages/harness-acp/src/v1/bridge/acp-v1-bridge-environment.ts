@@ -6,7 +6,7 @@ import type {
   ACPSerializableValue,
 } from '../acp-v1-settings';
 
-export const ACP_BRIDGE_CONFIGURATION_ENV = 'AI_SDK_ACP_BRIDGE_CONFIGURATION';
+export const ACP_BRIDGE_CONFIGURATION_ENV = 'ai-toolkit_ACP_BRIDGE_CONFIGURATION';
 
 const serializableValueSchema: z.ZodType<ACPSerializableValue> = z.json();
 

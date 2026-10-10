@@ -11,7 +11,7 @@ import type { RealtimeModelV4SessionConfig } from './realtime-model-v4-session-c
  * audio/text communication over WebSocket.
  *
  * Providers implement this interface to enable realtime voice
- * conversations through the AI SDK.
+ * conversations through the ai-toolkit.
  */
 export type RealtimeModelV4 = {
   /**

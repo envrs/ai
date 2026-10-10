@@ -1,4 +1,4 @@
-import type { InferToolOutput } from '@ai-sdk/provider-utils';
+import type { InferToolOutput } from '@ai-toolkit/provider-utils';
 import { describe, expect, expectTypeOf, test } from 'vitest';
 import {
   type HarnessV1QuestionsToolOutput,

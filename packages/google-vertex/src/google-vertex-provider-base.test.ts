@@ -1,11 +1,11 @@
-import type * as ProviderUtilsModule from '@ai-sdk/provider-utils';
+import type * as ProviderUtilsModule from '@ai-toolkit/provider-utils';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { createGoogleVertex } from './google-vertex-provider-base';
 import {
   GoogleInteractionsLanguageModel,
   GoogleLanguageModel,
   GoogleSpeechModel,
-} from '@ai-sdk/google/internal';
+} from '@ai-toolkit/google/internal';
 import { GoogleVertexEmbeddingModel } from './google-vertex-embedding-model';
 import { GoogleVertexImageModel } from './google-vertex-image-model';
 import { GoogleVertexVideoModel } from './google-vertex-video-model';
@@ -13,7 +13,7 @@ import { GoogleVertexTranscriptionModel } from './google-vertex-transcription-mo
 import { GoogleVertexCloudTTSSpeechModel } from './google-vertex-cloud-tts-speech-model';
 
 // Mock the imported modules
-vi.mock('@ai-sdk/provider-utils', async importOriginal => {
+vi.mock('@ai-toolkit/provider-utils', async importOriginal => {
   const actual = await importOriginal<typeof ProviderUtilsModule>();
   return {
     ...actual,
@@ -39,7 +39,7 @@ vi.mock('@ai-sdk/provider-utils', async importOriginal => {
   };
 });
 
-vi.mock('@ai-sdk/google/internal', () => ({
+vi.mock('@ai-toolkit/google/internal', () => ({
   GoogleLanguageModel: vi.fn(),
   GoogleInteractionsLanguageModel: vi.fn(),
   GoogleSpeechModel: vi.fn(),

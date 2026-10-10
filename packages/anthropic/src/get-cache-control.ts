@@ -1,7 +1,7 @@
 import type {
   SharedV4Warning,
   SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { AnthropicCacheControl } from './anthropic-api';
 
 // Anthropic allows a maximum of 4 cache breakpoints per request

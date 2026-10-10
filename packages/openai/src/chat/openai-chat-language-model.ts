@@ -9,7 +9,7 @@ import {
   type LanguageModelV4StreamResult,
   type SharedV4ProviderMetadata,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   StreamingToolCallTracker,
   combineHeaders,
@@ -24,7 +24,7 @@ import {
   WORKFLOW_SERIALIZE,
   type FetchFunction,
   type ParseResult,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { openaiFailedResponseHandler } from '../openai-error';
 import { getOpenAILanguageModelCapabilities } from '../openai-language-model-capabilities';
 import {
@@ -119,7 +119,7 @@ export class OpenAIChatLanguageModel implements LanguageModelV4 {
 
     const modelCapabilities = getOpenAILanguageModelCapabilities(this.modelId);
 
-    // AI SDK reasoning values map directly to the OpenAI reasoning values.
+    // ai-toolkit reasoning values map directly to the OpenAI reasoning values.
     let resolvedReasoningEffort =
       openaiOptions.reasoningEffort ??
       (isCustomReasoning(reasoning) ? reasoning : undefined);
@@ -227,7 +227,7 @@ export class OpenAIChatLanguageModel implements LanguageModelV4 {
       verbosity: openaiOptions.textVerbosity,
 
       // openai specific settings:
-      // TODO AI SDK 6: remove, we auto-map maxOutputTokens now
+      // TODO ai-toolkit 6: remove, we auto-map maxOutputTokens now
       max_completion_tokens: openaiOptions.maxCompletionTokens,
       store: openaiOptions.store,
       metadata: openaiOptions.metadata,

@@ -1,11 +1,11 @@
 {
-  "extends": "./node_modules/@vercel/ai-tsconfig/ts-library.json",
+  "extends": "./node_modules/@khulnasoft/ai-tsconfig/ts-library.json",
   "compilerOptions": {
     "composite": true,
     "rootDir": "src",
     "outDir": "dist",
     "paths": {
-      "@ai-sdk/test-server": ["../test-server/src"]
+      "@ai-toolkit/test-server": ["../test-server/src"]
     }
   },
   "exclude": ["dist", "build", "node_modules", "scripts", "tsdown.config.ts"],

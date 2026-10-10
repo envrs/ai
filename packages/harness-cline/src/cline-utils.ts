@@ -2,12 +2,12 @@ import type {
   JSONValue,
   LanguageModelV4FinishReason,
   LanguageModelV4Usage,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   HarnessCapabilityUnsupportedError,
   type HarnessV1Prompt,
-} from '@ai-sdk/harness';
-import { secureJsonParse } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness';
+import { secureJsonParse } from '@ai-toolkit/provider-utils';
 import type { AgentMessage, AgentUsage } from '@cline/agents';
 
 const HARNESS_ID = 'cline';

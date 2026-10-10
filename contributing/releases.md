@@ -15,7 +15,7 @@ We use [changesets](https://github.com/changesets/action) for automated releases
 
 ## Maintenance Releases
 
-- Enable the [`release` workflow](https://github.com/vercel/ai/blob/main/.github/workflows/release.yml) on the maintenance branch.
+- Enable the [`release` workflow](https://github.com/khulnasoft/ai/blob/main/.github/workflows/release.yml) on the maintenance branch.
 - Only `patch` releases are allowed.
 - To release:
   1. Create a pull request against the maintenance branch.
@@ -35,11 +35,11 @@ Quick reference:
 
 For test purposes (e.g. to validate whether a certain PR fixes a downstream bug), you can trigger snapshot releases based on the PR branch.
 
-Manually dispatch the [release workflow](https://github.com/vercel/ai/actions/workflows/release.yml), selecting the PR branch and enabling the checkbox to ensure it is a snapshot release.
+Manually dispatch the [release workflow](https://github.com/khulnasoft/ai/actions/workflows/release.yml), selecting the PR branch and enabling the checkbox to ensure it is a snapshot release.
 
 ## New Major Releases
 
-- Update version in `skills/use-ai-sdk/SKILL.md`.
+- Update version in `skills/use-ai-toolkit/SKILL.md`.
 
 ## Provenance
 
@@ -47,13 +47,13 @@ All packages are published with [npm provenance](https://docs.npmjs.com/generati
 
 - `publishConfig.provenance: true` in each package's `package.json`
 - `id-token: write` permission in `.github/workflows/release.yml`
-- A [Trusted Publisher](https://docs.npmjs.com/trusted-publishers) configured per package on npmjs.com, pointing at `vercel/ai` and `release.yml`
+- A [Trusted Publisher](https://docs.npmjs.com/trusted-publishers) configured per package on npmjs.com, pointing at `khulnasoft/ai` and `release.yml`
 
-For an existing package, no action is required — provenance is emitted automatically on every publish. For a **new** package, see [Bootstrapping a new `@ai-sdk/*` package](#bootstrapping-a-new-ai-sdk-package) below.
+For an existing package, no action is required — provenance is emitted automatically on every publish. For a **new** package, see [Bootstrapping a new `@ai-toolkit/*` package](#bootstrapping-a-new-ai-toolkit-package) below.
 
-### Bootstrapping a new `@ai-sdk/*` package
+### Bootstrapping a new `@ai-toolkit/*` package
 
-npm requires a package to exist before a Trusted Publisher can be configured for it. The first publish therefore has to happen manually, before the package is wired into the monorepo's release workflow. This must be done by a member of the Vercel IT team who has publish rights on the `@ai-sdk` npm scope.
+npm requires a package to exist before a Trusted Publisher can be configured for it. The first publish therefore has to happen manually, before the package is wired into the monorepo's release workflow. This must be done by a member of the khulnasoft IT team who has publish rights on the `@ai-toolkit` npm scope.
 
 Steps:
 
@@ -63,15 +63,15 @@ Steps:
 
    ```json
    {
-     "name": "@ai-sdk/<package-name>",
+     "name": "@ai-toolkit/<package-name>",
      "version": "0.0.0"
    }
    ```
 
 4. Run `npm publish`.
-5. Open `https://www.npmjs.com/package/@ai-sdk/<package-name>/access` and configure the Trusted Publisher with:
+5. Open `https://www.npmjs.com/package/@ai-toolkit/<package-name>/access` and configure the Trusted Publisher with:
    - **Publisher:** GitHub Actions
-   - **Organization or user:** `vercel`
+   - **Organization or user:** `khulnasoft`
    - **Repository:** `ai`
    - **Workflow name:** `release.yml`
    - **Environment name:** _(leave empty)_

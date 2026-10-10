@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4GenerateResult,
   LanguageModelV4StreamPart,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { ToolLoopAgent, tool } from 'ai';
 import { MockLanguageModelV4, convertArrayToReadableStream } from 'ai/test';
 import { describe, expect, it } from 'vitest';

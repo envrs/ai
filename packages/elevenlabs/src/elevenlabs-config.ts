@@ -1,7 +1,7 @@
 import type {
   FetchFunction,
   WebSocketConstructor,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 export type ElevenLabsConfig = {
   provider: string;

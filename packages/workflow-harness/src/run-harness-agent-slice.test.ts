@@ -2,8 +2,8 @@ import { describe, expect, test, vi } from 'vitest';
 import type {
   HarnessV1ContinueTurnState,
   HarnessV1ResumeSessionState,
-} from '@ai-sdk/harness';
-import type { HarnessAgentSession } from '@ai-sdk/harness/agent';
+} from '@ai-toolkit/harness';
+import type { HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import { readUIMessageStream, type UIMessage, type UIMessageChunk } from 'ai';
 import {
   createHarnessWorkflowState,

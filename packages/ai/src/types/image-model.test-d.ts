@@ -1,4 +1,4 @@
-import type { ImageModelV4 } from '@ai-sdk/provider';
+import type { ImageModelV4 } from '@ai-toolkit/provider';
 import { describe, expectTypeOf, it } from 'vitest';
 
 describe('ImageModelV4', () => {

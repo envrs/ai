@@ -1,15 +1,15 @@
 # Provider Architecture
 
-The AI SDK uses a layered provider architecture that follows the adapter pattern, enabling support for multiple AI providers through a unified interface.
+The ai-toolkit uses a layered provider architecture that follows the adapter pattern, enabling support for multiple AI providers through a unified interface.
 
 ## Architecture Overview
 
 ```mermaid
 graph LR
-    AI["Main Package<br/>ai"] --> PROVIDER["Specifications<br/>@ai-sdk/provider"]
-    AI --> UTILS["Shared Utilities<br/>@ai-sdk/provider-utils"]
+    AI["Main Package<br/>ai"] --> PROVIDER["Specifications<br/>@ai-toolkit/provider"]
+    AI --> UTILS["Shared Utilities<br/>@ai-toolkit/provider-utils"]
     UTILS --> PROVIDER
-    OPENAI["Provider<br/>e.g. @ai-sdk/openai"] --> PROVIDER
+    OPENAI["Provider<br/>e.g. @ai-toolkit/openai"] --> PROVIDER
     OPENAI --> UTILS
     OPENAI --> OPENAI_API["Provider API<br/>e.g. OpenAI API<br/>(External)"]
 

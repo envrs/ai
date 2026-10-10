@@ -13,8 +13,8 @@ import {
   type LanguageModelV4StreamPart,
   type LanguageModelV4ToolResultOutput,
   type SharedV4FileData,
-} from '@ai-sdk/provider';
-import { convertUint8ArrayToBase64 } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
 import { asLanguageModelV3 } from './as-language-model-v3';
 
 export function asLanguageModelV4(

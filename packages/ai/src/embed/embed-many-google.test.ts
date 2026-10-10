@@ -1,5 +1,5 @@
-import { createGoogle } from '@ai-sdk/google';
-import type { FetchFunction } from '@ai-sdk/provider-utils';
+import { createGoogle } from '@ai-toolkit/google';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 import { describe, expect, it, vi } from 'vitest';
 import { wrapEmbeddingModel } from '../middleware/wrap-embedding-model';
 import { embedMany } from './embed-many';

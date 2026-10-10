@@ -1,4 +1,4 @@
-import { googleTools } from '@ai-sdk/google/internal';
+import { googleTools } from '@ai-toolkit/google/internal';
 
 export const googleVertexTools = {
   googleSearch: googleTools.googleSearch,

@@ -4,7 +4,7 @@
     "value": {
       "toolCallId": "call-8c14b51a-46dd-4444-bbb0-37271f53b421-1",
       "title": "get_weather",
-      "name": "mcp_ai-sdk-harness-tools_get_weather",
+      "name": "mcp_ai-toolkit-harness-tools_get_weather",
       "kind": "other",
       "status": "pending",
       "rawInput": {
@@ -15,7 +15,7 @@
           "toolCall": {
             "internal": false,
             "mcp": {
-              "server": "ai-sdk-harness-tools",
+              "server": "ai-toolkit-harness-tools",
               "tool": "get_weather"
             }
           }
@@ -32,8 +32,8 @@
         "toolCallId": "call-8c14b51a-46dd-4444-bbb0-37271f53b421-1",
         "kind": "other",
         "status": "pending",
-        "title": "mcp_ai-sdk-harness-tools_get_weather",
-        "name": "mcp_ai-sdk-harness-tools_get_weather",
+        "title": "mcp_ai-toolkit-harness-tools_get_weather",
+        "name": "mcp_ai-toolkit-harness-tools_get_weather",
         "rawInput": {
           "city": "Austin"
         }

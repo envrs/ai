@@ -1,5 +1,5 @@
-import { UnsupportedFunctionalityError } from '@ai-sdk/provider';
-import { createToolNameMapping } from '@ai-sdk/provider-utils';
+import { UnsupportedFunctionalityError } from '@ai-toolkit/provider';
+import { createToolNameMapping } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { convertToMistralConversationInputs } from './convert-to-mistral-conversation-inputs';
 import { mistralProviderToolNames } from './mistral-conversation-prepare-tools';

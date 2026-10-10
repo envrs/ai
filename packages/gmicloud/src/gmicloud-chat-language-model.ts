@@ -1,10 +1,10 @@
-import { OpenAICompatibleChatLanguageModel } from '@ai-sdk/openai-compatible';
-import type { LanguageModelV4 } from '@ai-sdk/provider';
+import { OpenAICompatibleChatLanguageModel } from '@ai-toolkit/openai-compatible';
+import type { LanguageModelV4 } from '@ai-toolkit/provider';
 import {
   serializeModelOptions,
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { GmicloudChatModelId } from './gmicloud-chat-language-model-options';
 
 type GmicloudChatConfig = ConstructorParameters<

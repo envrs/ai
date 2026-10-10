@@ -1,5 +1,5 @@
-import type { JSONSchema7, LanguageModelV4Prompt } from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import type { JSONSchema7, LanguageModelV4Prompt } from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { expect, it, vi } from 'vitest';
 import { createGoogleVertex } from './google-vertex-provider-base';
 

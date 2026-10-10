@@ -1,4 +1,4 @@
-import type { JSONSchema7, JSONSchema7Definition } from '@ai-sdk/provider';
+import type { JSONSchema7, JSONSchema7Definition } from '@ai-toolkit/provider';
 
 /**
  * Recursively replaces `const` with a single-value `enum` in the JSON Schema

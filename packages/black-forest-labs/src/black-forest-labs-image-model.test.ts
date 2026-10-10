@@ -1,11 +1,11 @@
-import type { FetchFunction } from '@ai-sdk/provider-utils';
-import * as providerUtils from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
+import * as providerUtils from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { BlackForestLabsImageModel } from './black-forest-labs-image-model';
 import type { BlackForestLabsImageModelId } from './black-forest-labs-image-settings';
 
-vi.mock('@ai-sdk/provider-utils', async importOriginal => {
+vi.mock('@ai-toolkit/provider-utils', async importOriginal => {
   const actual = await importOriginal<typeof providerUtils>();
   return {
     ...actual,

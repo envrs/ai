@@ -6,11 +6,11 @@ import { tools } from '@/lib/tools-registry';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/resources/tools' },
-  title: 'AI SDK Tools Registry',
+  title: 'ai-toolkit Tools Registry',
   description:
     'Add powerful functionality to your agents with just a few lines of code.',
   ...socialCard(
-    'AI SDK Tools Registry',
+    'ai-toolkit Tools Registry',
     'Add powerful functionality to your agents with just a few lines of code.',
   ),
 };
@@ -79,7 +79,7 @@ const ToolsPage = () => (
         <div className="flex flex-col gap-3 sm:flex-row">
           <Link
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-gray-1000 px-4 py-2 font-medium text-background-100 transition-opacity hover:opacity-90"
-            href="https://github.com/vercel-labs/ai-sdk-tool-as-package-template"
+            href="https://github.com/khulnasoft-labs/ai-toolkit-tool-as-package-template"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -88,7 +88,7 @@ const ToolsPage = () => (
           </Link>
           <Link
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-alpha-400 bg-background-100 px-4 py-2 font-medium text-gray-1000 transition-colors hover:border-gray-500"
-            href="https://github.com/vercel/ai/blob/main/content/tools-registry/registry.ts"
+            href="https://github.com/khulnasoft/ai/blob/main/content/tools-registry/registry.ts"
             rel="noopener noreferrer"
             target="_blank"
           >

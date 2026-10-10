@@ -1,14 +1,14 @@
 import { randomBytes } from 'node:crypto';
 import type { HarnessV1RequestTransformation } from '../v1';
 
-const SANDBOX_CREDENTIAL_PLACEHOLDER_PREFIX = 'aisdkhc_';
+const SANDBOX_CREDENTIAL_PLACEHOLDER_PREFIX = 'ai-toolkithc_';
 
 export function generateSandboxCredentialPlaceholder(): string {
   return `${SANDBOX_CREDENTIAL_PLACEHOLDER_PREFIX}${randomBytes(32).toString('base64url')}`;
 }
 
 export function isSandboxCredentialPlaceholder(value: string): boolean {
-  return /^aisdkhc_[A-Za-z0-9_-]{43}$/.test(value);
+  return /^ai-toolkithc_[A-Za-z0-9_-]{43}$/.test(value);
 }
 
 /**

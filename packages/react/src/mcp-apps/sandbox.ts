@@ -1,4 +1,4 @@
-import type { MCPAppResourceCSP } from '@ai-sdk/mcp';
+import type { MCPAppResourceCSP } from '@ai-toolkit/mcp';
 
 // CSP source values come from the (untrusted) MCP server. Rather than
 // denylisting bad characters on the raw string (which an encoding like "%3B"

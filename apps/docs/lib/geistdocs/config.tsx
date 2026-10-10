@@ -1,4 +1,4 @@
-import { defineConfig } from '@vercel/geistdocs/config';
+import { defineConfig } from '@khulnasoft/geistdocs/config';
 import {
   content,
   Logo,
@@ -20,10 +20,10 @@ export const config = defineConfig({
   translations,
   siteId,
   siteUrl: isSiteUrlConfigured ? siteUrl.toString() : undefined,
-  github: { owner: 'vercel', repo: 'ai' },
+  github: { owner: 'khulnasoft', repo: 'ai' },
   agent: {
     product: {
-      name: 'AI SDK',
+      name: 'ai-toolkit',
       description:
         'The TypeScript toolkit for building AI applications and agents.',
       category: 'Developer tools',

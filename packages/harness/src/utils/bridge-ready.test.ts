@@ -1,7 +1,7 @@
 import type {
   Experimental_SandboxProcess,
   Experimental_SandboxSession,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { describe, expect, it, vi } from 'vitest';
 import { markBridgeStarting, waitForBridgeReady } from './bridge-ready';
 

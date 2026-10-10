@@ -4,7 +4,7 @@ import type {
   TranscriptionModelV4,
 } from '@ai-sdk/provider';
 import { LangfuseSpanProcessor } from '@langfuse/otel';
-import { LangfuseVercelAiSdkIntegration } from '@langfuse/vercel-ai-sdk';
+import { LangfuseVercelAiSdkIntegration } from '@langfuse/khulnasoft-ai-sdk';
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import {
   experimental_streamTranscribe as streamTranscribe,

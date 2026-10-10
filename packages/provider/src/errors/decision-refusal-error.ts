@@ -1,13 +1,13 @@
-import { AISDKError } from './ai-sdk-error';
+import { ai-toolkitError } from './ai-toolkit-error';
 
 const name = 'AI_DecisionRefusalError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
 /**
  * A decision model declined to answer one or more questions.
  */
-export class DecisionRefusalError extends AISDKError {
+export class DecisionRefusalError extends ai-toolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly questionIds: string[];
@@ -33,6 +33,6 @@ export class DecisionRefusalError extends AISDKError {
   }
 
   static isInstance(error: unknown): error is DecisionRefusalError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }

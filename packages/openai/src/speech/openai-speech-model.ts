@@ -1,4 +1,4 @@
-import type { SpeechModelV4, SharedV4Warning } from '@ai-sdk/provider';
+import type { SpeechModelV4, SharedV4Warning } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createBinaryResponseHandler,
@@ -7,7 +7,7 @@ import {
   serializeModelOptions,
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { OpenAIConfig } from '../openai-config';
 import { openaiFailedResponseHandler } from '../openai-error';
 import type { OpenAISpeechAPITypes } from './openai-speech-api';

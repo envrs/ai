@@ -17,7 +17,7 @@ import {
   type JSONObject,
   type LanguageModelV4GenerateResult,
   type SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertAsyncIteratorToReadableStream,
@@ -35,7 +35,7 @@ import {
   safeValidateTypes,
   zodSchema,
   type InferSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import {
   anthropicResponseSchema,

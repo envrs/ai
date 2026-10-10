@@ -3,9 +3,9 @@ import {
   LoadAPIKeyError,
   NoSuchModelError,
   type ImageModelV4CallOptions,
-} from '@ai-sdk/provider';
-import { convertUint8ArrayToBase64 } from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider';
+import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import {
   animateSvgResponseFixture,
@@ -109,7 +109,7 @@ describe('createQuiverAI', () => {
       authorization: 'Bearer test-api-key',
       'content-type': 'application/json',
     });
-    expect(server.calls[0].requestUserAgent).toContain('ai-sdk-quiverai/');
+    expect(server.calls[0].requestUserAgent).toContain('ai-toolkit-quiverai/');
   });
 
   it('reads the base URL and API key from the environment', async () => {

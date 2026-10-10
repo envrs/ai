@@ -1,19 +1,19 @@
-# AI SDK - Pi Harness
+# ai-toolkit - Pi Harness
 
 `HarnessV1` adapter backed by [`@earendil-works/pi-coding-agent`](https://www.npmjs.com/package/@earendil-works/pi-coding-agent). Pi runs in the host Node.js process and uses the sandbox as a remote filesystem + shell — no bridge process is installed inside the sandbox.
 
 ## Setup
 
 ```bash
-npm i @ai-sdk/harness-pi @ai-sdk/harness @ai-sdk/sandbox-vercel
+npm i @ai-toolkit/harness-pi @ai-toolkit/harness @ai-toolkit/sandbox-khulnasoft
 ```
 
 ## Usage
 
 ```ts
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { createPi } from '@ai-sdk/harness-pi';
-import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { createPi } from '@ai-toolkit/harness-pi';
+import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import { tool } from 'ai';
 import { z } from 'zod/v4';
 
@@ -53,7 +53,7 @@ try {
 ```
 
 Pi has no in-sandbox bridge, so the supplied sandbox session does not need
-exposed ports. Vercel and just-bash sessions both work.
+exposed ports. khulnasoft and just-bash sessions both work.
 
 ## Stateless session configuration
 
@@ -64,7 +64,7 @@ Application-managed credentials can be supplied through a `PiCredentialStore`;
 this replaces Pi's file-backed `auth.json` storage.
 
 ```ts
-import { createPi, type PiCredentialStore } from '@ai-sdk/harness-pi';
+import { createPi, type PiCredentialStore } from '@ai-toolkit/harness-pi';
 
 declare const credentials: PiCredentialStore;
 
@@ -79,7 +79,7 @@ const harness = createPi({
 Use `extensionFactories` to load trusted inline Pi extensions for each harness session:
 
 ```ts
-import { createPi } from '@ai-sdk/harness-pi';
+import { createPi } from '@ai-toolkit/harness-pi';
 
 const harness = createPi({
   extensionFactories: [

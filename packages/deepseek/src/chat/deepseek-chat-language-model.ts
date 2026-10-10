@@ -9,7 +9,7 @@ import {
   type LanguageModelV4StreamPart,
   type LanguageModelV4StreamResult,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createEventSourceResponseHandler,
@@ -29,7 +29,7 @@ import {
   type InferSchema,
   type ParseResult,
   type ResponseHandler,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { convertToDeepSeekChatMessages } from './convert-to-deepseek-chat-messages';
 import { convertDeepSeekUsage } from './convert-to-deepseek-usage';
 import {

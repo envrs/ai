@@ -1,16 +1,16 @@
-import { OpenAICompatibleChatLanguageModel } from '@ai-sdk/openai-compatible';
+import { OpenAICompatibleChatLanguageModel } from '@ai-toolkit/openai-compatible';
 import type {
   LanguageModelV4,
   LanguageModelV4CallOptions,
   LanguageModelV4GenerateResult,
   LanguageModelV4StreamPart,
   LanguageModelV4StreamResult,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   serializeModelOptions,
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { CerebrasChatModelId } from './cerebras-chat-language-model-options';
 
 type CerebrasChatConfig = ConstructorParameters<

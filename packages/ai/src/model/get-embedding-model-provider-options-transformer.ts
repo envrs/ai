@@ -1,8 +1,8 @@
-import type { EmbeddingModelV4 } from '@ai-sdk/provider';
+import type { EmbeddingModelV4 } from '@ai-toolkit/provider';
 import {
   EXPERIMENTAL_EMBEDDING_MODEL_PROVIDER_OPTIONS_TRANSFORMER,
   type EmbeddingModelProviderOptionsTransformer,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 export type EmbeddingModelWithProviderOptionsTransformer = EmbeddingModelV4 & {
   readonly [EXPERIMENTAL_EMBEDDING_MODEL_PROVIDER_OPTIONS_TRANSFORMER]?: EmbeddingModelProviderOptionsTransformer;

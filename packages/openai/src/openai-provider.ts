@@ -10,7 +10,7 @@ import type {
   SkillsV4,
   TranscriptionModelV4,
   Experimental_SpeechTranslationModelV4 as SpeechTranslationModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   loadOptionalSetting,
@@ -19,7 +19,7 @@ import {
   withUserAgentSuffix,
   type FetchFunction,
   type WebSocketConstructor,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   DecisionOpenAIModel,
   type OpenAIDecisionModelId,
@@ -241,7 +241,7 @@ export function createOpenAI(
         'OpenAI-Project': options.project,
         ...options.headers,
       },
-      `ai-sdk-openai/${VERSION}`,
+      `ai-toolkit-openai/${VERSION}`,
     );
 
   const createChatModel = (modelId: OpenAIChatModelId) =>

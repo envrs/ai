@@ -1,4 +1,4 @@
-import { safeValidateTypes } from '@ai-sdk/provider-utils';
+import { safeValidateTypes } from '@ai-toolkit/provider-utils';
 import { HarnessError } from '../../errors/harness-error';
 import type { HarnessV1, HarnessV1LifecycleState } from '../../v1';
 

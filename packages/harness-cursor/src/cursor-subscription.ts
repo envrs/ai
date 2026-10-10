@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
-import type { ACPAuthenticationMode } from '@ai-sdk/harness-acp';
+import type { ACPAuthenticationMode } from '@ai-toolkit/harness-acp';
 import {
   getJwtExpiresAt,
   isAccessTokenExpiringSoon,
@@ -11,8 +11,8 @@ import {
   isWindows,
   readMacOSKeychainPassword,
   shouldResolveNativeSubscription,
-} from '@ai-sdk/harness/utils';
-import { isRecord, safeParseJSON } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/utils';
+import { isRecord, safeParseJSON } from '@ai-toolkit/provider-utils';
 
 export async function resolveCursorSubscriptionEnvironment({
   auth,

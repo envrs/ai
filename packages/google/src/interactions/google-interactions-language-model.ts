@@ -6,7 +6,7 @@ import type {
   LanguageModelV4StreamResult,
   SharedV4ProviderMetadata,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createEventSourceResponseHandler,
@@ -20,7 +20,7 @@ import {
   WORKFLOW_SERIALIZE,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { googleFailedResponseHandler } from '../google-error';
 import { buildGoogleInteractionsStreamTransform } from './build-google-interactions-stream-transform';
 import {
@@ -187,7 +187,7 @@ export class GoogleInteractionsLanguageModel implements LanguageModelV4 {
      * `response_format` is a polymorphic array of entries. Three sources
      * contribute, in order:
      *
-     *   1. AI SDK call-level `responseFormat: { type: 'json', schema }` →
+     *   1. ai-toolkit call-level `responseFormat: { type: 'json', schema }` →
      *      `{ type: 'text', mime_type: 'application/json', schema }`.
      *   2. `providerOptions.google.responseFormat` (primary path) — entries
      *      are appended verbatim with camelCase → snake_case translation.
@@ -280,7 +280,7 @@ export class GoogleInteractionsLanguageModel implements LanguageModelV4 {
       warnings.push({
         type: 'other',
         message:
-          'google.interactions: both AI SDK system message and providerOptions.google.systemInstruction were set; using the AI SDK system message.',
+          'google.interactions: both ai-toolkit system message and providerOptions.google.systemInstruction were set; using the ai-toolkit system message.',
       });
     } else if (systemInstruction == null && optionSystemInstruction != null) {
       systemInstruction = optionSystemInstruction;
@@ -289,7 +289,7 @@ export class GoogleInteractionsLanguageModel implements LanguageModelV4 {
     /*
      * The Interactions API splits per-call config into `generation_config`
      * (model branch) and `agent_config` (agent branch); the two are mutually
-     * exclusive. The AI SDK call-level generation params and the thinking /
+     * exclusive. The ai-toolkit call-level generation params and the thinking /
      * imageConfig provider options flow into `generation_config`.
      *
      * When an agent is set, none of these fields are accepted by the API.

@@ -3,8 +3,8 @@ import {
   resolve,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
-import { EmptyResponseBodyError } from '@ai-sdk/provider';
+} from '@ai-toolkit/provider-utils';
+import { EmptyResponseBodyError } from '@ai-toolkit/provider';
 import { InvalidArgumentError } from '../error/invalid-argument-error';
 import type { UIMessageChunk } from '../ui-message-stream/ui-message-chunks';
 import type { ChatTransport } from './chat-transport';

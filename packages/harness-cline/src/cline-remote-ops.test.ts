@@ -1,4 +1,4 @@
-import type { Experimental_SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession } from '@ai-toolkit/provider-utils';
 import { describe, expect, it, vi } from 'vitest';
 import { createClineRemoteOps } from './cline-remote-ops';
 

@@ -3,7 +3,7 @@ import { join, resolve } from 'node:path';
 import {
   isHarnessAuthenticationEnvironment,
   shouldResolveNativeSubscription,
-} from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness/utils';
 import {
   Llms,
   ProviderSettingsManager,

@@ -1,11 +1,11 @@
 ---
 title: Choosing a Provider
-description: Learn how to configure and authenticate with AI providers in the AI SDK.
+description: Learn how to configure and authenticate with AI providers in the ai-toolkit.
 ---
 
 # Choosing a Provider
 
-The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [community](/providers/community-providers) packages.
+The ai-toolkit supports dozens of model providers through [first-party](/providers/ai-toolkit-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [community](/providers/community-providers) packages.
 
 ```ts
 import { generateText } from 'ai';
@@ -19,11 +19,11 @@ const { text } = await generateText({
 
 ## AI Gateway
 
-The [Vercel AI Gateway](/providers/ai-sdk-providers/ai-gateway) is the fastest way to get started with the AI SDK. Access models from OpenAI, Anthropic, Google, and other providers. Authenticate with [OIDC](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments) or an AI Gateway API key
+The [khulnasoft AI Gateway](/providers/ai-toolkit-providers/ai-gateway) is the fastest way to get started with the ai-toolkit. Access models from OpenAI, Anthropic, Google, and other providers. Authenticate with [OIDC](https://ai-toolkit.dev/providers/ai-toolkit-providers/ai-gateway#oidc-authentication-khulnasoft-deployments) or an AI Gateway API key
 
 <div className="max-w-[40%] mx-auto">
   <ButtonLink
-    href="https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%2Fapi-keys%3Futm_source%3Dgateway-models-page%26showCreateKeyModal%3Dtrue&title=Get+Started+with+Vercel+AI+Gateway"
+    href="https://khulnasoft.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%2Fapi-keys%3Futm_source%3Dgateway-models-page%26showCreateKeyModal%3Dtrue&title=Get+Started+with+khulnasoft+AI+Gateway"
     shape="rounded"
     size="large"
     type="default"
@@ -39,7 +39,7 @@ Add your API key to your environment:
 AI_GATEWAY_API_KEY=your_api_key_here
 ```
 
-The AI Gateway is the default [global provider](/docs/ai-sdk-core/provider-management#global-provider-configuration), so you can access models using a simple string:
+The AI Gateway is the default [global provider](/docs/ai-toolkit-core/provider-management#global-provider-configuration), so you can access models using a simple string:
 
 ```ts
 import { generateText } from 'ai';
@@ -57,30 +57,30 @@ You can also explicitly import and use the gateway provider:
 import { gateway } from 'ai';
 model: gateway('anthropic/claude-sonnet-5.5');
 
-// Option 2: Install and import from '@ai-sdk/gateway' package
-import { gateway } from '@ai-sdk/gateway';
+// Option 2: Install and import from '@ai-toolkit/gateway' package
+import { gateway } from '@ai-toolkit/gateway';
 model: gateway('anthropic/claude-sonnet-5.5');
 ```
 
 ## Using Dedicated Providers
 
-You can also use [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [community](/providers/community-providers) provider packages directly. Install the package and create a provider instance. For example, to use Anthropic:
+You can also use [first-party](/providers/ai-toolkit-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [community](/providers/community-providers) provider packages directly. Install the package and create a provider instance. For example, to use Anthropic:
 
-<InstallPackages packages="@ai-sdk/anthropic" />
+<InstallPackages packages="@ai-toolkit/anthropic" />
 
 ```ts
-import { anthropic } from '@ai-sdk/anthropic';
+import { anthropic } from '@ai-toolkit/anthropic';
 
 model: anthropic('claude-sonnet-5-5');
 ```
 
-You can change the default global provider so string model references use your preferred provider everywhere in your application. Learn more about [provider management](/docs/ai-sdk-core/provider-management#global-provider-configuration).
+You can change the default global provider so string model references use your preferred provider everywhere in your application. Learn more about [provider management](/docs/ai-toolkit-core/provider-management#global-provider-configuration).
 
-See [available providers](/providers/ai-sdk-providers) for setup instructions for each provider.
+See [available providers](/providers/ai-toolkit-providers) for setup instructions for each provider.
 
 ## Custom Providers
 
-You can build your own provider to integrate any service with the AI SDK. The AI SDK provides a [Language Model Specification](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v3) that ensures compatibility across providers.
+You can build your own provider to integrate any service with the ai-toolkit. The ai-toolkit provides a [Language Model Specification](https://github.com/khulnasoft/ai/tree/main/packages/provider/src/language-model/v3) that ensures compatibility across providers.
 
 ```ts
 import { generateText } from 'ai';

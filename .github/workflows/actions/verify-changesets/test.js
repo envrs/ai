@@ -30,7 +30,7 @@ test('happy path', async () => {
 
   const readFile = mockReadFile(
     async () =>
-      `---\nai: patch\n@ai-sdk/provider: patch\n---\n## Test changeset`,
+      `---\nai: patch\n@ai-toolkit/provider: patch\n---\n## Test changeset`,
   );
   const lstat = mockLstat();
 
@@ -127,7 +127,7 @@ test('minor update', async () => {
       return `---\nai: patch\n---\n## Test changeset`;
     }
 
-    return `---\n@ai-sdk/provider: minor\n---\n## Test changeset`;
+    return `---\n@ai-toolkit/provider: minor\n---\n## Test changeset`;
   });
   const lstat = mockLstat();
 
@@ -135,11 +135,11 @@ test('minor update', async () => {
     () => verifyChangesets(event, env, readFile, lstat),
     Object.assign(
       new Error(
-        `Invalid .changeset file - invalid version bump (only "patch" is allowed, see https://ai-sdk.dev/docs/migration-guides/versioning). To bypass, add one of the following labels: minor, major`,
+        `Invalid .changeset file - invalid version bump (only "patch" is allowed, see https://ai-toolkit.dev/docs/migration-guides/versioning). To bypass, add one of the following labels: minor, major`,
       ),
       {
         path: '.changeset/minor-update.md',
-        frontmatter: '---\n@ai-sdk/provider: minor\n---',
+        frontmatter: '---\n@ai-toolkit/provider: minor\n---',
       },
     ),
   );
@@ -174,7 +174,7 @@ test('minor update - with "minor" label', async () => {
       return `---\nai: patch\n---\n## Test changeset`;
     }
 
-    return `---\n@ai-sdk/provider: minor\n---\n## Test changeset`;
+    return `---\n@ai-toolkit/provider: minor\n---\n## Test changeset`;
   });
 
   const message = await verifyChangesets(event, env, readFile);
@@ -203,7 +203,7 @@ test('major update - with "major" label', async () => {
       return `---\nai: patch\n---\n## Test changeset`;
     }
 
-    return `---\n@ai-sdk/provider: major\n---\n## Test changeset`;
+    return `---\n@ai-toolkit/provider: major\n---\n## Test changeset`;
   });
 
   const message = await verifyChangesets(event, env, readFile);
@@ -228,7 +228,7 @@ test('major update - allowed when pre-release mode is active', async () => {
       return '{"mode":"pre","tag":"beta"}';
     }
 
-    return `---\n@ai-sdk/provider: major\n---\n## Test changeset`;
+    return `---\n@ai-toolkit/provider: major\n---\n## Test changeset`;
   });
   const lstat = mockLstat();
 
@@ -277,7 +277,7 @@ test('major update - rejected when not in pre-release mode', async () => {
   };
 
   const readFile = mockReadFile(async () => {
-    return `---\n@ai-sdk/provider: minor\n---\n## Test changeset`;
+    return `---\n@ai-toolkit/provider: minor\n---\n## Test changeset`;
   });
   const lstat = mockLstat();
 
@@ -324,7 +324,7 @@ test('error does not include raw file content', async () => {
   };
 
   const readFile = mockReadFile(
-    async () => '---\n@ai-sdk/provider: minor\n---\nSensitive content here',
+    async () => '---\n@ai-toolkit/provider: minor\n---\nSensitive content here',
   );
   const lstat = mockLstat();
 
@@ -333,7 +333,7 @@ test('error does not include raw file content', async () => {
     assert.fail('Expected error to be thrown');
   } catch (error) {
     // Should have frontmatter (safe to display), not full content
-    assert.strictEqual(error.frontmatter, '---\n@ai-sdk/provider: minor\n---');
+    assert.strictEqual(error.frontmatter, '---\n@ai-toolkit/provider: minor\n---');
     assert.strictEqual(error.content, undefined);
   }
 });
@@ -366,10 +366,10 @@ test('package code change with quoted package name in changeset', async () => {
 
   const readFile = mockReadFile(async path => {
     if (path.endsWith('package.json')) {
-      return JSON.stringify({ name: '@ai-sdk/openai' });
+      return JSON.stringify({ name: '@ai-toolkit/openai' });
     }
 
-    return `---\n'@ai-sdk/openai': patch\n---\n## New feature`;
+    return `---\n'@ai-toolkit/openai': patch\n---\n## New feature`;
   });
   const lstat = mockLstat();
 
@@ -411,7 +411,7 @@ test('package code change but changeset missing that package', async () => {
       return JSON.stringify({ name: 'ai' });
     }
     if (path.includes('packages/openai/')) {
-      return JSON.stringify({ name: '@ai-sdk/openai' });
+      return JSON.stringify({ name: '@ai-toolkit/openai' });
     }
 
     return `---\nai: patch\n---\n## Partial changeset`;
@@ -421,7 +421,7 @@ test('package code change but changeset missing that package', async () => {
   await assert.rejects(
     () => verifyChangesets(event, env, readFile, lstat),
     new Error(
-      `Missing changeset entries for packages: @ai-sdk/openai. Make sure all modified packages are listed in a .changeset/*.md file.`,
+      `Missing changeset entries for packages: @ai-toolkit/openai. Make sure all modified packages are listed in a .changeset/*.md file.`,
     ),
   );
 });
@@ -506,7 +506,7 @@ test('package example and docs changes do not require changesets', async t => {
 
         const readFile = mockReadFile(async path => {
           if (path.endsWith('package.json')) {
-            return JSON.stringify({ name: '@ai-sdk/devtools' });
+            return JSON.stringify({ name: '@ai-toolkit/devtools' });
           }
         });
         const lstat = mockLstat();
@@ -529,7 +529,7 @@ test('package example and docs changes do not exempt source changes', async () =
 
   const readFile = mockReadFile(async path => {
     if (path.endsWith('package.json')) {
-      return JSON.stringify({ name: '@ai-sdk/devtools' });
+      return JSON.stringify({ name: '@ai-toolkit/devtools' });
     }
   });
   const lstat = mockLstat();
@@ -553,7 +553,7 @@ test('package examples do not require an entry alongside other package changeset
   const readFile = mockReadFile(async path => {
     if (path.endsWith('package.json')) {
       return JSON.stringify({
-        name: path.includes('packages/ai/') ? 'ai' : '@ai-sdk/devtools',
+        name: path.includes('packages/ai/') ? 'ai' : '@ai-toolkit/devtools',
       });
     }
 

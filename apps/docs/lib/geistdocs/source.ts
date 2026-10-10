@@ -1,4 +1,4 @@
-import { createVersionedSources } from '@vercel/geistdocs/source';
+import { createVersionedSources } from '@khulnasoft/geistdocs/source';
 import {
   cookbookV5,
   cookbookV6,
@@ -98,7 +98,7 @@ export const cookbookVersions = createVersionedSources({
 
 /**
  * The same cookbook content served under /resources/recipes, mirroring
- * production: ai-sdk.dev renders every recipe on both URL surfaces (the
+ * production: ai-toolkit.dev renders every recipe on both URL surfaces (the
  * sitemap and agent surfaces canonicalize on /cookbook).
  */
 export const recipesVersions = createVersionedSources({

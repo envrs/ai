@@ -6,12 +6,12 @@ import type {
   Experimental_BatchV4Status as BatchV4Status,
   ImageModelV4ProviderMetadata,
   ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type {
   InferToolSetContext,
   ProviderOptions,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { ContentPart } from '../generate-text/content-part';
 import type { ToolOrder } from '../generate-text/tool-order';
 import type { LanguageModelCallOptions } from '../prompt/language-model-call-options';
@@ -118,7 +118,7 @@ export type StartBatchOptions<
 > = {
   /**
    * Provider used to process the batch. Defaults to the global provider, or
-   * the Vercel AI Gateway when no global provider is configured.
+   * the khulnasoft AI Gateway when no global provider is configured.
    */
   provider?: PROVIDER;
   requests: ReadonlyArray<BatchRequest<InferBatchModelIds<PROVIDER>, TOOLS>>;
@@ -182,7 +182,7 @@ export type ListBatchesResult = {
 export type GetBatchStatusOptions = {
   /**
    * Provider used to access the batch. Defaults to the global provider, or
-   * the Vercel AI Gateway when no global provider is configured.
+   * the khulnasoft AI Gateway when no global provider is configured.
    */
   provider?: BatchProvider;
   batch: BatchReference;

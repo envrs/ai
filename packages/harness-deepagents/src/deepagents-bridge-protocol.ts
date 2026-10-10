@@ -3,7 +3,7 @@ import {
   harnessV1BridgeOutboundMessageSchema,
   harnessV1BridgeReadySchema,
   harnessV1BridgeStartBaseSchema,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import { z } from 'zod/v4';
 
 // Deep Agents bridge wire protocol; only the `start` payload is adapter-specific.

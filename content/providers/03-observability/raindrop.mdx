@@ -1,19 +1,19 @@
 ---
 title: Raindrop
-description: Monitor AI SDK calls and agent traces with Raindrop
+description: Monitor ai-toolkit calls and agent traces with Raindrop
 ---
 
 # Raindrop Observability
 
-[Raindrop](https://www.raindrop.ai/) provides observability for AI applications. Its AI SDK integration records events and traces for `generateText`, `streamText`, `generateObject`, `streamObject`, model calls, tool calls, errors, latency, and token usage.
+[Raindrop](https://www.raindrop.ai/) provides observability for AI applications. Its ai-toolkit integration records events and traces for `generateText`, `streamText`, `generateObject`, `streamObject`, model calls, tool calls, errors, latency, and token usage.
 
-Raindrop supports the AI SDK v7 telemetry interface directly, so you can use `registerTelemetry` and the `telemetry` option without adding OpenTelemetry setup.
+Raindrop supports the ai-toolkit v7 telemetry interface directly, so you can use `registerTelemetry` and the `telemetry` option without adding OpenTelemetry setup.
 
 ## Setup
 
-Install the Raindrop AI SDK integration:
+Install the Raindrop ai-toolkit integration:
 
-<InstallPackages packages="@raindrop-ai/ai-sdk" />
+<InstallPackages packages="@raindrop-ai/ai-toolkit" />
 
 Set your Raindrop write key (create one in the [Raindrop dashboard](https://www.raindrop.ai/)):
 
@@ -21,22 +21,22 @@ Set your Raindrop write key (create one in the [Raindrop dashboard](https://www.
 RAINDROP_WRITE_KEY="..."
 ```
 
-Then register Raindrop once at application startup. `raindrop()` reads `RAINDROP_WRITE_KEY` automatically and needs no `@ai-sdk/otel` or OpenTelemetry setup:
+Then register Raindrop once at application startup. `raindrop()` reads `RAINDROP_WRITE_KEY` automatically and needs no `@ai-toolkit/otel` or OpenTelemetry setup:
 
 ```ts filename="instrumentation.ts"
 import { registerTelemetry } from 'ai';
-import { raindrop } from '@raindrop-ai/ai-sdk';
+import { raindrop } from '@raindrop-ai/ai-toolkit';
 
 registerTelemetry(raindrop());
 ```
 
 ## Usage
 
-Once registered, AI SDK calls emit telemetry automatically. Use the `telemetry` option for function-level settings such as `functionId`:
+Once registered, ai-toolkit calls emit telemetry automatically. Use the `telemetry` option for function-level settings such as `functionId`:
 
 ```ts
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 
 const { text } = await generateText({
   model: openai('gpt-6-luna'),
@@ -55,8 +55,8 @@ If Raindrop event fields such as `userId`, `convoId`, or `eventName` change per 
 
 ```ts highlight="8-10,15-19,21"
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
-import { raindrop } from '@raindrop-ai/ai-sdk';
+import { openai } from '@ai-toolkit/openai';
+import { raindrop } from '@raindrop-ai/ai-toolkit';
 
 const userId = 'user_123';
 const convoId = 'chat_456';
@@ -85,7 +85,7 @@ await raindropTelemetry.flush();
 
 ## Streaming
 
-Streaming calls work the same way. For AI SDK UI routes, return the v7 stream helpers and flush Raindrop when the stream finishes:
+Streaming calls work the same way. For ai-toolkit UI routes, return the v7 stream helpers and flush Raindrop when the stream finishes:
 
 ```ts filename="app/api/chat/route.ts" highlight="15-27"
 import {
@@ -95,8 +95,8 @@ import {
   toUIMessageStream,
   type UIMessage,
 } from 'ai';
-import { openai } from '@ai-sdk/openai';
-import { raindrop } from '@raindrop-ai/ai-sdk';
+import { openai } from '@ai-toolkit/openai';
+import { raindrop } from '@raindrop-ai/ai-toolkit';
 
 export async function POST(req: Request) {
   const { id, messages, userId } = (await req.json()) as {
@@ -152,5 +152,5 @@ Credential-shaped values in provider options are stripped from traces by default
 
 ## Resources
 
-- [Raindrop AI SDK integration](https://www.raindrop.ai/docs/integrations/vercel-ai-sdk/)
-- [AI SDK telemetry documentation](/docs/ai-sdk-core/telemetry)
+- [Raindrop ai-toolkit integration](https://www.raindrop.ai/docs/integrations/khulnasoft-ai-toolkit/)
+- [ai-toolkit telemetry documentation](/docs/ai-toolkit-core/telemetry)

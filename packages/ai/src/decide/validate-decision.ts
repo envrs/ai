@@ -2,7 +2,7 @@ import {
   InvalidResponseDataError,
   type Experimental_DecisionModelV4Result as DecisionModelV4Result,
   type Experimental_DecisionModelV4Question as DecisionQuestion,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { filePartSchema, textPartSchema } from '../prompt/content-part';
 import type { DecisionState } from './decision-state';
 import { InvalidArgumentError } from '../error/invalid-argument-error';

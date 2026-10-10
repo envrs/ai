@@ -2,8 +2,8 @@ import type {
   Experimental_DecisionModelV4State as DecisionModelV4State,
   JSONObject,
   JSONValue,
-} from '@ai-sdk/provider';
-import type { FilePart, TextPart } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import type { FilePart, TextPart } from '@ai-toolkit/provider-utils';
 import { convertToLanguageModelPrompt } from '../prompt/convert-to-language-model-prompt';
 
 /** Shared text, JSON data, or ordered multimodal parts for a decision. */

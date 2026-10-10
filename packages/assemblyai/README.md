@@ -1,48 +1,48 @@
-# AI SDK - AssemblyAI Provider
+# ai-toolkit - AssemblyAI Provider
 
-The **[AssemblyAI provider](https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai)** for the [AI SDK](https://ai-sdk.dev/docs)
+The **[AssemblyAI provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/assemblyai)** for the [ai-toolkit](https://ai-toolkit.dev/docs)
 contains transcription model support for the AssemblyAI transcription API.
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access AssemblyAI (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access AssemblyAI (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The AssemblyAI provider is available in the `@ai-sdk/assemblyai` module. You can install it with
+The AssemblyAI provider is available in the `@ai-toolkit/assemblyai` module. You can install it with
 
 ```bash
-npm i @ai-sdk/assemblyai
+npm i @ai-toolkit/assemblyai
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `assemblyai` from `@ai-sdk/assemblyai`:
+You can import the default provider instance `assemblyai` from `@ai-toolkit/assemblyai`:
 
 ```ts
-import { assemblyai } from '@ai-sdk/assemblyai';
+import { assemblyai } from '@ai-toolkit/assemblyai';
 ```
 
 ## Example
 
 ```ts
-import { assemblyai } from '@ai-sdk/assemblyai';
+import { assemblyai } from '@ai-toolkit/assemblyai';
 import { transcribe } from 'ai';
 
 const { text } = await transcribe({
   model: assemblyai.transcription('universal-3-5-pro'),
   audio: new URL(
-    'https://github.com/vercel/ai/raw/refs/heads/main/examples/ai-functions/data/galileo.mp3',
+    'https://github.com/khulnasoft/ai/raw/refs/heads/main/examples/ai-functions/data/galileo.mp3',
   ),
 });
 ```
 
 ## Documentation
 
-Please check out the **[AssemblyAI provider documentation](https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai)** for more information.
+Please check out the **[AssemblyAI provider documentation](https://ai-toolkit.dev/providers/ai-toolkit-providers/assemblyai)** for more information.

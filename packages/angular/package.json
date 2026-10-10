@@ -1,8 +1,8 @@
 {
-  "name": "@ai-sdk/angular",
-  "version": "3.0.137",
+  "name": "@ai-toolkit/angular",
+  "version": "2.0.1",
   "type": "module",
-  "description": "Angular implementation of ai-sdk.",
+  "description": "Angular implementation of ai-toolkit.",
   "license": "Apache-2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -34,13 +34,13 @@
     "README.md"
   ],
   "dependencies": {
-    "@ai-sdk/provider-utils": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*",
     "ai": "workspace:*"
   },
   "devDependencies": {
-    "@ai-sdk/test-server": "workspace:*",
+    "@ai-toolkit/test-server": "workspace:*",
     "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "jsdom": "^24.1.3",
     "tsdown": "^0.23.0",
     "typescript": "6.0.3",
@@ -57,14 +57,14 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/angular"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "sideEffects": false,
   "keywords": [

@@ -2,7 +2,7 @@ import {
   lazySchema,
   zodSchema,
   type InferSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 /**
@@ -48,7 +48,7 @@ export const topazOutputContainers = [
  *
  * Starlight models require `width`, `height`, `duration` and `frameRate`
  * (Topaz prices them from these values), and for other models they let Topaz
- * estimate the cost before it has the video. The AI SDK does not inspect
+ * estimate the cost before it has the video. The ai-toolkit does not inspect
  * media files, so the values come from the caller. Setting any of them
  * requires all four.
  */

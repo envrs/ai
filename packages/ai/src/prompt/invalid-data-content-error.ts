@@ -1,10 +1,10 @@
-import { AISDKError } from '@ai-sdk/provider';
+import { ai-toolkitError } from '@ai-toolkit/provider';
 
 const name = 'AI_InvalidDataContentError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class InvalidDataContentError extends AISDKError {
+export class InvalidDataContentError extends ai-toolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly content: unknown;
@@ -24,6 +24,6 @@ export class InvalidDataContentError extends AISDKError {
   }
 
   static isInstance(error: unknown): error is InvalidDataContentError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }

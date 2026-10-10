@@ -111,7 +111,7 @@ await agent.generate({
 Configure tools based on runtime inputs:
 
 ```ts
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { ToolLoopAgent } from 'ai';
 __PROVIDER_IMPORT__;
 import { z } from 'zod';
@@ -155,7 +155,7 @@ await newsAgent.generate({
 Configure provider settings dynamically:
 
 ```ts
-import { OpenAILanguageModelResponsesOptions } from '@ai-sdk/openai';
+import { OpenAILanguageModelResponsesOptions } from '@ai-toolkit/openai';
 import { ToolLoopAgent } from 'ai';
 import { z } from 'zod';
 

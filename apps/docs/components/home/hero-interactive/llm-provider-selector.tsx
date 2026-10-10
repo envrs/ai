@@ -1,8 +1,8 @@
 'use client';
 
-import { cn } from '@vercel/geistdocs/utils';
-import { IconChevronLeft } from '@vercel/geistdocs/assets/icons/icon-chevron-left';
-import { IconChevronRight } from '@vercel/geistdocs/assets/icons/icon-chevron-right';
+import { cn } from '@khulnasoft/geistdocs/utils';
+import { IconChevronLeft } from '@khulnasoft/geistdocs/assets/icons/icon-chevron-left';
+import { IconChevronRight } from '@khulnasoft/geistdocs/assets/icons/icon-chevron-right';
 import { AnimatePresence, motion } from 'motion/react';
 import { useRef, useState } from 'react';
 import { PROVIDERS, type Provider } from '@/lib/home/code-examples';

@@ -1,4 +1,4 @@
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { downloadToolResultFiles } from './download-tool-result-files';
 

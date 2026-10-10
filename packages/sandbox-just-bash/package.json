@@ -1,6 +1,6 @@
 {
-  "name": "@ai-sdk/sandbox-just-bash",
-  "version": "1.0.148",
+  "name": "@ai-toolkit/sandbox-just-bash",
+  "version": "2.0.1",
   "type": "module",
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -35,13 +35,13 @@
     }
   },
   "dependencies": {
-    "@ai-sdk/harness": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*",
+    "@ai-toolkit/harness": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*",
     "just-bash": "^2.14.5"
   },
   "devDependencies": {
     "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "tsdown": "^0.23.0",
     "typescript": "6.0.3"
   },
@@ -52,14 +52,14 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/sandbox-just-bash"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "keywords": [
     "ai",

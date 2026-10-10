@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4Citation,
   LanguageModelV4Source,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { ResponsesTextProviderMetadata } from './openai-responses-provider-metadata';
 
 type Annotation = NonNullable<

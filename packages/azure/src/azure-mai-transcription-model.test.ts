@@ -2,12 +2,12 @@ import {
   InvalidArgumentError,
   UnsupportedFunctionalityError,
   type JSONObject,
-} from '@ai-sdk/provider';
-import type { WebSocketConstructor } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import type { WebSocketConstructor } from '@ai-toolkit/provider-utils';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   createAzure,

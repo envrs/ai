@@ -1,4 +1,4 @@
-import { asArray } from '@ai-sdk/provider-utils';
+import { asArray } from '@ai-toolkit/provider-utils';
 import type { Telemetry } from 'ai';
 import type { HarnessV1Diagnostic, HarnessV1Observability } from '../../v1';
 import type {

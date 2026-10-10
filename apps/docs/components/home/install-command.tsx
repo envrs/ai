@@ -5,7 +5,7 @@ import {
   CommandPromptRoot,
   CommandPromptSurface,
   CommandPromptViewport,
-} from '@vercel/geistdocs/components/command-prompt';
+} from '@khulnasoft/geistdocs/components/command-prompt';
 
 export function InstallCommand({ command }: { command: string }) {
   return (

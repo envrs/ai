@@ -1,31 +1,31 @@
-# AI SDK - ByteDance Provider
+# ai-toolkit - ByteDance Provider
 
-The **ByteDance provider** for the [AI SDK](https://ai-sdk.dev/docs) contains video model support for ByteDance's Seedance family of video generation models through the [BytePlus ModelArk](https://docs.byteplus.com/en/docs/ModelArk/Video_Generation_API) platform.
+The **ByteDance provider** for the [ai-toolkit](https://ai-toolkit.dev/docs) contains video model support for ByteDance's Seedance family of video generation models through the [BytePlus ModelArk](https://docs.byteplus.com/en/docs/ModelArk/Video_Generation_API) platform.
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access ByteDance (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access ByteDance (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The ByteDance provider is available in the `@ai-sdk/bytedance` module. You can install it with:
+The ByteDance provider is available in the `@ai-toolkit/bytedance` module. You can install it with:
 
 ```bash
-npm i @ai-sdk/bytedance
+npm i @ai-toolkit/bytedance
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `byteDance` from `@ai-sdk/bytedance`:
+You can import the default provider instance `byteDance` from `@ai-toolkit/bytedance`:
 
 ```ts
-import { byteDance } from '@ai-sdk/bytedance';
+import { byteDance } from '@ai-toolkit/bytedance';
 ```
 
 ## Video Models
@@ -39,7 +39,7 @@ Generate video from a text prompt.
 Available models: `seedance-1-5-pro-251215`, `seedance-1-0-pro-250528`, `seedance-1-0-pro-fast-251015`, `seedance-1-0-lite-t2v-250428`
 
 ```ts
-import { byteDance, type ByteDanceVideoModelOptions } from '@ai-sdk/bytedance';
+import { byteDance, type ByteDanceVideoModelOptions } from '@ai-toolkit/bytedance';
 import { experimental_generateVideo as generateVideo } from 'ai';
 
 const { video } = await generateVideo({
@@ -64,7 +64,7 @@ Generate video from a first-frame image with an optional text prompt.
 Available models: `seedance-1-5-pro-251215`, `seedance-1-0-pro-250528`, `seedance-1-0-pro-fast-251015`, `seedance-1-0-lite-i2v-250428`
 
 ```ts
-import { byteDance, type ByteDanceVideoModelOptions } from '@ai-sdk/bytedance';
+import { byteDance, type ByteDanceVideoModelOptions } from '@ai-toolkit/bytedance';
 import { experimental_generateVideo as generateVideo } from 'ai';
 
 const { video } = await generateVideo({
@@ -87,7 +87,7 @@ const { video } = await generateVideo({
 Seedance 1.5 Pro supports generating synchronized audio alongside the video.
 
 ```ts
-import { byteDance, type ByteDanceVideoModelOptions } from '@ai-sdk/bytedance';
+import { byteDance, type ByteDanceVideoModelOptions } from '@ai-toolkit/bytedance';
 import { experimental_generateVideo as generateVideo } from 'ai';
 
 const { video } = await generateVideo({
@@ -111,7 +111,7 @@ const { video } = await generateVideo({
 Generate smooth transitions between a starting and ending keyframe image.
 
 ```ts
-import { byteDance, type ByteDanceVideoModelOptions } from '@ai-sdk/bytedance';
+import { byteDance, type ByteDanceVideoModelOptions } from '@ai-toolkit/bytedance';
 import { experimental_generateVideo as generateVideo } from 'ai';
 
 const { video } = await generateVideo({
@@ -138,7 +138,7 @@ Provide multiple reference images (1-4) that the model uses to faithfully reprod
 Available models: `seedance-1-0-lite-i2v-250428`
 
 ```ts
-import { byteDance, type ByteDanceVideoModelOptions } from '@ai-sdk/bytedance';
+import { byteDance, type ByteDanceVideoModelOptions } from '@ai-toolkit/bytedance';
 import { experimental_generateVideo as generateVideo } from 'ai';
 
 const { video } = await generateVideo({
@@ -193,7 +193,7 @@ ARK_API_KEY=your-api-key
 Or pass it directly:
 
 ```ts
-import { createByteDance } from '@ai-sdk/bytedance';
+import { createByteDance } from '@ai-toolkit/bytedance';
 
 const byteDance = createByteDance({
   apiKey: 'your-api-key',
@@ -204,4 +204,4 @@ You can [obtain an API key](https://console.byteplus.com/ark/apiKey) from the By
 
 ## Documentation
 
-Please check out the **[ByteDance provider](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance)** for more information.
+Please check out the **[ByteDance provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/bytedance)** for more information.

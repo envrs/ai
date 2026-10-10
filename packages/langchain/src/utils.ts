@@ -493,7 +493,7 @@ export function processModelChunk(
       state.emittedImages.add(imageOutput.id);
 
       /**
-       * Emit as a file part using proper AI SDK multimodal format
+       * Emit as a file part using proper ai-toolkit multimodal format
        */
       const mediaType = `image/${imageOutput.output_format || 'png'}`;
       controller.enqueue({
@@ -1027,7 +1027,7 @@ export function isCitationContentBlock(
  * LangChain Core standardizes citations as `{ type: 'citation', ... }` entries in
  * the `annotations` array of a text content block. The text extractors elsewhere
  * in this file only read the `text` field, so without this the citations would be
- * dropped instead of surfaced as AI SDK source parts.
+ * dropped instead of surfaced as ai-toolkit source parts.
  *
  * Handles both class instances and serialized LangChain message objects.
  */
@@ -1103,7 +1103,7 @@ function buildSourceProviderMetadata(
 }
 
 /**
- * Emits AI SDK source chunks (`source-url` / `source-document`) for the given
+ * Emits ai-toolkit source chunks (`source-url` / `source-document`) for the given
  * citations.
  *
  * Citations with a `url` become `source-url` parts keyed by that url; the rest
@@ -1615,7 +1615,7 @@ export function processLangGraphEvent(
             emittedImages.add(imageOutput.id);
 
             /**
-             * Emit as a file part using proper AI SDK multimodal format
+             * Emit as a file part using proper ai-toolkit multimodal format
              */
             const mediaType = `image/${imageOutput.output_format || 'png'}`;
             controller.enqueue({

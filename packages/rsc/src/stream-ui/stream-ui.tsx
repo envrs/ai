@@ -3,12 +3,12 @@ import type {
   LanguageModelV4StreamResult,
   LanguageModelV4Usage,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   safeParseJSON,
   type InferSchema,
   type ProviderOptions,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   InvalidToolInputError,
   NoSuchToolError,
@@ -139,7 +139,7 @@ export async function streamUI<
 
     /**
      * Additional provider-specific options. They are passed through
-     * to the provider from the AI SDK and enable provider-specific
+     * to the provider from the ai-toolkit and enable provider-specific
      * functionality that can be fully encapsulated in the provider.
      */
     providerOptions?: ProviderOptions;

@@ -35,7 +35,7 @@ interface CallState {
 
 export interface DevToolsTelemetryOptions {
   /**
-   * Identifier used to group multiple AI SDK calls into one DevTools run.
+   * Identifier used to group multiple ai-toolkit calls into one DevTools run.
    * Reuse the same value when resuming an interrupted interaction.
    */
   runId?: string;
@@ -96,13 +96,13 @@ function getOperationType(operationId: string): OperationType {
 }
 
 /**
- * Creates a devtools telemetry integration that logs all AI SDK operations
+ * Creates a devtools telemetry integration that logs all ai-toolkit operations
  * to the devtools viewer.
  *
  * Usage:
  * ```ts
  * import { registerTelemetry } from 'ai';
- * import { DevToolsTelemetry } from '@ai-sdk/devtools';
+ * import { DevToolsTelemetry } from '@ai-toolkit/devtools';
  *
  * registerTelemetry(DevToolsTelemetry());
  * ```
@@ -115,7 +115,7 @@ export function DevToolsTelemetry(
 ): Telemetry {
   if (process.env.NODE_ENV === 'production') {
     throw new Error(
-      '@ai-sdk/devtools should not be used in production. ' +
+      '@ai-toolkit/devtools should not be used in production. ' +
         'Remove DevToolsTelemetry from your telemetry configuration for production builds.',
     );
   }

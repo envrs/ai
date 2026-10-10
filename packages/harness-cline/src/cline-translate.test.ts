@@ -515,7 +515,7 @@ describe('translateClineEvent', () => {
               type: 'tool-result',
               toolCallId: 'mcp-call',
               toolName: 'context7__resolve-library-id',
-              output: { content: [{ type: 'text', text: '/vercel/next.js' }] },
+              output: { content: [{ type: 'text', text: '/khulnasoft/next.js' }] },
             },
           ],
           createdAt: 0,
@@ -539,7 +539,7 @@ describe('translateClineEvent', () => {
           "result": {
             "content": [
               {
-                "text": "/vercel/next.js",
+                "text": "/khulnasoft/next.js",
                 "type": "text",
               },
             ],

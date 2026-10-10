@@ -1,9 +1,9 @@
-import { InvalidArgumentError } from '@ai-sdk/provider';
+import { InvalidArgumentError } from '@ai-toolkit/provider';
 import {
   convertBase64ToUint8Array,
   convertUint8ArrayToBase64,
   detectMediaType,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 const MAX_REFERENCE_BASE64_LENGTH = 16_777_216;
 const MAX_REFERENCE_BYTES = 12_582_912;

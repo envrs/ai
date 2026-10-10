@@ -1,4 +1,4 @@
-import { resolve } from '@ai-sdk/provider-utils';
+import { resolve } from '@ai-toolkit/provider-utils';
 import {
   generateAuthToken as defaultGenerateAuthToken,
   type GoogleCredentials,

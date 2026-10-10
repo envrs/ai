@@ -1,4 +1,4 @@
-import type { JSONObject } from '@ai-sdk/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 import type { AnthropicMessageMetadata } from './anthropic-message-metadata';
 
 /**

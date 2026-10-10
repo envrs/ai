@@ -3,7 +3,7 @@ import type {
   InferToolSetContext,
   ModelMessage,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { createRestrictedTelemetryDispatcher } from 'ai/internal';
 import type {
   ContentPart,

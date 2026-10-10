@@ -1,12 +1,12 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   APICallError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4OperationStartResult as VideoModelV4OperationStartResult,
   type Experimental_VideoModelV4OperationStatusResult as VideoModelV4OperationStatusResult,
   type SharedV4ProviderMetadata,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertImageModelFileToDataUri,
@@ -15,7 +15,7 @@ import {
   getFromApi,
   parseProviderOptions,
   postJsonToApi,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { FalConfig } from './fal-config';
 import { falErrorDataSchema, falFailedResponseHandler } from './fal-error';
@@ -241,7 +241,7 @@ export class FalVideoModel implements VideoModelV4 {
 
     const responseUrl = queueResponse.response_url;
     if (!responseUrl) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'FAL_VIDEO_GENERATION_ERROR',
         message: 'No response URL returned from queue endpoint',
       });
@@ -324,7 +324,7 @@ export class FalVideoModel implements VideoModelV4 {
     const videoUrl = response.video?.url;
 
     if (!videoUrl || !response.video) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'FAL_VIDEO_GENERATION_ERROR',
         message: 'No video URL in response',
       });

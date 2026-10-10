@@ -1,7 +1,7 @@
 import { randomBytes, randomUUID, timingSafeEqual } from 'node:crypto';
 import { createServer, type IncomingMessage, type Server } from 'node:http';
 import type { AddressInfo } from 'node:net';
-import type { HarnessV1BridgeToolWire } from '@ai-sdk/harness';
+import type { HarnessV1BridgeToolWire } from '@ai-toolkit/harness';
 import type { ACPHostToolMCPTransport } from '../acp-v1-settings';
 import { canonicalFingerprint } from './canonical-json-fingerprint';
 import {

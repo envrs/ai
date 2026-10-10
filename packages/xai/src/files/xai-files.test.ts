@@ -378,7 +378,7 @@ describe('XaiFiles', () => {
       expect(options.method).toBe('POST');
       expect(options.duplex).toBe('half');
       expect(options.headers['content-type']).toMatch(
-        /^multipart\/form-data; boundary=ai-sdk-multipart-/,
+        /^multipart\/form-data; boundary=ai-toolkit-multipart-/,
       );
 
       const bodyText = await new Response(

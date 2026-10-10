@@ -4,7 +4,7 @@ import { access, readFile } from 'node:fs/promises';
 import { homedir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { promisify } from 'node:util';
-import type { ACPAuthenticationMode } from '@ai-sdk/harness-acp';
+import type { ACPAuthenticationMode } from '@ai-toolkit/harness-acp';
 import {
   isHarnessAuthenticationEnvironment,
   isLinux,
@@ -14,8 +14,8 @@ import {
   readMacOSKeychainPassword,
   readWindowsCredentialManagerPassword,
   shouldResolveNativeSubscription,
-} from '@ai-sdk/harness/utils';
-import { isRecord } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/utils';
+import { isRecord } from '@ai-toolkit/provider-utils';
 import { parse, type ParseError } from 'jsonc-parser';
 
 const COPILOT_KEYRING_SERVICE = 'copilot-cli';

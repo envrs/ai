@@ -1,11 +1,11 @@
-# AI SDK - Claude Code Harness
+# ai-toolkit - Claude Code Harness
 
 `HarnessV1` adapter backed by [`@anthropic-ai/claude-agent-sdk`](https://www.npmjs.com/package/@anthropic-ai/claude-agent-sdk), which drives the `claude` CLI. The adapter ships a bridge process that runs inside a sandbox and talks to the host over a WebSocket on a sandbox-proxied loopback port.
 
 ## Setup
 
 ```bash
-npm i @ai-sdk/harness-claude-code @ai-sdk/harness @ai-sdk/sandbox-vercel
+npm i @ai-toolkit/harness-claude-code @ai-toolkit/harness @ai-toolkit/sandbox-khulnasoft
 ```
 
 The bridge installs `@anthropic-ai/claude-agent-sdk` and `@anthropic-ai/claude-code` inside the sandbox the first time the session starts.
@@ -13,9 +13,9 @@ The bridge installs `@anthropic-ai/claude-agent-sdk` and `@anthropic-ai/claude-c
 ## Usage
 
 ```ts
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { createClaudeCode } from '@ai-sdk/harness-claude-code';
-import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { createClaudeCode } from '@ai-toolkit/harness-claude-code';
+import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import { tool } from 'ai';
 import { z } from 'zod/v4';
 

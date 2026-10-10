@@ -1,4 +1,4 @@
-import type { InferSchema } from '@ai-sdk/provider-utils';
+import type { InferSchema } from '@ai-toolkit/provider-utils';
 import { expectTypeOf } from 'vitest';
 import type { deepSeekFilesResponseSchema } from './deepseek-files-api';
 

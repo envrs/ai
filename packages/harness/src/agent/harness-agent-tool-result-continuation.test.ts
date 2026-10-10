@@ -1,4 +1,4 @@
-import type { ModelMessage } from '@ai-sdk/provider-utils';
+import type { ModelMessage } from '@ai-toolkit/provider-utils';
 import { describe, expect, test } from 'vitest';
 import { collectHarnessAgentToolResultContinuations } from './harness-agent-tool-result-continuation';
 

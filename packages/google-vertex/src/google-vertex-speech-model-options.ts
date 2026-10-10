@@ -1,4 +1,4 @@
-import type { GoogleSpeechModelOptions } from '@ai-sdk/google';
+import type { GoogleSpeechModelOptions } from '@ai-toolkit/google';
 
 // Gemini TTS models (Vertex `generateContent` endpoint):
 // https://docs.cloud.google.com/text-to-speech/docs/gemini-tts

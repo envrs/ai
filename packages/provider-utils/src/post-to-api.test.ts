@@ -1,4 +1,4 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import { describe, expect, it, vi } from 'vitest';
 import { z } from 'zod/v4';
 import { postJsonToApi } from './post-to-api';

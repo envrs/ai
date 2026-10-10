@@ -1,4 +1,4 @@
-import type { EmbeddingModelV4 } from '@ai-sdk/provider';
+import type { EmbeddingModelV4 } from '@ai-toolkit/provider';
 import assert from 'node:assert';
 import {
   afterEach,

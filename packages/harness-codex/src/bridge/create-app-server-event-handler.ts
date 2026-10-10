@@ -1,4 +1,4 @@
-import type { BridgeTurn } from '@ai-sdk/harness/bridge';
+import type { BridgeTurn } from '@ai-toolkit/harness/bridge';
 import type { CodexStepTracker } from './codex-step-tracker';
 import type { CodexEvent, CodexItem } from './create-emit-stream-event';
 import type { CodexAppServerNotification } from './codex-app-server-client';

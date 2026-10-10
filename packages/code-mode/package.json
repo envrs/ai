@@ -1,10 +1,10 @@
 {
-  "name": "@ai-sdk/code-mode",
-  "version": "1.0.94",
-  "description": "QuickJS-backed code mode tool for AI SDK",
+  "name": "@ai-toolkit/code-mode",
+  "version": "2.0.1",
+  "description": "QuickJS-backed code mode tool for ai-toolkit",
   "keywords": [
     "ai",
-    "ai-sdk",
+    "ai-toolkit",
     "agents",
     "code-mode",
     "quickjs",
@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "ai": "workspace:*",
     "tsdown": "^0.23.0",
     "typescript": "6.0.3",
@@ -63,14 +63,14 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/code-mode"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "dependencies": {
     "run": "^2.0.0"

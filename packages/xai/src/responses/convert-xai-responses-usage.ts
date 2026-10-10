@@ -1,4 +1,4 @@
-import type { LanguageModelV4Usage } from '@ai-sdk/provider';
+import type { LanguageModelV4Usage } from '@ai-toolkit/provider';
 import type { XaiResponsesUsage } from './xai-responses-api';
 
 export function convertXaiResponsesUsage(

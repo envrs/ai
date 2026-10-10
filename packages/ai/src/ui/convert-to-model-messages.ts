@@ -8,7 +8,7 @@ import {
   type TextPart,
   type ToolApprovalResponse,
   type ToolResultPart,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { createToolModelOutput } from '../prompt/create-tool-model-output';
 import { MessageConversionError } from '../prompt/message-conversion-error';
 import { getOwn } from '../util/get-own';

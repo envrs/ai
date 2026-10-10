@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { createCartesia } from './cartesia-provider';
 import { CartesiaSpeechModel } from './cartesia-speech-model';
@@ -298,7 +298,7 @@ describe('CartesiaSpeechModel', () => {
       });
 
       expect(server.calls[0].requestUserAgent).toContain(
-        `ai-sdk-cartesia/0.0.0-test`,
+        `ai-toolkit-cartesia/0.0.0-test`,
       );
     });
 

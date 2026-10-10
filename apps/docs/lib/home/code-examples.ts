@@ -1,4 +1,4 @@
-// Adapted from the prior ai-sdk.dev landing page. These are displayed examples;
+// Adapted from the prior ai-toolkit.dev landing page. These are displayed examples;
 // selecting a provider never sends a generation request.
 export type Mode = 'gateway' | 'provider' | 'custom';
 export type ModelKind = 'text' | 'image' | 'speech' | 'transcription' | 'video';
@@ -138,7 +138,7 @@ function sample({
   let providerImport = '';
 
   if (mode !== 'gateway') {
-    providerImport = `\nimport { ${sdk} } from '@ai-sdk/${sdk}';`;
+    providerImport = `\nimport { ${sdk} } from '@ai-toolkit/${sdk}';`;
     model =
       kind === 'text'
         ? `${sdk}('${modelId}')`
@@ -281,7 +281,7 @@ for await (const part of result.fullStream) {
         provider,
         mode,
         extraImports:
-          "\nimport { devToolsMiddleware } from '@ai-sdk/devtools';",
+          "\nimport { devToolsMiddleware } from '@ai-toolkit/devtools';",
         body: `const model = wrapLanguageModel({
   model: __MODEL__,
   middleware: devToolsMiddleware(),

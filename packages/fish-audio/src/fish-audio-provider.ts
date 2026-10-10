@@ -3,12 +3,12 @@ import {
   type ProviderV4,
   type SpeechModelV4,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { FishAudioSpeechModel } from './fish-audio-speech-model';
 import type { FishAudioSpeechModelId } from './fish-audio-speech-options';
 import { FishAudioTranscriptionModel } from './fish-audio-transcription-model';
@@ -93,7 +93,7 @@ export function createFishAudio(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-fish-audio/${VERSION}`,
+      `ai-toolkit-fish-audio/${VERSION}`,
     );
 
   const createSpeechModel = (modelId: FishAudioSpeechModelId) =>

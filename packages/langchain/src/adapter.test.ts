@@ -1,7 +1,7 @@
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import {
   toUIMessageStream,
   toBaseMessages,

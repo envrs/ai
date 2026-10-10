@@ -55,7 +55,7 @@ async function readChangeset(path, readFile, lstat) {
   //
   // ```yaml
   // 'ai': patch
-  // '@ai-sdk/provider': patch
+  // '@ai-toolkit/provider': patch
   // ```
   const lines = frontmatter.split('\n').slice(1, -1);
   const versionBumps = {};
@@ -171,7 +171,7 @@ export async function verifyChangesets(
     if (invalidVersionBumps.length > 0) {
       throw Object.assign(
         new Error(
-          `Invalid .changeset file - invalid version bump (only "patch" is allowed, see https://ai-sdk.dev/docs/migration-guides/versioning). To bypass, add one of the following labels: ${BYPASS_LABELS.join(', ')}`,
+          `Invalid .changeset file - invalid version bump (only "patch" is allowed, see https://ai-toolkit.dev/docs/migration-guides/versioning). To bypass, add one of the following labels: ${BYPASS_LABELS.join(', ')}`,
         ),
 
         { path, frontmatter: changeset.frontmatter },

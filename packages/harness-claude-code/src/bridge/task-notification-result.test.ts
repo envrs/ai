@@ -60,7 +60,7 @@ vi.mock('@modelcontextprotocol/sdk/server/mcp.js', () => ({
   },
 }));
 
-vi.mock('@ai-sdk/harness/bridge', () => ({
+vi.mock('@ai-toolkit/harness/bridge', () => ({
   runBridge: async ({
     onStart,
   }: {

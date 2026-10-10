@@ -36,7 +36,7 @@ const relayMock = vi.hoisted(() => ({
 }));
 const tempDirectories: string[] = [];
 
-vi.mock('@ai-sdk/harness/bridge', () => ({
+vi.mock('@ai-toolkit/harness/bridge', () => ({
   runBridge: vi.fn(async (options: unknown) => {
     const bridge = options as {
       onStart(start: unknown, turn: unknown): Promise<void>;

@@ -1,4 +1,4 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import { extractResponseHeaders } from './extract-response-headers';
 import type { FetchFunction } from './fetch-function';
 import { getRuntimeEnvironmentUserAgent } from './get-runtime-environment-user-agent';
@@ -36,7 +36,7 @@ export const deleteFromApi = async <T>({
       method: 'DELETE',
       headers: withUserAgentSuffix(
         headers,
-        `ai-sdk-provider-utils/${VERSION}`,
+        `ai-toolkit-provider-utils/${VERSION}`,
         getRuntimeEnvironmentUserAgent(),
       ),
       signal: abortSignal,

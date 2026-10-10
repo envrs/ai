@@ -3,9 +3,9 @@
 When a provider fetches a URL with `getFromApi`, always set the `validateUrl`
 flag explicitly so every call site makes a visible trust decision. The option
 is optional in the type only for backwards compatibility with external callers
-of `@ai-sdk/provider-utils`; omitting it behaves like `false` (no validation),
+of `@ai-toolkit/provider-utils`; omitting it behaves like `false` (no validation),
 so provider code in this repository must never leave it out. The
-`ai-sdk/require-validate-url` oxlint rule (`tools/oxlint-plugin-ai-sdk`)
+`ai-toolkit/require-validate-url` oxlint rule (`tools/oxlint-plugin-ai-toolkit`)
 enforces this in CI: `pnpm check` fails for any `getFromApi` call without an
 explicit `validateUrl`.
 
@@ -76,7 +76,7 @@ await getFromApi({
 
 ## Direct fetch helpers
 
-Use `fetchUntrustedUrl` from `@ai-sdk/provider-utils` for direct fetches of
+Use `fetchUntrustedUrl` from `@ai-toolkit/provider-utils` for direct fetches of
 response-supplied or otherwise untrusted URLs. It shares URL validation, DNS
 pinning, and redirect handling with `fetchWithValidatedRedirects`, but adds
 first-hop credential isolation. Without a matching `credentialedOrigin` or,
@@ -138,6 +138,6 @@ explanation lives in:
 ## Settings inserted into generated hostnames
 
 Before inserting a resource name, region, or location into a provider hostname,
-validate it with `isValidHostnamePart` from `@ai-sdk/provider-utils`. It accepts one
+validate it with `isValidHostnamePart` from `@ai-toolkit/provider-utils`. It accepts one
 ASCII DNS label (1–63 letters, digits, or hyphens, with no leading or trailing
 hyphen). Throw `InvalidArgumentError` with the setting name when validation fails.

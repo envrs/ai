@@ -1,7 +1,7 @@
 import type {
   Experimental_BatchV4 as BatchV4,
   LanguageModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { expectTypeOf, it } from 'vitest';
 import { createGateway } from './gateway-provider';
 import {
@@ -69,8 +69,8 @@ void decisionFallbackMetadata;
 
 createGateway({ apiKey: 'vck_test-key' });
 createGateway({ apiKey: 'vca_test-token' });
-createGateway({ apiKey: 'vca_test-token', teamIdOrSlug: 'vercel' });
-createGateway({ teamIdOrSlug: 'vercel' });
+createGateway({ apiKey: 'vca_test-token', teamIdOrSlug: 'khulnasoft' });
+createGateway({ teamIdOrSlug: 'khulnasoft' });
 createGateway({});
 
 // @ts-expect-error token is not a supported Gateway provider setting

@@ -1,5 +1,5 @@
 import { expectTypeOf, it } from 'vitest';
-import type { JSONObject } from '@ai-sdk/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 import {
   MCPClientError,
   createMCPClient,

@@ -5,11 +5,11 @@ import type {
   Experimental_RealtimeModelV4ClientSecretResult as RealtimeModelV4ClientSecretResult,
   Experimental_RealtimeModelV4ServerEvent as RealtimeModelV4ServerEvent,
   Experimental_RealtimeModelV4SessionConfig as RealtimeModelV4SessionConfig,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertBase64ToUint8Array,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { CartesiaRealtimeModelId } from './cartesia-realtime-model-options';
 
 export type CartesiaRealtimeModelConfig = {

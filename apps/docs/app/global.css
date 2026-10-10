@@ -2,7 +2,7 @@
 
 @source "../content/**/*.mdx";
 
-/* AI SDK keeps the page background aligned with the docs container surface. */
+/* ai-toolkit keeps the page background aligned with the docs container surface. */
 @layer base {
   body {
     @apply bg-background-200 text-gray-1000;
@@ -10,7 +10,7 @@
 }
 
 /* Input caret for the <ChatGeneration> MDX component (ported from
-   ai-sdk.dev). */
+   ai-toolkit.dev). */
 @keyframes blink {
   0%,
   49.9% {
@@ -26,7 +26,7 @@
   animation: blink 1s steps(1, start) infinite;
 }
 
-/* Landing page hero demo animations (ported from the ai-sdk.dev home page). */
+/* Landing page hero demo animations (ported from the ai-toolkit.dev home page). */
 @keyframes fadein-inplace {
   from {
     opacity: 0;
@@ -57,7 +57,7 @@
   }
 }
 
-/* Step counters for the <Steps> MDX component (ported from ai-sdk.dev). */
+/* Step counters for the <Steps> MDX component (ported from ai-toolkit.dev). */
 .docs-steps {
   counter-reset: step;
 }

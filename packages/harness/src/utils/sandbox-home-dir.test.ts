@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { Experimental_SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession } from '@ai-toolkit/provider-utils';
 import { resolveSandboxHomeDir } from './sandbox-home-dir';
 
 function makeSandbox(result: {
@@ -20,11 +20,11 @@ describe('resolveSandboxHomeDir', () => {
       resolveSandboxHomeDir({
         sandbox: makeSandbox({
           exitCode: 0,
-          stdout: '/home/vercel-sandbox\n',
+          stdout: '/home/khulnasoft-sandbox\n',
           stderr: '',
         }),
       }),
-    ).resolves.toBe('/home/vercel-sandbox');
+    ).resolves.toBe('/home/khulnasoft-sandbox');
   });
 
   it('rejects non-absolute output', async () => {

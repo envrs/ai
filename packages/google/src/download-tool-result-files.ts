@@ -1,13 +1,13 @@
 import type {
   LanguageModelV4Prompt,
   LanguageModelV4ToolResultOutput,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   detectMediaType,
   downloadBlob,
   isFullMediaType,
   isUrlSupported,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 /**
  * Download tool result file URLs that Vertex cannot reference directly before

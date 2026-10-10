@@ -1,4 +1,4 @@
-import { resolve } from '@ai-sdk/provider-utils';
+import { resolve } from '@ai-toolkit/provider-utils';
 import { createAuthTokenGenerator } from '../google-vertex-auth-google-auth-library';
 import { createGoogleVertexAnthropic as createVertexAnthropicOriginal } from './google-vertex-anthropic-provider';
 import { createGoogleVertexAnthropic as createVertexAnthropicNode } from './google-vertex-anthropic-provider-node';

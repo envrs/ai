@@ -1,7 +1,7 @@
-import type { Experimental_VideoModelV4 } from '@ai-sdk/provider';
+import type { Experimental_VideoModelV4 } from '@ai-toolkit/provider';
 import { describe, it, expect, vi } from 'vitest';
 import { GatewayVideoModel } from './gateway-video-model';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import type { GatewayConfig } from './gateway-config';
 
 const TEST_MODEL_ID = 'google/veo-2.0-generate-001';
@@ -1314,11 +1314,11 @@ describe('GatewayVideoModel', () => {
       // unrelated calls that happen to share it.
       await createTestModel().doStart({
         ...baseCallOptions,
-        headers: { 'idempotency-key': 'aisdk_vid_abc123' },
+        headers: { 'idempotency-key': 'ai-toolkit_vid_abc123' },
       });
 
       expect(server.calls[0].requestHeaders['idempotency-key']).toBe(
-        'aisdk_vid_abc123',
+        'ai-toolkit_vid_abc123',
       );
     });
 

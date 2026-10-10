@@ -6,13 +6,13 @@ import {
   type LanguageModelV4ToolCall,
   type ImageModelV4Result,
   type ProviderV4,
-} from '@ai-sdk/provider';
-import { gateway } from '@ai-sdk/gateway';
+} from '@ai-toolkit/provider';
+import { gateway } from '@ai-toolkit/gateway';
 import {
   detectMediaType,
   type ToolSet,
   withUserAgentSuffix,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { InvalidArgumentError } from '../error/invalid-argument-error';
 import { convertLanguageModelContent } from '../generate-text/convert-language-model-content';
 import {
@@ -417,7 +417,7 @@ export function getBatchResults<TOOLS extends ToolSet>({
 }
 
 function resolveBatchApi(provider?: BatchProvider): BatchV4 {
-  provider ??= asProviderV4(globalThis.AI_SDK_DEFAULT_PROVIDER ?? gateway);
+  provider ??= asProviderV4(globalThis.ai-toolkit_DEFAULT_PROVIDER ?? gateway);
 
   if (isBatchApi(provider)) {
     return provider;

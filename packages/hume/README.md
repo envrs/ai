@@ -1,38 +1,38 @@
-# AI SDK - Hume Provider
+# ai-toolkit - Hume Provider
 
-The **[Hume provider](https://ai-sdk.dev/providers/ai-sdk-providers/hume)** for the [AI SDK](https://ai-sdk.dev/docs)
+The **[Hume provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/hume)** for the [ai-toolkit](https://ai-toolkit.dev/docs)
 contains support for the Hume API.
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access Hume (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access Hume (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The Hume provider is available in the `@ai-sdk/hume` module. You can install it with
+The Hume provider is available in the `@ai-toolkit/hume` module. You can install it with
 
 ```bash
-npm i @ai-sdk/hume
+npm i @ai-toolkit/hume
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `hume` from `@ai-sdk/hume`:
+You can import the default provider instance `hume` from `@ai-toolkit/hume`:
 
 ```ts
-import { hume } from '@ai-sdk/hume';
+import { hume } from '@ai-toolkit/hume';
 ```
 
 ## Example
 
 ```ts
-import { hume } from '@ai-sdk/hume';
+import { hume } from '@ai-toolkit/hume';
 import { generateSpeech } from 'ai';
 
 const result = await generateSpeech({
@@ -43,4 +43,4 @@ const result = await generateSpeech({
 
 ## Documentation
 
-Please check out the **[Hume provider documentation](https://ai-sdk.dev/providers/ai-sdk-providers/hume)** for more information.
+Please check out the **[Hume provider documentation](https://ai-toolkit.dev/providers/ai-toolkit-providers/hume)** for more information.

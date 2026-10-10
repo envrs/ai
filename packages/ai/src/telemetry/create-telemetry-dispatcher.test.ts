@@ -12,7 +12,7 @@ const augmentedDummyEvent = {
 };
 
 beforeEach(() => {
-  globalThis.AI_SDK_TELEMETRY_INTEGRATIONS = undefined;
+  globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = undefined;
 });
 
 describe('createTelemetryDispatcher', () => {

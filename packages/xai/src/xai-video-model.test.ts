@@ -1,5 +1,5 @@
-import { InvalidArgumentError } from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { InvalidArgumentError } from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it } from 'vitest';
 import { XaiVideoModel } from './xai-video-model';
 

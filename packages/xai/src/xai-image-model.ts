@@ -1,4 +1,4 @@
-import type { ImageModelV4, SharedV4Warning } from '@ai-sdk/provider';
+import type { ImageModelV4, SharedV4Warning } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertImageModelFileToDataUri,
@@ -12,7 +12,7 @@ import {
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { xaiFailedResponseHandler } from './xai-error';
 import { xaiImageModelOptions } from './xai-image-model-options';

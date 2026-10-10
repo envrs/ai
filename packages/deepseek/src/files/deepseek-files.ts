@@ -3,7 +3,7 @@ import {
   type FilesV4,
   type FilesV4UploadFileCallOptions,
   type FilesV4UploadFileResult,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertInlineFileDataToUint8Array,
@@ -14,7 +14,7 @@ import {
   postFormDataToApi,
   type FetchFunction,
   type InferSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { deepSeekErrorSchema } from '../chat/deepseek-chat-api-types';
 import { deepSeekFilesResponseSchema } from './deepseek-files-api';
 import {

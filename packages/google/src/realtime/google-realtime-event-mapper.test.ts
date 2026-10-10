@@ -1,5 +1,5 @@
 import { beforeEach, describe, it, expect } from 'vitest';
-import type { JSONSchema7 } from '@ai-sdk/provider';
+import type { JSONSchema7 } from '@ai-toolkit/provider';
 import {
   GoogleRealtimeEventMapper,
   buildGoogleSessionConfig,

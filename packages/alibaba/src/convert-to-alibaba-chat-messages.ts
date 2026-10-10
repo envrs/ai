@@ -2,12 +2,12 @@ import {
   UnsupportedFunctionalityError,
   type LanguageModelV4FilePart,
   type LanguageModelV4Prompt,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertToBase64,
   getTopLevelMediaType,
   resolveFullMediaType,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { AlibabaChatPrompt } from './alibaba-chat-prompt';
 import type { CacheControlValidator } from './get-cache-control';
 

@@ -1,6 +1,6 @@
 {
-  "name": "@ai-sdk/moonshotai",
-  "version": "3.0.67",
+  "name": "@ai-toolkit/moonshotai",
+  "version": "2.0.1",
   "type": "module",
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -36,13 +36,13 @@
     }
   },
   "dependencies": {
-    "@ai-sdk/provider": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*"
+    "@ai-toolkit/provider": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*"
   },
   "devDependencies": {
-    "@ai-sdk/test-server": "workspace:*",
+    "@ai-toolkit/test-server": "workspace:*",
     "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "tsdown": "^0.23.0",
     "typescript": "6.0.3",
     "zod": "3.25.76"
@@ -57,14 +57,14 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/moonshotai"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "keywords": [
     "ai"

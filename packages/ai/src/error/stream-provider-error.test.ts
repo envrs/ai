@@ -39,7 +39,7 @@ describe('StreamProviderError', () => {
 
   it('supports marker-based identification across package copies', () => {
     const error = {
-      [Symbol.for('vercel.ai.error.AI_StreamProviderError')]: true,
+      [Symbol.for('khulnasoft.ai.error.AI_StreamProviderError')]: true,
     };
 
     expect(StreamProviderError.isInstance(error)).toBe(true);

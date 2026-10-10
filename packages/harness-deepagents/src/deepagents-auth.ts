@@ -2,12 +2,12 @@ import type {
   HarnessV1Authentication,
   HarnessV1RequestTransformation,
   HarnessV1RequestTransformationSources,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   createCredentialRequestTransformation,
   getAiGatewayAuthFromEnv,
   isHarnessAuthenticationEnvironment,
-} from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness/utils';
 
 export const DEEPAGENTS_CREDENTIAL_ENVIRONMENT_VARIABLES = [
   'AI_GATEWAY_API_KEY',

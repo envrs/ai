@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { createXai } from './xai-provider';
 import { XaiSpeechModel } from './xai-speech-model';
@@ -73,10 +73,10 @@ describe('doGenerate', () => {
   it('should send text with xAI defaults', async () => {
     prepareAudioResponse();
 
-    await model.doGenerate({ text: 'Hello from the AI SDK!' });
+    await model.doGenerate({ text: 'Hello from the ai-toolkit!' });
 
     expect(await server.calls[0].requestBodyJson).toStrictEqual({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       voice_id: 'eve',
       language: 'auto',
       output_format: { codec: 'mp3' },
@@ -89,7 +89,7 @@ describe('doGenerate', () => {
     prepareAudioResponse({ contentType: 'audio/wav' });
 
     await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       voice: 'ara',
       language: 'en',
       outputFormat: 'wav',
@@ -97,7 +97,7 @@ describe('doGenerate', () => {
     });
 
     expect(await server.calls[0].requestBodyJson).toStrictEqual({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       voice_id: 'ara',
       language: 'en',
       output_format: { codec: 'wav' },
@@ -111,7 +111,7 @@ describe('doGenerate', () => {
       prepareAudioResponse();
 
       await model.doGenerate({
-        text: 'Hello from the AI SDK!',
+        text: 'Hello from the ai-toolkit!',
         outputFormat,
       });
 
@@ -125,7 +125,7 @@ describe('doGenerate', () => {
     prepareAudioResponse();
 
     await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       providerOptions: {
         xai: {
           sampleRate: 44100,
@@ -151,7 +151,7 @@ describe('doGenerate', () => {
     prepareTimestampsResponse();
 
     await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       providerOptions: {
         xai: {
           withTimestamps: true,
@@ -198,7 +198,7 @@ describe('doGenerate', () => {
       headers: { 'x-trace-id': '06e3dab5-e3ba-4c6b-83a6-1e9ea11d78af' },
     });
 
-    const result = await model.doGenerate({ text: 'Hello from the AI SDK!' });
+    const result = await model.doGenerate({ text: 'Hello from the ai-toolkit!' });
 
     expect(result.providerMetadata).toStrictEqual({
       xai: { traceId: '06e3dab5-e3ba-4c6b-83a6-1e9ea11d78af' },
@@ -208,7 +208,7 @@ describe('doGenerate', () => {
   it('should return empty provider metadata when xAI headers are absent', async () => {
     prepareAudioResponse();
 
-    const result = await model.doGenerate({ text: 'Hello from the AI SDK!' });
+    const result = await model.doGenerate({ text: 'Hello from the ai-toolkit!' });
 
     expect(result.providerMetadata).toStrictEqual({ xai: {} });
   });
@@ -217,7 +217,7 @@ describe('doGenerate', () => {
     prepareAudioResponse();
 
     const result = await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       outputFormat: 'flac',
     });
 
@@ -233,7 +233,7 @@ describe('doGenerate', () => {
     prepareAudioResponse();
 
     const result = await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       outputFormat: 'wav',
       providerOptions: { xai: { bitRate: 192000 } },
     });
@@ -257,7 +257,7 @@ describe('doGenerate', () => {
     prepareAudioResponse();
 
     const result = await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       instructions: 'Speak cheerfully',
     });
 
@@ -275,7 +275,7 @@ describe('doGenerate', () => {
     });
 
     await customProvider.speech().doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       headers: { 'Custom-Request-Header': 'request-header-value' },
     });
 
@@ -285,13 +285,13 @@ describe('doGenerate', () => {
       'custom-provider-header': 'provider-header-value',
       'custom-request-header': 'request-header-value',
     });
-    expect(server.calls[0].requestUserAgent).toContain('ai-sdk-xai/0.0.0-test');
+    expect(server.calls[0].requestUserAgent).toContain('ai-toolkit-xai/0.0.0-test');
   });
 
   it('should return binary audio data', async () => {
     const audio = prepareAudioResponse();
 
-    const result = await model.doGenerate({ text: 'Hello from the AI SDK!' });
+    const result = await model.doGenerate({ text: 'Hello from the ai-toolkit!' });
 
     expect(result.audio).toStrictEqual(audio);
     expect(result.warnings).toEqual([]);
@@ -308,7 +308,7 @@ describe('doGenerate', () => {
     });
 
     const result = await customModel.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
     });
 
     expect(result.response).toMatchObject({
@@ -332,7 +332,7 @@ describe('doGenerate', () => {
 
     await expect(
       model.doGenerate({
-        text: 'Hello from the AI SDK!',
+        text: 'Hello from the ai-toolkit!',
       }),
     ).rejects.toMatchObject({
       message: 'Invalid text',
@@ -345,7 +345,7 @@ describe('doGenerate', () => {
 
     const beforeDate = new Date();
     const result = await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
     });
     const afterDate = new Date();
 

@@ -1,23 +1,23 @@
-# @ai-sdk/tui
+# @ai-toolkit/tui
 
-Run local or remote AI SDK agents in a terminal UI.
+Run local or remote ai-toolkit agents in a terminal UI.
 
-`@ai-sdk/tui` provides a full-screen interface with streaming output,
+`@ai-toolkit/tui` provides a full-screen interface with streaming output,
 tool cards, approvals, markdown rendering, scrollback, and a pinned prompt.
 
 ## Install
 
 ```bash
-npm install @ai-sdk/tui ai
-pnpm add @ai-sdk/tui ai
-bun add @ai-sdk/tui ai
+npm install @ai-toolkit/tui ai
+pnpm add @ai-toolkit/tui ai
+bun add @ai-toolkit/tui ai
 ```
 
 ## Usage
 
 ```ts
-import { openai } from '@ai-sdk/openai';
-import { runAgentTUI } from '@ai-sdk/tui';
+import { openai } from '@ai-toolkit/openai';
+import { runAgentTUI } from '@ai-toolkit/tui';
 import { ToolLoopAgent, tool } from 'ai';
 import { z } from 'zod';
 
@@ -52,7 +52,7 @@ await runAgentTUI({
 To connect to a remote agent, pass a `ChatTransport` instead:
 
 ```ts
-import { runAgentTUI } from '@ai-sdk/tui';
+import { runAgentTUI } from '@ai-toolkit/tui';
 import { DefaultChatTransport } from 'ai';
 
 await runAgentTUI({
@@ -85,8 +85,8 @@ await runAgentTUI({
 
 Settings:
 
-- `agent`: AI SDK agent to run. Provide either `agent` or `transport`.
-- `transport`: AI SDK chat transport used to communicate with a remote agent.
+- `agent`: ai-toolkit agent to run. Provide either `agent` or `transport`.
+- `transport`: ai-toolkit chat transport used to communicate with a remote agent.
   Provide either `agent` or `transport`.
 - `title`: optional title shown in the terminal UI.
 - `tools`: tool call rendering mode. Use `"full"` to show tool input and output, `"collapsed"` to show only tool cards, `"auto-collapsed"` to show the latest tool expanded until another visible section appears, or `"hidden"` to omit tool calls. Defaults to `"auto-collapsed"`.

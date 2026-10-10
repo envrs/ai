@@ -1,8 +1,8 @@
 import '../global.css';
 import '@/lib/geistdocs/site-url-warning';
-import { Analytics } from '@vercel/analytics/next';
-import { Footer } from '@vercel/geistdocs/footer';
-import { Navbar } from '@vercel/geistdocs/navbar';
+import { Analytics } from '@khulnasoft/analytics/next';
+import { Footer } from '@khulnasoft/geistdocs/footer';
+import { Navbar } from '@khulnasoft/geistdocs/navbar';
 import type { Metadata, Viewport } from 'next';
 import { DocsProvider } from '@/components/docs/provider';
 import { config } from '@/lib/geistdocs/config';
@@ -15,13 +15,13 @@ export const generateStaticParams = () => [{ lang: 'en' }];
 export const metadata: Metadata = {
   metadataBase: isSiteUrlConfigured ? siteUrl : undefined,
   title: {
-    default: 'AI SDK',
-    template: '%s | AI SDK',
+    default: 'ai-toolkit',
+    template: '%s | ai-toolkit',
   },
   description:
     'The TypeScript toolkit for building AI applications and agents.',
   openGraph: {
-    siteName: 'AI SDK',
+    siteName: 'ai-toolkit',
     type: 'website',
   },
   // Twitter falls back to the page's og:image; the card type must be set

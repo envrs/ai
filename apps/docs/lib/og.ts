@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
  * page-level `openGraph` object must carry these explicitly.
  */
 export const ogDefaults = {
-  siteName: 'AI SDK',
+  siteName: 'ai-toolkit',
   type: 'website',
 } as const;
 

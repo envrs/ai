@@ -1,7 +1,7 @@
-import type { Experimental_SpeechTranslationModelV4 } from '@ai-sdk/provider';
+import type { Experimental_SpeechTranslationModelV4 } from '@ai-toolkit/provider';
 
 /**
- * Speech translation model that is used by the AI SDK.
+ * Speech translation model that is used by the ai-toolkit.
  *
  * Experimental: part of the experimental speech translation modality and may
  * change in patch releases.

@@ -11,7 +11,7 @@ import {
 import {
   convertAsyncIteratorToReadableStream,
   getErrorMessage,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { createAsyncIterableStream } from 'ai/internal';
 import { normalizeUIMessageStreamParts } from './normalize-ui-message-stream.js';
 
@@ -19,14 +19,14 @@ import { normalizeUIMessageStreamParts } from './normalize-ui-message-stream.js'
  * Tracks `*-start` chunks the client has accepted so we can drop deltas/ends
  * that refer to a part whose start was emitted before the resume cursor.
  *
- * AI SDK's UI stream processor throws on `text-delta`/`reasoning-delta`/
+ * ai-toolkit's UI stream processor throws on `text-delta`/`reasoning-delta`/
  * `tool-input-delta` (and the matching `*-end`) when the start chunk for that
  * id was never observed, and on tool output/approval chunks when no tool part
  * exists for the call id. A negative `startIndex` on a flat chunk stream can
  * easily land mid-part, so without this guard the client crashes on resume.
  *
  * A tool part is established by `tool-input-start` OR by a self-contained
- * `tool-input-available`/`tool-input-error` chunk (the AI SDK creates the
+ * `tool-input-available`/`tool-input-error` chunk (the ai-toolkit creates the
  * part from those directly), so all three mark the call id as seen.
  *
  * This is a best-effort safety net — it preserves only the parts that the
@@ -69,7 +69,7 @@ function createOrphanFilter(): OrphanFilter {
         return false;
       case 'tool-input-start':
       // `tool-input-available` / `tool-input-error` are self-contained: the
-      // AI SDK creates the tool part from them directly (non-streamed tool
+      // ai-toolkit creates the tool part from them directly (non-streamed tool
       // calls are emitted as a bare `tool-input-available`), so they must
       // never be dropped. They also carry the full input, so they recover a
       // tool call whose `tool-input-start` fell outside the resumed window.
@@ -137,7 +137,7 @@ type OnChatEnd = ({
  * Configuration options for the WorkflowChatTransport.
  *
  * @template UI_MESSAGE - The type of UI messages being sent and received,
- *                        must extend the UIMessage interface from the AI SDK.
+ *                        must extend the UIMessage interface from the ai-toolkit.
  */
 export interface WorkflowChatTransportOptions<UI_MESSAGE extends UIMessage> {
   /**
@@ -208,12 +208,12 @@ export interface WorkflowChatTransportOptions<UI_MESSAGE extends UIMessage> {
  * A transport implementation for managing chat workflows with support for
  * streaming responses and automatic reconnection to interrupted streams.
  *
- * This class implements the ChatTransport interface from the AI SDK and provides
+ * This class implements the ChatTransport interface from the ai-toolkit and provides
  * reliable message streaming with automatic recovery from network interruptions
  * or function timeouts.
  *
  * @template UI_MESSAGE - The type of UI messages being sent and received,
- *                        must extend the UIMessage interface from the AI SDK.
+ *                        must extend the UIMessage interface from the ai-toolkit.
  *
  * @implements {ChatTransport<UI_MESSAGE>}
  */
@@ -361,7 +361,7 @@ export class WorkflowChatTransport<
     } else {
       // If the initial POST request did not include the "finish" chunk,
       // we need to reconnect to the stream. This could indicate that a
-      // network error occurred or the Vercel Function timed out.
+      // network error occurred or the khulnasoft Function timed out.
       yield* this.reconnectToStreamIterator(options, workflowRunId, chunkIndex);
     }
   }
@@ -370,7 +370,7 @@ export class WorkflowChatTransport<
    * Reconnects to an existing chat stream that was previously interrupted.
    *
    * This method is useful for resuming a chat session after network issues,
-   * page refreshes, or Vercel Function timeouts.
+   * page refreshes, or khulnasoft Function timeouts.
    *
    * @param options - Options for reconnecting to the stream
    * @param options.chatId - The chat ID to reconnect to
@@ -429,10 +429,10 @@ export class WorkflowChatTransport<
 
     // When resuming with a negative startIndex, the resolved chunk can land in
     // the middle of a `*-start` / `*-delta` / `*-end` sequence, which crashes
-    // the AI SDK UI stream processor. The orphan filter drops chunks whose
+    // the ai-toolkit UI stream processor. The orphan filter drops chunks whose
     // start chunk was emitted before the resume window. Only activated for
     // negative resumes — non-negative startIndex is the caller's explicit
-    // choice and we trust them. See: https://github.com/vercel/workflow/issues/1835
+    // choice and we trust them. See: https://github.com/khulnasoft/workflow/issues/1835
     const orphanFilter =
       useExplicitStartIndex && explicitStartIndex < 0
         ? createOrphanFilter()

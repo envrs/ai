@@ -1,9 +1,9 @@
-import type { JSONObject } from '@ai-sdk/provider';
-import type { InferToolInput, ToolSet } from '@ai-sdk/provider-utils';
+import type { JSONObject } from '@ai-toolkit/provider';
+import type { InferToolInput, ToolSet } from '@ai-toolkit/provider-utils';
 import type { ProviderMetadata } from '../types';
 import type { ValueOf } from '../util/value-of';
 
-const inputSchemaInputSymbol = Symbol('ai-sdk-tool-call-input-schema-input');
+const inputSchemaInputSymbol = Symbol('ai-toolkit-tool-call-input-schema-input');
 
 type BaseToolCall = {
   type: 'tool-call';
@@ -43,13 +43,13 @@ export type DynamicToolCall = BaseToolCall & {
    * a tool that does not exist.
    */
   // Added into DynamicToolCall to avoid breaking changes.
-  // TODO AI SDK 6: separate into a new InvalidToolCall type
+  // TODO ai-toolkit 6: separate into a new InvalidToolCall type
   invalid?: boolean;
 
   /**
    * The error that caused the tool call to be invalid.
    */
-  // TODO AI SDK 6: separate into a new InvalidToolCall type
+  // TODO ai-toolkit 6: separate into a new InvalidToolCall type
   error?: unknown;
 };
 

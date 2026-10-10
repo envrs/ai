@@ -1,9 +1,9 @@
 import {
   InvalidResponseDataError,
   type LanguageModelV4Prompt,
-} from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
 import fs from 'node:fs';
 import { createGroq } from './groq-provider';
 import { beforeEach, describe, it, expect, vi } from 'vitest';
@@ -637,7 +637,7 @@ describe('doGenerate', () => {
       }
     `);
     expect(server.calls[0].requestUserAgent).toContain(
-      `ai-sdk-groq/0.0.0-test`,
+      `ai-toolkit-groq/0.0.0-test`,
     );
   });
 

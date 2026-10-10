@@ -6,7 +6,7 @@ import {
   type FetchFunction,
   type FlexibleSchema,
   type InferSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { signal } from '@angular/core';
 import {
   asSchema,

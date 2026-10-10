@@ -1,7 +1,7 @@
 // Licensed under BSD-3-Clause (this file only)
 // Code adapted from https://github.com/fastify/secure-json-parse/blob/783fcb1b5434709466759847cec974381939673a/test/index.test.js
 //
-// Copyright (c) Vercel, Inc. (https://vercel.com)
+// Copyright (c) khulnasoft, Inc. (https://khulnasoft.com)
 // Copyright (c) 2019 The Fastify Team
 // Copyright (c) 2019, Sideway Inc, and project contributors
 // All rights reserved.
@@ -9,7 +9,7 @@
 // The complete list of contributors can be found at:
 // - https://github.com/hapijs/bourne/graphs/contributors
 // - https://github.com/fastify/secure-json-parse/graphs/contributors
-// - https://github.com/vercel/ai/commits/main/packages/provider-utils/src/secure-parse-json.test.ts
+// - https://github.com/khulnasoft/ai/commits/main/packages/provider-utils/src/secure-parse-json.test.ts
 //
 // Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 //

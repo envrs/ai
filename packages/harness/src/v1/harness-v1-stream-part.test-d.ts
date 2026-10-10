@@ -5,7 +5,7 @@ import type {
   LanguageModelV4ToolCall,
   LanguageModelV4ToolResult,
   LanguageModelV4Usage,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { CallWarning } from 'ai';
 import type { z } from 'zod/v4';
 import { expectTypeOf, test } from 'vitest';
@@ -96,7 +96,7 @@ test('finish + finish-step reuse exact V4 finish-reason + usage', () => {
   >().toEqualTypeOf<LanguageModelV4Usage>();
 });
 
-test('all stream-start warning variants satisfy the AI SDK call warning contract', () => {
+test('all stream-start warning variants satisfy the ai-toolkit call warning contract', () => {
   expectTypeOf<HarnessV1CallWarning>().toMatchTypeOf<CallWarning>();
   expectTypeOf<
     NonNullable<HPartByType<'stream-start'>['warnings']>[number]
@@ -119,7 +119,7 @@ test('runtime schema infers exactly the hand-written stream-part type', () => {
   // field surfaces as a non-`never` residue. Assignability (rather than the
   // invariant-position equality trick) is used deliberately — the schema reuses
   // a recursive `JSONValue` encoding, which defeats that trick with false
-  // negatives. This also catches upstream `@ai-sdk/provider` V4 tool-shape
+  // negatives. This also catches upstream `@ai-toolkit/provider` V4 tool-shape
   // drift, since the type references those primitives directly.
   type Inferred = z.infer<typeof harnessV1StreamPartSchema>;
   expectTypeOf<Exclude<Inferred, HarnessV1StreamPart>>().toEqualTypeOf<never>();

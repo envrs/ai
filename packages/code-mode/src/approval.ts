@@ -7,7 +7,7 @@ import type {
 } from './types.js';
 
 export const CODE_MODE_TOOL_APPROVAL_KIND =
-  'ai-sdk-code-mode/tool-approval' as const;
+  'ai-toolkit-code-mode/tool-approval' as const;
 
 export function isCodeModeApprovalInterruptPayload(
   payload: CodeModeInterruptPayload,

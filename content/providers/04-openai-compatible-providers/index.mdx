@@ -1,11 +1,11 @@
 ---
 title: OpenAI Compatible Providers
-description: Use OpenAI compatible providers with the AI SDK.
+description: Use OpenAI compatible providers with the ai-toolkit.
 ---
 
 # OpenAI Compatible Providers
 
-You can use the [OpenAI Compatible Provider](https://www.npmjs.com/package/@ai-sdk/openai-compatible) package to use language model providers that implement the OpenAI API.
+You can use the [OpenAI Compatible Provider](https://www.npmjs.com/package/@ai-toolkit/openai-compatible) package to use language model providers that implement the OpenAI API.
 
 Below we focus on the general setup and provider instance creation. You can also [write a custom provider package leveraging the OpenAI Compatible package](/providers/openai-compatible-providers/custom-providers).
 
@@ -24,16 +24,16 @@ The general setup and provider instance creation is the same for all of these pr
 
 ## Setup
 
-The OpenAI Compatible provider is available via the `@ai-sdk/openai-compatible` module. You can install it with:
+The OpenAI Compatible provider is available via the `@ai-toolkit/openai-compatible` module. You can install it with:
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+<InstallPackages packages="@ai-toolkit/openai-compatible" />
 
 ## Provider Instance
 
-To use an OpenAI compatible provider, you can create a custom provider instance with the `createOpenAICompatible` function from `@ai-sdk/openai-compatible`:
+To use an OpenAI compatible provider, you can create a custom provider instance with the `createOpenAICompatible` function from `@ai-toolkit/openai-compatible`:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 
 const provider = createOpenAICompatible({
   name: 'providerName',
@@ -91,7 +91,7 @@ You can use the following optional settings to customize the provider instance:
 
   Defines URLs that chat models can access directly, grouped by media type.
   Matching URLs are passed to the provider instead of being downloaded by the
-  AI SDK.
+  ai-toolkit.
 
 - **transformRequestBody** _(args: Record&lt;string, any&gt;, warnings?: SharedV4Warning[]) =&gt; Record&lt;string, any&gt;_
 
@@ -156,7 +156,7 @@ tool results for compatibility with the OpenAI Chat Completions API.
 You can use provider language models to generate text with the `generateText` function:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { generateText } from 'ai';
 
 const provider = createOpenAICompatible({
@@ -178,7 +178,7 @@ file ID as a provider reference. The reference key must match the provider's
 configured `name`, including hyphens:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { generateText } from 'ai';
 
 const provider = createOpenAICompatible({
@@ -223,7 +223,7 @@ part can receive video file parts. Inline bytes and base64-encoded data are sent
 as data URLs:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { generateText } from 'ai';
 import fs from 'node:fs';
 
@@ -291,7 +291,7 @@ request bodies.
 ### Including model ids for auto-completion
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { generateText } from 'ai';
 
 type ExampleChatModelIds =
@@ -343,7 +343,7 @@ You can set these via the optional `queryParams` provider setting. These will be
 added to all requests made by the provider.
 
 ```ts highlight="7-9"
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 
 const provider = createOpenAICompatible({
   name: 'providerName',
@@ -372,7 +372,7 @@ const model = provider.imageModel('model-id');
 import {
   createOpenAICompatible,
   type OpenAICompatibleImageModelOptions,
-} from '@ai-sdk/openai-compatible';
+} from '@ai-toolkit/openai-compatible';
 import { generateImage } from 'ai';
 
 const provider = createOpenAICompatible({
@@ -436,7 +436,7 @@ The OpenAI Compatible provider supports image editing through the `/images/edits
 #### Basic Image Editing
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { generateImage } from 'ai';
 import fs from 'fs';
 
@@ -462,7 +462,7 @@ const { images } = await generateImage({
 Edit specific parts of an image using a mask:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { generateImage } from 'ai';
 import fs from 'fs';
 
@@ -502,7 +502,7 @@ const model = provider.embeddingModel('model-id');
 ### Example
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { embed } from 'ai';
 
 const provider = createOpenAICompatible({
@@ -555,7 +555,7 @@ const model = provider.completionModel('model-id');
 ### Example
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { generateText } from 'ai';
 
 const provider = createOpenAICompatible({
@@ -667,7 +667,7 @@ const { text } = await generateText({
 
 Note that the `providerOptions` key will be in camelCase. If you set the provider name to `provider-name`, the options still need to be set on `providerOptions.providerName`.
 
-The request body sent to the provider will include the `customOption` field with the value `magic-value`. This gives you an easy way to add provider-specific options to requests without having to modify the provider or AI SDK code.
+The request body sent to the provider will include the `customOption` field with the value `magic-value`. This gives you an easy way to add provider-specific options to requests without having to modify the provider or ai-toolkit code.
 
 ## Custom Metadata Extraction
 
@@ -691,7 +691,7 @@ Metadata extractors work with both streaming and non-streaming chat completions 
 Here's an example metadata extractor that captures both standard and custom provider data:
 
 ```typescript
-import { MetadataExtractor } from '@ai-sdk/openai-compatible';
+import { MetadataExtractor } from '@ai-toolkit/openai-compatible';
 
 const myMetadataExtractor: MetadataExtractor = {
   // Process complete, non-streaming responses

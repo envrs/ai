@@ -1,12 +1,12 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   type LanguageModelV4Content,
   type LanguageModelV4ToolChoice,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { FinishReason } from '../types/language-model';
 
 const name = 'AI_ToolChoiceViolationError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
 type EnforcedToolChoice = Extract<
@@ -17,7 +17,7 @@ type EnforcedToolChoice = Extract<
 /**
  * Thrown when a model response does not satisfy an enforced tool choice.
  */
-export class ToolChoiceViolationError extends AISDKError {
+export class ToolChoiceViolationError extends ai-toolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   /**
@@ -75,6 +75,6 @@ export class ToolChoiceViolationError extends AISDKError {
   }
 
   static isInstance(error: unknown): error is ToolChoiceViolationError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }

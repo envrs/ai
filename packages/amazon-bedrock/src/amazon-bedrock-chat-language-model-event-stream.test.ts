@@ -1,6 +1,6 @@
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
-import { isProviderStreamError } from '@ai-sdk/provider-utils';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
+import { isProviderStreamError } from '@ai-toolkit/provider-utils';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
 import { EventStreamCodec } from '@smithy/eventstream-codec';
 import { fromUtf8, toUtf8 } from '@smithy/util-utf8';
 import { describe, expect, it } from 'vitest';

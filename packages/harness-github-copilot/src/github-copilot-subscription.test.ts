@@ -1,7 +1,7 @@
 import { chmod, mkdir, mkdtemp, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import type * as HarnessUtils from '@ai-sdk/harness/utils';
+import type * as HarnessUtils from '@ai-toolkit/harness/utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   findHostGitHubCliExecutable,
@@ -15,7 +15,7 @@ const credentialStoreMocks = vi.hoisted(() => ({
   readWindowsCredentialManagerPassword: vi.fn(),
 }));
 
-vi.mock('@ai-sdk/harness/utils', async importOriginal => {
+vi.mock('@ai-toolkit/harness/utils', async importOriginal => {
   const actual = await importOriginal<typeof HarnessUtils>();
   return { ...actual, ...credentialStoreMocks };
 });

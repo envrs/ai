@@ -1,4 +1,4 @@
-import { asSchema } from '@ai-sdk/provider-utils';
+import { asSchema } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { takoSearch } from './tako-search';
 

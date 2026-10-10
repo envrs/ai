@@ -2,13 +2,13 @@ import {
   NoSuchModelError,
   type LanguageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { GmicloudChatLanguageModel } from './gmicloud-chat-language-model';
 import type { GmicloudChatModelId } from './gmicloud-chat-options';
 import { gmicloudErrorStructure } from './gmicloud-error';
@@ -74,7 +74,7 @@ export function createGmicloud(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-gmicloud/${VERSION}`,
+      `ai-toolkit-gmicloud/${VERSION}`,
     );
 
   const createLanguageModel = (modelId: GmicloudChatModelId) => {

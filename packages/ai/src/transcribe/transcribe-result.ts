@@ -1,4 +1,4 @@
-import type { JSONObject } from '@ai-sdk/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 import type { TranscriptionModelResponseMetadata } from '../types/transcription-model-response-metadata';
 import type { Warning } from '../types/warning';
 

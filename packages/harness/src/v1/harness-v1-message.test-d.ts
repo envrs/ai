@@ -7,7 +7,7 @@ import type {
   LanguageModelV4ToolApprovalResponsePart,
   LanguageModelV4ToolCallPart,
   LanguageModelV4ToolResultOutput,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { expectTypeOf, test } from 'vitest';
 import type {
   HarnessV1AssistantMessage,

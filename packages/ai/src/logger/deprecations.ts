@@ -1,42 +1,42 @@
 // These codes are stable identifiers. Do not rename or reuse an existing code.
 const deprecationCodes = new Map<string, string>([
-  ['generateObject', 'AISDK_DEP_GENERATE_OBJECT'],
-  ['streamObject', 'AISDK_DEP_STREAM_OBJECT'],
-  ['experimental_generateSpeech', 'AISDK_DEP_EXPERIMENTAL_GENERATE_SPEECH'],
-  ['experimental_transcribe', 'AISDK_DEP_EXPERIMENTAL_TRANSCRIBE'],
-  ['"image" content part', 'AISDK_DEP_IMAGE_CONTENT_PART'],
+  ['generateObject', 'ai-toolkit_DEP_GENERATE_OBJECT'],
+  ['streamObject', 'ai-toolkit_DEP_STREAM_OBJECT'],
+  ['experimental_generateSpeech', 'ai-toolkit_DEP_EXPERIMENTAL_GENERATE_SPEECH'],
+  ['experimental_transcribe', 'ai-toolkit_DEP_EXPERIMENTAL_TRANSCRIBE'],
+  ['"image" content part', 'ai-toolkit_DEP_IMAGE_CONTENT_PART'],
   [
     '"tool-result" content of type "file-data"',
-    'AISDK_DEP_TOOL_RESULT_FILE_DATA',
+    'ai-toolkit_DEP_TOOL_RESULT_FILE_DATA',
   ],
   [
     '"tool-result" content of type "file-url"',
-    'AISDK_DEP_TOOL_RESULT_FILE_URL',
+    'ai-toolkit_DEP_TOOL_RESULT_FILE_URL',
   ],
-  ['"tool-result" content of type "file-id"', 'AISDK_DEP_TOOL_RESULT_FILE_ID'],
+  ['"tool-result" content of type "file-id"', 'ai-toolkit_DEP_TOOL_RESULT_FILE_ID'],
   [
     '"tool-result" content of type "file-reference"',
-    'AISDK_DEP_TOOL_RESULT_FILE_REFERENCE',
+    'ai-toolkit_DEP_TOOL_RESULT_FILE_REFERENCE',
   ],
   [
     '"tool-result" content of type "image-data"',
-    'AISDK_DEP_TOOL_RESULT_IMAGE_DATA',
+    'ai-toolkit_DEP_TOOL_RESULT_IMAGE_DATA',
   ],
   [
     '"tool-result" content of type "image-url"',
-    'AISDK_DEP_TOOL_RESULT_IMAGE_URL',
+    'ai-toolkit_DEP_TOOL_RESULT_IMAGE_URL',
   ],
   [
     '"tool-result" content of type "image-file-id"',
-    'AISDK_DEP_TOOL_RESULT_IMAGE_FILE_ID',
+    'ai-toolkit_DEP_TOOL_RESULT_IMAGE_FILE_ID',
   ],
   [
     '"tool-result" content of type "image-file-reference"',
-    'AISDK_DEP_TOOL_RESULT_IMAGE_FILE_REFERENCE',
+    'ai-toolkit_DEP_TOOL_RESULT_IMAGE_FILE_REFERENCE',
   ],
   [
     'rawInput in output-error UI message parts',
-    'AISDK_DEP_UI_MESSAGE_RAW_INPUT',
+    'ai-toolkit_DEP_UI_MESSAGE_RAW_INPUT',
   ],
 ]);
 
@@ -62,11 +62,11 @@ export function getDeprecationCode({
   if (provider == null) {
     return (
       deprecationCodes.get(setting) ??
-      `AISDK_DEP_SETTING_${encodeCodePart(setting)}`
+      `ai-toolkit_DEP_SETTING_${encodeCodePart(setting)}`
     );
   }
 
   // Provider codes are scoped to the provider, but not to a particular model or
   // message. This works for third-party providers without changing their spec.
-  return `AISDK_DEP_PROVIDER_${encodeCodePart(provider)}__${encodeCodePart(setting)}`;
+  return `ai-toolkit_DEP_PROVIDER_${encodeCodePart(provider)}__${encodeCodePart(setting)}`;
 }

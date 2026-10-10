@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { describe, it, expect, vi } from 'vitest';
 import { createOpenAI } from '../openai-provider';
 import { OpenAISpeechTranslationModel } from './openai-speech-translation-model';

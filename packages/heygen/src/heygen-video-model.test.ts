@@ -2,12 +2,12 @@ import {
   APICallError,
   InvalidArgumentError,
   InvalidResponseDataError,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { HeyGenVideoModel } from './heygen-video-model';
 

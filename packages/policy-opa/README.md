@@ -1,6 +1,6 @@
-# @ai-sdk/policy-opa
+# @ai-toolkit/policy-opa
 
-Policy-as-code authorization for AI SDK tool calls, powered by [Open Policy Agent](https://www.openpolicyagent.org/).
+Policy-as-code authorization for ai-toolkit tool calls, powered by [Open Policy Agent](https://www.openpolicyagent.org/).
 
 Write your "what can this agent do?" rules in a `.rego` file. Plug them into `generateText` / `streamText` / `ToolLoopAgent` as a `toolApproval` configuration. The SDK enforces them at every tool call, with the same wire format used by built-in approvals (`tool-approval-request` / `tool-approval-response`).
 
@@ -13,7 +13,7 @@ This package fills that gap. Rules live in `.rego`. They are evaluated by OPA (i
 ## Install
 
 ```sh
-pnpm add @ai-sdk/policy-opa
+pnpm add @ai-toolkit/policy-opa
 # pick one (or both) of the OPA backends:
 pnpm add @open-policy-agent/opa-wasm   # in-process WASM evaluation
 pnpm add @open-policy-agent/opa         # HTTP client to a running OPA server
@@ -47,8 +47,8 @@ The policy is consulted **before** every tool dispatch. Auto-deny does not requi
 
 ```ts
 import { generateText } from 'ai';
-import { anthropic } from '@ai-sdk/anthropic';
-import { opaPolicy, wasmPolicyClient } from '@ai-sdk/policy-opa';
+import { anthropic } from '@ai-toolkit/anthropic';
+import { opaPolicy, wasmPolicyClient } from '@ai-toolkit/policy-opa';
 import { readFile } from 'node:fs/promises';
 
 // 1. Load the compiled policy bundle.
@@ -181,7 +181,7 @@ tar -xzf bundle.tar.gz /policy.wasm
 Load it at startup:
 
 ```ts
-import { wasmPolicyClient, opaPolicy } from '@ai-sdk/policy-opa';
+import { wasmPolicyClient, opaPolicy } from '@ai-toolkit/policy-opa';
 import { readFile } from 'node:fs/promises';
 
 const wasm = await readFile('./policy.wasm');
@@ -209,7 +209,7 @@ services:
 Point the client at it:
 
 ```ts
-import { httpPolicyClient, opaPolicy } from '@ai-sdk/policy-opa';
+import { httpPolicyClient, opaPolicy } from '@ai-toolkit/policy-opa';
 
 const client = httpPolicyClient({ url: 'http://localhost:8181' });
 const toolApproval = opaPolicy({ client, path: 'agent/call/decision' });
@@ -285,7 +285,7 @@ decision := { "decision": "deny", "reason": r } {
 
 ```ts
 import { generateText } from 'ai';
-import { opaPolicy, wasmPolicyClient } from '@ai-sdk/policy-opa';
+import { opaPolicy, wasmPolicyClient } from '@ai-toolkit/policy-opa';
 
 const client = await wasmPolicyClient({ wasm });
 
@@ -392,7 +392,7 @@ const browserApproval = opaPolicy({
 
 ### Shell tool: gating git subcommands
 
-A `bash` tool (such as [vercel-labs/bash-tool](https://github.com/vercel-labs/bash-tool), input `{ command }`) can run any git operation, so the model could route a `git clone` or `git push` through it and skip a granular `git` rule. Gate it by parsing the command down to a git subcommand and deciding on that — and **deny anything you cannot reduce to a single clean git invocation**. Bash is adversarial to parse, so "can't prove it's safe" means "deny".
+A `bash` tool (such as [khulnasoft-labs/bash-tool](https://github.com/khulnasoft-labs/bash-tool), input `{ command }`) can run any git operation, so the model could route a `git clone` or `git push` through it and skip a granular `git` rule. Gate it by parsing the command down to a git subcommand and deciding on that — and **deny anything you cannot reduce to a single clean git invocation**. Bash is adversarial to parse, so "can't prove it's safe" means "deny".
 
 ```ts
 // Returns the git invocation, or null if `command` is not a single clean git
@@ -467,7 +467,7 @@ So `git status` is allowed on both surfaces, `git clone …` is denied on both, 
 
 This approach gates dispatch at the model's call boundary: the agent asks to run `bash 'git push'`, the policy sees `{ kind: 'git', args: ['push'] }`, the call is denied before `bash.execute` is ever invoked. What it does **not** defend against is a tool that, once approved, performs additional side effects beyond what its input describes. If `bash.execute` runs `command` and then _also_ sends a side-channel HTTP request, no policy at the call boundary can stop it.
 
-The framework's job here is to give you one obvious place to write per-action authorization for the cases this design covers. For stronger guarantees against arbitrary side effects, run untrusted execution in an out-of-band sandbox (Vercel Sandbox, Firecracker, containers) and treat the sandbox boundary, not the tool boundary, as the trust frontier.
+The framework's job here is to give you one obvious place to write per-action authorization for the cases this design covers. For stronger guarantees against arbitrary side effects, run untrusted execution in an out-of-band sandbox (khulnasoft Sandbox, Firecracker, containers) and treat the sandbox boundary, not the tool boundary, as the trust frontier.
 
 ## Optional policy: allow-all when no policy is configured
 
@@ -477,7 +477,7 @@ Most apps load the policy from one source (a WASM bundle, a remote OPA server) a
 
 ```ts
 import { readFile } from 'node:fs/promises';
-import { optionalOpaPolicy, wasmPolicyClient } from '@ai-sdk/policy-opa';
+import { optionalOpaPolicy, wasmPolicyClient } from '@ai-toolkit/policy-opa';
 
 const wasm = process.env.POLICY_WASM_PATH
   ? await readFile(process.env.POLICY_WASM_PATH)
@@ -509,7 +509,7 @@ Don't ship a new policy straight to enforce. The first version of any policy alm
 `shadow(approval, opts)` wraps any `ToolApprovalConfiguration`. The wrapped policy is evaluated normally and the decision is reported via `onDecision`, but the SDK is told the call is approved regardless of what the policy said.
 
 ```ts
-import { opaPolicy, shadow, wasmPolicyClient } from '@ai-sdk/policy-opa';
+import { opaPolicy, shadow, wasmPolicyClient } from '@ai-toolkit/policy-opa';
 
 const client = await wasmPolicyClient({ wasm });
 
@@ -554,7 +554,7 @@ If you want the opposite (enforcement waits for the audit log to commit), call y
 
 ```ts
 import { wrapLanguageModel } from 'ai';
-import { wasmPolicyClient, opaCapabilityMiddleware } from '@ai-sdk/policy-opa';
+import { wasmPolicyClient, opaCapabilityMiddleware } from '@ai-toolkit/policy-opa';
 
 const client = await wasmPolicyClient({ wasm });
 
@@ -587,7 +587,7 @@ When tools come from somewhere external (MCP discovery, a plugin registry, a rem
 `wrapMcpTools` closes that gap by making the resulting `toolApproval` configuration **total** over the discovered surface. Any tool the supplied approval does not match falls through to a configurable default:
 
 ```ts
-import { opaPolicy, wasmPolicyClient, wrapMcpTools } from '@ai-sdk/policy-opa';
+import { opaPolicy, wasmPolicyClient, wrapMcpTools } from '@ai-toolkit/policy-opa';
 
 const discovered = await mcpClient.tools();
 const client = await wasmPolicyClient({ wasm });
@@ -611,7 +611,7 @@ Despite the name, the helper works on any `Record<string, Tool>`, not just MCP-d
 
 ## API
 
-Everything is exported from the package root, `@ai-sdk/policy-opa`.
+Everything is exported from the package root, `@ai-toolkit/policy-opa`.
 
 ### Engine-neutral core
 
@@ -631,7 +631,7 @@ Everything is exported from the package root, `@ai-sdk/policy-opa`.
 
 ## Versioning
 
-This package follows the AI SDK's release cadence. `peerDependencies` pins `ai` to the workspace version; the OPA backends are versioned independently.
+This package follows the ai-toolkit's release cadence. `peerDependencies` pins `ai` to the workspace version; the OPA backends are versioned independently.
 
 ## License
 

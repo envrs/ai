@@ -1,5 +1,5 @@
 import { posix } from 'node:path';
-import type { Experimental_SandboxSession as SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import { harnessStateDirectoryPath, type HarnessV1Bootstrap } from '../../v1';
 
 /**

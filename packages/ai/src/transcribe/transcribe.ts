@@ -1,10 +1,10 @@
-import type { JSONObject } from '@ai-sdk/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 import {
   createIdGenerator,
   detectMediaType,
   withUserAgentSuffix,
   type ProviderOptions,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { NoTranscriptGeneratedError } from '../error/no-transcript-generated-error';
 import { logWarnings } from '../logger/log-warnings';
 import { resolveTranscriptionModel } from '../model/resolve-model';

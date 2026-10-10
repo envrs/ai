@@ -1,10 +1,10 @@
 import { readFileSync } from 'node:fs';
-import { APICallError, InvalidArgumentError } from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { APICallError, InvalidArgumentError } from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import {
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { createTypeSafeAi } from './typesafe-ai-provider';
 import { DecisionTypeSafeAiModel } from './typesafe-ai-decision-model';
@@ -109,7 +109,7 @@ it('passes custom fetch, headers, base URL, and future model IDs', async () => {
   expect(new Headers(init?.headers).get('custom')).toBe('provider');
   expect(new Headers(init?.headers).get('shared')).toBe('call');
   expect(new Headers(init?.headers).get('user-agent')).toContain(
-    `ai-sdk-typesafe-ai/${VERSION}`,
+    `ai-toolkit-typesafe-ai/${VERSION}`,
   );
   expect(JSON.parse(init?.body as string).model).toBe('jev-future');
   expect(result.response?.headers?.['x-request-id']).toBe('test-id');

@@ -1,4 +1,4 @@
-import type { Context, ProviderOptions } from '@ai-sdk/provider-utils';
+import type { Context, ProviderOptions } from '@ai-toolkit/provider-utils';
 import type { Embedding, ProviderMetadata } from '../types';
 import type { EmbeddingModelUsage } from '../types/usage';
 import type { Warning } from '../types/warning';

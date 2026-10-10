@@ -1,14 +1,14 @@
 name: Community Feedback
-description: Share feedback about the AI SDK community, or our contribution process.
+description: Share feedback about the ai-toolkit community, or our contribution process.
 title: 'Feedback: '
 labels: ['community-feedback']
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for helping us improve AI SDK for the community.
+        Thank you for helping us improve ai-toolkit for the community.
 
-        Use this issue type for feedback about the project, contribution process, maintenance automation, documentation experience, community resources, or other ideas that would make AI SDK better to use and contribute to.
+        Use this issue type for feedback about the project, contribution process, maintenance automation, documentation experience, community resources, or other ideas that would make ai-toolkit better to use and contribute to.
   - type: textarea
     id: feedback
     attributes:
@@ -40,7 +40,7 @@ body:
     id: terms
     attributes:
       label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://community.vercel.com/guidelines).
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://community.khulnasoft.com/guidelines).
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true

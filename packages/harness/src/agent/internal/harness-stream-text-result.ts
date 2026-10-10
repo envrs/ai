@@ -5,7 +5,7 @@ import {
   type Context,
   type ToolModelMessage,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   addLanguageModelUsage,
   asLanguageModelUsage,
@@ -17,7 +17,7 @@ import {
 import type {
   LanguageModelV4FinishReason,
   LanguageModelV4Usage,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   createUIMessageStreamResponse,
   toUIMessageStream as toUIMessageStreamHelper,
@@ -59,7 +59,7 @@ type EnrichedStreamPart<TOOLS extends ToolSet, PARTIAL_OUTPUT> = {
  *
  * Wraps a `ReadableStream<TextStreamPart<TOOLS>>` that the calling
  * driver pushes events into. Every `PromiseLike` accessor is backed by a
- * `DelayedPromise` so the AI SDK consumer surface stays identical to
+ * `DelayedPromise` so the ai-toolkit consumer surface stays identical to
  * `streamText`'s — consumers can `await result.text` or iterate
  * `result.fullStream`, in either order.
  *
@@ -79,7 +79,7 @@ export class HarnessStreamTextResult<
 > implements StreamTextResult<TOOLS, RUNTIME_CONTEXT, OUTPUT> {
   // Delayed promises backing every PromiseLike accessor. Each is typed
   // against the corresponding `StreamTextResult` property so the public
-  // surface stays in lockstep with AI SDK's interface as it evolves.
+  // surface stays in lockstep with ai-toolkit's interface as it evolves.
   private readonly _content = new DelayedPromise<
     StreamProp<TOOLS, RUNTIME_CONTEXT, OUTPUT, 'content'>
   >();
@@ -268,7 +268,7 @@ export class HarnessStreamTextResult<
   /**
    * Mark the end of a step. Builds a `StepResult` from the accumulated
    * content and records it in the steps array. Accepts the V4-shaped
-   * finish reason / usage the harness emits and normalizes to AI SDK's
+   * finish reason / usage the harness emits and normalizes to ai-toolkit's
    * flat shape internally.
    */
   finishStep(input: {
@@ -309,7 +309,7 @@ export class HarnessStreamTextResult<
     });
     this.stepsBuffer.push(step);
 
-    // Forward an AI SDK finish-step event so consumers reading fullStream
+    // Forward an ai-toolkit finish-step event so consumers reading fullStream
     // see step boundaries.
     this.fullStreamController.enqueue({
       type: 'finish-step',
@@ -497,7 +497,7 @@ export class HarnessStreamTextResult<
     });
     this._responseMessages.resolve(responseMessages);
 
-    // Forward AI SDK finish event before closing.
+    // Forward ai-toolkit finish event before closing.
     this.fullStreamController.enqueue({
       type: 'finish',
       finishReason: this.finalFinishReason,
@@ -991,8 +991,8 @@ function notSupportedYet(feature: string): Error {
   );
 }
 
-// Re-declare `AsyncIterableStream` locally to avoid pulling AI SDK's internal
+// Re-declare `AsyncIterableStream` locally to avoid pulling ai-toolkit's internal
 // async-iterable-stream helper. ReadableStreams already implement the
 // async-iterator contract in modern runtimes; we expose them under the same
-// nominal type AI SDK does.
+// nominal type ai-toolkit does.
 type AsyncIterableStream<T> = ReadableStream<T> & AsyncIterable<T>;

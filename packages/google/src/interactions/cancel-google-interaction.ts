@@ -3,7 +3,7 @@ import {
   getRuntimeEnvironmentUserAgent,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 const getOriginalFetch = () => globalThis.fetch;
 

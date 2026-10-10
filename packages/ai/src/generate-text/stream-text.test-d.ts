@@ -1,11 +1,11 @@
-import type { JSONValue } from '@ai-sdk/provider';
+import type { JSONValue } from '@ai-toolkit/provider';
 import {
   experimental_toolCaller,
   tool,
   type Context,
   type ModelMessage,
   type Tool,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { describe, expectTypeOf, it } from 'vitest';
 import { z } from 'zod/v4';
 import {
@@ -141,7 +141,7 @@ describe('streamText types', () => {
           }),
         },
         experimental_toolCallers: {
-          getInventory: ['AI_SDK_DIRECT_TOOL_CALL', 'code_mode'],
+          getInventory: ['ai-toolkit_DIRECT_TOOL_CALL', 'code_mode'],
         },
       });
     });
@@ -225,7 +225,7 @@ describe('streamText types', () => {
   });
 
   describe('onFinish compatibility', () => {
-    it('should expose deprecated AI SDK 6 properties', () => {
+    it('should expose deprecated ai-toolkit 6 properties', () => {
       streamText({
         model: new MockLanguageModelV4(),
         prompt: 'Hello',

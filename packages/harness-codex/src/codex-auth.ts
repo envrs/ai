@@ -2,14 +2,14 @@ import type {
   HarnessV1Authentication,
   HarnessV1RequestTransformation,
   HarnessV1RequestTransformationSources,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   createCredentialRequestTransformation,
   getAiGatewayAuthFromEnv,
   isHarnessAuthenticationEnvironment,
-} from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness/utils';
 
-const DEFAULT_AI_GATEWAY_BASE_URL = 'https://ai-gateway.vercel.sh/v1';
+const DEFAULT_AI_GATEWAY_BASE_URL = 'https://ai-gateway.khulnasoft.sh/v1';
 export const DEFAULT_OPENAI_BASE_URL = 'https://api.openai.com/v1';
 
 export const CODEX_CREDENTIAL_ENVIRONMENT_VARIABLES = [

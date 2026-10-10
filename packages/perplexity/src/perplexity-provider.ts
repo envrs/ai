@@ -3,14 +3,14 @@ import {
   type LanguageModelV4,
   type EmbeddingModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   generateId,
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { PerplexityEmbeddingModel } from './perplexity-embedding-model';
 import type { PerplexityEmbeddingModelId } from './perplexity-embedding-model-options';
 import { PerplexityLanguageModel } from './perplexity-language-model';
@@ -78,10 +78,10 @@ export function createPerplexity(
           environmentVariableName: 'PERPLEXITY_API_KEY',
           description: 'Perplexity',
         })}`,
-        'X-Pplx-Integration': 'vercel-ai-sdk',
+        'X-Pplx-Integration': 'khulnasoft-ai-toolkit',
         ...options.headers,
       },
-      `ai-sdk-perplexity/${VERSION}`,
+      `ai-toolkit-perplexity/${VERSION}`,
     );
 
   const baseURL = withoutTrailingSlash(

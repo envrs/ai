@@ -1,10 +1,10 @@
-import type { GoogleLanguageModelOptions } from '@ai-sdk/google';
-import { GoogleLanguageModel } from '@ai-sdk/google/internal';
+import type { GoogleLanguageModelOptions } from '@ai-toolkit/google';
+import { GoogleLanguageModel } from '@ai-toolkit/google/internal';
 import type {
   ImageModelV4,
   LanguageModelV4Prompt,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertToBase64,
   generateId as defaultGenerateId,
@@ -12,7 +12,7 @@ import {
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { GoogleVertexImageModelId } from './google-vertex-image-settings';
 
 interface GoogleVertexImageModelConfig {

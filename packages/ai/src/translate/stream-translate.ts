@@ -3,12 +3,12 @@ import type {
   Experimental_SpeechTranslationModelV4Usage,
   JSONObject,
   SharedV4AudioFormat,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   DelayedPromise,
   withUserAgentSuffix,
   type ProviderOptions,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { NoTranslationGeneratedError } from '../error/no-translation-generated-error';
 import { logWarnings } from '../logger/log-warnings';
 import { resolveSpeechTranslationModel } from '../model/resolve-model';

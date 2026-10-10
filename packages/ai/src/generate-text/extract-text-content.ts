@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4Content,
   LanguageModelV4Text,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 export function extractTextContent(
   content: LanguageModelV4Content[],

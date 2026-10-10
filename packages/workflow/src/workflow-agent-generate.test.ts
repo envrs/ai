@@ -1,4 +1,4 @@
-import type { LanguageModelV4GenerateResult } from '@ai-sdk/provider';
+import type { LanguageModelV4GenerateResult } from '@ai-toolkit/provider';
 import { Output, ToolLoopAgent, isStepCount, tool } from 'ai';
 import { MockLanguageModelV4 } from 'ai/test';
 import { describe, expect, it, vi } from 'vitest';

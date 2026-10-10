@@ -1,4 +1,4 @@
-import type { LanguageModelV4FinishReason } from '@ai-sdk/provider';
+import type { LanguageModelV4FinishReason } from '@ai-toolkit/provider';
 import type { AmazonBedrockStopReason } from './amazon-bedrock-api-types';
 
 export function mapAmazonBedrockFinishReason(

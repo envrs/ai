@@ -1,6 +1,6 @@
 import { fail } from 'assert';
-import { TypeValidationError, type JSONSchema7 } from '@ai-sdk/provider';
-import { jsonSchema } from '@ai-sdk/provider-utils';
+import { TypeValidationError, type JSONSchema7 } from '@ai-toolkit/provider';
+import { jsonSchema } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod/v4';
 import { InvalidArgumentError } from '../error/invalid-argument-error';

@@ -3,8 +3,8 @@ import {
   type LanguageModelV4Prompt,
   type LanguageModelV4ToolResultOutput,
   type LanguageModelV4ToolResultPart,
-} from '@ai-sdk/provider';
-import type { ToolNameMapping } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import type { ToolNameMapping } from '@ai-toolkit/provider-utils';
 import { describe, it, expect } from 'vitest';
 import { convertToOpenAIResponsesInput as convertToOpenAIResponsesInputBase } from './convert-to-openai-responses-input';
 
@@ -4361,12 +4361,12 @@ describe('convertToOpenAIResponsesInput', () => {
                   value: {
                     action: {
                       type: 'search',
-                      query: 'AI SDK',
+                      query: 'ai-toolkit',
                     },
                     sources: [
                       {
                         type: 'url',
-                        url: 'https://ai-sdk.dev',
+                        url: 'https://ai-toolkit.dev',
                       },
                     ],
                   },
@@ -4381,7 +4381,7 @@ describe('convertToOpenAIResponsesInput', () => {
                   value: {
                     action: {
                       type: 'openPage',
-                      url: 'https://ai-sdk.dev/docs',
+                      url: 'https://ai-toolkit.dev/docs',
                     },
                   },
                 },
@@ -4395,7 +4395,7 @@ describe('convertToOpenAIResponsesInput', () => {
                   value: {
                     action: {
                       type: 'findInPage',
-                      url: 'https://ai-sdk.dev/docs',
+                      url: 'https://ai-toolkit.dev/docs',
                       pattern: 'streamText',
                     },
                   },
@@ -4417,8 +4417,8 @@ describe('convertToOpenAIResponsesInput', () => {
             status: 'completed',
             action: {
               type: 'search',
-              query: 'AI SDK',
-              sources: [{ type: 'url', url: 'https://ai-sdk.dev' }],
+              query: 'ai-toolkit',
+              sources: [{ type: 'url', url: 'https://ai-toolkit.dev' }],
             },
           },
           {
@@ -4427,7 +4427,7 @@ describe('convertToOpenAIResponsesInput', () => {
             status: 'completed',
             action: {
               type: 'open_page',
-              url: 'https://ai-sdk.dev/docs',
+              url: 'https://ai-toolkit.dev/docs',
             },
           },
           {
@@ -4436,7 +4436,7 @@ describe('convertToOpenAIResponsesInput', () => {
             status: 'completed',
             action: {
               type: 'find_in_page',
-              url: 'https://ai-sdk.dev/docs',
+              url: 'https://ai-toolkit.dev/docs',
               pattern: 'streamText',
             },
           },

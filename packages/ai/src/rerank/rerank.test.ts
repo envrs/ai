@@ -1,7 +1,7 @@
 import {
   InvalidResponseDataError,
   type RerankingModelV4CallOptions,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import * as logWarningsModule from '../logger/log-warnings';
 import { MockRerankingModelV4 } from '../test/mock-reranking-model-v4';

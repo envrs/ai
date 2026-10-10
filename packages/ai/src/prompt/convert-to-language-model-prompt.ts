@@ -4,7 +4,7 @@ import type {
   LanguageModelV4Prompt,
   LanguageModelV4TextPart,
   LanguageModelV4ToolResultOutput,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   asArray,
   detectMediaType,
@@ -20,7 +20,7 @@ import {
   type ToolCallPart,
   type ToolResultOutput,
   type ToolResultPart,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   createDefaultDownloadFunction,
   type DownloadFunction,

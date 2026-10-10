@@ -1,6 +1,6 @@
-import type { Experimental_TextBatchV4Request as TextBatchV4Request } from '@ai-sdk/provider';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import type { Experimental_TextBatchV4Request as TextBatchV4Request } from '@ai-toolkit/provider';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { AnthropicLanguageModel } from './anthropic-language-model';
 import type { AnthropicLanguageModelOptions } from './anthropic-language-model-options';

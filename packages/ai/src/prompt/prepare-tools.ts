@@ -1,14 +1,14 @@
 import type {
   LanguageModelV4FunctionTool,
   LanguageModelV4ProviderTool,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   asSchema,
   type Experimental_SandboxSession as SandboxSession,
   type InferToolSetContext,
   type Tool,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { ToolOrder } from '../generate-text/tool-order';
 import { isNonEmptyObject } from '../util/is-non-empty-object';
 

@@ -1,8 +1,8 @@
-import type { Experimental_VideoModelV4 } from '@ai-sdk/provider';
+import type { Experimental_VideoModelV4 } from '@ai-toolkit/provider';
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { resumeWebhook } from 'workflow/api';
 
 class SerializableVideoModel implements Experimental_VideoModelV4 {

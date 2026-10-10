@@ -1,4 +1,4 @@
-import { isJSONObject } from '@ai-sdk/provider';
+import { isJSONObject } from '@ai-toolkit/provider';
 import type {
   MCPAppBridgeHandlers,
   MCPAppHostContext,
@@ -155,7 +155,7 @@ export class MCPAppBridge {
     targetWindow,
     targetOrigin = '*',
     handlers = {},
-    hostInfo = { name: 'ai-sdk-react', version: '1.0.0' },
+    hostInfo = { name: 'ai-toolkit-react', version: '1.0.0' },
     hostContext = { displayMode: 'inline' },
   }: {
     targetWindow: Window;

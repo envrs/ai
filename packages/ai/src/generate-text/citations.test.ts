@@ -1,8 +1,8 @@
-import type { LanguageModelV4Usage } from '@ai-sdk/provider';
+import type { LanguageModelV4Usage } from '@ai-toolkit/provider';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it } from 'vitest';
 import { MockLanguageModelV4 } from '../test/mock-language-model-v4';
 import { simulateStreamingMiddleware } from '../middleware/simulate-streaming-middleware';

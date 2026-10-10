@@ -7,7 +7,7 @@ import type {
   LanguageModelV4ToolResult,
   LanguageModelV4Usage,
   SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { z } from 'zod/v4';
 import type { HarnessV1CallWarning } from './harness-v1-call-warning';
 import type { HarnessV1Metadata } from './harness-v1-metadata';
@@ -16,7 +16,7 @@ import type { HarnessV1Metadata } from './harness-v1-metadata';
  * One event emitted by a harness adapter during a prompt turn.
  *
  * Mirrors `LanguageModelV4StreamPart` on the variants it shares so a
- * `HarnessAgent` can pipe events through to AI SDK consumers with minimal
+ * `HarnessAgent` can pipe events through to ai-toolkit consumers with minimal
  * translation. Primitive types from the V4 spec (`LanguageModelV4ToolCall`,
  * `LanguageModelV4ToolResult`, `LanguageModelV4ToolApprovalRequest`,
  * `LanguageModelV4Usage`, `LanguageModelV4FinishReason`) are reused
@@ -24,7 +24,7 @@ import type { HarnessV1Metadata } from './harness-v1-metadata';
  *
  * The metadata field is named `harnessMetadata` (not `providerMetadata`)
  * because a harness is a peer to a provider, not a kind of provider. The
- * agent rebinds it when forwarding to AI SDK consumers.
+ * agent rebinds it when forwarding to ai-toolkit consumers.
  */
 export type HarnessV1StreamPart =
   | {

@@ -12,7 +12,7 @@ import type { SharedV4ProviderOptions } from '../../shared/v4/shared-v4-provider
  * Note: Not all models and prompt formats support multi-modal inputs and
  * tool calls. The validation happens at runtime.
  *
- * Note: This is not a user-facing prompt. The AI SDK methods will map the
+ * Note: This is not a user-facing prompt. The ai-toolkit methods will map the
  * user-facing prompt types such as chat or instruction prompts to this format.
  */
 export type LanguageModelV4Prompt = Array<LanguageModelV4Message>;
@@ -52,7 +52,7 @@ export type LanguageModelV4Message =
   ) & {
     /**
      * Additional provider-specific options. They are passed through
-     * to the provider from the AI SDK and enable provider-specific
+     * to the provider from the ai-toolkit and enable provider-specific
      * functionality that can be fully encapsulated in the provider.
      */
     providerOptions?: SharedV4ProviderOptions;
@@ -71,7 +71,7 @@ export interface LanguageModelV4TextPart {
 
   /**
    * Additional provider-specific options. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: SharedV4ProviderOptions;
@@ -90,7 +90,7 @@ export interface LanguageModelV4ReasoningPart {
 
   /**
    * Additional provider-specific options. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: SharedV4ProviderOptions;
@@ -119,7 +119,7 @@ export interface LanguageModelV4ReasoningFilePart {
 
   /**
    * Additional provider-specific options. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: SharedV4ProviderOptions;
@@ -139,7 +139,7 @@ export interface LanguageModelV4CustomPart {
 
   /**
    * Additional provider-specific options. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: SharedV4ProviderOptions;
@@ -172,7 +172,7 @@ export interface LanguageModelV4FilePart {
    *
    * `*`-subtype wildcards (e.g. `image/*`) are normalized as equivalent to the
    * top-level segment alone (e.g. `image`). Providers can use the helpers in
-   * `@ai-sdk/provider-utils` (`isFullMediaType`, `getTopLevelMediaType`,
+   * `@ai-toolkit/provider-utils` (`isFullMediaType`, `getTopLevelMediaType`,
    * `detectMediaType`) to resolve the field according to their API
    * requirements.
    *
@@ -182,7 +182,7 @@ export interface LanguageModelV4FilePart {
 
   /**
    * Additional provider-specific options. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: SharedV4ProviderOptions;
@@ -217,7 +217,7 @@ export interface LanguageModelV4ToolCallPart {
 
   /**
    * Additional provider-specific options. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: SharedV4ProviderOptions;
@@ -246,7 +246,7 @@ export interface LanguageModelV4ToolResultPart {
 
   /**
    * Additional provider-specific options. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: SharedV4ProviderOptions;
@@ -276,7 +276,7 @@ export interface LanguageModelV4ToolApprovalResponsePart {
 
   /**
    * Additional provider-specific options. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: SharedV4ProviderOptions;
@@ -376,7 +376,7 @@ export type LanguageModelV4ToolResultOutput =
              *
              * `*`-subtype wildcards (e.g. `image/*`) are normalized as equivalent to the
              * top-level segment alone (e.g. `image`). Providers can use the helpers in
-             * `@ai-sdk/provider-utils` (`isFullMediaType`, `getTopLevelMediaType`,
+             * `@ai-toolkit/provider-utils` (`isFullMediaType`, `getTopLevelMediaType`,
              * `detectMediaType`) to resolve the field according to their API
              * requirements.
              *

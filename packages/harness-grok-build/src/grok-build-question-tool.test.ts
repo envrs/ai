@@ -1,4 +1,4 @@
-import type { ToolResultPart } from '@ai-sdk/provider-utils';
+import type { ToolResultPart } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { grokBuildAskUserQuestions } from './grok-build-question-tool';
 

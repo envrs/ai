@@ -4,12 +4,12 @@ import { RecipesLanding } from '@/components/recipes/recipes-landing';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/resources/recipes' },
-  title: 'AI SDK Recipes',
+  title: 'ai-toolkit Recipes',
   description:
-    'Open-source recipes, guides, and examples for building with the AI SDK.',
+    'Open-source recipes, guides, and examples for building with the ai-toolkit.',
   ...socialCard(
-    'AI SDK Recipes',
-    'Open-source recipes, guides, and examples for building with the AI SDK.',
+    'ai-toolkit Recipes',
+    'Open-source recipes, guides, and examples for building with the ai-toolkit.',
   ),
 };
 

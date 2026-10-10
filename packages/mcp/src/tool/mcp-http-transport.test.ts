@@ -1,7 +1,7 @@
 import {
   createTestServer,
   TestResponseController,
-} from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/test-server/with-vitest';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { createMCPClient } from './mcp-client';
 import { HttpMCPTransport } from './mcp-http-transport';
@@ -954,7 +954,7 @@ describe('HttpMCPTransport', () => {
       accept: 'text/event-stream',
       ...customHeaders,
     });
-    expect(server.calls[0].requestUserAgent).toContain('ai-sdk/');
+    expect(server.calls[0].requestUserAgent).toContain('ai-toolkit/');
 
     expect(server.calls[1].requestHeaders).toEqual({
       'content-type': 'application/json',
@@ -962,7 +962,7 @@ describe('HttpMCPTransport', () => {
       accept: 'application/json, text/event-stream',
       ...customHeaders,
     });
-    expect(server.calls[1].requestUserAgent).toContain('ai-sdk/');
+    expect(server.calls[1].requestUserAgent).toContain('ai-toolkit/');
   });
 
   it('should deduplicate OAuth refresh when inbound SSE and initialize both get 401', async () => {

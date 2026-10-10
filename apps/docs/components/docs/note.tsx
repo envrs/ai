@@ -1,8 +1,8 @@
-import { Callout } from '@vercel/geistdocs/components/callout';
+import { Callout } from '@khulnasoft/geistdocs/components/callout';
 import type { ReactNode } from 'react';
 
 /**
- * Maps the legacy ai-sdk.dev `<Note>` component (from @vercel/geist) onto the
+ * Maps the legacy ai-toolkit.dev `<Note>` component (from @khulnasoft/geist) onto the
  * geistdocs callout. Extra attributes such as `id` pass through so in-content
  * anchors (for example `/cookbook/guides/r1#deepseek-r1-middleware`) resolve.
  */

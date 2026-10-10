@@ -3,7 +3,7 @@ import {
   type JSONObject,
   type SharedV4Warning,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -15,7 +15,7 @@ import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { mistralFailedResponseHandler } from './mistral-error';
 import {

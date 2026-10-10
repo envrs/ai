@@ -7,7 +7,7 @@ import {
   type Experimental_VideoModelV4OperationStartResult as VideoModelV4OperationStartResult,
   type Experimental_VideoModelV4OperationStatusResult as VideoModelV4OperationStatusResult,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -23,7 +23,7 @@ import {
   withUserAgentSuffix,
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { TopazConfig } from './topaz-config';
 import { topazFailedResponseHandler } from './topaz-error';
@@ -472,7 +472,7 @@ export class TopazVideoModel implements VideoModelV4 {
       method: 'PUT',
       headers: withUserAgentSuffix(
         { 'Content-Type': contentType },
-        `ai-sdk-topaz/${VERSION}`,
+        `ai-toolkit-topaz/${VERSION}`,
       ) as HeadersInit,
       body: bytes as BodyInit,
       signal: abortSignal,

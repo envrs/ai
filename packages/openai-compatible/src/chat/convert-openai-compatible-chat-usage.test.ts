@@ -1,4 +1,4 @@
-import { createNullLanguageModelUsage } from '@ai-sdk/provider-utils';
+import { createNullLanguageModelUsage } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { convertOpenAICompatibleChatUsage } from './convert-openai-compatible-chat-usage';
 

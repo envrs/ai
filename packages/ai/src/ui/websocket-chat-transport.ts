@@ -11,7 +11,7 @@ import {
   type Resolvable,
   type WebSocketConstructor,
   type WebSocketLike,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   uiMessageChunkSchema,
   type UIMessageChunk,

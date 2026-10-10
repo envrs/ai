@@ -1,8 +1,8 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   type TranscriptionModelV4,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -15,7 +15,7 @@ import {
   serializeModelOptions,
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { RevaiConfig } from './revai-config';
 import { revaiFailedResponseHandler } from './revai-error';
@@ -158,7 +158,7 @@ export class RevaiTranscriptionModel implements TranscriptionModelV4 {
     });
 
     if (submissionResponse.status === 'failed') {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         message: 'Failed to submit transcription job to Rev.ai',
         name: 'TranscriptionJobSubmissionFailed',
         cause: submissionResponse,
@@ -174,7 +174,7 @@ export class RevaiTranscriptionModel implements TranscriptionModelV4 {
     while (jobResponse.status !== 'transcribed') {
       // Check if we've exceeded the timeout
       if (Date.now() - startTime > timeoutMs) {
-        throw new AISDKError({
+        throw new ai-toolkitError({
           message: 'Transcription job polling timed out',
           name: 'TranscriptionJobPollingTimedOut',
           cause: submissionResponse,
@@ -200,7 +200,7 @@ export class RevaiTranscriptionModel implements TranscriptionModelV4 {
       jobResponse = pollingResult.value;
 
       if (jobResponse.status === 'failed') {
-        throw new AISDKError({
+        throw new ai-toolkitError({
           message: 'Transcription job failed',
           name: 'TranscriptionJobFailed',
           cause: jobResponse,

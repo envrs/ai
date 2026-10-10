@@ -3,14 +3,14 @@ import {
   type SharedV4Warning,
   type LanguageModelV4Prompt,
   type SharedV4ProviderOptions,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { OpenAIChatPrompt } from './openai-chat-prompt';
 import {
   convertToBase64,
   getTopLevelMediaType,
   resolveFullMediaType,
   resolveProviderReference,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 function serializeToolCallArguments(input: unknown): string {
   return JSON.stringify(

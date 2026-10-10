@@ -123,15 +123,15 @@ describe('sandbox credential placeholders', () => {
     const first = generateSandboxCredentialPlaceholder();
     const second = generateSandboxCredentialPlaceholder();
 
-    expect(first).toMatch(/^aisdkhc_[A-Za-z0-9_-]{43}$/);
-    expect(second).toMatch(/^aisdkhc_[A-Za-z0-9_-]{43}$/);
+    expect(first).toMatch(/^ai-toolkithc_[A-Za-z0-9_-]{43}$/);
+    expect(second).toMatch(/^ai-toolkithc_[A-Za-z0-9_-]{43}$/);
     expect(second).not.toBe(first);
     expect(isSandboxCredentialPlaceholder(first)).toBe(true);
   });
 
   it('rejects values outside the complete placeholder format', () => {
     expect(isSandboxCredentialPlaceholder('real-secret')).toBe(false);
-    expect(isSandboxCredentialPlaceholder('aisdkhc_')).toBe(false);
+    expect(isSandboxCredentialPlaceholder('ai-toolkithc_')).toBe(false);
     expect(
       isSandboxCredentialPlaceholder(
         `prefix-${generateSandboxCredentialPlaceholder()}`,
@@ -232,7 +232,7 @@ describe('createCredentialRequestTransformation', () => {
     expect(
       createCredentialRequestTransformation({
         matchUrl: 'https://api.example.com/v1',
-        matchHeaders: { Authorization: 'Bearer aisdkhc_placeholder' },
+        matchHeaders: { Authorization: 'Bearer ai-toolkithc_placeholder' },
         transformHeaders: { Authorization: 'Bearer real-secret' },
       }),
     ).toEqual({
@@ -242,7 +242,7 @@ describe('createCredentialRequestTransformation', () => {
         headers: [
           {
             key: { exact: 'Authorization' },
-            value: { exact: 'Bearer aisdkhc_placeholder' },
+            value: { exact: 'Bearer ai-toolkithc_placeholder' },
           },
         ],
       },

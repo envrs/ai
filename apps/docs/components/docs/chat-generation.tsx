@@ -11,7 +11,7 @@ interface Message {
 
 /**
  * Simulated chat exchange for cookbook demos (ported from the legacy
- * ai-sdk.dev app): click "Send Message" to submit the staged input and
+ * ai-toolkit.dev app): click "Send Message" to submit the staged input and
  * reveal the assistant reply, word by word when `stream` is set.
  */
 export const ChatGeneration = ({

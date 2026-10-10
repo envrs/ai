@@ -1,13 +1,13 @@
 import {
   UnsupportedFunctionalityError,
   type LanguageModelV4Prompt,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { GroqChatPrompt } from './groq-api-types';
 import {
   convertToBase64,
   getTopLevelMediaType,
   resolveFullMediaType,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 export function convertToGroqChatMessages(
   prompt: LanguageModelV4Prompt,
@@ -85,7 +85,7 @@ export function convertToGroqChatMessages(
         for (const part of content) {
           switch (part.type) {
             // groq supports reasoning for tool-calls in multi-turn conversations
-            // https://github.com/vercel/ai/issues/7860
+            // https://github.com/khulnasoft/ai/issues/7860
             case 'reasoning': {
               reasoning += part.text;
               break;

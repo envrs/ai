@@ -1,7 +1,7 @@
 import {
   TooManyEmbeddingValuesForCallError,
   type EmbeddingModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createJsonResponseHandler,
@@ -13,7 +13,7 @@ import {
   WORKFLOW_DESERIALIZE,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   amazonBedrockEmbeddingModelOptionsSchema,
   type AmazonBedrockEmbeddingModelId,

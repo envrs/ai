@@ -1,7 +1,7 @@
 import {
   UnsupportedFunctionalityError,
   type LanguageModelV4CallOptions,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { prepareTools } from './alibaba-prepare-tools';
 

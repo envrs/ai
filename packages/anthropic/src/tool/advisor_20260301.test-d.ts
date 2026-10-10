@@ -1,4 +1,4 @@
-import type { InferToolOutput } from '@ai-sdk/provider-utils';
+import type { InferToolOutput } from '@ai-toolkit/provider-utils';
 import { describe, expectTypeOf, it } from 'vitest';
 import { anthropic } from '../index';
 

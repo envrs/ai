@@ -1,4 +1,4 @@
-import type { Experimental_DecisionModelV4 as DecisionModelV4 } from '@ai-sdk/provider';
+import type { Experimental_DecisionModelV4 as DecisionModelV4 } from '@ai-toolkit/provider';
 import { notImplemented } from './not-implemented';
 
 export class DecisionMockModelV4 implements DecisionModelV4 {

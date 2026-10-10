@@ -1,8 +1,8 @@
-import type { LanguageModelV4Usage } from '@ai-sdk/provider';
+import type { LanguageModelV4Usage } from '@ai-toolkit/provider';
 import {
   convertArrayToReadableStream,
   convertAsyncIterableToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it } from 'vitest';
 import { generateText, streamText } from '../generate-text';
 import type { TextStreamPart } from '../generate-text/stream-text-result';

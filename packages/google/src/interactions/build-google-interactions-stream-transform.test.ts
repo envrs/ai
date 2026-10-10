@@ -1,11 +1,11 @@
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import {
   isProviderStreamError,
   type ParseResult,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { buildGoogleInteractionsStreamTransform } from './build-google-interactions-stream-transform';
 import type { GoogleInteractionsEvent } from './google-interactions-api';

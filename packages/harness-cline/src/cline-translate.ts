@@ -1,4 +1,4 @@
-import type { HarnessV1StreamPart } from '@ai-sdk/harness';
+import type { HarnessV1StreamPart } from '@ai-toolkit/harness';
 import type { AgentRuntimeEvent, AgentToolResult } from '@cline/agents';
 import {
   mapModelFinishReason,

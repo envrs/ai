@@ -1,5 +1,5 @@
-import type { HarnessV1StreamPart } from '@ai-sdk/harness';
-import type { BridgeTurn } from '@ai-sdk/harness/bridge';
+import type { HarnessV1StreamPart } from '@ai-toolkit/harness';
+import type { BridgeTurn } from '@ai-toolkit/harness/bridge';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { loadWeatherApprovalFixture } from './__fixtures__/weather-approval-fixture';
 import { createEmitStreamEvent } from './create-emit-stream-event';
@@ -11,9 +11,9 @@ describe('host weather approval stream', () => {
   afterEach(() => vi.useRealTimers());
 
   it.each([
-    { tool_name: 'ai-sdk-harness-tools__get_weather' },
-    { tool_name: 'ai-sdk-harness-tools__get_weather', tool_input: null },
-    { tool_name: 'ai-sdk-harness-tools__get_weather', tool_input: [] },
+    { tool_name: 'ai-toolkit-harness-tools__get_weather' },
+    { tool_name: 'ai-toolkit-harness-tools__get_weather', tool_input: null },
+    { tool_name: 'ai-toolkit-harness-tools__get_weather', tool_input: [] },
   ])(
     'does not silently claim an unresolved deferred permission: %j',
     async rawInput => {
@@ -29,11 +29,11 @@ describe('host weather approval stream', () => {
         emit: event => events.push(event),
         emitToolCallCandidate: vi.fn(),
         builtinTools: [],
-        hostToolServerName: 'ai-sdk-harness-tools',
+        hostToolServerName: 'ai-toolkit-harness-tools',
         hostTools: [{ name: 'get_weather', inputSchema: { type: 'object' } }],
       });
       const authorization = createHostToolRelayAuthorization({
-        serverName: 'ai-sdk-harness-tools',
+        serverName: 'ai-toolkit-harness-tools',
         toolNames: ['get_weather'],
       });
       const controller = createACPPermissionController({
@@ -54,7 +54,7 @@ describe('host weather approval stream', () => {
           ...permission.value,
           toolCall: {
             ...permission.value.toolCall,
-            title: 'mcp__ai-sdk-harness-tools__get_weather',
+            title: 'mcp__ai-toolkit-harness-tools__get_weather',
             rawInput,
           },
         });
@@ -102,11 +102,11 @@ describe('host weather approval stream', () => {
         emit: event => events.push(event),
         emitToolCallCandidate: candidate,
         builtinTools: [],
-        hostToolServerName: 'ai-sdk-harness-tools',
+        hostToolServerName: 'ai-toolkit-harness-tools',
         hostTools: tools,
       });
       const authorization = createHostToolRelayAuthorization({
-        serverName: 'ai-sdk-harness-tools',
+        serverName: 'ai-toolkit-harness-tools',
         toolNames: ['get_weather'],
         ttlMs: 20,
       });
@@ -165,7 +165,7 @@ describe('host weather approval stream', () => {
         );
         vi.useRealTimers();
         const relay = await startHostToolRelay({
-          serverName: 'ai-sdk-harness-tools',
+          serverName: 'ai-toolkit-harness-tools',
           tools,
         });
         let resolveResult!: (value: {

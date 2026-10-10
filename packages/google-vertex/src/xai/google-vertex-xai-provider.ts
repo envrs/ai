@@ -3,18 +3,18 @@ import {
   type LanguageModelV4,
   type LanguageModelV4Usage,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   createOpenAICompatible,
   type OpenAICompatibleProvider,
-} from '@ai-sdk/openai-compatible';
+} from '@ai-toolkit/openai-compatible';
 import {
   loadOptionalSetting,
   loadSetting,
   withoutTrailingSlash,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { GoogleVertexXaiModelId } from './google-vertex-xai-options';
 
 export interface GoogleVertexXaiProvider extends ProviderV4 {

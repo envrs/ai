@@ -1,6 +1,6 @@
-import { createOpenAI } from '@ai-sdk/openai';
-import type { ModelMessage } from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createOpenAI } from '@ai-toolkit/openai';
+import type { ModelMessage } from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it } from 'vitest';
 import { generateText } from './generate-text';
 import { streamText } from './stream-text';

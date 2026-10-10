@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { createOpenAI } from '../openai-provider';
 import { OpenAIImageModel } from './openai-image-model';
 import type {
@@ -216,7 +216,7 @@ describe('doGenerate', () => {
       'openai-project': 'test-project',
     });
     expect(server.calls[0].requestUserAgent).toContain(
-      `ai-sdk-openai/0.0.0-test`,
+      `ai-toolkit-openai/0.0.0-test`,
     );
   });
 

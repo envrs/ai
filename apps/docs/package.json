@@ -1,8 +1,8 @@
 {
-  "name": "ai-sdk-docs",
+  "name": "ai-toolkit-docs",
   "version": "0.0.0",
   "private": true,
-  "description": "Documentation site for the AI SDK (ai-sdk.dev), built with @vercel/geistdocs.",
+  "description": "Documentation site for the ai-toolkit (ai-toolkit.dev), built with @khulnasoft/geistdocs.",
   "scripts": {
     "sync-content": "node scripts/sync-content.mjs",
     "dev:site": "pnpm sync-content && fumadocs-mdx && next dev",
@@ -15,8 +15,8 @@
   "dependencies": {
     "@shikijs/langs": "3.23.0",
     "@shikijs/transformers": "3.23.0",
-    "@vercel/analytics": "^2.0.1",
-    "@vercel/geistdocs": "2.9.1",
+    "@khulnasoft/analytics": "^2.0.1",
+    "@khulnasoft/geistdocs": "2.9.1",
     "fumadocs-core": "16.2.2",
     "fumadocs-mdx": "14.0.4",
     "fumadocs-ui": "16.2.2",

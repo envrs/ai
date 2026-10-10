@@ -1,4 +1,4 @@
-import type { LanguageModelV4StreamPart } from '@ai-sdk/provider';
+import type { LanguageModelV4StreamPart } from '@ai-toolkit/provider';
 
 /**
  * Providers that cannot use native structured output for a request can use a

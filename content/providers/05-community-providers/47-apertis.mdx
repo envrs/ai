@@ -1,6 +1,6 @@
 ---
 title: Apertis
-description: Apertis AI Provider for the AI SDK
+description: Apertis AI Provider for the ai-toolkit
 ---
 
 # Apertis Provider
@@ -17,20 +17,20 @@ description: Apertis AI Provider for the AI SDK
 
 ## Setup
 
-<InstallPackages packages="@apertis/ai-sdk-provider" />
+<InstallPackages packages="@apertis/ai-toolkit-provider" />
 
 ## Provider Instance
 
 You can import the default `apertis` provider instance or create a custom one:
 
 ```ts
-import { apertis } from '@apertis/ai-sdk-provider';
+import { apertis } from '@apertis/ai-toolkit-provider';
 ```
 
 Or create a custom instance with your API key:
 
 ```ts
-import { createApertis } from '@apertis/ai-sdk-provider';
+import { createApertis } from '@apertis/ai-toolkit-provider';
 
 const apertis = createApertis({
   apiKey: process.env.APERTIS_API_KEY,
@@ -75,7 +75,7 @@ const embeddingModel = apertis.textEmbeddingModel('text-embedding-3-small');
 ### Generate Text
 
 ```ts
-import { apertis } from '@apertis/ai-sdk-provider';
+import { apertis } from '@apertis/ai-toolkit-provider';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -87,7 +87,7 @@ const { text } = await generateText({
 ### Stream Text
 
 ```ts
-import { apertis } from '@apertis/ai-sdk-provider';
+import { apertis } from '@apertis/ai-toolkit-provider';
 import { streamText } from 'ai';
 
 const { textStream } = await streamText({
@@ -103,7 +103,7 @@ for await (const chunk of textStream) {
 ### Generate Embeddings
 
 ```ts
-import { apertis } from '@apertis/ai-sdk-provider';
+import { apertis } from '@apertis/ai-toolkit-provider';
 import { embed } from 'ai';
 
 const { embedding } = await embed({

@@ -1,6 +1,6 @@
-# AI SDK - Perplexity Provider
+# ai-toolkit - Perplexity Provider
 
-The **[Perplexity provider](https://ai-sdk.dev/providers/ai-sdk-providers/perplexity)** for the [AI SDK](https://ai-sdk.dev/docs)
+The **[Perplexity provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/perplexity)** for the [ai-toolkit](https://ai-toolkit.dev/docs)
 contains language model support for Perplexity's Agent API, including web search, citations, function tools, and structured output.
 
 ## Features
@@ -9,38 +9,38 @@ contains language model support for Perplexity's Agent API, including web search
 - Agent API presets from `fast` through `xhigh`
 - Direct access to supported third-party models through Perplexity
 - Native tools for web search, URL fetching, code execution, finance, MCP, and connectors
-- AI SDK function tools, structured output, reasoning streams, and multi-turn tool calls
+- ai-toolkit function tools, structured output, reasoning streams, and multi-turn tool calls
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access Perplexity (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access Perplexity (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The Perplexity provider is available in the `@ai-sdk/perplexity` module. You can install it with:
+The Perplexity provider is available in the `@ai-toolkit/perplexity` module. You can install it with:
 
 ```bash
-npm i @ai-sdk/perplexity
+npm i @ai-toolkit/perplexity
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `perplexity` from `@ai-sdk/perplexity`:
+You can import the default provider instance `perplexity` from `@ai-toolkit/perplexity`:
 
 ```ts
-import { perplexity } from '@ai-sdk/perplexity';
+import { perplexity } from '@ai-toolkit/perplexity';
 ```
 
 ## Example
 
 ```ts
-import { perplexity } from '@ai-sdk/perplexity';
+import { perplexity } from '@ai-toolkit/perplexity';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -51,7 +51,7 @@ const { text } = await generateText({
 
 Version 5 is a breaking migration from Sonar Chat Completions to the Agent API.
 Legacy Sonar model IDs and provider options are not mapped. Review the
-[migration notes](https://ai-sdk.dev/providers/ai-sdk-providers/perplexity#migrating-from-v4-sonar-to-v5-agent-api)
+[migration notes](https://ai-toolkit.dev/providers/ai-toolkit-providers/perplexity#migrating-from-v4-sonar-to-v5-agent-api)
 before upgrading an existing application.
 
 Perplexity supports Sonar Chat Completions only until September 27, 2026.
@@ -60,4 +60,4 @@ Migrate unsupported Sonar features using the alternatives in the migration notes
 
 ## Documentation
 
-Please check out the **[Perplexity provider documentation](https://ai-sdk.dev/providers/ai-sdk-providers/perplexity)** for more information.
+Please check out the **[Perplexity provider documentation](https://ai-toolkit.dev/providers/ai-toolkit-providers/perplexity)** for more information.

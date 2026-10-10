@@ -1,13 +1,13 @@
 ---
 name: add-harness-package
-description: Guide for adding new AI SDK harness packages. Use when creating a new @ai-sdk/harness-<name> package that adapts a coding-agent runtime to HarnessV1.
+description: Guide for adding new ai-toolkit harness packages. Use when creating a new @ai-toolkit/harness-<name> package that adapts a coding-agent runtime to HarnessV1.
 metadata:
   internal: true
 ---
 
 ## Adding a New Harness Package
 
-This guide covers creating a new `@ai-sdk/harness-<name>` package for an agent harness.
+This guide covers creating a new `@ai-toolkit/harness-<name>` package for an agent harness.
 
 Before evaluating a runtime, read [Harness Requirements](references/harness-requirements.md) for feasibility criteria and capability gaps to document. Follow the requirements while implementing the harness package.
 
@@ -17,20 +17,20 @@ Prefer host-driven when the runtime supports it.
 ## First-Party vs Third-Party Harnesses
 
 - **Third-party packages**: Any runtime can publish an external harness package.
-- **First-party `@ai-sdk/harness-<name>` packages**: Create an issue first to discuss whether the runtime belongs in this repo.
+- **First-party `@ai-toolkit/harness-<name>` packages**: Create an issue first to discuss whether the runtime belongs in this repo.
 
 ## Reference Example
 
-See https://github.com/vercel/ai/pull/16255/changes for a complete example of adding a new harness.
+See https://github.com/khulnasoft/ai/pull/16255/changes for a complete example of adding a new harness.
 
 ## Harness Architecture
 
-The AI SDK uses a layered harness architecture following the adapter pattern:
+The ai-toolkit uses a layered harness architecture following the adapter pattern:
 
-1. **Harness specification** (`@ai-sdk/harness`): Defines interfaces like `HarnessV1` and `HarnessV1Session`
-2. **Utilities** (`@ai-sdk/harness/utils`): Shared code for implementing harnesses
-3. **Harness implementations** (`@ai-sdk/harness-<name>`): Concrete adapters for harnesses
-4. **Harness agent** (`@ai-sdk/harness/agent`): The high-level user-facing `HarnessAgent` API
+1. **Harness specification** (`@ai-toolkit/harness`): Defines interfaces like `HarnessV1` and `HarnessV1Session`
+2. **Utilities** (`@ai-toolkit/harness/utils`): Shared code for implementing harnesses
+3. **Harness implementations** (`@ai-toolkit/harness-<name>`): Concrete adapters for harnesses
+4. **Harness agent** (`@ai-toolkit/harness/agent`): The high-level user-facing `HarnessAgent` API
 
 ## Step-by-Step Guide
 
@@ -66,7 +66,7 @@ src/
     └── pnpm-lock.yaml
 ```
 
-Add a `CHANGELOG.md` containing just the package heading (`# @ai-sdk/harness-<name>`). Every package is required to have one.
+Add a `CHANGELOG.md` containing just the package heading (`# @ai-toolkit/harness-<name>`). Every package is required to have one.
 
 ### 2. Configure package.json
 
@@ -74,13 +74,13 @@ Use existing harness packages as the source of truth for scripts, exports, repos
 
 Required package basics:
 
-- `"name": "@ai-sdk/harness-<name>"`
+- `"name": "@ai-toolkit/harness-<name>"`
 - `"type": "module"`
 - `"version": "0.0.0"` (starting point for new packages)
 - `"license": "Apache-2.0"`
 - `"sideEffects": false`
-- dependency on `@ai-sdk/harness` via `workspace:*`
-- dependency on `@ai-sdk/provider-utils` via `workspace:*` when using sandbox/auth/schema utilities
+- dependency on `@ai-toolkit/harness` via `workspace:*`
+- dependency on `@ai-toolkit/provider-utils` via `workspace:*` when using sandbox/auth/schema utilities
 - runtime SDK/CLI dependencies required by the harness
 - dev dependencies matching existing harness packages
 - `"engines": { "node": ">=22" }`
@@ -129,7 +129,7 @@ If the runtime needs in-sandbox setup, expose `getBootstrap()`.
 Add only the concerns the runtime needs:
 
 - auth resolution — for AI Gateway support, use the central `getAiGatewayAuthFromEnv()` helper rather than reading env directly. This ensures both `VERCEL_OIDC_TOKEN` and `AI_GATEWAY_API_KEY` are accepted as Gateway credential. When the runtime resolves provider per model, resolve the provider from the model id and set that provider's env; if routing through the gateway, note that base-URL conventions differ per provider (e.g. an Anthropic client appends `/v1/messages` to a root base, an OpenAI client appends to a `/v1` base);
-- AI Gateway client attribution — follow the convention in existing harness packages: define a versioned client app value such as `ai-sdk/harness-<name>/${VERSION}` and use it for Gateway requests. Configure both `User-Agent` and `x-client-app` headers when the underlying runtime/SDK supports both; at least one of those two headers is required. If the runtime cannot set arbitrary headers directly, use the runtime-supported equivalent that produces one of those headers (e.g. an SDK client-app environment variable);
+- AI Gateway client attribution — follow the convention in existing harness packages: define a versioned client app value such as `ai-toolkit/harness-<name>/${VERSION}` and use it for Gateway requests. Configure both `User-Agent` and `x-client-app` headers when the underlying runtime/SDK supports both; at least one of those two headers is required. If the runtime cannot set arbitrary headers directly, use the runtime-supported equivalent that produces one of those headers (e.g. an SDK client-app environment variable);
 - custom-tool schema translation — if you convert host tools' JSON Schema into the runtime's tool format, convert _recursively_ (nested objects, array `items`, enums, descriptions); a flat top-level-only conversion silently drops the model's structured guidance. Passing the JSON Schema through directly, if the runtime accepts it, avoids the problem;
 - skill or discovery-file materialization;
 - native protocol to harness stream/control translation;
@@ -176,7 +176,7 @@ Add relevant examples for the new harness.
 
 ### 9. Add Documentation
 
-Create documentation in `content/providers/02-ai-sdk-harnesses/<next number>-<name>.mdx`.
+Create documentation in `content/providers/02-ai-toolkit-harnesses/<next number>-<name>.mdx`.
 
 Include:
 
@@ -187,7 +187,7 @@ Include:
 - Usage examples
 - Known limitations
 
-Update `content/docs/03-ai-sdk-harnesses/05-harness-adapters.mdx` to list the new harness when it is ready to be public.
+Update `content/docs/03-ai-toolkit-harnesses/05-harness-adapters.mdx` to list the new harness when it is ready to be public.
 
 ### 10. Update References and Validate
 
@@ -196,8 +196,8 @@ Run from the workspace root:
 ```bash
 pnpm konsistent
 pnpm update-references
-pnpm --filter @ai-sdk/harness-<name> build
-pnpm --filter @ai-sdk/harness-<name> test
+pnpm --filter @ai-toolkit/harness-<name> build
+pnpm --filter @ai-toolkit/harness-<name> test
 pnpm type-check:full
 ```
 
@@ -224,7 +224,7 @@ Run relevant harness examples against a live sandbox **early** — don't rely on
 - [ ] `CHANGELOG.md` added (package heading; required by `konsistent`)
 - [ ] Changeset added (`major` for a first release)
 - [ ] Examples added
-- [ ] Documentation added in `content/providers/02-ai-sdk-harnesses/`
+- [ ] Documentation added in `content/providers/02-ai-toolkit-harnesses/`
 - [ ] Harness adapter list updated, if public
 - [ ] Validated against a live sandbox (not just unit tests / type-check)
 - [ ] `pnpm update-references` run
@@ -236,5 +236,5 @@ Run relevant harness examples against a live sandbox **early** — don't rely on
 ## Related Documentation
 
 - [Harness Abstraction Architecture](../../architecture/harness-abstraction.md)
-- [`@ai-sdk/harness` README](../../packages/harness/README.md)
+- [`@ai-toolkit/harness` README](../../packages/harness/README.md)
 - Existing harness packages with similar runtime placement

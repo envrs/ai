@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, it, expect, vi } from 'vitest';
 import { createOpenAI } from '../openai-provider';
 
@@ -246,7 +246,7 @@ describe('OpenAI Files - uploadFile (stream data)', () => {
     expect(result.providerReference).toEqual({ openai: 'file-stream1' });
 
     expect(server.calls[0].requestHeaders['content-type']).toMatch(
-      /^multipart\/form-data; boundary=ai-sdk-multipart-/,
+      /^multipart\/form-data; boundary=ai-toolkit-multipart-/,
     );
 
     const multipart = await server.calls[0].requestBodyMultipart;

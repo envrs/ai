@@ -3,8 +3,8 @@ import {
   type HarnessV1NetworkSandboxSession,
   type HarnessV1SandboxSessionCreateOptions,
   type HarnessV1SandboxSessionResumeOptions,
-} from '@ai-sdk/harness';
-import type { Experimental_SandboxSession as SandboxSession } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness';
+import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import { Sandbox } from 'just-bash';
 import { JustBashNetworkSandboxSession } from './just-bash-network-sandbox-session';
 import { JustBashSandboxSession } from './just-bash-sandbox-session';

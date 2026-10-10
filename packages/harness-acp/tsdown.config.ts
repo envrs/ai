@@ -19,8 +19,8 @@ export default defineConfig(
       dts: false,
       deps: {
         alwaysBundle: [
-          /^@ai-sdk\/harness(?:\/|$)/,
-          /^@ai-sdk\/provider-utils(?:\/|$)/,
+          /^@ai-toolkit\/harness(?:\/|$)/,
+          /^@ai-toolkit\/provider-utils(?:\/|$)/,
         ],
         neverBundle: true,
       },
@@ -35,8 +35,8 @@ export default defineConfig(
       dts: false,
       deps: {
         alwaysBundle: [
-          /^@ai-sdk\/harness(?:\/|$)/,
-          /^@ai-sdk\/provider-utils(?:\/|$)/,
+          /^@ai-toolkit\/harness(?:\/|$)/,
+          /^@ai-toolkit\/provider-utils(?:\/|$)/,
         ],
         neverBundle: true,
       },

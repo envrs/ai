@@ -1,4 +1,4 @@
-import type { JSONObject, LanguageModelV4Usage } from '@ai-sdk/provider';
+import type { JSONObject, LanguageModelV4Usage } from '@ai-toolkit/provider';
 
 /**
  * Represents a single iteration in the usage breakdown.

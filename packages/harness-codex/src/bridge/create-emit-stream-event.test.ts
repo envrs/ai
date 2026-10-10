@@ -354,7 +354,7 @@ describe('createEmitStreamEvent', () => {
         id: 'context7-call',
         server: 'context7',
         tool: 'query-docs',
-        arguments: { libraryId: '/vercel/next.js' },
+        arguments: { libraryId: '/khulnasoft/next.js' },
       },
     });
     emitStreamEvent({
@@ -383,7 +383,7 @@ describe('createEmitStreamEvent', () => {
         toolCallId: 'context7-call',
         toolName: 'mcp__context7__query-docs',
         nativeName: 'mcp__context7__query-docs',
-        input: '{"libraryId":"/vercel/next.js"}',
+        input: '{"libraryId":"/khulnasoft/next.js"}',
         providerExecuted: true,
         dynamic: true,
       },
@@ -603,7 +603,7 @@ describe('createEmitStreamEvent', () => {
       item: {
         type: 'web_search',
         id: 'search-1',
-        query: 'latest AI SDK release',
+        query: 'latest ai-toolkit release',
       },
     });
 
@@ -613,7 +613,7 @@ describe('createEmitStreamEvent', () => {
         toolCallId: 'search-1',
         toolName: 'webSearch',
         nativeName: 'web_search',
-        input: JSON.stringify({ query: 'latest AI SDK release' }),
+        input: JSON.stringify({ query: 'latest ai-toolkit release' }),
         providerExecuted: true,
       },
       {

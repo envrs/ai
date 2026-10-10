@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { resolveSandboxCredentialEnvironment } from '@ai-sdk/harness/utils';
+import { resolveSandboxCredentialEnvironment } from '@ai-toolkit/harness/utils';
 import {
   createOpenCodeRequestTransformations,
   OPENCODE_CREDENTIAL_ENVIRONMENT_VARIABLES,
@@ -200,11 +200,11 @@ describe('OpenCode auth', () => {
   });
 
   it('normalizes OpenCode gateway base URLs to /v1', () => {
-    expect(toOpenCodeGatewayBaseUrl('https://ai-gateway.vercel.sh')).toBe(
-      'https://ai-gateway.vercel.sh/v1',
+    expect(toOpenCodeGatewayBaseUrl('https://ai-gateway.khulnasoft.sh')).toBe(
+      'https://ai-gateway.khulnasoft.sh/v1',
     );
-    expect(toOpenCodeGatewayBaseUrl('https://ai-gateway.vercel.sh/v1')).toBe(
-      'https://ai-gateway.vercel.sh/v1',
+    expect(toOpenCodeGatewayBaseUrl('https://ai-gateway.khulnasoft.sh/v1')).toBe(
+      'https://ai-gateway.khulnasoft.sh/v1',
     );
   });
 
@@ -230,7 +230,7 @@ describe('OpenCode auth', () => {
       }),
     ).toEqual({
       AI_GATEWAY_API_KEY: 'gw-mode',
-      AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh/v1',
+      AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh/v1',
     });
   });
 });

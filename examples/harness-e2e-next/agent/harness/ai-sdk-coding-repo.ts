@@ -1,7 +1,7 @@
 import type { Experimental_SandboxSession as SandboxSession } from 'ai';
 
 export const aiSdkCodingSandboxWorkDir = 'ai-sdk';
-export const aiSdkCodingSandboxBootstrapHash = 'vercel-ai-shallow-clone-v1';
+export const aiSdkCodingSandboxBootstrapHash = 'khulnasoft-ai-shallow-clone-v1';
 
 export async function bootstrapAiSdkCodingRepo({
   session,

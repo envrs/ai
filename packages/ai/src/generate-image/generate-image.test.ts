@@ -3,11 +3,11 @@ import type {
   ImageModelV4ProviderMetadata,
   ImageModelV4Result,
   ImageModelV4Usage,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertBase64ToUint8Array,
   convertUint8ArrayToBase64,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   afterEach,
   beforeEach,

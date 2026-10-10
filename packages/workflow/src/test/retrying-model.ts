@@ -1,8 +1,8 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { convertArrayToReadableStream, MockLanguageModelV4 } from 'ai/test';
 import { getStepMetadata } from 'workflow';
 
@@ -73,7 +73,7 @@ class SerializableRetryingModel extends MockLanguageModelV4 {
 }
 
 // Keep construction outside the workflow module to avoid the SWC closure
-// transformation issue tracked in https://github.com/vercel/workflow/issues/1365.
+// transformation issue tracked in https://github.com/khulnasoft/workflow/issues/1365.
 export function retryingModel(): MockLanguageModelV4 {
   return new SerializableRetryingModel(2);
 }

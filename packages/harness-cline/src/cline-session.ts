@@ -13,12 +13,12 @@ import {
   type HarnessV1Skill,
   type HarnessV1StreamPart,
   type HarnessV1ToolSpec,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   getRestrictedSandboxSession,
   resolveSandboxHomeDir,
-} from '@ai-sdk/harness/utils';
-import type { Experimental_SandboxSession as SandboxSession } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/utils';
+import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import {
   Agent,
   createTool,

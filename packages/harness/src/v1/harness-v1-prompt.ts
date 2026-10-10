@@ -1,4 +1,4 @@
-import type { UserModelMessage } from '@ai-sdk/provider-utils';
+import type { UserModelMessage } from '@ai-toolkit/provider-utils';
 
 /**
  * Prompt shape passed to `HarnessV1Session.doPromptTurn`.

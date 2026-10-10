@@ -4,7 +4,7 @@ import { Guides } from './guides';
 import { RecipeList } from './recipe-list';
 
 /**
- * The /resources/recipes landing page (ported from the legacy ai-sdk.dev
+ * The /resources/recipes landing page (ported from the legacy ai-toolkit.dev
  * RecipesPage): featured guides, a filterable recipe list, and a
  * contribution call-out.
  */
@@ -28,7 +28,7 @@ export const RecipesLanding = ({
         </div>
         <h1 className="font-semibold text-4xl text-gray-1000">Recipes</h1>
         <p className="text-gray-900 text-xl">
-          Build specific AI SDK features with open-source recipes from Vercel
+          Build specific ai-toolkit features with open-source recipes from khulnasoft
           and the community.
         </p>
       </div>
@@ -59,7 +59,7 @@ export const RecipesLanding = ({
         </p>
         <Link
           className="mt-4 inline-flex rounded-lg border border-gray-alpha-400 px-4 py-2 font-medium text-gray-1000 hover:border-gray-500"
-          href="https://github.com/vercel/ai"
+          href="https://github.com/khulnasoft/ai"
           rel="noopener noreferrer"
           target="_blank"
         >

@@ -1,28 +1,28 @@
 ---
 title: LM Studio
-description: Use the LM Studio OpenAI compatible API with the AI SDK.
+description: Use the LM Studio OpenAI compatible API with the ai-toolkit.
 ---
 
 # LM Studio Provider
 
 [LM Studio](https://lmstudio.ai/) is a user interface for running local models.
 
-It contains an OpenAI compatible API server that you can use with the AI SDK.
+It contains an OpenAI compatible API server that you can use with the ai-toolkit.
 You can start the local server under the [Local Server tab](https://lmstudio.ai/docs/basics/server) in the LM Studio UI ("Start Server" button).
 
 ## Setup
 
-The LM Studio provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API.
+The LM Studio provider is available via the `@ai-toolkit/openai-compatible` module as it is compatible with the OpenAI API.
 You can install it with
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+<InstallPackages packages="@ai-toolkit/openai-compatible" />
 
 ## Provider Instance
 
-To use LM Studio, you can create a custom provider instance with the `createOpenAICompatible` function from `@ai-sdk/openai-compatible`:
+To use LM Studio, you can create a custom provider instance with the `createOpenAICompatible` function from `@ai-toolkit/openai-compatible`:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 
 const lmstudio = createOpenAICompatible({
   name: 'lmstudio',
@@ -51,7 +51,7 @@ const model = lmstudio('llama-3.2-1b');
 You can use LM Studio language models to generate text with the `generateText` function:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { generateText } from 'ai';
 
 const lmstudio = createOpenAICompatible({
@@ -80,7 +80,7 @@ const model = lmstudio.embeddingModel('text-embedding-nomic-embed-text-v1.5');
 ### Example - Embedding a Single Value
 
 ```tsx
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { embed } from 'ai';
 
 const lmstudio = createOpenAICompatible({
@@ -100,12 +100,12 @@ const { embedding } = await embed({
 When loading data, e.g. when preparing a data store for retrieval-augmented generation (RAG),
 it is often useful to embed many values at once (batch embedding).
 
-The AI SDK provides the [`embedMany`](/docs/reference/ai-sdk-core/embed-many) function for this purpose.
+The ai-toolkit provides the [`embedMany`](/docs/reference/ai-toolkit-core/embed-many) function for this purpose.
 Similar to `embed`, you can use it with embeddings models,
 e.g. `lmstudio.embeddingModel('text-embedding-nomic-embed-text-v1.5')` or `lmstudio.embeddingModel('text-embedding-bge-small-en-v1.5')`.
 
 ```tsx
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { embedMany } from 'ai';
 
 const lmstudio = createOpenAICompatible({

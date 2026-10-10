@@ -108,8 +108,8 @@ describe('resolveSandboxCredentialEnvironment', () => {
     for (const call of credentialForwarding.mock.calls) {
       expect(isSandboxCredentialPlaceholder(call[0].credential)).toBe(true);
     }
-    expect(result.API_KEY).toMatch(/^wrapped-aisdkhc_/);
-    expect(result.SECOND_API_KEY).toMatch(/^wrapped-aisdkhc_/);
+    expect(result.API_KEY).toMatch(/^wrapped-ai-toolkithc_/);
+    expect(result.SECOND_API_KEY).toMatch(/^wrapped-ai-toolkithc_/);
   });
 
   it('does not add absent credential variables', async () => {
@@ -149,10 +149,10 @@ describe('resolveSandboxCredentialEnvironment', () => {
 
     expect(result).toEqual({
       API_KEY: 'saved-placeholder',
-      NEW_API_KEY: expect.stringMatching(/^wrapped-aisdkhc_/),
+      NEW_API_KEY: expect.stringMatching(/^wrapped-ai-toolkithc_/),
     });
     expect(credentialForwarding).toHaveBeenCalledExactlyOnceWith({
-      credential: expect.stringMatching(/^aisdkhc_[A-Za-z0-9_-]{43}$/),
+      credential: expect.stringMatching(/^ai-toolkithc_[A-Za-z0-9_-]{43}$/),
       environmentVariableName: 'NEW_API_KEY',
     });
     expect(previousSandboxCredentialEnvironment).toEqual({
@@ -182,7 +182,7 @@ describe('resolveSandboxCredentialEnvironment', () => {
       credentialEnvironmentVariables: ['API_KEY'],
       credentialForwarding: undefined,
     });
-    expect(result.API_KEY).toMatch(/^aisdkhc_[A-Za-z0-9_-]{43}$/);
+    expect(result.API_KEY).toMatch(/^ai-toolkithc_[A-Za-z0-9_-]{43}$/);
     expect(JSON.stringify(result)).not.toContain('host-secret');
   });
 

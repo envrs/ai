@@ -2,7 +2,7 @@ import {
   experimental_toolCaller,
   tool,
   type Context,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { describe, expectTypeOf, it } from 'vitest';
 import { z } from 'zod/v4';
 import {

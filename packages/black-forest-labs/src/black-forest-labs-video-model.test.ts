@@ -1,13 +1,13 @@
 import type {
   Experimental_VideoModelV4CallOptions,
   Experimental_VideoModelV4File,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it } from 'vitest';
 import { BlackForestLabsVideoModel } from './black-forest-labs-video-model';
 

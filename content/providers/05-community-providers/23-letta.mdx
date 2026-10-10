@@ -1,11 +1,11 @@
 ---
 title: Letta
-description: Learn how to use the Letta provider with the AI SDK.
+description: Learn how to use the Letta provider with the ai-toolkit.
 ---
 
 # Letta Provider
 
-The [Letta AI SDK provider](https://github.com/letta-ai/vercel-ai-sdk-provider) allows you to use Letta agents with the AI SDK.
+The [Letta ai-toolkit provider](https://github.com/letta-ai/khulnasoft-ai-toolkit-provider) allows you to use Letta agents with the ai-toolkit.
 
 Features include:
 
@@ -13,7 +13,7 @@ Features include:
 - Access to both agent-level and model-level reasoning messages with source attribution
 - Support for custom agent-configured tools and MCP (Model Context Protocol)
 - Agent-managed filesystem operations with tool-based file access
-- Built-in utilities to convert between Letta and AI SDK message formats
+- Built-in utilities to convert between Letta and ai-toolkit message formats
 - [Every Letta Send Message API feature](https://docs.letta.com/api-reference/agents/messages/create-stream), like [Long-Running Agent Executions](https://docs.letta.com/guides/agents/long-running)
 
 ## Supported Models
@@ -24,21 +24,21 @@ See the [Letta documentation](https://docs.letta.com/connecting-model-providers/
 
 You can install the Letta provider with:
 
-<InstallPackages packages="@letta-ai/vercel-ai-sdk-provider" />
+<InstallPackages packages="@letta-ai/khulnasoft-ai-toolkit-provider" />
 
 ## Provider Instance
 
-You can import the provider instance `lettaCloud` or `lettaLocal` from `@letta-ai/vercel-ai-sdk-provider`:
+You can import the provider instance `lettaCloud` or `lettaLocal` from `@letta-ai/khulnasoft-ai-toolkit-provider`:
 
 ```ts
 // For cloud users
-import { lettaCloud } from '@letta-ai/vercel-ai-sdk-provider';
+import { lettaCloud } from '@letta-ai/khulnasoft-ai-toolkit-provider';
 
 // For self-hosted users
-import { lettaLocal } from '@letta-ai/vercel-ai-sdk-provider';
+import { lettaLocal } from '@letta-ai/khulnasoft-ai-toolkit-provider';
 
 // Create a custom Letta provider
-import { createLetta } from '@letta-ai/vercel-ai-sdk-provider';
+import { createLetta } from '@letta-ai/khulnasoft-ai-toolkit-provider';
 
 const letta = createLetta({
   baseUrl: '<your-base-url>',
@@ -56,7 +56,7 @@ LETTA_API_KEY=your-letta-api-key
 ```
 
 ```typescript
-import { lettaCloud } from '@letta-ai/vercel-ai-sdk-provider';
+import { lettaCloud } from '@letta-ai/khulnasoft-ai-toolkit-provider';
 import { generateText } from 'ai';
 
 const result = await generateText({
@@ -79,7 +79,7 @@ console.log(result.text);
 You can configure Letta-specific settings using the `providerOptions.letta` parameter:
 
 ```typescript
-import { lettaCloud } from '@letta-ai/vercel-ai-sdk-provider';
+import { lettaCloud } from '@letta-ai/khulnasoft-ai-toolkit-provider';
 import { streamText } from 'ai';
 
 const result = streamText({
@@ -140,7 +140,7 @@ Letta agents support custom tools and MCP (Model Context Protocol) servers throu
 ```typescript
 import { streamText } from 'ai';
 import { z } from 'zod';
-import { lettaCloud } from '@letta-ai/vercel-ai-sdk-provider';
+import { lettaCloud } from '@letta-ai/khulnasoft-ai-toolkit-provider';
 
 // Use with streaming
 const result = streamText({
@@ -170,16 +170,16 @@ const result = streamText({
 
 ## Using other Letta Client Functions
 
-The `vercel-ai-sdk-provider` extends the [@letta-ai/letta-client](https://www.npmjs.com/package/@letta-ai/letta-client), you can access the operations directly by using `lettaCloud.client` or `lettaLocal.client` or your custom generated `letta.client`
+The `khulnasoft-ai-toolkit-provider` extends the [@letta-ai/letta-client](https://www.npmjs.com/package/@letta-ai/letta-client), you can access the operations directly by using `lettaCloud.client` or `lettaLocal.client` or your custom generated `letta.client`
 
 ```ts
 // with Letta Cloud
-import { lettaCloud } from '@letta-ai/vercel-ai-sdk-provider';
+import { lettaCloud } from '@letta-ai/khulnasoft-ai-toolkit-provider';
 
 lettaCloud.client.agents.list();
 
 // with Letta Local
-import { lettaLocal } from '@letta-ai/vercel-ai-sdk-provider';
+import { lettaLocal } from '@letta-ai/khulnasoft-ai-toolkit-provider';
 
 lettaLocal.client.agents.list();
 ```

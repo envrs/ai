@@ -1,11 +1,11 @@
 <!--
-Welcome to contributing to AI SDK! We're excited to see your changes.
+Welcome to contributing to ai-toolkit! We're excited to see your changes.
 
 We suggest you read the following contributing guide we've created before submitting:
 
-https://github.com/vercel/ai/blob/main/CONTRIBUTING.md
+https://github.com/khulnasoft/ai/blob/main/CONTRIBUTING.md
 
-AI SDK maintenance is becoming increasingly automated. High-quality issues, reproductions,
+ai-toolkit maintenance is becoming increasingly automated. High-quality issues, reproductions,
 failing tests, docs fixes, and focused clarifications are especially valuable. You do not
 need to send a complete bug fix for your contribution to be appreciated or credited.
 -->

@@ -1,19 +1,19 @@
 ---
 title: Heroku
-description: Use a Heroku OpenAI compatible API with the AI SDK.
+description: Use a Heroku OpenAI compatible API with the ai-toolkit.
 ---
 
 # Heroku Provider
 
 [Heroku](https://heroku.com/) is a cloud platform that allows you to deploy and run applications, including AI models with OpenAI API compatibility.
-You can deploy models that are OpenAI API compatible and use them with the AI SDK.
+You can deploy models that are OpenAI API compatible and use them with the ai-toolkit.
 
 ## Setup
 
-The Heroku provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API.
+The Heroku provider is available via the `@ai-toolkit/openai-compatible` module as it is compatible with the OpenAI API.
 You can install it with
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+<InstallPackages packages="@ai-toolkit/openai-compatible" />
 
 ### Heroku Setup
 
@@ -40,10 +40,10 @@ export INFERENCE_URL=$(heroku config:get INFERENCE_URL -a $APP_NAME)
 
 ## Provider Instance
 
-To use Heroku, you can create a custom provider instance with the `createOpenAICompatible` function from `@ai-sdk/openai-compatible`:
+To use Heroku, you can create a custom provider instance with the `createOpenAICompatible` function from `@ai-toolkit/openai-compatible`:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 
 const heroku = createOpenAICompatible({
   name: 'heroku',
@@ -68,7 +68,7 @@ const model = heroku('claude-3-5-haiku');
 You can use Heroku language models to generate text with the `generateText` function:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { generateText } from 'ai';
 
 const heroku = createOpenAICompatible({
@@ -88,7 +88,7 @@ console.log(text);
 Heroku language models are also able to generate text in a streaming fashion with the `streamText` function:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { streamText } from 'ai';
 
 const heroku = createOpenAICompatible({
@@ -107,4 +107,4 @@ for await (const message of result.textStream) {
 }
 ```
 
-Heroku language models also support structured data generation with [`Output`](/docs/reference/ai-sdk-core/output).
+Heroku language models also support structured data generation with [`Output`](/docs/reference/ai-toolkit-core/output).

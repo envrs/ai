@@ -1,4 +1,4 @@
-import type { ACPHarnessSettings } from '@ai-sdk/harness-acp';
+import type { ACPHarnessSettings } from '@ai-toolkit/harness-acp';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { createGrokBuild } from './grok-build-harness';
 import { VERSION } from './version';
@@ -7,7 +7,7 @@ const mocks = vi.hoisted(() => ({
   createACP: vi.fn(),
 }));
 
-vi.mock('@ai-sdk/harness-acp', () => ({
+vi.mock('@ai-toolkit/harness-acp', () => ({
   createACP: mocks.createACP,
 }));
 
@@ -86,7 +86,7 @@ describe('createGrokBuild', () => {
           "reference_to_video",
         ],
         "clientApp": {
-          "name": "ai-sdk-harness-grok-build",
+          "name": "ai-toolkit-harness-grok-build",
           "version": "0.0.0-test",
         },
         "credentialEnv": [

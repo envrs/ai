@@ -22,7 +22,7 @@ pnpm benchmark:memory setup
 ```
 
 The image contains a pinned Neovate checkout and a Turbo-pruned copy of the
-required AI SDK packages. Dependencies are cached separately from source
+required ai-toolkit packages. Dependencies are cached separately from source
 changes; credentials, repositories, existing results, and `node_modules` are
 excluded.
 

@@ -4,7 +4,7 @@ import {
   type LanguageModelV4FilePart,
   type LanguageModelV4Prompt,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertBase64ToUint8Array,
   convertToBase64,
@@ -12,7 +12,7 @@ import {
   parseProviderOptions,
   resolveProviderReference,
   resolveFullMediaType,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 import type { MoonshotAIMessages } from './moonshotai-chat-api-types';
 import {

@@ -1,5 +1,5 @@
 import { runInNewContext } from 'node:vm';
-import { tool } from '@ai-sdk/provider-utils';
+import { tool } from '@ai-toolkit/provider-utils';
 import { expect, it } from 'vitest';
 import { z } from 'zod/v3';
 import { validateApprovedToolApprovals } from './validate-tool-approvals';

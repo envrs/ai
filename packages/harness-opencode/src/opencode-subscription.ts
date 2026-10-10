@@ -4,7 +4,7 @@ import { dirname, join } from 'node:path';
 import {
   HarnessCapabilityUnsupportedError,
   type HarnessV1RequestTransformation,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   createCredentialRequestTransformation,
   isAccessTokenExpiringSoon,
@@ -12,8 +12,8 @@ import {
   isWindows,
   parseJwtPayload,
   refreshOAuthAccessToken,
-} from '@ai-sdk/harness/utils';
-import { isRecord, safeParseJSON } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/utils';
+import { isRecord, safeParseJSON } from '@ai-toolkit/provider-utils';
 import {
   hasOpenCodeCredential,
   OPENCODE_SUBSCRIPTION_ACCESS_TOKEN_ENVIRONMENT_VARIABLE,
@@ -28,9 +28,9 @@ const XAI_CLIENT_ID = 'b1a00492-073a-47ea-816f-4c329264a828';
 const GITLAB_CLIENT_ID =
   '1d89f9fdb23ee96d4e603201f6861dab6e143c5c3c00469a018a2d94bdc03d4e';
 const GITLAB_AI_GATEWAY_URL = 'https://cloud.gitlab.com';
-const GITLAB_ANTHROPIC_PROVIDER_ID = 'ai-sdk-gitlab-anthropic';
-const GITLAB_OPENAI_CHAT_PROVIDER_ID = 'ai-sdk-gitlab-openai-chat';
-const GITLAB_OPENAI_RESPONSES_PROVIDER_ID = 'ai-sdk-gitlab-openai-responses';
+const GITLAB_ANTHROPIC_PROVIDER_ID = 'ai-toolkit-gitlab-anthropic';
+const GITLAB_OPENAI_CHAT_PROVIDER_ID = 'ai-toolkit-gitlab-openai-chat';
+const GITLAB_OPENAI_RESPONSES_PROVIDER_ID = 'ai-toolkit-gitlab-openai-responses';
 
 type OpenCodeGitLabModel = {
   readonly providerId:
@@ -441,21 +441,21 @@ export function createOpenCodeGitLabSubscriptionConfig({
   const providers = {
     [GITLAB_ANTHROPIC_PROVIDER_ID]: {
       name: 'GitLab Anthropic',
-      npm: '@ai-sdk/anthropic',
+      npm: '@ai-toolkit/anthropic',
       api: `${aiGatewayUrl}/ai/v1/proxy/anthropic/v1`,
       options: { authToken: sandboxAccessToken, ...providerOptions },
       models: createOpenCodeGitLabModels(GITLAB_ANTHROPIC_PROVIDER_ID),
     },
     [GITLAB_OPENAI_CHAT_PROVIDER_ID]: {
       name: 'GitLab OpenAI Chat',
-      npm: '@ai-sdk/openai-compatible',
+      npm: '@ai-toolkit/openai-compatible',
       api: `${aiGatewayUrl}/ai/v1/proxy/openai/v1`,
       options: { apiKey: sandboxAccessToken, ...providerOptions },
       models: createOpenCodeGitLabModels(GITLAB_OPENAI_CHAT_PROVIDER_ID),
     },
     [GITLAB_OPENAI_RESPONSES_PROVIDER_ID]: {
       name: 'GitLab OpenAI Responses',
-      npm: '@ai-sdk/openai',
+      npm: '@ai-toolkit/openai',
       api: `${aiGatewayUrl}/ai/v1/proxy/openai/v1`,
       options: { apiKey: sandboxAccessToken, ...providerOptions },
       models: createOpenCodeGitLabModels(GITLAB_OPENAI_RESPONSES_PROVIDER_ID),

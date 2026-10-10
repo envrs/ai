@@ -1,5 +1,5 @@
 {
-  "name": "ai-sdk-integration-tests",
+  "name": "ai-toolkit-integration-tests",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -10,12 +10,12 @@
     "type-check": "tsc --build"
   },
   "devDependencies": {
-    "@ai-sdk/google-vertex": "workspace:*",
-    "@ai-sdk/open-responses": "workspace:*",
-    "@ai-sdk/test-server": "workspace:*",
+    "@ai-toolkit/google-vertex": "workspace:*",
+    "@ai-toolkit/open-responses": "workspace:*",
+    "@ai-toolkit/test-server": "workspace:*",
     "@edge-runtime/vm": "^5.0.0",
     "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "ai": "workspace:*",
     "typescript": "6.0.3",
     "zod": "3.25.76"

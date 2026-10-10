@@ -1,7 +1,7 @@
 import type {
   HarnessV1QuestionsToolInput,
   HarnessV1QuestionsToolOutput,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import type { AskUserQuestionInput } from '@anthropic-ai/claude-agent-sdk/sdk-tools.js';
 
 type ClaudeCodeQuestion = AskUserQuestionInput['questions'][number];

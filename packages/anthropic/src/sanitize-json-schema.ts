@@ -1,5 +1,5 @@
-import type { JSONSchema7, JSONSchema7Definition } from '@ai-sdk/provider';
-import { isRecord } from '@ai-sdk/provider-utils';
+import type { JSONSchema7, JSONSchema7Definition } from '@ai-toolkit/provider';
+import { isRecord } from '@ai-toolkit/provider-utils';
 
 const SUPPORTED_STRING_FORMATS = new Set([
   'date-time',
@@ -35,7 +35,7 @@ const DESCRIPTION_CONSTRAINT_KEYS = [
  * Removes JSON Schema keywords that Anthropic rejects in
  * `output_config.format.schema`.
  *
- * The full original schema is still used by AI SDK result validation. This
+ * The full original schema is still used by ai-toolkit result validation. This
  * only relaxes the schema sent to Anthropic's constrained decoder.
  */
 export function sanitizeJsonSchema(schema: JSONSchema7): JSONSchema7 {

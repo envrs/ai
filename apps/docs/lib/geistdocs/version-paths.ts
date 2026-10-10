@@ -1,5 +1,5 @@
-import { collectVersionPaths } from '@vercel/geistdocs/source';
-import type { GeistdocsVersionPaths } from '@vercel/geistdocs/versions';
+import { collectVersionPaths } from '@khulnasoft/geistdocs/source';
+import type { GeistdocsVersionPaths } from '@khulnasoft/geistdocs/versions';
 import {
   recipesV5Source,
   recipesV6Source,

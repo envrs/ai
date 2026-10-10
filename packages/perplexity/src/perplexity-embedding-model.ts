@@ -1,7 +1,7 @@
 import {
   TooManyEmbeddingValuesForCallError,
   type EmbeddingModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -13,7 +13,7 @@ import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import {
   perplexityEmbeddingModelOptions,

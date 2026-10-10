@@ -7,7 +7,7 @@ import {
   type SpeechModelV4,
   type TranscriptionModelV4,
   type RerankingModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 export class MockProviderV4 implements ProviderV4 {
   readonly specificationVersion = 'v4' as const;
 

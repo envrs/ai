@@ -3,13 +3,13 @@ import {
   NoSuchModelError,
   type LanguageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { DeepSeekChatModelId } from './chat/deepseek-chat-language-model-options';
 import { DeepSeekChatLanguageModel } from './chat/deepseek-chat-language-model';
 import { DeepSeekFiles } from './files/deepseek-files';
@@ -82,7 +82,7 @@ export function createDeepSeek(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-deepseek/${VERSION}`,
+      `ai-toolkit-deepseek/${VERSION}`,
     );
 
   const createLanguageModel = (modelId: DeepSeekChatModelId) => {

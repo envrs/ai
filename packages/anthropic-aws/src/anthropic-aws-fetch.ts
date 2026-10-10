@@ -4,7 +4,7 @@ import {
   withUserAgentSuffix,
   getRuntimeEnvironmentUserAgent,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { AwsV4Signer } from 'aws4fetch';
 import { VERSION } from './version';
 
@@ -41,7 +41,7 @@ export function createSigV4FetchFunction(
     );
     const headersWithUserAgent = withUserAgentSuffix(
       originalHeaders,
-      `ai-sdk-anthropic-aws/${VERSION}`,
+      `ai-toolkit-anthropic-aws/${VERSION}`,
       getRuntimeEnvironmentUserAgent(),
     );
 
@@ -131,7 +131,7 @@ export function createApiKeyFetchFunction(
     const originalHeaders = normalizeHeaders(init?.headers);
     const headersWithUserAgent = withUserAgentSuffix(
       originalHeaders,
-      `ai-sdk-anthropic-aws/${VERSION}`,
+      `ai-toolkit-anthropic-aws/${VERSION}`,
       getRuntimeEnvironmentUserAgent(),
     );
 

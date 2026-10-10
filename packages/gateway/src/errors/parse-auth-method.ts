@@ -3,7 +3,7 @@ import {
   lazySchema,
   safeValidateTypes,
   zodSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { GATEWAY_AUTH_METHOD_HEADER } from '../gateway-headers';
 
 export async function parseAuthMethod(

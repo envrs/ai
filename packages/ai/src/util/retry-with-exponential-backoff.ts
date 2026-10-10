@@ -1,10 +1,10 @@
-import { APICallError } from '@ai-sdk/provider';
-import { GatewayError } from '@ai-sdk/gateway';
+import { APICallError } from '@ai-toolkit/provider';
+import { GatewayError } from '@ai-toolkit/gateway';
 import {
   retryWithExponentialBackoff,
   type RetryFunction,
   type ShouldRetryFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { RetryError } from './retry-error';
 
 function getRetryDelayInMs({

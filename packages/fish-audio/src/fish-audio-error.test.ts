@@ -1,4 +1,4 @@
-import { safeParseJSON } from '@ai-sdk/provider-utils';
+import { safeParseJSON } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { fishAudioErrorDataSchema } from './fish-audio-error';
 

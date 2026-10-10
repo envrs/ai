@@ -2,7 +2,7 @@ import {
   UnsupportedFunctionalityError,
   type LanguageModelV4CallOptions,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { isBrowserSearchSupportedModel } from './groq-browser-search-models';
 import type { GroqChatModelId } from './groq-chat-language-model-options';
 

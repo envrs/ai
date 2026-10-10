@@ -1,8 +1,8 @@
 import {
   HarnessCapabilityUnsupportedError,
   type HarnessV1NetworkSandboxSession,
-} from '@ai-sdk/harness';
-import type * as HarnessUtils from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness';
+import type * as HarnessUtils from '@ai-toolkit/harness/utils';
 import { mkdir, mkdtemp, writeFile } from 'node:fs/promises';
 import type * as NodeFsPromises from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -183,7 +183,7 @@ const harnessUtilsMocks = vi.hoisted(() => {
   };
 });
 
-vi.mock('@ai-sdk/harness/utils', async importOriginal => {
+vi.mock('@ai-toolkit/harness/utils', async importOriginal => {
   const actual = await importOriginal<typeof HarnessUtils>();
   return {
     ...actual,
@@ -260,12 +260,12 @@ describe('createOpenCode adapter', () => {
     const harness = createOpenCode();
     const sandboxSession = {
       id: 'test-sandbox',
-      defaultWorkingDirectory: '/vercel/sandbox',
+      defaultWorkingDirectory: '/khulnasoft/sandbox',
       restricted: () =>
         ({
           run: async () => ({
             exitCode: 0,
-            stdout: '/home/vercel-sandbox',
+            stdout: '/home/khulnasoft-sandbox',
             stderr: '',
           }),
           readTextFile: async () => null,
@@ -284,7 +284,7 @@ describe('createOpenCode adapter', () => {
       harness.doStart({
         sessionId: 's1',
         sandboxSession,
-        sessionWorkDir: '/vercel/sandbox/opencode-s1',
+        sessionWorkDir: '/khulnasoft/sandbox/opencode-s1',
       }),
     ).rejects.toBeInstanceOf(HarnessCapabilityUnsupportedError);
   });
@@ -305,7 +305,7 @@ describe('createOpenCode adapter', () => {
     const sandbox = {
       async run({ command }: { command: string }) {
         return command === 'printf "%s" "$HOME"'
-          ? { exitCode: 0, stdout: '/home/vercel-sandbox', stderr: '' }
+          ? { exitCode: 0, stdout: '/home/khulnasoft-sandbox', stderr: '' }
           : { exitCode: 0, stdout: '', stderr: '' };
       },
       async readTextFile() {
@@ -404,7 +404,7 @@ describe('createOpenCode adapter', () => {
     const sandbox = {
       async run({ command }: { command: string }) {
         return command === 'printf "%s" "$HOME"'
-          ? { exitCode: 0, stdout: '/home/vercel-sandbox', stderr: '' }
+          ? { exitCode: 0, stdout: '/home/khulnasoft-sandbox', stderr: '' }
           : { exitCode: 0, stdout: '', stderr: '' };
       },
       async readTextFile() {
@@ -471,7 +471,7 @@ describe('createOpenCode adapter', () => {
     ]);
     expect(forwardedCredentials).toEqual([
       {
-        credential: expect.stringMatching(/^aisdkhc_[A-Za-z0-9_-]{43}$/),
+        credential: expect.stringMatching(/^ai-toolkithc_[A-Za-z0-9_-]{43}$/),
         environmentVariableName: 'OPENAI_API_KEY',
       },
     ]);
@@ -500,7 +500,7 @@ describe('createOpenCode adapter', () => {
       },
     });
     const resumedCredential = spawnEnvs[1]?.ANTHROPIC_API_KEY;
-    expect(resumedCredential).toMatch(/^aisdkhc_[A-Za-z0-9_-]{43}$/);
+    expect(resumedCredential).toMatch(/^ai-toolkithc_[A-Za-z0-9_-]{43}$/);
     expect(spawnEnvs[1]?.OPENAI_API_KEY).toBeUndefined();
     expect(JSON.stringify(spawnEnvs[1])).not.toContain('new-anthropic-secret');
     expect(addRequestTransformations).toHaveBeenNthCalledWith(2, [
@@ -542,7 +542,7 @@ describe('createOpenCode adapter', () => {
       },
     });
     expect(spawnEnvs[2]?.ANTHROPIC_API_KEY).toMatch(
-      /^aisdkhc_[A-Za-z0-9_-]{43}$/,
+      /^ai-toolkithc_[A-Za-z0-9_-]{43}$/,
     );
     expect(JSON.stringify(spawnEnvs[2])).not.toContain('older-state-secret');
     await olderSession.doDetach();
@@ -597,7 +597,7 @@ describe('createOpenCode adapter', () => {
     const sandbox = {
       async run({ command }: { command: string }) {
         return command === 'printf "%s" "$HOME"'
-          ? { exitCode: 0, stdout: '/home/vercel-sandbox', stderr: '' }
+          ? { exitCode: 0, stdout: '/home/khulnasoft-sandbox', stderr: '' }
           : { exitCode: 0, stdout: '', stderr: '' };
       },
       async readTextFile() {
@@ -657,7 +657,7 @@ describe('createOpenCode adapter', () => {
         }),
       );
       expect(addRequestTransformations).toHaveBeenCalledTimes(1);
-      expect(start.model).toBe('ai-sdk-gitlab-anthropic/duo-chat-sonnet-4-5');
+      expect(start.model).toBe('ai-toolkit-gitlab-anthropic/duo-chat-sonnet-4-5');
       expect(serializedStart).not.toContain('gitlab-oauth-access-token');
       expect(serializedStart).not.toContain('gitlab-oauth-refresh-token');
       expect(serializedStart).not.toContain('gitlab-ai-access-token');
@@ -696,7 +696,7 @@ describe('createOpenCode adapter', () => {
     const sandbox = {
       async run({ command }: { command: string }) {
         return command === 'printf "%s" "$HOME"'
-          ? { exitCode: 0, stdout: '/home/vercel-sandbox', stderr: '' }
+          ? { exitCode: 0, stdout: '/home/khulnasoft-sandbox', stderr: '' }
           : { exitCode: 0, stdout: '', stderr: '' };
       },
       async readTextFile() {
@@ -786,7 +786,7 @@ describe('createOpenCode adapter', () => {
         if (command === 'printf "%s" "$HOME"') {
           return {
             exitCode: 0,
-            stdout: '/home/vercel-sandbox',
+            stdout: '/home/khulnasoft-sandbox',
             stderr: '',
           };
         }
@@ -853,18 +853,18 @@ describe('createOpenCode adapter', () => {
 
     expect(runCommands).toContain('printf "%s" "$HOME"');
     expect(runCommands).toContain(
-      "mkdir -p '/home/vercel-sandbox/.agents/skills'",
+      "mkdir -p '/home/khulnasoft-sandbox/.agents/skills'",
     );
     const skillWrites = writes.filter(write => write.path.includes('/demo/'));
     expect(skillWrites).toEqual(
       expect.arrayContaining([
         {
-          path: '/home/vercel-sandbox/.agents/skills/demo/SKILL.md',
+          path: '/home/khulnasoft-sandbox/.agents/skills/demo/SKILL.md',
           content:
             '---\nname: demo\ndescription: Demo skill.\n---\n\nUse reference.md.',
         },
         {
-          path: '/home/vercel-sandbox/.agents/skills/demo/reference.md',
+          path: '/home/khulnasoft-sandbox/.agents/skills/demo/reference.md',
           content: '# Reference',
         },
       ]),
@@ -882,18 +882,18 @@ describe('createOpenCode adapter', () => {
     expect(spawns.at(-1)?.env).not.toHaveProperty('XDG_CACHE_HOME');
     expect(spawns.at(-1)?.env).not.toHaveProperty('XDG_DATA_HOME');
     expect(spawns.at(-1)?.env).not.toHaveProperty('XDG_STATE_HOME');
-    expect(spawns.at(-1)?.env.AI_SDK_HARNESS_CLIENT_APP).toBe(
-      'ai-sdk-harness-opencode/0.0.0-test',
+    expect(spawns.at(-1)?.env.ai-toolkit_HARNESS_CLIENT_APP).toBe(
+      'ai-toolkit-harness-opencode/0.0.0-test',
     );
     expect(spawns.at(-1)?.env.BRIDGE_CHANNEL_TOKEN).toMatch(/^[a-f0-9]{64}$/);
     expect(spawns.at(-1)?.command).toContain(
-      "node '/home/vercel-sandbox/.ai-sdk-harness/.harness-bootstrap/opencode/bridge.mjs'",
+      "node '/home/khulnasoft-sandbox/.ai-toolkit-harness/.harness-bootstrap/opencode/bridge.mjs'",
     );
     expect(spawns.at(-1)?.command).toContain(
-      "--bootstrap-dir '/home/vercel-sandbox/.ai-sdk-harness/.harness-bootstrap/opencode'",
+      "--bootstrap-dir '/home/khulnasoft-sandbox/.ai-toolkit-harness/.harness-bootstrap/opencode'",
     );
     expect(spawns.at(-1)?.command).toContain(
-      "--skills-dir '/home/vercel-sandbox/.agents/skills'",
+      "--skills-dir '/home/khulnasoft-sandbox/.agents/skills'",
     );
     await session.doDestroy();
   });
@@ -912,7 +912,7 @@ describe('createOpenCode adapter', () => {
         if (command === 'printf "%s" "$HOME"') {
           return {
             exitCode: 0,
-            stdout: '/home/vercel-sandbox',
+            stdout: '/home/khulnasoft-sandbox',
             stderr: '',
           };
         }
@@ -1055,7 +1055,7 @@ describe('createOpenCode adapter', () => {
     const sandbox = {
       async run({ command }: { command: string }) {
         return command === 'printf "%s" "$HOME"'
-          ? { exitCode: 0, stdout: '/home/vercel-sandbox', stderr: '' }
+          ? { exitCode: 0, stdout: '/home/khulnasoft-sandbox', stderr: '' }
           : { exitCode: 0, stdout: '', stderr: '' };
       },
       async readTextFile() {
@@ -1131,7 +1131,7 @@ describe('createOpenCode adapter', () => {
         return command === 'printf "%s" "$HOME"'
           ? {
               exitCode: 0,
-              stdout: '/home/vercel-sandbox',
+              stdout: '/home/khulnasoft-sandbox',
               stderr: '',
             }
           : { exitCode: 0, stdout: '', stderr: '' };

@@ -1,4 +1,4 @@
-import { zodSchema } from '@ai-sdk/provider-utils';
+import { zodSchema } from '@ai-toolkit/provider-utils';
 import { safeValidateUIMessages, validateUIMessages } from 'ai';
 import * as z3 from 'zod/v3';
 import * as z4 from 'zod/v4';

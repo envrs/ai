@@ -1,7 +1,7 @@
 import { mkdtemp, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import type * as HarnessUtils from '@ai-sdk/harness/utils';
+import type * as HarnessUtils from '@ai-toolkit/harness/utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   createCodexRequestTransformations,
@@ -20,7 +20,7 @@ const credentialStoreMocks = vi.hoisted(() => ({
   readWindowsCredentialManagerPassword: vi.fn(),
 }));
 
-vi.mock('@ai-sdk/harness/utils', async importOriginal => {
+vi.mock('@ai-toolkit/harness/utils', async importOriginal => {
   const actual = await importOriginal<typeof HarnessUtils>();
   return { ...actual, ...credentialStoreMocks };
 });
@@ -52,8 +52,8 @@ describe('resolveCodexEnv', () => {
     expect(env).toEqual({
       AI_GATEWAY_API_KEY: 'gw-key',
       CODEX_API_KEY: 'gw-key',
-      AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh/v1',
-      OPENAI_BASE_URL: 'https://ai-gateway.vercel.sh/v1',
+      AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh/v1',
+      OPENAI_BASE_URL: 'https://ai-gateway.khulnasoft.sh/v1',
     });
   });
 
@@ -88,8 +88,8 @@ describe('resolveCodexEnv', () => {
     expect(env).toEqual({
       AI_GATEWAY_API_KEY: 'gw-auto',
       CODEX_API_KEY: 'gw-auto',
-      AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh/v1',
-      OPENAI_BASE_URL: 'https://ai-gateway.vercel.sh/v1',
+      AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh/v1',
+      OPENAI_BASE_URL: 'https://ai-gateway.khulnasoft.sh/v1',
     });
   });
 
@@ -98,8 +98,8 @@ describe('resolveCodexEnv', () => {
     expect(env).toEqual({
       AI_GATEWAY_API_KEY: 'oidc-auto',
       CODEX_API_KEY: 'oidc-auto',
-      AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh/v1',
-      OPENAI_BASE_URL: 'https://ai-gateway.vercel.sh/v1',
+      AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh/v1',
+      OPENAI_BASE_URL: 'https://ai-gateway.khulnasoft.sh/v1',
     });
   });
 
@@ -143,11 +143,11 @@ describe('resolveCodexEnv', () => {
   it('forwards host OPENAI_BASE_URL alongside the api key', () => {
     const env = resolveCodexEnv(undefined, {
       OPENAI_API_KEY: 'sk-auto',
-      OPENAI_BASE_URL: 'https://ai-gateway.vercel.sh',
+      OPENAI_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
     });
     expect(env).toEqual({
       CODEX_API_KEY: 'sk-auto',
-      OPENAI_BASE_URL: 'https://ai-gateway.vercel.sh',
+      OPENAI_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
     });
   });
 
@@ -166,8 +166,8 @@ describe('resolveCodexEnv', () => {
     ).toEqual({
       AI_GATEWAY_API_KEY: 'gw-mode',
       CODEX_API_KEY: 'gw-mode',
-      AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh/v1',
-      OPENAI_BASE_URL: 'https://ai-gateway.vercel.sh/v1',
+      AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh/v1',
+      OPENAI_BASE_URL: 'https://ai-gateway.khulnasoft.sh/v1',
     });
   });
 });
@@ -495,7 +495,7 @@ describe('createCodexRequestTransformations', () => {
     ).toEqual([
       {
         match: {
-          host: 'ai-gateway.vercel.sh',
+          host: 'ai-gateway.khulnasoft.sh',
           path: { startsWith: '/v1' },
           headers: [
             {

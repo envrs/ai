@@ -69,7 +69,7 @@ const renderCard = async (
     <div style={{ fontFamily: 'Geist Sans' }} tw="flex h-full w-full bg-black">
       {/* Satori requires a plain img element. */}
       <img
-        alt="Vercel OpenGraph Background"
+        alt="khulnasoft OpenGraph Background"
         height={628}
         src={backgroundImageData as never}
         width={1200}

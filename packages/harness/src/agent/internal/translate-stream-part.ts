@@ -1,9 +1,9 @@
 import type { HarnessV1StreamPart } from '../../v1';
 import type { TextStreamPart } from 'ai';
-import { generateId, type ToolSet } from '@ai-sdk/provider-utils';
+import { generateId, type ToolSet } from '@ai-toolkit/provider-utils';
 
 /**
- * Translate one event from the harness wire format to the AI SDK
+ * Translate one event from the harness wire format to the ai-toolkit
  * `TextStreamPart` shape consumed by `streamText` callers.
  *
  * Most variants are close to the identity function — V4 primitives
@@ -16,13 +16,13 @@ import { generateId, type ToolSet } from '@ai-sdk/provider-utils';
  *     `run-prompt.ts`
  *   - a failed `tool-result` from a provider-executed tool becomes a
  *     `tool-error` (see `isProviderExecuted`)
- *   - the harness `raw` part is forwarded as the AI SDK `raw` part
+ *   - the harness `raw` part is forwarded as the ai-toolkit `raw` part
  *
- * Returns an array of zero or more AI SDK parts. Most harness events project
- * to a single AI SDK part; `file-change` fans out into a synthetic
+ * Returns an array of zero or more ai-toolkit parts. Most harness events project
+ * to a single ai-toolkit part; `file-change` fans out into a synthetic
  * dynamic + provider-executed `tool-call` / `tool-result` pair so the event
  * is observable in `streamText`-style flows without a new stream-part type
- * needing first-class AI SDK support. Events with no consumer-facing AI SDK
+ * needing first-class ai-toolkit support. Events with no consumer-facing ai-toolkit
  * equivalent (`stream-start`, `finish-step`, `finish` — consumed internally)
  * return an empty array.
  */
@@ -164,7 +164,7 @@ export function translateStreamPart<TOOLS extends ToolSet>(
 
     case 'file-change': {
       /*
-       * `file-change` has no first-class AI SDK stream-part equivalent.
+       * `file-change` has no first-class ai-toolkit stream-part equivalent.
        * Project it as a synthetic dynamic + provider-executed tool-call /
        * tool-result pair under the reserved name `fileChange` so the event
        * is visible to `streamText`-style consumers. `dynamic: true` keeps it
@@ -202,7 +202,7 @@ export function translateStreamPart<TOOLS extends ToolSet>(
 
     case 'compaction': {
       /*
-       * Like `file-change`, compaction has no first-class AI SDK stream-part
+       * Like `file-change`, compaction has no first-class ai-toolkit stream-part
        * equivalent. Project it as a synthetic dynamic + provider-executed
        * tool-call / tool-result pair under the reserved name `compaction`, so
        * the event is visible to `streamText`-style consumers. Compaction takes
@@ -259,7 +259,7 @@ export function translateStreamPart<TOOLS extends ToolSet>(
     case 'finish-step':
     case 'finish':
       // finish-step / finish are consumed by the agent's result builder, not
-      // forwarded directly. The agent emits AI SDK `finish-step` / `finish`
+      // forwarded directly. The agent emits ai-toolkit `finish-step` / `finish`
       // parts itself once it has assembled the surrounding step / response
       // metadata.
       return [];

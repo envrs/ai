@@ -1,12 +1,12 @@
 ---
 title: Web Search Agent
-description: Learn how to build an agent that has access to web with the AI SDK and Node
+description: Learn how to build an agent that has access to web with the ai-toolkit and Node
 tags: ['node', 'tool use', 'agent', 'web']
 ---
 
 # Web Search Agent
 
-There are two approaches you can take to building a web search agent with the AI SDK:
+There are two approaches you can take to building a web search agent with the ai-toolkit:
 
 1. Use a model that has native web-searching capabilities
 2. Use a tool to access the web and return search results.
@@ -24,7 +24,7 @@ There are several models that offer native web-searching capabilities (Perplexit
 OpenAI's Responses API has a built-in web search tool that can be used to search the web and return search results. This tool is called `web_search` and is accessed via the `openai` provider.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { generateText } from 'ai';
 
 const { text, sources } = await generateText({
@@ -42,7 +42,7 @@ console.log(sources);
 You can also use the `ToolLoopAgent` to build a web search agent with OpenAI. This following example shows how to extract query and sources from tool calls:
 
 ```ts
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { ToolLoopAgent } from 'ai';
 
 const agent = new ToolLoopAgent({
@@ -75,12 +75,12 @@ for (const toolResult of toolResults) {
 
 Perplexity's Agent API offers presets that combine models with native tools such as web search. The `fast` preset can search the web and return citations through the `sources` property.
 
-Install `@ai-sdk/perplexity` and set `PERPLEXITY_API_KEY` in your environment to use the provider directly:
+Install `@ai-toolkit/perplexity` and set `PERPLEXITY_API_KEY` in your environment to use the provider directly:
 
-<InstallPackages packages="@ai-sdk/perplexity" />
+<InstallPackages packages="@ai-toolkit/perplexity" />
 
 ```ts
-import { perplexity } from '@ai-sdk/perplexity';
+import { perplexity } from '@ai-toolkit/perplexity';
 import { generateText } from 'ai';
 
 const { text, sources } = await generateText({
@@ -92,14 +92,14 @@ console.log(text);
 console.log(sources);
 ```
 
-See the [Perplexity provider documentation](/providers/ai-sdk-providers/perplexity#agent-tools) for native tools, search filters, and Agent API options.
+See the [Perplexity provider documentation](/providers/ai-toolkit-providers/perplexity#agent-tools) for native tools, search filters, and Agent API options.
 
 ### Gemini
 
 With compatible Gemini models, you can enable search grounding to give the model access to the latest information using Google search.
 
 ```ts
-import { google } from '@ai-sdk/google';
+import { google } from '@ai-toolkit/google';
 import { generateText } from 'ai';
 
 const { text, sources, providerMetadata } = await generateText({
@@ -123,7 +123,7 @@ const safetyRatings = metadata?.safetyRatings;
 
 ## Using tools
 
-When using tools for web search, you have two options: use ready-made tools that integrate directly with the AI SDK, or build custom tools tailored to your specific needs.
+When using tools for web search, you have two options: use ready-made tools that integrate directly with the ai-toolkit, or build custom tools tailored to your specific needs.
 
 Unlike the native web search examples where searching is built into the model, using web search tools requires multiple steps. The language model will make two generations - the first to call the relevant web search tool (extracting search queries from the context), and the second to process the results and generate a response. This multi-step process is handled automatically when you set `stopWhen: isStepCount(n)` to a value greater than 1.
 
@@ -137,7 +137,7 @@ Unlike the native web search examples where searching is built into the model, u
 
 ### Use ready-made tools
 
-If you prefer a ready-to-use web search tool without building one from scratch, there are several options that integrate directly with the AI SDK.
+If you prefer a ready-to-use web search tool without building one from scratch, there are several options that integrate directly with the ai-toolkit.
 
 #### Exa
 
@@ -148,7 +148,7 @@ If you prefer a ready-to-use web search tool without building one from scratch, 
 First, install the Exa `webSearch` tool:
 
 ```bash
-pnpm install @exalabs/ai-sdk
+pnpm install @exalabs/ai-toolkit
 ```
 
 Then, you can import and pass it into `generateText`, `streamText`, or your agent:
@@ -156,7 +156,7 @@ Then, you can import and pass it into `generateText`, `streamText`, or your agen
 ```ts
 import { generateText, isStepCount } from 'ai';
 __PROVIDER_IMPORT__;
-import { webSearch } from '@exalabs/ai-sdk';
+import { webSearch } from '@exalabs/ai-toolkit';
 
 const { text } = await generateText({
   model: __MODEL__,
@@ -170,16 +170,16 @@ const { text } = await generateText({
 console.log(text);
 ```
 
-For more configuration options and customization, see the [Exa AI SDK documentation](https://docs.exa.ai/reference/vercel).
+For more configuration options and customization, see the [Exa ai-toolkit documentation](https://docs.exa.ai/reference/khulnasoft).
 
 #### Parallel Web
 
 <Note>Get your API key from the [Parallel Platform](https://parallel.ai).</Note>
 
-First, install the Parallel Web AI SDK tools:
+First, install the Parallel Web ai-toolkit tools:
 
 ```bash
-pnpm install @parallel-web/ai-sdk-tools
+pnpm install @parallel-web/ai-toolkit-tools
 ```
 
 Then, you can import and pass the tools into `generateText`, `streamText`, or your agent. Parallel Web provides two tools: `searchTool` for web search and `extractTool` for extracting web page content:
@@ -187,11 +187,11 @@ Then, you can import and pass the tools into `generateText`, `streamText`, or yo
 ```ts
 import { generateText, isStepCount } from 'ai';
 __PROVIDER_IMPORT__;
-import { searchTool, extractTool } from '@parallel-web/ai-sdk-tools';
+import { searchTool, extractTool } from '@parallel-web/ai-toolkit-tools';
 
 const { text } = await generateText({
   model: __MODEL__,
-  prompt: 'When was Vercel Ship AI?',
+  prompt: 'When was khulnasoft Ship AI?',
   tools: {
     webSearch: searchTool,
     webExtract: extractTool,
@@ -212,7 +212,7 @@ console.log(text);
 First, install the Perplexity Search tool:
 
 ```bash
-pnpm install @perplexity-ai/ai-sdk
+pnpm install @perplexity-ai/ai-toolkit
 ```
 
 Then, you can import and pass it into `generateText`, `streamText`, or your agent. Perplexity Search provides real-time web search with advanced filtering options including domain, language, date range, and recency filters:
@@ -220,7 +220,7 @@ Then, you can import and pass it into `generateText`, `streamText`, or your agen
 ```ts
 import { generateText, isStepCount } from 'ai';
 __PROVIDER_IMPORT__;
-import { perplexitySearch } from '@perplexity-ai/ai-sdk';
+import { perplexitySearch } from '@perplexity-ai/ai-toolkit';
 
 const { text } = await generateText({
   model: __MODEL__,
@@ -246,7 +246,7 @@ For more configuration options and customization, see the [Perplexity Search API
 First, install the `tavilySearch` tool:
 
 ```bash
-pnpm install @tavily/ai-sdk
+pnpm install @tavily/ai-toolkit
 ```
 
 Then, you can import and pass it into `generateText`, `streamText`, or your agent:
@@ -254,11 +254,11 @@ Then, you can import and pass it into `generateText`, `streamText`, or your agen
 ```ts
 import { generateText, isStepCount } from 'ai';
 __PROVIDER_IMPORT__;
-import { tavilySearch, tavilyExtract } from '@tavily/ai-sdk';
+import { tavilySearch, tavilyExtract } from '@tavily/ai-toolkit';
 
 const { text } = await generateText({
   model: __MODEL__,
-  prompt: 'When was the latest update to the AI SDK?',
+  prompt: 'When was the latest update to the ai-toolkit?',
   tools: {
     webSearch: tavilySearch(),
     webExtract: tavilyExtract(),
@@ -269,7 +269,7 @@ const { text } = await generateText({
 console.log(text);
 ```
 
-For more customization options over your agent's web-access functionality, visit the [Tavily AI SDK Documentation](https://docs.tavily.com/documentation/integrations/vercel).
+For more customization options over your agent's web-access functionality, visit the [Tavily ai-toolkit Documentation](https://docs.tavily.com/documentation/integrations/khulnasoft).
 
 #### You.com
 
@@ -278,10 +278,10 @@ For more customization options over your agent's web-access functionality, visit
   page](https://you.com/platform/api-keys).
 </Note>
 
-First, install the You.com AI SDK plugin:
+First, install the You.com ai-toolkit plugin:
 
 ```bash
-pnpm install @youdotcom-oss/ai-sdk-plugin
+pnpm install @youdotcom-oss/ai-toolkit-plugin
 ```
 
 Then, you can import and pass the tools into `generateText`, `streamText`, or your agent. You.com provides three tools: `youSearch` for real-time web search with advanced filtering, `youResearch` for deep research with cited sources and configurable effort (lite to exhaustive), and `youContents` for extracting webpage content in markdown or HTML:
@@ -293,7 +293,7 @@ import {
   youSearch,
   youResearch,
   youContents,
-} from '@youdotcom-oss/ai-sdk-plugin';
+} from '@youdotcom-oss/ai-toolkit-plugin';
 
 const { text } = await generateText({
   model: __MODEL__,
@@ -309,7 +309,7 @@ const { text } = await generateText({
 console.log(text);
 ```
 
-For more configuration options and customization, see the [You.com AI SDK Plugin documentation](https://github.com/youdotcom-oss/dx-toolkit/tree/main/packages/ai-sdk-plugin#readme).
+For more configuration options and customization, see the [You.com ai-toolkit Plugin documentation](https://github.com/youdotcom-oss/dx-toolkit/tree/main/packages/ai-toolkit-plugin#readme).
 
 ### Build and use custom tools
 
@@ -404,7 +404,7 @@ export const webSearch = tool({
 const main = async () => {
   const { text } = await generateText({
     model: __MODEL__, // can be any model that supports tools
-    prompt: 'Get the latest blog post from vercel.com/blog',
+    prompt: 'Get the latest blog post from khulnasoft.com/blog',
     tools: {
       webSearch,
     },

@@ -1,6 +1,6 @@
 {
-  "name": "@ai-sdk/anthropic-aws",
-  "version": "2.0.71",
+  "name": "@ai-toolkit/anthropic-aws",
+  "version": "2.0.1",
   "type": "module",
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -24,7 +24,7 @@
     "build": "pnpm clean && tsdown",
     "build:watch": "pnpm clean && tsdown --watch",
     "clean": "del-cli docs *.tsbuildinfo",
-    "prepack": "mkdir -p docs && cp ../../content/providers/01-ai-sdk-providers/07-anthropic-aws.mdx ./docs/",
+    "prepack": "mkdir -p docs && cp ../../content/providers/01-ai-toolkit-providers/07-anthropic-aws.mdx ./docs/",
     "postpack": "del-cli docs",
     "type-check": "tsc --build",
     "test": "pnpm test:node && pnpm test:edge",
@@ -42,15 +42,15 @@
     }
   },
   "dependencies": {
-    "@ai-sdk/anthropic": "workspace:*",
-    "@ai-sdk/provider": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*",
+    "@ai-toolkit/anthropic": "workspace:*",
+    "@ai-toolkit/provider": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*",
     "aws4fetch": "^1.0.20"
   },
   "devDependencies": {
-    "@ai-sdk/test-server": "workspace:*",
+    "@ai-toolkit/test-server": "workspace:*",
     "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "tsdown": "^0.23.0",
     "typescript": "6.0.3",
     "zod": "3.25.76"
@@ -65,14 +65,14 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/anthropic-aws"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "keywords": [
     "ai"

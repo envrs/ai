@@ -3,13 +3,13 @@ import {
   type LanguageModelV4FilePart,
   type LanguageModelV4Prompt,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertToBase64,
   getTopLevelMediaType,
   parseProviderOptions,
   resolveFullMediaType,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { cohereImagePartProviderOptions } from './cohere-chat-language-model-options';
 import type {
   CohereAssistantMessage,
@@ -83,7 +83,7 @@ export async function convertToCohereChatPrompt(
                   throw new UnsupportedFunctionalityError({
                     functionality: 'File URL data',
                     message:
-                      'URLs should be downloaded by the AI SDK and not reach this point. This indicates a configuration issue.',
+                      'URLs should be downloaded by the ai-toolkit and not reach this point. This indicates a configuration issue.',
                   });
                 }
                 case 'text': {

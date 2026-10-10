@@ -3,7 +3,7 @@ import type {
   InferToolContext,
   InferToolSetContext,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type {
   IncludedContext,
   IncludedToolsContext,

@@ -1,4 +1,4 @@
-import type { SharedV4Warning, SpeechModelV4 } from '@ai-sdk/provider';
+import type { SharedV4Warning, SpeechModelV4 } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createBinaryResponseHandler,
@@ -7,7 +7,7 @@ import {
   serializeModelOptions,
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { FishAudioConfig } from './fish-audio-config';
 import { fishAudioFailedResponseHandler } from './fish-audio-error';
 import type {

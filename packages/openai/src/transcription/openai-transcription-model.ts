@@ -4,7 +4,7 @@ import {
   type SharedV4Warning,
   type TranscriptionModelV4,
   type TranscriptionModelV4CallOptions,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -22,7 +22,7 @@ import {
   waitForWebSocketBufferDrain,
   type WebSocketConnection,
   type WebSocketLike,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { OpenAIConfig } from '../openai-config';
 import { openaiFailedResponseHandler } from '../openai-error';
 import { openaiTranscriptionResponseSchema } from './openai-transcription-api';

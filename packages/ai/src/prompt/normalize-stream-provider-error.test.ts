@@ -1,5 +1,5 @@
-import { AISDKError } from '@ai-sdk/provider';
-import { createProviderStreamError } from '@ai-sdk/provider-utils';
+import { ai-toolkitError } from '@ai-toolkit/provider';
+import { createProviderStreamError } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { StreamProviderError } from '../error/stream-provider-error';
 import { normalizeStreamProviderError } from './normalize-stream-provider-error';
@@ -202,7 +202,7 @@ describe('normalizeStreamProviderError', () => {
     expect(normalizeStreamProviderError(error)).toBe(error);
   });
 
-  it('preserves non-AI SDK cross-realm Error instances', () => {
+  it('preserves non-ai-toolkit cross-realm Error instances', () => {
     const error = {
       [Symbol.toStringTag]: 'Error',
       name: 'TypeError',
@@ -215,13 +215,13 @@ describe('normalizeStreamProviderError', () => {
     expect(normalizeStreamProviderError(error)).toBe(error);
   });
 
-  it('preserves cross-realm AI SDK errors', () => {
+  it('preserves cross-realm ai-toolkit errors', () => {
     const error = {
-      [Symbol.for('vercel.ai.error')]: true,
+      [Symbol.for('khulnasoft.ai.error')]: true,
       message: 'existing SDK error',
     };
 
-    expect(AISDKError.isInstance(error)).toBe(true);
+    expect(ai-toolkitError.isInstance(error)).toBe(true);
     expect(normalizeStreamProviderError(error)).toBe(error);
   });
 

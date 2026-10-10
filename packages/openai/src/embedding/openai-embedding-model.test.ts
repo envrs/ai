@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 
-import { EXPERIMENTAL_EMBEDDING_MODEL_MAX_INPUT_BYTES_PER_CALL } from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { EXPERIMENTAL_EMBEDDING_MODEL_MAX_INPUT_BYTES_PER_CALL } from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { createOpenAI } from '../openai-provider';
 import { describe, it, expect, vi } from 'vitest';
 
@@ -192,7 +192,7 @@ describe('doEmbed', () => {
       'openai-project': 'test-project',
     });
     expect(server.calls[0].requestUserAgent).toContain(
-      `ai-sdk-openai/0.0.0-test`,
+      `ai-toolkit-openai/0.0.0-test`,
     );
   });
 });

@@ -1,4 +1,4 @@
-import { createProxy } from '@vercel/geistdocs/proxy';
+import { createProxy } from '@khulnasoft/geistdocs/proxy';
 import {
   type NextFetchEvent,
   type NextRequest,

@@ -1,4 +1,4 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import { convertAsyncIteratorToReadableStream } from './convert-async-iterator-to-readable-stream';
 import { extractResponseHeaders } from './extract-response-headers';
 import type { FetchFunction } from './fetch-function';
@@ -172,7 +172,7 @@ export const postMultipartStreamToApi = async <T>({
   abortSignal?: AbortSignal;
   fetch?: FetchFunction;
 }) => {
-  const boundary = `ai-sdk-multipart-${generateId()}`;
+  const boundary = `ai-toolkit-multipart-${generateId()}`;
 
   // stream contents cannot be replayed for error reporting; expose part
   // names, field values, and file placeholders only
@@ -195,7 +195,7 @@ export const postMultipartStreamToApi = async <T>({
           ...headers,
           'Content-Type': `multipart/form-data; boundary=${boundary}`,
         },
-        `ai-sdk-provider-utils/${VERSION}`,
+        `ai-toolkit-provider-utils/${VERSION}`,
         getRuntimeEnvironmentUserAgent(),
       ),
       body: body.stream,

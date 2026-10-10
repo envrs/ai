@@ -1,10 +1,10 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import {
   NoSuchModelError,
   Experimental_DecisionUnsupportedQuestionTypeError as DecisionUnsupportedQuestionTypeError,
   type Experimental_DecisionModelV4State as DecisionModelV4State,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { DecisionState } from '../decide/decision-state';
 import { UnsupportedModelVersionError } from '../error/unsupported-model-version-error';
 import { decide } from '../decide/decide';
@@ -61,7 +61,7 @@ describe('custom decision models', () => {
   });
 
   it('resolves string aliases through the configured default provider', () => {
-    vi.stubGlobal('AI_SDK_DEFAULT_PROVIDER', new DecisionTestProvider());
+    vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', new DecisionTestProvider());
     const provider = customProvider({
       decisionModels: { alias: 'model:version' },
     });
@@ -216,7 +216,7 @@ describe('decision registry', () => {
 
 describe('decision model resolution', () => {
   const server = createTestServer({
-    'https://ai-gateway.vercel.sh/v4/ai/decision-model': {
+    'https://ai-gateway.khulnasoft.sh/v4/ai/decision-model': {
       response: {
         type: 'json-value',
         body: {
@@ -274,7 +274,7 @@ describe('decision model resolution', () => {
   )(
     'decides through Gateway using a model $resolution with $name state when no default provider is configured',
     async ({ resolution, state, expectedStateParts }) => {
-      vi.stubGlobal('AI_SDK_DEFAULT_PROVIDER', undefined);
+      vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', undefined);
       vi.stubEnv('AI_GATEWAY_API_KEY', 'test-api-key');
       const modelId = 'typesafe-ai/jev';
       const questions = {
@@ -309,7 +309,7 @@ describe('decision model resolution', () => {
   );
 
   it('requires an explicitly configured default provider to support decision', () => {
-    vi.stubGlobal('AI_SDK_DEFAULT_PROVIDER', new MockProviderV4());
+    vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', new MockProviderV4());
     expect(() => resolveDecisionModel('typesafe-ai/jev')).toThrow(
       'The default provider does not support decision models.',
     );
@@ -323,7 +323,7 @@ describe('decision model resolution', () => {
     } as unknown as DecisionMockModelV4;
     const provider = customProvider({ decisionModels: { invalid } });
     const registry = createProviderRegistry({ provider });
-    vi.stubGlobal('AI_SDK_DEFAULT_PROVIDER', registry);
+    vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', registry);
     for (const resolve of [
       () => resolveDecisionModel(invalid),
       () => provider.decisionModel('invalid'),
@@ -338,7 +338,7 @@ describe('decision model resolution', () => {
       modelId: 'missing',
       modelType: 'decisionModel',
     });
-    vi.stubGlobal('AI_SDK_DEFAULT_PROVIDER', {
+    vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', {
       decisionModel() {
         throw error;
       },
@@ -347,7 +347,7 @@ describe('decision model resolution', () => {
   });
 
   it('reports missing models returned by the default provider', () => {
-    vi.stubGlobal('AI_SDK_DEFAULT_PROVIDER', {
+    vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', {
       decisionModel: () => undefined,
     });
     expect(() => resolveDecisionModel('missing')).toThrow(
@@ -369,7 +369,7 @@ describe('decision model resolution', () => {
       const provider = customProvider({
         decisionModels: { route: new DecisionMockModelV4({ doDecide }) },
       });
-      vi.stubGlobal('AI_SDK_DEFAULT_PROVIDER', provider);
+      vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', provider);
       const questions = {
         route: {
           type: 'choice',
@@ -414,7 +414,7 @@ describe('decision model resolution', () => {
         }),
       },
     });
-    vi.stubGlobal('AI_SDK_DEFAULT_PROVIDER', provider);
+    vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', provider);
     await expect(
       decide({
         model: 'choice',

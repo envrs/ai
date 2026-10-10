@@ -3,13 +3,13 @@ import {
   type EmbeddingModelV4,
   type RerankingModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { VoyageEmbeddingModel } from './voyage-embedding-model';
 import type { VoyageEmbeddingModelId } from './voyage-embedding-model-options';
 import type { VoyageRerankingModelId } from './reranking/voyage-reranking-model-options';
@@ -48,7 +48,7 @@ export function createVoyage(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-voyage/${VERSION}`,
+      `ai-toolkit-voyage/${VERSION}`,
     );
 
   const createEmbeddingModel = (modelId: VoyageEmbeddingModelId) =>

@@ -4,7 +4,7 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import * as z4 from 'zod/v4';
 
-const API_URL = 'https://ai-gateway.vercel.sh/v1/models';
+const API_URL = 'https://ai-gateway.khulnasoft.sh/v1/models';
 const OUTPUT_DIR = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
   '..',

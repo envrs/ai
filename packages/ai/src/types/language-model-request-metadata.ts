@@ -1,4 +1,4 @@
-import type { ModelMessage } from '@ai-sdk/provider-utils';
+import type { ModelMessage } from '@ai-toolkit/provider-utils';
 
 /**
  * Metadata for a language model request.

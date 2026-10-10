@@ -1,4 +1,4 @@
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
 import { EventStreamCodec } from '@smithy/eventstream-codec';
 import { fromUtf8, toUtf8 } from '@smithy/util-utf8';
 import { describe, expect, it, vi } from 'vitest';

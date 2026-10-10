@@ -1,4 +1,4 @@
-import { NoSuchModelError } from '@ai-sdk/provider';
+import { NoSuchModelError } from '@ai-toolkit/provider';
 import { describe, expect, it, vi } from 'vitest';
 import { createFishAudio } from './fish-audio-provider';
 import { FishAudioSpeechModel } from './fish-audio-speech-model';

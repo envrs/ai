@@ -1,7 +1,7 @@
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { TextStreamPart } from '../generate-text/stream-text-result';
 import { createUIMessageStreamResponse } from './create-ui-message-stream-response';
@@ -42,7 +42,7 @@ describe('createUIMessageStreamResponse', () => {
           "content-type": "text/event-stream",
           "custom-header": "test",
           "x-accel-buffering": "no",
-          "x-vercel-ai-ui-message-stream": "v1",
+          "x-khulnasoft-ai-ui-message-stream": "v1",
         }
       `);
 

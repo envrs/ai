@@ -1,8 +1,8 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   type TranscriptionModelV4,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -16,7 +16,7 @@ import {
   serializeModelOptions,
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { GladiaConfig } from './gladia-config';
 import { gladiaFailedResponseHandler } from './gladia-error';
@@ -264,7 +264,7 @@ export class GladiaTranscriptionModel implements TranscriptionModelV4 {
     while (true) {
       // Check if we've exceeded the timeout
       if (Date.now() - startTime > timeoutMs) {
-        throw new AISDKError({
+        throw new ai-toolkitError({
           message: 'Transcription job polling timed out',
           name: 'TranscriptionJobPollingTimedOut',
           cause: transcriptionResult,
@@ -294,7 +294,7 @@ export class GladiaTranscriptionModel implements TranscriptionModelV4 {
       }
 
       if (transcriptionResult.status === 'error') {
-        throw new AISDKError({
+        throw new ai-toolkitError({
           message: 'Transcription job failed',
           name: 'TranscriptionJobFailed',
           cause: transcriptionResult,
@@ -306,7 +306,7 @@ export class GladiaTranscriptionModel implements TranscriptionModelV4 {
     }
 
     if (!transcriptionResult.result) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         message: 'Transcription result is empty',
         name: 'TranscriptionResultEmpty',
         cause: transcriptionResult,

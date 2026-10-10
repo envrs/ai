@@ -1,4 +1,4 @@
-import type { FlexibleSchema, ToolSet } from '@ai-sdk/provider-utils';
+import type { FlexibleSchema, ToolSet } from '@ai-toolkit/provider-utils';
 import type { HarnessV1Bootstrap } from './harness-v1-bootstrap';
 import type {
   HarnessV1Session,

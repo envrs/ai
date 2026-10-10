@@ -1,9 +1,9 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
-import { UnsupportedFunctionalityError } from '@ai-sdk/provider';
+} from '@ai-toolkit/provider-utils/test';
+import { UnsupportedFunctionalityError } from '@ai-toolkit/provider';
 import { ElevenLabsTranscriptionModel } from './elevenlabs-transcription-model';
 import { createElevenLabs } from './elevenlabs-provider';
 import { readFile } from 'node:fs/promises';
@@ -151,7 +151,7 @@ describe('doGenerate', () => {
         'custom-request-header': 'request-header-value',
       });
       expect(server.calls[0].requestUserAgent).toContain(
-        `ai-sdk-elevenlabs/0.0.0-test`,
+        `ai-toolkit-elevenlabs/0.0.0-test`,
       );
     });
 
@@ -162,7 +162,7 @@ describe('doGenerate', () => {
       });
 
       expect(result.text).toMatchInlineSnapshot(
-        `"Hello from the Vercel AI SDK."`,
+        `"Hello from the khulnasoft ai-toolkit."`,
       );
     });
 
@@ -412,7 +412,7 @@ describe('doStream', () => {
             enableLogging: false,
             includeLanguageDetection: true,
             includeTimestamps: true,
-            keyterms: ['Vercel', 'AI SDK'],
+            keyterms: ['khulnasoft', 'ai-toolkit'],
             minSilenceDurationMs: 200,
             minSpeechDurationMs: 150,
             noVerbatim: true,
@@ -445,7 +445,7 @@ describe('doStream', () => {
       vad_silence_threshold_secs: '1.2',
       vad_threshold: '0.5',
     });
-    expect(url.searchParams.getAll('keyterms')).toEqual(['Vercel', 'AI SDK']);
+    expect(url.searchParams.getAll('keyterms')).toEqual(['khulnasoft', 'ai-toolkit']);
     expect(url.searchParams.getAll('secondary_languages')).toEqual([
       'es',
       'fr',

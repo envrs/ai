@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import fs from 'node:fs';
 import { createVoyage } from './voyage-provider';
 import { beforeEach, describe, it, expect, vi } from 'vitest';
@@ -191,7 +191,7 @@ describe('doEmbed', () => {
       }
     `);
     expect(server.calls[0].requestUserAgent).toContain(
-      `ai-sdk-voyage/0.0.0-test`,
+      `ai-toolkit-voyage/0.0.0-test`,
     );
   });
 });

@@ -1,6 +1,6 @@
 {
-  "name": "@ai-sdk/gladia",
-  "version": "3.0.58",
+  "name": "@ai-toolkit/gladia",
+  "version": "2.0.1",
   "type": "module",
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -24,7 +24,7 @@
     "build": "tsdown",
     "build:watch": "tsdown --watch",
     "clean": "del-cli docs",
-    "prepack": "mkdir -p docs && cp ../../content/providers/01-ai-sdk-providers/120-gladia.mdx ./docs/",
+    "prepack": "mkdir -p docs && cp ../../content/providers/01-ai-toolkit-providers/120-gladia.mdx ./docs/",
     "postpack": "del-cli docs",
     "type-check": "tsc --noEmit",
     "test": "pnpm test:node && pnpm test:edge",
@@ -42,13 +42,13 @@
     }
   },
   "dependencies": {
-    "@ai-sdk/provider": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*"
+    "@ai-toolkit/provider": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*"
   },
   "devDependencies": {
-    "@ai-sdk/test-server": "workspace:*",
+    "@ai-toolkit/test-server": "workspace:*",
     "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "tsdown": "^0.23.0",
     "typescript": "6.0.3",
     "zod": "3.25.76"
@@ -63,14 +63,14 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/gladia"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "keywords": [
     "ai"

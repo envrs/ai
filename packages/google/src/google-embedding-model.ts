@@ -1,7 +1,7 @@
 import {
   TooManyEmbeddingValuesForCallError,
   type EmbeddingModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createJsonResponseHandler,
@@ -16,7 +16,7 @@ import {
   WORKFLOW_DESERIALIZE,
   zodSchema,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { googleFailedResponseHandler } from './google-error';
 import {

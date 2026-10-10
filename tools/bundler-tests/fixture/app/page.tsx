@@ -1,3 +1,3 @@
 export default function Page() {
-  return <main>AI SDK consumer bundle fixture</main>;
+  return <main>ai-toolkit consumer bundle fixture</main>;
 }

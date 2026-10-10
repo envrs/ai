@@ -3,7 +3,7 @@
 // MIT License
 //
 // Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)
-// Copyright (c) Vercel, Inc. (https://vercel.com)
+// Copyright (c) khulnasoft, Inc. (https://khulnasoft.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
 // documentation files (the "Software"), to deal in the Software without restriction, including without limitation
@@ -19,7 +19,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-import type { FlexibleSchema, InferSchema } from '@ai-sdk/provider-utils';
+import type { FlexibleSchema, InferSchema } from '@ai-toolkit/provider-utils';
 
 /**
  * Create a type from an object with all keys and nested keys set to optional.

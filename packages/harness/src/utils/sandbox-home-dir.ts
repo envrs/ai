@@ -1,5 +1,5 @@
 import path from 'node:path';
-import type { Experimental_SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession } from '@ai-toolkit/provider-utils';
 
 export async function resolveSandboxHomeDir({
   sandbox,

@@ -8,7 +8,7 @@ import type { HarnessV1StreamPart } from '../../v1/harness-v1-stream-part';
  * Adapters implement `doPromptTurn` / `doContinueTurn` against an `emit` callback
  * because that is the natural shape when wrapping an SDK that itself produces
  * events. Consumers (notably `HarnessAgent`) prefer a stream because that is
- * the idiomatic AI SDK shape. This helper converts the former into the latter
+ * the idiomatic ai-toolkit shape. This helper converts the former into the latter
  * and is agnostic to which turn entry point produced the control surface — the
  * caller supplies an `invoke` thunk that wires `emit` into either method.
  *

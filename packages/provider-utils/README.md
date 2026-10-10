@@ -1,1 +1,1 @@
-# AI SDK - Provider Implementation Utilities
+# ai-toolkit - Provider Implementation Utilities

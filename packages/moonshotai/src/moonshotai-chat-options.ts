@@ -1,4 +1,4 @@
-import type { LanguageModelV4FunctionTool } from '@ai-sdk/provider';
+import type { LanguageModelV4FunctionTool } from '@ai-toolkit/provider';
 import { z } from 'zod/v4';
 
 export type MoonshotAIChatModelId =

@@ -2,13 +2,13 @@ import {
   NoSuchModelError,
   type LanguageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { VERSION } from './version';
 import { ZaiChatLanguageModel } from './zai-chat-language-model';
 import type { ZaiChatModelId } from './zai-chat-options';
@@ -72,7 +72,7 @@ export function createZai(options: ZaiProviderSettings = {}): ZaiProvider {
         })}`,
         ...options.headers,
       },
-      `ai-sdk-zai/${VERSION}`,
+      `ai-toolkit-zai/${VERSION}`,
     );
 
   const createLanguageModel = (modelId: ZaiChatModelId) =>

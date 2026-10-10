@@ -1,10 +1,10 @@
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
-import { isProviderStreamError } from '@ai-sdk/provider-utils';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
+import { isProviderStreamError } from '@ai-toolkit/provider-utils';
 import {
   convertReadableStreamToArray,
   mockId,
-} from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { HuggingFaceResponsesLanguageModel } from './huggingface-responses-language-model';
 

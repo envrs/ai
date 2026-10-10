@@ -29,12 +29,12 @@ export type LangSmithDeploymentTransportOptions = Omit<
 /**
  * A ChatTransport implementation for LangSmith/LangGraph deployments.
  *
- * This transport enables seamless integration between the AI SDK's useChat hook
+ * This transport enables seamless integration between the ai-toolkit's useChat hook
  * and LangSmith deployed LangGraph agents.
  *
  * @example
  * ```ts
- * import { LangSmithDeploymentTransport } from '@ai-sdk/langchain';
+ * import { LangSmithDeploymentTransport } from '@ai-toolkit/langchain';
  *
  * // Use with useChat
  * const { messages, input, handleSubmit } = useChat({

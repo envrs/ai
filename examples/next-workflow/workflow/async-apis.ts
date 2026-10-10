@@ -142,7 +142,7 @@ async function findMaintainers(repositoryUrl: string): Promise<{
         Accept: 'application/vnd.github+json',
         Authorization: `Bearer ${githubToken}`,
         'Content-Type': 'application/json',
-        'User-Agent': 'vercel-ai-next-workflow-example',
+        'User-Agent': 'khulnasoft-ai-next-workflow-example',
         'X-GitHub-Api-Version': '2022-11-28',
       },
       body: JSON.stringify({
@@ -270,7 +270,7 @@ async function downloadAvatar(
   }
 
   const response = await fetch(avatarUrl, {
-    headers: { 'User-Agent': 'vercel-ai-next-workflow-example' },
+    headers: { 'User-Agent': 'khulnasoft-ai-next-workflow-example' },
   });
   if (!response.ok) {
     throw new Error(

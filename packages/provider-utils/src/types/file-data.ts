@@ -2,7 +2,7 @@ import type {
   SharedV4FileDataReference,
   SharedV4FileDataText,
   SharedV4FileDataUrl,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { DataContent } from './data-content';
 
 /**

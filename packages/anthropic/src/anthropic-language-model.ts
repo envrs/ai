@@ -16,7 +16,7 @@ import {
   type LanguageModelV4ToolCall,
   type SharedV4ProviderMetadata,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createEventSourceResponseHandler,
@@ -40,7 +40,7 @@ import {
   type InferSchema,
   type ParseResult,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { anthropicFailedResponseHandler } from './anthropic-error';
 import type {
   AnthropicMessageMetadata,

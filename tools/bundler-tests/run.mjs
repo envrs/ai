@@ -66,7 +66,7 @@ function select(name) {
   }
 }
 select('ai');
-select('@ai-sdk/openai');
+select('@ai-toolkit/openai');
 
 const temporary = await mkdtemp(join(tmpdir(), 'ai-bundler-tests-'));
 let succeeded = false;

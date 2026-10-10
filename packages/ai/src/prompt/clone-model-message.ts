@@ -1,4 +1,4 @@
-import type { ModelMessage } from '@ai-sdk/provider-utils';
+import type { ModelMessage } from '@ai-toolkit/provider-utils';
 
 /**
  * Clone model messages while preserving URL instances. Node's structuredClone

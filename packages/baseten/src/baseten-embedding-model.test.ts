@@ -1,5 +1,5 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
-import { TooManyEmbeddingValuesForCallError } from '@ai-sdk/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
+import { TooManyEmbeddingValuesForCallError } from '@ai-toolkit/provider';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { createBaseten } from './baseten-provider';
 

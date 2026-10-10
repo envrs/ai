@@ -1,6 +1,6 @@
-# AI SDK Codemods
+# ai-toolkit Codemods
 
-The AI SDK provides automated code transformations (codemods) to help upgrade your codebase when features are deprecated, removed, or changed between versions.
+The ai-toolkit provides automated code transformations (codemods) to help upgrade your codebase when features are deprecated, removed, or changed between versions.
 
 Codemods are transformations that run on your codebase programmatically, allowing you to easily apply many changes without manually editing every file.
 
@@ -11,7 +11,7 @@ Codemods are transformations that run on your codebase programmatically, allowin
 To run all codemods:
 
 ```sh
-npx @ai-sdk/codemod upgrade
+npx @ai-toolkit/codemod upgrade
 ```
 
 This will automatically detect and transform all applicable code patterns in your project.
@@ -21,13 +21,13 @@ This will automatically detect and transform all applicable code patterns in you
 To run codemods for a specific version:
 
 ```sh
-npx @ai-sdk/codemod v4
+npx @ai-toolkit/codemod v4
 
-npx @ai-sdk/codemod v5
+npx @ai-toolkit/codemod v5
 
-npx @ai-sdk/codemod v6
+npx @ai-toolkit/codemod v6
 
-npx @ai-sdk/codemod upgrade
+npx @ai-toolkit/codemod upgrade
 ```
 
 ### Run Individual Codemods
@@ -35,20 +35,20 @@ npx @ai-sdk/codemod upgrade
 To run a specific codemod:
 
 ```sh
-npx @ai-sdk/codemod <codemod-name> <path>
+npx @ai-toolkit/codemod <codemod-name> <path>
 ```
 
 Examples:
 
 ```sh
 # Transform a specific file
-npx @ai-sdk/codemod v4/remove-experimental-ai-fn-exports src/app/api/chat/route.ts
+npx @ai-toolkit/codemod v4/remove-experimental-ai-fn-exports src/app/api/chat/route.ts
 
 # Transform a directory
-npx @ai-sdk/codemod v4/replace-baseurl src/lib/
+npx @ai-toolkit/codemod v4/replace-baseurl src/lib/
 
 # Transform entire project
-npx @ai-sdk/codemod v5/rename-format-stream-part .
+npx @ai-toolkit/codemod v5/rename-format-stream-part .
 ```
 
 ## Available Codemods
@@ -93,7 +93,7 @@ npx @ai-sdk/codemod v5/rename-format-stream-part .
 | `v5/move-langchain-adapter`                                           | Transforms v5/move langchain adapter                                           |
 | `v5/move-maxsteps-to-stopwhen`                                        | Transforms v5/move maxsteps to stopwhen                                        |
 | `v5/move-provider-options`                                            | Transforms v5/move provider options                                            |
-| `v5/move-react-to-ai-sdk`                                             | Transforms v5/move react to ai sdk                                             |
+| `v5/move-react-to-ai-toolkit`                                             | Transforms v5/move react to ai-toolkit                                             |
 | `v5/move-ui-utils-to-ai`                                              | Transforms v5/move ui utils to ai                                              |
 | `v5/remove-experimental-wrap-language-model`                          | Transforms v5/remove experimental wrap language model                          |
 | `v5/remove-get-ui-text`                                               | Transforms v5/remove get ui text                                               |
@@ -155,7 +155,7 @@ npx @ai-sdk/codemod v5/rename-format-stream-part .
 ### Commands
 
 ```sh
-npx @ai-sdk/codemod@beta <command> [options]
+npx @ai-toolkit/codemod@beta <command> [options]
 ```
 
 **Available Commands:**
@@ -176,22 +176,22 @@ npx @ai-sdk/codemod@beta <command> [options]
 
 ```sh
 # Preview all changes without applying
-npx @ai-sdk/codemod@beta --dry upgrade
+npx @ai-toolkit/codemod@beta --dry upgrade
 
 # Preview v4 changes only
-npx @ai-sdk/codemod@beta --dry v4
+npx @ai-toolkit/codemod@beta --dry v4
 
 # Preview v5 changes only
-npx @ai-sdk/codemod@beta --dry v5
+npx @ai-toolkit/codemod@beta --dry v5
 
 # Preview v6 changes only
-npx @ai-sdk/codemod@beta --dry v6
+npx @ai-toolkit/codemod@beta --dry v6
 
 # Show verbose output for specific codemod
-npx @ai-sdk/codemod@beta --verbose v4/remove-experimental-ai-fn-exports src/
+npx @ai-toolkit/codemod@beta --verbose v4/remove-experimental-ai-fn-exports src/
 
 # Print transformed code for specific codemod
-npx @ai-sdk/codemod@beta --print v4/replace-baseurl src/config.ts
+npx @ai-toolkit/codemod@beta --print v4/replace-baseurl src/config.ts
 ```
 
 ## Best Practices
@@ -200,7 +200,7 @@ npx @ai-sdk/codemod@beta --print v4/replace-baseurl src/config.ts
 
 1. **Backup your code** - Commit all changes to version control
 2. **Review current deprecation warnings** - Fix any obvious issues first
-3. **Update dependencies** - Ensure you're on the target AI SDK version
+3. **Update dependencies** - Ensure you're on the target ai-toolkit version
 
 ### After Running Codemods
 
@@ -250,19 +250,19 @@ pnpm test:watch
 
 ## Support
 
-- **Documentation**: [AI SDK Migration Guides](https://ai-sdk.dev/docs/migration-guides)
-- **Issues**: [GitHub Issues](https://github.com/vercel/ai/issues)
-- **Community**: [Discord](https://discord.gg/vercel)
+- **Documentation**: [ai-toolkit Migration Guides](https://ai-toolkit.dev/docs/migration-guides)
+- **Issues**: [GitHub Issues](https://github.com/khulnasoft/ai/issues)
+- **Community**: [Discord](https://discord.gg/khulnasoft)
 
 ## Version Compatibility
 
-- **AI SDK 6.0**: All codemods in this package
-- **AI SDK 5.0**: Use v4 + v5 codemods
-- **AI SDK 4.x**: Use `@ai-sdk/codemod@1.x`
-- **AI SDK 3.x**: Manual migration required
+- **ai-toolkit 6.0**: All codemods in this package
+- **ai-toolkit 5.0**: Use v4 + v5 codemods
+- **ai-toolkit 4.x**: Use `@ai-toolkit/codemod@1.x`
+- **ai-toolkit 3.x**: Manual migration required
 
 ---
 
 For more detailed migration information, see:
 
-- [AI SDK 6.0 Migration Guide](https://ai-sdk.dev/docs/migration-guides/migration-guide-6-0)
+- [ai-toolkit 6.0 Migration Guide](https://ai-toolkit.dev/docs/migration-guides/migration-guide-6-0)

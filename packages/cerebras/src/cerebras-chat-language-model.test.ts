@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4Prompt,
   LanguageModelV4StreamPart,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import fs from 'node:fs';
 import { describe, expect, expectTypeOf, it, vi } from 'vitest';
 import { createCerebras } from './cerebras-provider';

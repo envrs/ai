@@ -1,5 +1,5 @@
-import { openai } from '@ai-sdk/openai';
-import { tool, type ToolSet } from '@ai-sdk/provider-utils';
+import { openai } from '@ai-toolkit/openai';
+import { tool, type ToolSet } from '@ai-toolkit/provider-utils';
 import { describe, it } from 'vitest';
 import { z } from 'zod/v4';
 import type { InferUITools, UIMessage } from './ui-messages';

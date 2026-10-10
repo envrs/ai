@@ -3,9 +3,9 @@ import {
   type LanguageModelV4FilePart,
   type LanguageModelV4Prompt,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
 import { GatewayLanguageModel } from './gateway-language-model';
 import type { GatewayConfig } from './gateway-config';
 import {
@@ -257,7 +257,7 @@ describe('GatewayLanguageModel', () => {
         expect(GatewayAuthenticationError.isInstance(error)).toBe(true);
         const authError = error as GatewayAuthenticationError;
         expect(authError.message).toContain('Invalid API key');
-        expect(authError.message).toContain('vercel.com/d?to=');
+        expect(authError.message).toContain('khulnasoft.com/d?to=');
         expect(authError.statusCode).toBe(401);
         expect(authError.type).toBe('authentication_error');
       }
@@ -580,7 +580,7 @@ describe('GatewayLanguageModel', () => {
           ferror: { message: 'Model not found', type: 'model_not_found' },
         };
 
-        // Mock the server to return malformed response that can't be parsed by AI SDK
+        // Mock the server to return malformed response that can't be parsed by ai-toolkit
         server.urls['https://api.test.com/language-model'].response = {
           type: 'error',
           status: 404,
@@ -912,7 +912,7 @@ describe('GatewayLanguageModel', () => {
         expect(GatewayAuthenticationError.isInstance(error)).toBe(true);
         const authError = error as GatewayAuthenticationError;
         expect(authError.message).toContain('Invalid API key');
-        expect(authError.message).toContain('vercel.com/d?to=');
+        expect(authError.message).toContain('khulnasoft.com/d?to=');
         expect(authError.statusCode).toBe(401);
         expect(authError.type).toBe('authentication_error');
       }

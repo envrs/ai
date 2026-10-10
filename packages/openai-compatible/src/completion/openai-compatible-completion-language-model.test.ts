@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
 import { createOpenAICompatible } from '../openai-compatible-provider';
 import { OpenAICompatibleCompletionLanguageModel } from './openai-compatible-completion-language-model';
 

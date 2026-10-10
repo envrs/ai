@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { AgentTUIRunner } from './agent-tui-runner';
 import { MockScreen, MockUserInput } from './test/mock-terminal';
 import { createDeferred } from './util/deferred';
-import type { LanguageModelV4StreamPart } from '@ai-sdk/provider';
+import type { LanguageModelV4StreamPart } from '@ai-toolkit/provider';
 import { MockLanguageModelV4 } from 'ai/test';
 import { simulateReadableStream, ToolLoopAgent, tool } from 'ai';
 import { z } from 'zod/v4';

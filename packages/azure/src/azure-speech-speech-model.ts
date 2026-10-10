@@ -2,7 +2,7 @@ import {
   APICallError,
   type SharedV4Warning,
   type SpeechModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createBinaryResponseHandler,
@@ -11,7 +11,7 @@ import {
   safeParseJSON,
   type FetchFunction,
   type ResponseHandler,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { getMAIVoiceModel } from './azure-speech-model-options';
 import type { AzureSpeechModelSpeechOptions } from './azure-speech-speech-model-options';

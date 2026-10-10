@@ -1,4 +1,4 @@
-import { filterNullable } from '@ai-sdk/provider-utils';
+import { filterNullable } from '@ai-toolkit/provider-utils';
 
 /**
  * Merges multiple abort sources into a single `AbortSignal`.

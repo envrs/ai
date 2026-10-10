@@ -7,7 +7,7 @@ import type {
   Experimental_RealtimeModelV4ServerEvent as RealtimeModelV4ServerEvent,
   Experimental_RealtimeModelV4SessionConfig as RealtimeModelV4SessionConfig,
   Experimental_RealtimeModelV4ToolDefinition as RealtimeModelV4ToolDefinition,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 export type RealtimeFactory = RealtimeFactoryV4;
 

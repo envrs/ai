@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
-import type { Experimental_SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 const PI_SESSION_FILE_NAME_PATTERN = /^[A-Za-z0-9][A-Za-z0-9._-]*\.jsonl?$/;
@@ -41,7 +41,7 @@ export function resolvePiPrivateSessionDirectory(input: {
   const sessionKey = createHash('sha256').update(input.sessionId).digest('hex');
   const privateSessionDir = path.posix.join(
     input.sandboxHomeDir,
-    '.ai-sdk',
+    '.ai-toolkit',
     'harness-pi',
     sessionKey,
   );

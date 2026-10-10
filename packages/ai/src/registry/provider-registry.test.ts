@@ -2,7 +2,7 @@ import {
   type FilesV4,
   NoSuchModelError,
   type SkillsV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { MockEmbeddingModelV4 } from '../test/mock-embedding-model-v4';
 import { MockEmbeddingModelV3 } from '../test/mock-embedding-model-v3';
 import { MockLanguageModelV4 } from '../test/mock-language-model-v4';

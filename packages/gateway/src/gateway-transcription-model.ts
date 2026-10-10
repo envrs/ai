@@ -6,7 +6,7 @@ import {
   type SharedV4ProviderMetadata,
   type SharedV4Warning,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -26,7 +26,7 @@ import {
   type WebSocketConnection,
   type WebSocketConstructor,
   type WebSocketLike,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from './zod';
 import { asGatewayError, createGatewayErrorFromResponse } from './errors';
 import { parseAuthMethod } from './errors/parse-auth-method';

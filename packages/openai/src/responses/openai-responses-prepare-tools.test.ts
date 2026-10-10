@@ -1,4 +1,4 @@
-import { NoSuchProviderReferenceError } from '@ai-sdk/provider';
+import { NoSuchProviderReferenceError } from '@ai-toolkit/provider';
 import { imageGeneration } from '../tool/image-generation';
 import { prepareResponsesTools } from './openai-responses-prepare-tools';
 import { describe, it, expect } from 'vitest';

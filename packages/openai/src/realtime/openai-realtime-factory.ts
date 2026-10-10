@@ -3,7 +3,7 @@ import {
   UnsupportedFunctionalityError,
   type Experimental_RealtimeFactoryV4 as RealtimeFactoryV4,
   type Experimental_RealtimeModelV4 as RealtimeModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { OpenAIRealtimeModelLive } from '../live/openai-realtime-model-live';
 import {
   OpenAIRealtimeModel,

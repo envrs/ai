@@ -1,4 +1,4 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import { extractResponseHeaders } from './extract-response-headers';
 import { fetchWithValidatedRedirects } from './fetch-with-validated-redirects';
 import type { FetchFunction } from './fetch-function';
@@ -76,7 +76,7 @@ export const getFromApi = async <T>({
 
     const requestHeaders = withUserAgentSuffix(
       outgoingHeaders,
-      `ai-sdk-provider-utils/${VERSION}`,
+      `ai-toolkit-provider-utils/${VERSION}`,
       getRuntimeEnvironmentUserAgent(),
     );
 

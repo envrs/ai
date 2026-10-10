@@ -1,4 +1,4 @@
-import type { LanguageModelV4StreamPart } from '@ai-sdk/provider';
+import type { LanguageModelV4StreamPart } from '@ai-toolkit/provider';
 import { tool } from 'ai';
 import { MockLanguageModelV4, convertArrayToReadableStream } from 'ai/test';
 import { describe, expect, it } from 'vitest';

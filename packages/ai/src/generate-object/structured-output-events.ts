@@ -1,5 +1,5 @@
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
-import type { ModelMessage, ProviderOptions } from '@ai-sdk/provider-utils';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
+import type { ModelMessage, ProviderOptions } from '@ai-toolkit/provider-utils';
 import type { Instructions } from '../prompt';
 import type {
   CallWarning,

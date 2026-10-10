@@ -4,7 +4,7 @@ import {
   UnsupportedFunctionalityError,
   type Experimental_RealtimeModelV4 as RealtimeModelV4,
   type Experimental_RealtimeModelV4ClientEvent as RealtimeModelV4ClientEvent,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { describe, expect, it, vi } from 'vitest';
 import {
   createOpenAI,

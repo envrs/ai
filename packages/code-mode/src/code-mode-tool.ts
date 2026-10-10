@@ -18,7 +18,7 @@ import type {
 } from './types.js';
 
 /**
- * Creates an AI SDK tool that executes code-mode TypeScript in an isolated
+ * Creates an ai-toolkit tool that executes code-mode TypeScript in an isolated
  * sandbox.
  */
 export function createCodeModeTool(
@@ -59,7 +59,7 @@ function createCodeModeToolWithDiscovery(
 
 /**
  * Creates a code-mode caller whose host tools are bound by the surrounding
- * AI SDK generation call.
+ * ai-toolkit generation call.
  */
 export function codeModeTool(
   options: CodeModeToolOptions = {},

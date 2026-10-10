@@ -1,7 +1,7 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { GatewayFetchMetadata } from './gateway-fetch-metadata';
-import type { FetchFunction } from '@ai-sdk/provider-utils';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 import {
   GatewayAuthenticationError,
   GatewayInternalServerError,
@@ -641,7 +641,7 @@ describe('GatewayFetchMetadata', () => {
       await createBasicMetadataFetcher({
         headers: () => ({
           Authorization: 'Bearer vca_test-token',
-          'x-vercel-ai-gateway-team': 'team_123',
+          'x-khulnasoft-ai-gateway-team': 'team_123',
         }),
       }).getCredits();
 
@@ -649,7 +649,7 @@ describe('GatewayFetchMetadata', () => {
         'https://api.example.com/v1/credits?teamId=team_123',
       );
       expect(server.calls[0].requestHeaders).toMatchObject({
-        'x-vercel-ai-gateway-team': 'team_123',
+        'x-khulnasoft-ai-gateway-team': 'team_123',
       });
     });
 
@@ -662,7 +662,7 @@ describe('GatewayFetchMetadata', () => {
       await createBasicMetadataFetcher({
         headers: () => ({
           Authorization: 'Bearer vca_test-token',
-          'X-Vercel-AI-Gateway-Team': "team-o'brien",
+          'X-khulnasoft-ai-Gateway-Team': "team-o'brien",
         }),
       }).getCredits();
 

@@ -1,5 +1,5 @@
-import type * as ProviderUtilsModule from '@ai-sdk/provider-utils';
-import { isUrlSupported } from '@ai-sdk/provider-utils';
+import type * as ProviderUtilsModule from '@ai-toolkit/provider-utils';
+import { isUrlSupported } from '@ai-toolkit/provider-utils';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { createGoogle } from './google-provider';
 import { GoogleLanguageModel } from './google-language-model';
@@ -9,7 +9,7 @@ import { GoogleVideoModel } from './google-video-model';
 import { GoogleSpeechModel } from './google-speech-model';
 
 // Mock the imported modules using a partial mock to preserve original exports
-vi.mock('@ai-sdk/provider-utils', async importOriginal => {
+vi.mock('@ai-toolkit/provider-utils', async importOriginal => {
   const mod = await importOriginal<typeof ProviderUtilsModule>();
   return {
     ...mod,
@@ -97,7 +97,7 @@ describe('google-provider', () => {
     expect(headers).toEqual({
       'x-goog-api-key': 'test-api-key',
       'custom-header': 'custom-value',
-      'user-agent': 'ai-sdk-google/0.0.0-test',
+      'user-agent': 'ai-toolkit-google/0.0.0-test',
     });
   });
 

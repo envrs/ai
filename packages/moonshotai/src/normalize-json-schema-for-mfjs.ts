@@ -1,5 +1,5 @@
-import { UnsupportedFunctionalityError } from '@ai-sdk/provider';
-import { isRecord } from '@ai-sdk/provider-utils';
+import { UnsupportedFunctionalityError } from '@ai-toolkit/provider';
+import { isRecord } from '@ai-toolkit/provider-utils';
 
 const SCHEMA_ARRAY_KEYS = ['allOf', 'anyOf', 'oneOf', 'prefixItems'] as const;
 const SCHEMA_MAP_KEYS = [
@@ -23,7 +23,7 @@ const SCHEMA_SINGLE_KEYS = [
  * Normalizes a JSON Schema to the subset Moonshot's MFJS validator accepts:
  * `object` root required, tuple `items` become `prefixItems`, and `type` next
  * to `anyOf` moves into the branches. Everything else passes through. The
- * full original schema is still used for AI SDK result validation.
+ * full original schema is still used for ai-toolkit result validation.
  */
 export function normalizeJsonSchemaForMFJS(schema: unknown): unknown {
   return normalizeDefinition(schema, true);

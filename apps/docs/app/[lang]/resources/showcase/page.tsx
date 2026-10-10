@@ -7,11 +7,11 @@ import { showcaseProjects } from '@/lib/showcase';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/resources/showcase' },
-  title: 'AI SDK Showcase',
-  description: 'Popular products and projects built with the AI SDK.',
+  title: 'ai-toolkit Showcase',
+  description: 'Popular products and projects built with the ai-toolkit.',
   ...socialCard(
-    'AI SDK Showcase',
-    'Popular products and projects built with the AI SDK.',
+    'ai-toolkit Showcase',
+    'Popular products and projects built with the ai-toolkit.',
   ),
 };
 
@@ -59,7 +59,7 @@ const ShowcasePage = () => (
         Showcase
       </h1>
       <p className="max-w-2xl text-gray-900">
-        Popular products and projects built with the AI SDK.
+        Popular products and projects built with the ai-toolkit.
       </p>
     </div>
     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -74,11 +74,11 @@ const ShowcasePage = () => (
     </div>
     <div className="mt-12 flex flex-col items-center justify-center">
       <p className="mb-4 font-bold text-gray-1000 text-xl lg:text-3xl">
-        Are you using the AI SDK?
+        Are you using the ai-toolkit?
       </p>
       <Link
         className="inline-flex items-center justify-center rounded-md bg-gray-1000 px-4 py-2 font-medium text-background-100 transition-opacity hover:opacity-90"
-        href="https://github.com/vercel/ai/discussions/1914"
+        href="https://github.com/khulnasoft/ai/discussions/1914"
         rel="noopener noreferrer"
         target="_blank"
       >

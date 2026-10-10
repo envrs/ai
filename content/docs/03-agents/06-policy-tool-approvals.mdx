@@ -1,11 +1,11 @@
 ---
 title: Policy-Based Tool Approvals
-description: Author tool authorization rules as code with @ai-sdk/policy-opa and Open Policy Agent.
+description: Author tool authorization rules as code with @ai-toolkit/policy-opa and Open Policy Agent.
 ---
 
 # Policy-Based Tool Approvals
 
-[Tool Approvals](/docs/agents/tool-approvals) let you approve or deny tool calls with a function in your agent setup. `@ai-sdk/policy-opa` moves those rules out of code and into [Open Policy Agent](https://www.openpolicyagent.org/) (OPA) policies written in `.rego`.
+[Tool Approvals](/docs/agents/tool-approvals) let you approve or deny tool calls with a function in your agent setup. `@ai-toolkit/policy-opa` moves those rules out of code and into [Open Policy Agent](https://www.openpolicyagent.org/) (OPA) policies written in `.rego`.
 
 Use it when you want authorization to be:
 
@@ -42,7 +42,7 @@ Rule of thumb: if you can point at a field in the `input` object and write an ex
 ## Install
 
 ```sh
-pnpm add @ai-sdk/policy-opa
+pnpm add @ai-toolkit/policy-opa
 # pick one (or both) OPA backends:
 pnpm add @open-policy-agent/opa-wasm   # in-process WASM evaluation
 pnpm add @open-policy-agent/opa        # HTTP client to a running OPA server
@@ -64,8 +64,8 @@ The policy is consulted before every tool dispatch and maps to one of the standa
 
 ```ts
 import { generateText } from 'ai';
-import { anthropic } from '@ai-sdk/anthropic';
-import { opaPolicy, wasmPolicyClient } from '@ai-sdk/policy-opa';
+import { anthropic } from '@ai-toolkit/anthropic';
+import { opaPolicy, wasmPolicyClient } from '@ai-toolkit/policy-opa';
 import { readFile } from 'node:fs/promises';
 
 // 1. Load the compiled policy bundle.
@@ -173,7 +173,7 @@ tar -xzf bundle.tar.gz /policy.wasm
 ```
 
 ```ts
-import { wasmPolicyClient, opaPolicy } from '@ai-sdk/policy-opa';
+import { wasmPolicyClient, opaPolicy } from '@ai-toolkit/policy-opa';
 import { readFile } from 'node:fs/promises';
 
 const wasm = await readFile('./policy.wasm');
@@ -188,7 +188,7 @@ const toolApproval = opaPolicy({ client, path: 'agent/call/decision' });
 ### Option B: HTTP (running OPA server)
 
 ```ts
-import { httpPolicyClient, opaPolicy } from '@ai-sdk/policy-opa';
+import { httpPolicyClient, opaPolicy } from '@ai-toolkit/policy-opa';
 
 const client = httpPolicyClient({ url: 'http://localhost:8181' });
 const toolApproval = opaPolicy({ client, path: 'agent/call/decision' });
@@ -220,7 +220,7 @@ This package only maps the resulting decision to the SDK's approval status. The 
 Do not ship a new policy straight to enforce. The first version almost always denies things you did not mean to. `shadow(approval, opts)` evaluates the policy and reports the decision via `onDecision`, but tells the SDK every call is approved until you flip `enforce: true`.
 
 ```ts
-import { opaPolicy, shadow, wasmPolicyClient } from '@ai-sdk/policy-opa';
+import { opaPolicy, shadow, wasmPolicyClient } from '@ai-toolkit/policy-opa';
 
 const client = await wasmPolicyClient({ wasm });
 
@@ -286,7 +286,7 @@ When you use the HTTP backend, OPA can also emit [decision logs](https://www.ope
 
 ```ts
 import { wrapLanguageModel } from 'ai';
-import { wasmPolicyClient, opaCapabilityMiddleware } from '@ai-sdk/policy-opa';
+import { wasmPolicyClient, opaCapabilityMiddleware } from '@ai-toolkit/policy-opa';
 
 const client = await wasmPolicyClient({ wasm });
 
@@ -305,7 +305,7 @@ const wrappedModel = wrapLanguageModel({
 When tools come from MCP discovery or a plugin registry, you cannot write per-tool rules ahead of time, and any tool you forgot is silently allowed. `wrapMcpTools` makes the approval total over the discovered surface by routing unmatched tools to a configurable default.
 
 ```ts
-import { opaPolicy, wasmPolicyClient, wrapMcpTools } from '@ai-sdk/policy-opa';
+import { opaPolicy, wasmPolicyClient, wrapMcpTools } from '@ai-toolkit/policy-opa';
 
 const discovered = await mcpClient.tools();
 const client = await wasmPolicyClient({ wasm });
@@ -332,7 +332,7 @@ Despite the name, it works on any `Record<string, Tool>`.
 `optionalOpaPolicy` returns `undefined` when `client` is `undefined`, which is the same as not passing `toolApproval` (the SDK approves every call). Useful for local dev or CI where the policy file is absent.
 
 ```ts
-import { optionalOpaPolicy, wasmPolicyClient } from '@ai-sdk/policy-opa';
+import { optionalOpaPolicy, wasmPolicyClient } from '@ai-toolkit/policy-opa';
 import { readFile } from 'node:fs/promises';
 
 const wasm = process.env.POLICY_WASM_PATH
@@ -370,24 +370,24 @@ Guidance:
 
 - Keep the matching logic in one place: either a shared Rego helper rule (both approvals call `opaPolicy` with the same `path`) or a shared TypeScript predicate.
 - Deny anything you cannot reduce to a clean invocation. Shell input is adversarial to parse, so "cannot prove it is safe" means deny.
-- Honest limitation: this gates dispatch at the model's call boundary. It does not stop a tool that, once approved, performs extra side effects beyond what its input describes. For that, run untrusted execution in an out-of-band sandbox (Vercel Sandbox, Firecracker, containers) and treat the sandbox as the trust boundary.
+- Honest limitation: this gates dispatch at the model's call boundary. It does not stop a tool that, once approved, performs extra side effects beyond what its input describes. For that, run untrusted execution in an out-of-band sandbox (khulnasoft Sandbox, Firecracker, containers) and treat the sandbox as the trust boundary.
 
-Worked examples for SQL, HTTP, MCP, browser, and shell dispatchers live in the [package README](https://github.com/vercel/ai/tree/main/packages/policy-opa).
+Worked examples for SQL, HTTP, MCP, browser, and shell dispatchers live in the [package README](https://github.com/khulnasoft/ai/tree/main/packages/policy-opa).
 
 ## Example application
 
-The [ai-sdk-slackbot](https://github.com/vercel-labs/ai-sdk-slackbot) example wires this package into a real agent end to end. It shows:
+The [ai-toolkit-slackbot](https://github.com/khulnasoft-labs/ai-toolkit-slackbot) example wires this package into a real agent end to end. It shows:
 
 - Every tool call gated by Rego in `policies/decision.rego`, editable without touching TypeScript.
 - Real tools under policy: a web search scoped to a domain, a weather tool with a city allowlist, and a `bash` tool restricted to a read-only command allowlist (transitive enforcement).
 - Switching backends with one env var (`POLICY_MODE`): in-process WASM by default, or a live OPA HTTP server for hot-reloading policies in dev.
 - Policy code tested independently with OPA-native tests in `policies/decision_test.rego`.
 
-See [`policies/`](https://github.com/vercel-labs/ai-sdk-slackbot/tree/main/policies) and [`lib/policy/load.ts`](https://github.com/vercel-labs/ai-sdk-slackbot/blob/main/lib/policy/load.ts) for how the policy is loaded and applied.
+See [`policies/`](https://github.com/khulnasoft-labs/ai-toolkit-slackbot/tree/main/policies) and [`lib/policy/load.ts`](https://github.com/khulnasoft-labs/ai-toolkit-slackbot/blob/main/lib/policy/load.ts) for how the policy is loaded and applied.
 
 ## API reference
 
-Everything is exported from the package root, `@ai-sdk/policy-opa`.
+Everything is exported from the package root, `@ai-toolkit/policy-opa`.
 
 Engine-neutral core:
 
@@ -409,5 +409,5 @@ OPA backend and adapters:
 
 - [Tool Approvals](/docs/agents/tool-approvals): the underlying `toolApproval` callback this package plugs into.
 - [Building Agents](/docs/agents/building-agents)
-- [ai-sdk-slackbot example](https://github.com/vercel-labs/ai-sdk-slackbot): a full agent with policy-gated tools.
+- [ai-toolkit-slackbot example](https://github.com/khulnasoft-labs/ai-toolkit-slackbot): a full agent with policy-gated tools.
 - [Open Policy Agent documentation](https://www.openpolicyagent.org/docs/)

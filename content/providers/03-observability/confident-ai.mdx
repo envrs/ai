@@ -1,15 +1,15 @@
 ---
 title: Confident AI
-description: Trace and monitor your AI SDK applications with Confident AI
+description: Trace and monitor your ai-toolkit applications with Confident AI
 ---
 
 # Confident AI Observability
 
 [Confident AI](https://confident-ai.com/) is an LLM observability and evaluation platform for teams building reliable AI applications in development and production.
 
-[`confident-trace`](https://github.com/confident-ai/confident-trace), Confident AI's OpenTelemetry-native tracing SDK, traces AI SDK applications without changing your calls — every `generateText` and `streamText` call shows up in the [Observatory](https://www.confident-ai.com/docs/llm-tracing/introduction) as a trace with agent, step, model, and tool spans, so you can see which tools your app chose, what each model call cost, and run evaluations on the result.
+[`confident-trace`](https://github.com/confident-ai/confident-trace), Confident AI's OpenTelemetry-native tracing SDK, traces ai-toolkit applications without changing your calls — every `generateText` and `streamText` call shows up in the [Observatory](https://www.confident-ai.com/docs/llm-tracing/introduction) as a trace with agent, step, model, and tool spans, so you can see which tools your app chose, what each model call cost, and run evaluations on the result.
 
-Confident AI integrates with the AI SDK to provide:
+Confident AI integrates with the ai-toolkit to provide:
 
 - [Traces](https://www.confident-ai.com/docs/llm-tracing/introduction) with the full agent, step, model, and tool hierarchy
 - [Token usage and cost](https://www.confident-ai.com/docs/llm-tracing/features/token-usage-cost) on every model call
@@ -18,12 +18,12 @@ Confident AI integrates with the AI SDK to provide:
 
 ## Setup
 
-Tracing requires Node.js 22 or later and AI SDK `>=7.0.93 <8`.
+Tracing requires Node.js 22 or later and ai-toolkit `>=7.0.93 <8`.
 
 ### 1. Install confident-trace
 
 ```bash
-npm install confident-trace @ai-sdk/otel
+npm install confident-trace @ai-toolkit/otel
 ```
 
 ### 2. Set Your API Key
@@ -41,16 +41,16 @@ CONFIDENT_API_KEY="YOUR-PROJECT-API-KEY"
 
 ### 3. Register the Telemetry Integration
 
-The `createVercelAITracer()` function returns a tracer that maps AI SDK spans onto
+The `createVercelAITracer()` function returns a tracer that maps ai-toolkit spans onto
 Confident AI's span types. Pass it to `OpenTelemetry` and register that once at
-application startup, before any AI SDK call. `init()` sets up the exporter that
+application startup, before any ai-toolkit call. `init()` sets up the exporter that
 ships the spans to your project:
 
 ```ts filename="instrumentation.ts"
 import { registerTelemetry } from 'ai';
-import { OpenTelemetry } from '@ai-sdk/otel';
+import { OpenTelemetry } from '@ai-toolkit/otel';
 import { init } from 'confident-trace';
-import { createVercelAITracer } from 'confident-trace/vercel-ai';
+import { createVercelAITracer } from 'confident-trace/khulnasoft-ai';
 
 export function register() {
   init();
@@ -64,10 +64,10 @@ lines at the top level of your entry file:
 
 ```ts filename="index.ts"
 import { generateText, registerTelemetry } from 'ai';
-import { openai } from '@ai-sdk/openai';
-import { OpenTelemetry } from '@ai-sdk/otel';
+import { openai } from '@ai-toolkit/openai';
+import { OpenTelemetry } from '@ai-toolkit/otel';
 import { init } from 'confident-trace';
-import { createVercelAITracer } from 'confident-trace/vercel-ai';
+import { createVercelAITracer } from 'confident-trace/khulnasoft-ai';
 
 const runtime = init();
 registerTelemetry(new OpenTelemetry({ tracer: createVercelAITracer() }));
@@ -83,7 +83,7 @@ try {
 }
 ```
 
-Your AI SDK calls stay exactly as they are. Every span carries the `Vercel AI SDK` integration label, nests under whatever span is active when the call is made, and captures:
+Your ai-toolkit calls stay exactly as they are. Every span carries the `khulnasoft ai-toolkit` integration label, nests under whatever span is active when the call is made, and captures:
 
 - **Agent and step spans** — one span for the overall `generateText` or `streamText` call, plus one span per step in a multi-step run.
 - **Model calls** — [LLM spans](https://www.confident-ai.com/docs/llm-tracing/features/span-types#llm-spans) with the model name, [token usage](https://www.confident-ai.com/docs/llm-tracing/features/token-usage-cost), finish reason, and normalized input/output messages, including the tool calls the model requested.
@@ -130,7 +130,7 @@ Use a [trace context](https://www.confident-ai.com/docs/llm-tracing/features/tra
 
 ```ts
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { traceContext } from 'confident-trace';
 
 const { text } = await traceContext(
@@ -150,11 +150,11 @@ const { text } = await traceContext(
 
 ### Group Traces Into Threads
 
-`confident-trace` provides a `turn()` method you can use to group sequential AI SDK calls into one turn. Reuse the same thread ID on later turns to group them into one thread you can view and evaluate on Confident AI:
+`confident-trace` provides a `turn()` method you can use to group sequential ai-toolkit calls into one turn. Reuse the same thread ID on later turns to group them into one thread you can view and evaluate on Confident AI:
 
 ```ts
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { turn, updateTrace } from 'confident-trace';
 
 async function chat(prompt: string, threadId: string) {
@@ -171,17 +171,17 @@ async function chat(prompt: string, threadId: string) {
 
 ## Troubleshooting
 
-- **No traces at all:** confirm `registerTelemetry()` runs before the first AI SDK call. In Next.js, that means `instrumentation.ts` at the project root, not inside a route. Registering no telemetry integration disables AI SDK telemetry entirely.
+- **No traces at all:** confirm `registerTelemetry()` runs before the first ai-toolkit call. In Next.js, that means `instrumentation.ts` at the project root, not inside a route. Registering no telemetry integration disables ai-toolkit telemetry entirely.
 - **Traces stop partway through a run:** the process exited before the export queue drained. Call `runtime.shutdown()` at exit, or `runtime.flush()` at the end of a serverless handler.
 - **Streamed calls arrive incomplete:** finish consuming or abort the stream before flushing or shutting down.
-- **Traces are missing content:** check AI SDK's `recordInputs` and `recordOutputs`, and `captureContent` on `init()`.
+- **Traces are missing content:** check ai-toolkit's `recordInputs` and `recordOutputs`, and `captureContent` on `init()`.
 
 For anything else, see [Confident AI's troubleshooting guide](https://www.confident-ai.com/docs/llm-tracing/troubleshooting).
 
 ## Learn More
 
 - [AI observability on Confident AI](https://www.confident-ai.com/docs/llm-tracing/introduction)
-- [The full AI SDK integration guide](https://www.confident-ai.com/docs/integrations/third-party/vercel-ai-sdk)
+- [The full ai-toolkit integration guide](https://www.confident-ai.com/docs/integrations/third-party/khulnasoft-ai-toolkit)
 - [Online evaluations](https://www.confident-ai.com/docs/llm-tracing/online-evals)
 - [Need help integrating? Talk to a human.](https://www.confident-ai.com/book-a-demo)
-- [AI SDK Telemetry documentation](/docs/ai-sdk-core/telemetry)
+- [ai-toolkit Telemetry documentation](/docs/ai-toolkit-core/telemetry)

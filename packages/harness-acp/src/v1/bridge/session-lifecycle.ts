@@ -1,4 +1,4 @@
-import { HarnessBridgeCapabilityUnsupportedError } from '@ai-sdk/harness/bridge';
+import { HarnessBridgeCapabilityUnsupportedError } from '@ai-toolkit/harness/bridge';
 import * as acp from '@agentclientprotocol/sdk';
 import type { ACPInitializeResult } from './protocol-configuration';
 

@@ -82,7 +82,7 @@ describe('host tool MCP HTTP transport', () => {
     expect(result).toMatchObject({
       content: [{ type: 'text', text: '{"celsius":12}' }],
       _meta: {
-        'ai-sdk-harness-acp-correlation':
+        'ai-toolkit-harness-acp-correlation':
           expect.stringMatching(/^[a-f0-9]{64}$/),
       },
     });
@@ -98,7 +98,7 @@ describe('host tool MCP HTTP transport', () => {
     });
     expect(registerCorrelationInvocation).toHaveBeenCalledWith({
       token: expect.stringMatching(/^[a-f0-9]{64}$/),
-      serverName: 'ai-sdk-harness-tools',
+      serverName: 'ai-toolkit-harness-tools',
       toolName: 'weather',
       input: { city: 'Paris' },
       order: 1,
@@ -110,7 +110,7 @@ describe('host tool MCP HTTP transport', () => {
       tools: [{ name: 'weather', inputSchema: { type: 'object' } }],
     });
     const authorization = createHostToolRelayAuthorization({
-      serverName: 'ai-sdk-harness-tools',
+      serverName: 'ai-toolkit-harness-tools',
       toolNames: ['weather'],
       ttlMs: 20,
     });
@@ -146,7 +146,7 @@ describe('host tool MCP HTTP transport', () => {
         sessionUpdate: 'tool_call',
         toolCallId: 'model-call',
         title: 'Weather',
-        name: 'mcp__ai-sdk-harness-tools__weather',
+        name: 'mcp__ai-toolkit-harness-tools__weather',
         rawInput: { city: 'Paris' },
         status: 'in_progress',
       },
@@ -288,7 +288,7 @@ async function createRelay({
 }): Promise<HostToolRelay> {
   const relay = await startHostToolRelay({
     tools,
-    serverName: 'ai-sdk-harness-tools',
+    serverName: 'ai-toolkit-harness-tools',
     mcpTransport,
   });
   cleanups.push(() => relay.close());

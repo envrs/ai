@@ -135,7 +135,7 @@ vi.mock('@modelcontextprotocol/sdk/server/mcp.js', () => ({
   },
 }));
 
-vi.mock('@ai-sdk/harness/bridge', () => ({
+vi.mock('@ai-toolkit/harness/bridge', () => ({
   runBridge: async ({
     onStart,
     onStop,
@@ -783,7 +783,7 @@ describe('Claude Code bridge configuration', () => {
     expect(canUseTool).toBeTypeOf('function');
     await canUseTool!(
       'mcp__context7__query-docs',
-      { libraryId: '/vercel/next.js' },
+      { libraryId: '/khulnasoft/next.js' },
       { toolUseID: 'external-tool' },
     );
 
@@ -797,7 +797,7 @@ describe('Claude Code bridge configuration', () => {
       toolCallId: 'external-tool',
       toolName: 'mcp__context7__query-docs',
       nativeName: 'mcp__context7__query-docs',
-      input: '{"libraryId":"/vercel/next.js"}',
+      input: '{"libraryId":"/khulnasoft/next.js"}',
       providerExecuted: true,
       dynamic: true,
     });

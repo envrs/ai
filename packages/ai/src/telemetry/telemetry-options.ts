@@ -3,7 +3,7 @@ import type {
   Context,
   InferToolSetContext,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { Telemetry } from './telemetry';
 
 export type IncludedContext<CONTEXT extends Context | unknown | never> =

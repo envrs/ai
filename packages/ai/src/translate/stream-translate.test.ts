@@ -1,11 +1,11 @@
 import type {
   Experimental_SpeechTranslationModelV4 as SpeechTranslationModelV4,
   Experimental_SpeechTranslationModelV4StreamPart as SpeechTranslationModelV4StreamPart,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertArrayToReadableStream,
   convertAsyncIterableToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import {
   afterEach,
   beforeEach,
@@ -727,7 +727,7 @@ describe('experimental_streamTranslate', () => {
   });
 
   it('should throw when a string model cannot be resolved', () => {
-    globalThis.AI_SDK_DEFAULT_PROVIDER = {
+    globalThis.ai-toolkit_DEFAULT_PROVIDER = {
       specificationVersion: 'v4' as const,
       languageModel: () => {
         throw new Error('not implemented');
@@ -752,7 +752,7 @@ describe('experimental_streamTranslate', () => {
         'The default provider does not support speech translation models.',
       );
     } finally {
-      delete globalThis.AI_SDK_DEFAULT_PROVIDER;
+      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
     }
   });
 });

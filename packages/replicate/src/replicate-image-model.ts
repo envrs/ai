@@ -2,7 +2,7 @@ import {
   InvalidResponseDataError,
   type ImageModelV4,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertImageModelFileToDataUri,
@@ -18,7 +18,7 @@ import {
   WORKFLOW_DESERIALIZE,
   type Resolvable,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { replicateFailedResponseHandler } from './replicate-error';
 import { replicateImageModelOptionsSchema } from './replicate-image-model-options';

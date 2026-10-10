@@ -1,37 +1,37 @@
-# AI SDK - Anthropic Provider
+# ai-toolkit - Anthropic Provider
 
-The **[Anthropic provider](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic)** for the [AI SDK](https://ai-sdk.dev/docs) contains language model support for the [Anthropic Messages API](https://docs.anthropic.com/claude/reference/messages_post).
+The **[Anthropic provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/anthropic)** for the [ai-toolkit](https://ai-toolkit.dev/docs) contains language model support for the [Anthropic Messages API](https://docs.anthropic.com/claude/reference/messages_post).
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access Anthropic (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access Anthropic (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The Anthropic provider is available in the `@ai-sdk/anthropic` module. You can install it with
+The Anthropic provider is available in the `@ai-toolkit/anthropic` module. You can install it with
 
 ```bash
-npm i @ai-sdk/anthropic
+npm i @ai-toolkit/anthropic
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `anthropic` from `@ai-sdk/anthropic`:
+You can import the default provider instance `anthropic` from `@ai-toolkit/anthropic`:
 
 ```ts
-import { anthropic } from '@ai-sdk/anthropic';
+import { anthropic } from '@ai-toolkit/anthropic';
 ```
 
 ## Example
 
 ```ts
-import { anthropic } from '@ai-sdk/anthropic';
+import { anthropic } from '@ai-toolkit/anthropic';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -42,4 +42,4 @@ const { text } = await generateText({
 
 ## Documentation
 
-Please check out the **[Anthropic provider documentation](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic)** for more information.
+Please check out the **[Anthropic provider documentation](https://ai-toolkit.dev/providers/ai-toolkit-providers/anthropic)** for more information.

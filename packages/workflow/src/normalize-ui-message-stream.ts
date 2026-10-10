@@ -60,7 +60,7 @@ function* repairPart(
 
 /**
  * Normalizes the part framing of a UI message stream so it is always
- * well-formed for the AI SDK's stream consumer (`processUIMessageStream`,
+ * well-formed for the ai-toolkit's stream consumer (`processUIMessageStream`,
  * which backs `useChat`/`readUIMessageStream`).
  *
  * ## Why this exists
@@ -76,7 +76,7 @@ function* repairPart(
  *   orphan the rest of that part's content.
  * - The same stream is read across reconnects, and a stream-producing step can
  *   run more than once (retry/redelivery, or the concurrent-worker duplication
- *   tracked in vercel/workflow#2331 and #2039). Either can interleave or
+ *   tracked in khulnasoft/workflow#2331 and #2039). Either can interleave or
  *   duplicate chunks on the shared stream — e.g. a `finish-step` landing in the
  *   middle of another execution's text part.
  *

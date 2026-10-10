@@ -1,4 +1,4 @@
-import { convertUint8ArrayToBase64 } from '@ai-sdk/provider-utils';
+import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
 
 const encoder = new TextEncoder();
 

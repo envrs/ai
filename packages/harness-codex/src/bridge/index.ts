@@ -9,7 +9,7 @@ import {
   runBridge,
   type BridgeEvent,
   type BridgeTurn,
-} from '@ai-sdk/harness/bridge';
+} from '@ai-toolkit/harness/bridge';
 import type { StartMessage } from '../codex-bridge-protocol';
 import { createCodexAppServerRuntime } from './codex-app-server-driver';
 import { createCodexStepTracker, defaultUsage } from './codex-step-tracker';
@@ -22,7 +22,7 @@ const bridgeStateDir = requireArg({
   value: args.bridgeStateDir,
   name: '--bridge-state-dir',
 });
-const HARNESS_CLIENT_APP = procEnv.AI_SDK_HARNESS_CLIENT_APP;
+const HARNESS_CLIENT_APP = procEnv.ai-toolkit_HARNESS_CLIENT_APP;
 
 const threadState: { id: string | undefined } = { id: undefined };
 const appServer = createCodexAppServerRuntime();

@@ -5,10 +5,10 @@ import {
   type Tool,
   type ToolSet,
   type UserModelMessage,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { InvalidArgumentError } from '../error/invalid-argument-error';
 
-export const DIRECT_TOOL_CALL = 'AI_SDK_DIRECT_TOOL_CALL';
+export const DIRECT_TOOL_CALL = 'ai-toolkit_DIRECT_TOOL_CALL';
 
 type ToolCallerName<TOOLS extends ToolSet> = {
   [NAME in keyof TOOLS]: TOOLS[NAME] extends Experimental_ToolCallerTool
@@ -19,7 +19,7 @@ type ToolCallerName<TOOLS extends ToolSet> = {
 
 export type Experimental_ToolCallers<TOOLS extends ToolSet> = {
   [NAME in keyof TOOLS]?: ReadonlyArray<
-    'AI_SDK_DIRECT_TOOL_CALL' | ToolCallerName<TOOLS>
+    'ai-toolkit_DIRECT_TOOL_CALL' | ToolCallerName<TOOLS>
   >;
 };
 

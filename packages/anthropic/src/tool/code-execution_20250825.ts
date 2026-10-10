@@ -3,7 +3,7 @@ import {
   experimental_toolCaller,
   lazySchema,
   zodSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 export const codeExecution_20250825OutputSchema = lazySchema(() =>
@@ -71,7 +71,7 @@ export const codeExecution_20250825OutputSchema = lazySchema(() =>
 export const codeExecution_20250825InputSchema = lazySchema(() =>
   zodSchema(
     z.discriminatedUnion('type', [
-      // Programmatic tool calling format (mapped from { code } by AI SDK)
+      // Programmatic tool calling format (mapped from { code } by ai-toolkit)
       z.object({
         type: z.literal('programmatic-tool-call'),
         code: z.string(),

@@ -1,4 +1,4 @@
-import { tool } from '@ai-sdk/provider-utils';
+import { tool } from '@ai-toolkit/provider-utils';
 import type { TextStreamPart, ToolSet } from 'ai';
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod/v4';

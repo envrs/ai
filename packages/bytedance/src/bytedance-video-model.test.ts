@@ -1,6 +1,6 @@
-import type { Experimental_VideoModelV4 as VideoModelV4 } from '@ai-sdk/provider';
-import { DownloadError, type FetchFunction } from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import type { Experimental_VideoModelV4 as VideoModelV4 } from '@ai-toolkit/provider';
+import { DownloadError, type FetchFunction } from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it } from 'vitest';
 import { ByteDanceVideoModel } from './bytedance-video-model';
 

@@ -2,7 +2,7 @@ import type {
   HarnessV1BuiltinToolFiltering,
   HarnessV1QuestionsToolOutput,
   HarnessV1ToolSpec,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   createTool,
   type AgentTool,

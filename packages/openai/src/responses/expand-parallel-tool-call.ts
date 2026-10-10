@@ -3,8 +3,8 @@ import {
   type LanguageModelV4FunctionTool,
   type LanguageModelV4ToolCall,
   type SharedV4ProviderOptions,
-} from '@ai-sdk/provider';
-import { safeParseJSON } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { safeParseJSON } from '@ai-toolkit/provider-utils';
 
 const parallelToolName = 'parallel';
 const recipientNamePrefix = 'functions.';

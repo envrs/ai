@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { GladiaTranscriptionModel } from './gladia-transcription-model';
 import { createGladia } from './gladia-provider';
 import { readFile } from 'node:fs/promises';
@@ -111,7 +111,7 @@ describe('doGenerate', () => {
         'custom-request-header': 'request-header-value',
       });
       expect(server.calls[0].requestUserAgent).toContain(
-        `ai-sdk-gladia/0.0.0-test`,
+        `ai-toolkit-gladia/0.0.0-test`,
       );
     });
 

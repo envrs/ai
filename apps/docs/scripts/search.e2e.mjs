@@ -86,7 +86,7 @@ test('unscoped search keeps the Referer fallback', async () => {
   for (const [referer, version] of [
     [undefined, 'v7'],
     ['not a URL', 'v7'],
-    [`${baseURL}/v5/providers/ai-sdk-providers`, 'v5'],
+    [`${baseURL}/v5/providers/ai-toolkit-providers`, 'v5'],
     [`${baseURL}/v6/cookbook/next/stream-text`, 'v6'],
     [`${baseURL}/docs/introduction`, 'v7'],
   ]) {

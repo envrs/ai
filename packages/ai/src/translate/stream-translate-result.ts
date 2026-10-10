@@ -2,7 +2,7 @@ import type {
   Experimental_SpeechTranslationModelV4Usage,
   JSONObject,
   SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { SpeechTranslationModelResponseMetadata } from '../types/speech-translation-model-response-metadata';
 import type { Warning } from '../types/warning';
 import type { AsyncIterableStream } from '../util/async-iterable-stream';

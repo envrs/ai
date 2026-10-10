@@ -1,4 +1,4 @@
-import { createLanguageModelResponseMetadata } from '@ai-sdk/provider-utils';
+import { createLanguageModelResponseMetadata } from '@ai-toolkit/provider-utils';
 
 export function getResponseMetadata({
   id,

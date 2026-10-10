@@ -1,4 +1,4 @@
-import type { LanguageModelV4 } from '@ai-sdk/provider';
+import type { LanguageModelV4 } from '@ai-toolkit/provider';
 
 export const KNOWN_MODEL_TYPES = [
   'embedding',
@@ -58,7 +58,7 @@ export interface GatewayLanguageModelEntry {
   } | null;
 
   /**
-   * Additional AI SDK language model specifications for the model.
+   * Additional ai-toolkit language model specifications for the model.
    */
   specification: GatewayLanguageModelSpecification;
 

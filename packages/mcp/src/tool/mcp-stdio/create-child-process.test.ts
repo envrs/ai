@@ -121,7 +121,7 @@ describe('createChildProcess', () => {
   it.runIf(process.platform === 'win32')(
     'should escape command shim arguments on Windows',
     async () => {
-      const cwd = mkdtempSync(join(os.tmpdir(), 'ai-sdk-mcp-'));
+      const cwd = mkdtempSync(join(os.tmpdir(), 'ai-toolkit-mcp-'));
       const markerPath = join(cwd, 'injected.txt');
 
       try {

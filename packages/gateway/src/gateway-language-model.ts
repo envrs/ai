@@ -4,7 +4,7 @@ import type {
   LanguageModelV4StreamPart,
   LanguageModelV4GenerateResult,
   LanguageModelV4StreamResult,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createEventSourceResponseHandler,
@@ -18,7 +18,7 @@ import {
   WORKFLOW_DESERIALIZE,
   type ParseResult,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from './zod';
 import type { GatewayConfig } from './gateway-config';
 import type { GatewayModelId } from './gateway-language-model-settings';

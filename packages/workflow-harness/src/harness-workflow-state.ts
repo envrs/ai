@@ -2,7 +2,7 @@ import type {
   HarnessV1ContinueTurnState,
   HarnessV1Prompt,
   HarnessV1ResumeSessionState,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 
 export type HarnessWorkflowModelMessage =
   | { readonly role: 'system'; readonly content: any }
@@ -97,7 +97,7 @@ export interface HarnessWorkflowState<OUTPUT = unknown> {
    */
   readonly prompt: HarnessV1Prompt;
   /**
-   * Full AI SDK model messages for continuing a suspended approval turn. When
+   * Full ai-toolkit model messages for continuing a suspended approval turn. When
    * present, the next execution sends these to `HarnessAgent.stream()` so
    * approval responses can resume the suspended turn.
    */

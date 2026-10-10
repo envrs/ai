@@ -5,8 +5,8 @@ import type {
   LanguageModelV4CallOptions,
   LanguageModelV4GenerateResult,
   LanguageModelV4StreamResult,
-} from '@ai-sdk/provider';
-import { asArray } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { asArray } from '@ai-toolkit/provider-utils';
 import { asLanguageModelV4 } from '../model/as-language-model-v4';
 import type { LanguageModelMiddleware } from '../types';
 

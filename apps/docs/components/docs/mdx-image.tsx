@@ -24,12 +24,12 @@ export const MDXImage = ({
   widthDark?: number | string;
   heightDark?: number | string;
 }) => {
-  const isProviderDiagram = srcLight === '/images/ai-sdk-diagram.png';
+  const isProviderDiagram = srcLight === '/images/ai-toolkit-diagram.png';
   const altText =
     alt ??
     caption ??
     (isProviderDiagram
-      ? 'Diagram showing the AI SDK Core API, provider specifications, and provider implementations'
+      ? 'Diagram showing the ai-toolkit Core API, provider specifications, and provider implementations'
       : '');
   const lightWidth = isProviderDiagram ? 1694 : width;
   const lightHeight = isProviderDiagram ? 1206 : height;

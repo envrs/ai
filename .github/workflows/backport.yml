@@ -32,7 +32,7 @@ jobs:
       contents: read
       pull-requests: write
     if: |
-      github.repository_owner == 'vercel' &&
+      github.repository_owner == 'khulnasoft' &&
       (
         github.event_name == 'workflow_dispatch' ||
         (
@@ -186,12 +186,12 @@ jobs:
               echo "@${LABELER_LOGIN} this pull request was opened from a fork and must be backported with a workflow_dispatch event."
               echo
               echo 'Please trigger the Backport workflow manually:'
-              echo 'https://github.com/vercel/ai/actions/workflows/backport.yml'
+              echo 'https://github.com/khulnasoft/ai/actions/workflows/backport.yml'
               echo
               echo 'From the terminal, run:'
               echo
               echo '```sh'
-              echo "gh workflow run backport.yml --repo vercel/ai -f pull_request_number=${PR_NUMBER}"
+              echo "gh workflow run backport.yml --repo khulnasoft/ai -f pull_request_number=${PR_NUMBER}"
               echo '```'
             } > comment.md
 
@@ -224,7 +224,7 @@ jobs:
     timeout-minutes: 5
     needs: resolve-pr
     if: |
-      github.repository_owner == 'vercel' &&
+      github.repository_owner == 'khulnasoft' &&
       needs.resolve-pr.outputs.should-backport == 'true'
     outputs:
       release-branch: ${{ steps.find-target.outputs.release-branch }}
@@ -310,7 +310,7 @@ jobs:
     timeout-minutes: 10
     needs: [resolve-pr, find-branch]
     if: |
-      github.repository_owner == 'vercel' &&
+      github.repository_owner == 'khulnasoft' &&
       needs.resolve-pr.outputs.should-backport == 'true'
     # Serialize backport runs for the same PR + release branch. A single PR can
     # trigger more than one run over its lifetime (e.g. a `closed` run at merge

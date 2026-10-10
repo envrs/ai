@@ -1,11 +1,11 @@
 import type {
   LanguageModelV4StreamPart,
   LanguageModelV4Usage,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertArrayToReadableStream,
   convertAsyncIterableToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it } from 'vitest';
 import { generateText, streamText } from '../generate-text';
 import { wrapLanguageModel } from '../middleware/wrap-language-model';

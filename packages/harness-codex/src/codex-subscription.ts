@@ -13,7 +13,7 @@ import { dirname, join, resolve } from 'node:path';
 import type {
   HarnessV1RequestTransformation,
   HarnessV1RequestTransformationSources,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   getJwtExpiresAt,
   isAccessTokenExpiringSoon,
@@ -26,8 +26,8 @@ import {
   readWindowsCredentialManagerPassword,
   refreshOAuthAccessToken,
   shouldResolveNativeSubscription,
-} from '@ai-sdk/harness/utils';
-import { isRecord, safeParseJSON } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/utils';
+import { isRecord, safeParseJSON } from '@ai-toolkit/provider-utils';
 import {
   createCodexRequestTransformations,
   resolveCodexEnv,
@@ -465,16 +465,16 @@ public static class CodexCredentialManager {
       });
     },
     async write({ service, account, value }) {
-      const script = `Add-Type -TypeDefinition $env:AI_SDK_CODEX_CREDENTIAL_SOURCE; $value = [Console]::In.ReadToEnd(); [CodexCredentialManager]::Write($env:AI_SDK_CODEX_CREDENTIAL_TARGET, $env:AI_SDK_CODEX_CREDENTIAL_USER, $value)`;
+      const script = `Add-Type -TypeDefinition $env:ai-toolkit_CODEX_CREDENTIAL_SOURCE; $value = [Console]::In.ReadToEnd(); [CodexCredentialManager]::Write($env:ai-toolkit_CODEX_CREDENTIAL_TARGET, $env:ai-toolkit_CODEX_CREDENTIAL_USER, $value)`;
       await runCommandWithInput({
         command: 'powershell.exe',
         args: ['-NoProfile', '-NonInteractive', '-Command', script],
         input: value,
         env: {
           ...process.env,
-          AI_SDK_CODEX_CREDENTIAL_SOURCE: source,
-          AI_SDK_CODEX_CREDENTIAL_TARGET: `${account}.${service}`,
-          AI_SDK_CODEX_CREDENTIAL_USER: account,
+          ai-toolkit_CODEX_CREDENTIAL_SOURCE: source,
+          ai-toolkit_CODEX_CREDENTIAL_TARGET: `${account}.${service}`,
+          ai-toolkit_CODEX_CREDENTIAL_USER: account,
         },
       });
     },

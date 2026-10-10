@@ -3,7 +3,7 @@ import {
   UnsupportedFunctionalityError,
   type LanguageModelV4,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   asArray,
   createIdGenerator,
@@ -20,7 +20,7 @@ import {
   type ToolApprovalResponse,
   type ToolContent,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { ServerResponse } from 'node:http';
 import { NoOutputGeneratedError, ToolChoiceViolationError } from '../error';
 import { logWarnings } from '../logger/log-warnings';
@@ -201,7 +201,7 @@ export type StreamTextInclude = {
    * the unprocessed data from the provider.
    *
    * This allows access to cutting-edge provider features not yet wrapped by
-   * the AI SDK.
+   * the ai-toolkit.
    *
    * @default false
    */
@@ -448,7 +448,7 @@ export function streamText<
 
     /**
      * Additional provider-specific options. They are passed through
-     * to the provider from the AI SDK and enable provider-specific
+     * to the provider from the ai-toolkit and enable provider-specific
      * functionality that can be fully encapsulated in the provider.
      */
     providerOptions?: ProviderOptions;
@@ -553,7 +553,7 @@ export function streamText<
     /**
      * Whether to include raw chunks from the provider in the stream.
      * When enabled, you will receive raw chunks with type 'raw' that contain the unprocessed data from the provider.
-     * This allows access to cutting-edge provider features not yet wrapped by the AI SDK.
+     * This allows access to cutting-edge provider features not yet wrapped by the ai-toolkit.
      * Defaults to false.
      *
      * @deprecated Use `include.rawChunks` instead.

@@ -2,8 +2,8 @@ import {
   commonTool,
   type HarnessV1,
   type HarnessV1BuiltinTool,
-} from '@ai-sdk/harness';
-import { tool } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness';
+import { tool } from '@ai-toolkit/provider-utils';
 import type {
   ExtensionFactory,
   ProviderConfig,
@@ -23,7 +23,7 @@ import { VERSION } from './version';
 /**
  * Value to use in User-Agent and `x-client-app` headers.
  */
-const PI_CLIENT_APP = `ai-sdk-harness-pi/${VERSION}`;
+const PI_CLIENT_APP = `ai-toolkit-harness-pi/${VERSION}`;
 
 /**
  * Configuration knobs for `createPi`. Pi runs as an in-process Node library

@@ -1,4 +1,4 @@
-import type { Context, ToolSet } from '@ai-sdk/provider-utils';
+import type { Context, ToolSet } from '@ai-toolkit/provider-utils';
 import {
   filterIncludedContext,
   filterToolContext,

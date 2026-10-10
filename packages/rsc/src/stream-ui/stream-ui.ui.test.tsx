@@ -1,6 +1,6 @@
-import type { LanguageModelV4Usage } from '@ai-sdk/provider';
-import { delay } from '@ai-sdk/provider-utils';
-import { convertArrayToReadableStream } from '@ai-sdk/provider-utils/test';
+import type { LanguageModelV4Usage } from '@ai-toolkit/provider';
+import { delay } from '@ai-toolkit/provider-utils';
+import { convertArrayToReadableStream } from '@ai-toolkit/provider-utils/test';
 import { asLanguageModelUsage } from 'ai/internal';
 import { MockLanguageModelV4 } from 'ai/test';
 import React from 'react';

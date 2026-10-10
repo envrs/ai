@@ -1,7 +1,7 @@
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it } from 'vitest';
 import type { TextStreamPart } from '../generate-text/stream-text-result';
 import { toTextStream } from './to-text-stream';

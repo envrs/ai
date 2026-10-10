@@ -1,4 +1,4 @@
-import { validateTypes, type Context, type Tool } from '@ai-sdk/provider-utils';
+import { validateTypes, type Context, type Tool } from '@ai-toolkit/provider-utils';
 
 /**
  * Resolves the per-tool context passed to tool callbacks and execution.

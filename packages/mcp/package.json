@@ -1,6 +1,6 @@
 {
-  "name": "@ai-sdk/mcp",
-  "version": "2.0.73",
+  "name": "@ai-toolkit/mcp",
+  "version": "2.0.1",
   "type": "module",
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -42,16 +42,16 @@
     }
   },
   "dependencies": {
-    "@ai-sdk/provider": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*",
+    "@ai-toolkit/provider": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*",
     "cross-spawn": "^7.0.6",
     "pkce-challenge": "^5.0.1"
   },
   "devDependencies": {
-    "@ai-sdk/test-server": "workspace:*",
+    "@ai-toolkit/test-server": "workspace:*",
     "@types/cross-spawn": "^6.0.6",
     "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "tsdown": "^0.23.0",
     "typescript": "6.0.3",
     "vitest": "^4.1.11",
@@ -67,14 +67,14 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/mcp"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "keywords": [
     "ai",

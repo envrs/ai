@@ -5,7 +5,7 @@
     "dev": "next"
   },
   "dependencies": {
-    "@ai-sdk/rsc": "workspace:*",
+    "@ai-toolkit/rsc": "workspace:*",
     "next": "16.3.6",
     "react": "rc",
     "react-dom": "rc",

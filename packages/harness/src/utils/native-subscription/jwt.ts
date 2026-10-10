@@ -1,4 +1,4 @@
-import { isRecord, safeParseJSON } from '@ai-sdk/provider-utils';
+import { isRecord, safeParseJSON } from '@ai-toolkit/provider-utils';
 
 export async function parseJwtPayload({
   token,

@@ -1,11 +1,11 @@
 ---
 title: Node.js
-description: Learn how to build your first agent with the AI SDK and Node.js.
+description: Learn how to build your first agent with the ai-toolkit and Node.js.
 ---
 
 # Node.js Quickstart
 
-The AI SDK is a powerful TypeScript library designed to help developers build AI-powered applications.
+The ai-toolkit is a powerful TypeScript library designed to help developers build AI-powered applications.
 
 In this quickstart tutorial, you'll build a simple agent with a streaming chat user interface. Along the way, you'll learn key concepts and techniques that are fundamental to using the SDK in your own projects.
 
@@ -16,9 +16,9 @@ If you are unfamiliar with the concepts of [Prompt Engineering](/docs/advanced/p
 To follow this quickstart, you'll need:
 
 - Node.js 22+ and pnpm installed on your local development machine.
-- A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
+- A [ khulnasoft AI Gateway ](https://khulnasoft.com/ai-gateway) API key.
 
-If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai&title=Go+to+AI+Gateway) on the Vercel website.
+If you haven't obtained your khulnasoft AI Gateway API key, you can do so by [signing up](https://khulnasoft.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai&title=Go+to+AI+Gateway) on the khulnasoft website.
 
 ## Setup Your Application
 
@@ -32,10 +32,10 @@ pnpm init
 
 ### Install Dependencies
 
-Install `ai`, the AI SDK, along with other necessary dependencies.
+Install `ai`, the ai-toolkit, along with other necessary dependencies.
 
 <Note>
-  The AI SDK is designed to be a unified interface to interact with any large
+  The ai-toolkit is designed to be a unified interface to interact with any large
   language model. This means that you can change model and providers with just
   one line of code! Learn more about [available providers](/providers) and
   [building custom providers](/providers/community-providers/custom-providers)
@@ -47,11 +47,11 @@ pnpm add ai zod dotenv
 pnpm add -D @types/node tsx typescript
 ```
 
-The `ai` package contains the AI SDK. You will use `zod` to define type-safe schemas that you will pass to the large language model (LLM). You will use `dotenv` to access environment variables (your Vercel AI Gateway key) within your application. There are also three development dependencies, installed with the `-D` flag, that are necessary to run your TypeScript code.
+The `ai` package contains the ai-toolkit. You will use `zod` to define type-safe schemas that you will pass to the large language model (LLM). You will use `dotenv` to access environment variables (your khulnasoft AI Gateway key) within your application. There are also three development dependencies, installed with the `-D` flag, that are necessary to run your TypeScript code.
 
-### Configure Vercel AI Gateway API key
+### Configure khulnasoft AI Gateway API key
 
-Create a `.env` file in your project's root directory and add your Vercel AI Gateway API Key. This key is used to authenticate your application with the Vercel AI Gateway service.
+Create a `.env` file in your project's root directory and add your khulnasoft AI Gateway API Key. This key is used to authenticate your application with the khulnasoft AI Gateway service.
 
 <Snippet text="touch .env" />
 
@@ -61,11 +61,11 @@ Edit the `.env` file:
 AI_GATEWAY_API_KEY=xxxxxxxxx
 ```
 
-Replace `xxxxxxxxx` with your actual Vercel AI Gateway API key.
+Replace `xxxxxxxxx` with your actual khulnasoft AI Gateway API key.
 
 <Note className="mb-4">
-  The AI SDK will use the `AI_GATEWAY_API_KEY` environment variable to
-  authenticate with Vercel AI Gateway.
+  The ai-toolkit will use the `AI_GATEWAY_API_KEY` environment variable to
+  authenticate with khulnasoft AI Gateway.
 </Note>
 
 ## Create Your Application
@@ -119,7 +119,7 @@ Let's take a look at what is happening in this code:
 
 - Prompt for and capture user input, storing it in `userInput`.
 - Add user input to the `messages` array as a user message.
-- Call [`streamText`](/docs/reference/ai-sdk-core/stream-text), which is imported from the `ai` package. This function accepts a configuration object that contains a `model` provider and `messages`.
+- Call [`streamText`](/docs/reference/ai-toolkit-core/stream-text), which is imported from the `ai` package. This function accepts a configuration object that contains a `model` provider and `messages`.
 - Iterate over the text stream returned by the `streamText` function (`result.textStream`) and print the contents of the stream to the terminal.
 - Add the assistant's response to the `messages` array.
 
@@ -129,13 +129,13 @@ With that, you have built everything you need for your agent! To start your appl
 
 <Snippet text="pnpm tsx index.ts" />
 
-You should see a prompt in your terminal. Test it out by entering a message and see the AI agent respond in real-time! The AI SDK makes it fast and easy to build AI chat interfaces with Node.js.
+You should see a prompt in your terminal. Test it out by entering a message and see the AI agent respond in real-time! The ai-toolkit makes it fast and easy to build AI chat interfaces with Node.js.
 
 ## Choosing a Provider
 
-The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [ community ](/providers/community-providers) packages.
+The ai-toolkit supports dozens of model providers through [first-party](/providers/ai-toolkit-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [ community ](/providers/community-providers) packages.
 
-This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](/docs/ai-sdk-core/provider-management#global-provider-configuration). This means you can access models using a simple string in the model configuration:
+This quickstart uses the [khulnasoft AI Gateway](https://khulnasoft.com/ai-gateway) provider, which is the default [global provider](/docs/ai-toolkit-core/provider-management#global-provider-configuration). This means you can access models using a simple string in the model configuration:
 
 ```ts
 model: __MODEL__;
@@ -148,8 +148,8 @@ You can also explicitly import and use the gateway provider in two other equival
 import { gateway } from 'ai';
 model: gateway('anthropic/claude-sonnet-5.5');
 
-// Option 2: Install and import from '@ai-sdk/gateway' package
-import { gateway } from '@ai-sdk/gateway';
+// Option 2: Install and import from '@ai-toolkit/gateway' package
+import { gateway } from '@ai-toolkit/gateway';
 model: gateway('anthropic/claude-sonnet-5.5');
 ```
 
@@ -157,17 +157,17 @@ model: gateway('anthropic/claude-sonnet-5.5');
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-<InstallPackages packages="@ai-sdk/openai" />
+<InstallPackages packages="@ai-toolkit/openai" />
 
 ```ts
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 
 model: openai('gpt-6-astra');
 ```
 
 ## Enhance Your Agent with Tools
 
-While large language models (LLMs) have incredible generation capabilities, they struggle with discrete tasks (e.g. mathematics) and interacting with the outside world (e.g. getting the weather). This is where [tools](/docs/ai-sdk-core/tools-and-tool-calling) come in.
+While large language models (LLMs) have incredible generation capabilities, they struggle with discrete tasks (e.g. mathematics) and interacting with the outside world (e.g. getting the weather). This is where [tools](/docs/ai-toolkit-core/tools-and-tool-calling) come in.
 
 Tools are actions that an LLM can invoke. The results of these actions can be reported back to the LLM to be considered in the next response.
 
@@ -487,8 +487,8 @@ This example demonstrates how tools can expand your agent's capabilities. You ca
 
 ## Where to Next?
 
-You've built an AI agent using the AI SDK! From here, you have several paths to explore:
+You've built an AI agent using the ai-toolkit! From here, you have several paths to explore:
 
-- To learn more about the AI SDK, read through the [documentation](/docs).
+- To learn more about the ai-toolkit, read through the [documentation](/docs).
 - If you're interested in diving deeper with guides, check out the [RAG (retrieval-augmented generation)](/cookbook/guides/rag-chatbot) and [multi-modal chatbot](/cookbook/guides/multi-modal-chatbot) guides.
-- To jumpstart your first AI project, explore available [templates](https://vercel.com/templates?type=ai).
+- To jumpstart your first AI project, explore available [templates](https://khulnasoft.com/templates?type=ai).

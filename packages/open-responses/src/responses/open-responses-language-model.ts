@@ -10,7 +10,7 @@ import {
   type LanguageModelV4Usage,
   type SharedV4ProviderMetadata,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createEventSourceResponseHandler,
@@ -27,7 +27,7 @@ import {
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
   type ParseResult,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import {
   asOpenResponsesExtensionRecord,
@@ -446,7 +446,7 @@ export class OpenResponsesLanguageModel implements LanguageModelV4 {
 
     for (const part of response.output) {
       switch (part.type) {
-        // TODO AI SDK 7 adjust reasoning in the specification to better support the reasoning structure from open responses.
+        // TODO ai-toolkit 7 adjust reasoning in the specification to better support the reasoning structure from open responses.
         case 'reasoning': {
           if ((part.content?.length ?? 0) > 0) {
             for (const contentPart of part.content!) {

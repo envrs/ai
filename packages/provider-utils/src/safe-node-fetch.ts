@@ -134,7 +134,7 @@ export async function getDefaultDownloadFetch(): Promise<FetchFunction> {
 }
 
 function createSafeNodeFetch(): FetchFunction {
-  // @vercel/nft (node file trace) only recognizes an indirectly loaded createRequire when its receiver
+  // @khulnasoft/nft (node file trace) only recognizes an indirectly loaded createRequire when its receiver
   // is named `module` and the returned require function is assigned.
   // eslint-disable-next-line @next/next/no-assign-module-variable
   const module = loadBuiltinModule<NodeModule>('node:module');

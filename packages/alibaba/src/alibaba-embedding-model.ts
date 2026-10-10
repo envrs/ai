@@ -2,7 +2,7 @@ import {
   TooManyEmbeddingValuesForCallError,
   UnsupportedFunctionalityError,
   type EmbeddingModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createJsonErrorResponseHandler,
@@ -12,7 +12,7 @@ import {
   serializeModelOptions,
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import {
   alibabaEmbeddingModelOptions,
@@ -85,12 +85,12 @@ export class AlibabaEmbeddingModel implements EmbeddingModelV4 {
       schema: alibabaEmbeddingModelOptions,
     });
 
-    // TODO: Explore first-class sparse embedding support in AI SDK core.
+    // TODO: Explore first-class sparse embedding support in ai-toolkit core.
     if (alibabaOptions?.outputType === 'sparse') {
       throw new UnsupportedFunctionalityError({
         functionality: "Alibaba embedding outputType 'sparse'",
         message:
-          "Alibaba embedding outputType 'sparse' is not supported because AI SDK embeddings require dense number arrays. Use 'dense' or 'dense&sparse' instead.",
+          "Alibaba embedding outputType 'sparse' is not supported because ai-toolkit embeddings require dense number arrays. Use 'dense' or 'dense&sparse' instead.",
       });
     }
 

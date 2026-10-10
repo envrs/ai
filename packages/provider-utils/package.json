@@ -1,6 +1,6 @@
 {
-  "name": "@ai-sdk/provider-utils",
-  "version": "5.0.58",
+  "name": "@ai-toolkit/provider-utils",
+  "version": "2.0.1",
   "type": "module",
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -53,7 +53,7 @@
     }
   },
   "dependencies": {
-    "@ai-sdk/provider": "workspace:*",
+    "@ai-toolkit/provider": "workspace:*",
     "@standard-schema/spec": "^1.1.0",
     "@workflow/serde": "4.1.0",
     "eventsource-parser": "^3.0.8",
@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "msw": "2.7.0",
     "tsdown": "^0.23.0",
     "typescript": "6.0.3",
@@ -77,14 +77,14 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/provider-utils"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "keywords": [
     "ai"

@@ -15,8 +15,8 @@ test('examples use current model factories and stream/tool APIs', () => {
   assert.match(example('Image Generation').getCode('google', 'custom'), /provider\.imageModel\('my-model'\)/);
   assert.match(example('Speech').getCode('elevenlabs', 'provider'), /elevenlabs\.speech\(/);
   assert.match(example('Speech').getCode('openai', 'gateway'), /const \{ audio \}/);
-  assert.match(example('Text Generation').getCode('moonshot', 'provider'), /@ai-sdk\/moonshotai/);
-  assert.match(example('Text Generation').getCode('meta', 'provider'), /@ai-sdk\/togetherai/);
+  assert.match(example('Text Generation').getCode('moonshot', 'provider'), /@ai-toolkit\/moonshotai/);
+  assert.match(example('Text Generation').getCode('meta', 'provider'), /@ai-toolkit\/togetherai/);
   assert.match(example('Tool Calling').getCode('openai', 'gateway'), /inputSchema: z\.object/);
   assert.match(example('Error Handling').getCode('openai', 'gateway'), /process\.stdout\.write\(part\.text\)/);
   assert.match(example('DevTools').getCode('openai', 'gateway'), /model: gateway\(/);

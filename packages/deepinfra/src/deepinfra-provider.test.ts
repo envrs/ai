@@ -4,9 +4,9 @@ import { DeepInfraChatLanguageModel } from './deepinfra-chat-language-model';
 import {
   OpenAICompatibleCompletionLanguageModel,
   OpenAICompatibleEmbeddingModel,
-} from '@ai-sdk/openai-compatible';
-import type { LanguageModelV4, EmbeddingModelV4 } from '@ai-sdk/provider';
-import { loadApiKey } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/openai-compatible';
+import type { LanguageModelV4, EmbeddingModelV4 } from '@ai-toolkit/provider';
+import { loadApiKey } from '@ai-toolkit/provider-utils';
 import { describe, it, expect, vi, beforeEach, type Mock } from 'vitest';
 // Add type assertion for the mocked class
 const DeepInfraChatLanguageModelMock =
@@ -16,13 +16,13 @@ vi.mock('./deepinfra-chat-language-model', () => ({
   DeepInfraChatLanguageModel: vi.fn(),
 }));
 
-vi.mock('@ai-sdk/openai-compatible', () => ({
+vi.mock('@ai-toolkit/openai-compatible', () => ({
   OpenAICompatibleCompletionLanguageModel: vi.fn(),
   OpenAICompatibleEmbeddingModel: vi.fn(),
 }));
 
-vi.mock('@ai-sdk/provider-utils', async () => {
-  const actual = await vi.importActual('@ai-sdk/provider-utils');
+vi.mock('@ai-toolkit/provider-utils', async () => {
+  const actual = await vi.importActual('@ai-toolkit/provider-utils');
   return {
     ...actual,
     loadApiKey: vi.fn().mockReturnValue('mock-api-key'),

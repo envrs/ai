@@ -1,6 +1,6 @@
-import type { LanguageModelV4GenerateResult } from '@ai-sdk/provider';
-import { tool, type Tool } from '@ai-sdk/provider-utils';
-import { convertArrayToReadableStream } from '@ai-sdk/provider-utils/test';
+import type { LanguageModelV4GenerateResult } from '@ai-toolkit/provider';
+import { tool, type Tool } from '@ai-toolkit/provider-utils';
+import { convertArrayToReadableStream } from '@ai-toolkit/provider-utils/test';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { z } from 'zod/v4';
 import { ToolLoopAgent } from './tool-loop-agent';
@@ -32,7 +32,7 @@ describe.each([
 
   beforeEach(() => {
     logger.mockClear();
-    vi.stubGlobal('AI_SDK_LOG_WARNINGS', logger);
+    vi.stubGlobal('ai-toolkit_LOG_WARNINGS', logger);
     finishAtStep = Infinity;
 
     function response(step: number): LanguageModelV4GenerateResult {
@@ -191,7 +191,7 @@ describe.each([
   });
 
   it('respects disabled warning logging', async () => {
-    vi.stubGlobal('AI_SDK_LOG_WARNINGS', false);
+    vi.stubGlobal('ai-toolkit_LOG_WARNINGS', false);
     const consoleWarn = vi.spyOn(console, 'warn').mockImplementation(() => {});
     try {
       expect(await run()).toHaveLength(limit);

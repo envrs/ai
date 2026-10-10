@@ -3,11 +3,11 @@ import {
   type CreateModelRuntimeOptions,
   type ModelRegistry,
 } from '@earendil-works/pi-coding-agent';
-import type { HarnessV1Authentication } from '@ai-sdk/harness';
+import type { HarnessV1Authentication } from '@ai-toolkit/harness';
 import {
   getAiGatewayAuthFromEnv,
   isHarnessAuthenticationEnvironment,
-} from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness/utils';
 import { access } from 'node:fs/promises';
 import { VERSION } from './version';
 
@@ -40,10 +40,10 @@ export type PiAuthenticationMode = HarnessV1Authentication<
   'openai' | 'anthropic' | 'custom'
 >;
 
-const DEFAULT_GATEWAY_BASE_URL = 'https://ai-gateway.vercel.sh';
+const DEFAULT_GATEWAY_BASE_URL = 'https://ai-gateway.khulnasoft.sh';
 const DEFAULT_OPENAI_BASE_URL = 'https://api.openai.com/v1';
 const DEFAULT_ANTHROPIC_BASE_URL = 'https://api.anthropic.com';
-const HARNESS_CLIENT_APP = `ai-sdk-harness-pi/${VERSION}`;
+const HARNESS_CLIENT_APP = `ai-toolkit-harness-pi/${VERSION}`;
 
 function createIsolatedPiCredentialStore(): {
   credentials: PiCredentialStore;
@@ -375,7 +375,7 @@ export async function registerPiProviders({
       if (!gatewayApiKey) return;
       await register({
         registries,
-        provider: 'vercel-ai-gateway',
+        provider: 'khulnasoft-ai-gateway',
         apiKey: gatewayApiKey,
         config: createGatewayProviderConfig({
           apiKey: gatewayApiKey,
@@ -400,7 +400,7 @@ export async function registerPiProviders({
       if (gatewayApiKey) {
         await register({
           registries,
-          provider: 'vercel-ai-gateway',
+          provider: 'khulnasoft-ai-gateway',
           apiKey: gatewayApiKey,
           config: createGatewayProviderConfig({
             apiKey: gatewayApiKey,
@@ -483,7 +483,7 @@ async function registerCustomProviders({
     const baseUrl = customEnv.AI_GATEWAY_BASE_URL ?? DEFAULT_GATEWAY_BASE_URL;
     await register({
       registries,
-      provider: 'vercel-ai-gateway',
+      provider: 'khulnasoft-ai-gateway',
       apiKey: gatewayKey,
       config: createGatewayProviderConfig({
         apiKey: gatewayKey,

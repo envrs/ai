@@ -1,4 +1,4 @@
-import type { MCPAppResource } from '@ai-sdk/mcp';
+import type { MCPAppResource } from '@ai-toolkit/mcp';
 import type { DynamicToolUIPart, ToolUIPart, UITools } from 'ai';
 import type { CSSProperties, ReactNode } from 'react';
 import type { MCPAppPermission } from './sandbox';

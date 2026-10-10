@@ -1,4 +1,4 @@
-import type { JSONParseError, TypeValidationError } from '@ai-sdk/provider';
+import type { JSONParseError, TypeValidationError } from '@ai-toolkit/provider';
 
 /**
  * A function that attempts to repair the raw output of the model

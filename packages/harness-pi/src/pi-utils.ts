@@ -2,7 +2,7 @@ import {
   HarnessCapabilityUnsupportedError,
   type HarnessV1Prompt,
   type HarnessV1Skill,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 
 const HARNESS_ID = 'pi';
 

@@ -1,8 +1,8 @@
 import {
   createOpenResponses,
   type Experimental_OpenResponsesExtension,
-} from '@ai-sdk/open-responses';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/open-responses';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import {
   generateText,
   type ModelMessage,

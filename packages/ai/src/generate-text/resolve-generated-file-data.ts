@@ -1,4 +1,4 @@
-import type { LanguageModelV4Content } from '@ai-sdk/provider';
+import type { LanguageModelV4Content } from '@ai-toolkit/provider';
 import { download } from '../util/download/download';
 
 type GeneratedFileData = Extract<

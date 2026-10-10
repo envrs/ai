@@ -21,7 +21,7 @@ export default defineConfig(
       outExtensions: () => ({ js: '.mjs' }),
       dts: false,
       deps: {
-        alwaysBundle: [/^@ai-sdk\/harness(?:\/|$)/],
+        alwaysBundle: [/^@ai-toolkit\/harness(?:\/|$)/],
         neverBundle: true,
       },
       define: {

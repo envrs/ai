@@ -1,4 +1,4 @@
-import type { Experimental_SandboxSession as SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import { harnessStateDirectoryPath } from '../v1';
 import type { HarnessAgentSandboxConfig } from './harness-agent-settings';
 import type { HarnessAgentAdapter } from './harness-agent-types';

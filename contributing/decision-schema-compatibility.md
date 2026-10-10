@@ -54,6 +54,6 @@ calibration guarantee; callers choose their own thresholds. Choice and Score
 distributions are not generated.
 
 The shared adapter is exported from
-`@ai-sdk/provider-utils/experimental-decision`. Its separate entry point keeps
+`@ai-toolkit/provider-utils/experimental-decision`. Its separate entry point keeps
 computed Workflow serialization hooks at module scope for the Workflow compiler
 while allowing ordinary provider-utils imports to exclude decision code.

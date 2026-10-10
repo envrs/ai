@@ -1,37 +1,37 @@
-# AI SDK - Baseten Provider
+# ai-toolkit - Baseten Provider
 
-The **[Baseten provider](https://ai-sdk.dev/providers/ai-sdk-providers/baseten)** for the [AI SDK](https://ai-sdk.dev/docs) contains language model and embedding model support for the [Baseten](https://baseten.co) platform.
+The **[Baseten provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/baseten)** for the [ai-toolkit](https://ai-toolkit.dev/docs) contains language model and embedding model support for the [Baseten](https://baseten.co) platform.
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access Baseten (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access Baseten (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The Baseten provider is available in the `@ai-sdk/baseten` module. You can install it with
+The Baseten provider is available in the `@ai-toolkit/baseten` module. You can install it with
 
 ```bash
-npm i @ai-sdk/baseten
+npm i @ai-toolkit/baseten
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `baseten` from `@ai-sdk/baseten`:
+You can import the default provider instance `baseten` from `@ai-toolkit/baseten`:
 
 ```ts
-import { baseten } from '@ai-sdk/baseten';
+import { baseten } from '@ai-toolkit/baseten';
 ```
 
 ## Language Model Example (Model APIs)
 
 ```ts
-import { baseten } from '@ai-sdk/baseten';
+import { baseten } from '@ai-toolkit/baseten';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -42,4 +42,4 @@ const { text } = await generateText({
 
 ## Documentation
 
-Please check out the **[Baseten provider](https://ai-sdk.dev/providers/ai-sdk-providers/baseten)** for more information.
+Please check out the **[Baseten provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/baseten)** for more information.

@@ -1,11 +1,11 @@
-import type { JSONValue } from '@ai-sdk/provider';
+import type { JSONValue } from '@ai-toolkit/provider';
 import {
   createIdGenerator,
   withUserAgentSuffix,
   type FlexibleSchema,
   type InferSchema,
   type ProviderOptions,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { NoObjectGeneratedError } from '../error/no-object-generated-error';
 import { extractReasoningContent } from '../generate-text/extract-reasoning-content';
 import { extractTextContent } from '../generate-text/extract-text-content';
@@ -103,7 +103,7 @@ const originalGenerateId = createIdGenerator({ prefix: 'aiobj', size: 24 });
  * @param telemetry - Optional telemetry configuration.
  *
  * @param providerOptions - Additional provider-specific options. They are passed through
- * to the provider from the AI SDK and enable provider-specific
+ * to the provider from the ai-toolkit and enable provider-specific
  * functionality that can be fully encapsulated in the provider.
  *
  * @param onStart - Callback invoked when generation begins, before the LLM call.
@@ -201,7 +201,7 @@ export async function generateObject<
 
       /**
        * Additional provider-specific options. They are passed through
-       * to the provider from the AI SDK and enable provider-specific
+       * to the provider from the ai-toolkit and enable provider-specific
        * functionality that can be fully encapsulated in the provider.
        */
       providerOptions?: ProviderOptions;

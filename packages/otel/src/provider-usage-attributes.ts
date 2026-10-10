@@ -1,5 +1,5 @@
 import type { Attributes } from '@opentelemetry/api';
-import type { JSONObject, JSONValue } from '@ai-sdk/provider';
+import type { JSONObject, JSONValue } from '@ai-toolkit/provider';
 
 const usageKeyAliases: Record<string, string> = {
   inputtokens: 'input_tokens',

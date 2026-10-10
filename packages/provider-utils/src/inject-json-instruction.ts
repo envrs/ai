@@ -2,7 +2,7 @@ import type {
   JSONSchema7,
   LanguageModelV4Message,
   LanguageModelV4Prompt,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 const DEFAULT_SCHEMA_PREFIX = 'JSON schema:';
 const DEFAULT_SCHEMA_SUFFIX =

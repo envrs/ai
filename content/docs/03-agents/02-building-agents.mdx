@@ -140,7 +140,7 @@ they return another override.
 
 For the full model, including sensitive context filtering and where each context
 value is available, see [Runtime and Tool
-Context](/docs/ai-sdk-core/runtime-and-tool-context).
+Context](/docs/ai-toolkit-core/runtime-and-tool-context).
 
 ### Tools That Use Experimental Sandboxes
 
@@ -187,7 +187,7 @@ The experimental sandbox description is not added to the model prompt automatica
 it in the prompt or instructions when the model needs to know environment
 details. Passing an experimental sandbox does not sandbox the tool itself; the tool must
 explicitly delegate operations to the experimental sandbox. See the
-[Experimental Sandbox section in Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling#experimental-sandbox)
+[Experimental Sandbox section in Tool Calling](/docs/ai-toolkit-core/tools-and-tool-calling#experimental-sandbox)
 for more details.
 
 You can also require approval before a tool executes. Configure approval on the
@@ -217,7 +217,7 @@ Approvals](/docs/agents/tool-approvals).
 
 ### Loop Control
 
-By default, agents run for 20 steps (`stopWhen: isStepCount(20)`). In each step, the model either generates text or calls a tool. If it generates text, the agent completes. If it calls a tool, the AI SDK executes that tool.
+By default, agents run for 20 steps (`stopWhen: isStepCount(20)`). In each step, the model either generates text or calls a tool. If it generates text, the agent completes. If it calls a tool, the ai-toolkit executes that tool.
 
 You can configure `stopWhen` differently to allow more steps. After each tool execution, the agent triggers a new generation where the model can call another tool or generate text:
 
@@ -525,7 +525,7 @@ The available lifecycle callbacks are:
 - **`onStepEnd`**: Called after each step finishes. Receives step results including usage, performance, finish reason, and tool calls.
 - **`onEnd`**: Called when all steps are finished and the response is complete. Receives all step results, total usage, and `runtimeContext`.
 
-For the full event data reference, see [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks). `ToolLoopAgent` uses the same generation lifecycle event types for `onStart`, `onStepStart`, `onToolExecutionStart`, `onToolExecutionEnd`, `onStepEnd`, and `onEnd`.
+For the full event data reference, see [Lifecycle Callbacks](/docs/ai-toolkit-core/lifecycle-callbacks). `ToolLoopAgent` uses the same generation lifecycle event types for `onStart`, `onStepStart`, `onToolExecutionStart`, `onToolExecutionEnd`, `onStepEnd`, and `onEnd`.
 
 #### Constructor vs. Method Callbacks
 
@@ -570,7 +570,7 @@ Use this type in your client components with `useChat`:
 ```tsx filename="components/chat.tsx"
 'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import type { MyAgentUIMessage } from '@/agent/my-agent';
 
 export function Chat() {

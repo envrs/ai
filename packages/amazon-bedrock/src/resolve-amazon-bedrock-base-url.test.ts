@@ -1,4 +1,4 @@
-import { InvalidArgumentError } from '@ai-sdk/provider';
+import { InvalidArgumentError } from '@ai-toolkit/provider';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { resolveAmazonBedrockBaseURL } from './resolve-amazon-bedrock-base-url';
 

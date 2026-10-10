@@ -1,10 +1,10 @@
-import { OpenTelemetry } from '@ai-sdk/otel';
+import { OpenTelemetry } from '@ai-toolkit/otel';
 import {
   BasicTracerProvider,
   InMemorySpanExporter,
   SimpleSpanProcessor,
 } from '@opentelemetry/sdk-trace-base';
-import { tool } from '@ai-sdk/provider-utils';
+import { tool } from '@ai-toolkit/provider-utils';
 import type { Telemetry } from 'ai';
 import { describe, expect, test } from 'vitest';
 import { z } from 'zod/v4';

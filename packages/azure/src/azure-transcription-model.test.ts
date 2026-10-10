@@ -1,15 +1,15 @@
-import { OpenAITranscriptionModel } from '@ai-sdk/openai/internal';
+import { OpenAITranscriptionModel } from '@ai-toolkit/openai/internal';
 import {
   APICallError,
   InvalidArgumentError,
   UnsupportedFunctionalityError,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import fs from 'node:fs';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import {
@@ -162,7 +162,7 @@ describe('API routing', () => {
     { transcribeStyle: 'invalid' },
     { diarization: { enabled: 'yes' } },
     { diarization: { enabled: true, maxSpeakers: 2 } },
-    { phraseList: { phrases: ['Vercel'], biasingWeight: 1.5 } },
+    { phraseList: { phrases: ['khulnasoft'], biasingWeight: 1.5 } },
     { profanityFilterMode: 'Masked' },
     { timestamp: 'word' },
   ])('rejects invalid options %j before fetching', async azure => {
@@ -191,7 +191,7 @@ describe('Speech requests', () => {
         'test-key',
       );
       expect(request().headers.has('api-key')).toBe(false);
-      expect(request().headers.get('user-agent')).toContain('ai-sdk-azure/');
+      expect(request().headers.get('user-agent')).toContain('ai-toolkit-azure/');
       expect(definition()).toEqual({
         enhancedMode: {
           enabled: true,
@@ -215,7 +215,7 @@ describe('Speech requests', () => {
         transcribeStyle: 'clean',
         locales: ['en'],
         diarization: { enabled: true },
-        phraseList: { phrases: ['Vercel'] },
+        phraseList: { phrases: ['khulnasoft'] },
       } satisfies AzureTranscriptionModelOptions;
       await provider
         .transcription('mai-transcribe-2')
@@ -228,7 +228,7 @@ describe('Speech requests', () => {
         },
         locales: ['en'],
         diarization: { enabled: true },
-        phraseList: { phrases: ['Vercel'] },
+        phraseList: { phrases: ['khulnasoft'] },
       });
     },
   );

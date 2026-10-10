@@ -20,7 +20,7 @@ const skill = {
 
 describe('resolveACPPrivateSessionDirectory', () => {
   it('keeps session state under .agent-runs/<sessionId>', () => {
-    const stateDirectory = '/home/agent/.ai-sdk-harness';
+    const stateDirectory = '/home/agent/.ai-toolkit-harness';
 
     expect(
       resolveACPPrivateSessionDirectory({
@@ -39,11 +39,11 @@ describe('resolveACPPrivateSessionDirectory', () => {
   it('keeps session IDs containing traversal inside .agent-runs', () => {
     expect(
       resolveACPPrivateSessionDirectory({
-        stateDirectory: '/home/agent/.ai-sdk-harness',
+        stateDirectory: '/home/agent/.ai-toolkit-harness',
         sessionId: '../../../../work/project',
       }),
     ).toBe(
-      '/home/agent/.ai-sdk-harness/.agent-runs/..%2F..%2F..%2F..%2Fwork%2Fproject',
+      '/home/agent/.ai-toolkit-harness/.agent-runs/..%2F..%2F..%2F..%2Fwork%2Fproject',
     );
   });
 });

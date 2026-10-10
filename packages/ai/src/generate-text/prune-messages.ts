@@ -2,7 +2,7 @@ import type {
   AssistantModelMessage,
   ModelMessage,
   ToolModelMessage,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 /**
  * Prunes model messages from a list of model messages.

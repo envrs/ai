@@ -9,8 +9,8 @@ import type {
   LanguageModelV4ToolApprovalResponsePart,
   LanguageModelV4ToolCallPart,
   LanguageModelV4ToolResultPart,
-} from '@ai-sdk/provider';
-import type { ModelMessage } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import type { ModelMessage } from '@ai-toolkit/provider-utils';
 import { convertDataContentToBase64String } from 'ai';
 
 type LanguageModelV4ContentPart =
@@ -63,7 +63,7 @@ interface SemConvSystemInstruction {
 }
 
 /**
- * Maps an AI SDK provider string (e.g. "anthropic.messages", "openai.chat")
+ * Maps an ai-toolkit provider string (e.g. "anthropic.messages", "openai.chat")
  * to a well-known gen_ai.provider.name value per the OTel GenAI SemConv.
  *
  * Provider strings come in formats like:
@@ -109,7 +109,7 @@ export function mapProviderName(provider: string): string {
 }
 
 /**
- * Maps an AI SDK operationId to a gen_ai.operation.name value.
+ * Maps an ai-toolkit operationId to a gen_ai.operation.name value.
  */
 export function mapOperationName(operationId: string): string {
   const mapping: Record<string, string> = {

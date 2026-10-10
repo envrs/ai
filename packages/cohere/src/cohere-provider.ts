@@ -4,14 +4,14 @@ import {
   type LanguageModelV4,
   type RerankingModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   generateId,
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { CohereChatLanguageModel } from './cohere-chat-language-model';
 import type { CohereChatModelId } from './cohere-chat-language-model-options';
 import { CohereEmbeddingModel } from './cohere-embedding-model';
@@ -108,7 +108,7 @@ export function createCohere(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-cohere/${VERSION}`,
+      `ai-toolkit-cohere/${VERSION}`,
     );
 
   const createChatModel = (modelId: CohereChatModelId) =>

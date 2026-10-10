@@ -1,4 +1,4 @@
-import type { FunctionTool } from '@ai-sdk/provider-utils';
+import type { FunctionTool } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 const harnessV1QuestionSchema = z.object({

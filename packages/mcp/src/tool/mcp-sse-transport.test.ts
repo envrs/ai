@@ -1,7 +1,7 @@
 import {
   createTestServer,
   TestResponseController,
-} from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/test-server/with-vitest';
 import { MCPClientError } from '../error/mcp-client-error';
 import { deserializeMessage, SseMCPTransport } from './mcp-sse-transport';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
@@ -690,7 +690,7 @@ describe('SseMCPTransport', () => {
       accept: 'text/event-stream',
       ...customHeaders,
     });
-    expect(server.calls[0].requestUserAgent).toContain('ai-sdk/');
+    expect(server.calls[0].requestUserAgent).toContain('ai-toolkit/');
 
     // Verify POST request headers
     expect(server.calls[1].requestHeaders).toEqual({
@@ -698,7 +698,7 @@ describe('SseMCPTransport', () => {
       'mcp-protocol-version': LATEST_LEGACY_PROTOCOL_VERSION,
       ...customHeaders,
     });
-    expect(server.calls[1].requestUserAgent).toContain('ai-sdk/');
+    expect(server.calls[1].requestUserAgent).toContain('ai-toolkit/');
 
     await transport.close();
   });

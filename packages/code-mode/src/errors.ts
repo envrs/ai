@@ -36,7 +36,7 @@ export class CodeModeTimeoutError extends CodeModeError {
 }
 
 /**
- * Raised when the outer AI SDK abort signal aborts a code-mode invocation.
+ * Raised when the outer ai-toolkit abort signal aborts a code-mode invocation.
  */
 export class CodeModeAbortedError extends CodeModeError {
   constructor() {

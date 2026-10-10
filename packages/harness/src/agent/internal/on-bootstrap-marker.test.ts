@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import type { Experimental_SandboxSession as SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import { runSandboxBootstrap } from './sandbox-bootstrap';
 
 describe('onBootstrap marker', () => {
@@ -39,7 +39,7 @@ describe('onBootstrap marker', () => {
     const paths = [...files.keys()];
     expect(paths).toHaveLength(1);
     expect(paths[0]).toMatch(
-      /^\/home\/agent\/\.ai-sdk-harness\/\.on-bootstrap\/[0-9a-f]{64}\.ok$/,
+      /^\/home\/agent\/\.ai-toolkit-harness\/\.on-bootstrap\/[0-9a-f]{64}\.ok$/,
     );
   });
 

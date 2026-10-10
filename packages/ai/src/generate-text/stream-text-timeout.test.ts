@@ -2,9 +2,9 @@ import {
   APICallError,
   type LanguageModelV4StreamPart,
   type LanguageModelV4Usage,
-} from '@ai-sdk/provider';
-import { delay, DelayedPromise } from '@ai-sdk/provider-utils';
-import { convertArrayToReadableStream } from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider';
+import { delay, DelayedPromise } from '@ai-toolkit/provider-utils';
+import { convertArrayToReadableStream } from '@ai-toolkit/provider-utils/test';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { z } from 'zod/v4';
 import { MockLanguageModelV4 } from '../test/mock-language-model-v4';

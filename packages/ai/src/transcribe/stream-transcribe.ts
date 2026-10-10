@@ -3,13 +3,13 @@ import {
   type Experimental_TranscriptionModelV4StreamPart,
   type JSONObject,
   type SharedV4AudioFormat,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   createIdGenerator,
   DelayedPromise,
   withUserAgentSuffix,
   type ProviderOptions,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { NoTranscriptGeneratedError } from '../error/no-transcript-generated-error';
 import { logWarnings } from '../logger/log-warnings';
 import { resolveTranscriptionModel } from '../model/resolve-model';
@@ -132,7 +132,7 @@ export function streamTranscribe({
           ? ' String model IDs resolve through the global provider (AI Gateway by default).' +
             ' If that provider does not support streaming transcription, pass a provider model' +
             " instance instead (e.g. openai.transcription('gpt-realtime-whisper'))" +
-            ' or upgrade @ai-sdk/gateway to a version with streaming transcription support.'
+            ' or upgrade @ai-toolkit/gateway to a version with streaming transcription support.'
           : ''),
     });
   }

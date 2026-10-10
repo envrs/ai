@@ -1,4 +1,4 @@
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { convertToGoogleInteractionsInput } from './convert-to-google-interactions-input';
 

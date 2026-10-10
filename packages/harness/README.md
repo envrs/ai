@@ -1,4 +1,4 @@
-# AI SDK - Harness Specification and Agent
+# ai-toolkit - Harness Specification and Agent
 
 _This package is **experimental**._
 
@@ -7,15 +7,15 @@ _This package is **experimental**._
 ## Setup
 
 ```bash
-npm i ai zod @ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel
+npm i ai zod @ai-toolkit/harness @ai-toolkit/harness-claude-code @ai-toolkit/sandbox-khulnasoft
 ```
 
 ## Usage
 
 ```ts
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { claudeCode } from '@ai-sdk/harness-claude-code';
-import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { claudeCode } from '@ai-toolkit/harness-claude-code';
+import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import { tool } from 'ai';
 import { z } from 'zod/v4';
 
@@ -102,6 +102,6 @@ const agent = new HarnessAgent({
 
 ## Documentation
 
-- [Detailed usage documentation](https://ai-sdk.dev/docs/ai-sdk-harnesses)
-- [Harness abstraction architecture](https://github.com/vercel/ai/blob/main/architecture/harness-abstraction.md)
-- [Sandbox abstraction architecture](https://github.com/vercel/ai/blob/main/architecture/sandbox-abstraction.md)
+- [Detailed usage documentation](https://ai-toolkit.dev/docs/ai-toolkit-harnesses)
+- [Harness abstraction architecture](https://github.com/khulnasoft/ai/blob/main/architecture/harness-abstraction.md)
+- [Sandbox abstraction architecture](https://github.com/khulnasoft/ai/blob/main/architecture/sandbox-abstraction.md)

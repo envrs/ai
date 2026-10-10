@@ -3,12 +3,12 @@ import type {
   EmbeddingModelV4,
   EmbeddingModelV4CallOptions,
   EmbeddingModelV4Result,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   asArray,
   EXPERIMENTAL_EMBEDDING_MODEL_MAX_INPUT_BYTES_PER_CALL,
   EXPERIMENTAL_EMBEDDING_MODEL_PROVIDER_OPTIONS_TRANSFORMER,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { asEmbeddingModelV4 } from '../model/as-embedding-model-v4';
 import {
   getEmbeddingModelMaxInputBytesPerCall,

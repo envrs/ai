@@ -3,7 +3,7 @@ import type {
   Context,
   Experimental_SandboxSession as SandboxSession,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { ServerResponse } from 'node:http';
 import type { Output } from '../generate-text/output';
 import type { StreamTextTransform } from '../generate-text/stream-text';

@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4Content,
   LanguageModelV4Reasoning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 export function extractReasoningContent(
   content: LanguageModelV4Content[],

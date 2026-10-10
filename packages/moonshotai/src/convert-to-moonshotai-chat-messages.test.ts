@@ -1,7 +1,7 @@
 import {
   InvalidPromptError,
   type LanguageModelV4Prompt,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { convertToMoonshotAIChatMessages } from './convert-to-moonshotai-chat-messages';
 

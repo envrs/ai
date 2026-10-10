@@ -1,15 +1,15 @@
 const internalLinkBoundary = '(?=[/?#)\\s>]|$)';
 
 const inlineLink = new RegExp(
-  `(\\]\\(\\s*<?)(https://ai-sdk\\.dev)?/(docs|providers|cookbook)${internalLinkBoundary}`,
+  `(\\]\\(\\s*<?)(https://ai-toolkit\\.dev)?/(docs|providers|cookbook)${internalLinkBoundary}`,
   'g',
 );
 const referenceLink = new RegExp(
-  `^(\\s*\\[[^\\]]+\\]:\\s*<?)(https://ai-sdk\\.dev)?/(docs|providers|cookbook)${internalLinkBoundary}`,
+  `^(\\s*\\[[^\\]]+\\]:\\s*<?)(https://ai-toolkit\\.dev)?/(docs|providers|cookbook)${internalLinkBoundary}`,
   'gm',
 );
 const htmlLink = new RegExp(
-  `(\\bhref\\s*=\\s*["'])(https://ai-sdk\\.dev)?/(docs|providers|cookbook)${internalLinkBoundary}`,
+  `(\\bhref\\s*=\\s*["'])(https://ai-toolkit\\.dev)?/(docs|providers|cookbook)${internalLinkBoundary}`,
   'gi',
 );
 

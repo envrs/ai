@@ -1,5 +1,5 @@
-import { IconArrowUpRight } from '@vercel/geistdocs/assets/icons/icon-arrow-up-right';
-import { LogoNextjs, LogoSvelteKit } from '@vercel/geistdocs/assets/logos';
+import { IconArrowUpRight } from '@khulnasoft/geistdocs/assets/icons/icon-arrow-up-right';
+import { LogoNextjs, LogoSvelteKit } from '@khulnasoft/geistdocs/assets/logos';
 import Link from 'next/link';
 import { NodeIcon, PuzzleIcon } from '@/components/docs/framework-icons';
 

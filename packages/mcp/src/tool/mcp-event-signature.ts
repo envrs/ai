@@ -1,7 +1,7 @@
 import {
   convertBase64ToUint8Array,
   convertUint8ArrayToBase64,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { MCPClientError } from '../error/mcp-client-error';
 
 export function createMCPEventSecret(): string {

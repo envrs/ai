@@ -1,4 +1,4 @@
-import type { ImageModelV4, SharedV4Warning } from '@ai-sdk/provider';
+import type { ImageModelV4, SharedV4Warning } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   parseJSON,
@@ -9,7 +9,7 @@ import {
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
   zodSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   buildProdiaProviderMetadata,
   parseMultipart,

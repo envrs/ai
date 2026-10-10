@@ -7,7 +7,7 @@ export {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
   mockId,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 export { MockEmbeddingModelV3 } from '../src/test/mock-embedding-model-v3';
 export { MockEmbeddingModelV4 } from '../src/test/mock-embedding-model-v4';
 export { DecisionMockModelV4 as Experimental_DecisionMockModelV4 } from '../src/test/decision-mock-model-v4';

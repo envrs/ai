@@ -1,13 +1,13 @@
-import { AISDKError } from './ai-sdk-error';
+import { ai-toolkitError } from './ai-toolkit-error';
 
 const name = 'AI_InvalidArgumentError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
 /**
  * A function argument is invalid.
  */
-export class InvalidArgumentError extends AISDKError {
+export class InvalidArgumentError extends ai-toolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly argument: string;
@@ -27,6 +27,6 @@ export class InvalidArgumentError extends AISDKError {
   }
 
   static isInstance(error: unknown): error is InvalidArgumentError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }

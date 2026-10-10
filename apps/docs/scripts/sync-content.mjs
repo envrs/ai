@@ -28,7 +28,7 @@ import { transformDir } from "./sync-content-utils.mjs";
 
 const appDir = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = resolve(appDir, "../..");
-const cacheDir = join(appDir, "node_modules/.cache/ai-sdk-docs");
+const cacheDir = join(appDir, "node_modules/.cache/ai-toolkit-docs");
 const force = process.argv.includes("--force");
 
 /** Version definitions. `ref: null` means the local working tree. */

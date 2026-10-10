@@ -1,5 +1,5 @@
-import { LoadAPIKeyError } from '@ai-sdk/provider';
-import { loadOptionalSetting, loadSetting } from '@ai-sdk/provider-utils';
+import { LoadAPIKeyError } from '@ai-toolkit/provider';
+import { loadOptionalSetting, loadSetting } from '@ai-toolkit/provider-utils';
 
 /**
  * Encode a string to base64url format (URL-safe base64 without padding).

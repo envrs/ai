@@ -1,7 +1,7 @@
-# AI SDK Code Mode
+# ai-toolkit Code Mode
 
-`@ai-sdk/code-mode` lets models write JavaScript or TypeScript that calls your
-AI SDK tools. The code runs in an isolated QuickJS sandbox and returns a
+`@ai-toolkit/code-mode` lets models write JavaScript or TypeScript that calls your
+ai-toolkit tools. The code runs in an isolated QuickJS sandbox and returns a
 JSON-serializable value.
 
 Use code mode when a model needs to call several tools, transform their results,
@@ -11,7 +11,7 @@ generated code.
 ## Installation
 
 ```bash
-pnpm add ai @ai-sdk/code-mode
+pnpm add ai @ai-toolkit/code-mode
 ```
 
 This package runs on the server and requires Node.js 22.13 or newer.
@@ -22,7 +22,7 @@ This package runs on the server and requires Node.js 22.13 or newer.
 import {
   DIRECT_TOOL_CALL,
   experimental_codeModeTool as codeModeTool,
-} from '@ai-sdk/code-mode';
+} from '@ai-toolkit/code-mode';
 import { generateText, isStepCount, tool } from 'ai';
 import { z } from 'zod';
 
@@ -93,7 +93,7 @@ return {
 Use `experimental_runCodeMode` to run code directly:
 
 ```ts
-import { experimental_runCodeMode as runCodeMode } from '@ai-sdk/code-mode';
+import { experimental_runCodeMode as runCodeMode } from '@ai-toolkit/code-mode';
 
 const result = await runCodeMode({
   js: 'return await tools.getInventory({ productId: "sku_123" });',

@@ -1,6 +1,6 @@
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { expect, it } from 'vitest';
 import { createOpenAICompatible } from '../openai-compatible-provider';
 

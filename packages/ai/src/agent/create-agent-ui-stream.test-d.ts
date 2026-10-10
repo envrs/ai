@@ -1,4 +1,4 @@
-import { tool, type Context } from '@ai-sdk/provider-utils';
+import { tool, type Context } from '@ai-toolkit/provider-utils';
 import { describe, expectTypeOf, it } from 'vitest';
 import { z } from 'zod/v4';
 import { MockLanguageModelV4 } from '../test/mock-language-model-v4';

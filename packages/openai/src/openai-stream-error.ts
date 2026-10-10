@@ -1,9 +1,9 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import {
   createProviderStreamError,
   type ParseResult,
   type ProviderStreamError,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 type StreamError = {
   message: string;

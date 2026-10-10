@@ -1,4 +1,4 @@
-import { dynamicTool, tool } from '@ai-sdk/provider-utils';
+import { dynamicTool, tool } from '@ai-toolkit/provider-utils';
 import { describe, expect, it, vi } from 'vitest';
 import * as z from 'zod/v4';
 import type { GeneratedFile } from '../generate-text';
@@ -539,7 +539,7 @@ describe('toUIMessageChunk', () => {
       toolCallId: 'call-undefined',
       // This must be `null` so that we don't lose the property when this is
       // serialized to JSON. See the following issue for more details:
-      // https://github.com/vercel/ai/issues/15854
+      // https://github.com/khulnasoft/ai/issues/15854
       output: null,
       dynamic: true,
     });

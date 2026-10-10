@@ -1,4 +1,4 @@
-import type { Context, Tool } from '@ai-sdk/provider-utils';
+import type { Context, Tool } from '@ai-toolkit/provider-utils';
 import type { ToolApprovalConfiguration, ToolApprovalStatus } from 'ai';
 
 type ApprovalLiteralStatus = Extract<ToolApprovalStatus, string>;
@@ -33,8 +33,8 @@ export interface WrappedMcpTools<
  *
  * @example
  * ```ts
- * import { wrapMcpTools } from '@ai-sdk/policy-opa';
- * import { opaPolicy, wasmPolicyClient } from '@ai-sdk/policy-opa';
+ * import { wrapMcpTools } from '@ai-toolkit/policy-opa';
+ * import { opaPolicy, wasmPolicyClient } from '@ai-toolkit/policy-opa';
  *
  * const discovered = await mcpClient.tools();
  * const client = await wasmPolicyClient({ wasm });

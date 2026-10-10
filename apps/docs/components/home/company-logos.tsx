@@ -1,5 +1,5 @@
 // Company wordmarks for the landing page testimonials, copied from
-// `@vercel/geistcn-assets` (LogoElementorLogotypeSvg, LogoOpencodeSvg). These
+// `@khulnasoft/geistcn-assets` (LogoElementorLogotypeSvg, LogoOpencodeSvg). These
 // are third-party logos covered by the notice in README.md.
 
 /** Elementor wordmark. */

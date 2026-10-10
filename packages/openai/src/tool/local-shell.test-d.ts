@@ -1,4 +1,4 @@
-import type { InferSchema, Tool } from '@ai-sdk/provider-utils';
+import type { InferSchema, Tool } from '@ai-toolkit/provider-utils';
 import { describe, expectTypeOf, it } from 'vitest';
 import {
   localShell,

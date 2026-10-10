@@ -1,4 +1,4 @@
-import { InvalidArgumentError } from '@ai-sdk/provider';
+import { InvalidArgumentError } from '@ai-toolkit/provider';
 import { safeValidateTypes } from './validate-types';
 import type { FlexibleSchema } from './schema';
 

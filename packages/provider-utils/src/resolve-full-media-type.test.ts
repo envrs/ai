@@ -1,7 +1,7 @@
 import {
   UnsupportedFunctionalityError,
   type LanguageModelV4FilePart,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { resolveFullMediaType } from './resolve-full-media-type';
 

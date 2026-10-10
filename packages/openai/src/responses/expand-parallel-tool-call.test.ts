@@ -1,4 +1,4 @@
-import type { LanguageModelV4FunctionTool } from '@ai-sdk/provider';
+import type { LanguageModelV4FunctionTool } from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { expandParallelToolCall } from './expand-parallel-tool-call';
 

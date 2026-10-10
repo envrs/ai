@@ -1,4 +1,4 @@
-import type { Context, Tool, ToolSet } from '@ai-sdk/provider-utils';
+import type { Context, Tool, ToolSet } from '@ai-toolkit/provider-utils';
 import type { Agent } from '../agent/agent';
 import type { Output } from '../generate-text/output';
 import type { UIMessageStreamOptions } from '../generate-text/stream-text-result';
@@ -43,7 +43,7 @@ export type DirectChatTransportOptions<
  *
  * @example
  * ```tsx
- * import { useChat } from '@ai-sdk/react';
+ * import { useChat } from '@ai-toolkit/react';
  * import { DirectChatTransport } from 'ai';
  * import { myAgent } from './my-agent';
  *

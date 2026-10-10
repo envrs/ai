@@ -1,7 +1,7 @@
 'use client';
 
-import { IconCheck, IconCopy } from '@vercel/geistdocs/assets/icons';
-import { Button } from '@vercel/geistdocs/components/button';
+import { IconCheck, IconCopy } from '@khulnasoft/geistdocs/assets/icons';
+import { Button } from '@khulnasoft/geistdocs/components/button';
 import { useEffect, useRef, useState } from 'react';
 
 const COPIED_RESET_MS = 1500;
@@ -54,7 +54,7 @@ const CopyButton = ({ value }: { value: string }) => {
 };
 
 /**
- * Terminal command snippet (legacy @vercel/geist `<Snippet>` equivalent).
+ * Terminal command snippet (legacy @khulnasoft/geist `<Snippet>` equivalent).
  * Renders one `$`-prefixed line per command with a copy button that copies
  * the raw commands (no prompt prefixes), newline-joined. Accepts one string
  * (split on newlines) or an array of commands, matching the legacy component.

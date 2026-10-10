@@ -1,7 +1,7 @@
 import type {
   Experimental_RealtimeFactoryV4 as RealtimeFactoryV4,
   Experimental_RealtimeModelV4 as RealtimeModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { expectTypeOf, it } from 'vitest';
 import {
   openai,

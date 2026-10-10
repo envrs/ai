@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4Message,
   LanguageModelV4Prompt,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertDataContentToBase64String,
   type Experimental_DecisionState as DecisionState,

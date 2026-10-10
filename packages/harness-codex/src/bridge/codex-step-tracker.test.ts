@@ -1,4 +1,4 @@
-import type { BridgeEvent } from '@ai-sdk/harness/bridge';
+import type { BridgeEvent } from '@ai-toolkit/harness/bridge';
 import { describe, expect, it } from 'vitest';
 import { createCodexStepTracker } from './codex-step-tracker';
 

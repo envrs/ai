@@ -1,6 +1,6 @@
 {
-  "name": "@ai-sdk/react",
-  "version": "4.0.140",
+  "name": "@ai-toolkit/react",
+  "version": "2.0.1",
   "type": "module",
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -35,22 +35,22 @@
     "README.md"
   ],
   "dependencies": {
-    "@ai-sdk/mcp": "workspace:*",
-    "@ai-sdk/provider": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*",
+    "@ai-toolkit/mcp": "workspace:*",
+    "@ai-toolkit/provider": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*",
     "ai": "workspace:*",
     "swr": "^2.4.1",
     "throttleit": "2.1.0"
   },
   "devDependencies": {
-    "@ai-sdk/test-server": "workspace:*",
+    "@ai-toolkit/test-server": "workspace:*",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
     "@types/node": "22.19.19",
     "@types/react": "^18.3.28",
     "@types/react-dom": "^18.3.7",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "@vitejs/plugin-react": "^4.7.0",
     "jsdom": "^24.1.3",
     "msw": "2.6.4",
@@ -70,14 +70,14 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/react"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "keywords": [
     "ai",

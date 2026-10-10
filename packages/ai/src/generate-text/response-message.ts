@@ -1,7 +1,7 @@
 import type {
   AssistantModelMessage,
   ToolModelMessage,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 /**
  * A message that was generated during the generation process.

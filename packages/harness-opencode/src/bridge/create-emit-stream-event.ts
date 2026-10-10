@@ -1,4 +1,4 @@
-import type { BridgeTurn } from '@ai-sdk/harness/bridge';
+import type { BridgeTurn } from '@ai-toolkit/harness/bridge';
 import {
   emitLegacyPartDelta,
   emitLegacyTextPartUpdate,

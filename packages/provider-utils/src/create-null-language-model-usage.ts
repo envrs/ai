@@ -1,4 +1,4 @@
-import type { LanguageModelV4Usage } from '@ai-sdk/provider';
+import type { LanguageModelV4Usage } from '@ai-toolkit/provider';
 
 /**
  * Creates an empty language model usage result for unavailable usage data.

@@ -8,7 +8,7 @@ import type {
   LanguageModelV4StreamPart,
   LanguageModelV4StreamResult,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createEventSourceResponseHandler,
@@ -29,7 +29,7 @@ import {
   type InferSchema,
   type ParseResult,
   type ResponseHandler,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { convertToMoonshotAIChatMessages } from './convert-to-moonshotai-chat-messages';
 import { convertMoonshotAIChatUsage } from './convert-moonshotai-chat-usage';
 import { mapMoonshotAIFinishReason } from './map-moonshotai-finish-reason';
@@ -111,7 +111,7 @@ export class MoonshotAIChatLanguageModel implements LanguageModelV4 {
 
   readonly modelId: MoonshotAIChatModelId;
 
-  // Moonshot AI does not fetch external URLs; the AI SDK downloads and
+  // Moonshot AI does not fetch external URLs; the ai-toolkit downloads and
   // inlines URL file parts instead. ms:// file references from the Moonshot
   // Files API are passed through natively.
   readonly supportedUrls = {
@@ -406,7 +406,7 @@ export class MoonshotAIChatLanguageModel implements LanguageModelV4 {
         responseFormat.schema != null
       ) {
         // kimi-k2.5 produces nonsensical output when the top-level `$schema`
-        // keyword injected by the AI SDK is present, even though it otherwise
+        // keyword injected by the ai-toolkit is present, even though it otherwise
         // supports structured outputs. Strip it from the schema sent to
         // Moonshot; the full original schema is still used for result
         // validation.

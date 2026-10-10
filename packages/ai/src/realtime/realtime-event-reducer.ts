@@ -1,4 +1,4 @@
-import { safeParseJSON } from '@ai-sdk/provider-utils';
+import { safeParseJSON } from '@ai-toolkit/provider-utils';
 import type { RealtimeServerEvent } from '../types/realtime-model';
 import type { RealtimeSessionState } from './realtime-session-state';
 import type {

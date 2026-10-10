@@ -1,4 +1,4 @@
-import { asArray, type Context } from '@ai-sdk/provider-utils';
+import { asArray, type Context } from '@ai-toolkit/provider-utils';
 import type { Callback } from '../util/callback';
 import {
   filterIncludedContext,

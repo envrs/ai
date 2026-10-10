@@ -1,4 +1,4 @@
-import { convertArrayToReadableStream } from '@ai-sdk/provider-utils/test';
+import { convertArrayToReadableStream } from '@ai-toolkit/provider-utils/test';
 import type { UIMessageChunk } from '../ui-message-stream/ui-message-chunks';
 import { consumeStream } from '../util/consume-stream';
 import {
@@ -42,11 +42,11 @@ describe('processUIMessageStream', () => {
   beforeEach(() => {
     writeCalls = [];
     state = undefined;
-    globalThis.AI_SDK_LOG_WARNINGS = false;
+    globalThis.ai-toolkit_LOG_WARNINGS = false;
   });
 
   afterEach(() => {
-    delete globalThis.AI_SDK_LOG_WARNINGS;
+    delete globalThis.ai-toolkit_LOG_WARNINGS;
   });
 
   const runUpdateMessageJob = async (
@@ -6954,7 +6954,7 @@ describe('processUIMessageStream', () => {
 
     beforeEach(async () => {
       warningLogger.mockClear();
-      globalThis.AI_SDK_LOG_WARNINGS = warningLogger;
+      globalThis.ai-toolkit_LOG_WARNINGS = warningLogger;
 
       const stream = createUIMessageStream([
         {
@@ -7172,7 +7172,7 @@ describe('processUIMessageStream', () => {
       'clears raw input on $name',
       async ({ chunk: terminalChunk }) => {
         const warningLogger = vi.fn();
-        globalThis.AI_SDK_LOG_WARNINGS = warningLogger;
+        globalThis.ai-toolkit_LOG_WARNINGS = warningLogger;
 
         const stream = createUIMessageStream([
           { type: 'start' },

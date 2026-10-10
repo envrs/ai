@@ -1,4 +1,4 @@
-import type { LanguageModelV4FinishReason } from '@ai-sdk/provider';
+import type { LanguageModelV4FinishReason } from '@ai-toolkit/provider';
 
 export function mapXaiFinishReason(
   finishReason: string | null | undefined,

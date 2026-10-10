@@ -1,4 +1,4 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import { describe, expect, it, vi } from 'vitest';
 import { deleteFromApi } from './delete-from-api';
 import {

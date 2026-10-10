@@ -933,7 +933,7 @@ describe('translatePiEvent', () => {
         type: 'tool_execution_start',
         toolCallId: 'mcp-call',
         toolName: 'mcp__memory_search',
-        args: { query: 'AI SDK' },
+        args: { query: 'ai-toolkit' },
       } as PiSessionEvent,
       state,
     );
@@ -945,7 +945,7 @@ describe('translatePiEvent', () => {
           content: [
             {
               type: 'text',
-              text: '{"matches":["AI SDK Core","AI SDK UI"]}',
+              text: '{"matches":["ai-toolkit Core","ai-toolkit UI"]}',
             },
           ],
         },
@@ -957,7 +957,7 @@ describe('translatePiEvent', () => {
       [
         {
           "dynamic": true,
-          "input": "{"query":"AI SDK"}",
+          "input": "{"query":"ai-toolkit"}",
           "providerExecuted": true,
           "toolCallId": "mcp-call",
           "toolName": "mcp__memory_search",
@@ -967,8 +967,8 @@ describe('translatePiEvent', () => {
           "dynamic": true,
           "result": {
             "matches": [
-              "AI SDK Core",
-              "AI SDK UI",
+              "ai-toolkit Core",
+              "ai-toolkit UI",
             ],
           },
           "toolCallId": "mcp-call",

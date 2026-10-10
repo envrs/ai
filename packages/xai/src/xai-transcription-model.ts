@@ -3,7 +3,7 @@ import {
   type Experimental_TranscriptionModelV4StreamOptions as TranscriptionModelV4StreamOptions,
   type SharedV4Warning,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -22,7 +22,7 @@ import {
   type WebSocketConnection,
   type WebSocketConstructor,
   type WebSocketLike,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { xaiFailedResponseHandler } from './xai-error';
 import {

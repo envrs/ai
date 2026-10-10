@@ -1,14 +1,14 @@
-# AI SDK Tools Registry - Contributing a Tool
+# ai-toolkit Tools Registry - Contributing a Tool
 
-You can add your tool to the [registry](https://ai-sdk.dev/resources/tools) by submitting a pull request that updates the `content/tools-registry/registry.ts` file.
+You can add your tool to the [registry](https://ai-toolkit.dev/resources/tools) by submitting a pull request that updates the `content/tools-registry/registry.ts` file.
 
 ### Prerequisites
 
 Before submitting your tool, ensure you have:
 
 - Published your tool package to npm
-- Tested the integration with the current AI SDK and confirmed that it works as advertised
-- Published documentation on your website that explains how the tool works with the AI SDK
+- Tested the integration with the current ai-toolkit and confirmed that it works as advertised
+- Published documentation on your website that explains how the tool works with the ai-toolkit
 
 ### Adding Your Tool
 
@@ -52,7 +52,7 @@ Before submitting your tool, ensure you have:
    });
 
    console.log(text);`,
-     docsUrl: 'https://your-docs-url.com/ai-sdk-integration',
+     docsUrl: 'https://your-docs-url.com/ai-toolkit-integration',
      apiKeyUrl: 'https://your-api-key-url.com',
      websiteUrl: 'https://your-website.com',
      npmUrl: 'https://www.npmjs.com/package/your-package-name',
@@ -61,12 +61,12 @@ Before submitting your tool, ensure you have:
 
 3. **Document and test your integration**
 
-   Set `docsUrl` to the documentation on your website that explains how your tool works with the AI SDK. The link should point directly to the relevant AI SDK integration guide rather than to a homepage or generic API documentation.
+   Set `docsUrl` to the documentation on your website that explains how your tool works with the ai-toolkit. The link should point directly to the relevant ai-toolkit integration guide rather than to a homepage or generic API documentation.
 
    Confirm that the integration works as advertised. Your `codeExample` must:
    - Be a complete, working example
    - Show realistic usage of your tool
-   - Use the latest AI SDK patterns
+   - Use the latest ai-toolkit patterns
    - Include necessary imports
    - Be tested to ensure it works
 
@@ -92,4 +92,4 @@ If you have questions about adding your tool to the registry:
 
 - Check the main [CONTRIBUTING.md](../../CONTRIBUTING.md) guide
 - Review existing tool entries in `registry.ts` for examples
-- Open an issue on [GitHub](https://github.com/vercel/ai/issues)
+- Open an issue on [GitHub](https://github.com/khulnasoft/ai/issues)

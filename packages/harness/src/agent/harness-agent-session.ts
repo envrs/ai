@@ -5,7 +5,7 @@ import type {
   ToolApprovalResponse,
   ToolResultPart,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type {
   OutputInterface as Output,
   StopCondition,

@@ -1,7 +1,7 @@
 import type {
   JSONSchema7,
   LanguageModelV4ProviderTool,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { expect, it } from 'vitest';
 import { prepareTools } from './google-prepare-tools';
 

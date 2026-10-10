@@ -2,7 +2,7 @@ import type {
   HasRequiredKey,
   InferToolSetContext,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 /**
  * Checks whether a tool context map contains any contextual tool entries.

@@ -97,7 +97,7 @@ describe('createHostToolCorrelation', () => {
               undefined,
               null,
               'get_weather',
-              'mcp__ai-sdk-harness-tools__get_weather',
+              'mcp__ai-toolkit-harness-tools__get_weather',
             ]) {
               expect(
                 correlation.claimHostToolPermission({
@@ -133,17 +133,17 @@ describe('createHostToolCorrelation', () => {
 
   it.each([
     {
-      server: 'ai-sdk-harness-tools',
+      server: 'ai-toolkit-harness-tools',
       tool: 'get_weather',
       arguments: { city: 'Austin' },
     },
     {
-      origin: 'ai-sdk-harness-tools',
+      origin: 'ai-toolkit-harness-tools',
       operation: 'get_weather',
       arguments: { city: 'Austin' },
     },
     {
-      tool_name: 'ai-sdk-harness-tools__get_weather',
+      tool_name: 'ai-toolkit-harness-tools__get_weather',
       tool_input: { city: 'Austin' },
     },
   ])('accepts equivalent permission envelopes: %j', rawInput => {
@@ -172,7 +172,7 @@ describe('createHostToolCorrelation', () => {
     const { correlation } = setup({ hostTools: [{ name: 'get_weather' }] });
     const toolCall = deferredToolPermission({
       toolCallId: 'deferred',
-      combinedToolName: 'ai-sdk-harness-tools__get_weather',
+      combinedToolName: 'ai-toolkit-harness-tools__get_weather',
       input: { city: 'Austin' },
     });
     correlation.update({
@@ -202,14 +202,14 @@ describe('createHostToolCorrelation', () => {
   });
 
   it.each([
-    { tool_name: 'ai-sdk-harness-tools__get_weather' },
-    { tool_name: 'ai-sdk-harness-tools__get_weather', tool_input: null },
-    { tool_name: 'ai-sdk-harness-tools__get_weather', tool_input: [] },
+    { tool_name: 'ai-toolkit-harness-tools__get_weather' },
+    { tool_name: 'ai-toolkit-harness-tools__get_weather', tool_input: null },
+    { tool_name: 'ai-toolkit-harness-tools__get_weather', tool_input: [] },
     { tool_name: 'other-server__get_weather', tool_input: { city: 'Austin' } },
     {
-      tool_name: 'ai-sdk-harness-tools__get_weather',
+      tool_name: 'ai-toolkit-harness-tools__get_weather',
       tool_input: { city: 'Austin' },
-      server: 'ai-sdk-harness-tools',
+      server: 'ai-toolkit-harness-tools',
       tool: 'get_weather',
       arguments: { city: 'Austin' },
     },
@@ -221,7 +221,7 @@ describe('createHostToolCorrelation', () => {
         correlation.claimHostToolPermission({
           toolCall: {
             toolCallId: 'unobserved',
-            title: 'mcp__ai-sdk-harness-tools__get_weather',
+            title: 'mcp__ai-toolkit-harness-tools__get_weather',
             rawInput,
           },
         }),
@@ -306,24 +306,24 @@ describe('createHostToolCorrelation', () => {
     },
     {
       rawInput: {
-        providerIdentifier: 'ai-sdk-harness-tools',
+        providerIdentifier: 'ai-toolkit-harness-tools',
         toolName: 'get_weather_forecast',
         args: { city: 'Austin' },
       },
     },
     {
       rawInput: {
-        providerIdentifier: 'ai-sdk-harness-tools',
+        providerIdentifier: 'ai-toolkit-harness-tools',
         toolName: 'get_weather',
         args: null,
       },
     },
     {
       rawInput: {
-        providerIdentifier: 'ai-sdk-harness-tools',
+        providerIdentifier: 'ai-toolkit-harness-tools',
         toolName: 'get_weather',
         args: { city: 'Austin' },
-        tool_name: 'ai-sdk-harness-tools__get_weather',
+        tool_name: 'ai-toolkit-harness-tools__get_weather',
         tool_input: { city: 'Austin' },
       },
     },
@@ -509,7 +509,7 @@ describe('createHostToolCorrelation', () => {
       correlation.claimHostToolPermission({
         toolCall: {
           toolCallId: 'unobserved',
-          title: 'ai-sdk-harness-tools-get_weather: get_weather',
+          title: 'ai-toolkit-harness-tools-get_weather: get_weather',
         },
       }),
     ).toBeUndefined();
@@ -585,7 +585,7 @@ describe('createHostToolCorrelation', () => {
       rawInput: { city: 'Lima' },
       _meta: {
         details: [
-          { serverName: 'ai-sdk-harness-tools' },
+          { serverName: 'ai-toolkit-harness-tools' },
           { toolName: 'weather' },
         ],
       },
@@ -626,7 +626,7 @@ describe('createHostToolCorrelation', () => {
       title: 'Opaque display',
       status: 'completed',
       rawInput: { city: 'Lima' },
-      _meta: { serverName: 'ai-sdk-harness-tools' },
+      _meta: { serverName: 'ai-toolkit-harness-tools' },
     } as const;
 
     correlation.update({
@@ -640,7 +640,7 @@ describe('createHostToolCorrelation', () => {
       .toMatchInlineSnapshot(`
               {
                 "_meta": {
-                  "serverName": "ai-sdk-harness-tools",
+                  "serverName": "ai-toolkit-harness-tools",
                 },
                 "name": "weather",
                 "rawInput": {
@@ -665,11 +665,11 @@ describe('createHostToolCorrelation', () => {
     const rawUpdate = {
       sessionUpdate: 'tool_call',
       toolCallId: 'cursor-mcp-call',
-      title: 'ai-sdk-harness-tools: weather',
+      title: 'ai-toolkit-harness-tools: weather',
       kind: 'other',
       status: 'completed',
       rawInput: {
-        providerIdentifier: 'ai-sdk-harness-tools',
+        providerIdentifier: 'ai-toolkit-harness-tools',
         toolName: 'weather',
         args: { city: 'Lima' },
       },
@@ -716,7 +716,7 @@ describe('createHostToolCorrelation', () => {
     });
     const toolCall = {
       toolCallId: 'toolu_01UTvc8ZcXBubKg5RqvTr8mo',
-      title: 'mcp__ai-sdk-harness-tools__get_weather',
+      title: 'mcp__ai-toolkit-harness-tools__get_weather',
       kind: 'other',
       status: 'pending',
       rawInput: { city: 'Lima' },
@@ -726,7 +726,7 @@ describe('createHostToolCorrelation', () => {
       ...toolCall,
       _meta: {
         claudeCode: {
-          toolName: 'mcp__ai-sdk-harness-tools__get_weather',
+          toolName: 'mcp__ai-toolkit-harness-tools__get_weather',
         },
       },
     } as const;
@@ -765,7 +765,7 @@ describe('createHostToolCorrelation', () => {
     });
     const toolCall = deferredToolPermission({
       toolCallId: 'permission-before-update',
-      combinedToolName: 'ai-sdk-harness-tools__get_weather',
+      combinedToolName: 'ai-toolkit-harness-tools__get_weather',
       input: { city: 'Lima' },
     });
 
@@ -790,7 +790,7 @@ describe('createHostToolCorrelation', () => {
       status: 'pending',
       rawInput: { city: 'Lima' },
       _meta: {
-        details: [{ toolName: 'mcp__ai-sdk-harness-tools__get_weather' }],
+        details: [{ toolName: 'mcp__ai-toolkit-harness-tools__get_weather' }],
       },
     } as const;
 
@@ -830,7 +830,7 @@ describe('createHostToolCorrelation', () => {
       title: 'Opaque display',
       status: 'pending',
       rawInput: { city: 'Lima' },
-      _meta: { serverName: 'ai-sdk-harness-tools' },
+      _meta: { serverName: 'ai-toolkit-harness-tools' },
     } as const;
     correlation.update({
       message: update({
@@ -857,7 +857,7 @@ describe('createHostToolCorrelation', () => {
     });
     const toolCall = deferredToolPermission({
       toolCallId: 'later-provider-update',
-      combinedToolName: 'ai-sdk-harness-tools__get_weather',
+      combinedToolName: 'ai-toolkit-harness-tools__get_weather',
       input: { city: 'Lima' },
     });
     expect(correlation.claimHostToolPermission({ toolCall }))
@@ -895,9 +895,9 @@ describe('createHostToolCorrelation', () => {
     });
     const toolCall = deferredToolPermission({
       toolCallId: 'deferred-identity-mismatch',
-      combinedToolName: 'ai-sdk-harness-tools__get_weather_forecast',
+      combinedToolName: 'ai-toolkit-harness-tools__get_weather_forecast',
       input: { city: 'Lima' },
-      title: 'ai-sdk-harness-tools__get_weather',
+      title: 'ai-toolkit-harness-tools__get_weather',
     });
 
     expect(correlation.claimHostToolPermission({ toolCall })).toBeUndefined();
@@ -920,7 +920,7 @@ describe('createHostToolCorrelation', () => {
     });
     const toolCall = deferredToolPermission({
       toolCallId: 'deferred-input-mismatch',
-      combinedToolName: 'ai-sdk-harness-tools__get_weather',
+      combinedToolName: 'ai-toolkit-harness-tools__get_weather',
       input: { city: 'Quito' },
     });
 
@@ -934,13 +934,13 @@ describe('createHostToolCorrelation', () => {
     const rawUpdate = {
       sessionUpdate: 'tool_call',
       toolCallId: 'toolu_input_mismatch',
-      title: 'mcp__ai-sdk-harness-tools__get_weather',
+      title: 'mcp__ai-toolkit-harness-tools__get_weather',
       kind: 'other',
       status: 'pending',
       rawInput: { city: 'Lima' },
       _meta: {
         claudeCode: {
-          toolName: 'mcp__ai-sdk-harness-tools__get_weather',
+          toolName: 'mcp__ai-toolkit-harness-tools__get_weather',
         },
       },
     } as const;
@@ -968,13 +968,13 @@ describe('createHostToolCorrelation', () => {
     const rawUpdate = {
       sessionUpdate: 'tool_call',
       toolCallId: 'toolu_tool_name_suffix',
-      title: 'mcp__ai-sdk-harness-tools__get_weather',
+      title: 'mcp__ai-toolkit-harness-tools__get_weather',
       kind: 'other',
       status: 'pending',
       rawInput: { city: 'Lima' },
       _meta: {
         claudeCode: {
-          toolName: 'mcp__ai-sdk-harness-tools__get_weather',
+          toolName: 'mcp__ai-toolkit-harness-tools__get_weather',
         },
       },
     } as const;
@@ -1002,13 +1002,13 @@ describe('createHostToolCorrelation', () => {
     const rawUpdate = {
       sessionUpdate: 'tool_call',
       toolCallId: 'toolu_ambiguous',
-      title: 'mcp__ai-sdk-harness-tools__get_weather',
+      title: 'mcp__ai-toolkit-harness-tools__get_weather',
       kind: 'other',
       status: 'pending',
       rawInput: { city: 'Lima' },
       _meta: {
         protocol: {
-          toolName: 'mcp__ai-sdk-harness-tools__get_weather',
+          toolName: 'mcp__ai-toolkit-harness-tools__get_weather',
         },
       },
     } as const;
@@ -1244,7 +1244,7 @@ function setup({
   const correlation = createHostToolCorrelation({
     emitSemanticUpdate: value => semantic.push(value),
     emitRawUpdate: ({ rawUpdate }) => raw.push(rawUpdate),
-    hostToolServerName: 'ai-sdk-harness-tools',
+    hostToolServerName: 'ai-toolkit-harness-tools',
     hostTools,
   });
   return { correlation, semantic, raw };
@@ -1265,7 +1265,7 @@ function register({
 }): void {
   correlation.registerInvocation({
     token,
-    serverName: 'ai-sdk-harness-tools',
+    serverName: 'ai-toolkit-harness-tools',
     toolName,
     input,
     order,
@@ -1289,7 +1289,7 @@ function portableUpdate({
     name: toolName,
     status,
     rawInput: {
-      origin: 'ai-sdk-harness-tools',
+      origin: 'ai-toolkit-harness-tools',
       operation: toolName,
       arguments: input,
     },

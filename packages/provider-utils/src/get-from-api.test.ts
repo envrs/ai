@@ -1,4 +1,4 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import { describe, it, expect, vi } from 'vitest';
 import { DownloadError } from './download-error';
 import { getFromApi } from './get-from-api';
@@ -62,7 +62,7 @@ describe('getFromApi', () => {
         method: 'GET',
         headers: {
           authorization: 'Bearer test',
-          'user-agent': 'ai-sdk-provider-utils/0.0.0-test test-env',
+          'user-agent': 'ai-toolkit-provider-utils/0.0.0-test test-env',
         },
       }),
     );
@@ -154,7 +154,7 @@ describe('getFromApi', () => {
       expect.objectContaining({
         headers: {
           authorization: 'Bearer test',
-          'user-agent': 'ai-sdk-provider-utils/0.0.0-test test-env',
+          'user-agent': 'ai-toolkit-provider-utils/0.0.0-test test-env',
         },
       }),
     );
@@ -306,7 +306,7 @@ describe('getFromApi', () => {
       expect(sentHeaders.get('authorization')).toBe('Bearer secret');
       expect(sentHeaders.get('x-key')).toBe('provider-secret');
       expect(sentHeaders.get('x-custom-metadata')).toBe('custom-value');
-      expect(sentHeaders.get('user-agent')).toContain('ai-sdk-provider-utils');
+      expect(sentHeaders.get('user-agent')).toContain('ai-toolkit-provider-utils');
     });
 
     it('drops all caller headers except user-agent when a redirect crosses origin', async () => {
@@ -333,7 +333,7 @@ describe('getFromApi', () => {
       expect(secondHopHeaders.get('x-key')).toBeNull();
       // the user-agent suffix still identifies the SDK on the redirected hop.
       expect(secondHopHeaders.get('user-agent')).toContain(
-        'ai-sdk-provider-utils',
+        'ai-toolkit-provider-utils',
       );
     });
 
@@ -373,7 +373,7 @@ describe('getFromApi', () => {
     it('does not validate the URL when validateUrl is omitted (backwards compatibility)', async () => {
       const mockFetch = vi.fn().mockResolvedValue(okJson());
 
-      // oxlint-disable-next-line ai-sdk/require-validate-url -- deliberately omitted: this test pins the backwards-compatible default
+      // oxlint-disable-next-line ai-toolkit/require-validate-url -- deliberately omitted: this test pins the backwards-compatible default
       await getFromApi({
         url: 'http://127.0.0.1/file',
         successfulResponseHandler:
@@ -423,7 +423,7 @@ describe('getFromApi', () => {
       const sent = mockFetch.mock.calls[0][1].headers as Headers;
       expect(sent.get('authorization')).toBeNull();
       // user-agent is still applied even when caller headers are withheld.
-      expect(sent.get('user-agent')).toContain('ai-sdk-provider-utils');
+      expect(sent.get('user-agent')).toContain('ai-toolkit-provider-utils');
     });
 
     it('sends headers when the URL is same-origin with credentialedOrigin', async () => {

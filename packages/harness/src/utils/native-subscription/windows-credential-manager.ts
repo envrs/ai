@@ -7,7 +7,7 @@ const credentialManagerSource = `
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
-public static class AISDKCredentialManager {
+public static class ai-toolkitCredentialManager {
   [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
   public struct Credential {
     public UInt32 Flags; public UInt32 Type; public string TargetName;
@@ -43,13 +43,13 @@ export async function readWindowsCredentialManagerPassword({
         '-NoProfile',
         '-NonInteractive',
         '-Command',
-        `Add-Type -TypeDefinition $env:AI_SDK_WINDOWS_CREDENTIAL_MANAGER_SOURCE; $value = [AISDKCredentialManager]::Read($env:AI_SDK_WINDOWS_CREDENTIAL_MANAGER_TARGET); if ($null -ne $value) { [Console]::Out.Write($value) }`,
+        `Add-Type -TypeDefinition $env:ai-toolkit_WINDOWS_CREDENTIAL_MANAGER_SOURCE; $value = [ai-toolkitCredentialManager]::Read($env:ai-toolkit_WINDOWS_CREDENTIAL_MANAGER_TARGET); if ($null -ne $value) { [Console]::Out.Write($value) }`,
       ],
       {
         env: {
           ...process.env,
-          AI_SDK_WINDOWS_CREDENTIAL_MANAGER_SOURCE: credentialManagerSource,
-          AI_SDK_WINDOWS_CREDENTIAL_MANAGER_TARGET: targetName,
+          ai-toolkit_WINDOWS_CREDENTIAL_MANAGER_SOURCE: credentialManagerSource,
+          ai-toolkit_WINDOWS_CREDENTIAL_MANAGER_TARGET: targetName,
         },
         windowsHide: true,
       },

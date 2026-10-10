@@ -1,4 +1,4 @@
-import { createJsonErrorResponseHandler } from '@ai-sdk/provider-utils';
+import { createJsonErrorResponseHandler } from '@ai-toolkit/provider-utils';
 import * as z from 'zod/v4';
 
 // Verified against the official SDK at 66880ccded6cb642dc1809620c2b108c33730214.

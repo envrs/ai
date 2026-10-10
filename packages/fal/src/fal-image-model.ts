@@ -1,4 +1,4 @@
-import type { ImageModelV4, SharedV4Warning } from '@ai-sdk/provider';
+import type { ImageModelV4, SharedV4Warning } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertImageModelFileToDataUri,
@@ -15,7 +15,7 @@ import {
   WORKFLOW_DESERIALIZE,
   type Resolvable,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { FalImageModelId, FalImageSize } from './fal-image-settings';
 import { falImageModelOptionsSchema } from './fal-image-model-options';
@@ -173,7 +173,7 @@ export class FalImageModel implements ImageModelV4 {
       if (deprecatedKeys && deprecatedKeys.length > 0) {
         warnings.push({
           type: 'other',
-          message: `The following provider options use deprecated snake_case and will be removed in @ai-sdk/fal v2.0. Please use camelCase instead: ${deprecatedKeys
+          message: `The following provider options use deprecated snake_case and will be removed in @ai-toolkit/fal v2.0. Please use camelCase instead: ${deprecatedKeys
             .map(key => {
               const camelCase = key.replace(/_([a-z])/g, (_, letter) =>
                 letter.toUpperCase(),

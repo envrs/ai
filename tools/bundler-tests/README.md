@@ -8,7 +8,7 @@ output. The suite does not use Playwright or install a browser.
 
 ```sh
 pnpm install
-pnpm exec turbo build --filter=ai --filter=@ai-sdk/openai
+pnpm exec turbo build --filter=ai --filter=@ai-toolkit/openai
 pnpm test:bundlers
 # Or run just one supported peer-dependency boundary:
 pnpm test:bundlers 4.1.8
@@ -20,7 +20,7 @@ implementation shipped inside Zod 3. The fixture pins Next.js, React, esbuild,
 and its type-checking dependencies; other transitive dependencies resolve at
 install time. No API keys or live model calls are needed.
 
-The runner packs `ai`, `@ai-sdk/openai`, and their recursive workspace
+The runner packs `ai`, `@ai-toolkit/openai`, and their recursive workspace
 dependencies. It overrides every selected SDK dependency with the local tarball,
 including transitive dependencies. The consumer checks that package entry points
 resolve to built output inside its own installation. It has no workspace links,
@@ -48,10 +48,10 @@ failed consumer installations and prints their locations for local investigation
 ## Relationship to #9388
 
 This is compatibility coverage motivated by
-[the Zod import regression](https://github.com/vercel/ai/issues/9388), not a
+[the Zod import regression](https://github.com/khulnasoft/ai/issues/9388), not a
 confirmed reproduction of it. The issue and revert do not identify the exact
 failing bundler configuration. An initial experiment with the affected
-`ai@5.0.62` and `@ai-sdk/provider-utils@3.0.11` passed basic schema checks in
+`ai@5.0.62` and `@ai-toolkit/provider-utils@3.0.11` passed basic schema checks in
 esbuild and webpack bundles. Before claiming that #9388 is fixed, add a fixture
 that fails with those releases and passes with the import revert under the same
 configuration. Keep that historical reproduction separate from these tests of

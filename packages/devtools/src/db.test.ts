@@ -18,7 +18,7 @@ describe('devtools db path validation', () => {
 
   // Keep cold module transformation out of the test timeout on busy CI runners.
   beforeEach(async () => {
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ai-sdk-devtools-'));
+    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ai-toolkit-devtools-'));
     tempDirs.push(tempDir);
     process.chdir(tempDir);
     vi.resetModules();

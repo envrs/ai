@@ -1,5 +1,5 @@
-import type { HarnessV1Bootstrap } from '@ai-sdk/harness';
-import { createReadBridgeAsset } from '@ai-sdk/harness/utils';
+import type { HarnessV1Bootstrap } from '@ai-toolkit/harness';
+import { createReadBridgeAsset } from '@ai-toolkit/harness/utils';
 import {
   createImplementationDescriptor,
   createImplementationInstallCommand,

@@ -1,33 +1,33 @@
-# AI SDK - Model Context Protocol Client
+# ai-toolkit - Model Context Protocol Client
 
 The **Model Context Protocol (MCP) client** for the
-[AI SDK](https://ai-sdk.dev/docs) lets you connect to MCP servers and use their
-tools with AI SDK functions like `generateText` and `streamText`.
+[ai-toolkit](https://ai-toolkit.dev/docs) lets you connect to MCP servers and use their
+tools with ai-toolkit functions like `generateText` and `streamText`.
 
 ## Setup
 
-The MCP client is available in the `@ai-sdk/mcp` module. You can install it with
+The MCP client is available in the `@ai-toolkit/mcp` module. You can install it with
 
 ```bash
-npm i @ai-sdk/mcp ai zod
+npm i @ai-toolkit/mcp ai zod
 ```
 
 ## Skill for Coding Agents
 
 If you use coding agents such as Claude Code or Cursor, we highly recommend
-adding the AI SDK skill to your repository:
+adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Usage
 
 Create an MCP client with `createMCPClient()`, fetch the server tools with
-`mcpClient.tools()`, and pass them to an AI SDK call:
+`mcpClient.tools()`, and pass them to an ai-toolkit call:
 
 ```ts
-import { createMCPClient } from '@ai-sdk/mcp';
+import { createMCPClient } from '@ai-toolkit/mcp';
 import { generateText, isStepCount } from 'ai';
 
 const mcpClient = await createMCPClient({
@@ -56,7 +56,7 @@ try {
 }
 ```
 
-The client converts MCP tool definitions into AI SDK tools, so model calls can
+The client converts MCP tool definitions into ai-toolkit tools, so model calls can
 use them through the standard `tools` option.
 
 ## Experimental webhook events
@@ -73,7 +73,7 @@ envelopes before invoking your handler. Optional callbacks let your application
 validate filters and event data. Agent execution and durable deduplication
 remain application concerns; closing the client does not unsubscribe.
 
-See the [MCP Events guide](https://ai-sdk.dev/docs/ai-sdk-core/mcp-events) and the
+See the [MCP Events guide](https://ai-toolkit.dev/docs/ai-toolkit-core/mcp-events) and the
 [local server/client example](../../examples/mcp/src/events/README.md).
 
 ## Protocol versions
@@ -90,7 +90,7 @@ protocol version, client capabilities, and client information in `_meta`.
 For streaming responses, close the MCP client when the stream finishes:
 
 ```ts
-import { createMCPClient } from '@ai-sdk/mcp';
+import { createMCPClient } from '@ai-toolkit/mcp';
 import { streamText } from 'ai';
 
 const mcpClient = await createMCPClient({
@@ -123,7 +123,7 @@ Session persistence applies only to legacy MCP protocol versions. MCP
 results.
 
 ```ts
-import { createMCPClient } from '@ai-sdk/mcp';
+import { createMCPClient } from '@ai-toolkit/mcp';
 
 const savedSession = await loadMcpSession();
 let currentSessionId = savedSession?.sessionId;
@@ -167,12 +167,12 @@ const mcpClient = await createMCPClient({
 });
 ```
 
-For local MCP servers, you can use stdio transport from the `@ai-sdk/mcp/mcp-stdio`
+For local MCP servers, you can use stdio transport from the `@ai-toolkit/mcp/mcp-stdio`
 subpath:
 
 ```ts
-import { createMCPClient } from '@ai-sdk/mcp';
-import { Experimental_StdioMCPTransport } from '@ai-sdk/mcp/mcp-stdio';
+import { createMCPClient } from '@ai-toolkit/mcp';
+import { Experimental_StdioMCPTransport } from '@ai-toolkit/mcp/mcp-stdio';
 
 const mcpClient = await createMCPClient({
   transport: new Experimental_StdioMCPTransport({
@@ -185,7 +185,7 @@ const mcpClient = await createMCPClient({
 ## Documentation
 
 Please check out the
-[AI SDK MCP documentation](https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools) for
+[ai-toolkit MCP documentation](https://ai-toolkit.dev/docs/ai-toolkit-core/mcp-tools) for
 more information.
 
 Managed backends can implement `Experimental_MCPEventAdapter` and configure
@@ -195,4 +195,4 @@ method receives `{ transport }` metadata (HTTP/SSE type and URL, or
 bound to the authorized account. Catalog discovery still
 uses the authenticated MCP transport; subscribe/get/list/unsubscribe delegate
 to the backend, which owns renewal and webhook delivery. Managed clients do not
-expose `refresh()`. See the [managed subscription reference](https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-events#managed-subscriptions).
+expose `refresh()`. See the [managed subscription reference](https://ai-toolkit.dev/docs/reference/ai-toolkit-core/mcp-events#managed-subscriptions).

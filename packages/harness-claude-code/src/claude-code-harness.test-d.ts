@@ -2,10 +2,10 @@ import {
   HarnessAgent,
   type HarnessAgentAdapter,
   type HarnessAgentSettings,
-} from '@ai-sdk/harness/agent';
-import type { HarnessV1QuestionsToolOutput } from '@ai-sdk/harness';
-import type { SandboxChannelReconnectOptions } from '@ai-sdk/harness/utils';
-import type { InferToolInput, InferToolOutput } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/agent';
+import type { HarnessV1QuestionsToolOutput } from '@ai-toolkit/harness';
+import type { SandboxChannelReconnectOptions } from '@ai-toolkit/harness/utils';
+import type { InferToolInput, InferToolOutput } from '@ai-toolkit/provider-utils';
 import { assertType, describe, expectTypeOf, test } from 'vitest';
 import {
   claudeCode,

@@ -65,7 +65,7 @@ const autoCompletePartialJson = (objectStr: string): ObjectProps | null => {
 
 /**
  * Simulated structured-object generation for cookbook demos (ported from
- * the legacy ai-sdk.dev app): click "View Notifications" to reveal the
+ * the legacy ai-toolkit.dev app): click "View Notifications" to reveal the
  * object, progressively parsed from a partial JSON stream when `stream` is
  * set.
  */

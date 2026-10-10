@@ -60,7 +60,7 @@ const DEFAULT_MAX_IN_FLIGHT_BRIDGE_REQUESTS = 32;
 let invocationCounter = 0;
 
 /**
- * Runs one code-mode invocation directly without wrapping it as an AI SDK tool.
+ * Runs one code-mode invocation directly without wrapping it as an ai-toolkit tool.
  *
  * The source is executed in a fresh QuickJS context with the provided host tools
  * and execution limits.
@@ -99,7 +99,7 @@ export async function runCodeMode(input: RunCodeModeInput): Promise<unknown> {
     input.options?.continuationSecurity,
   );
   const runner = createRunner({
-    continuationAudience: '@ai-sdk/code-mode/v2',
+    continuationAudience: '@ai-toolkit/code-mode/v2',
     continuationCodec: createSignedContinuationCodec({
       maxAgeMs: continuationSecurity.maxAgeMs,
       secret: createHash('sha256')

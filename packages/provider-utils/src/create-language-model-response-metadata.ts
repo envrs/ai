@@ -1,4 +1,4 @@
-import type { LanguageModelV4ResponseMetadata } from '@ai-sdk/provider';
+import type { LanguageModelV4ResponseMetadata } from '@ai-toolkit/provider';
 
 /**
  * Converts common provider response fields into language model response

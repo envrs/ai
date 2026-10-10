@@ -1,5 +1,5 @@
-import { IconArrowUpRight } from '@vercel/geistdocs/assets/icons/icon-arrow-up-right';
-import { Button } from '@vercel/geistdocs/components/button';
+import { IconArrowUpRight } from '@khulnasoft/geistdocs/assets/icons/icon-arrow-up-right';
+import { Button } from '@khulnasoft/geistdocs/components/button';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 

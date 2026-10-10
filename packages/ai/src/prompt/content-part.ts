@@ -12,7 +12,7 @@ import {
   type ToolApprovalResponse,
   type ToolResultOutput,
   type ToolResultPart,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { jsonValueSchema } from '../types/json-value';
 import { providerMetadataSchema } from '../types/provider-metadata';
 import { z, type ZodType } from '../util/zod';
@@ -137,7 +137,7 @@ export interface ToolCallPart {
 
   /**
    * Additional provider-specific metadata. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: ProviderOptions;

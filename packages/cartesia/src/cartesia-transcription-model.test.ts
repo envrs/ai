@@ -1,8 +1,8 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { CartesiaTranscriptionModel } from './cartesia-transcription-model';
 import { createCartesia } from './cartesia-provider';
 import { readFile } from 'node:fs/promises';
@@ -127,7 +127,7 @@ describe('doGenerate', () => {
         'custom-request-header': 'request-header-value',
       });
       expect(server.calls[0].requestUserAgent).toContain(
-        `ai-sdk-cartesia/0.0.0-test`,
+        `ai-toolkit-cartesia/0.0.0-test`,
       );
     });
 
@@ -138,7 +138,7 @@ describe('doGenerate', () => {
       });
 
       expect(result.text).toMatchInlineSnapshot(
-        `"Hello from the Vercel AI SDK."`,
+        `"Hello from the khulnasoft ai-toolkit."`,
       );
     });
 

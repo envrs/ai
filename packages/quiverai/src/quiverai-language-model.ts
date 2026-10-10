@@ -5,16 +5,16 @@ import {
   type LanguageModelV4StreamPart,
   type SharedV4ProviderMetadata,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   createOpenResponses,
   type OpenResponsesProviderSettings,
-} from '@ai-sdk/open-responses';
+} from '@ai-toolkit/open-responses';
 import {
   serializeModelOptions,
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   getQuiverAIResponseErrorMetadata,
   quiveraiFailedResponseHandler,

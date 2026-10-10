@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import type { HarnessV1DebugConfig, HarnessV1ToolSpec } from '@ai-sdk/harness';
+import type { HarnessV1DebugConfig, HarnessV1ToolSpec } from '@ai-toolkit/harness';
 import type { ACPAuthenticationProfileIdentity } from '../acp-auth';
 import {
   acpSerializableToolSpecSchema,

@@ -15,7 +15,7 @@ export default createTransformer((fileInfo, api, options, context) => {
     'transcribe',
   ];
 
-  // Common provider function names (these typically come from @ai-sdk/* packages)
+  // Common provider function names (these typically come from @ai-toolkit/* packages)
   const providerFunctions = [
     'openai',
     'anthropic',
@@ -121,6 +121,6 @@ export default createTransformer((fileInfo, api, options, context) => {
     );
     context.messages.push('');
     // TODO: add link to migration guide
-    // context.messages.push('See migration guide: https://ai-sdk.dev/docs/migration/switch-to-provider-options');
+    // context.messages.push('See migration guide: https://ai-toolkit.dev/docs/migration/switch-to-provider-options');
   }
 });

@@ -3,7 +3,7 @@ import {
   extractLines,
   type Experimental_SandboxSession as SandboxSession,
   type Experimental_SandboxProcess as SandboxProcess,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { Sandbox, SandboxCommand } from 'just-bash';
 import { ensureRealpath } from './utils';
 

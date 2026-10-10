@@ -2,7 +2,7 @@ import {
   InvalidPromptError,
   NoSuchProviderReferenceError,
   UnsupportedFunctionalityError,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { describe, it, expect } from 'vitest';
 import { convertToDeepSeekChatMessages } from './convert-to-deepseek-chat-messages';
 

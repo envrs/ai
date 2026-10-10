@@ -8,7 +8,7 @@ import type {
   Experimental_VideoModelV4FrameImage,
   Experimental_VideoModelV4FrameType,
   SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertBase64ToUint8Array,
   delay as defaultDelay,
@@ -17,7 +17,7 @@ import {
   type DataContent,
   detectMediaType,
   type ProviderOptions,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { NoVideoGeneratedError } from '../error/no-video-generated-error';
 import {
   DefaultGeneratedFile,
@@ -529,7 +529,7 @@ async function executeStartStatusFlow({
       ...callOptions.headers,
       ...(callerIdempotencyKey
         ? {}
-        : { 'idempotency-key': `aisdk_vid_${generateId()}` }),
+        : { 'idempotency-key': `ai-toolkit_vid_${generateId()}` }),
     },
     webhookUrl,
   };

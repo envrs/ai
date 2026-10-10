@@ -1,5 +1,5 @@
-import { getErrorMessage, type JSONValue } from '@ai-sdk/provider';
-import type { Tool, ToolResultOutput } from '@ai-sdk/provider-utils';
+import { getErrorMessage, type JSONValue } from '@ai-toolkit/provider';
+import type { Tool, ToolResultOutput } from '@ai-toolkit/provider-utils';
 
 export async function createToolModelOutput({
   toolCallId,
@@ -37,7 +37,7 @@ export async function createToolModelOutput({
  * The parsed text is produced by `JSON.stringify` from a value that is
  * already materialized in this process, so it is not untrusted input.
  * `JSON.parse` is used deliberately instead of the secure parser from
- * `@ai-sdk/provider-utils`: the secure parser rejects own `__proto__` and
+ * `@ai-toolkit/provider-utils`: the secure parser rejects own `__proto__` and
  * `constructor.prototype` keys, which are valid data in tool outputs
  * (e.g. rows from an external API). `JSON.parse` defines `__proto__` as an
  * own data property and never modifies the prototype chain, so preserving

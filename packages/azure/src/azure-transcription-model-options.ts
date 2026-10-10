@@ -2,7 +2,7 @@ import {
   lazySchema,
   zodSchema,
   type InferSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { azureMaiTranscriptionModelOptionsShape } from './azure-mai-transcription-model-options';
 import { azureSpeechTranscriptionModelOptionsShape } from './azure-speech-transcription-model-options';

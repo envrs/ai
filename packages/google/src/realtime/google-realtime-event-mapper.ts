@@ -4,8 +4,8 @@ import type {
   Experimental_RealtimeModelV4FunctionCallOutput as RealtimeModelV4FunctionCallOutput,
   Experimental_RealtimeModelV4ServerEvent as RealtimeModelV4ServerEvent,
   Experimental_RealtimeModelV4SessionConfig as RealtimeModelV4SessionConfig,
-} from '@ai-sdk/provider';
-import { isRecord, safeParseJSON } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { isRecord, safeParseJSON } from '@ai-toolkit/provider-utils';
 import { getModelPath } from '../get-model-path';
 import type { GoogleRealtimeModelOptions } from './google-realtime-model-options';
 

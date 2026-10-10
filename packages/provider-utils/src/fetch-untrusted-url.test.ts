@@ -32,7 +32,7 @@ describe('fetchUntrustedUrl', () => {
           range: 'bytes=0-1023',
           'idempotency-key': 'operation-id',
           'x-request-id': 'request-id',
-          'user-agent': 'ai-sdk/test',
+          'user-agent': 'ai-toolkit/test',
         },
         fetch: fetchMock,
       });
@@ -42,7 +42,7 @@ describe('fetchUntrustedUrl', () => {
         range: 'bytes=0-1023',
         'idempotency-key': 'operation-id',
         'x-request-id': 'request-id',
-        'user-agent': 'ai-sdk/test',
+        'user-agent': 'ai-toolkit/test',
       });
     },
   );
@@ -136,7 +136,7 @@ describe('fetchUntrustedUrl', () => {
       authorization: 'Bearer secret',
       'x-key': 'provider-secret',
       'x-protocol-version': '2026-09-24',
-      'user-agent': 'ai-sdk/test',
+      'user-agent': 'ai-toolkit/test',
     };
 
     await fetchUntrustedUrl({
@@ -153,8 +153,8 @@ describe('fetchUntrustedUrl', () => {
     expect(sent).toEqual([
       headers,
       headers,
-      { 'user-agent': 'ai-sdk/test' },
-      { 'user-agent': 'ai-sdk/test' },
+      { 'user-agent': 'ai-toolkit/test' },
+      { 'user-agent': 'ai-toolkit/test' },
     ]);
   });
 

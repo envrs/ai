@@ -1,6 +1,6 @@
 ---
 title: SigNoz
-description: Monitor, observe and debug your AI SDK application with SigNoz
+description: Monitor, observe and debug your ai-toolkit application with SigNoz
 ---
 
 # SigNoz Observability
@@ -27,7 +27,7 @@ Check out detailed instructions on how to set up OpenTelemetry instrumentation i
 **Step 1.** Install OpenTelemetry packages
 
 ```bash
-npm install @vercel/otel @opentelemetry/api @ai-sdk/otel
+npm install @khulnasoft/otel @opentelemetry/api @ai-toolkit/otel
 ```
 
 **Step 2.** Update **`next.config.mjs`** to include instrumentationHook
@@ -49,8 +49,8 @@ export default nextConfig;
 
 ```jsx
 import { registerTelemetry } from 'ai';
-import { LegacyOpenTelemetry } from '@ai-sdk/otel';
-import { registerOTel, OTLPHttpJsonTraceExporter } from '@vercel/otel';
+import { LegacyOpenTelemetry } from '@ai-toolkit/otel';
+import { registerOTel, OTLPHttpJsonTraceExporter } from '@khulnasoft/otel';
 // Add otel logging
 import { diag, DiagConsoleLogger, DiagLogLevel } from '@opentelemetry/api';
 diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.ERROR); // set diag log level to DEBUG when debugging
@@ -76,15 +76,15 @@ export function register() {
 
 Your Next.js app should be properly instrumented now.
 
-## Enable Telemetry for Vercel AI SDK
+## Enable Telemetry for khulnasoft ai-toolkit
 
-The Vercel AI SDK uses [OpenTelemetry](https://signoz.io/blog/what-is-opentelemetry/) to collect telemetry data. OpenTelemetry is an open-source observability framework designed to provide standardized instrumentation for collecting telemetry data.
+The khulnasoft ai-toolkit uses [OpenTelemetry](https://signoz.io/blog/what-is-opentelemetry/) to collect telemetry data. OpenTelemetry is an open-source observability framework designed to provide standardized instrumentation for collecting telemetry data.
 
 ## Enabling Telemetry
 
-Check out more detailed information about Vercel AI SDK's telemetry options visit [here](https://ai-sdk.dev/docs/ai-sdk-core/telemetry#telemetry).
+Check out more detailed information about khulnasoft ai-toolkit's telemetry options visit [here](https://ai-toolkit.dev/docs/ai-toolkit-core/telemetry#telemetry).
 
-With `@ai-sdk/otel` installed and `registerTelemetry` added to your `instrumentation.ts` (see Step 3 above), telemetry is captured automatically on every AI SDK call:
+With `@ai-toolkit/otel` installed and `registerTelemetry` added to your `instrumentation.ts` (see Step 3 above), telemetry is captured automatically on every ai-toolkit call:
 
 ```jsx
 const result = await generateText({
@@ -125,7 +125,7 @@ If you want your traces to use a `TracerProvider` other than the one provided by
 
 ```jsx
 import { registerTelemetry, generateText } from 'ai';
-import { LegacyOpenTelemetry } from '@ai-sdk/otel';
+import { LegacyOpenTelemetry } from '@ai-toolkit/otel';
 
 const tracerProvider = new NodeTracerProvider();
 registerTelemetry(
@@ -140,6 +140,6 @@ const result = await generateText({
 });
 ```
 
-Your Vercel AI SDK commands should now automatically emit traces, spans, and events. You can find more details on the types of spans and events generated [here](https://ai-sdk.dev/docs/ai-sdk-core/telemetry#collected-data).
+Your khulnasoft ai-toolkit commands should now automatically emit traces, spans, and events. You can find more details on the types of spans and events generated [here](https://ai-toolkit.dev/docs/ai-toolkit-core/telemetry#collected-data).
 
 Finally, you should be able to view this data in Signoz Cloud under the traces tab.

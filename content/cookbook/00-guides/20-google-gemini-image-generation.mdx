@@ -1,12 +1,12 @@
 ---
 title: Google Gemini Image Generation
-description: Generate and edit images with Google Gemini 3.1 Flash Image using the AI SDK.
+description: Generate and edit images with Google Gemini 3.1 Flash Image using the ai-toolkit.
 tags: ['image-generation', 'google', 'gemini']
 ---
 
 # Generate and Edit Images with Google Gemini 3.1 Flash
 
-This guide will show you how to generate and edit images with the AI SDK and Google's Gemini 3.1 Flash Image model.
+This guide will show you how to generate and edit images with the ai-toolkit and Google's Gemini 3.1 Flash Image model.
 
 ## Generating Images
 
@@ -71,7 +71,7 @@ async function editImage() {
             type: 'file',
             // data: DataContent (string | Uint8Array | ArrayBuffer | Buffer) or URL
             data: new URL(
-              'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
+              'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
             ),
             mediaType: 'image/png',
           },

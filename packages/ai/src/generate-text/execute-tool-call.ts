@@ -7,7 +7,7 @@ import {
   type InferToolSetContext,
   type ModelMessage,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   getToolTimeoutMs,
   type TimeoutConfiguration,
@@ -122,7 +122,7 @@ export async function executeToolCall<TOOLS extends ToolSet>({
 
       let toolExecutionMs = 0;
       try {
-        // Integration wrappers keep nested AI SDK calls associated with this tool execution.
+        // Integration wrappers keep nested ai-toolkit calls associated with this tool execution.
         await executeToolInTelemetryContext({
           callId,
           toolCallId,

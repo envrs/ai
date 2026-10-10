@@ -1,6 +1,6 @@
 # Sandbox Abstraction Architecture
 
-This document explains the two-tier sandbox abstraction in the AI SDK.
+This document explains the two-tier sandbox abstraction in the ai-toolkit.
 It starts with the basic sandbox session surface and then describes the harness-specific layer.
 For how `HarnessAgent` and harness adapters use these contracts, see the [harness abstraction architecture](./harness-abstraction.md).
 
@@ -85,7 +85,7 @@ import type {
   HarnessV1NetworkSandboxSession,
   HarnessV1SandboxSessionCreateOptions,
   HarnessV1SandboxSessionResumeOptions,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 
 type DockerCreateOptions = HarnessV1SandboxSessionCreateOptions<{
   image?: string;
@@ -164,5 +164,5 @@ Use the network layer when consumers need ports, network policy or request trans
 - Shared resume options - [`packages/harness/src/v1/harness-v1-sandbox-session-resume-options.ts`](../packages/harness/src/v1/harness-v1-sandbox-session-resume-options.ts)
 - Template contract - [`packages/harness/src/v1/harness-v1-sandbox-template.ts`](../packages/harness/src/v1/harness-v1-sandbox-template.ts)
 - Template creation - [`packages/harness/src/agent/create-harness-sandbox-template.ts`](../packages/harness/src/agent/create-harness-sandbox-template.ts)
-- Vercel sandbox sessions - [`packages/sandbox-vercel/src/vercel-sandbox.ts`](../packages/sandbox-vercel/src/vercel-sandbox.ts)
+- khulnasoft sandbox sessions - [`packages/sandbox-khulnasoft/src/khulnasoft-sandbox.ts`](../packages/sandbox-khulnasoft/src/khulnasoft-sandbox.ts)
 - Just Bash sandbox sessions - [`packages/sandbox-just-bash/src/just-bash-sandbox.ts`](../packages/sandbox-just-bash/src/just-bash-sandbox.ts)

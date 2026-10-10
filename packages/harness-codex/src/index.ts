@@ -11,4 +11,4 @@ export { createCodex } from './codex-harness';
 export { VERSION } from './version';
 export type { CodexHarnessSettings } from './codex-harness';
 export type { CodexAuthenticationMode } from './codex-auth';
-export type { JSONObject } from '@ai-sdk/provider';
+export type { JSONObject } from '@ai-toolkit/provider';

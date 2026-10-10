@@ -8,7 +8,7 @@ import {
   withUserAgentSuffix,
   type FetchFunction,
   type WebSocketConstructor,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from './zod';
 import { asGatewayError, GatewayAuthenticationError } from './errors';
 import {
@@ -53,7 +53,7 @@ import type { GatewayTranscriptionModelId } from './gateway-transcription-model-
 import type { GatewayRealtimeModelId } from './gateway-realtime-model-settings';
 import type { GatewayVideoModelId } from './gateway-video-model-settings';
 import { gatewayTools } from './gateway-tools';
-import { getVercelOidcToken, getVercelRequestId } from './vercel-environment';
+import { getVercelOidcToken, getVercelRequestId } from './khulnasoft-environment';
 import type { GatewayModelId } from './gateway-language-model-settings';
 import type {
   EmbeddingModelV4,
@@ -68,7 +68,7 @@ import type {
   Experimental_RealtimeFactoryV4GetTokenOptions as RealtimeFactoryV4GetTokenOptions,
   ProviderV4,
   LanguageModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { VERSION } from './version';
 
 export interface GatewayProvider extends ProviderV4 {
@@ -258,18 +258,18 @@ export interface GatewayProviderSettings {
   };
 
   /**
-   * The base URL prefix for API calls. Defaults to `https://ai-gateway.vercel.sh/v4/ai`.
+   * The base URL prefix for API calls. Defaults to `https://ai-gateway.khulnasoft.sh/v4/ai`.
    */
   baseURL?: string;
 
   /**
-   * API key or Vercel access token that is being sent using the `Authorization`
+   * API key or khulnasoft access token that is being sent using the `Authorization`
    * header. It defaults to the `AI_GATEWAY_API_KEY` environment variable.
    */
   apiKey?: string;
 
   /**
-   * Vercel team ID or slug to scope requests for access tokens that can access
+   * khulnasoft team ID or slug to scope requests for access tokens that can access
    * multiple teams.
    */
   teamIdOrSlug?: string;
@@ -328,7 +328,7 @@ export function createGateway(
 
   const baseURL =
     withoutTrailingSlash(options.baseURL) ??
-    'https://ai-gateway.vercel.sh/v4/ai';
+    'https://ai-gateway.khulnasoft.sh/v4/ai';
 
   const createAuthHeaders = (auth: {
     token: string;
@@ -344,7 +344,7 @@ export function createGateway(
           : {}),
         ...options.headers,
       },
-      `ai-sdk-gateway/${VERSION}`,
+      `ai-toolkit-gateway/${VERSION}`,
     );
 
   const getHeaders = async () => {

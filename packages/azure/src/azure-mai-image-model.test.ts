@@ -1,10 +1,10 @@
-import type { ImageModelV4CallOptions } from '@ai-sdk/provider';
+import type { ImageModelV4CallOptions } from '@ai-toolkit/provider';
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
-import type * as ProviderUtils from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
+import type * as ProviderUtils from '@ai-toolkit/provider-utils';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { dimensionsForAspectRatio } from './azure-mai-image-model';
 import {
@@ -15,7 +15,7 @@ import {
 vi.mock('./version', () => ({ VERSION: '0.0.0-test' }));
 
 const { downloadBlobMock } = vi.hoisted(() => ({ downloadBlobMock: vi.fn() }));
-vi.mock('@ai-sdk/provider-utils', async importOriginal => ({
+vi.mock('@ai-toolkit/provider-utils', async importOriginal => ({
   ...(await importOriginal<typeof ProviderUtils>()),
   downloadBlob: downloadBlobMock,
 }));

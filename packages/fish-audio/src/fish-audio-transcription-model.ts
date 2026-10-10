@@ -1,4 +1,4 @@
-import type { SharedV4Warning, TranscriptionModelV4 } from '@ai-sdk/provider';
+import type { SharedV4Warning, TranscriptionModelV4 } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -9,7 +9,7 @@ import {
   serializeModelOptions,
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { FishAudioConfig } from './fish-audio-config';
 import { fishAudioFailedResponseHandler } from './fish-audio-error';

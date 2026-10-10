@@ -2,8 +2,8 @@ import {
   HarnessCapabilityUnsupportedError,
   type HarnessV1NetworkSandboxSession,
   type HarnessV1PortEndpoint,
-} from '@ai-sdk/harness';
-import type { Experimental_SandboxSession as SandboxSession } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness';
+import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import { randomUUID } from 'node:crypto';
 import type { Sandbox } from 'just-bash';
 import { JustBashSandboxSession } from './just-bash-sandbox-session';
@@ -52,7 +52,7 @@ export class JustBashNetworkSandboxSession
       harnessId: JUST_BASH_PROVIDER_ID,
       message:
         'just-bash sandboxes run in-process and cannot expose a port URL. ' +
-        'Use a hosted sandbox (e.g. @ai-sdk/sandbox-vercel) for bridge-backed harness adapters.',
+        'Use a hosted sandbox (e.g. @ai-toolkit/sandbox-khulnasoft) for bridge-backed harness adapters.',
     });
   };
 

@@ -34,7 +34,7 @@ import {
   parseJSON,
   validateDownloadUrl,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 export type AuthResult = 'AUTHORIZED' | 'REDIRECT';
 
 export interface OAuthAuthorizationServerInformation {

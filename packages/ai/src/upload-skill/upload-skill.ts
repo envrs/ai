@@ -3,7 +3,7 @@ import type {
   SkillsV4,
   SkillsV4File,
   SkillsV4UploadSkillCallOptions,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { UploadSkillResult } from './upload-skill-result';
 
 type UploadSkillFile = Omit<SkillsV4File, 'data'> & {

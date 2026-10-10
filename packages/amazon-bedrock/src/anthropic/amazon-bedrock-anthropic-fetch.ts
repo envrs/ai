@@ -2,7 +2,7 @@ import {
   convertBase64ToUint8Array,
   safeParseJSON,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { createAmazonBedrockEventStreamDecoder } from '../amazon-bedrock-event-stream-decoder';
 import { getAmazonBedrockStreamErrorMetadata } from '../amazon-bedrock-stream-error';

@@ -1,14 +1,14 @@
-import { AISDKError } from '@ai-sdk/provider';
+import { ai-toolkitError } from '@ai-toolkit/provider';
 import type { SpeechTranslationModelResponseMetadata } from '../types/speech-translation-model-response-metadata';
 
 const name = 'AI_NoTranslationGeneratedError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
 /**
  * Error that is thrown when no translation was generated.
  */
-export class NoTranslationGeneratedError extends AISDKError {
+export class NoTranslationGeneratedError extends ai-toolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly response: SpeechTranslationModelResponseMetadata;
@@ -23,6 +23,6 @@ export class NoTranslationGeneratedError extends AISDKError {
   }
 
   static isInstance(error: unknown): error is NoTranslationGeneratedError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }

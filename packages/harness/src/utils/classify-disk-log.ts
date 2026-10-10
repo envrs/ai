@@ -1,4 +1,4 @@
-import { safeParseJSON } from '@ai-sdk/provider-utils';
+import { safeParseJSON } from '@ai-toolkit/provider-utils';
 
 /**
  * Recovery rung selected from an on-disk bridge event log when attach is not

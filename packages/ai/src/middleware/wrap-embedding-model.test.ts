@@ -1,11 +1,11 @@
 import type {
   EmbeddingModelV4CallOptions,
   EmbeddingModelV4Middleware,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   EXPERIMENTAL_EMBEDDING_MODEL_MAX_INPUT_BYTES_PER_CALL,
   EXPERIMENTAL_EMBEDDING_MODEL_PROVIDER_OPTIONS_TRANSFORMER,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { wrapEmbeddingModel } from '../middleware/wrap-embedding-model';
 import { describe, it, expect, vi } from 'vitest';
 import { MockEmbeddingModelV4 } from '../test/mock-embedding-model-v4';

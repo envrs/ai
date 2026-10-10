@@ -1,4 +1,4 @@
-const DEFAULT_AI_GATEWAY_BASE_URL = 'https://ai-gateway.vercel.sh';
+const DEFAULT_AI_GATEWAY_BASE_URL = 'https://ai-gateway.khulnasoft.sh';
 
 export function getAiGatewayAuthFromEnv({
   env,

@@ -1,5 +1,5 @@
 import type { HarnessAgentAdapter } from './harness-agent-types';
-import type { ToolSet } from '@ai-sdk/provider-utils';
+import type { ToolSet } from '@ai-toolkit/provider-utils';
 
 /** Extract the builtin tool set type from a harness adapter parameter. */
 export type HarnessBuiltinToolsOf<H> =

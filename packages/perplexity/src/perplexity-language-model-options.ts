@@ -61,7 +61,7 @@ export const perplexityLanguageModelOptions = z.looseObject({
   instructions: z.string().optional(),
 
   /**
-   * Native Agent API tools. AI SDK function tools can also be supplied through
+   * Native Agent API tools. ai-toolkit function tools can also be supplied through
    * the top-level `tools` option on `generateText` and `streamText`.
    */
   tools: z.array(nativeToolSchema).optional(),

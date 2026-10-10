@@ -1,7 +1,7 @@
 import type {
   InferToolOutput,
   ProviderDefinedTool,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { describe, expectTypeOf, it } from 'vitest';
 import { bash_20250124 } from './bash_20250124';
 

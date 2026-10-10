@@ -2,8 +2,8 @@ import type {
   LanguageModelV4CallOptions,
   LanguageModelV4Middleware,
   LanguageModelV4Prompt,
-} from '@ai-sdk/provider';
-import { tool } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { tool } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod/v4';
 import { generateText } from '../generate-text/generate-text';

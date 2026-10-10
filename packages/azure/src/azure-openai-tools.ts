@@ -4,7 +4,7 @@ import {
   imageGeneration,
   webSearch,
   webSearchPreview,
-} from '@ai-sdk/openai/internal';
+} from '@ai-toolkit/openai/internal';
 
 export const azureOpenaiTools: {
   codeInterpreter: typeof codeInterpreter;

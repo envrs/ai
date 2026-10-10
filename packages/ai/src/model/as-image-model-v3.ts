@@ -1,4 +1,4 @@
-import type { ImageModelV2, ImageModelV3 } from '@ai-sdk/provider';
+import type { ImageModelV2, ImageModelV3 } from '@ai-toolkit/provider';
 import { logV2CompatibilityWarning } from '../util/log-v2-compatibility-warning';
 
 export function asImageModelV3(

@@ -1,7 +1,7 @@
 import {
   createTestServer,
   TestResponseController,
-} from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/test-server/with-vitest';
 import {
   act,
   cleanup,

@@ -1,5 +1,5 @@
-import { NoSuchModelError } from '@ai-sdk/provider';
-import type { FetchFunction } from '@ai-sdk/provider-utils';
+import { NoSuchModelError } from '@ai-toolkit/provider';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { createHeyGen } from './heygen-provider';
 import { VERSION } from './version';
@@ -69,7 +69,7 @@ describe('createHeyGen', () => {
       expect(requests[0].headers.get('x-custom')).toBe('custom');
       expect(requests[0].headers.get('x-request')).toBe('request');
       expect(requests[0].headers.get('user-agent')).toContain(
-        `ai-sdk-heygen/${VERSION}`,
+        `ai-toolkit-heygen/${VERSION}`,
       );
     },
   );

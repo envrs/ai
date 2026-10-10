@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { HarnessCapabilityUnsupportedError } from '@ai-sdk/harness';
+import { HarnessCapabilityUnsupportedError } from '@ai-toolkit/harness';
 import {
   extractUserText,
   frameInstructions,

@@ -3,7 +3,7 @@ import {
   runBridge,
   type BridgeEvent,
   type BridgeTurn,
-} from '@ai-sdk/harness/bridge';
+} from '@ai-toolkit/harness/bridge';
 import * as acp from '@agentclientprotocol/sdk';
 import { spawn, type ChildProcessWithoutNullStreams } from 'node:child_process';
 import { readFile, writeFile } from 'node:fs/promises';
@@ -64,7 +64,7 @@ type ImplementationDescriptor = {
   readonly envKeys: ReadonlyArray<string>;
 };
 
-const HOST_TOOL_MCP_SERVER_NAME = 'ai-sdk-harness-tools';
+const HOST_TOOL_MCP_SERVER_NAME = 'ai-toolkit-harness-tools';
 const CATALOG_REFRESH_TIMEOUT_MS = 10_000;
 
 const args = parseArgs({ args: argv.slice(2) });
@@ -796,8 +796,8 @@ async function authenticate({
 }
 
 function resolveClientApp(): ACPClientApp {
-  const name = processEnv.AI_SDK_ACP_CLIENT_APP_NAME;
-  const version = processEnv.AI_SDK_ACP_CLIENT_APP_VERSION;
+  const name = processEnv.ai-toolkit_ACP_CLIENT_APP_NAME;
+  const version = processEnv.ai-toolkit_ACP_CLIENT_APP_VERSION;
   if (name == null || version == null) {
     throw new Error('ACP client app values were not supplied to the bridge.');
   }
@@ -809,8 +809,8 @@ function resolveGatewayValues({
 }: {
   clientApp: ACPClientApp;
 }): ACPGatewayValues {
-  const apiKey = processEnv.AI_SDK_ACP_GATEWAY_API_KEY;
-  const baseUrl = processEnv.AI_SDK_ACP_GATEWAY_BASE_URL;
+  const apiKey = processEnv.ai-toolkit_ACP_GATEWAY_API_KEY;
+  const baseUrl = processEnv.ai-toolkit_ACP_GATEWAY_BASE_URL;
   if (apiKey == null || baseUrl == null) {
     throw new Error(
       'AI Gateway profile values were not supplied to the ACP bridge.',
@@ -836,10 +836,10 @@ function createChildEnvironment({
   const blocked = new Set([
     'BRIDGE_CHANNEL_TOKEN',
     'BRIDGE_WS_PORT',
-    'AI_SDK_ACP_GATEWAY_API_KEY',
-    'AI_SDK_ACP_GATEWAY_BASE_URL',
-    'AI_SDK_ACP_CLIENT_APP_NAME',
-    'AI_SDK_ACP_CLIENT_APP_VERSION',
+    'ai-toolkit_ACP_GATEWAY_API_KEY',
+    'ai-toolkit_ACP_GATEWAY_BASE_URL',
+    'ai-toolkit_ACP_CLIENT_APP_NAME',
+    'ai-toolkit_ACP_CLIENT_APP_VERSION',
     ACP_BRIDGE_CONFIGURATION_ENV,
   ]);
   const environment = {

@@ -1,8 +1,8 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   type TranscriptionModelV4,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertUint8ArrayToBase64,
@@ -15,7 +15,7 @@ import {
   serializeModelOptions,
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { FalConfig } from './fal-config';
 import { falErrorDataSchema, falFailedResponseHandler } from './fal-error';
@@ -197,7 +197,7 @@ export class FalTranscriptionModel implements TranscriptionModelV4 {
 
       // Check if we've exceeded the timeout
       if (Date.now() - startTime > timeoutMs) {
-        throw new AISDKError({
+        throw new ai-toolkitError({
           message: 'Transcription request timed out after 60 seconds',
           name: 'TranscriptionRequestTimedOut',
           cause: response,

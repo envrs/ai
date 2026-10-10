@@ -1,4 +1,4 @@
-import type { HarnessV1StreamPart } from '@ai-sdk/harness';
+import type { HarnessV1StreamPart } from '@ai-toolkit/harness';
 import { describe, expect, it } from 'vitest';
 import type { ACPToolCall } from '../../acp-tool-call';
 import {
@@ -642,7 +642,7 @@ describe('createACPStreamTranslator', () => {
       rawInput: {
         type: 'webSearch',
         id: 'search-1',
-        query: 'AI SDK',
+        query: 'ai-toolkit',
         action: null,
       },
     });
@@ -663,7 +663,7 @@ describe('createACPStreamTranslator', () => {
           "type": "tool-result",
         },
         {
-          "input": "{"type":"webSearch","id":"search-1","query":"AI SDK","action":null}",
+          "input": "{"type":"webSearch","id":"search-1","query":"ai-toolkit","action":null}",
           "nativeName": "web_search",
           "providerExecuted": true,
           "toolCallId": "call-web-search",

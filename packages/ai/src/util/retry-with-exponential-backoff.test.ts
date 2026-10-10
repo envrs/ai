@@ -1,10 +1,10 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import {
   GatewayInternalServerError,
   GatewayRateLimitError,
   GatewayAuthenticationError,
-} from '@ai-sdk/gateway';
+} from '@ai-toolkit/gateway';
 import { retryWithExponentialBackoffRespectingRetryHeaders } from './retry-with-exponential-backoff';
 
 describe('retryWithExponentialBackoffRespectingRetryHeaders', () => {

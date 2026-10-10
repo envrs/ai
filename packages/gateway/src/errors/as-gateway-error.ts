@@ -1,4 +1,4 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import { createGatewayErrorFromResponse } from './create-gateway-error';
 import { extractApiCallResponse } from './extract-api-call-response';
 import { GatewayError } from './gateway-error';

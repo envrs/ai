@@ -1,11 +1,11 @@
 ---
 title: Latitude
-description: Monitor and debug your AI SDK application with Latitude
+description: Monitor and debug your ai-toolkit application with Latitude
 ---
 
 # Latitude Observability
 
-[Latitude](https://latitude.so) ([GitHub](https://github.com/latitude-dev/latitude-llm)) is an open-source MIT-licensed platform for AI agent observability with semantic trace search and issue tracking. It integrates with the AI SDK to capture:
+[Latitude](https://latitude.so) ([GitHub](https://github.com/latitude-dev/latitude-llm)) is an open-source MIT-licensed platform for AI agent observability with semantic trace search and issue tracking. It integrates with the ai-toolkit to capture:
 
 - Traces of every `generateText`, `streamText`, and tool call
 - Token usage and latency per call
@@ -13,11 +13,11 @@ description: Monitor and debug your AI SDK application with Latitude
 
 ## Setup
 
-Latitude's SDK registers a global OpenTelemetry tracer. Once you register the AI SDK's telemetry integration, every AI SDK call emits spans automatically.
+Latitude's SDK registers a global OpenTelemetry tracer. Once you register the ai-toolkit's telemetry integration, every ai-toolkit call emits spans automatically.
 
 Install both packages:
 
-<InstallPackages packages="@latitude-data/telemetry @ai-sdk/otel" />
+<InstallPackages packages="@latitude-data/telemetry @ai-toolkit/otel" />
 
 Sign in at [app.latitude.so](https://app.latitude.so) and grab your API key and project slug from the dashboard. Set them in your environment:
 
@@ -26,13 +26,13 @@ LATITUDE_API_KEY="..."
 LATITUDE_PROJECT_SLUG="..."
 ```
 
-Initialize Latitude and register telemetry once at startup. After that, every AI SDK call emits traces automatically:
+Initialize Latitude and register telemetry once at startup. After that, every ai-toolkit call emits traces automatically:
 
 ```ts
 import { Latitude } from '@latitude-data/telemetry';
 import { registerTelemetry, generateText } from 'ai';
-import { OpenTelemetry } from '@ai-sdk/otel';
-import { openai } from '@ai-sdk/openai';
+import { OpenTelemetry } from '@ai-toolkit/otel';
+import { openai } from '@ai-toolkit/openai';
 
 const latitude = new Latitude({
   apiKey: process.env.LATITUDE_API_KEY!,
@@ -65,6 +65,6 @@ await capture('generate-support-reply', async () => {
 
 ## Resources
 
-- [Latitude Vercel AI SDK guide](https://docs.latitude.so/telemetry/frameworks/vercel-ai-sdk)
+- [Latitude khulnasoft ai-toolkit guide](https://docs.latitude.so/telemetry/frameworks/khulnasoft-ai-toolkit)
 - [Latitude documentation](https://docs.latitude.so)
 - [GitHub repository](https://github.com/latitude-dev/latitude-llm)

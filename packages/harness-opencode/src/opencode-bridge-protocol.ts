@@ -3,7 +3,7 @@ import {
   harnessV1BridgeOutboundMessageSchema,
   harnessV1BridgeReadySchema,
   harnessV1BridgeStartBaseSchema,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import { z } from 'zod/v4';
 
 export const outboundMessageSchema = harnessV1BridgeOutboundMessageSchema;

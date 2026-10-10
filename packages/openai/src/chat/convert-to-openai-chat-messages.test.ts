@@ -1,4 +1,4 @@
-import type { LanguageModelV4ToolResultOutput } from '@ai-sdk/provider';
+import type { LanguageModelV4ToolResultOutput } from '@ai-toolkit/provider';
 import { convertToOpenAIChatMessages } from './convert-to-openai-chat-messages';
 import { describe, it, expect } from 'vitest';
 

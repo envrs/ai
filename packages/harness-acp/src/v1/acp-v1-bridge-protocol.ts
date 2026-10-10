@@ -9,7 +9,7 @@ import {
   type HarnessV1LifecycleState,
   type HarnessV1PermissionMode,
   type HarnessV1ToolSpec,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import { z } from 'zod/v4';
 import type { ACPToolCall } from '../acp-tool-call';
 import type {

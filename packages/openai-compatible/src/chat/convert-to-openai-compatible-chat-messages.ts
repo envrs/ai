@@ -5,7 +5,7 @@ import {
   type LanguageModelV4TextPart,
   type LanguageModelV4ToolResultOutput,
   type SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type {
   OpenAICompatibleChatPrompt,
   OpenAICompatibleContentPart,
@@ -16,7 +16,7 @@ import {
   getTopLevelMediaType,
   resolveFullMediaType,
   resolveProviderReference,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 function getOpenAIMetadata(message: {
   providerOptions?: SharedV4ProviderMetadata;

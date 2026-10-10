@@ -67,15 +67,15 @@ const LogoZapier = () => (
 );
 
 /**
- * "Deploy and Scale AI Apps with Vercel" card under the table of contents
- * (ported from the legacy ai-sdk.dev app). Brand logos are used
+ * "Deploy and Scale AI Apps with khulnasoft" card under the table of contents
+ * (ported from the legacy ai-toolkit.dev app). Brand logos are used
  * nominatively; the marks belong to their respective owners.
  */
 export const Upsell = () => (
   <div className="w-full" data-testid="docs-upsell">
     <div className="relative flex flex-col gap-3 rounded-xl border border-gray-alpha-400 bg-background-100 p-4 text-gray-900 text-sm">
       <span className="inline-flex font-semibold text-gray-1000 text-xl leading-tight tracking-tighter">
-        Deploy and Scale AI Apps with Vercel
+        Deploy and Scale AI Apps with khulnasoft
       </span>
 
       <p>Deliver AI experiences globally with one push.</p>

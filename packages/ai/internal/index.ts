@@ -2,7 +2,7 @@
 import '../src/global';
 
 // internal re-exports
-export { convertAsyncIteratorToReadableStream } from '@ai-sdk/provider-utils';
+export { convertAsyncIteratorToReadableStream } from '@ai-toolkit/provider-utils';
 
 // internal
 export { createAsyncIterableStream } from '../src/util/async-iterable-stream';

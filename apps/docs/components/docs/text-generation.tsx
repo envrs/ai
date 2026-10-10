@@ -8,7 +8,7 @@ const answer =
 
 /**
  * Simulated text completion for cookbook demos (ported from the legacy
- * ai-sdk.dev app): click "Answer" to reveal a canned response, word by word
+ * ai-toolkit.dev app): click "Answer" to reveal a canned response, word by word
  * when `stream` is set.
  */
 export const TextGeneration = ({ stream = false }: { stream?: boolean }) => {

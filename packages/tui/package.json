@@ -1,8 +1,8 @@
 {
-  "name": "@ai-sdk/tui",
-  "version": "1.0.138",
+  "name": "@ai-toolkit/tui",
+  "version": "2.0.1",
   "type": "module",
-  "description": "Run AI SDK agents in a terminal UI.",
+  "description": "Run ai-toolkit agents in a terminal UI.",
   "license": "Apache-2.0",
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -40,9 +40,9 @@
     "ai": "workspace:*"
   },
   "devDependencies": {
-    "@ai-sdk/provider": "workspace:*",
+    "@ai-toolkit/provider": "workspace:*",
     "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "tsdown": "^0.23.0",
     "typescript": "6.0.3",
     "vitest": "^4.1.11",
@@ -55,14 +55,14 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/tui"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "keywords": [
     "ai",

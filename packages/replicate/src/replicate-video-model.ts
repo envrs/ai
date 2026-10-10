@@ -1,10 +1,10 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4OperationStartResult as VideoModelV4OperationStartResult,
   type Experimental_VideoModelV4OperationStatusResult as VideoModelV4OperationStatusResult,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertImageModelFileToDataUri,
@@ -15,7 +15,7 @@ import {
   postJsonToApi,
   type Resolvable,
   resolve,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { replicateFailedResponseHandler } from './replicate-error';
 import {
@@ -277,7 +277,7 @@ export class ReplicateVideoModel implements VideoModelV4 {
 
     if (prediction.status === 'succeeded') {
       if (!prediction.output) {
-        throw new AISDKError({
+        throw new ai-toolkitError({
           name: 'REPLICATE_VIDEO_GENERATION_ERROR',
           message: 'No video URL in response',
         });

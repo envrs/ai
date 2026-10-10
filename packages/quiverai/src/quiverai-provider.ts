@@ -3,18 +3,18 @@ import {
   type ImageModelV4,
   type LanguageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   createOpenResponses,
   type OpenResponsesProviderSettings,
-} from '@ai-sdk/open-responses';
+} from '@ai-toolkit/open-responses';
 import {
   loadApiKey,
   loadOptionalSetting,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   getQuiverAIResponseErrorMetadata,
   quiveraiFailedResponseHandler,
@@ -105,7 +105,7 @@ export function createQuiverAI(
   });
 
   const getImageHeaders = () =>
-    withUserAgentSuffix(getHeaders(), `ai-sdk-quiverai/${VERSION}`);
+    withUserAgentSuffix(getHeaders(), `ai-toolkit-quiverai/${VERSION}`);
 
   const responsesConfig: OpenResponsesProviderSettings = {
     name: 'quiverai',
@@ -117,7 +117,7 @@ export function createQuiverAI(
     strictResponseInput: true,
     customToolId: 'quiverai.custom',
     structuredOutputs: false,
-    userAgentSuffix: `ai-sdk-quiverai/${VERSION}`,
+    userAgentSuffix: `ai-toolkit-quiverai/${VERSION}`,
   };
   const responsesProvider = createOpenResponses(responsesConfig);
 

@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { z } from 'zod/v3';
 import { parseReadonlyDef } from './readonly';
 import { getRefs } from '../refs';
-import type { JSONSchema7 } from '@ai-sdk/provider';
+import type { JSONSchema7 } from '@ai-toolkit/provider';
 
 describe('readonly', () => {
   it('should be possible to use readonly', () => {

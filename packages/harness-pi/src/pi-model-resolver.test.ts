@@ -39,8 +39,8 @@ const defaultGatewayModel: PiModel = {
   ...sampleModel,
   id: DEFAULT_PI_GATEWAY_MODEL_ID,
   name: 'Claude Sonnet 4.6',
-  provider: 'vercel-ai-gateway',
-  baseUrl: 'https://ai-gateway.vercel.sh',
+  provider: 'khulnasoft-ai-gateway',
+  baseUrl: 'https://ai-gateway.khulnasoft.sh',
 };
 
 const xaiModel: PiModel = {
@@ -55,8 +55,8 @@ const xaiProxiedThroughGateway: PiModel = {
   ...sampleModel,
   id: 'xai/grok-4.3',
   name: 'Grok 4.3 (gateway)',
-  provider: 'vercel-ai-gateway',
-  baseUrl: 'https://ai-gateway.vercel.sh',
+  provider: 'khulnasoft-ai-gateway',
+  baseUrl: 'https://ai-gateway.khulnasoft.sh',
 };
 
 const openaiModel: PiModel = {

@@ -2,9 +2,9 @@ import {
   type FetchFunction,
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
-import { APICallError, InvalidArgumentError } from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider-utils';
+import { APICallError, InvalidArgumentError } from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it } from 'vitest';
 import { TopazVideoModel } from './topaz-video-model';
 

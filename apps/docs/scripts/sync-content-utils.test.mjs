@@ -6,9 +6,9 @@ import test from 'node:test';
 import { parseSegment, transformDir, transformMdx } from './sync-content-utils.mjs';
 
 test('parseSegment removes numeric ordering prefixes', () => {
-  assert.deepEqual(parseSegment('03-ai-sdk-core'), {
+  assert.deepEqual(parseSegment('03-ai-toolkit-core'), {
     prefix: 3,
-    clean: 'ai-sdk-core',
+    clean: 'ai-toolkit-core',
   });
   assert.deepEqual(parseSegment('introduction'), {
     prefix: null,

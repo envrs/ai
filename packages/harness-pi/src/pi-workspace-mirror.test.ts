@@ -9,8 +9,8 @@ import {
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { gzipSync } from 'node:zlib';
-import { createJustBashNetworkSandboxSession } from '@ai-sdk/sandbox-just-bash';
-import type { Experimental_SandboxSession } from '@ai-sdk/provider-utils';
+import { createJustBashNetworkSandboxSession } from '@ai-toolkit/sandbox-just-bash';
+import type { Experimental_SandboxSession } from '@ai-toolkit/provider-utils';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   ARCHIVE_BATCH_SIZE,

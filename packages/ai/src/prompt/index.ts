@@ -40,4 +40,4 @@ export type {
   ToolResultPart,
   UserContent,
   UserModelMessage,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';

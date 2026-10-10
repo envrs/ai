@@ -4,7 +4,7 @@ import {
   type ResponseStatisticsMode,
   type RunAgentTUIOptions,
   type TerminalPartDisplayMode,
-} from '@ai-sdk/tui';
+} from '@ai-toolkit/tui';
 import { MockLanguageModelV4 } from 'ai/test';
 import {
   Output,

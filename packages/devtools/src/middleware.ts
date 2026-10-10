@@ -3,7 +3,7 @@ import type {
   LanguageModelV4Usage,
   LanguageModelV4Middleware,
   LanguageModelV4StreamPart,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   createRun,
   createStep,
@@ -101,7 +101,7 @@ const generateRunId = (): string => {
 export const devToolsMiddleware = (): LanguageModelV4Middleware => {
   if (process.env.NODE_ENV === 'production') {
     throw new Error(
-      '@ai-sdk/devtools should not be used in production. ' +
+      '@ai-toolkit/devtools should not be used in production. ' +
         'Remove devToolsMiddleware from your model configuration for production builds.',
     );
   }

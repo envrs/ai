@@ -1,11 +1,11 @@
 import type {
   LanguageModelV4Prompt,
   LanguageModelV4StreamPart,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { describe, expect, expectTypeOf, it, vi } from 'vitest';
 import type { ZaiLanguageModelChatOptions } from './index';
 import { ZaiChatLanguageModel } from './zai-chat-language-model';

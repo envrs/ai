@@ -1,17 +1,17 @@
-# @ai-sdk/workflow
+# @ai-toolkit/workflow
 
 WorkflowAgent is a class for building durable AI agents that can maintain state across workflow steps, call tools, and handle interruptions gracefully.
 
 ## Installation
 
 ```bash
-npm install @ai-sdk/workflow ai workflow@5
+npm install @ai-toolkit/workflow ai workflow@5
 ```
 
 ## Usage
 
 ```typescript
-import { WorkflowAgent } from '@ai-sdk/workflow';
+import { WorkflowAgent } from '@ai-toolkit/workflow';
 import { z } from 'zod';
 
 const agent = new WorkflowAgent({
@@ -49,7 +49,7 @@ workflow until a provider webhook arrives, and returns the provider's video
 data without downloading hosted URLs.
 
 ```typescript
-import { experimental_generateVideo as generateVideo } from '@ai-sdk/workflow/video';
+import { experimental_generateVideo as generateVideo } from '@ai-toolkit/workflow/video';
 
 export async function videoWorkflow(prompt: string) {
   'use workflow';
@@ -80,7 +80,7 @@ separate step without serializing the video bytes through the workflow.
 
 ## API
 
-See the [AI SDK documentation](https://ai-sdk.dev/docs) for full API details.
+See the [ai-toolkit documentation](https://ai-toolkit.dev/docs) for full API details.
 
 ## License
 

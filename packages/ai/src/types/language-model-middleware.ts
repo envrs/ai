@@ -1,4 +1,4 @@
-import type { LanguageModelV4Middleware } from '@ai-sdk/provider';
+import type { LanguageModelV4Middleware } from '@ai-toolkit/provider';
 
 /**
  * Middleware for language models.

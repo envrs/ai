@@ -1,6 +1,6 @@
 ---
 title: Cencori
-description: Cencori Provider for the AI SDK
+description: Cencori Provider for the ai-toolkit
 ---
 
 # Cencori
@@ -25,7 +25,7 @@ The Cencori provider is available in the `cencori` module. You can install it wi
 To create a Cencori provider instance, use the `createCencori` function:
 
 ```ts
-import { createCencori } from 'cencori/vercel';
+import { createCencori } from 'cencori/khulnasoft';
 
 const cencori = createCencori({
   apiKey: 'YOUR_CENCORI_API_KEY',
@@ -39,7 +39,7 @@ You can obtain your Cencori API key from the [Cencori Dashboard](https://cencori
 Alternatively, you can set the `CENCORI_API_KEY` environment variable and use the default provider:
 
 ```ts
-import { cencori } from 'cencori/vercel';
+import { cencori } from 'cencori/khulnasoft';
 
 // Uses CENCORI_API_KEY environment variable
 const model = cencori('gpt-4o');
@@ -73,12 +73,12 @@ You can find the full list of available models in the [Cencori Documentation](ht
 
 ## Examples
 
-Here are examples of using Cencori with the AI SDK:
+Here are examples of using Cencori with the ai-toolkit:
 
 ### generateText
 
 ```ts
-import { cencori } from 'cencori/vercel';
+import { cencori } from 'cencori/khulnasoft';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -92,7 +92,7 @@ console.log(text);
 ### streamText
 
 ```ts
-import { cencori } from 'cencori/vercel';
+import { cencori } from 'cencori/khulnasoft';
 import { streamText } from 'ai';
 
 const result = streamText({
@@ -110,7 +110,7 @@ for await (const chunk of result.textStream) {
 Cencori supports tool calling with all compatible models:
 
 ```ts
-import { cencori } from 'cencori/vercel';
+import { cencori } from 'cencori/khulnasoft';
 import { generateText, tool } from 'ai';
 import { z } from 'zod';
 
@@ -136,7 +136,7 @@ console.log(text, toolCalls);
 ### Next.js Route Handler
 
 ```ts
-import { cencori } from 'cencori/vercel';
+import { cencori } from 'cencori/khulnasoft';
 import { streamText } from 'ai';
 
 export async function POST(req: Request) {
@@ -156,7 +156,7 @@ export async function POST(req: Request) {
 ```tsx
 'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
@@ -202,7 +202,7 @@ For more information about these features and advanced configuration options, vi
 You can customize the provider with additional options:
 
 ```ts
-import { createCencori } from 'cencori/vercel';
+import { createCencori } from 'cencori/khulnasoft';
 
 const cencori = createCencori({
   apiKey: 'YOUR_CENCORI_API_KEY',

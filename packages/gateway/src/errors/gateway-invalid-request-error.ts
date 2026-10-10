@@ -1,7 +1,7 @@
 import { GatewayError } from './gateway-error';
 
 const name = 'GatewayInvalidRequestError';
-const marker = `vercel.ai.gateway.error.${name}`;
+const marker = `khulnasoft.ai.gateway.error.${name}`;
 const symbol = Symbol.for(marker);
 
 /**

@@ -1,7 +1,7 @@
 'use client';
 
-import { IconCheck } from '@vercel/geistdocs/assets/icons/icon-check';
-import { IconCopy } from '@vercel/geistdocs/assets/icons/icon-copy';
+import { IconCheck } from '@khulnasoft/geistdocs/assets/icons/icon-check';
+import { IconCopy } from '@khulnasoft/geistdocs/assets/icons/icon-copy';
 import { useEffect, useRef, useState } from 'react';
 
 /**

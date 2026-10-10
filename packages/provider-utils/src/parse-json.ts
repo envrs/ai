@@ -2,7 +2,7 @@ import {
   JSONParseError,
   TypeValidationError,
   type JSONValue,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { secureJsonParse } from './secure-json-parse';
 import { safeValidateTypes, validateTypes } from './validate-types';
 import type { FlexibleSchema } from './schema';

@@ -1,4 +1,4 @@
-# AI SDK - ACP Harness
+# ai-toolkit - ACP Harness
 
 `HarnessV1` adapter backed by an NPM-installed
 [Agent Client Protocol](https://agentclientprotocol.com/) version 1 implementation.
@@ -9,7 +9,7 @@ implementation runs alongside the bridge inside the sandbox.
 ## Setup
 
 ```bash
-npm i @ai-sdk/harness-acp @ai-sdk/harness @ai-sdk/sandbox-vercel
+npm i @ai-toolkit/harness-acp @ai-toolkit/harness @ai-toolkit/sandbox-khulnasoft
 ```
 
 The bridge installs the configured ACP implementation inside the sandbox the
@@ -21,10 +21,10 @@ This example connects `HarnessAgent` to Codex ACP using direct OpenAI
 authentication:
 
 ```ts
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { createACP } from '@ai-sdk/harness-acp';
-import { createCredentialRequestTransformation } from '@ai-sdk/harness/utils';
-import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { createACP } from '@ai-toolkit/harness-acp';
+import { createCredentialRequestTransformation } from '@ai-toolkit/harness/utils';
+import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
 const codexACP = createACP({
   harnessId: 'acp-codex',

@@ -1,7 +1,7 @@
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
-import type { Experimental_SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession } from '@ai-toolkit/provider-utils';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   persistSessionFileToSandbox,
@@ -138,7 +138,7 @@ describe('resolvePiPrivateSessionDirectory', () => {
     });
 
     expect(privateSessionDir).toMatch(
-      /^\/sandbox\/home\/\.ai-sdk\/harness-pi\/[a-f0-9]{64}$/,
+      /^\/sandbox\/home\/\.ai-toolkit\/harness-pi\/[a-f0-9]{64}$/,
     );
     expect(privateSessionDir).toBe(
       resolvePiPrivateSessionDirectory({
@@ -166,14 +166,14 @@ describe('pullSessionFileFromSandbox', () => {
     const sandbox = makeSandbox({
       readBinary: requestedPath =>
         requestedPath ===
-        '/sandbox/home/.ai-sdk/harness-pi/session-key/session.jsonl'
+        '/sandbox/home/.ai-toolkit/harness-pi/session-key/session.jsonl'
           ? bytes
           : undefined,
     });
 
     const hostPath = await pullSessionFileFromSandbox({
       sandbox: sandbox.sandbox,
-      privateSessionDir: '/sandbox/home/.ai-sdk/harness-pi/session-key',
+      privateSessionDir: '/sandbox/home/.ai-toolkit/harness-pi/session-key',
       hostSessionDir,
       sessionFileName: 'session.jsonl',
     });
@@ -181,7 +181,7 @@ describe('pullSessionFileFromSandbox', () => {
     expect(hostPath).toBe(path.join(hostSessionDir, 'session.jsonl'));
     expect(readFileSync(hostPath!, 'utf8')).toBe('session data');
     expect(sandbox.readCalls).toEqual([
-      '/sandbox/home/.ai-sdk/harness-pi/session-key/session.jsonl',
+      '/sandbox/home/.ai-toolkit/harness-pi/session-key/session.jsonl',
     ]);
   });
 
@@ -191,7 +191,7 @@ describe('pullSessionFileFromSandbox', () => {
     await expect(
       pullSessionFileFromSandbox({
         sandbox: sandbox.sandbox,
-        privateSessionDir: '/sandbox/home/.ai-sdk/harness-pi/session-key',
+        privateSessionDir: '/sandbox/home/.ai-toolkit/harness-pi/session-key',
         hostSessionDir,
         sessionFileName: '../session.jsonl',
       }),
@@ -208,13 +208,13 @@ describe('persistSessionFileToSandbox', () => {
 
     await persistSessionFileToSandbox({
       sandbox: sandbox.sandbox,
-      privateSessionDir: '/sandbox/home/.ai-sdk/harness-pi/session-key',
+      privateSessionDir: '/sandbox/home/.ai-toolkit/harness-pi/session-key',
       hostSessionDir,
       sessionFileName: 'session.jsonl',
     });
 
     expect(sandbox.writeCalls[0]?.path).toBe(
-      '/sandbox/home/.ai-sdk/harness-pi/session-key/session.jsonl',
+      '/sandbox/home/.ai-toolkit/harness-pi/session-key/session.jsonl',
     );
     expect(Buffer.from(sandbox.writeCalls[0]!.content).toString('utf8')).toBe(
       'session data',
@@ -227,15 +227,15 @@ describe('persistSessionFileToSandbox', () => {
 
     await persistSessionFileToSandbox({
       sandbox: sandbox.sandbox,
-      privateSessionDir: '/home/vercel-sandbox/.ai-sdk/harness-pi/session-key',
+      privateSessionDir: '/home/khulnasoft-sandbox/.ai-toolkit/harness-pi/session-key',
       hostSessionDir,
       sessionFileName: 'session.jsonl',
     });
 
     expect(sandbox.writeCalls[0]?.path).toBe(
-      '/home/vercel-sandbox/.ai-sdk/harness-pi/session-key/session.jsonl',
+      '/home/khulnasoft-sandbox/.ai-toolkit/harness-pi/session-key/session.jsonl',
     );
-    expect(sandbox.writeCalls[0]?.path).not.toContain('/vercel/sandbox/pi-s1');
+    expect(sandbox.writeCalls[0]?.path).not.toContain('/khulnasoft/sandbox/pi-s1');
     expect(Buffer.from(sandbox.writeCalls[0]!.content).toString('utf8')).toBe(
       'session data',
     );
@@ -247,7 +247,7 @@ describe('persistSessionFileToSandbox', () => {
     await expect(
       persistSessionFileToSandbox({
         sandbox: sandbox.sandbox,
-        privateSessionDir: '/sandbox/home/.ai-sdk/harness-pi/session-key',
+        privateSessionDir: '/sandbox/home/.ai-toolkit/harness-pi/session-key',
         hostSessionDir,
         sessionFileName: '../session.jsonl',
       }),

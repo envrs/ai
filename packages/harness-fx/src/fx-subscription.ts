@@ -4,24 +4,24 @@ import { join } from 'node:path';
 import type {
   ACPAuthenticationFile,
   ACPAuthenticationMode,
-} from '@ai-sdk/harness-acp';
+} from '@ai-toolkit/harness-acp';
 import {
   isAccessTokenExpiringSoon,
   isHarnessAuthenticationEnvironment,
   parseJwtPayload,
   refreshOAuthAccessToken,
   shouldResolveNativeSubscription,
-} from '@ai-sdk/harness/utils';
-import { isRecord, safeParseJSON } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/utils';
+import { isRecord, safeParseJSON } from '@ai-toolkit/provider-utils';
 
 const CHATGPT_ACCESS_TOKEN_ENVIRONMENT_VARIABLE =
-  'AI_SDK_FX_CHATGPT_ACCESS_TOKEN';
-const CHATGPT_ACCOUNT_ID_ENVIRONMENT_VARIABLE = 'AI_SDK_FX_CHATGPT_ACCOUNT_ID';
-const GROK_ACCESS_TOKEN_ENVIRONMENT_VARIABLE = 'AI_SDK_FX_GROK_ACCESS_TOKEN';
-const GROK_ACCOUNT_ID_ENVIRONMENT_VARIABLE = 'AI_SDK_FX_GROK_ACCOUNT_ID';
+  'ai-toolkit_FX_CHATGPT_ACCESS_TOKEN';
+const CHATGPT_ACCOUNT_ID_ENVIRONMENT_VARIABLE = 'ai-toolkit_FX_CHATGPT_ACCOUNT_ID';
+const GROK_ACCESS_TOKEN_ENVIRONMENT_VARIABLE = 'ai-toolkit_FX_GROK_ACCESS_TOKEN';
+const GROK_ACCOUNT_ID_ENVIRONMENT_VARIABLE = 'ai-toolkit_FX_GROK_ACCOUNT_ID';
 const OPENAI_CLIENT_ID = 'app_EMoamEEZ73f0CkXaXp7hrann';
 const XAI_CLIENT_ID = 'b1a00492-073a-47ea-816f-4c329264a828';
-const SANDBOX_REFRESH_TOKEN = 'ai-sdk-harness-brokered';
+const SANDBOX_REFRESH_TOKEN = 'ai-toolkit-harness-brokered';
 
 type FxSubscriptionProvider = 'chatgpt' | 'grok';
 

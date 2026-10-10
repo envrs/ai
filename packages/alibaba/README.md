@@ -1,37 +1,37 @@
-# AI SDK - Alibaba Provider
+# ai-toolkit - Alibaba Provider
 
-The **[Alibaba provider](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba)** for the [AI SDK](https://ai-sdk.dev/docs) contains language model, embedding model, and video model support for [Alibaba Cloud Model Studio](https://modelstudio.console.alibabacloud.com/), including the Qwen model series with advanced reasoning capabilities.
+The **[Alibaba provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/alibaba)** for the [ai-toolkit](https://ai-toolkit.dev/docs) contains language model, embedding model, and video model support for [Alibaba Cloud Model Studio](https://modelstudio.console.alibabacloud.com/), including the Qwen model series with advanced reasoning capabilities.
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access Alibaba (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access Alibaba (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The Alibaba provider is available in the `@ai-sdk/alibaba` module. You can install it with
+The Alibaba provider is available in the `@ai-toolkit/alibaba` module. You can install it with
 
 ```bash
-npm i @ai-sdk/alibaba
+npm i @ai-toolkit/alibaba
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `alibaba` from `@ai-sdk/alibaba`:
+You can import the default provider instance `alibaba` from `@ai-toolkit/alibaba`:
 
 ```ts
-import { alibaba } from '@ai-sdk/alibaba';
+import { alibaba } from '@ai-toolkit/alibaba';
 ```
 
 ## Language Model Example
 
 ```ts
-import { alibaba } from '@ai-sdk/alibaba';
+import { alibaba } from '@ai-toolkit/alibaba';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -45,7 +45,7 @@ const { text } = await generateText({
 Alibaba's Qwen models support thinking/reasoning mode for complex problem-solving:
 
 ```ts
-import { alibaba } from '@ai-sdk/alibaba';
+import { alibaba } from '@ai-toolkit/alibaba';
 import { generateText } from 'ai';
 
 const { text, reasoningText } = await generateText({
@@ -65,12 +65,12 @@ console.log('Answer:', text);
 
 ## Preserved Thinking Example (Multi-Turn Reasoning)
 
-For models that support preserved thinking, the AI SDK sends reasoning from
+For models that support preserved thinking, the ai-toolkit sends reasoning from
 previous assistant messages back as Alibaba `reasoning_content` by default
 (`preserve_thinking`), so the model can build on its earlier thought process:
 
 ```ts
-import { alibaba } from '@ai-sdk/alibaba';
+import { alibaba } from '@ai-toolkit/alibaba';
 import { generateText } from 'ai';
 
 const providerOptions = {
@@ -120,7 +120,7 @@ reasoning parts survive to be serialized as `reasoning_content`. Set the
 ## Embedding Model Example
 
 ```ts
-import { alibaba, type AlibabaEmbeddingModelOptions } from '@ai-sdk/alibaba';
+import { alibaba, type AlibabaEmbeddingModelOptions } from '@ai-toolkit/alibaba';
 import { embed } from 'ai';
 
 const { embedding, usage } = await embed({
@@ -139,7 +139,7 @@ const { embedding, usage } = await embed({
 ## Tool Calling Example
 
 ```ts
-import { alibaba } from '@ai-sdk/alibaba';
+import { alibaba } from '@ai-toolkit/alibaba';
 import { generateText, tool } from 'ai';
 import { z } from 'zod';
 
@@ -168,7 +168,7 @@ Alibaba supports both implicit and explicit prompt caching to reduce costs for r
 **Implicit caching** works automatically - the provider caches appropriate content without any configuration. For more control, you can use **explicit caching** by marking specific messages with `cacheControl`:
 
 ```ts
-import { alibaba } from '@ai-sdk/alibaba';
+import { alibaba } from '@ai-toolkit/alibaba';
 import { generateText } from 'ai';
 
 const longDocument = '... large document content ...';
@@ -202,4 +202,4 @@ const { text, usage } = await generateText({
 
 ## Documentation
 
-Please check out the **[Alibaba provider documentation](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba)** for more information.
+Please check out the **[Alibaba provider documentation](https://ai-toolkit.dev/providers/ai-toolkit-providers/alibaba)** for more information.

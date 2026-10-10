@@ -15,7 +15,7 @@ const randomWidths = () =>
 
 /**
  * Browser-window skeleton that contrasts streaming with blocking responses
- * (ported from the legacy ai-sdk.dev app). Streaming reveals lines one after
+ * (ported from the legacy ai-toolkit.dev app). Streaming reveals lines one after
  * another with a wipe; blocking waits, then shows every line together. Both
  * fade out and replay every four seconds while the illustration is on screen,
  * unless the visitor prefers reduced motion. Pausing off screen keeps the

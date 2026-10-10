@@ -1,4 +1,4 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod/v4';
 import { DEFAULT_MAX_DOWNLOAD_SIZE } from './read-response-with-size-limit';

@@ -91,7 +91,7 @@ export const conventions = defineConventions([
       importTypes: [
         {
           name: 'ProviderV4',
-          from: '@ai-sdk/provider',
+          from: '@ai-toolkit/provider',
         },
       ],
       exportInterfaces: [
@@ -151,7 +151,7 @@ export const conventions = defineConventions([
       importTypes: [
         {
           name: '${modelKind.toPascalCase()}ModelV4',
-          from: '@ai-sdk/provider',
+          from: '@ai-toolkit/provider',
         },
       ],
       exportClasses: [
@@ -190,7 +190,7 @@ export const conventions = defineConventions([
       importTypes: [
         {
           name: '${modelKind.toNthSegmentPascalCase(1)}ModelV4',
-          from: '@ai-sdk/provider',
+          from: '@ai-toolkit/provider',
         },
       ],
       exportClasses: [
@@ -229,7 +229,7 @@ export const conventions = defineConventions([
       importTypes: [
         {
           name: 'Experimental_RealtimeModelV4',
-          from: '@ai-sdk/provider',
+          from: '@ai-toolkit/provider',
           alias: 'RealtimeModelV4',
         },
       ],
@@ -269,7 +269,7 @@ export const conventions = defineConventions([
       importTypes: [
         {
           name: 'Experimental_SpeechTranslationModelV4',
-          from: '@ai-sdk/provider',
+          from: '@ai-toolkit/provider',
           alias: 'SpeechTranslationModelV4',
         },
       ],
@@ -306,7 +306,7 @@ export const conventions = defineConventions([
       importTypes: [
         {
           name: 'Experimental_VideoModelV4',
-          from: '@ai-sdk/provider',
+          from: '@ai-toolkit/provider',
           alias: 'VideoModelV4',
         },
       ],
@@ -332,7 +332,7 @@ export const conventions = defineConventions([
       importTypes: [
         {
           name: 'Experimental_DecisionModelV4',
-          from: '@ai-sdk/provider',
+          from: '@ai-toolkit/provider',
           alias: 'DecisionModelV4',
         },
       ],
@@ -371,15 +371,15 @@ export const conventions = defineConventions([
       importValues: [
         {
           name: 'serializeModelOptions',
-          from: '@ai-sdk/provider-utils',
+          from: '@ai-toolkit/provider-utils',
         },
         {
           name: 'WORKFLOW_SERIALIZE',
-          from: '@ai-sdk/provider-utils',
+          from: '@ai-toolkit/provider-utils',
         },
         {
           name: 'WORKFLOW_DESERIALIZE',
-          from: '@ai-sdk/provider-utils',
+          from: '@ai-toolkit/provider-utils',
         },
       ],
     },

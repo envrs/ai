@@ -2,11 +2,11 @@ import type {
   FilesV4,
   FilesV4UploadFileCallOptions,
   ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertBase64ToUint8Array,
   detectMediaType,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { ProviderMetadata } from '../types/provider-metadata';
 import type { ProviderReference } from '../types/provider-reference';
 import type { Warning } from '../types/warning';

@@ -1,6 +1,6 @@
 import { describe, expectTypeOf, it } from 'vitest';
 import { z } from 'zod/v4';
-import { tool, type Tool } from '@ai-sdk/provider-utils';
+import { tool, type Tool } from '@ai-toolkit/provider-utils';
 import type { ActiveTools } from './active-tools';
 import { filterActiveTools } from './filter-active-tools';
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { Experimental_SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession } from '@ai-toolkit/provider-utils';
 import { writeSkills } from './write-skills';
 
 function makeSandbox() {
@@ -87,7 +87,7 @@ describe('writeSkills', () => {
     expect(
       JSON.parse(
         state.files.get(
-          '/home/user/.agents/skills/.ai-sdk-harness-skills.json',
+          '/home/user/.agents/skills/.ai-toolkit-harness-skills.json',
         )!,
       ),
     ).toMatchInlineSnapshot(`
@@ -184,7 +184,7 @@ describe('writeSkills', () => {
 
     expect(result.written).toEqual(['alpha', 'zeta']);
     const manifest = JSON.parse(
-      state.files.get('/home/user/.agents/skills/.ai-sdk-harness-skills.json')!,
+      state.files.get('/home/user/.agents/skills/.ai-toolkit-harness-skills.json')!,
     );
     expect(
       manifest.skills.map((skill: { name: string }) => skill.name),
@@ -204,14 +204,14 @@ describe('writeSkills', () => {
       }),
     ).rejects.toThrow('already exists and is not owned');
     expect(
-      state.files.has('/home/user/.agents/skills/.ai-sdk-harness-skills.json'),
+      state.files.has('/home/user/.agents/skills/.ai-toolkit-harness-skills.json'),
     ).toBe(false);
   });
 
   it('recovers a pending update by clearing every recorded directory', async () => {
     const state = makeSandbox();
     state.files.set(
-      '/home/user/.agents/skills/.ai-sdk-harness-skills.json',
+      '/home/user/.agents/skills/.ai-toolkit-harness-skills.json',
       JSON.stringify({
         version: 1,
         state: 'pending',

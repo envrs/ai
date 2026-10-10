@@ -1,5 +1,5 @@
-import type { SandboxChannelReconnectOptions } from '@ai-sdk/harness/utils';
-import type { InferToolInput } from '@ai-sdk/provider-utils';
+import type { SandboxChannelReconnectOptions } from '@ai-toolkit/harness/utils';
+import type { InferToolInput } from '@ai-toolkit/provider-utils';
 import { assertType, expectTypeOf, test } from 'vitest';
 import { createFx, type FxHarnessSettings } from './fx-harness';
 

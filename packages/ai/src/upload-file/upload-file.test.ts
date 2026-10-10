@@ -2,7 +2,7 @@ import type {
   FilesV4,
   FilesV4UploadFileResult,
   ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { describe, expect, it, vi } from 'vitest';
 import { uploadFile } from './upload-file';
 

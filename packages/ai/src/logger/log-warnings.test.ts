@@ -1,4 +1,4 @@
-import type { SharedV4Warning } from '@ai-sdk/provider';
+import type { SharedV4Warning } from '@ai-toolkit/provider';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { Warning } from '../types/warning';
 import {
@@ -24,16 +24,16 @@ describe('logWarnings', () => {
     mockConsoleInfo.mockClear();
     mockProcessEmitWarning.mockClear();
     resetLogWarningsState();
-    delete globalThis.AI_SDK_LOG_WARNINGS;
+    delete globalThis.ai-toolkit_LOG_WARNINGS;
   });
 
   afterEach(() => {
-    delete globalThis.AI_SDK_LOG_WARNINGS;
+    delete globalThis.ai-toolkit_LOG_WARNINGS;
   });
 
-  describe('when AI_SDK_LOG_WARNINGS is false', () => {
+  describe('when ai-toolkit_LOG_WARNINGS is false', () => {
     beforeEach(() => {
-      globalThis.AI_SDK_LOG_WARNINGS = false;
+      globalThis.ai-toolkit_LOG_WARNINGS = false;
     });
 
     it('should not log any warnings (single)', () => {
@@ -85,10 +85,10 @@ describe('logWarnings', () => {
     });
   });
 
-  describe('when AI_SDK_LOG_WARNINGS is a custom function', () => {
+  describe('when ai-toolkit_LOG_WARNINGS is a custom function', () => {
     it('should call the custom function with warning options', () => {
       const customLogger = vi.fn();
-      globalThis.AI_SDK_LOG_WARNINGS = customLogger;
+      globalThis.ai-toolkit_LOG_WARNINGS = customLogger;
 
       const warnings: Warning[] = [
         {
@@ -108,7 +108,7 @@ describe('logWarnings', () => {
 
     it('should call the custom function with multiple warnings', () => {
       const customLogger = vi.fn();
-      globalThis.AI_SDK_LOG_WARNINGS = customLogger;
+      globalThis.ai-toolkit_LOG_WARNINGS = customLogger;
 
       const warnings: Warning[] = [
         {
@@ -133,7 +133,7 @@ describe('logWarnings', () => {
 
     it('should not call the custom function with empty warnings array', () => {
       const customLogger = vi.fn();
-      globalThis.AI_SDK_LOG_WARNINGS = customLogger;
+      globalThis.ai-toolkit_LOG_WARNINGS = customLogger;
 
       const warnings: Warning[] = [];
 
@@ -145,7 +145,7 @@ describe('logWarnings', () => {
     });
   });
 
-  describe('when AI_SDK_LOG_WARNINGS is unset/undefined (default behavior)', () => {
+  describe('when ai-toolkit_LOG_WARNINGS is unset/undefined (default behavior)', () => {
     it('should emit the information note and warning via process.emitWarning without logging to stdout', () => {
       const warning: SharedV4Warning = {
         type: 'other',
@@ -165,7 +165,7 @@ describe('logWarnings', () => {
       );
       expect(mockProcessEmitWarning).toHaveBeenNthCalledWith(
         2,
-        'AI SDK Warning (myProvider / myModel): Test warning message',
+        'ai-toolkit Warning (myProvider / myModel): Test warning message',
         { type: 'Warning' },
       );
     });
@@ -191,12 +191,12 @@ describe('logWarnings', () => {
       );
       expect(mockProcessEmitWarning).toHaveBeenNthCalledWith(
         2,
-        'AI SDK Warning (a / b): 1',
+        'ai-toolkit Warning (a / b): 1',
         { type: 'Warning' },
       );
       expect(mockProcessEmitWarning).toHaveBeenNthCalledWith(
         3,
-        'AI SDK Warning (a / b): 2',
+        'ai-toolkit Warning (a / b): 2',
         { type: 'Warning' },
       );
     });
@@ -225,7 +225,7 @@ describe('logWarnings', () => {
       );
       expect(mockConsoleWarn).toHaveBeenNthCalledWith(
         2,
-        'AI SDK Warning (provider / model): Test warning',
+        'ai-toolkit Warning (provider / model): Test warning',
       );
       expect(mockProcessEmitWarning).not.toHaveBeenCalled();
     });
@@ -292,27 +292,27 @@ describe('logWarnings', () => {
       );
       expect(mockProcessEmitWarning).toHaveBeenNthCalledWith(
         2,
-        'AI SDK Warning (zzz / MMM): ' +
+        'ai-toolkit Warning (zzz / MMM): ' +
           'The feature "mediaType" is not supported. detail',
         { type: 'Warning' },
       );
       expect(mockProcessEmitWarning).toHaveBeenNthCalledWith(
         3,
-        'AI SDK Warning (zzz / MMM): ' +
+        'ai-toolkit Warning (zzz / MMM): ' +
           'The feature "voice" is not supported. detail2',
         { type: 'Warning' },
       );
       expect(mockProcessEmitWarning).toHaveBeenNthCalledWith(
         4,
-        `AI SDK Warning (zzz / MMM): Deprecated: "providerOptions key 'old-key'". Use 'oldKey' instead.`,
+        `ai-toolkit Warning (zzz / MMM): Deprecated: "providerOptions key 'old-key'". Use 'oldKey' instead.`,
         {
           type: 'DeprecationWarning',
-          code: 'AISDK_DEP_PROVIDER_zzz__providerOptions_0020key_0020_0027old_002Dkey_0027',
+          code: 'ai-toolkit_DEP_PROVIDER_zzz__providerOptions_0020key_0020_0027old_002Dkey_0027',
         },
       );
       expect(mockProcessEmitWarning).toHaveBeenNthCalledWith(
         5,
-        'AI SDK Warning (zzz / MMM): other msg',
+        'ai-toolkit Warning (zzz / MMM): other msg',
         { type: 'Warning' },
       );
     });
@@ -327,15 +327,15 @@ describe('logWarnings', () => {
       expect(mockConsoleInfo).not.toHaveBeenCalled();
       expect(mockConsoleWarn).not.toHaveBeenCalled();
       expect(mockProcessEmitWarning).toHaveBeenCalledWith(
-        'AI SDK Warning (unknown provider / unknown model): messx',
+        'ai-toolkit Warning (unknown provider / unknown model): messx',
         { type: 'Warning' },
       );
     });
   });
 
-  describe('when AI_SDK_LOG_WARNINGS is undefined (explicitly set)', () => {
+  describe('when ai-toolkit_LOG_WARNINGS is undefined (explicitly set)', () => {
     beforeEach(() => {
-      globalThis.AI_SDK_LOG_WARNINGS = undefined;
+      globalThis.ai-toolkit_LOG_WARNINGS = undefined;
     });
 
     it('should use default behavior and emit via process.emitWarning', () => {
@@ -357,7 +357,7 @@ describe('logWarnings', () => {
       );
       expect(mockProcessEmitWarning).toHaveBeenNthCalledWith(
         2,
-        'AI SDK Warning (p1 / m1): Test warning with undefined logger',
+        'ai-toolkit Warning (p1 / m1): Test warning with undefined logger',
         { type: 'Warning' },
       );
     });
@@ -378,13 +378,13 @@ describe('logWarnings', () => {
       expect(mockProcessEmitWarning).toHaveBeenCalledTimes(3);
       expect(mockProcessEmitWarning).toHaveBeenNthCalledWith(
         2,
-        'AI SDK Warning: Deprecated: "generateObject". Use generateText with an output setting instead.',
-        { type: 'DeprecationWarning', code: 'AISDK_DEP_GENERATE_OBJECT' },
+        'ai-toolkit Warning: Deprecated: "generateObject". Use generateText with an output setting instead.',
+        { type: 'DeprecationWarning', code: 'ai-toolkit_DEP_GENERATE_OBJECT' },
       );
       expect(mockProcessEmitWarning).toHaveBeenNthCalledWith(
         3,
         expect.any(String),
-        { type: 'DeprecationWarning', code: 'AISDK_DEP_STREAM_OBJECT' },
+        { type: 'DeprecationWarning', code: 'ai-toolkit_DEP_STREAM_OBJECT' },
       );
     });
 
@@ -397,7 +397,7 @@ describe('logWarnings', () => {
         expect.any(String),
         {
           type: 'DeprecationWarning',
-          code: 'AISDK_DEP_PROVIDER_b__generateObject',
+          code: 'ai-toolkit_DEP_PROVIDER_b__generateObject',
         },
       );
     });
@@ -408,16 +408,16 @@ describe('logWarnings', () => {
       logWarnings({ warnings: [warning, other] });
       expect(mockProcessEmitWarning).toHaveBeenCalledTimes(4);
       expect(mockProcessEmitWarning).toHaveBeenLastCalledWith(
-        'AI SDK Warning: Repeated warning.',
+        'ai-toolkit Warning: Repeated warning.',
         { type: 'Warning' },
       );
     });
 
     it('does not consume codes while warnings are disabled', () => {
-      globalThis.AI_SDK_LOG_WARNINGS = false;
+      globalThis.ai-toolkit_LOG_WARNINGS = false;
       logWarnings({ warnings: [warning] });
       expect(mockProcessEmitWarning).not.toHaveBeenCalled();
-      delete globalThis.AI_SDK_LOG_WARNINGS;
+      delete globalThis.ai-toolkit_LOG_WARNINGS;
       logWarnings({ warnings: [warning] });
       expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
     });
@@ -426,7 +426,7 @@ describe('logWarnings', () => {
       const options = { warnings: [warning, warning] };
       logWarnings(options);
       const logger = vi.fn();
-      globalThis.AI_SDK_LOG_WARNINGS = logger;
+      globalThis.ai-toolkit_LOG_WARNINGS = logger;
       logWarnings(options);
       logWarnings(options);
       expect(logger).toHaveBeenCalledTimes(2);
@@ -435,10 +435,10 @@ describe('logWarnings', () => {
     });
 
     it('does not consume codes while using a custom logger', () => {
-      globalThis.AI_SDK_LOG_WARNINGS = vi.fn<LogWarningsFunction>();
+      globalThis.ai-toolkit_LOG_WARNINGS = vi.fn<LogWarningsFunction>();
       logWarnings({ warnings: [warning] });
       expect(mockProcessEmitWarning).not.toHaveBeenCalled();
-      delete globalThis.AI_SDK_LOG_WARNINGS;
+      delete globalThis.ai-toolkit_LOG_WARNINGS;
       logWarnings({ warnings: [warning] });
       expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
     });
@@ -457,7 +457,7 @@ describe('logWarnings', () => {
         expect(mockProcessEmitWarning).not.toHaveBeenCalled();
         expect(mockConsoleWarn).toHaveBeenCalledTimes(2);
         expect(mockConsoleWarn).toHaveBeenLastCalledWith(
-          '[AISDK_DEP_GENERATE_OBJECT] AI SDK Warning: Deprecated: "generateObject". Use generateText with an output setting instead.',
+          '[ai-toolkit_DEP_GENERATE_OBJECT] ai-toolkit Warning: Deprecated: "generateObject". Use generateText with an output setting instead.',
         );
       },
     );
@@ -505,7 +505,7 @@ describe('logWarnings', () => {
 
     it('should not display information note when using custom logger', () => {
       const customLogger = vi.fn();
-      globalThis.AI_SDK_LOG_WARNINGS = customLogger;
+      globalThis.ai-toolkit_LOG_WARNINGS = customLogger;
 
       logWarnings({
         warnings: [{ type: 'other', message: 'Message' } as SharedV4Warning],
@@ -517,8 +517,8 @@ describe('logWarnings', () => {
       expect(customLogger).toHaveBeenCalledOnce();
     });
 
-    it('should not display information note when AI_SDK_LOG_WARNINGS is false', () => {
-      globalThis.AI_SDK_LOG_WARNINGS = false;
+    it('should not display information note when ai-toolkit_LOG_WARNINGS is false', () => {
+      globalThis.ai-toolkit_LOG_WARNINGS = false;
 
       logWarnings({
         warnings: [

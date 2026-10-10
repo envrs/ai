@@ -7,7 +7,7 @@ export type { QuiverAIImageModelId } from './quiverai-image-settings';
 export type { QuiverAIImageModelOptions } from './quiverai-image-model-options';
 export type { QuiverAILanguageModelId } from './quiverai-language-model-settings';
 export type { QuiverAILanguageModelOptions } from './quiverai-language-model-options';
-export type { OpenResponsesCustomToolOptions as QuiverAICustomToolOptions } from '@ai-sdk/open-responses';
+export type { OpenResponsesCustomToolOptions as QuiverAICustomToolOptions } from '@ai-toolkit/open-responses';
 export {
   prepareQuiverAIImageReference,
   type QuiverAIImageReference,

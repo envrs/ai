@@ -1,5 +1,5 @@
-import { commonTool } from '@ai-sdk/harness';
-import type { SandboxChannelReconnectOptions } from '@ai-sdk/harness/utils';
+import { commonTool } from '@ai-toolkit/harness';
+import type { SandboxChannelReconnectOptions } from '@ai-toolkit/harness/utils';
 import type { ToolCall } from '@agentclientprotocol/sdk';
 import { describe, expectTypeOf, test } from 'vitest';
 import { z } from 'zod/v4';

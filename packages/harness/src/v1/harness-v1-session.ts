@@ -1,5 +1,5 @@
 import type { HarnessV1NetworkSandboxSession } from './harness-v1-network-sandbox-session';
-import type { Experimental_SandboxSession as SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import type { HarnessV1Observability } from './harness-v1-observability';
 import type { HarnessV1PermissionMode } from './harness-v1-permission-mode';
 import type { HarnessV1Prompt } from './harness-v1-prompt';

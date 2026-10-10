@@ -1,4 +1,4 @@
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it } from 'vitest';
 import { createOpenResponses } from './open-responses-provider';
 

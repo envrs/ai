@@ -8,7 +8,7 @@ The code in this directory and sub-directories is released under the ISC license
 ISC License
 
 Copyright (c) 2020, Stefan Terdell
-Copyright (c) 2025, Vercel Inc.
+Copyright (c) 2025, khulnasoft Inc.
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above

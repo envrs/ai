@@ -1,4 +1,4 @@
-import { UnsupportedFunctionalityError } from '@ai-sdk/provider';
+import { UnsupportedFunctionalityError } from '@ai-toolkit/provider';
 import type { FileUIPart } from './ui-messages';
 
 export async function convertFileListToFileUIParts(

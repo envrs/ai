@@ -1,4 +1,4 @@
-import type { FetchFunction } from '@ai-sdk/provider-utils';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 import { generateImage } from 'ai';
 import { describe, expect, it, vi } from 'vitest';
 import { createAzure } from './azure-openai-provider';

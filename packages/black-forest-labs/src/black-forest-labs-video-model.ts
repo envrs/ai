@@ -1,5 +1,5 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   InvalidArgumentError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4CallOptions as VideoModelV4CallOptions,
@@ -8,7 +8,7 @@ import {
   type Experimental_VideoModelV4OperationStatusResult as VideoModelV4OperationStatusResult,
   type Experimental_VideoModelV4Result as VideoModelV4Result,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createJsonResponseHandler,
@@ -23,7 +23,7 @@ import {
   WORKFLOW_SERIALIZE,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import {
   bflFailedResponseHandler,
@@ -630,7 +630,7 @@ export class BlackForestLabsVideoModel implements VideoModelV4 {
     if (status === 'Ready') {
       const parsed = bflVideoResultSchema.safeParse(result);
       if (!parsed.success) {
-        throw new AISDKError({
+        throw new ai-toolkitError({
           name: 'BLACK_FOREST_LABS_VIDEO_GENERATION_ERROR',
           message:
             'Black Forest Labs reported the video as Ready but returned no result.sample URL. ' +
@@ -711,7 +711,7 @@ export class BlackForestLabsVideoModel implements VideoModelV4 {
       await delay(pollIntervalMillis, { abortSignal: options.abortSignal });
 
       if (Date.now() - startTime > pollTimeoutMillis) {
-        throw new AISDKError({
+        throw new ai-toolkitError({
           name: 'BLACK_FOREST_LABS_VIDEO_GENERATION_TIMEOUT',
           message:
             `Black Forest Labs video generation timed out after ${pollTimeoutMillis}ms. ` +
@@ -730,7 +730,7 @@ export class BlackForestLabsVideoModel implements VideoModelV4 {
       }
 
       if (statusResult.status === 'error') {
-        throw new AISDKError({
+        throw new ai-toolkitError({
           name: 'BLACK_FOREST_LABS_VIDEO_GENERATION_FAILED',
           message: statusResult.error,
         });

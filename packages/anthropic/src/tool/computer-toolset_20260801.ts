@@ -2,12 +2,12 @@ import {
   createProviderDefinedToolFactory,
   lazySchema,
   zodSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 /**
  * Member tools of the computer toolset. Each member is returned by the API as
- * its own `tool_use` block; the AI SDK exposes it as the `action` of a single
+ * its own `tool_use` block; the ai-toolkit exposes it as the `action` of a single
  * computer tool call.
  */
 export const computerToolset_20260801Members = [
@@ -78,7 +78,7 @@ export const computerToolset_20260801 = createProviderDefinedToolFactory<
   {
     /**
      * The member tool that Claude invoked. Each member is returned by the API
-     * as a separate `tool_use` block; the AI SDK maps it to the `action`.
+     * as a separate `tool_use` block; the ai-toolkit maps it to the `action`.
      *
      * - `screenshot`: Capture the full display as an image.
      * - `zoom`: Capture a `region` of the screen at full resolution.

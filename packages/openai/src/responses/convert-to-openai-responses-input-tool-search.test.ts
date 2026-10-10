@@ -1,4 +1,4 @@
-import type { ToolNameMapping } from '@ai-sdk/provider-utils';
+import type { ToolNameMapping } from '@ai-toolkit/provider-utils';
 import { expect, it } from 'vitest';
 import { convertToOpenAIResponsesInput } from './convert-to-openai-responses-input';
 

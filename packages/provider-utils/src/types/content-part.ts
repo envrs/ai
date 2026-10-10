@@ -1,4 +1,4 @@
-import type { JSONValue } from '@ai-sdk/provider';
+import type { JSONValue } from '@ai-toolkit/provider';
 import type { DataContent } from './data-content';
 import type { FileData, FileDataData, FileDataUrl } from './file-data';
 import type { ProviderOptions } from './provider-options';
@@ -17,7 +17,7 @@ export interface TextPart {
 
   /**
    * Additional provider-specific metadata. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: ProviderOptions;
@@ -50,7 +50,7 @@ export interface ImagePart {
 
   /**
    * Additional provider-specific metadata. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: ProviderOptions;
@@ -85,7 +85,7 @@ export interface FilePart {
    *
    * `*`-subtype wildcards (e.g. `image/*`) are normalized as equivalent to the
    * top-level segment alone (e.g. `image`). Providers can use the helpers in
-   * `@ai-sdk/provider-utils` (`isFullMediaType`, `getTopLevelMediaType`,
+   * `@ai-toolkit/provider-utils` (`isFullMediaType`, `getTopLevelMediaType`,
    * `detectMediaType`) to resolve the field according to their API
    * requirements.
    *
@@ -95,7 +95,7 @@ export interface FilePart {
 
   /**
    * Additional provider-specific metadata. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: ProviderOptions;
@@ -114,7 +114,7 @@ export interface ReasoningPart {
 
   /**
    * Additional provider-specific metadata. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: ProviderOptions;
@@ -134,7 +134,7 @@ export interface CustomPart {
 
   /**
    * Additional provider-specific metadata. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: ProviderOptions;
@@ -172,7 +172,7 @@ export interface ReasoningFilePart {
 
   /**
    * Additional provider-specific metadata. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: ProviderOptions;
@@ -201,7 +201,7 @@ export interface ToolCallPart {
 
   /**
    * Additional provider-specific metadata. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: ProviderOptions;
@@ -235,7 +235,7 @@ export interface ToolResultPart {
 
   /**
    * Additional provider-specific metadata. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: ProviderOptions;
@@ -338,7 +338,7 @@ export type ToolResultOutput =
              *
              * `*`-subtype wildcards (e.g. `image/*`) are normalized as equivalent to the
              * top-level segment alone (e.g. `image`). Providers can use the helpers in
-             * `@ai-sdk/provider-utils` (`isFullMediaType`, `getTopLevelMediaType`,
+             * `@ai-toolkit/provider-utils` (`isFullMediaType`, `getTopLevelMediaType`,
              * `detectMediaType`) to resolve the field according to their API
              * requirements.
              *

@@ -3,7 +3,7 @@ import type {
   ImageModelV4CallOptions,
   ImageModelV4Usage,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertImageModelFileToDataUri,
@@ -12,7 +12,7 @@ import {
   parseProviderOptions,
   postJsonToApi,
   resolve,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { ByteDanceConfig } from './bytedance-config';
 import {

@@ -2,7 +2,7 @@ import {
   lazySchema,
   zodSchema,
   type InferSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 /**
@@ -68,7 +68,7 @@ export type GoogleInteractionsVideoOptions = {
 /**
  * Provider-options schema for `google.interactions(...)` calls. Read from the
  * shared `providerOptions.google.*` namespace (per PRD); per-call options that
- * the AI SDK doesn't natively expose live here.
+ * the ai-toolkit doesn't natively expose live here.
  *
  * All fields are `.nullish()` per the existing google provider convention.
  */
@@ -103,7 +103,7 @@ export const googleInteractionsLanguageModelOptions = lazySchema(() =>
        * array. Use this to request image, audio, video, or non-JSON text
        * outputs with modality-specific controls.
        *
-       * Entries are sent in order. The AI SDK call-level `responseFormat: {
+       * Entries are sent in order. The ai-toolkit call-level `responseFormat: {
        * type: 'json', schema }` still drives JSON-mode and adds a matching
        * text entry automatically; entries listed here are appended.
        */
@@ -201,7 +201,7 @@ export const googleInteractionsLanguageModelOptions = lazySchema(() =>
       serviceTier: z.enum(['flex', 'standard', 'priority']).nullish(),
 
       /**
-       * Alternative to AI SDK `system` message. If both are set, the AI SDK
+       * Alternative to ai-toolkit `system` message. If both are set, the ai-toolkit
        * `system` message wins and a warning is emitted.
        */
       systemInstruction: z.string().nullish(),

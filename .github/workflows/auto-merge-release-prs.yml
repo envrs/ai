@@ -24,6 +24,6 @@ jobs:
           gh pr review ${{ github.event.pull_request.number }} --approve
         env:
           # this should really be an app token. But for that we would need to register a secondary app,
-          # since the vercel=ai-sdk app already creates the pull request and it cannot approve its own pull requests.
+          # since the khulnasoft=ai-toolkit app already creates the pull request and it cannot approve its own pull requests.
           GH_TOKEN: ${{ secrets.GR2M_PR_REVIEW_TOKEN }}
           GH_REPO: ${{ github.repository }}

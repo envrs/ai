@@ -1,4 +1,4 @@
-import { parseJSON } from '@ai-sdk/provider-utils';
+import { parseJSON } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { BaseParamsSchema, RequestSchema, ResultSchema } from './types';
 

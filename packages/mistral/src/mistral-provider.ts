@@ -5,13 +5,13 @@ import {
   type ProviderV4,
   type SpeechModelV4,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { MistralChatLanguageModel } from './mistral-chat-language-model';
 import { MistralConversationLanguageModel } from './mistral-conversation-language-model';
 import type { MistralChatModelId } from './mistral-chat-language-model-options';
@@ -132,7 +132,7 @@ export function createMistral(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-mistral/${VERSION}`,
+      `ai-toolkit-mistral/${VERSION}`,
     );
 
   const createChatModel = (modelId: MistralChatModelId) =>

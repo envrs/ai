@@ -1,4 +1,4 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { quiveraiFailedResponseHandler } from './quiverai-error';
 import { QuiverAIImageModel } from './quiverai-image-model';

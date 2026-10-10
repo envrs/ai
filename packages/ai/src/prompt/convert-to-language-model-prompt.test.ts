@@ -2550,10 +2550,10 @@ describe('convertToLanguageModelMessage', () => {
 
         expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
         expect(mockProcessEmitWarning).toHaveBeenCalledWith(
-          'AI SDK Warning: Deprecated: ""tool-result" content of type "file-data"". The "file-data" type for tool result content is deprecated. Use the "file" type with mediaType and { type: \'data\', data } instead.',
+          'ai-toolkit Warning: Deprecated: ""tool-result" content of type "file-data"". The "file-data" type for tool result content is deprecated. Use the "file" type with mediaType and { type: \'data\', data } instead.',
           {
             type: 'DeprecationWarning',
-            code: 'AISDK_DEP_TOOL_RESULT_FILE_DATA',
+            code: 'ai-toolkit_DEP_TOOL_RESULT_FILE_DATA',
           },
         );
         expect(
@@ -2603,10 +2603,10 @@ describe('convertToLanguageModelMessage', () => {
 
         expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
         expect(mockProcessEmitWarning).toHaveBeenCalledWith(
-          'AI SDK Warning: Deprecated: ""tool-result" content of type "file-reference"". The "file-reference" type for tool result content is deprecated. Use the "file" type with mediaType and { type: \'reference\', reference } instead.',
+          'ai-toolkit Warning: Deprecated: ""tool-result" content of type "file-reference"". The "file-reference" type for tool result content is deprecated. Use the "file" type with mediaType and { type: \'reference\', reference } instead.',
           {
             type: 'DeprecationWarning',
-            code: 'AISDK_DEP_TOOL_RESULT_FILE_REFERENCE',
+            code: 'ai-toolkit_DEP_TOOL_RESULT_FILE_REFERENCE',
           },
         );
         expect(
@@ -2659,10 +2659,10 @@ describe('convertToLanguageModelMessage', () => {
 
         expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
         expect(mockProcessEmitWarning).toHaveBeenCalledWith(
-          'AI SDK Warning: Deprecated: ""tool-result" content of type "image-data"". The "image-data" type for tool result content is deprecated. Use the "file" type with mediaType and { type: \'data\', data } instead.',
+          'ai-toolkit Warning: Deprecated: ""tool-result" content of type "image-data"". The "image-data" type for tool result content is deprecated. Use the "file" type with mediaType and { type: \'data\', data } instead.',
           {
             type: 'DeprecationWarning',
-            code: 'AISDK_DEP_TOOL_RESULT_IMAGE_DATA',
+            code: 'ai-toolkit_DEP_TOOL_RESULT_IMAGE_DATA',
           },
         );
         expect(
@@ -2708,10 +2708,10 @@ describe('convertToLanguageModelMessage', () => {
 
         expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
         expect(mockProcessEmitWarning).toHaveBeenCalledWith(
-          'AI SDK Warning: Deprecated: ""tool-result" content of type "image-url"". The "image-url" type for tool result content is deprecated. Use the "file" type with mediaType \'image\' (or a specific image/* subtype) and { type: \'url\', url } instead.',
+          'ai-toolkit Warning: Deprecated: ""tool-result" content of type "image-url"". The "image-url" type for tool result content is deprecated. Use the "file" type with mediaType \'image\' (or a specific image/* subtype) and { type: \'url\', url } instead.',
           {
             type: 'DeprecationWarning',
-            code: 'AISDK_DEP_TOOL_RESULT_IMAGE_URL',
+            code: 'ai-toolkit_DEP_TOOL_RESULT_IMAGE_URL',
           },
         );
         expect(
@@ -2763,10 +2763,10 @@ describe('convertToLanguageModelMessage', () => {
 
         expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
         expect(mockProcessEmitWarning).toHaveBeenCalledWith(
-          'AI SDK Warning: Deprecated: ""tool-result" content of type "image-file-reference"". The "image-file-reference" type for tool result content is deprecated. Use the "file" type with mediaType and { type: \'reference\', reference } instead.',
+          'ai-toolkit Warning: Deprecated: ""tool-result" content of type "image-file-reference"". The "image-file-reference" type for tool result content is deprecated. Use the "file" type with mediaType and { type: \'reference\', reference } instead.',
           {
             type: 'DeprecationWarning',
-            code: 'AISDK_DEP_TOOL_RESULT_IMAGE_FILE_REFERENCE',
+            code: 'ai-toolkit_DEP_TOOL_RESULT_IMAGE_FILE_REFERENCE',
           },
         );
         expect(
@@ -2818,10 +2818,10 @@ describe('convertToLanguageModelMessage', () => {
 
         expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
         expect(mockProcessEmitWarning).toHaveBeenCalledWith(
-          'AI SDK Warning: Deprecated: ""tool-result" content of type "image-file-id"". The "image-file-id" type for tool result content is deprecated. Use the "file" type with mediaType and { type: \'reference\', reference } instead.',
+          'ai-toolkit Warning: Deprecated: ""tool-result" content of type "image-file-id"". The "image-file-id" type for tool result content is deprecated. Use the "file" type with mediaType and { type: \'reference\', reference } instead.',
           {
             type: 'DeprecationWarning',
-            code: 'AISDK_DEP_TOOL_RESULT_IMAGE_FILE_ID',
+            code: 'ai-toolkit_DEP_TOOL_RESULT_IMAGE_FILE_ID',
           },
         );
         expect(
@@ -2873,8 +2873,8 @@ describe('convertToLanguageModelMessage', () => {
 
         expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
         expect(mockProcessEmitWarning).toHaveBeenCalledWith(
-          'AI SDK Warning: Deprecated: ""tool-result" content of type "file-id"". The "file-id" type for tool result content is deprecated. Use the "file" type with mediaType and { type: \'reference\', reference } instead.',
-          { type: 'DeprecationWarning', code: 'AISDK_DEP_TOOL_RESULT_FILE_ID' },
+          'ai-toolkit Warning: Deprecated: ""tool-result" content of type "file-id"". The "file-id" type for tool result content is deprecated. Use the "file" type with mediaType and { type: \'reference\', reference } instead.',
+          { type: 'DeprecationWarning', code: 'ai-toolkit_DEP_TOOL_RESULT_FILE_ID' },
         );
         expect(
           (
@@ -2926,10 +2926,10 @@ describe('convertToLanguageModelMessage', () => {
 
         expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
         expect(mockProcessEmitWarning).toHaveBeenCalledWith(
-          `AI SDK Warning: Deprecated: ""tool-result" content of type "file-url"". The "file-url" type for tool result content is deprecated. Use the "file" type with mediaType and { type: 'url', url } instead.`,
+          `ai-toolkit Warning: Deprecated: ""tool-result" content of type "file-url"". The "file-url" type for tool result content is deprecated. Use the "file" type with mediaType and { type: 'url', url } instead.`,
           {
             type: 'DeprecationWarning',
-            code: 'AISDK_DEP_TOOL_RESULT_FILE_URL',
+            code: 'ai-toolkit_DEP_TOOL_RESULT_FILE_URL',
           },
         );
       });
@@ -2960,10 +2960,10 @@ describe('convertToLanguageModelMessage', () => {
 
         expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
         expect(mockProcessEmitWarning).toHaveBeenCalledWith(
-          `AI SDK Warning: Deprecated: ""tool-result" content of type "file-url"". The "file-url" tool result content part with URL "https://example.com/image.png" is missing a "mediaType". Inferred media type 'image/png' from URL. The "file-url" type for tool result content is deprecated. Use the "file" type with mediaType and { type: 'url', url } instead.`,
+          `ai-toolkit Warning: Deprecated: ""tool-result" content of type "file-url"". The "file-url" tool result content part with URL "https://example.com/image.png" is missing a "mediaType". Inferred media type 'image/png' from URL. The "file-url" type for tool result content is deprecated. Use the "file" type with mediaType and { type: 'url', url } instead.`,
           {
             type: 'DeprecationWarning',
-            code: 'AISDK_DEP_TOOL_RESULT_FILE_URL',
+            code: 'ai-toolkit_DEP_TOOL_RESULT_FILE_URL',
           },
         );
       });
@@ -2994,10 +2994,10 @@ describe('convertToLanguageModelMessage', () => {
 
         expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
         expect(mockProcessEmitWarning).toHaveBeenCalledWith(
-          `AI SDK Warning: Deprecated: ""tool-result" content of type "file-url"". The "file-url" tool result content part with URL "https://example.com/file" is missing a "mediaType". Unable to infer media type from URL. Defaulting to 'application/octet-stream'. The "file-url" type for tool result content is deprecated. Use the "file" type with mediaType and { type: 'url', url } instead.`,
+          `ai-toolkit Warning: Deprecated: ""tool-result" content of type "file-url"". The "file-url" tool result content part with URL "https://example.com/file" is missing a "mediaType". Unable to infer media type from URL. Defaulting to 'application/octet-stream'. The "file-url" type for tool result content is deprecated. Use the "file" type with mediaType and { type: 'url', url } instead.`,
           {
             type: 'DeprecationWarning',
-            code: 'AISDK_DEP_TOOL_RESULT_FILE_URL',
+            code: 'ai-toolkit_DEP_TOOL_RESULT_FILE_URL',
           },
         );
       });
@@ -3032,10 +3032,10 @@ describe('convertToLanguageModelMessage', () => {
 
         expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
         expect(mockProcessEmitWarning).toHaveBeenCalledWith(
-          `AI SDK Warning: Deprecated: ""tool-result" content of type "file-url"". The "file-url" tool result content part with URL "https://example.com/foo.constructor" is missing a "mediaType". Unable to infer media type from URL. Defaulting to 'application/octet-stream'. The "file-url" type for tool result content is deprecated. Use the "file" type with mediaType and { type: 'url', url } instead.`,
+          `ai-toolkit Warning: Deprecated: ""tool-result" content of type "file-url"". The "file-url" tool result content part with URL "https://example.com/foo.constructor" is missing a "mediaType". Unable to infer media type from URL. Defaulting to 'application/octet-stream'. The "file-url" type for tool result content is deprecated. Use the "file" type with mediaType and { type: 'url', url } instead.`,
           {
             type: 'DeprecationWarning',
-            code: 'AISDK_DEP_TOOL_RESULT_FILE_URL',
+            code: 'ai-toolkit_DEP_TOOL_RESULT_FILE_URL',
           },
         );
       });
@@ -3067,10 +3067,10 @@ describe('convertToLanguageModelMessage', () => {
 
         expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
         expect(mockProcessEmitWarning).toHaveBeenCalledWith(
-          'AI SDK Warning: Deprecated: ""tool-result" content of type "image-data"". The "image-data" type for tool result content is deprecated. Use the "file" type with mediaType and { type: \'data\', data } instead.',
+          'ai-toolkit Warning: Deprecated: ""tool-result" content of type "image-data"". The "image-data" type for tool result content is deprecated. Use the "file" type with mediaType and { type: \'data\', data } instead.',
           {
             type: 'DeprecationWarning',
-            code: 'AISDK_DEP_TOOL_RESULT_IMAGE_DATA',
+            code: 'ai-toolkit_DEP_TOOL_RESULT_IMAGE_DATA',
           },
         );
       });

@@ -1,4 +1,4 @@
-import type { ToolSet } from '@ai-sdk/provider-utils';
+import type { ToolSet } from '@ai-toolkit/provider-utils';
 import type {
   HARNESS_V1_BUILTIN_TOOLS,
   HarnessV1,

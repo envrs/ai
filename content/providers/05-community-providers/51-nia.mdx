@@ -1,32 +1,32 @@
 ---
 title: Nia
-description: Learn how to use Nia with the AI SDK.
+description: Learn how to use Nia with the ai-toolkit.
 ---
 
 # Nia
 
-[Nia](https://www.trynia.ai/) by Nozomio Labs is an API for technical, up-to-date context. It lets you index docs, repos, PDFs, and datasets, then search them with AI so your agent gets real answers instead of hallucinations. The [`@nozomioai/nia-ai-sdk`](https://www.npmjs.com/package/@nozomioai/nia-ai-sdk) package integrates Nia with the AI SDK through tools, middleware, and direct streaming helpers.
+[Nia](https://www.trynia.ai/) by Nozomio Labs is an API for technical, up-to-date context. It lets you index docs, repos, PDFs, and datasets, then search them with AI so your agent gets real answers instead of hallucinations. The [`@nozomioai/nia-ai-toolkit`](https://www.npmjs.com/package/@nozomioai/nia-ai-toolkit) package integrates Nia with the ai-toolkit through tools, middleware, and direct streaming helpers.
 
 It is designed for workflows where you want to:
 
 - Call Nia Tracer as a tool for public GitHub and documentation research
 - Call Nia Oracle as a tool for grounded research over indexed repositories, docs, PDFs, and datasets
 - Call Nia Document Agent as a tool for deep document analysis and structured extraction
-- Augment an existing AI SDK model with Nia-backed middleware
+- Augment an existing ai-toolkit model with Nia-backed middleware
 - Stream Tracer, Oracle, or Document Agent events directly in your app
 
 Learn more in the [Nia documentation](https://docs.trynia.ai/).
 
 ## Setup
 
-The Nia adapter is available in the `@nozomioai/nia-ai-sdk` package. You can install it with:
+The Nia adapter is available in the `@nozomioai/nia-ai-toolkit` package. You can install it with:
 
-<InstallPackages packages="@nozomioai/nia-ai-sdk" />
+<InstallPackages packages="@nozomioai/nia-ai-toolkit" />
 
 If you want to use Nia middleware with a model provider, install that provider as well. For example:
 
 ```bash
-pnpm add @ai-sdk/openai
+pnpm add @ai-toolkit/openai
 ```
 
 Set your Nia API key:
@@ -39,14 +39,14 @@ You can get your API key from the [Nia dashboard](https://www.trynia.ai/).
 
 ## Tool Usage
 
-Nia works well as a set of AI SDK tools that you pass to `generateText` or `streamText`.
+Nia works well as a set of ai-toolkit tools that you pass to `generateText` or `streamText`.
 
 ### `generateText`
 
 ```ts
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
-import { createNiaResearchTools } from '@nozomioai/nia-ai-sdk';
+import { openai } from '@ai-toolkit/openai';
+import { createNiaResearchTools } from '@nozomioai/nia-ai-toolkit';
 
 const tools = createNiaResearchTools({
   apiKey: process.env.NIA_API_KEY!,
@@ -57,8 +57,8 @@ const tools = createNiaResearchTools({
   },
   oracle: {
     defaultRequest: {
-      repositories: ['vercel/ai'],
-      dataSources: ['Vercel AI SDK'],
+      repositories: ['khulnasoft/ai'],
+      dataSources: ['khulnasoft ai-toolkit'],
     },
   },
   documentAgent: {
@@ -71,7 +71,7 @@ const tools = createNiaResearchTools({
 const result = await generateText({
   model: openai('gpt-4.1'),
   prompt:
-    'Research how AI SDK middleware works, then summarize the best integration pattern.',
+    'Research how ai-toolkit middleware works, then summarize the best integration pattern.',
   tools,
 });
 
@@ -90,20 +90,20 @@ Use middleware when you want Nia to enrich the last user message before your bas
 
 ```ts
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
-import { withOracleContext } from '@nozomioai/nia-ai-sdk';
+import { openai } from '@ai-toolkit/openai';
+import { withOracleContext } from '@nozomioai/nia-ai-toolkit';
 
 const model = withOracleContext(openai('gpt-4.1'), {
   apiKey: process.env.NIA_API_KEY!,
   defaultRequest: {
-    repositories: ['vercel/ai'],
-    dataSources: ['Vercel AI SDK'],
+    repositories: ['khulnasoft/ai'],
+    dataSources: ['khulnasoft ai-toolkit'],
   },
 });
 
 const result = await generateText({
   model,
-  prompt: 'How should I think about AI SDK middleware for retrieval?',
+  prompt: 'How should I think about ai-toolkit middleware for retrieval?',
 });
 
 console.log(result.text);
@@ -123,7 +123,7 @@ If you want raw Nia job events, use the direct streaming helpers:
 - `streamDocumentAgent()`
 
 ```ts
-import { streamTracer } from '@nozomioai/nia-ai-sdk';
+import { streamTracer } from '@nozomioai/nia-ai-toolkit';
 
 const session = await streamTracer(
   {
@@ -131,7 +131,7 @@ const session = await streamTracer(
   },
   {
     query: 'How does generateText stream responses?',
-    repositories: ['vercel/ai'],
+    repositories: ['khulnasoft/ai'],
     mode: 'tracer-fast',
   },
 );
@@ -143,7 +143,7 @@ for await (const event of session.events) {
 
 ## Additional Resources
 
-- [Nia package on npm](https://www.npmjs.com/package/@nozomioai/nia-ai-sdk)
-- [Nia adapter repository](https://github.com/nozomio-labs/nia-ai-sdk)
+- [Nia package on npm](https://www.npmjs.com/package/@nozomioai/nia-ai-toolkit)
+- [Nia adapter repository](https://github.com/nozomio-labs/nia-ai-toolkit)
 - [Nia documentation](https://docs.trynia.ai/)
 - [Nia website](https://www.trynia.ai/)

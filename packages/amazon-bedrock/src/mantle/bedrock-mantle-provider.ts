@@ -1,13 +1,13 @@
 import {
   OpenAIChatLanguageModel,
   OpenAIResponsesLanguageModel,
-} from '@ai-sdk/openai/internal';
+} from '@ai-toolkit/openai/internal';
 import {
   InvalidArgumentError,
   NoSuchModelError,
   type LanguageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   isValidHostnamePart,
   loadOptionalSetting,
@@ -15,7 +15,7 @@ import {
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   createApiKeyFetchFunction,
   createSigV4FetchFunction,
@@ -248,7 +248,7 @@ export function createBedrockMantle(
   const getHeaders = (): Record<string, string | undefined> =>
     withUserAgentSuffix(
       options.headers ?? {},
-      `ai-sdk-amazon-bedrock/${VERSION}`,
+      `ai-toolkit-amazon-bedrock/${VERSION}`,
     );
 
   const url = ({ path, modelId }: { path: string; modelId: string }): string =>

@@ -8,7 +8,7 @@ import type {
   LanguageModelV4ToolCallPart,
   LanguageModelV4ToolResultOutput,
   LanguageModelV4ToolResultPart,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { HarnessV1Metadata } from './harness-v1-metadata';
 
 type LanguageModelV4ToolResultContentPart = Extract<

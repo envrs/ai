@@ -1,4 +1,4 @@
-export const PLAYGROUND_ORIGIN = 'https://playground.ai-sdk.dev';
+export const PLAYGROUND_ORIGIN = 'https://playground.ai-toolkit.dev';
 
 /** Preserve encoded model IDs, query parameters, and fragments in authored links. */
 export const resolvePlaygroundHref = (href: string): string | undefined => {
@@ -33,7 +33,7 @@ const transitionHeaders = {
 };
 
 const retiredApi =
-  /^\/api\/(?:generate|stream\/internal|prompt|vercel|share|upload|chats(?:\/[^/]+)?|status|warm|feedback|track|request-count|auth\/(?:info|logout|signin\/vercel))\/?$/;
+  /^\/api\/(?:generate|stream\/internal|prompt|khulnasoft|share|upload|chats(?:\/[^/]+)?|status|warm|feedback|track|request-count|auth\/(?:info|logout|signin\/khulnasoft))\/?$/;
 
 const goneResponse = () =>
   Response.json(
@@ -41,7 +41,7 @@ const goneResponse = () =>
       error:
         'The playground has moved. Copy any unsaved messages, then open the new playground and sign in again.',
       playground: PLAYGROUND_ORIGIN,
-      recovery: 'https://ai-sdk.dev/playground-recovery',
+      recovery: 'https://ai-toolkit.dev/playground-recovery',
     },
     { status: 410, headers: transitionHeaders },
   );
@@ -52,7 +52,7 @@ export function playgroundTransitionResponse(
   const url = new URL(request.url);
   const read = request.method === 'GET' || request.method === 'HEAD';
 
-  if (url.pathname === '/api/auth/callback/vercel') {
+  if (url.pathname === '/api/auth/callback/khulnasoft') {
     if (!read || request.headers.has('next-action')) return goneResponse();
 
     return new Response(null, {

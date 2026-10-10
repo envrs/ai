@@ -1,7 +1,7 @@
 import {
   TypeValidationError,
   type TypeValidationContext,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { asSchema, type FlexibleSchema } from './schema';
 /**
  * Validates the types of an unknown object using a schema and

@@ -95,7 +95,7 @@ describe('viewer server errors', () => {
     ).toThrow('process exited');
 
     expect(consoleError).toHaveBeenCalledWith(
-      '   AI_SDK_DEVTOOLS_PORT=4984 npx @ai-sdk/devtools@latest\n',
+      '   ai-toolkit_DEVTOOLS_PORT=4984 npx @ai-toolkit/devtools@latest\n',
     );
     expect(mockExit).toHaveBeenCalledWith(1);
   });

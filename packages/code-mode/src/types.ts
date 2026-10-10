@@ -6,7 +6,7 @@ import type { ModelMessage, Tool } from 'ai';
 export type CodeModeToolSet = Record<string, Tool<any, any>>;
 
 /**
- * AI SDK execution metadata forwarded to nested host tool calls.
+ * ai-toolkit execution metadata forwarded to nested host tool calls.
  */
 export interface CodeModeToolExecutionOptions {
   toolCallId: string;
@@ -18,7 +18,7 @@ export interface CodeModeToolExecutionOptions {
 }
 
 /**
- * AI SDK tool returned by `createCodeModeTool`.
+ * ai-toolkit tool returned by `createCodeModeTool`.
  */
 export type CodeModeTool = Tool<CodeModeToolInput, unknown> & {
   description: string;
@@ -150,7 +150,7 @@ export type CodeModeUnwrappedResult =
   | { status: 'interrupted'; interrupt: CodeModeInterrupt };
 
 export interface CodeModeApprovalInterruptPayload extends CodeModeInterruptPayload {
-  kind: 'ai-sdk-code-mode/tool-approval';
+  kind: 'ai-toolkit-code-mode/tool-approval';
 }
 
 export type CodeModeApprovalInterrupt =

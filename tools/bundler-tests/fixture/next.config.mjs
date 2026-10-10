@@ -3,9 +3,9 @@ export default {
   // Otherwise Next.js can externalize server dependencies and skip bundling them.
   transpilePackages: [
     'ai',
-    '@ai-sdk/openai',
-    '@ai-sdk/provider',
-    '@ai-sdk/provider-utils',
-    '@ai-sdk/gateway',
+    '@ai-toolkit/openai',
+    '@ai-toolkit/provider',
+    '@ai-toolkit/provider-utils',
+    '@ai-toolkit/gateway',
   ],
 };

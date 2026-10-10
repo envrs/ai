@@ -5,7 +5,7 @@ import {
   type GoogleInteractionsAgentName,
   type GoogleInteractionsModelId,
   type GoogleInteractionsModelInput,
-} from '@ai-sdk/google/internal';
+} from '@ai-toolkit/google/internal';
 import {
   InvalidArgumentError,
   type Experimental_VideoModelV4,
@@ -14,7 +14,7 @@ import {
   type ProviderV4,
   type SpeechModelV4,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   generateId,
   isValidHostnamePart,
@@ -27,7 +27,7 @@ import {
   type FetchFunction,
   type Resolvable,
   type WebSocketConstructor,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { VERSION } from './version';
 import type { GoogleVertexConfig } from './google-vertex-config';
 import { GoogleVertexEmbeddingModel } from './google-vertex-embedding-model';
@@ -284,7 +284,7 @@ export function createGoogleVertex(
       const originalHeaders = await resolve(options.headers ?? {});
       return withUserAgentSuffix(
         originalHeaders,
-        `ai-sdk-google-vertex/${VERSION}`,
+        `ai-toolkit-google-vertex/${VERSION}`,
       );
     };
 

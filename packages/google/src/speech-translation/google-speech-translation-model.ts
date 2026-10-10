@@ -5,7 +5,7 @@ import {
   type Experimental_SpeechTranslationModelV4StreamPart as SpeechTranslationModelV4StreamPart,
   type Experimental_SpeechTranslationModelV4Usage as SpeechTranslationModelV4Usage,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   connectToWebSocket,
   combineHeaders,
@@ -20,7 +20,7 @@ import {
   type WebSocketConnection,
   type WebSocketConstructor,
   type WebSocketLike,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { getModelPath } from '../get-model-path';
 import { getRealtimeWebSocketURL } from '../get-realtime-base-url';
 import {

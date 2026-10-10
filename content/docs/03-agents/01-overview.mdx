@@ -1,6 +1,6 @@
 ---
 title: Overview
-description: Learn how to build agents with the AI SDK.
+description: Learn how to build agents with the ai-toolkit.
 ---
 
 # Agents
@@ -28,7 +28,7 @@ or scoped permissions; each tool receives only its own typed `context` based on
 its `contextSchema`.
 
 Learn more in [Runtime and Tool
-Context](/docs/ai-sdk-core/runtime-and-tool-context).
+Context](/docs/ai-toolkit-core/runtime-and-tool-context).
 
 ## ToolLoopAgent Class
 
@@ -83,7 +83,7 @@ The ToolLoopAgent handles the loop, context management, and stopping conditions.
 
 ## Why Use the ToolLoopAgent?
 
-The ToolLoopAgent is the recommended approach for building agents with the AI SDK because it:
+The ToolLoopAgent is the recommended approach for building agents with the ai-toolkit because it:
 
 - **Reduces boilerplate** - Manages loops and message arrays
 - **Improves reusability** - Define once, use throughout your application
@@ -96,23 +96,23 @@ For most use cases, start with the ToolLoopAgent. Use core functions (`generateT
 Use `HarnessAgent` when you want to run a preconfigured established harness,
 such as Claude Code, Codex, or Pi, instead of building the loop yourself around
 a language model. Harnesses are a separate abstraction from providers and
-models, but stream into AI SDK-compatible result and UI primitives.
+models, but stream into ai-toolkit-compatible result and UI primitives.
 
-Learn more in [Harnesses](/docs/ai-sdk-harnesses) and
-[HarnessAgent](/docs/ai-sdk-harnesses/harness-agent).
+Learn more in [Harnesses](/docs/ai-toolkit-harnesses) and
+[HarnessAgent](/docs/ai-toolkit-harnesses/harness-agent).
 
-The rest of this section focuses on `ToolLoopAgent`, which is the AI SDK agent
+The rest of this section focuses on `ToolLoopAgent`, which is the ai-toolkit agent
 class for building your own model-and-tools loop.
 
 ## Terminal UI
 
-Use `@ai-sdk/tui` to run a `ToolLoopAgent` in an interactive terminal UI. It is
+Use `@ai-toolkit/tui` to run a `ToolLoopAgent` in an interactive terminal UI. It is
 useful for local agent development, demos, and internal tools where you want
 prompt input, streamed responses, tool cards, reasoning sections, scrolling, and
 tool approval prompts without building a custom interface.
 
 ```ts
-import { runAgentTUI } from '@ai-sdk/tui';
+import { runAgentTUI } from '@ai-toolkit/tui';
 
 await runAgentTUI({
   title: 'Weather Agent',
@@ -136,6 +136,6 @@ Agents are flexible and powerful, but non-deterministic. When you need reliable,
 ## Next Steps
 
 - **[Building Agents](/docs/agents/building-agents)** - Guide to creating agents with the ToolLoopAgent
-- **[Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)** - How to pass shared agent state and per-tool context
+- **[Runtime and Tool Context](/docs/ai-toolkit-core/runtime-and-tool-context)** - How to pass shared agent state and per-tool context
 - **[Workflow Patterns](/docs/agents/workflows)** - Structured patterns using core functions for complex workflows
 - **[Loop Control](/docs/agents/loop-control)** - Execution control with stopWhen and prepareStep

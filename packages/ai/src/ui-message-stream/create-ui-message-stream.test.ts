@@ -1,5 +1,5 @@
-import { DelayedPromise } from '@ai-sdk/provider-utils';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
+import { DelayedPromise } from '@ai-toolkit/provider-utils';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { UIMessage } from '../ui/ui-messages';
 import { consumeStream } from '../util/consume-stream';

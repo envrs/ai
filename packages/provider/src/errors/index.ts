@@ -1,6 +1,6 @@
 import { DecisionUnsupportedQuestionTypeError } from './decision-unsupported-question-type-error';
 
-export { AISDKError } from './ai-sdk-error';
+export { ai-toolkitError } from './ai-toolkit-error';
 export { APICallError } from './api-call-error';
 export { EmptyResponseBodyError } from './empty-response-body-error';
 export { DecisionRefusalError as Experimental_DecisionRefusalError } from './decision-refusal-error';

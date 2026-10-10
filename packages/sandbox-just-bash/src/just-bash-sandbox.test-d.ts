@@ -1,5 +1,5 @@
 import { expectTypeOf } from 'vitest';
-import type { HarnessV1SandboxTemplate } from '@ai-sdk/harness';
+import type { HarnessV1SandboxTemplate } from '@ai-toolkit/harness';
 import type {
   JustBashNativeSandboxSession,
   JustBashNetworkSandboxSessionCreateOptions,

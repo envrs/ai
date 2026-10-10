@@ -1,5 +1,5 @@
-import { isJSONObject, type JSONObject } from '@ai-sdk/provider';
-import { convertBase64ToUint8Array } from '@ai-sdk/provider-utils';
+import { isJSONObject, type JSONObject } from '@ai-toolkit/provider';
+import { convertBase64ToUint8Array } from '@ai-toolkit/provider-utils';
 import * as z4 from 'zod/v4';
 import type { MCPClient } from './mcp-client';
 import type {

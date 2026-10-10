@@ -8,7 +8,7 @@ export default createTransformer((fileInfo, api, options, context) => {
   const { j, root } = context;
 
   root.find(j.ImportDeclaration).forEach(path => {
-    if (path.node.source.value !== '@ai-sdk/google') return;
+    if (path.node.source.value !== '@ai-toolkit/google') return;
 
     path.node.specifiers?.forEach(specifier => {
       if (

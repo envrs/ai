@@ -46,12 +46,12 @@ export type OpenTelemetryOptions = {
 
   /**
    * Adds custom attributes to spans when they are created. These attributes are
-   * not AI SDK-owned semantics and are intended for observability integrations.
+   * not ai-toolkit-owned semantics and are intended for observability integrations.
    */
   enrichSpan?: EnrichSpan;
 
   /**
-   * Emit AI SDK usage details that are not represented by GenAI SemConv.
+   * Emit ai-toolkit usage details that are not represented by GenAI SemConv.
    */
   usage?: boolean;
 

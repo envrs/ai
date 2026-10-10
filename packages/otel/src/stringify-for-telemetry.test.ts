@@ -3,7 +3,7 @@ import {
   stringifyForTelemetry,
   stringifyDecisionStateForTelemetry,
 } from './stringify-for-telemetry';
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
 import { describe, it, expect } from 'vitest';
 
 describe('stringifyForTelemetry', () => {

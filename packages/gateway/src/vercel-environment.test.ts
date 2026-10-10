@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { getVercelOidcToken, getVercelRequestId } from './vercel-environment';
+import { getVercelOidcToken, getVercelRequestId } from './khulnasoft-environment';
 
-const SYMBOL_FOR_REQ_CONTEXT = Symbol.for('@vercel/request-context');
+const SYMBOL_FOR_REQ_CONTEXT = Symbol.for('@khulnasoft/request-context');
 
 describe('getVercelRequestId', () => {
   const originalSymbolValue = (globalThis as any)[SYMBOL_FOR_REQ_CONTEXT];
@@ -22,7 +22,7 @@ describe('getVercelRequestId', () => {
     (globalThis as any)[SYMBOL_FOR_REQ_CONTEXT] = {
       get: () => ({
         headers: {
-          'x-vercel-id': 'req_1234567890abcdef',
+          'x-khulnasoft-id': 'req_1234567890abcdef',
         },
       }),
     };

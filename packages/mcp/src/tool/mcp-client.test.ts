@@ -499,7 +499,7 @@ describe('MCPClient', () => {
     await client?.close();
   });
 
-  it('should return AI SDK compatible tool set', async () => {
+  it('should return ai-toolkit compatible tool set', async () => {
     client = await createMCPClient({
       transport: { type: 'sse', url: 'https://example.com/sse' },
     });
@@ -611,7 +611,7 @@ describe('MCPClient', () => {
               },
               _meta: {
                 ui: {
-                  resourceUri: 'ui://ai-sdk-e2e/dashboard',
+                  resourceUri: 'ui://ai-toolkit-e2e/dashboard',
                   visibility: ['model', 'app'],
                 },
               },
@@ -640,7 +640,7 @@ describe('MCPClient', () => {
       {
         "app": {
           "mimeType": "text/html;profile=mcp-app",
-          "resourceUri": "ui://ai-sdk-e2e/dashboard",
+          "resourceUri": "ui://ai-toolkit-e2e/dashboard",
           "visibility": [
             "model",
             "app",
@@ -717,7 +717,7 @@ describe('MCPClient', () => {
     expect(tool).toHaveProperty('inputSchema');
     expect(tool).toHaveProperty('execute');
 
-    // Verify the execute function works without AI SDK execution options
+    // Verify the execute function works without ai-toolkit execution options
     const result = await tool.execute({ foo: 'bar' });
     expect(result).toEqual({
       content: [{ type: 'text', text: JSON.stringify(structuredContent) }],
@@ -785,7 +785,7 @@ describe('MCPClient', () => {
     expect(tools['mock-tool'].execute).toBeDefined();
   });
 
-  it('should convert MCP image content to AI SDK format via toModelOutput', async () => {
+  it('should convert MCP image content to ai-toolkit format via toModelOutput', async () => {
     createMockTransport.mockImplementation(
       () =>
         new MockMCPTransport({
@@ -866,7 +866,7 @@ describe('MCPClient', () => {
     `);
   });
 
-  it('should convert MCP text content to AI SDK format via toModelOutput', async () => {
+  it('should convert MCP text content to ai-toolkit format via toModelOutput', async () => {
     createMockTransport.mockImplementation(
       () =>
         new MockMCPTransport({
@@ -935,7 +935,7 @@ describe('MCPClient', () => {
     `);
   });
 
-  it('should convert mixed MCP content to AI SDK format via toModelOutput', async () => {
+  it('should convert mixed MCP content to ai-toolkit format via toModelOutput', async () => {
     createMockTransport.mockImplementation(
       () =>
         new MockMCPTransport({
@@ -1409,7 +1409,7 @@ describe('MCPClient', () => {
     ).rejects.toThrow(MCPClientError);
   });
 
-  it('should return typed AI SDK compatible tool set when schemas are provided', async () => {
+  it('should return typed ai-toolkit compatible tool set when schemas are provided', async () => {
     const mockTransport = new MockMCPTransport({
       overrideTools: [
         {
@@ -3064,7 +3064,7 @@ describe('MCPClient', () => {
       });
 
       expect(dynamicTools['annotated-tool'].metadata).toEqual({
-        clientName: 'ai-sdk-mcp-client',
+        clientName: 'ai-toolkit-mcp-client',
         toolName: 'annotated-tool',
         title: 'Annotated Tool',
         annotations: {
@@ -3104,7 +3104,7 @@ describe('MCPClient', () => {
       const tools = await client.tools();
       expect(tools['titled-tool'].title).toBe('My Tool Title');
       expect(tools['titled-tool'].metadata).toEqual({
-        clientName: 'ai-sdk-mcp-client',
+        clientName: 'ai-toolkit-mcp-client',
         title: 'My Tool Title',
         toolName: 'titled-tool',
       });
@@ -3186,7 +3186,7 @@ describe('MCPClient', () => {
       const tools = await client.tools();
       expect(tools['no-title-tool'].title).toBeUndefined();
       expect(tools['no-title-tool'].metadata).toEqual({
-        clientName: 'ai-sdk-mcp-client',
+        clientName: 'ai-toolkit-mcp-client',
         toolName: 'no-title-tool',
       });
     });
@@ -3224,7 +3224,7 @@ describe('MCPClient', () => {
 
       expect(tools['typed-titled-tool'].title).toBe('Typed Tool Title');
       expect(tools['typed-titled-tool'].metadata).toEqual({
-        clientName: 'ai-sdk-mcp-client',
+        clientName: 'ai-toolkit-mcp-client',
         title: 'Typed Tool Title',
         toolName: 'typed-titled-tool',
       });
@@ -3296,7 +3296,7 @@ describe('MCPClient', () => {
           'io.modelcontextprotocol/protocolVersion': LATEST_PROTOCOL_VERSION,
           'io.modelcontextprotocol/clientCapabilities': {},
           'io.modelcontextprotocol/clientInfo': {
-            name: 'ai-sdk-mcp-client',
+            name: 'ai-toolkit-mcp-client',
             version: '1.0.0',
           },
         });

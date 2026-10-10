@@ -2,11 +2,11 @@ import {
   UnsupportedFunctionalityError,
   type Experimental_TranscriptionModelV4StreamPart as TranscriptionModelV4StreamPart,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertArrayToReadableStream,
   convertAsyncIterableToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import {
   afterEach,
   beforeEach,

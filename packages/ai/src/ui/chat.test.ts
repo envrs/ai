@@ -1,9 +1,9 @@
-import { APICallError } from '@ai-sdk/provider';
-import { mockId } from '@ai-sdk/provider-utils/test';
+import { APICallError } from '@ai-toolkit/provider';
+import { mockId } from '@ai-toolkit/provider-utils/test';
 import {
   createTestServer,
   TestResponseController,
-} from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/test-server/with-vitest';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { InvalidArgumentError } from '../error/invalid-argument-error';
 import type { UIMessageChunk } from '../ui-message-stream/ui-message-chunks';

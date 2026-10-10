@@ -2,12 +2,12 @@ import {
   createGoogleVertexAnthropic,
   googleVertexAnthropicTools,
 } from './google-vertex-anthropic-provider';
-import { NoSuchModelError } from '@ai-sdk/provider';
-import { AnthropicLanguageModel } from '@ai-sdk/anthropic/internal';
+import { NoSuchModelError } from '@ai-toolkit/provider';
+import { AnthropicLanguageModel } from '@ai-toolkit/anthropic/internal';
 import { vi, describe, beforeEach, it, expect } from 'vitest';
 
 // Mock the imported modules
-vi.mock('@ai-sdk/provider-utils', async importOriginal => {
+vi.mock('@ai-toolkit/provider-utils', async importOriginal => {
   const actual = await importOriginal();
   return {
     ...(actual as Record<string, unknown>),
@@ -24,8 +24,8 @@ vi.mock('@ai-sdk/provider-utils', async importOriginal => {
   };
 });
 
-vi.mock('@ai-sdk/anthropic/internal', async () => {
-  const originalModule = await vi.importActual('@ai-sdk/anthropic/internal');
+vi.mock('@ai-toolkit/anthropic/internal', async () => {
+  const originalModule = await vi.importActual('@ai-toolkit/anthropic/internal');
   return {
     ...originalModule,
     AnthropicLanguageModel: vi.fn(),

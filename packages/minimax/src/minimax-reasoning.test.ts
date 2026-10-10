@@ -1,12 +1,12 @@
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it } from 'vitest';
 import { createMiniMax } from './minimax-provider';
 
 // MiniMax-specific behavior: the provider delegates to the Anthropic message
 // protocol, so `thinking` must flow through the `minimax` provider-options
 // namespace to the request, and the response `thinking` block must surface as
-// an AI SDK reasoning part
+// an ai-toolkit reasoning part
 
 const TEST_PROMPT: LanguageModelV4Prompt = [
   { role: 'user', content: [{ type: 'text', text: 'Hello' }] },

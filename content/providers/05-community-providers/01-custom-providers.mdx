@@ -1,15 +1,15 @@
 ---
 title: Writing a Custom Provider
-description: Learn how to write a custom provider for the AI SDK
+description: Learn how to write a custom provider for the ai-toolkit
 ---
 
 # Writing a Custom Provider
 
-The AI SDK provides a [Language Model Specification](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v4) that enables you to create custom providers compatible with the AI SDK. This specification ensures consistency across different providers.
+The ai-toolkit provides a [Language Model Specification](https://github.com/khulnasoft/ai/tree/main/packages/provider/src/language-model/v4) that enables you to create custom providers compatible with the ai-toolkit. This specification ensures consistency across different providers.
 
 ## Publishing Your Provider
 
-Please publish your custom provider in your own GitHub repository and as an NPM package. You are responsible for hosting and maintaining your provider. Once published, you can submit a PR to the AI SDK repository to add your provider to the [Community Providers](/providers/community-providers) documentation section. Use the [OpenRouter provider documentation](https://github.com/vercel/ai/blob/main/content/providers/05-community-providers/32-openrouter.mdx) as a template for your documentation.
+Please publish your custom provider in your own GitHub repository and as an NPM package. You are responsible for hosting and maintaining your provider. Once published, you can submit a PR to the ai-toolkit repository to add your provider to the [Community Providers](/providers/community-providers) documentation section. Use the [OpenRouter provider documentation](https://github.com/khulnasoft/ai/blob/main/content/providers/05-community-providers/32-openrouter.mdx) as a template for your documentation.
 
 ## Why the Language Model Specification?
 
@@ -364,7 +364,7 @@ supportedUrls: {
 }
 ```
 
-The AI SDK checks these patterns before downloading any URL-based content.
+The ai-toolkit checks these patterns before downloading any URL-based content.
 
 ### Provider Options
 
@@ -410,7 +410,7 @@ The V4 specification emphasizes robust error handling:
 To implement a custom language model provider, you'll need to install the required packages:
 
 ```bash
-npm install @ai-sdk/provider @ai-sdk/provider-utils
+npm install @ai-toolkit/provider @ai-toolkit/provider-utils
 ```
 
 Implementing a custom language model provider involves several steps:
@@ -423,7 +423,7 @@ Implementing a custom language model provider involves several steps:
 
 <Note>
   The best way to get started is to use the [Mistral
-  provider](https://github.com/vercel/ai/tree/main/packages/mistral) as a
+  provider](https://github.com/khulnasoft/ai/tree/main/packages/mistral) as a
   reference implementation.
 </Note>
 
@@ -436,8 +436,8 @@ import {
   generateId,
   loadApiKey,
   withoutTrailingSlash,
-} from '@ai-sdk/provider-utils';
-import { NoSuchModelError, ProviderV4 } from '@ai-sdk/provider';
+} from '@ai-toolkit/provider-utils';
+import { NoSuchModelError, ProviderV4 } from '@ai-toolkit/provider';
 import { CustomChatLanguageModel } from './custom-chat-language-model';
 
 // Define your provider interface extending ProviderV4
@@ -526,8 +526,8 @@ const custom = createCustom();
 Create a `custom-chat-language-model.ts` file that implements `LanguageModelV4`:
 
 ```ts filename="custom-chat-language-model.ts"
-import { LanguageModelV4, LanguageModelV4CallOptions } from '@ai-sdk/provider';
-import { postJsonToApi } from '@ai-sdk/provider-utils';
+import { LanguageModelV4, LanguageModelV4CallOptions } from '@ai-toolkit/provider';
+import { postJsonToApi } from '@ai-toolkit/provider-utils';
 
 class CustomChatLanguageModel implements LanguageModelV4 {
   readonly specificationVersion = 'v4';
@@ -546,7 +546,7 @@ class CustomChatLanguageModel implements LanguageModelV4 {
     // Initialize with settings and config
   }
 
-  // Convert AI SDK prompt to provider format
+  // Convert ai-toolkit prompt to provider format
   private getArgs(options: LanguageModelV4CallOptions) {
     const warnings: SharedV4Warning[] = [];
 
@@ -583,7 +583,7 @@ class CustomChatLanguageModel implements LanguageModelV4 {
       abortSignal: options.abortSignal,
     });
 
-    // Convert provider response to AI SDK format
+    // Convert provider response to ai-toolkit format
     const content: LanguageModelV4Content[] = [];
 
     // Extract text content
@@ -634,7 +634,7 @@ class CustomChatLanguageModel implements LanguageModelV4 {
       signal: options.abortSignal,
     });
 
-    // Transform stream to AI SDK format
+    // Transform stream to ai-toolkit format
     const stream = response
       .body!.pipeThrough(new TextDecoderStream())
       .pipeThrough(this.createParser())
@@ -654,7 +654,7 @@ class CustomChatLanguageModel implements LanguageModelV4 {
 
 ### Step 3: Implement Message Conversion
 
-Map AI SDK messages to your provider's format:
+Map ai-toolkit messages to your provider's format:
 
 ```ts filename="custom-chat-language-model.ts#L50-100"
 private convertToProviderMessages(prompt: LanguageModelV4Prompt) {
@@ -700,7 +700,7 @@ private convertToProviderMessages(prompt: LanguageModelV4Prompt) {
 
 ### Step 4: Implement Streaming
 
-Create a streaming transformer that converts provider chunks to AI SDK stream parts:
+Create a streaming transformer that converts provider chunks to ai-toolkit stream parts:
 
 ```ts filename="custom-chat-language-model.ts#L150-200"
 private createTransformer(warnings: SharedV4Warning[]) {
@@ -754,14 +754,14 @@ private createTransformer(warnings: SharedV4Warning[]) {
 
 ### Step 5: Handle Errors
 
-Use standardized AI SDK errors for consistent error handling:
+Use standardized ai-toolkit errors for consistent error handling:
 
 ```ts filename="custom-chat-language-model.ts#L250-280"
 import {
   APICallError,
   InvalidResponseDataError,
   TooManyRequestsError,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 private handleError(error: unknown): never {
   if (error instanceof Response) {
@@ -788,7 +788,7 @@ private handleError(error: unknown): never {
 
 ### Step 6: Add Workflow Serialization Support
 
-To make your provider compatible with [Workflow DevKit](https://useworkflow.dev), model instances need to be serializable when they cross workflow step boundaries. The AI SDK provides helpers that make this straightforward.
+To make your provider compatible with [Workflow DevKit](https://useworkflow.dev), model instances need to be serializable when they cross workflow step boundaries. The ai-toolkit provides helpers that make this straightforward.
 
 First, make `headers` optional in your config type so deserialized models work without pre-configured auth:
 
@@ -810,7 +810,7 @@ import {
   deserializeModel,
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 class CustomChatLanguageModel implements LanguageModelV4 {
   // Note: classId is generated automatically by the workflow SWC compiler at build time
@@ -850,8 +850,8 @@ headers: combineHeaders(this.config.headers?.(), options.headers),
 
 ## Next Steps
 
-- Dig into the [Language Model Specification V4](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v4)
-- Check out the [Mistral provider](https://github.com/vercel/ai/tree/main/packages/mistral) reference implementation
-- Check out [provider utilities](https://github.com/vercel/ai/tree/main/packages/provider-utils) for helpful functions
-- Test your provider with the AI SDK's built-in examples
-- Explore the V4 types in detail at [`@ai-sdk/provider`](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v4)
+- Dig into the [Language Model Specification V4](https://github.com/khulnasoft/ai/tree/main/packages/provider/src/language-model/v4)
+- Check out the [Mistral provider](https://github.com/khulnasoft/ai/tree/main/packages/mistral) reference implementation
+- Check out [provider utilities](https://github.com/khulnasoft/ai/tree/main/packages/provider-utils) for helpful functions
+- Test your provider with the ai-toolkit's built-in examples
+- Explore the V4 types in detail at [`@ai-toolkit/provider`](https://github.com/khulnasoft/ai/tree/main/packages/provider/src/language-model/v4)

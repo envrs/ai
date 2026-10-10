@@ -6,7 +6,7 @@ import {
   resolveHostToolCall,
 } from './resolve-host-tool-call';
 
-const serverName = 'ai-sdk-harness-tools';
+const serverName = 'ai-toolkit-harness-tools';
 const input = { city: 'Austin' };
 
 describe('classifyHostToolInputEnvelope', () => {

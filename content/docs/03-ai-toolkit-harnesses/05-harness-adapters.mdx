@@ -1,0 +1,47 @@
+---
+title: Harness Adapters
+description: Learn about the available ai-toolkit harness adapters.
+---
+
+# Harness Adapters
+
+Harness adapters connect `HarnessAgent` to a specific agent runtime. They are
+the harness equivalent of ai-toolkit model providers: each adapter wraps one runtime
+and normalizes its sessions, stream events, tools, usage, lifecycle state, and
+configuration into the harness contract.
+
+## ai-toolkit Harness Adapters
+
+The ai-toolkit includes the following harness adapters:
+
+- [Claude Code](/providers/ai-toolkit-harnesses/claude-code) (`@ai-toolkit/harness-claude-code`)
+- [Cline](/providers/ai-toolkit-harnesses/cline) (`@ai-toolkit/harness-cline`)
+- [Codex](/providers/ai-toolkit-harnesses/codex) (`@ai-toolkit/harness-codex`)
+- [Cursor](/providers/ai-toolkit-harnesses/cursor) (`@ai-toolkit/harness-cursor`)
+- [Deep Agents](/providers/ai-toolkit-harnesses/deepagents) (`@ai-toolkit/harness-deepagents`)
+- [fx](/providers/ai-toolkit-harnesses/fx) (`@ai-toolkit/harness-fx`)
+- [GitHub Copilot](/providers/ai-toolkit-harnesses/github-copilot) (`@ai-toolkit/harness-github-copilot`)
+- [Grok Build](/providers/ai-toolkit-harnesses/grok-build) (`@ai-toolkit/harness-grok-build`)
+- [OpenCode](/providers/ai-toolkit-harnesses/opencode) (`@ai-toolkit/harness-opencode`)
+- [Pi](/providers/ai-toolkit-harnesses/pi) (`@ai-toolkit/harness-pi`)
+
+### Coming Soon
+
+- Amp (`@ai-toolkit/harness-amp`)
+- Goose (`@ai-toolkit/harness-goose`)
+- Mastra (`@ai-toolkit/harness-mastra`)
+
+## Adapter Capabilities
+
+| Adapter                                                      | Runtime location | Custom tools | Custom skills | Structured output | Built-in tool approval | Built-in tool filtering      | History access |
+| ------------------------------------------------------------ | ---------------- | ------------ | ------------- | ----------------- | ---------------------- | ---------------------------- | -------------- |
+| [Claude Code](/providers/ai-toolkit-harnesses/claude-code)       | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check />                    | <Cross />      |
+| [Cline](/providers/ai-toolkit-harnesses/cline)                   | Host process     | <Check />    | <Check />     | <Check />         | <Check />              | <Check />                    | <Cross />      |
+| [Codex](/providers/ai-toolkit-harnesses/codex)                   | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Cross />              | <Cross />                    | <Cross />      |
+| [Cursor](/providers/ai-toolkit-harnesses/cursor)                 | Sandbox via ACP  | <Check />    | <Check />     | <Cross />         | <Cross />              | <Cross />                    | <Cross />      |
+| [Deep Agents](/providers/ai-toolkit-harnesses/deepagents)        | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check /> via auto-rejection | <Cross />      |
+| [fx](/providers/ai-toolkit-harnesses/fx)                         | Sandbox via ACP  | <Check />    | <Check />     | <Cross />         | <Check />              | <Cross />                    | <Cross />      |
+| [GitHub Copilot](/providers/ai-toolkit-harnesses/github-copilot) | Sandbox via ACP  | <Check />    | <Check />     | <Cross />         | <Cross />              | <Cross />                    | <Cross />      |
+| [Grok Build](/providers/ai-toolkit-harnesses/grok-build)         | Sandbox via ACP  | <Check />    | <Check />     | <Check />         | <Cross />              | <Cross />                    | <Cross />      |
+| [OpenCode](/providers/ai-toolkit-harnesses/opencode)             | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check /> via auto-rejection | <Cross />      |
+| [Pi](/providers/ai-toolkit-harnesses/pi)                         | Host process     | <Check />    | <Check />     | <Cross />         | <Check />              | <Check />                    | <Cross />      |

@@ -1,6 +1,6 @@
-import type { ImageModelV4CallOptions } from '@ai-sdk/provider';
-import type { FetchFunction } from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import type { ImageModelV4CallOptions } from '@ai-toolkit/provider';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it } from 'vitest';
 import { ByteDanceImageModel } from './bytedance-image-model';
 

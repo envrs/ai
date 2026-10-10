@@ -46,9 +46,9 @@ describe('Node deprecation warning behavior', () => {
         .map(line => JSON.parse(line)),
     ).toEqual([
       { name: 'Warning' },
-      { name: 'DeprecationWarning', code: 'AISDK_DEP_GENERATE_OBJECT' },
+      { name: 'DeprecationWarning', code: 'ai-toolkit_DEP_GENERATE_OBJECT' },
     ]);
-    expect(result.stderr.match(/\[AISDK_DEP_GENERATE_OBJECT\]/g)).toHaveLength(
+    expect(result.stderr.match(/\[ai-toolkit_DEP_GENERATE_OBJECT\]/g)).toHaveLength(
       1,
     );
   });
@@ -57,20 +57,20 @@ describe('Node deprecation warning behavior', () => {
     const result = runLogger(['--no-deprecation']);
     expect(result.status).toBe(0);
     expect(result.stdout).not.toContain('DeprecationWarning');
-    expect(result.stderr).not.toContain('AISDK_DEP_GENERATE_OBJECT');
+    expect(result.stderr).not.toContain('ai-toolkit_DEP_GENERATE_OBJECT');
   });
 
   it('throws deprecations with --throw-deprecation', () => {
     const result = runLogger(['--throw-deprecation']);
     expect(result.status).toBe(1);
     expect(result.stderr).toContain('DeprecationWarning');
-    expect(result.stderr).toContain("code: 'AISDK_DEP_GENERATE_OBJECT'");
+    expect(result.stderr).toContain("code: 'ai-toolkit_DEP_GENERATE_OBJECT'");
   });
 
   it('includes the call stack with --trace-deprecation', () => {
     const result = runLogger(['--trace-deprecation']);
     expect(result.status).toBe(0);
-    expect(result.stderr).toContain('[AISDK_DEP_GENERATE_OBJECT]');
+    expect(result.stderr).toContain('[ai-toolkit_DEP_GENERATE_OBJECT]');
     expect(result.stderr).toMatch(/at (?:Object\.)?logWarnings/);
   });
 });

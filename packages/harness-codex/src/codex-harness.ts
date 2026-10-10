@@ -22,7 +22,7 @@ import {
   type HarnessV1StreamPart,
   harnessStateDirectoryPath,
   harnessSessionDataDirectoryPath,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   applyCredentialForwarding,
   classifyDiskLog,
@@ -43,12 +43,12 @@ import {
   withBridgeToken,
   writeSkills,
   type SandboxChannelReconnectOptions,
-} from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness/utils';
 import {
   tool,
   type Experimental_SandboxProcess,
   type Experimental_SandboxSession as SandboxSession,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { WebSocket } from 'ws';
 import { z } from 'zod/v4';
 import {
@@ -90,7 +90,7 @@ const DEFAULT_CODEX_MODEL = 'gpt-5.5';
 /**
  * Value to use in User-Agent and `x-client-app` headers.
  */
-const CODEX_CLIENT_APP = `ai-sdk-harness-codex/${VERSION}`;
+const CODEX_CLIENT_APP = `ai-toolkit-harness-codex/${VERSION}`;
 
 export type CodexHarnessSettings = {
   readonly auth?: CodexAuthenticationMode;
@@ -326,7 +326,7 @@ export function createCodex(
           resolvedAuthEnvironment.OPENAI_BASE_URL == null
         ) {
           /*
-           * Vercel Sandbox request transformations apply only to HTTP traffic.
+           * khulnasoft Sandbox request transformations apply only to HTTP traffic.
            * Materializing Codex's standard OpenAI URL makes the bridge select
            * its custom provider, where WebSockets are disabled, while keeping
            * the non-brokered path on Codex's built-in OpenAI provider.
@@ -479,7 +479,7 @@ export function createCodex(
       }
       const env = {
         ...forwardedAuthEnvironment,
-        AI_SDK_HARNESS_CLIENT_APP: CODEX_CLIENT_APP,
+        ai-toolkit_HARNESS_CLIENT_APP: CODEX_CLIENT_APP,
         BRIDGE_CHANNEL_TOKEN: token,
         BRIDGE_WS_PORT: String(port),
         ...(respawnStrategy === 'replay'

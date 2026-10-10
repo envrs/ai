@@ -1,7 +1,7 @@
 import { HarnessCapabilityUnsupportedError } from '../../errors/harness-capability-unsupported-error';
 import type { HarnessV1, HarnessV1BuiltinToolFiltering } from '../../v1';
 import { NoSuchToolError, type ActiveTools } from 'ai';
-import type { ToolSet } from '@ai-sdk/provider-utils';
+import type { ToolSet } from '@ai-toolkit/provider-utils';
 
 export type ResolvedHarnessAgentToolFiltering<TUserTools extends ToolSet> = {
   readonly activeUserTools: TUserTools;

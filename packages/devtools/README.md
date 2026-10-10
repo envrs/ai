@@ -1,31 +1,31 @@
-# AI SDK DevTools
+# ai-toolkit DevTools
 
-A local development tool for debugging and inspecting AI SDK applications. View LLM requests, responses, tool calls, and multi-step interactions in a web-based UI.
+A local development tool for debugging and inspecting ai-toolkit applications. View LLM requests, responses, tool calls, and multi-step interactions in a web-based UI.
 
 > **Note**: This package is experimental and intended for local development only. Do not use in production environments.
 
 ## Installation
 
 ```bash
-npm install @ai-sdk/devtools
+npm install @ai-toolkit/devtools
 # or
-pnpm add @ai-sdk/devtools
+pnpm add @ai-toolkit/devtools
 ```
 
 ## Requirements
 
-- AI SDK v7 canary (`ai@canary`)
+- ai-toolkit v7 canary (`ai@canary`)
 - Node.js compatible runtime
 
 ## Usage
 
 ### 1. Register the telemetry integration
 
-Register `DevToolsTelemetry` globally so it captures all AI SDK calls:
+Register `DevToolsTelemetry` globally so it captures all ai-toolkit calls:
 
 ```typescript
 import { registerTelemetry } from 'ai';
-import { DevToolsTelemetry } from '@ai-sdk/devtools';
+import { DevToolsTelemetry } from '@ai-toolkit/devtools';
 
 registerTelemetry(DevToolsTelemetry());
 ```
@@ -46,7 +46,7 @@ globally:
 
 ```typescript
 import { streamText } from 'ai';
-import { DevToolsTelemetry } from '@ai-sdk/devtools';
+import { DevToolsTelemetry } from '@ai-toolkit/devtools';
 
 const result = streamText({
   model: yourModel,
@@ -60,23 +60,23 @@ const result = streamText({
 ### 2. Run the viewer
 
 ```bash
-npx @ai-sdk/devtools@latest
+npx @ai-toolkit/devtools@latest
 ```
 
-Open http://localhost:4983 to view your AI SDK interactions.
+Open http://localhost:4983 to view your ai-toolkit interactions.
 
 The viewer uses the dark theme by default. Use the theme button in the header to
 switch between dark and light themes. The browser remembers your selection for
 the next time you open the viewer at the same origin.
 
 If you are using a monorepo, start DevTools from the same workspace where your
-AI SDK code runs. The explicit `@latest` tag ensures that `npx` installs an
+ai-toolkit code runs. The explicit `@latest` tag ensures that `npx` installs an
 executable copy instead of selecting a transitive dependency whose binary is
 not linked into that workspace.
 
 ## How it works
 
-The `DevToolsTelemetry` integration hooks into the AI SDK telemetry lifecycle to
+The `DevToolsTelemetry` integration hooks into the ai-toolkit telemetry lifecycle to
 capture `generateText`, `streamText`, `generateObject`, and `streamObject` calls.
 It captures:
 
@@ -90,7 +90,7 @@ Data is stored locally in a JSON file (`.devtools/generations.json`) and served 
 ### Data flow
 
 ```
-AI SDK call -> DevToolsTelemetry -> JSON file -> Hono API -> React UI
+ai-toolkit call -> DevToolsTelemetry -> JSON file -> Hono API -> React UI
 ```
 
 ### Key concepts

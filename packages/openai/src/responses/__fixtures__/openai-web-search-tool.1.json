@@ -49,15 +49,15 @@
           },
           {
             "type": "url",
-            "url": "https://www.investing.com/news/stock-market-news/ai-coding-startup-vercel-raises-300-million-valued-at-93-billion-4264199"
+            "url": "https://www.investing.com/news/stock-market-news/ai-coding-startup-khulnasoft-raises-300-million-valued-at-93-billion-4264199"
           },
           {
             "type": "url",
-            "url": "https://www.finsmes.com/2025/10/vercel-closes-300m-series-f-funding-at-9-3-billion-valuation.html"
+            "url": "https://www.finsmes.com/2025/10/khulnasoft-closes-300m-series-f-funding-at-9-3-billion-valuation.html"
           },
           {
             "type": "url",
-            "url": "https://vercel.com/blog/series-f"
+            "url": "https://khulnasoft.com/blog/series-f"
           },
           {
             "type": "url",
@@ -65,7 +65,7 @@
           },
           {
             "type": "url",
-            "url": "https://www.nasdaq.com/press-release/vercel-announces-%24150m-in-series-d-funding-at-a-%242.5b-valuation-to-further-fuel"
+            "url": "https://www.nasdaq.com/press-release/khulnasoft-announces-%24150m-in-series-d-funding-at-a-%242.5b-valuation-to-further-fuel"
           },
           {
             "type": "url",
@@ -73,19 +73,19 @@
           },
           {
             "type": "url",
-            "url": "https://www.theinformation.com/briefings/vercel-lands-unsolicited-investment-offers-9-billion"
+            "url": "https://www.theinformation.com/briefings/khulnasoft-lands-unsolicited-investment-offers-9-billion"
           },
           {
             "type": "url",
-            "url": "https://www.mexc.com/en-NG/news/us-cloud-platform-vercel-achieves-9-billion-valuation-amid-rapid-growth-in-ai-integration/77540"
+            "url": "https://www.mexc.com/en-NG/news/us-cloud-platform-khulnasoft-achieves-9-billion-valuation-amid-rapid-growth-in-ai-integration/77540"
           },
           {
             "type": "url",
-            "url": "https://www.bloomberg.com/news/articles/2025-09-30/vercel-notches-9-3-billion-valuation-in-latest-ai-funding-round"
+            "url": "https://www.bloomberg.com/news/articles/2025-09-30/khulnasoft-notches-9-3-billion-valuation-in-latest-ai-funding-round"
           },
           {
             "type": "url",
-            "url": "https://www.aol.com/exclusive-vercel-completes-250-million-144101876.html"
+            "url": "https://www.aol.com/exclusive-khulnasoft-completes-250-million-144101876.html"
           },
           {
             "type": "url",
@@ -119,7 +119,7 @@
       "status": "completed",
       "action": {
         "type": "find_in_page",
-        "pattern": "Vercel",
+        "pattern": "khulnasoft",
         "url": "https://www.theverge.com/podcast/838932/openai-chatgpt-code-red-vergecast"
       }
     },
@@ -161,14 +161,14 @@
               "type": "url_citation",
               "end_index": 1343,
               "start_index": 1295,
-              "title": "Towards the AI Cloud: Our Series F - Vercel",
-              "url": "https://vercel.com/blog/series-f"
+              "title": "Towards the AI Cloud: Our Series F - khulnasoft",
+              "url": "https://khulnasoft.com/blog/series-f"
             },
             {
               "type": "url_citation",
               "end_index": 1594,
               "start_index": 1489,
-              "title": "CVE-2025-49826: Vercel Next.js Cache Poisoning DOS Flaw",
+              "title": "CVE-2025-49826: khulnasoft Next.js Cache Poisoning DOS Flaw",
               "url": "https://www.sentinelone.com/vulnerability-database/cve-2025-49826/?utm_source=openai"
             },
             {
@@ -196,19 +196,19 @@
               "type": "url_citation",
               "end_index": 2635,
               "start_index": 2502,
-              "title": "Vercel Notches $9.3 Billion Valuation in Latest AI Funding Round - Bloomberg",
-              "url": "https://www.bloomberg.com/news/articles/2025-09-30/vercel-notches-9-3-billion-valuation-in-latest-ai-funding-round"
+              "title": "khulnasoft Notches $9.3 Billion Valuation in Latest AI Funding Round - Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2025-09-30/khulnasoft-notches-9-3-billion-valuation-in-latest-ai-funding-round"
             },
             {
               "type": "url_citation",
               "end_index": 2822,
               "start_index": 2774,
-              "title": "Towards the AI Cloud: Our Series F - Vercel",
-              "url": "https://vercel.com/blog/series-f"
+              "title": "Towards the AI Cloud: Our Series F - khulnasoft",
+              "url": "https://khulnasoft.com/blog/series-f"
             }
           ],
           "logprobs": [],
-          "text": "Short answer first — yes. I pulled several tech-news pages published today (December 5, 2025) and searched each for the keyword pattern \"vercel\". Below is a brief “today in tech” digest followed by the exact results of the on-page searches.\n\nToday’s top tech stories (December 5, 2025) — quick highlights\n- OpenAI declared a “code red” for ChatGPT as pressure increases from rivals (discussion and analysis on The Vergecast). ([theverge.com](https://www.theverge.com/podcast/838932/openai-chatgpt-code-red-vergecast))  \n- The EU opened a formal antitrust probe into Meta’s WhatsApp AI policy, which regulators say could block rival AI assistants. ([techstartups.com](https://techstartups.com/2025/12/05/technology-news-today-the-latest-in-tech-ai-startup-news-december-5-2025/))  \n- A major media deal: reports that Netflix is pursuing an $83B acquisition of Warner Bros. Discovery (market coverage today). ([investopedia.com](https://www.investopedia.com/5-things-to-know-before-the-stock-market-opens-december-5-2025-11862701?utm_source=openai))  \n- Vercel-related funding and valuation news continued to circulate: Vercel disclosed a large funding/tender transaction and company posts describe a Series F round positioning the company as AI/cloud-focused. (see company blog + news coverage). ([vercel.com](https://vercel.com/blog/series-f))  \n- Security note: a recently disclosed Next.js cache-poisoning/CVE issue was documented (affects certain Next.js versions; patch was released). ([sentinelone.com](https://www.sentinelone.com/vulnerability-database/cve-2025-49826/?utm_source=openai))\n\nPages I opened and the results of searching those pages for the pattern \"vercel\"\n- The Verge (podcast/story “It’s code red for ChatGPT”) — search for \"vercel\": no occurrences on that page. (I opened the Dec 5 Verge piece and searched it.) ([theverge.com](https://www.theverge.com/podcast/838932/openai-chatgpt-code-red-vergecast))  \n- WIRED (Big Interview 2025 recap) — search for \"vercel\": no occurrences found. ([wired.com](https://www.wired.com/story/the-big-interview-2025-recap))  \n- TechStartups (Technology News Today — Dec 5, 2025 roundup) — search for \"vercel\": no occurrences found on that roundup page. ([techstartups.com](https://techstartups.com/2025/12/05/technology-news-today-the-latest-in-tech-ai-startup-news-december-5-2025/))  \n- Bloomberg (article: “Vercel Notches $9.3 Billion Valuation…” / Vercel coverage) — search for \"vercel\": found (article is about Vercel’s funding/valuation). ([bloomberg.com](https://www.bloomberg.com/news/articles/2025-09-30/vercel-notches-9-3-billion-valuation-in-latest-ai-funding-round))  \n- Vercel’s own blog post (“Towards the AI Cloud: Our Series F”) — search for \"vercel\": found (company announcement / Series F details). ([vercel.com](https://vercel.com/blog/series-f))\n\nWould you like me to:\n- open more tech sites from today (e.g., TechCrunch, Reuters, The Information) and run the same \"vercel\" search across them, or  \n- search for a different keyword or company on today’s tech pages?"
+          "text": "Short answer first — yes. I pulled several tech-news pages published today (December 5, 2025) and searched each for the keyword pattern \"khulnasoft\". Below is a brief “today in tech” digest followed by the exact results of the on-page searches.\n\nToday’s top tech stories (December 5, 2025) — quick highlights\n- OpenAI declared a “code red” for ChatGPT as pressure increases from rivals (discussion and analysis on The Vergecast). ([theverge.com](https://www.theverge.com/podcast/838932/openai-chatgpt-code-red-vergecast))  \n- The EU opened a formal antitrust probe into Meta’s WhatsApp AI policy, which regulators say could block rival AI assistants. ([techstartups.com](https://techstartups.com/2025/12/05/technology-news-today-the-latest-in-tech-ai-startup-news-december-5-2025/))  \n- A major media deal: reports that Netflix is pursuing an $83B acquisition of Warner Bros. Discovery (market coverage today). ([investopedia.com](https://www.investopedia.com/5-things-to-know-before-the-stock-market-opens-december-5-2025-11862701?utm_source=openai))  \n- khulnasoft-related funding and valuation news continued to circulate: khulnasoft disclosed a large funding/tender transaction and company posts describe a Series F round positioning the company as AI/cloud-focused. (see company blog + news coverage). ([khulnasoft.com](https://khulnasoft.com/blog/series-f))  \n- Security note: a recently disclosed Next.js cache-poisoning/CVE issue was documented (affects certain Next.js versions; patch was released). ([sentinelone.com](https://www.sentinelone.com/vulnerability-database/cve-2025-49826/?utm_source=openai))\n\nPages I opened and the results of searching those pages for the pattern \"khulnasoft\"\n- The Verge (podcast/story “It’s code red for ChatGPT”) — search for \"khulnasoft\": no occurrences on that page. (I opened the Dec 5 Verge piece and searched it.) ([theverge.com](https://www.theverge.com/podcast/838932/openai-chatgpt-code-red-vergecast))  \n- WIRED (Big Interview 2025 recap) — search for \"khulnasoft\": no occurrences found. ([wired.com](https://www.wired.com/story/the-big-interview-2025-recap))  \n- TechStartups (Technology News Today — Dec 5, 2025 roundup) — search for \"khulnasoft\": no occurrences found on that roundup page. ([techstartups.com](https://techstartups.com/2025/12/05/technology-news-today-the-latest-in-tech-ai-startup-news-december-5-2025/))  \n- Bloomberg (article: “khulnasoft Notches $9.3 Billion Valuation…” / khulnasoft coverage) — search for \"khulnasoft\": found (article is about khulnasoft’s funding/valuation). ([bloomberg.com](https://www.bloomberg.com/news/articles/2025-09-30/khulnasoft-notches-9-3-billion-valuation-in-latest-ai-funding-round))  \n- khulnasoft’s own blog post (“Towards the AI Cloud: Our Series F”) — search for \"khulnasoft\": found (company announcement / Series F details). ([khulnasoft.com](https://khulnasoft.com/blog/series-f))\n\nWould you like me to:\n- open more tech sites from today (e.g., TechCrunch, Reuters, The Information) and run the same \"khulnasoft\" search across them, or  \n- search for a different keyword or company on today’s tech pages?"
         }
       ],
       "role": "assistant"

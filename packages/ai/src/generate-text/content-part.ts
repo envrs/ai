@@ -1,4 +1,4 @@
-import type { ToolSet } from '@ai-sdk/provider-utils';
+import type { ToolSet } from '@ai-toolkit/provider-utils';
 import type { ProviderMetadata } from '../types';
 import type { Citation } from '../types/citation';
 import type { Source } from '../types/language-model';

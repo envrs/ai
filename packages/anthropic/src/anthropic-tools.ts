@@ -154,7 +154,7 @@ export const anthropicTools = {
    * (`computer_20251124` and earlier) on newer models.
    *
    * The API returns each computer action as its own `tool_use` block with
-   * `toolset_name: 'computer'`. The AI SDK maps every member call to this tool
+   * `toolset_name: 'computer'`. The ai-toolkit maps every member call to this tool
    * and exposes the member name as `action`, so `execute` receives the same
    * input shape as the older computer tools. Claude may return several actions
    * in one turn.

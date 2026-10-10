@@ -1,17 +1,17 @@
 ---
 title: Cheaper Inference
-description: Use the Cheaper Inference OpenAI compatible API with the AI SDK.
+description: Use the Cheaper Inference OpenAI compatible API with the ai-toolkit.
 ---
 
 # Cheaper Inference Provider
 
-[Cheaper Inference](https://cheaperinference.com/) is an API gateway that provides access to models from multiple AI labs through an OpenAI-compatible API. You can use its Chat Completions endpoint with the AI SDK through the `@ai-sdk/openai-compatible` module.
+[Cheaper Inference](https://cheaperinference.com/) is an API gateway that provides access to models from multiple AI labs through an OpenAI-compatible API. You can use its Chat Completions endpoint with the ai-toolkit through the `@ai-toolkit/openai-compatible` module.
 
 ## Setup
 
 Install the OpenAI Compatible provider:
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+<InstallPackages packages="@ai-toolkit/openai-compatible" />
 
 Create a Cheaper Inference API key and set it as a server-side environment variable:
 
@@ -19,14 +19,14 @@ Create a Cheaper Inference API key and set it as a server-side environment varia
 export CHEAPER_INFERENCE_API_KEY=your-api-key
 ```
 
-See the [Cheaper Inference integration guide](https://cheaperinference.com/docs/integrations#framework-vercel) for instructions on creating an API key.
+See the [Cheaper Inference integration guide](https://cheaperinference.com/docs/integrations#framework-khulnasoft) for instructions on creating an API key.
 
 ## Provider Instance
 
 Create a Cheaper Inference provider instance with `createOpenAICompatible`:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 
 const cheaperInference = createOpenAICompatible({
   name: 'cheaper-inference',
@@ -50,7 +50,7 @@ const model = cheaperInference('gpt-5.4');
 Use `generateText` to generate text with the model:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { generateText } from 'ai';
 
 const cheaperInference = createOpenAICompatible({
@@ -72,7 +72,7 @@ console.log(text);
 Use `streamText` to stream text as it is generated:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { streamText } from 'ai';
 
 const cheaperInference = createOpenAICompatible({
@@ -99,7 +99,7 @@ The model catalog changes over time. Use the authenticated [`GET /models`](https
 
 ## Resources
 
-- [Cheaper Inference Vercel AI SDK integration guide](https://cheaperinference.com/docs/integrations#framework-vercel)
+- [Cheaper Inference khulnasoft ai-toolkit integration guide](https://cheaperinference.com/docs/integrations#framework-khulnasoft)
 - [Cheaper Inference API documentation](https://cheaperinference.com/docs)
 - [Cheaper Inference model catalog](https://cheaperinference.com/models)
-- [AI SDK OpenAI Compatible provider](/providers/openai-compatible-providers)
+- [ai-toolkit OpenAI Compatible provider](/providers/openai-compatible-providers)

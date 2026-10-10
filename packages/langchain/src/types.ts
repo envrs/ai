@@ -51,7 +51,7 @@ export interface LangGraphEventState {
 }
 
 /**
- * A LangChain citation projected to the fields the AI SDK source parts can carry.
+ * A LangChain citation projected to the fields the ai-toolkit source parts can carry.
  */
 export interface NormalizedCitation {
   url?: string;

@@ -2,7 +2,7 @@ import { InvalidArgumentError } from '../error/invalid-argument-error';
 import type {
   RetryFunction,
   ShouldRetryFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { retryWithExponentialBackoffRespectingRetryHeaders } from '../util/retry-with-exponential-backoff';
 /**
  * Validate and prepare retries.

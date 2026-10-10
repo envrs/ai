@@ -9,11 +9,11 @@ COPY json/ .
 COPY pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN pnpm install --frozen-lockfile \
   --filter ai... \
-  --filter @ai-sdk/anthropic... \
-  --filter @ai-sdk/google... \
-  --filter @ai-sdk/mcp... \
-  --filter @ai-sdk/openai... \
-  --filter @ai-sdk/openai-compatible...
+  --filter @ai-toolkit/anthropic... \
+  --filter @ai-toolkit/google... \
+  --filter @ai-toolkit/mcp... \
+  --filter @ai-toolkit/openai... \
+  --filter @ai-toolkit/openai-compatible...
 RUN mkdir -p tools/memory-benchmark/.repos/neovate-code \
   && git -C tools/memory-benchmark/.repos/neovate-code init \
   && git -C tools/memory-benchmark/.repos/neovate-code remote add origin https://github.com/neovateai/neovate-code.git \

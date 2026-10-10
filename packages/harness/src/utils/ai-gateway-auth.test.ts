@@ -12,7 +12,7 @@ describe('getAiGatewayAuthFromEnv', () => {
       }),
     ).toEqual({
       apiKey: 'gateway-key',
-      baseUrl: 'https://ai-gateway.vercel.sh',
+      baseUrl: 'https://ai-gateway.khulnasoft.sh',
     });
   });
 
@@ -35,14 +35,14 @@ describe('getAiGatewayAuthFromEnv', () => {
       getAiGatewayAuthFromEnv({ env: { VERCEL_OIDC_TOKEN: 'oidc-token' } }),
     ).toEqual({
       apiKey: 'oidc-token',
-      baseUrl: 'https://ai-gateway.vercel.sh',
+      baseUrl: 'https://ai-gateway.khulnasoft.sh',
     });
   });
 
   it('returns undefined apiKey when no gateway auth env is configured', () => {
     expect(getAiGatewayAuthFromEnv({ env: {} })).toEqual({
       apiKey: undefined,
-      baseUrl: 'https://ai-gateway.vercel.sh',
+      baseUrl: 'https://ai-gateway.khulnasoft.sh',
     });
   });
 });

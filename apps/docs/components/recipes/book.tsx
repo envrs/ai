@@ -3,7 +3,7 @@ import styles from './book.module.css';
 
 /**
  * 3D book cover used on the /resources/recipes guides grid (ported from the
- * legacy ai-sdk.dev Book component, simple variant).
+ * legacy ai-toolkit.dev Book component, simple variant).
  */
 export const Book = ({
   title,

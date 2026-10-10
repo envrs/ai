@@ -2,14 +2,14 @@ import {
   UnsupportedFunctionalityError,
   type SharedV4Warning,
   type LanguageModelV4Message,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertToBase64,
   getTopLevelMediaType,
   parseProviderOptions,
   resolveFullMediaType,
   resolveProviderReference,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { xaiFilePartProviderOptions } from '../xai-file-part-options';
 import type {
   XaiResponsesFunctionCallOutput,

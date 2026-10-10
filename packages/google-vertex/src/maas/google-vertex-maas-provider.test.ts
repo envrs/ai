@@ -1,10 +1,10 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { createGoogleVertexMaas } from './google-vertex-maas-provider';
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
-import type * as ProviderUtilsModule from '@ai-sdk/provider-utils';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
+import type * as ProviderUtilsModule from '@ai-toolkit/provider-utils';
 
 // Mock the imported modules
-vi.mock('@ai-sdk/openai-compatible', () => ({
+vi.mock('@ai-toolkit/openai-compatible', () => ({
   createOpenAICompatible: vi.fn(() => {
     const provider: any = vi.fn();
     provider.specificationVersion = 'v4';
@@ -18,7 +18,7 @@ vi.mock('@ai-sdk/openai-compatible', () => ({
   }),
 }));
 
-vi.mock('@ai-sdk/provider-utils', async importOriginal => {
+vi.mock('@ai-toolkit/provider-utils', async importOriginal => {
   const actual = await importOriginal<typeof ProviderUtilsModule>();
 
   return {

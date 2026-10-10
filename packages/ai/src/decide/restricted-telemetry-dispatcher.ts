@@ -1,4 +1,4 @@
-import type { Context } from '@ai-sdk/provider-utils';
+import type { Context } from '@ai-toolkit/provider-utils';
 import { createTelemetryDispatcher } from '../telemetry/create-telemetry-dispatcher';
 import { filterIncludedContext } from '../telemetry/filter-included-context';
 import type { TelemetryDispatcher } from '../telemetry/telemetry';

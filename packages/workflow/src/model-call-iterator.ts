@@ -3,8 +3,8 @@ import type {
   LanguageModelV4Prompt,
   LanguageModelV4ToolResultPart,
   SharedV4ProviderOptions,
-} from '@ai-sdk/provider';
-import type { Context } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import type { Context } from '@ai-toolkit/provider-utils';
 import {
   experimental_filterActiveTools as filterActiveTools,
   type ActiveTools,
@@ -523,7 +523,7 @@ export async function* modelCallIterator({
         // tool calls are not part of StepResult.content, so retain the previous
         // behavior of appending them to the prompt.
         // Note: providerMetadata from the tool call is mapped to providerOptions
-        // in the prompt format, following the AI SDK convention. This is critical
+        // in the prompt format, following the ai-toolkit convention. This is critical
         // for providers like Gemini that require thoughtSignature to be preserved
         // across multi-turn tool calls. Some fields are sanitized before mapping.
         conversationPrompt.push({

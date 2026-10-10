@@ -1,6 +1,6 @@
-import type { LanguageModelV4Usage } from '@ai-sdk/provider';
-import { tool } from '@ai-sdk/provider-utils';
-import { convertArrayToReadableStream } from '@ai-sdk/provider-utils/test';
+import type { LanguageModelV4Usage } from '@ai-toolkit/provider';
+import { tool } from '@ai-toolkit/provider-utils';
+import { convertArrayToReadableStream } from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it, vi } from 'vitest';
 import { z } from 'zod/v4';
 import { MissingToolResultsError } from '../error/missing-tool-result-error';

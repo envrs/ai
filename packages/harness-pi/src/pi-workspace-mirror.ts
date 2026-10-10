@@ -8,8 +8,8 @@ import {
 } from 'node:fs/promises';
 import path from 'node:path';
 import { gunzipSync } from 'node:zlib';
-import { shellQuote } from '@ai-sdk/harness/utils';
-import type { Experimental_SandboxSession } from '@ai-sdk/provider-utils';
+import { shellQuote } from '@ai-toolkit/harness/utils';
+import type { Experimental_SandboxSession } from '@ai-toolkit/provider-utils';
 
 /*
  * Pi runs on the host with its working directory pointed at the local mirror,

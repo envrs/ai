@@ -1,4 +1,4 @@
-import { secureJsonParse } from '@ai-sdk/provider-utils';
+import { secureJsonParse } from '@ai-toolkit/provider-utils';
 import {
   Experimental_AbstractRealtimeSession as AbstractRealtimeSession,
   type Experimental_RealtimeServerEvent as RealtimeServerEvent,

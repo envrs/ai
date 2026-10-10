@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { AmazonBedrockEmbeddingModel } from './amazon-bedrock-embedding-model';
 import { injectFetchHeaders } from './inject-fetch-headers';
 import { beforeEach, describe, expect, it } from 'vitest';

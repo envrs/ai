@@ -2,11 +2,11 @@ import {
   type Experimental_RealtimeModelV4 as RealtimeModelV4,
   type Experimental_RealtimeModelV4ClientEvent as RealtimeModelV4ClientEvent,
   type Experimental_RealtimeModelV4SessionConfig as RealtimeModelV4SessionConfig,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   createJsonResponseHandler,
   postJsonToApi,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { openaiFailedResponseHandler } from '../openai-error';
 import {

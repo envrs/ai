@@ -1,4 +1,4 @@
-import type { ToolSet } from '@ai-sdk/provider-utils';
+import type { ToolSet } from '@ai-toolkit/provider-utils';
 
 /**
  * Tool names that define the order in which tools are sent to the provider.

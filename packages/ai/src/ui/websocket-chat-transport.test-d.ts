@@ -1,4 +1,4 @@
-import type { WebSocketConstructor } from '@ai-sdk/provider-utils';
+import type { WebSocketConstructor } from '@ai-toolkit/provider-utils';
 import { expectTypeOf, it } from 'vitest';
 import {
   safeValidateWebSocketChatTransportRequest,

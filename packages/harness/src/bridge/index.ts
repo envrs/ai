@@ -11,7 +11,7 @@ import { appendFile, mkdir, writeFile } from 'node:fs/promises';
 import { existsSync, readFileSync } from 'node:fs';
 import { randomUUID } from 'node:crypto';
 import { env as procEnv, pid, stdout } from 'node:process';
-import type { ToolResultPart } from '@ai-sdk/provider-utils';
+import type { ToolResultPart } from '@ai-toolkit/provider-utils';
 import { WebSocketServer, type WebSocket } from 'ws';
 
 export { HarnessBridgeCapabilityUnsupportedError } from './harness-bridge-capability-unsupported-error';

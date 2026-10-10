@@ -1,4 +1,4 @@
-import { convertBase64ToUint8Array } from '@ai-sdk/provider-utils';
+import { convertBase64ToUint8Array } from '@ai-toolkit/provider-utils';
 import { hashCanonical, toBase64url } from '../util/canonical-hash';
 
 const encoder = new TextEncoder();
@@ -32,7 +32,7 @@ function buildPayload(
 ) {
   return encoder.encode(
     JSON.stringify([
-      'ai-sdk-tool-approval-v1',
+      'ai-toolkit-tool-approval-v1',
       approvalId,
       toolCallId,
       toolName,

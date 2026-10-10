@@ -1,17 +1,17 @@
 ---
 title: ModelRush
-description: Use the ModelRush OpenAI compatible API with the AI SDK.
+description: Use the ModelRush OpenAI compatible API with the ai-toolkit.
 ---
 
 # ModelRush Provider
 
-[ModelRush](https://modelrush.ai/) provides access to AI models through an OpenAI-compatible API. You can use its Chat Completions endpoint with the AI SDK through the `@ai-sdk/openai-compatible` module.
+[ModelRush](https://modelrush.ai/) provides access to AI models through an OpenAI-compatible API. You can use its Chat Completions endpoint with the ai-toolkit through the `@ai-toolkit/openai-compatible` module.
 
 ## Setup
 
 Install the OpenAI Compatible provider:
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+<InstallPackages packages="@ai-toolkit/openai-compatible" />
 
 Create a ModelRush API key and set it as a server-side environment variable:
 
@@ -26,7 +26,7 @@ See the [ModelRush quick start](https://modelrush.ai/docs/quickstart) for instru
 Create a ModelRush provider instance with `createOpenAICompatible`:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 
 const modelrush = createOpenAICompatible({
   name: 'modelrush',
@@ -48,7 +48,7 @@ const model = modelrush.chatModel('modelrush/deepseek-v4-flash-0731');
 Use `generateText` to generate text with the model:
 
 ```ts
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
+import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import { generateText } from 'ai';
 
 const modelrush = createOpenAICompatible({
@@ -73,7 +73,7 @@ Use the [ModelRush models endpoint](https://modelrush.ai/docs/api/models) or [mo
 
 ## Resources
 
-- [ModelRush AI SDK example](https://github.com/Moonveil-AI/modelrush-developer-tools/tree/main/examples/ai-sdk)
+- [ModelRush ai-toolkit example](https://github.com/Moonveil-AI/modelrush-developer-tools/tree/main/examples/ai-toolkit)
 - [ModelRush quick start](https://modelrush.ai/docs/quickstart)
 - [ModelRush Chat Completions documentation](https://modelrush.ai/docs/models/chat)
-- [AI SDK OpenAI Compatible provider](/providers/openai-compatible-providers)
+- [ai-toolkit OpenAI Compatible provider](/providers/openai-compatible-providers)

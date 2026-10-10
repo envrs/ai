@@ -5,7 +5,7 @@ import {
   NoSuchModelError,
   type FilesV4,
   type SkillsV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { MockEmbeddingModelV4 } from '../test/mock-embedding-model-v4';
 import { MockImageModelV2 } from '../test/mock-image-model-v2';
 import { MockImageModelV3 } from '../test/mock-image-model-v3';
@@ -127,7 +127,7 @@ describe('string model ids', () => {
   const videoModel = new MockVideoModelV4();
 
   beforeEach(() => {
-    globalThis.AI_SDK_DEFAULT_PROVIDER = customProvider({
+    globalThis.ai-toolkit_DEFAULT_PROVIDER = customProvider({
       languageModels: { language: languageModel },
       embeddingModels: { embedding: embeddingModel },
       imageModels: { image: imageModel },
@@ -139,7 +139,7 @@ describe('string model ids', () => {
   });
 
   afterEach(() => {
-    delete globalThis.AI_SDK_DEFAULT_PROVIDER;
+    delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
   });
 
   it('should resolve string model ids through the global default provider', () => {

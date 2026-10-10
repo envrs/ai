@@ -3,13 +3,13 @@ import {
   harnessV1BridgeOutboundMessageSchema,
   harnessV1BridgeReadySchema,
   harnessV1BridgeStartBaseSchema,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import { z } from 'zod/v4';
 
 /*
  * Claude Code's bridge wire protocol. The outbound events, transport frames,
  * shared inbound commands, and `bridge-ready` line all come from the shared
- * `@ai-sdk/harness` protocol — the only Claude-specific piece is the `start`
+ * `@ai-toolkit/harness` protocol — the only Claude-specific piece is the `start`
  * payload, which carries Claude SDK configuration.
  */
 

@@ -36,7 +36,7 @@ function fetchReturning(chunks: UIMessageChunk[]): typeof fetch {
 }
 
 /**
- * Drives a transport-produced stream through the real AI SDK consumer
+ * Drives a transport-produced stream through the real ai-toolkit consumer
  * (the same state machine that backs `useChat`). Returns the final assembled
  * message parts and any framing error the consumer reported.
  */

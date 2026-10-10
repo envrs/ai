@@ -1,4 +1,4 @@
-import { generateId } from '@ai-sdk/provider-utils';
+import { generateId } from '@ai-toolkit/provider-utils';
 import type {
   RealtimeClientEvent,
   RealtimeServerEvent,

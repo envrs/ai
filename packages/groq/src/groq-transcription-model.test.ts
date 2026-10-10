@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { GroqTranscriptionModel } from './groq-transcription-model';
 import { createGroq } from './groq-provider';
 import { readFile } from 'node:fs/promises';
@@ -101,7 +101,7 @@ describe('doGenerate', () => {
       'custom-request-header': 'request-header-value',
     });
     expect(server.calls[0].requestUserAgent).toContain(
-      `ai-sdk-groq/0.0.0-test`,
+      `ai-toolkit-groq/0.0.0-test`,
     );
   });
 

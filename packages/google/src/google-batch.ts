@@ -17,7 +17,7 @@ import {
   type ImageModelV4Result,
   type LanguageModelV4Prompt,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertAsyncIteratorToReadableStream,
@@ -36,7 +36,7 @@ import {
   convertToBase64,
   type InferSchema,
   type ResponseHandler,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { getModelPath } from './get-model-path';
 import { googleFailedResponseHandler } from './google-error';
@@ -206,7 +206,7 @@ export class GoogleBatch implements BatchV4<GoogleBatchModelIds> {
     assertSupportedBatchRequests(options.requests);
     const modelId = getGoogleBatchModelId(options.requests);
     const warnings: BatchV4StartResult['warnings'] = [];
-    const displayName = `ai-sdk-batch-${this.batchGenerateId()}`;
+    const displayName = `ai-toolkit-batch-${this.batchGenerateId()}`;
     const inlinedRequests: Array<{
       request: unknown;
       metadata: { key: string };
@@ -661,7 +661,7 @@ export class GoogleBatch implements BatchV4<GoogleBatchModelIds> {
           error: {
             message:
               `Google returned a "${unsupportedPart.type}" content block, ` +
-              'but that content is not supported in AI SDK text batches.',
+              'but that content is not supported in ai-toolkit text batches.',
             code: 'unsupported_content',
           },
         };

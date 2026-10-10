@@ -1,5 +1,5 @@
-import type { ProviderErrorStructure } from '@ai-sdk/openai-compatible';
-import { secureJsonParse } from '@ai-sdk/provider-utils';
+import type { ProviderErrorStructure } from '@ai-toolkit/openai-compatible';
+import { secureJsonParse } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 export const gmicloudErrorDataSchema = z.object({

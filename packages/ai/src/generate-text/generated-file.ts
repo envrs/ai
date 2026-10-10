@@ -1,8 +1,8 @@
 import {
   convertBase64ToUint8Array,
   convertUint8ArrayToBase64,
-} from '@ai-sdk/provider-utils';
-import type { JSONObject } from '@ai-sdk/provider';
+} from '@ai-toolkit/provider-utils';
+import type { JSONObject } from '@ai-toolkit/provider';
 
 /**
  * A generated file.

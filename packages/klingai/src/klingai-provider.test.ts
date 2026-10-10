@@ -1,4 +1,4 @@
-import { resolve } from '@ai-sdk/provider-utils';
+import { resolve } from '@ai-toolkit/provider-utils';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { resolveKlingAIAuthToken } from './klingai-auth';
 import { createKlingAI } from './klingai-provider';

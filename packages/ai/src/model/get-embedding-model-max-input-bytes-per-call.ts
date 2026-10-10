@@ -1,5 +1,5 @@
-import type { EmbeddingModelV4 } from '@ai-sdk/provider';
-import { EXPERIMENTAL_EMBEDDING_MODEL_MAX_INPUT_BYTES_PER_CALL } from '@ai-sdk/provider-utils';
+import type { EmbeddingModelV4 } from '@ai-toolkit/provider';
+import { EXPERIMENTAL_EMBEDDING_MODEL_MAX_INPUT_BYTES_PER_CALL } from '@ai-toolkit/provider-utils';
 
 export type EmbeddingModelWithMaxInputBytesPerCall = EmbeddingModelV4 & {
   readonly [EXPERIMENTAL_EMBEDDING_MODEL_MAX_INPUT_BYTES_PER_CALL]?:

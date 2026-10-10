@@ -2,8 +2,8 @@ import {
   createProviderDefinedToolFactoryWithOutputSchema,
   lazySchema,
   zodSchema,
-} from '@ai-sdk/provider-utils';
-import type { SharedV4ProviderReference } from '@ai-sdk/provider';
+} from '@ai-toolkit/provider-utils';
+import type { SharedV4ProviderReference } from '@ai-toolkit/provider';
 import { z } from 'zod/v4';
 
 export const shellInputSchema = lazySchema(() =>

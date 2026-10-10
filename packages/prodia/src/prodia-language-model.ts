@@ -5,7 +5,7 @@ import {
   type LanguageModelV4Content,
   type LanguageModelV4StreamPart,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   isCustomReasoning,
@@ -22,7 +22,7 @@ import {
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
   zodSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   buildProdiaProviderMetadata,
   parseMultipart,

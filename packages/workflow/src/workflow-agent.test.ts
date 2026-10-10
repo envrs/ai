@@ -11,7 +11,7 @@ import {
   type LanguageModelV4Prompt,
   type LanguageModelV4ToolCall,
   type LanguageModelV4ToolResultPart,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   tool,
   type Experimental_SandboxSession as SandboxSession,
@@ -110,13 +110,13 @@ describe('WorkflowAgent', () => {
 
     it('should tag the user-agent with the agent identifier', async () => {
       const headers = await runStream();
-      expect(headers['user-agent']).toContain('ai-sdk-agent/workflow');
+      expect(headers['user-agent']).toContain('ai-toolkit-agent/workflow');
     });
 
     it('should preserve a caller-provided user-agent', async () => {
       const headers = await runStream({ 'user-agent': 'my-app/1.0' });
       expect(headers['user-agent']).toContain('my-app/1.0');
-      expect(headers['user-agent']).toContain('ai-sdk-agent/workflow');
+      expect(headers['user-agent']).toContain('ai-toolkit-agent/workflow');
     });
   });
 
@@ -1402,7 +1402,7 @@ describe('WorkflowAgent', () => {
       // The loop should have stopped - iterator.next called only once
       expect(mockIterator.next).toHaveBeenCalledTimes(1);
 
-      // toolCalls should contain the call (matches AI SDK convention)
+      // toolCalls should contain the call (matches ai-toolkit convention)
       expect(result.toolCalls).toHaveLength(1);
       expect(result.toolCalls[0]).toEqual({
         type: 'tool-call',
@@ -1524,7 +1524,7 @@ describe('WorkflowAgent', () => {
       });
       expect(writtenChunks).not.toContainEqual({ type: 'start-step' });
 
-      // Consumer can find unresolved calls by diffing (standard AI SDK pattern)
+      // Consumer can find unresolved calls by diffing (standard ai-toolkit pattern)
       const unresolvedCalls = result.toolCalls.filter(
         tc => !result.toolResults.some(tr => tr.toolCallId === tc.toolCallId),
       );

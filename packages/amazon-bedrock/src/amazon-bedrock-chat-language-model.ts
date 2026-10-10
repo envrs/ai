@@ -11,7 +11,7 @@ import type {
   LanguageModelV4StreamResult,
   SharedV4ProviderMetadata,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createProviderStreamError,
@@ -30,11 +30,11 @@ import {
   type FetchFunction,
   type ParseResult,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   getModelCapabilities,
   sanitizeJsonSchema,
-} from '@ai-sdk/anthropic/internal';
+} from '@ai-toolkit/anthropic/internal';
 import { z } from 'zod/v4';
 import {
   BEDROCK_STOP_REASONS,

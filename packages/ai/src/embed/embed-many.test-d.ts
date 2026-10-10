@@ -1,4 +1,4 @@
-import type { Context } from '@ai-sdk/provider-utils';
+import type { Context } from '@ai-toolkit/provider-utils';
 import { describe, it, expectTypeOf } from 'vitest';
 import { MockEmbeddingModelV4 } from '../test/mock-embedding-model-v4';
 import { embedMany } from './embed-many';

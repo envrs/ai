@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, it, expect, vi } from 'vitest';
 import { createGoogleVertex } from './google-vertex-provider-base';
 import { GoogleVertexTranscriptionModel } from './google-vertex-transcription-model';
@@ -224,7 +224,7 @@ describe('doGenerate', () => {
       'custom-request-header': 'request-header-value',
     });
     expect(server.calls[0].requestUserAgent).toContain(
-      'ai-sdk-google-vertex/0.0.0-test',
+      'ai-toolkit-google-vertex/0.0.0-test',
     );
   });
 

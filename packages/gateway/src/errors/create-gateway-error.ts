@@ -20,7 +20,7 @@ import {
   safeValidateTypes,
   zodSchema,
   type InferSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 export async function createGatewayErrorFromResponse({
   response,
   statusCode,

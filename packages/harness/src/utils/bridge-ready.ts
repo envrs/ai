@@ -2,7 +2,7 @@ import {
   safeParseJSON,
   type Experimental_SandboxProcess,
   type Experimental_SandboxSession,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { harnessV1BridgeReadySchema } from '../v1/harness-v1-bridge-protocol';
 

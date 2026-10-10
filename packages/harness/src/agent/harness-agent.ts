@@ -21,7 +21,7 @@ import {
   type ToolApprovalResponse,
   type ToolResultPart,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { mergeCallbacks, type ToolsContextSettings } from 'ai/internal';
 import type {
   Agent,
@@ -144,7 +144,7 @@ type HarnessAgentTurnResult<
 };
 
 /**
- * AI SDK `Agent` implementation that drives a third-party agent runtime
+ * ai-toolkit `Agent` implementation that drives a third-party agent runtime
  * through a harness adapter (Claude Code, Codex, …).
  *
  * Behaviour summary:
@@ -194,7 +194,7 @@ export class HarnessAgent<
   readonly id: string | undefined;
 
   /**
-   * Merged tool set exposed to AI SDK consumers: harness builtins +
+   * Merged tool set exposed to ai-toolkit consumers: harness builtins +
    * user-defined tools, with user tools overriding builtins on key
    * collision. Built once at construction time so the typed surface is
    * stable across calls.
@@ -936,7 +936,7 @@ export class HarnessAgent<
   }
 
   /*
-   * Reduce AI SDK input to the single user message the harness should run
+   * Reduce ai-toolkit input to the single user message the harness should run
    * for this turn. The harness session owns prior-turn state (system
    * prompt, assistant turns, tool results) — we never replay it. A bare
    * string is forwarded as-is; a message array is collapsed to its last

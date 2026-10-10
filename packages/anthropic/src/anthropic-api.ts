@@ -1,9 +1,9 @@
-import type { JSONSchema7 } from '@ai-sdk/provider';
+import type { JSONSchema7 } from '@ai-toolkit/provider';
 import {
   lazySchema,
   zodSchema,
   type InferSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 export type AnthropicPrompt = {

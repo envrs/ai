@@ -1,5 +1,5 @@
 ---
-'@ai-sdk/provider-utils': patch
+'@ai-toolkit/provider-utils': patch
 ---
 
 fix(provider-utils): accept exact criteria labels in decision choice responses

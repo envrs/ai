@@ -8,12 +8,12 @@ import { tools } from '@/lib/tools-registry';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/resources' },
-  title: 'AI SDK Resources',
+  title: 'ai-toolkit Resources',
   description:
-    'Explore AI SDK recipes, tools, templates, and products from Vercel and the community.',
+    'Explore ai-toolkit recipes, tools, templates, and products from khulnasoft and the community.',
   ...socialCard(
-    'AI SDK Resources',
-    'Explore AI SDK recipes, tools, templates, and products from Vercel and the community.',
+    'ai-toolkit Resources',
+    'Explore ai-toolkit recipes, tools, templates, and products from khulnasoft and the community.',
   ),
 };
 
@@ -28,13 +28,13 @@ const templateGroups = [
 const featuredLinks = [
   {
     title: 'Submit a tool',
-    description: 'Add an AI SDK tool package to the registry through GitHub.',
-    href: 'https://github.com/vercel/ai/blob/main/contributing/add-new-tool-to-registry.md',
+    description: 'Add an ai-toolkit tool package to the registry through GitHub.',
+    href: 'https://github.com/khulnasoft/ai/blob/main/contributing/add-new-tool-to-registry.md',
   },
   {
     title: 'Add your product',
-    description: 'Share a product built with the AI SDK for the showcase.',
-    href: 'https://github.com/vercel/ai/discussions/1914',
+    description: 'Share a product built with the ai-toolkit for the showcase.',
+    href: 'https://github.com/khulnasoft/ai/discussions/1914',
   },
 ];
 
@@ -45,7 +45,7 @@ const ResourcesPage = () => {
     {
       title: 'Recipes',
       description:
-        'Build specific AI SDK features with focused MDX recipes and runnable examples.',
+        'Build specific ai-toolkit features with focused MDX recipes and runnable examples.',
       href: '/resources/recipes',
       meta: `${recipeCount} recipes`,
       icon: <Code size={18} />,
@@ -69,7 +69,7 @@ const ResourcesPage = () => {
     {
       title: 'Showcase',
       description:
-        'See popular products and projects built with the AI SDK for proof and inspiration.',
+        'See popular products and projects built with the ai-toolkit for proof and inspiration.',
       href: '/resources/showcase',
       meta: `${showcaseProjects.length} projects`,
       icon: <Star size={18} />,
@@ -83,21 +83,21 @@ const ResourcesPage = () => {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(113,113,122,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(113,113,122,0.12)_1px,transparent_1px)] bg-[size:28px_28px] opacity-60" />
           <div className="relative flex max-w-3xl flex-col gap-5">
             <div className="w-fit rounded-full border border-gray-alpha-400 bg-background-100 px-3 py-1 text-gray-900 text-sm shadow-sm">
-              AI SDK Resources
+              ai-toolkit Resources
             </div>
             <div className="flex flex-col gap-4">
               <h1 className="max-w-2xl font-semibold text-4xl text-gray-1000 tracking-tight md:text-6xl">
-                Find what you need to build with the AI SDK.
+                Find what you need to build with the ai-toolkit.
               </h1>
               <p className="max-w-2xl text-gray-900 text-lg leading-8 md:text-xl">
-                Explore recipes, tools, templates, and real products from Vercel
-                and the AI SDK community.
+                Explore recipes, tools, templates, and real products from khulnasoft
+                and the ai-toolkit community.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-alpha-400 bg-background-100 px-4 py-2 font-medium text-gray-1000 transition-colors hover:border-gray-500"
-                href="https://github.com/vercel/ai"
+                href="https://github.com/khulnasoft/ai"
                 rel="noopener noreferrer"
                 target="_blank"
               >

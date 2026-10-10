@@ -2,12 +2,12 @@ import {
   APICallError,
   InvalidArgumentError,
   type SpeechModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import {
   createAzure,
@@ -189,7 +189,7 @@ describe('Speech requests', () => {
     );
     expect(headers.get('ocp-apim-subscription-key')).toBe('test-key');
     expect(headers.get('api-key')).toBeNull();
-    expect(headers.get('user-agent')).toContain('ai-sdk-azure/0.0.0-test');
+    expect(headers.get('user-agent')).toContain('ai-toolkit-azure/0.0.0-test');
     expect(result).toMatchObject({
       audio,
       warnings: [],

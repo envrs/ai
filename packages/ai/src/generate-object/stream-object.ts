@@ -5,14 +5,14 @@ import type {
   LanguageModelV4Usage,
   SharedV4ProviderMetadata,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   createIdGenerator,
   DelayedPromise,
   type InferSchema,
   type FlexibleSchema,
   type ProviderOptions,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { ServerResponse } from 'http';
 import { logWarnings } from '../logger/log-warnings';
 import { resolveLanguageModel } from '../model/resolve-model';
@@ -116,7 +116,7 @@ export type StreamObjectOnFinishCallback<RESULT> = (event: {
 
   /**
    * Additional provider-specific metadata. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerMetadata: ProviderMetadata | undefined;
@@ -181,7 +181,7 @@ export type StreamObjectOnFinishCallback<RESULT> = (event: {
  * @param telemetry - Optional telemetry configuration.
  *
  * @param providerOptions - Additional provider-specific options. They are passed through
- * to the provider from the AI SDK and enable provider-specific
+ * to the provider from the ai-toolkit and enable provider-specific
  * functionality that can be fully encapsulated in the provider.
  *
  * @returns
@@ -272,7 +272,7 @@ export function streamObject<
 
       /**
        * Additional provider-specific options. They are passed through
-       * to the provider from the AI SDK and enable provider-specific
+       * to the provider from the ai-toolkit and enable provider-specific
        * functionality that can be fully encapsulated in the provider.
        */
       providerOptions?: ProviderOptions;

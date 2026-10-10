@@ -1,4 +1,4 @@
-import type { HarnessV1ToolSpec } from '@ai-sdk/harness';
+import type { HarnessV1ToolSpec } from '@ai-toolkit/harness';
 import type { AgentTool } from '@cline/agents';
 import { describe, expect, it, vi } from 'vitest';
 import type { ClineRemoteOps } from './cline-remote-ops';

@@ -2,7 +2,7 @@ import type {
   SpeechModelV2,
   SpeechModelV3,
   SpeechModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { asSpeechModelV3 } from './as-speech-model-v3';
 
 export function asSpeechModelV4(

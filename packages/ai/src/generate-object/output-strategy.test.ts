@@ -1,5 +1,5 @@
-import type { JSONSchema7 } from '@ai-sdk/provider';
-import { jsonSchema } from '@ai-sdk/provider-utils';
+import type { JSONSchema7 } from '@ai-toolkit/provider';
+import { jsonSchema } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { getOutputStrategy } from './output-strategy';
 

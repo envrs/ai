@@ -1,4 +1,4 @@
-import type { HarnessV1StreamPart } from '@ai-sdk/harness';
+import type { HarnessV1StreamPart } from '@ai-toolkit/harness';
 import type { PromptResponse, SessionUpdate } from '@agentclientprotocol/sdk';
 import type {
   ACPToolCall,

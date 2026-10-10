@@ -48,7 +48,7 @@ test('legacy playground links preserve public URL details', () => {
 test('legacy pages and public resources redirect only read requests', async () => {
   for (const method of ['GET', 'HEAD']) {
     const response = playgroundTransitionResponse(
-      new Request('https://ai-sdk.dev/playground/s/abc?foo=bar', { method }),
+      new Request('https://ai-toolkit.dev/playground/s/abc?foo=bar', { method }),
     );
     assert.equal(response.status, 307);
     assert.equal(
@@ -59,7 +59,7 @@ test('legacy pages and public resources redirect only read requests', async () =
   }
 
   const feed = playgroundTransitionResponse(
-    new Request('https://ai-sdk.dev/api/model-feed?version=7'),
+    new Request('https://ai-toolkit.dev/api/model-feed?version=7'),
   );
   assert.equal(feed.status, 307);
   assert.equal(
@@ -76,7 +76,7 @@ test('legacy pages and public resources redirect only read requests', async () =
     '/api/model-feed',
   ]) {
     const response = playgroundTransitionResponse(
-      new Request(`https://ai-sdk.dev${path}`, {
+      new Request(`https://ai-toolkit.dev${path}`, {
         method: 'POST',
         headers: { 'next-action': 'old-action' },
         body: 'private draft',
@@ -90,13 +90,13 @@ test('legacy pages and public resources redirect only read requests', async () =
 
   assert.equal(
     playgroundTransitionResponse(
-      new Request('https://ai-sdk.dev/api/chat', { method: 'POST' }),
+      new Request('https://ai-toolkit.dev/api/chat', { method: 'POST' }),
     ),
     undefined,
   );
   assert.equal(
     playgroundTransitionResponse(
-      new Request('https://ai-sdk.dev/api/search?query=streamText'),
+      new Request('https://ai-toolkit.dev/api/search?query=streamText'),
     ),
     undefined,
   );
@@ -105,7 +105,7 @@ test('legacy pages and public resources redirect only read requests', async () =
 test('the temporary OAuth callback relay preserves provider parameters', async () => {
   const response = playgroundTransitionResponse(
     new Request(
-      'https://ai-sdk.dev/api/auth/callback/vercel?code=a%2Fb&state=state-1&error=denied',
+      'https://ai-toolkit.dev/api/auth/callback/vercel?code=a%2Fb&state=state-1&error=denied',
     ),
   );
 
@@ -119,7 +119,7 @@ test('the temporary OAuth callback relay preserves provider parameters', async (
   assert.equal(await response.text(), '');
 
   const mutation = playgroundTransitionResponse(
-    new Request('https://ai-sdk.dev/api/auth/callback/vercel?code=secret', {
+    new Request('https://ai-toolkit.dev/api/auth/callback/vercel?code=secret', {
       method: 'POST',
       body: 'verifier',
     }),
@@ -144,13 +144,13 @@ test('browser recovery exports supported state and excludes authentication', () 
     getItem: key => data.get(key) ?? null,
   };
 
-  const result = createPlaygroundBackup(storage, 'https://ai-sdk.dev');
+  const result = createPlaygroundBackup(storage, 'https://ai-toolkit.dev');
   const backup = JSON.parse(result.backup);
 
   assert.equal(result.count, 4);
-  assert.equal(backup.type, 'ai-sdk-playground-browser-state');
+  assert.equal(backup.type, 'ai-toolkit-playground-browser-state');
   assert.equal(backup.version, 1);
-  assert.equal(backup.sourceOrigin, 'https://ai-sdk.dev');
+  assert.equal(backup.sourceOrigin, 'https://ai-toolkit.dev');
   assert.deepEqual(
     backup.entries.map(([key]) => key),
     [

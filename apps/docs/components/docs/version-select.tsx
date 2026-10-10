@@ -1,12 +1,12 @@
 'use client';
 
-import type { GeistdocsVersionConfig } from '@vercel/geistdocs/config';
+import type { GeistdocsVersionConfig } from '@khulnasoft/geistdocs/config';
 import {
   GeistdocsRouteSelect,
   type GeistdocsVersionPaths,
-} from '@vercel/geistdocs/versions';
+} from '@khulnasoft/geistdocs/versions';
 
-/** Version glyph from the production ai-sdk.dev version switcher. */
+/** Version glyph from the production ai-toolkit.dev version switcher. */
 const VersionGlyph = () => (
   <svg
     aria-hidden

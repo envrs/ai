@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import path from 'node:path';
-import { shellQuote } from '@ai-sdk/harness/utils';
-import type { Experimental_SandboxSession } from '@ai-sdk/provider-utils';
+import { shellQuote } from '@ai-toolkit/harness/utils';
+import type { Experimental_SandboxSession } from '@ai-toolkit/provider-utils';
 import type { PiPathMapper } from './pi-paths';
 
 export type PiRemoteFileChangeKind = 'create' | 'modify';
@@ -417,7 +417,7 @@ export function createPiRemoteOps(options: PiRemoteOpsOptions): PiRemoteOps {
       String(limit),
       ...(input.glob ? [`--include=${input.glob}`] : []),
     ];
-    const temporaryPathPrefix = `/tmp/.ai-sdk-harness-pi-grep-${randomUUID()}`;
+    const temporaryPathPrefix = `/tmp/.ai-toolkit-harness-pi-grep-${randomUUID()}`;
     const outputPath = `${temporaryPathPrefix}.stdout`;
     const stderrPath = `${temporaryPathPrefix}.stderr`;
     const statusPath = `${temporaryPathPrefix}.status`;

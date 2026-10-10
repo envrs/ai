@@ -1,4 +1,4 @@
-import { tool } from '@ai-sdk/provider-utils';
+import { tool } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { InferUITool, UIMessage } from './ui-messages';
 import {
@@ -18,11 +18,11 @@ import {
 
 describe('validateUIMessages', () => {
   beforeEach(() => {
-    globalThis.AI_SDK_LOG_WARNINGS = false;
+    globalThis.ai-toolkit_LOG_WARNINGS = false;
   });
 
   afterEach(() => {
-    delete globalThis.AI_SDK_LOG_WARNINGS;
+    delete globalThis.ai-toolkit_LOG_WARNINGS;
   });
 
   describe('parameter validation', () => {
@@ -1014,7 +1014,7 @@ describe('validateUIMessages', () => {
 
     it('should validate a dynamic tool part in output-error state when input key is absent', async () => {
       const warningLogger = vi.fn();
-      globalThis.AI_SDK_LOG_WARNINGS = warningLogger;
+      globalThis.ai-toolkit_LOG_WARNINGS = warningLogger;
 
       const messages = [
         {
@@ -1878,7 +1878,7 @@ describe('validateUIMessages', () => {
 
     it('should preserve rawInput when state is output-error', async () => {
       const warningLogger = vi.fn();
-      globalThis.AI_SDK_LOG_WARNINGS = warningLogger;
+      globalThis.ai-toolkit_LOG_WARNINGS = warningLogger;
 
       const inputMessages = [
         {

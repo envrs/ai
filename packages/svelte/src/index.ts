@@ -1,4 +1,4 @@
-import type { FlexibleSchema, InferSchema } from '@ai-sdk/provider-utils';
+import type { FlexibleSchema, InferSchema } from '@ai-toolkit/provider-utils';
 import {
   StructuredObject,
   type StructuredObjectOptions,

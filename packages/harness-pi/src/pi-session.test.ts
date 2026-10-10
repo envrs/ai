@@ -14,12 +14,12 @@ import type {
   HarnessV1Session,
   HarnessV1StreamPart,
   HarnessV1ToolSpec,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   HarnessAgent,
   type HarnessAgentContinueTurnState,
-} from '@ai-sdk/harness/agent';
-import { tool } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/agent';
+import { tool } from '@ai-toolkit/provider-utils';
 import {
   existsSync,
   mkdirSync,
@@ -197,7 +197,7 @@ describe('createPiSession', () => {
       sandboxSession: createSandboxSession(),
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: false,
     });
 
@@ -230,7 +230,7 @@ describe('createPiSession', () => {
       sandboxSession: createSandboxSession(),
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: false,
     });
 
@@ -597,7 +597,7 @@ describe('createPiSession', () => {
       sandboxSession: createSandboxSession(),
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: false,
     });
 
@@ -664,7 +664,7 @@ describe('createPiSession', () => {
       sandboxSession,
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: false,
     });
 
@@ -940,7 +940,7 @@ describe('createPiSession', () => {
       sandboxSession: createSandboxSession(),
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: false,
     });
 
@@ -1056,7 +1056,7 @@ describe('createPiSession', () => {
           memory: { command: 'memory-mcp', args: [] },
         },
       },
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: false,
     });
     const control = await session.doPromptTurn({
@@ -1115,7 +1115,7 @@ describe('createPiSession', () => {
           memory: { command: 'memory-mcp', args: [], lifecycle: 'eager' },
         },
       },
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: false,
     });
     const control = await session.doPromptTurn({
@@ -1307,7 +1307,7 @@ describe('createPiSession', () => {
         sandboxSession,
         sessionWorkDir: '/sandbox/work',
         settings: {},
-        clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+        clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
         isResume: true,
         resumeSessionFileName: '../session.jsonl',
       }),
@@ -1329,7 +1329,7 @@ describe('createPiSession', () => {
       }),
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: true,
       resumeSessionFileName: 'pi-session.jsonl',
     });
@@ -1385,7 +1385,7 @@ describe('createPiSession', () => {
       settings: {
         mcpServers: { memory: { command: 'memory-mcp', args: [] } },
       },
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: false,
     });
     const control = await session.doPromptTurn({
@@ -1437,7 +1437,7 @@ describe('createPiSession', () => {
       sandboxSession,
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: false,
     });
     const toolSpecs: HarnessV1ToolSpec[] = [{ name: 'weather' }];
@@ -1462,7 +1462,7 @@ describe('createPiSession', () => {
       sandboxSession,
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: true,
       resumeStateType: 'continue-turn',
     });
@@ -1525,7 +1525,7 @@ describe('createPiSession', () => {
       sandboxSession,
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: false,
     });
     const tools: HarnessV1ToolSpec[] = [{ name: 'weather' }];
@@ -1543,7 +1543,7 @@ describe('createPiSession', () => {
       sandboxSession,
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: true,
       resumeStateType: 'resume-session',
     });
@@ -1603,13 +1603,13 @@ describe('createPiSession', () => {
       piMock.session = fakePiSession;
 
       const sessionId = `session-disabled-reattach-${lifecycle}`;
-      const hostRoot = path.join(tmpdir(), 'ai-sdk-harness', 'pi', sessionId);
+      const hostRoot = path.join(tmpdir(), 'ai-toolkit-harness', 'pi', sessionId);
       const session = await createPiSession({
         sessionId,
         sandboxSession: createSandboxSession(),
         sessionWorkDir: '/sandbox/work',
         settings: { reattachInProcess: false },
-        clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+        clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
         isResume: false,
       });
       const control = await session.doPromptTurn({
@@ -1686,7 +1686,7 @@ describe('createPiSession', () => {
       sandboxSession,
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: false,
       ...(input.initialAgentDir ? { agentDir: input.initialAgentDir } : {}),
     });
@@ -1704,7 +1704,7 @@ describe('createPiSession', () => {
       sandboxSession,
       sessionWorkDir: '/sandbox/work',
       settings: input.settings,
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: true,
       resumeStateType: input.resumeStateType,
       ...(input.resumeAgentDir ? { agentDir: input.resumeAgentDir } : {}),
@@ -1735,7 +1735,7 @@ describe('createPiSession', () => {
       sandboxSession,
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: true,
       resumeSessionFileName: 'pi-session.jsonl',
     });
@@ -1816,7 +1816,7 @@ describe('createPiSession', () => {
       }),
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: true,
       resumeSessionFileName: 'pi-session.jsonl',
     });
@@ -1884,7 +1884,7 @@ describe('createPiSession', () => {
       sandboxSession,
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: true,
       resumeSessionFileName: 'pi-session.jsonl',
     });
@@ -1921,7 +1921,7 @@ describe('createPiSession', () => {
       sandboxSession,
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: true,
       resumeSessionFileName: 'pi-session.jsonl',
     });
@@ -1998,7 +1998,7 @@ describe('createPiSession', () => {
       sandboxSession,
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: true,
       resumeSessionFileName: 'pi-session.jsonl',
     });
@@ -2238,7 +2238,7 @@ describe('createPiSession', () => {
         sandboxSession,
         sessionWorkDir: '/sandbox/work',
         settings: { auth: 'openai' },
-        clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+        clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
         isResume: false,
         agentDir: '/custom/.pi/agent',
       });
@@ -2279,7 +2279,7 @@ describe('createPiSession', () => {
       sandboxSession: createSandboxSession(),
       sessionWorkDir: '/sandbox/work',
       settings: { providers: { myprovider: provider } },
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: false,
     });
 
@@ -2300,7 +2300,7 @@ describe('createPiSession', () => {
       sandboxSession,
       sessionWorkDir: '/sandbox/work',
       settings: {},
-      clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+      clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
       isResume: false,
     });
 
@@ -2398,7 +2398,7 @@ async function startDeferredCrossProcessRerun({
     }),
     sessionWorkDir: '/sandbox/work',
     settings: {},
-    clientApp: 'ai-sdk-harness-pi/0.0.0-test',
+    clientApp: 'ai-toolkit-harness-pi/0.0.0-test',
     isResume: true,
     resumeSessionFileName: 'pi-session.jsonl',
   });

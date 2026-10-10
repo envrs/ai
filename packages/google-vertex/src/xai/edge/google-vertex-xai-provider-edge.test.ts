@@ -18,7 +18,7 @@ vi.mock('../google-vertex-xai-provider', () => ({
   }),
 }));
 
-vi.mock('@ai-sdk/provider-utils', () => ({
+vi.mock('@ai-toolkit/provider-utils', () => ({
   resolve: vi.fn().mockImplementation(async value => {
     if (typeof value === 'function') return value();
     return value;

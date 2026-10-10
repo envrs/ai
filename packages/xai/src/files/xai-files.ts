@@ -10,7 +10,7 @@ import {
   type FilesV4UploadFileCallOptions,
   type FilesV4UploadFileResult,
   type SharedV4ProviderReference,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertInlineFileDataToUint8Array,
@@ -24,7 +24,7 @@ import {
   type FetchFunction,
   type InferSchema,
   type MultipartStreamPart,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { xaiFailedResponseHandler } from '../xai-error';
 import {
   xaiFileDeleteResponseSchema,

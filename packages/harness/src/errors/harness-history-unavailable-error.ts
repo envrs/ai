@@ -1,8 +1,8 @@
-import { AISDKError } from '@ai-sdk/provider';
+import { ai-toolkitError } from '@ai-toolkit/provider';
 import { HarnessError } from './harness-error';
 
 const name = 'AI_HarnessHistoryUnavailableError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
 /**
@@ -36,6 +36,6 @@ export class HarnessHistoryUnavailableError extends HarnessError {
   }
 
   static isInstance(error: unknown): error is HarnessHistoryUnavailableError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }

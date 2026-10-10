@@ -1,4 +1,4 @@
-import { NoSuchModelError } from '@ai-sdk/provider';
+import { NoSuchModelError } from '@ai-toolkit/provider';
 import { describe, it, expect } from 'vitest';
 import { createVoyage } from './voyage-provider';
 

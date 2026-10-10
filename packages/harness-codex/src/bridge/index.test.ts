@@ -57,7 +57,7 @@ const state = vi.hoisted(() => ({
   >,
 }));
 
-vi.mock('@ai-sdk/harness/bridge', () => ({
+vi.mock('@ai-toolkit/harness/bridge', () => ({
   runBridge: async ({
     onStart,
     onStop,

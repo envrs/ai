@@ -3,8 +3,8 @@ import {
   type JSONValue,
   type LanguageModelV4Prompt,
   type LanguageModelV4ToolResultPart,
-} from '@ai-sdk/provider';
-import type { ToolNameMapping } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import type { ToolNameMapping } from '@ai-toolkit/provider-utils';
 import { convertToMistralChatMessages } from './convert-to-mistral-chat-messages';
 import type {
   MistralAssistantMessageContent,

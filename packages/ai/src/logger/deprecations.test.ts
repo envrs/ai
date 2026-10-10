@@ -3,14 +3,14 @@ import { getDeprecationCode } from './deprecations';
 
 describe('getDeprecationCode', () => {
   it.each([
-    ['generateObject', 'AISDK_DEP_GENERATE_OBJECT'],
-    ['streamObject', 'AISDK_DEP_STREAM_OBJECT'],
-    ['experimental_generateSpeech', 'AISDK_DEP_EXPERIMENTAL_GENERATE_SPEECH'],
-    ['experimental_transcribe', 'AISDK_DEP_EXPERIMENTAL_TRANSCRIBE'],
-    ['"image" content part', 'AISDK_DEP_IMAGE_CONTENT_PART'],
+    ['generateObject', 'ai-toolkit_DEP_GENERATE_OBJECT'],
+    ['streamObject', 'ai-toolkit_DEP_STREAM_OBJECT'],
+    ['experimental_generateSpeech', 'ai-toolkit_DEP_EXPERIMENTAL_GENERATE_SPEECH'],
+    ['experimental_transcribe', 'ai-toolkit_DEP_EXPERIMENTAL_TRANSCRIBE'],
+    ['"image" content part', 'ai-toolkit_DEP_IMAGE_CONTENT_PART'],
     [
       'rawInput in output-error UI message parts',
-      'AISDK_DEP_UI_MESSAGE_RAW_INPUT',
+      'ai-toolkit_DEP_UI_MESSAGE_RAW_INPUT',
     ],
     ...[
       'file-data',
@@ -23,7 +23,7 @@ describe('getDeprecationCode', () => {
       'image-file-reference',
     ].map(type => [
       `"tool-result" content of type "${type}"`,
-      `AISDK_DEP_TOOL_RESULT_${type.replaceAll('-', '_').toUpperCase()}`,
+      `ai-toolkit_DEP_TOOL_RESULT_${type.replaceAll('-', '_').toUpperCase()}`,
     ]),
   ])('keeps the registered code for %s', (setting, code) => {
     expect(getDeprecationCode({ setting })).toBe(code);
@@ -32,7 +32,7 @@ describe('getDeprecationCode', () => {
   it('scopes provider warnings separately from built-in deprecations', () => {
     expect(
       getDeprecationCode({ setting: 'generateObject', provider: 'test' }),
-    ).toBe('AISDK_DEP_PROVIDER_test__generateObject');
+    ).toBe('ai-toolkit_DEP_PROVIDER_test__generateObject');
   });
 
   it('does not collapse punctuation, case, Unicode, or provider boundaries', () => {
@@ -54,6 +54,6 @@ describe('getDeprecationCode', () => {
     expect(new Set(codes).size).toBe(inputs.length);
     expect(codes).toEqual(inputs.map(getDeprecationCode));
     expect(codes.every(code => /^[a-zA-Z0-9_]+$/.test(code))).toBe(true);
-    expect(codes[0]).toBe('AISDK_DEP_PROVIDER_test__old_002Dkey');
+    expect(codes[0]).toBe('ai-toolkit_DEP_PROVIDER_test__old_002Dkey');
   });
 });

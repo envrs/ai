@@ -1,5 +1,5 @@
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
-import { generateId, convertUint8ArrayToBase64 } from '@ai-sdk/provider-utils';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
+import { generateId, convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
 import {
   ToolChoiceViolationError,
   type LanguageModel,

@@ -3,8 +3,8 @@ import {
   InvalidArgumentError,
   TypeValidationError,
   UnsupportedFunctionalityError,
-} from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { createDeepSeek } from '../deepseek-provider';
 

@@ -1,4 +1,4 @@
-import { tool, type Tool, type ToolResultOutput } from '@ai-sdk/provider-utils';
+import { tool, type Tool, type ToolResultOutput } from '@ai-toolkit/provider-utils';
 import { createToolModelOutput } from './create-tool-model-output';
 import z from 'zod/v4';
 import { describe, it, expect } from 'vitest';
@@ -168,7 +168,7 @@ describe('createToolModelOutput', () => {
     // Guards against re-introducing a "this-binding guard" (e.g. destructuring
     // `toModelOutput` off the tool before calling it), which would break
     // class-based tools that rely on `this` in `toModelOutput`.
-    // See https://github.com/vercel/ai/pull/15917#discussion_r3376474765
+    // See https://github.com/khulnasoft/ai/pull/15917#discussion_r3376474765
     it('should preserve `this` when calling a class-based tool.toModelOutput', async () => {
       class WeatherTool {
         readonly inputSchema = z.object({});

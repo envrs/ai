@@ -2,7 +2,7 @@ import type {
   TranscriptionModelV4,
   SharedV4Warning,
   SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createJsonResponseHandler,
@@ -13,7 +13,7 @@ import {
   serializeModelOptions,
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { AssemblyAIConfig } from './assemblyai-config';
 import { assemblyaiFailedResponseHandler } from './assemblyai-error';
@@ -387,7 +387,7 @@ export class AssemblyAITranscriptionModel implements TranscriptionModelV4 {
         options.abortSignal,
       );
 
-    // Surface diarization and audio-intelligence results that the AI SDK's
+    // Surface diarization and audio-intelligence results that the ai-toolkit's
     // `segments` shape can't represent, keyed under `assemblyai`. Presence is
     // gated on the parsed transcript, but values are taken from the raw
     // response so no fields are stripped by the schema.
@@ -421,7 +421,7 @@ export class AssemblyAITranscriptionModel implements TranscriptionModelV4 {
 
     return {
       text: transcript.text ?? '',
-      // AssemblyAI returns word timings in milliseconds; the AI SDK reports
+      // AssemblyAI returns word timings in milliseconds; the ai-toolkit reports
       // segment timings in seconds.
       segments:
         transcript.words?.map(word => ({

@@ -4,9 +4,9 @@ import {
   type HarnessV1CredentialForwarding,
   type HarnessV1MintBridgeTokenCallback,
   type HarnessV1PortEndpoint,
-} from '@ai-sdk/harness';
-import type { SandboxChannelReconnectOptions } from '@ai-sdk/harness/utils';
-import type { ToolSet } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness';
+import type { SandboxChannelReconnectOptions } from '@ai-toolkit/harness/utils';
+import type { ToolSet } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { ACPAuthenticationMode, ACPClientApp } from './acp-auth';
 import type { ACPToolCall } from './acp-tool-call';
@@ -22,7 +22,7 @@ import {
 import { VERSION } from './version';
 
 const ACP_CLIENT_APP = {
-  name: 'ai-sdk-harness-acp',
+  name: 'ai-toolkit-harness-acp',
   version: VERSION,
 } as const satisfies ACPClientApp;
 
@@ -175,11 +175,11 @@ export function createACP<
     settings.mcpServers != null &&
     Object.prototype.hasOwnProperty.call(
       settings.mcpServers,
-      'ai-sdk-harness-tools',
+      'ai-toolkit-harness-tools',
     )
   ) {
     throw new Error(
-      'ACP MCP server name "ai-sdk-harness-tools" is reserved for HarnessAgent tools.',
+      'ACP MCP server name "ai-toolkit-harness-tools" is reserved for HarnessAgent tools.',
     );
   }
   const version = (settings as { readonly version?: string }).version ?? 'v1';

@@ -3,9 +3,9 @@ import {
   HARNESS_V1_BUILTIN_TOOLS,
   type HarnessV1,
   type HarnessV1BuiltinTool,
-} from '@ai-sdk/harness';
-import { isHarnessAuthenticationEnvironment } from '@ai-sdk/harness/utils';
-import { tool } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness';
+import { isHarnessAuthenticationEnvironment } from '@ai-toolkit/harness/utils';
+import { tool } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { ClineAuthenticationMode } from './cline-auth';
 import { resolveClineAuthentication } from './cline-subscription';
@@ -16,7 +16,7 @@ import { VERSION } from './version';
 /**
  * Value used to identify the harness in provider request headers.
  */
-const CLINE_CLIENT_APP = `ai-sdk-harness-cline/${VERSION}`;
+const CLINE_CLIENT_APP = `ai-toolkit-harness-cline/${VERSION}`;
 
 /**
  * Configuration knobs for `createCline`. The Cline runtime

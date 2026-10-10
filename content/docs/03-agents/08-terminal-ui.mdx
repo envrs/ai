@@ -1,11 +1,11 @@
 ---
 title: Terminal UI
-description: Run AI SDK agents in an interactive terminal UI.
+description: Run ai-toolkit agents in an interactive terminal UI.
 ---
 
 # Terminal UI
 
-The `@ai-sdk/tui` package lets you run a local `ToolLoopAgent` or connect to a
+The `@ai-toolkit/tui` package lets you run a local `ToolLoopAgent` or connect to a
 remote agent through a `ChatTransport` in an interactive terminal interface.
 It is useful for local development, demos, and internal tools where a terminal
 experience is enough and you do not want to build a custom UI.
@@ -15,17 +15,17 @@ rendering, tool cards, reasoning sections, scrolling, and tool approval prompts.
 
 ## Installation
 
-Install `@ai-sdk/tui` alongside `ai` and the provider package you use:
+Install `@ai-toolkit/tui` alongside `ai` and the provider package you use:
 
-<Snippet text={`pnpm add @ai-sdk/tui ai @ai-sdk/openai`} prompt={false} />
+<Snippet text={`pnpm add @ai-toolkit/tui ai @ai-toolkit/openai`} prompt={false} />
 
 ## Running an Agent
 
 Create a `ToolLoopAgent` and pass it to `runAgentTUI`:
 
 ```ts
-import { openai } from '@ai-sdk/openai';
-import { runAgentTUI } from '@ai-sdk/tui';
+import { openai } from '@ai-toolkit/openai';
+import { runAgentTUI } from '@ai-toolkit/tui';
 import { ToolLoopAgent, tool } from 'ai';
 import { z } from 'zod';
 
@@ -58,10 +58,10 @@ await runAgentTUI({
 ## Connecting to a Remote Agent
 
 Pass a `ChatTransport` instead of an `agent` to connect the terminal UI to a
-remote AI SDK UI message endpoint:
+remote ai-toolkit UI message endpoint:
 
 ```ts
-import { runAgentTUI } from '@ai-sdk/tui';
+import { runAgentTUI } from '@ai-toolkit/tui';
 import { DefaultChatTransport } from 'ai';
 
 await runAgentTUI({
@@ -82,7 +82,7 @@ Pass a sandbox session with the `sandbox` option when your agent tools need an
 execution environment:
 
 ```ts
-import { createJustBashNetworkSandboxSession } from '@ai-sdk/sandbox-just-bash';
+import { createJustBashNetworkSandboxSession } from '@ai-toolkit/sandbox-just-bash';
 
 const sandboxSession = await createJustBashNetworkSandboxSession({
   cwd: '/home/user',
@@ -183,5 +183,5 @@ custom stream processing.
   instances
 - [Tool Approvals](/docs/agents/tool-approvals) for configuring human review of
   tool calls
-- [runAgentTUI API Reference](/docs/reference/ai-sdk-tui/run-agent-tui) for
+- [runAgentTUI API Reference](/docs/reference/ai-toolkit-tui/run-agent-tui) for
   detailed parameter documentation

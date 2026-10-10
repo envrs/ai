@@ -56,7 +56,7 @@ const getTagsByCount = (items: RecipeItem[], selectedEnvironment: string) => {
 
 /**
  * Filterable recipe list on the /resources/recipes landing page (ported
- * from the legacy ai-sdk.dev CookbookList component).
+ * from the legacy ai-toolkit.dev CookbookList component).
  */
 export const RecipeList = ({
   items,

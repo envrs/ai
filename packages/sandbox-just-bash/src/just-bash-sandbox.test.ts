@@ -1,4 +1,4 @@
-import { HarnessCapabilityUnsupportedError } from '@ai-sdk/harness';
+import { HarnessCapabilityUnsupportedError } from '@ai-toolkit/harness';
 import { defineCommand, Sandbox } from 'just-bash';
 import { describe, expect, it, vi } from 'vitest';
 import {

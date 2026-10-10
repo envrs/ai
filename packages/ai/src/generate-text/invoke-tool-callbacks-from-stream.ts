@@ -2,7 +2,7 @@ import type {
   InferToolSetContext,
   ModelMessage,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { createIdMap } from '../util/create-id-map';
 import { getOwn } from '../util/get-own';
 import type { LanguageModelStreamPart } from './stream-language-model-call';

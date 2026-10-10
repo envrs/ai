@@ -10,7 +10,7 @@ import type { HarnessDiagnostic, HarnessDiagnosticConsumer } from './types';
  * framework drives its `Telemetry` methods for spans and calls
  * `ingestDiagnostic` for diagnostics.
  *
- * No external collector or OTel setup required — this is the AI-SDK-idiomatic
+ * No external collector or OTel setup required — this is the ai-toolkit-idiomatic
  * replacement for the original SDK's host-side artifact files.
  */
 export interface FileReporterOptions {

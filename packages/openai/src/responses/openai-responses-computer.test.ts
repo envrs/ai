@@ -1,8 +1,8 @@
 import {
   convertReadableStreamToArray,
   mockId,
-} from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it } from 'vitest';
 import { convertToOpenAIResponsesInput } from './convert-to-openai-responses-input';
 import { OpenAIResponsesLanguageModel } from './openai-responses-language-model';

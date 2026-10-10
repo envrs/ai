@@ -2,7 +2,7 @@ import {
   UnsupportedFunctionalityError,
   type Experimental_RealtimeModelV4ClientEvent as RealtimeModelV4ClientEvent,
   type Experimental_RealtimeModelV4ServerEvent as RealtimeModelV4ServerEvent,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { z } from 'zod/v4';
 import { buildOpenAILiveSessionConfig } from './openai-live-session-config';
 

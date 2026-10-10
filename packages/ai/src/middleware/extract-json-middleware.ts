@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4Content,
   LanguageModelV4StreamPart,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { LanguageModelMiddleware } from '../types/language-model-middleware';
 import { createIdMap } from '../util/create-id-map';
 

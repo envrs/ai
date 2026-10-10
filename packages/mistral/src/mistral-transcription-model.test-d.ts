@@ -1,4 +1,4 @@
-import type { TranscriptionModelV4 } from '@ai-sdk/provider';
+import type { TranscriptionModelV4 } from '@ai-toolkit/provider';
 import { expectTypeOf } from 'vitest';
 import {
   mistral,
@@ -23,7 +23,7 @@ const options = {
   language: 'en',
   temperature: 0.2,
   diarize: true,
-  contextBias: ['Vercel', 'AI_SDK'],
+  contextBias: ['khulnasoft', 'ai-toolkit'],
 } satisfies MistralTranscriptionModelOptions;
 expectTypeOf(options).toMatchTypeOf<MistralTranscriptionModelOptions>();
 

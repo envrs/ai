@@ -1,4 +1,4 @@
-import type { FetchFunction, Resolvable } from '@ai-sdk/provider-utils';
+import type { FetchFunction, Resolvable } from '@ai-toolkit/provider-utils';
 
 export type HeyGenConfig = {
   provider: string;

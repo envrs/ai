@@ -1,7 +1,7 @@
 import {
   tool,
   type Experimental_SandboxSession as SandboxSession,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { mockSandboxSessionFileStubs } from '../test/mock-sandbox';
 import * as z from 'zod/v4';
@@ -1105,7 +1105,7 @@ describe('executeToolCall', () => {
 
   describe('dynamic tools', () => {
     it('should set dynamic: true for dynamic tools on success', async () => {
-      const { dynamicTool } = await import('@ai-sdk/provider-utils');
+      const { dynamicTool } = await import('@ai-toolkit/provider-utils');
 
       const result = await executeToolCall({
         toolCall: createToolCall({ dynamic: true }),
@@ -1128,7 +1128,7 @@ describe('executeToolCall', () => {
     });
 
     it('should set dynamic: true for dynamic tools on error', async () => {
-      const { dynamicTool } = await import('@ai-sdk/provider-utils');
+      const { dynamicTool } = await import('@ai-toolkit/provider-utils');
 
       const result = await executeToolCall({
         toolCall: createToolCall({ dynamic: true }),

@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'node:url';
 import { execPath } from 'node:process';
 import type * as acp from '@agentclientprotocol/sdk';
-import { HarnessBridgeCapabilityUnsupportedError } from '@ai-sdk/harness/bridge';
+import { HarnessBridgeCapabilityUnsupportedError } from '@ai-toolkit/harness/bridge';
 import type { ACPHostToolMCPTransport } from '../acp-v1-settings';
 import type { HostToolRelay } from './host-tool-relay';
 
@@ -35,15 +35,15 @@ export function createHostToolMcpServerDefinition({
       args: [fileURLToPath(new URL('./host-tool-mcp.mjs', import.meta.url))],
       env: [
         {
-          name: 'AI_SDK_ACP_HOST_TOOLS_FILE',
+          name: 'ai-toolkit_ACP_HOST_TOOLS_FILE',
           value: catalogPath,
         },
         {
-          name: 'AI_SDK_ACP_HOST_TOOL_RELAY_URL',
+          name: 'ai-toolkit_ACP_HOST_TOOL_RELAY_URL',
           value: relay.url,
         },
         {
-          name: 'AI_SDK_ACP_HOST_TOOL_RELAY_CREDENTIAL',
+          name: 'ai-toolkit_ACP_HOST_TOOL_RELAY_CREDENTIAL',
           value: relay.credential,
         },
       ],

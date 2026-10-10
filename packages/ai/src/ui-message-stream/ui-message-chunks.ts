@@ -1,5 +1,5 @@
 import { citationSchema, type Citation } from '../types/citation';
-import type { JSONObject } from '@ai-sdk/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 import {
   providerMetadataSchema,
   type ProviderMetadata,
@@ -14,7 +14,7 @@ import type {
 } from '../ui/ui-messages';
 import type { ValueOf } from '../util/value-of';
 import { z, type ZodType } from '../util/zod';
-import { lazySchema, zodSchema } from '@ai-sdk/provider-utils';
+import { lazySchema, zodSchema } from '@ai-toolkit/provider-utils';
 
 const toolMetadataSchema: ZodType<JSONObject> = z.record(
   z.string(),

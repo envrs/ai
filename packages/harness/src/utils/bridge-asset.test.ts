@@ -10,7 +10,7 @@ describe('createReadBridgeAsset', () => {
 
   beforeEach(async () => {
     temporaryDirectory = await mkdtemp(
-      join(tmpdir(), 'ai-sdk-harness-bridge-asset-'),
+      join(tmpdir(), 'ai-toolkit-harness-bridge-asset-'),
     );
   });
 

@@ -31,13 +31,13 @@ import {
   type HarnessV1Skill,
   type HarnessV1StreamPart,
   type HarnessV1ToolSpec,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   getRestrictedSandboxSession,
   resolveSandboxHomeDir,
   writeSkills,
-} from '@ai-sdk/harness/utils';
-import type { Experimental_SandboxSession as SandboxSession } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/utils';
+import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import {
   createPiModelRuntime,
   registerPiProviders,
@@ -382,7 +382,7 @@ async function isWorkspaceAvailableOnHost({
   // filesystem API before using the workspace directly.
   const probePath = path.join(
     sessionWorkDir,
-    `.ai-sdk-harness-pi-${randomUUID()}`,
+    `.ai-toolkit-harness-pi-${randomUUID()}`,
   );
   const probeContent = randomUUID();
 
@@ -432,7 +432,7 @@ export async function createPiSession(
   // that would otherwise turn a session id like `2026-05-29T17:54:27` into a
   // sub-directory tree on disk.
   const safeSessionId = input.sessionId.replace(/[\\/: ]/g, '-');
-  const hostRoot = path.join(tmpdir(), 'ai-sdk-harness', 'pi', safeSessionId);
+  const hostRoot = path.join(tmpdir(), 'ai-toolkit-harness', 'pi', safeSessionId);
   const hostAgentDir = path.join(hostRoot, 'agent');
   const hostSessionDir = path.join(hostRoot, 'sessions');
   const toolSafeSandboxSession = getRestrictedSandboxSession(

@@ -2,14 +2,14 @@ import {
   NoSuchModelError,
   type Experimental_DecisionModelV4 as DecisionModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   loadOptionalSetting,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   DecisionTypeSafeAiModel,
   type TypeSafeAiDecisionModelId,
@@ -53,7 +53,7 @@ export function createTypeSafeAi(
         Authorization: `Bearer ${loadApiKey({ apiKey: options.apiKey, environmentVariableName: 'TYPESAFE_AI_API_KEY', description: 'TypeSafe' })}`,
         ...options.headers,
       },
-      `ai-sdk-typesafe-ai/${VERSION}`,
+      `ai-toolkit-typesafe-ai/${VERSION}`,
     );
 
   const decisionModel = (modelId: TypeSafeAiDecisionModelId) =>

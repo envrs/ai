@@ -2,12 +2,12 @@ import {
   NoSuchModelError,
   type TranscriptionModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { RevaiTranscriptionModel } from './revai-transcription-model';
 import type { RevaiTranscriptionModelId } from './revai-transcription-options';
 import { VERSION } from './version';
@@ -65,7 +65,7 @@ export function createRevai(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-revai/${VERSION}`,
+      `ai-toolkit-revai/${VERSION}`,
     );
 
   const createTranscriptionModel = (modelId: RevaiTranscriptionModelId) =>

@@ -1,7 +1,7 @@
 import type {
   Experimental_VideoModelV4,
   Experimental_VideoModelV4VideoData,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { createWebhook, getStepMetadata } from 'workflow';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { experimental_generateVideo } from './generate-video.js';
@@ -122,7 +122,7 @@ describe('experimental_generateVideo', () => {
       'https://example.com/workflow-webhook',
     );
     expect(doStart.mock.calls[0][0].headers).toMatchObject({
-      'idempotency-key': 'aisdk_workflow_video_step-1',
+      'idempotency-key': 'ai-toolkit_workflow_video_step-1',
       'x-test': 'test',
     });
     expect(doStatus).not.toHaveBeenCalled();

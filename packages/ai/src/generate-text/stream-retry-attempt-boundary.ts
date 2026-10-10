@@ -1,4 +1,4 @@
-import type { SharedV4Warning } from '@ai-sdk/provider';
+import type { SharedV4Warning } from '@ai-toolkit/provider';
 
 const streamRetryAttemptBoundarySymbol = Symbol('streamRetryAttemptBoundary');
 

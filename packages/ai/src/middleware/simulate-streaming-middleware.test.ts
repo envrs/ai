@@ -1,9 +1,9 @@
-import type { LanguageModelV4Usage } from '@ai-sdk/provider';
-import { jsonSchema, tool } from '@ai-sdk/provider-utils';
+import type { LanguageModelV4Usage } from '@ai-toolkit/provider';
+import { jsonSchema, tool } from '@ai-toolkit/provider-utils';
 import {
   convertAsyncIterableToArray,
   mockId,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import {
   afterEach,
   beforeEach,

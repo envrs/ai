@@ -4,7 +4,7 @@ import type {
   Experimental_SandboxSession as SandboxSession,
   ModelMessage,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type {
   GenerateTextOnEndCallback,
   GenerateTextOnStartCallback,

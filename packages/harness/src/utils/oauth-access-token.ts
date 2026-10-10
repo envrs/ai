@@ -1,4 +1,4 @@
-import { isRecord, safeParseJSON } from '@ai-sdk/provider-utils';
+import { isRecord, safeParseJSON } from '@ai-toolkit/provider-utils';
 import { getJwtExpiresAt } from './native-subscription/jwt';
 
 const DEFAULT_REFRESH_WINDOW_MS = 300_000;

@@ -4,12 +4,12 @@ import {
   type JSONSchema7Definition,
   type LanguageModelV4CallOptions,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
-import { asSchema } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { asSchema } from '@ai-toolkit/provider-utils';
 import {
   anthropicTools,
   prepareTools as prepareAnthropicTools,
-} from '@ai-sdk/anthropic/internal';
+} from '@ai-toolkit/anthropic/internal';
 import {
   isAnthropicModel as detectAnthropicModel,
   supportsStrictTools,

@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4Prompt,
   LanguageModelV4ToolResultPart,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 export interface ProviderExecutedToolResultPosition {
   toolCallId: string;

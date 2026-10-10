@@ -1,14 +1,14 @@
 import { describe, it, expect, vi, beforeEach, type Mock } from 'vitest';
-import { loadApiKey } from '@ai-sdk/provider-utils';
-import { NoSuchModelError } from '@ai-sdk/provider';
-import { AnthropicLanguageModel } from '@ai-sdk/anthropic/internal';
+import { loadApiKey } from '@ai-toolkit/provider-utils';
+import { NoSuchModelError } from '@ai-toolkit/provider';
+import { AnthropicLanguageModel } from '@ai-toolkit/anthropic/internal';
 import { createMiniMax } from './minimax-provider';
 import { MiniMaxVideoModel } from './minimax-video-model';
 
 const AnthropicLanguageModelMock = AnthropicLanguageModel as unknown as Mock;
 const MiniMaxVideoModelMock = MiniMaxVideoModel as unknown as Mock;
 
-vi.mock('@ai-sdk/anthropic/internal', () => {
+vi.mock('@ai-toolkit/anthropic/internal', () => {
   const mockConstructor = vi.fn().mockImplementation(function (
     this: any,
     modelId: string,
@@ -38,8 +38,8 @@ vi.mock('./minimax-video-model', () => {
   };
 });
 
-vi.mock('@ai-sdk/provider-utils', async () => {
-  const actual = await vi.importActual('@ai-sdk/provider-utils');
+vi.mock('@ai-toolkit/provider-utils', async () => {
+  const actual = await vi.importActual('@ai-toolkit/provider-utils');
   return {
     ...actual,
     loadApiKey: vi.fn().mockReturnValue('mock-api-key'),
@@ -178,7 +178,7 @@ describe('MiniMaxProvider', () => {
 
       expect(headers).toMatchObject({
         authorization: 'Bearer mock-api-key',
-        'user-agent': expect.stringMatching(/^ai-sdk-minimax\//),
+        'user-agent': expect.stringMatching(/^ai-toolkit-minimax\//),
       });
       expect(headers).not.toHaveProperty('x-api-key');
       expect(headers).not.toHaveProperty('anthropic-version');

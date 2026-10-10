@@ -1,35 +1,35 @@
-# AI SDK - Voyage AI Provider
+# ai-toolkit - Voyage AI Provider
 
-The **[Voyage AI provider](https://ai-sdk.dev/providers/ai-sdk-providers/voyage)** for the [AI SDK](https://ai-sdk.dev/docs) contains embedding and reranking model support for the [Voyage AI](https://voyageai.com/) APIs.
+The **[Voyage AI provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/voyage)** for the [ai-toolkit](https://ai-toolkit.dev/docs) contains embedding and reranking model support for the [Voyage AI](https://voyageai.com/) APIs.
 
 ## Setup
 
-The Voyage AI provider is available in the `@ai-sdk/voyage` module. You can install it with
+The Voyage AI provider is available in the `@ai-toolkit/voyage` module. You can install it with
 
 ```bash
-npm i @ai-sdk/voyage
+npm i @ai-toolkit/voyage
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `voyage` from `@ai-sdk/voyage`:
+You can import the default provider instance `voyage` from `@ai-toolkit/voyage`:
 
 ```ts
-import { voyage } from '@ai-sdk/voyage';
+import { voyage } from '@ai-toolkit/voyage';
 ```
 
 ## Example
 
 ```ts
-import { voyage } from '@ai-sdk/voyage';
+import { voyage } from '@ai-toolkit/voyage';
 import { embedMany } from 'ai';
 
 const { embeddings } = await embedMany({
@@ -43,4 +43,4 @@ const { embeddings } = await embedMany({
 
 ## Documentation
 
-Please check out the **[Voyage AI provider documentation](https://ai-sdk.dev/providers/ai-sdk-providers/voyage)** for more information.
+Please check out the **[Voyage AI provider documentation](https://ai-toolkit.dev/providers/ai-toolkit-providers/voyage)** for more information.

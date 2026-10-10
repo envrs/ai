@@ -1,6 +1,6 @@
 # Harness abstraction architecture
 
-This document explains how harness agents, sandbox sessions, and harness adapters fit together in the AI SDK.
+This document explains how harness agents, sandbox sessions, and harness adapters fit together in the ai-toolkit.
 It starts with a high-level view and then describes the main decisions involved in adding a new harness adapter.
 
 ## High-level architecture
@@ -47,7 +47,7 @@ Sandbox provisioning and lifecycle behavior are described in [Sandbox ownership 
 
 The adapter must operate on that provided sandbox.
 
-If an underlying runtime cannot be made to work against the sandbox supplied by the AI SDK harness framework, it is not suitable to be implemented as an AI SDK harness.
+If an underlying runtime cannot be made to work against the sandbox supplied by the ai-toolkit harness framework, it is not suitable to be implemented as an ai-toolkit harness.
 
 The adapter is the translation boundary between the native coding-agent runtime and the harness protocol.
 It should expose native runtime output, tool calls, approvals, completion, and usage through the harness stream and control surfaces without leaking runtime-specific protocol details into `HarnessAgent`.
@@ -209,7 +209,7 @@ The exception is per-session bridge authentication tokens, which bridge-backed a
 
 Credential brokering requires a `HarnessV1NetworkSandboxSession` implementation with `addRequestTransformations()` and is strongly recommended. The adapter installs outbound HTTPS request transformations that match the placeholder and destination, then inject the real credential after the request leaves the sandbox security boundary.
 
-On every brokered start or resume, bridge-backed adapters must call `resolveSandboxCredentialEnvironment` from `@ai-sdk/harness/utils`. It returns only currently present credential names, preserves sandbox-facing values for matching names, and generates placeholders for newly present names. Use that result in the sandbox environment and persist it in the next lifecycle state; build request transformations against the current host credentials.
+On every brokered start or resume, bridge-backed adapters must call `resolveSandboxCredentialEnvironment` from `@ai-toolkit/harness/utils`. It returns only currently present credential names, preserves sandbox-facing values for matching names, and generates placeholders for newly present names. Use that result in the sandbox environment and persist it in the next lifecycle state; build request transformations against the current host credentials.
 
 When `addRequestTransformations()` is unavailable, adapters fall back to forwarding authentication values into the sandbox process. This is the only supported case in which real model or provider credentials may enter the sandbox. The adapter warns if a real credential remains in the forwarded environment. It does not warn if `credentialForwarding` replaces every real credential with a caller-managed value.
 

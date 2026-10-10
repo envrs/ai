@@ -1,4 +1,4 @@
-import { tool, type FlexibleSchema, type Tool } from '@ai-sdk/provider-utils';
+import { tool, type FlexibleSchema, type Tool } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { harnessV1QuestionsTool } from './harness-v1-questions-tool';
 
@@ -64,7 +64,7 @@ export type HarnessV1BuiltinToolUseKind = 'readonly' | 'edit' | 'bash';
 
 /**
  * A tool that the adapter's underlying runtime exposes natively. Extends the
- * AI SDK `Tool` shape with two optional harness-specific fields:
+ * ai-toolkit `Tool` shape with two optional harness-specific fields:
  *
  *  - `nativeName`: the name as the underlying runtime knows it. Required
  *    only when the tool's key in the harness's `builtinTools` is not the
@@ -78,7 +78,7 @@ export type HarnessV1BuiltinToolUseKind = 'readonly' | 'edit' | 'bash';
  *    `Bash` and Codex's `shell` are the same kind of tool.
  *
  * Always set both fields together via the `commonTool` helper, or neither
- * (declare the tool with the AI SDK's `tool()` directly).
+ * (declare the tool with the ai-toolkit's `tool()` directly).
  */
 export type HarnessV1BuiltinTool<INPUT = unknown, OUTPUT = unknown> = Tool<
   INPUT,

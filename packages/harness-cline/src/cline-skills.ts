@@ -1,5 +1,5 @@
 import path from 'node:path';
-import type { HarnessV1Skill } from '@ai-sdk/harness';
+import type { HarnessV1Skill } from '@ai-toolkit/harness';
 import type { AgentTool } from '@cline/agents';
 import { createDefaultTools, type ToolExecutors } from '@cline/core';
 

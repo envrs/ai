@@ -1,8 +1,8 @@
-import { isJSONObject } from '@ai-sdk/provider';
+import { isJSONObject } from '@ai-toolkit/provider';
 import type { MCPAppMetadata, MCPAppRendererProps } from './types';
 
 /**
- * Extracts MCP App metadata from an AI SDK tool UI part.
+ * Extracts MCP App metadata from an ai-toolkit tool UI part.
  *
  * @example
  * ```ts
@@ -46,10 +46,10 @@ export function getMCPAppFromToolPart(
 }
 
 /**
- * Converts an AI SDK tool output into the MCP Apps tool-result shape.
+ * Converts an ai-toolkit tool output into the MCP Apps tool-result shape.
  *
  * MCP Apps expect tool results to have `content` and optional
- * `structuredContent`. MCP tools already return that shape, but typed AI SDK
+ * `structuredContent`. MCP tools already return that shape, but typed ai-toolkit
  * tools may return only structured data. This helper wraps structured-only
  * outputs so the iframe can receive a valid tool result notification.
  *

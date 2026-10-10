@@ -1,4 +1,4 @@
-const marker = 'vercel.ai.gateway.error';
+const marker = 'khulnasoft.ai.gateway.error';
 const symbol = Symbol.for(marker);
 
 export abstract class GatewayError extends Error {

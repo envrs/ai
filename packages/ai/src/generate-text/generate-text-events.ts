@@ -3,7 +3,7 @@ import type {
   InferToolSetContext,
   ProviderOptions,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { LanguageModelCallOptions } from '../prompt/language-model-call-options';
 import type { TimeoutConfiguration } from '../prompt/request-options';
 import type { StandardizedPrompt } from '../prompt/standardize-prompt';

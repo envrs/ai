@@ -4,10 +4,10 @@ import type {
   ImageModelV4,
   ImageModelV4ProviderMetadata,
   ImageModelV2ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 /**
- * Image model that is used by the AI SDK.
+ * Image model that is used by the ai-toolkit.
  */
 export type ImageModel = string | ImageModelV4 | ImageModelV3 | ImageModelV2;
 

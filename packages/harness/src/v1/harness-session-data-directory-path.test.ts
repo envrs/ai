@@ -2,7 +2,7 @@ import { posix } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { harnessSessionDataDirectoryPath } from './harness-session-data-directory-path';
 
-const stateDirectory = '/home/agent/.ai-sdk-harness';
+const stateDirectory = '/home/agent/.ai-toolkit-harness';
 const agentRunsDirectory = `${stateDirectory}/.agent-runs`;
 
 describe('harnessSessionDataDirectoryPath', () => {

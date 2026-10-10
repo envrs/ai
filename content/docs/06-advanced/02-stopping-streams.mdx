@@ -1,6 +1,6 @@
 ---
 title: Stopping Streams
-description: Learn how to cancel streams with the AI SDK
+description: Learn how to cancel streams with the ai-toolkit
 ---
 
 # Stopping Streams
@@ -8,11 +8,11 @@ description: Learn how to cancel streams with the AI SDK
 Canceling ongoing streams is often needed.
 For example, users might want to stop a stream when they realize that the response is not what they want.
 
-The different parts of the AI SDK support canceling streams in different ways.
+The different parts of the ai-toolkit support canceling streams in different ways.
 
-## AI SDK Core
+## ai-toolkit Core
 
-The AI SDK functions have an `abortSignal` argument that you can use to cancel a stream.
+The ai-toolkit functions have an `abortSignal` argument that you can use to cancel a stream.
 You would use this if you want to cancel a stream from the server side to the LLM API, e.g. by
 forwarding the `abortSignal` from the request.
 
@@ -41,10 +41,10 @@ export async function POST(req: Request) {
 }
 ```
 
-## AI SDK UI
+## ai-toolkit UI
 
 The hooks, e.g. `useChat` or `useCompletion`, provide a `stop` helper function that can be used to cancel a stream.
-This aborts the HTTP request from the client. To also stop the model request on the server, your server runtime must propagate the client disconnect to the request's `AbortSignal`, and your route must forward that signal to the AI SDK Core call as shown above.
+This aborts the HTTP request from the client. To also stop the model request on the server, your server runtime must propagate the client disconnect to the request's `AbortSignal`, and your route must forward that signal to the ai-toolkit Core call as shown above.
 
 <Note type="warning">
   Stream abort functionality is not compatible with stream resumption. If you're
@@ -56,7 +56,7 @@ This aborts the HTTP request from the client. To also stop the model request on 
 ```tsx file="app/page.tsx" highlight="6,11-14"
 'use client';
 
-import { useCompletion } from '@ai-sdk/react';
+import { useCompletion } from '@ai-toolkit/react';
 
 export default function Chat() {
   const { input, completion, stop, status, handleSubmit, handleInputChange } =
@@ -78,11 +78,11 @@ export default function Chat() {
 }
 ```
 
-### Vercel
+### khulnasoft
 
-On Vercel, [request cancellation](https://vercel.com/docs/functions/functions-api-reference#cancel-requests) is only supported in the Node.js runtime and must be enabled for each function that needs it. Add `supportsCancellation` to the function's configuration in `vercel.json`:
+On khulnasoft, [request cancellation](https://khulnasoft.com/docs/functions/functions-api-reference#cancel-requests) is only supported in the Node.js runtime and must be enabled for each function that needs it. Add `supportsCancellation` to the function's configuration in `khulnasoft.json`:
 
-```json filename="vercel.json"
+```json filename="khulnasoft.json"
 {
   "functions": {
     "app/api/chat/route.ts": {
@@ -92,7 +92,7 @@ On Vercel, [request cancellation](https://vercel.com/docs/functions/functions-ap
 }
 ```
 
-With cancellation enabled, calling `stop()` aborts the client request, Vercel aborts `req.signal`, and forwarding `req.signal` as `abortSignal` cancels the model request.
+With cancellation enabled, calling `stop()` aborts the client request, khulnasoft aborts `req.signal`, and forwarding `req.signal` as `abortSignal` cancels the model request.
 
 <Note type="warning">
   Without `supportsCancellation`, `stop()` still stops the client-side stream
@@ -165,7 +165,7 @@ for await (const part of result.stream) {
 When using `toUIMessageStream`, you need to handle stream abortion slightly differently. The `onEnd` callback receives an `isAborted` parameter, and you should pass `consumeStream` to `createUIMessageStreamResponse` to ensure proper abort handling:
 
 ```tsx highlight="3,21,24-30,34"
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import {
   consumeStream,
   convertToModelMessages,
@@ -213,8 +213,8 @@ stream observes an `abort` part first, `outcome.status` is `'aborted'`,
 `isAborted` is `true`, and `isCancelled` is absent. Check both flags when the
 same cleanup should run for either case.
 
-## AI SDK RSC
+## ai-toolkit RSC
 
 <Note type="warning">
-  The AI SDK RSC does not currently support stopping streams.
+  The ai-toolkit RSC does not currently support stopping streams.
 </Note>

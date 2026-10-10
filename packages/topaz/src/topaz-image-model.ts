@@ -1,12 +1,12 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   InvalidArgumentError,
   InvalidResponseDataError,
   type ImageModelV4,
   type ImageModelV4CallOptions,
   type ImageModelV4Result,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -22,7 +22,7 @@ import {
   serializeModelOptions,
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { TopazConfig } from './topaz-config';
 import { topazFailedResponseHandler } from './topaz-error';
@@ -334,7 +334,7 @@ export class TopazImageModel implements ImageModelV4 {
       }
 
       if (status.status === 'Failed' || status.status === 'Cancelled') {
-        throw new AISDKError({
+        throw new ai-toolkitError({
           name: 'TOPAZ_IMAGE_ENHANCEMENT_FAILED',
           message: `Topaz image enhancement ${status.status.toLowerCase()} for process ${processId}.`,
         });
@@ -342,7 +342,7 @@ export class TopazImageModel implements ImageModelV4 {
 
       if (Date.now() + pollIntervalMillis > deadline) {
         await this.cancelQuietly(processId, headers ?? {});
-        throw new AISDKError({
+        throw new ai-toolkitError({
           name: 'TOPAZ_IMAGE_ENHANCEMENT_TIMEOUT',
           message:
             `Topaz image enhancement did not finish within ${pollTimeoutMillis}ms ` +

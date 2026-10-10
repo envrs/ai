@@ -1,7 +1,7 @@
 import {
   APICallError,
   type Experimental_VideoModelV4CallOptions as VideoModelV4CallOptions,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { describe, expect, it, vi } from 'vitest';
 import { MockVideoModelV4 } from '../test/mock-video-model-v4';
 import { experimental_startVideo } from './start-video';
@@ -54,7 +54,7 @@ describe('experimental_startVideo', () => {
       providerOptions: {},
       headers: {
         'user-agent': `ai/0.0.0-test`,
-        'idempotency-key': expect.stringMatching(/^aisdk_vid_/),
+        'idempotency-key': expect.stringMatching(/^ai-toolkit_vid_/),
       },
       abortSignal: undefined,
       webhookUrl: undefined,

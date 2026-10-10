@@ -2,8 +2,8 @@ import type {
   Experimental_DecisionModelV4CallOptions as DecisionModelV4CallOptions,
   Experimental_DecisionModelV4Result as DecisionModelV4Result,
   Experimental_DecisionModelV4Question as DecisionQuestion,
-} from '@ai-sdk/provider';
-import type { Context, ProviderOptions } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import type { Context, ProviderOptions } from '@ai-toolkit/provider-utils';
 import type { DecisionState } from './decision-state';
 import type { DecisionResult } from './decision-result';
 

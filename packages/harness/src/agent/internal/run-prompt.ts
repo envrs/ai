@@ -25,13 +25,13 @@ import {
   type ToolApprovalResponse,
   type ToolResultPart,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   getErrorMessage,
   type LanguageModelV4FinishReason,
   type LanguageModelV4ToolCall,
   type LanguageModelV4Usage,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   addLanguageModelUsage,
   asLanguageModelUsage,
@@ -97,7 +97,7 @@ function unwrapToolResultOutput(toolResult: ToolResultPart): {
 /**
  * Drive one prompt turn end-to-end:
  *  - call `session.doPromptTurn` via `toHarnessStream`
- *  - translate harness events to AI SDK `TextStreamPart`s and push into the
+ *  - translate harness events to ai-toolkit `TextStreamPart`s and push into the
  *    result object
  *  - execute host-side user tools when their `tool-call` events arrive and
  *    submit results back to the harness
@@ -1437,7 +1437,7 @@ export function runPrompt<
                 submitToolResult,
                 onPreliminaryResult: preliminaryOutput => {
                   /*
-                   * Project a `yield`ed value as a preliminary AI SDK
+                   * Project a `yield`ed value as a preliminary ai-toolkit
                    * `tool-result` part. Unlike the final result — which is
                    * submitted to the runtime, echoed back as a `tool-result`
                    * event, and stripped on its way through the loop above —
@@ -1658,13 +1658,13 @@ async function maybeExecuteHostTool<TOOLS extends ToolSet>(input: {
   try {
     /*
      * Normalize the tool's return value through `executeTool`, the same helper
-     * the non-harness AI SDK uses, so generator `execute` functions behave
+     * the non-harness ai-toolkit uses, so generator `execute` functions behave
      * identically here: each `yield`ed value arrives as a `preliminary` part
      * and the last `yield` is re-emitted as the `final` part; a plain value or
      * Promise arrives as a single `final` part. The underlying runtimes accept
      * exactly one tool result per call, so only the final value is submitted
      * back to the model — preliminary values are surfaced to the consumer
-     * stream alone, matching how the AI SDK treats `onPreliminaryToolResult`.
+     * stream alone, matching how the ai-toolkit treats `onPreliminaryToolResult`.
      */
     const output = await input.wrappedExecuteTool({
       toolCallId: input.event.toolCallId,
@@ -1709,7 +1709,7 @@ async function maybeExecuteHostTool<TOOLS extends ToolSet>(input: {
 
 /*
  * Validate an inbound `tool-call` event against the merged tool set's schema
- * using the AI SDK's canonical `parseToolCall`. Returns an AI SDK `tool-call`
+ * using the ai-toolkit's canonical `parseToolCall`. Returns an ai-toolkit `tool-call`
  * stream part with parsed input on success, or a `dynamic + invalid: true`
  * part on failure (unknown tool, schema mismatch, malformed JSON).
  *

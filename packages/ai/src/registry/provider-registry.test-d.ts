@@ -10,7 +10,7 @@ import type {
   SkillsV4,
   SpeechModelV4,
   TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { describe, expectTypeOf, it } from 'vitest';
 import type { ExtractLiteralUnion } from '../util/extract-literal-union';
 import { customProvider } from './custom-provider';

@@ -1,11 +1,11 @@
 ---
 title: WorkflowAgent
-description: Build durable, resumable agents with the WorkflowAgent from @ai-sdk/workflow.
+description: Build durable, resumable agents with the WorkflowAgent from @ai-toolkit/workflow.
 ---
 
 # WorkflowAgent
 
-The `WorkflowAgent` from `@ai-sdk/workflow` is designed for building **durable, resumable agents** that run inside a [workflow](https://vercel.com/docs/workflow). It provides the same agent loop as the [`ToolLoopAgent`](/docs/agents/building-agents), but adds automatic state persistence, tool schema serialization, and built-in tool approval flows that survive workflow step boundaries.
+The `WorkflowAgent` from `@ai-toolkit/workflow` is designed for building **durable, resumable agents** that run inside a [workflow](https://khulnasoft.com/docs/workflow). It provides the same agent loop as the [`ToolLoopAgent`](/docs/agents/building-agents), but adds automatic state persistence, tool schema serialization, and built-in tool approval flows that survive workflow step boundaries.
 
 ## Why Durable Agents?
 
@@ -22,7 +22,7 @@ A standard `ToolLoopAgent` runs entirely in memory — if the process crashes, a
 
 |                         | ToolLoopAgent             | WorkflowAgent                                    |
 | ----------------------- | ------------------------- | ------------------------------------------------ |
-| **Package**             | `ai`                      | `@ai-sdk/workflow`                               |
+| **Package**             | `ai`                      | `@ai-toolkit/workflow`                               |
 | **Runtime**             | In-memory                 | Workflow                                         |
 | **Durability**          | Lost on crash             | Survives restarts                                |
 | **Tool retries**        | Manual                    | Automatic (via workflow steps)                   |
@@ -36,17 +36,17 @@ For simpler use cases that don't need durability, use [`ToolLoopAgent`](/docs/ag
 ## Installation
 
 ```bash
-npm install @ai-sdk/workflow workflow@5
+npm install @ai-toolkit/workflow workflow@5
 ```
 
-`@ai-sdk/workflow` requires Workflow 5, as well as the `ai` package and `zod` peer dependencies. The `workflow` package provides the Workflow DevKit runtime (`getWritable`, `'use workflow'`, `'use step'`).
+`@ai-toolkit/workflow` requires Workflow 5, as well as the `ai` package and `zod` peer dependencies. The `workflow` package provides the Workflow DevKit runtime (`getWritable`, `'use workflow'`, `'use step'`).
 
 ## Creating a WorkflowAgent
 
 Define an agent by instantiating the `WorkflowAgent` class with a model, instructions, and tools:
 
 ```ts
-import { WorkflowAgent } from '@ai-sdk/workflow';
+import { WorkflowAgent } from '@ai-toolkit/workflow';
 import { tool } from 'ai';
 import { z } from 'zod';
 
@@ -77,7 +77,7 @@ The `model` parameter accepts two forms:
 new WorkflowAgent({ model: 'anthropic/claude-sonnet-5.5' });
 
 // Provider instance
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 new WorkflowAgent({ model: openai('gpt-6-astra') });
 ```
 
@@ -92,7 +92,7 @@ new WorkflowAgent({ model: openai('gpt-6-astra') });
 ### End-to-End Example
 
 ```ts filename="workflow/agent-chat.ts"
-import { WorkflowAgent, type ModelCallStreamPart } from '@ai-sdk/workflow';
+import { WorkflowAgent, type ModelCallStreamPart } from '@ai-toolkit/workflow';
 import { convertToModelMessages, tool, type UIMessage } from 'ai';
 import { getWritable } from 'workflow';
 import { z } from 'zod';
@@ -136,7 +136,7 @@ export async function chat(messages: UIMessage[]) {
 ```
 
 ```ts filename="app/api/chat/route.ts"
-import { createModelCallToUIChunkTransform } from '@ai-sdk/workflow';
+import { createModelCallToUIChunkTransform } from '@ai-toolkit/workflow';
 import { createUIMessageStreamResponse, type UIMessage } from 'ai';
 import { start } from 'workflow/api';
 import { chat } from '@/workflow/agent-chat';
@@ -176,7 +176,7 @@ export async function chat(messages: UIMessage[]) {
 Unlike `ToolLoopAgent` where you consume the returned stream, `WorkflowAgent` writes raw `ModelCallStreamPart` chunks to a `writable` stream provided by the workflow runtime via `getWritable()`. At the response boundary, use `createModelCallToUIChunkTransform()` to convert these into `UIMessageChunk` objects for the client:
 
 ```ts
-import { createModelCallToUIChunkTransform } from '@ai-sdk/workflow';
+import { createModelCallToUIChunkTransform } from '@ai-toolkit/workflow';
 import { createUIMessageStreamResponse } from 'ai';
 
 // Convert raw model stream parts → UI message chunks
@@ -192,13 +192,13 @@ the retried output.
 
 ## Resumable Streaming with WorkflowChatTransport
 
-Workflow functions can time out or be interrupted by network failures. `WorkflowChatTransport` is a [`ChatTransport`](/docs/ai-sdk-ui/transport) implementation that handles these interruptions automatically — it detects when a stream ends without a `finish` event and reconnects to resume from where it left off.
+Workflow functions can time out or be interrupted by network failures. `WorkflowChatTransport` is a [`ChatTransport`](/docs/ai-toolkit-ui/transport) implementation that handles these interruptions automatically — it detects when a stream ends without a `finish` event and reconnects to resume from where it left off.
 
 ```tsx filename="app/page.tsx"
 'use client';
 
-import { useChat } from '@ai-sdk/react';
-import { WorkflowChatTransport } from '@ai-sdk/workflow/client';
+import { useChat } from '@ai-toolkit/react';
+import { WorkflowChatTransport } from '@ai-toolkit/workflow/client';
 import { useMemo } from 'react';
 
 export default function Chat() {
@@ -220,7 +220,7 @@ export default function Chat() {
 The transport requires your POST endpoint to return an `x-workflow-run-id` response header, and a GET endpoint at `{api}/{runId}/stream` for reconnection:
 
 ```ts filename="app/api/chat/route.ts"
-import { createModelCallToUIChunkTransform } from '@ai-sdk/workflow';
+import { createModelCallToUIChunkTransform } from '@ai-toolkit/workflow';
 import { createUIMessageStreamResponse, type UIMessage } from 'ai';
 import { start } from 'workflow/api';
 import { chat } from '@/workflow/agent-chat';
@@ -239,7 +239,7 @@ export async function POST(request: Request) {
 ```
 
 ```ts filename="app/api/chat/[runId]/stream/route.ts"
-import { createModelCallToUIChunkTransform } from '@ai-sdk/workflow';
+import { createModelCallToUIChunkTransform } from '@ai-toolkit/workflow';
 import { createUIMessageStreamResponse } from 'ai';
 import type { NextRequest } from 'next/server';
 import { getRun } from 'workflow/api';
@@ -282,7 +282,7 @@ stream from index `0` and apply the non-negative UI cursor in
 require a durable stream that already stores `UIMessageChunk` objects and
 cannot be used with this raw-to-UI conversion.
 
-For the full API reference, see [`WorkflowChatTransport`](/docs/reference/ai-sdk-workflow/workflow-chat-transport).
+For the full API reference, see [`WorkflowChatTransport`](/docs/reference/ai-toolkit-workflow/workflow-chat-transport).
 
 ## Tools as Workflow Steps
 
@@ -435,14 +435,14 @@ const result = await agent.stream({
 `isLoopFinished()` is equivalent to omitting `stopWhen` for `WorkflowAgent`.
 Use it with caution because a model that keeps calling tools can run
 indefinitely and incur significant costs. See
-[`isLoopFinished()`](/docs/reference/ai-sdk-core/loop-finished).
+[`isLoopFinished()`](/docs/reference/ai-toolkit-core/loop-finished).
 
 ## Structured Output
 
 Parse agent responses into typed objects using `Output`:
 
 ```ts
-import { Output } from '@ai-sdk/workflow';
+import { Output } from '@ai-toolkit/workflow';
 import { z } from 'zod';
 
 const result = await agent.stream({
@@ -470,7 +470,7 @@ Pass server-side state through the agent loop without putting it into the prompt
 - `toolsContext` is a per-tool map keyed by tool name. Each tool's `execute` only sees its own validated entry as `context`. Tools that declare a `contextSchema` validate their entry against the schema before execution.
 
 ```ts filename="workflow/agent-chat.ts"
-import { WorkflowAgent } from '@ai-sdk/workflow';
+import { WorkflowAgent } from '@ai-toolkit/workflow';
 import { tool } from 'ai';
 import { z } from 'zod';
 
@@ -659,7 +659,7 @@ stable callback is used.
 Infer the UI message type for type-safe client components:
 
 ```ts
-import { WorkflowAgent, InferWorkflowAgentUIMessage } from '@ai-sdk/workflow';
+import { WorkflowAgent, InferWorkflowAgentUIMessage } from '@ai-toolkit/workflow';
 
 const myAgent = new WorkflowAgent({
   // ... configuration
@@ -670,15 +670,15 @@ export type MyAgentUIMessage = InferWorkflowAgentUIMessage<typeof myAgent>;
 
 ## Migrating from `DurableAgent`
 
-`WorkflowAgent` replaces the Workflow DevKit's [`DurableAgent`](https://workflow-sdk.dev/docs/api-reference/workflow-ai/durable-agent). The two share the same core idea — a durable agent loop that runs inside a workflow — but `WorkflowAgent` moves the class into the AI SDK, tightens typing, and introduces first-class tool approval. If you are using `DurableAgent` today, follow the steps below to switch.
+`WorkflowAgent` replaces the Workflow DevKit's [`DurableAgent`](https://workflow-sdk.dev/docs/api-reference/workflow-ai/durable-agent). The two share the same core idea — a durable agent loop that runs inside a workflow — but `WorkflowAgent` moves the class into the ai-toolkit, tightens typing, and introduces first-class tool approval. If you are using `DurableAgent` today, follow the steps below to switch.
 
 ### Change the import and class name
 
-`DurableAgent` was exported from `workflow/ai`. `WorkflowAgent` is exported from `@ai-sdk/workflow`, alongside its helpers.
+`DurableAgent` was exported from `workflow/ai`. `WorkflowAgent` is exported from `@ai-toolkit/workflow`, alongside its helpers.
 
 ```diff
 - import { DurableAgent } from 'workflow/ai';
-+ import { WorkflowAgent, type ModelCallStreamPart } from '@ai-sdk/workflow';
++ import { WorkflowAgent, type ModelCallStreamPart } from '@ai-toolkit/workflow';
 
 - const agent = new DurableAgent({
 + const agent = new WorkflowAgent({
@@ -691,7 +691,7 @@ export type MyAgentUIMessage = InferWorkflowAgentUIMessage<typeof myAgent>;
 Install the new package alongside `workflow`:
 
 ```bash
-npm install @ai-sdk/workflow workflow@5
+npm install @ai-toolkit/workflow workflow@5
 ```
 
 ### Write `ModelCallStreamPart`, not `UIMessageChunk`
@@ -709,7 +709,7 @@ npm install @ai-sdk/workflow workflow@5
 
 ```diff
   // Inside the route handler
-+ import { createModelCallToUIChunkTransform } from '@ai-sdk/workflow';
++ import { createModelCallToUIChunkTransform } from '@ai-toolkit/workflow';
 
   return createUIMessageStreamResponse({
 -   stream: run.readable,
@@ -719,7 +719,7 @@ npm install @ai-sdk/workflow workflow@5
 
 ### Replace `maxSteps` with `stopWhen`
 
-`DurableAgent` accepted `maxSteps` directly. `WorkflowAgent` uses the AI SDK's shared `stopWhen` conditions so the same stop logic works across `ToolLoopAgent`, `generateText`, and `streamText`.
+`DurableAgent` accepted `maxSteps` directly. `WorkflowAgent` uses the ai-toolkit's shared `stopWhen` conditions so the same stop logic works across `ToolLoopAgent`, `generateText`, and `streamText`.
 
 ```diff
 + import { isStepCount } from 'ai';
@@ -736,7 +736,7 @@ See [Loop Control](/docs/agents/loop-control) for the full list of stop conditio
 ### Replace `experimental_output` with `output`
 
 ```diff
-+ import { Output } from '@ai-sdk/workflow';
++ import { Output } from '@ai-toolkit/workflow';
 
   await agent.stream({
     messages,
@@ -772,7 +772,7 @@ whether approval is required (see [Tool Approval](#tool-approval) above).
 
 `DurableAgent.stream()` returned accumulated `uiMessages` when `collectUIMessages: true` was set. `WorkflowAgent.stream()` returns `ModelMessage[]` on `result.messages` instead.
 
-For persistence, store `UIMessage[]` as your source of truth and call [`convertToModelMessages`](/docs/reference/ai-sdk-ui/convert-to-model-messages) before passing them to the agent — this is the pattern described in [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence). There is no built-in `ModelMessage` → `UIMessage` conversion, so avoid persisting `result.messages` as your only copy if you need to render the conversation in the UI later.
+For persistence, store `UIMessage[]` as your source of truth and call [`convertToModelMessages`](/docs/reference/ai-toolkit-ui/convert-to-model-messages) before passing them to the agent — this is the pattern described in [Chatbot Message Persistence](/docs/ai-toolkit-ui/chatbot-message-persistence). There is no built-in `ModelMessage` → `UIMessage` conversion, so avoid persisting `result.messages` as your only copy if you need to render the conversation in the UI later.
 
 ```diff
   const result = await agent.stream({
@@ -806,7 +806,7 @@ Generation uses the provider's `doGenerate()` method and the same durable tool l
 
 The generated result uses core's final-step text and all-step content, tool results, warnings, and usage semantics. `responseMessages` contains generated messages only. `output` defaults to text and supports constructor or per-call output specifications. End callbacks run before complete-output parsing.
 
-Use result getters inside the workflow, then return selected serializable fields through `run.returnValue`. Returning the whole result class is not supported. See the [generate reference](/docs/reference/ai-sdk-workflow/workflow-agent#generate) for options and remaining differences.
+Use result getters inside the workflow, then return selected serializable fields through `run.returnValue`. Returning the whole result class is not supported. See the [generate reference](/docs/reference/ai-toolkit-workflow/workflow-agent#generate) for options and remaining differences.
 
 #### Approval round trips without streaming
 
@@ -877,7 +877,7 @@ Other options carry over with the same names: `prepareStep`, `onStart`, `onStepS
 
 ## Next Steps
 
-- [WorkflowAgent API Reference](/docs/reference/ai-sdk-workflow/workflow-agent) for detailed parameter documentation
-- [WorkflowChatTransport API Reference](/docs/reference/ai-sdk-workflow/workflow-chat-transport) for stream reconnection options
+- [WorkflowAgent API Reference](/docs/reference/ai-toolkit-workflow/workflow-agent) for detailed parameter documentation
+- [WorkflowChatTransport API Reference](/docs/reference/ai-toolkit-workflow/workflow-chat-transport) for stream reconnection options
 - [Building Agents](/docs/agents/building-agents) for the in-memory `ToolLoopAgent` alternative
 - [Loop Control](/docs/agents/loop-control) for advanced stop conditions

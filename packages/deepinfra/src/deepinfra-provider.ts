@@ -3,17 +3,17 @@ import type {
   EmbeddingModelV4,
   ProviderV4,
   ImageModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   OpenAICompatibleCompletionLanguageModel,
   OpenAICompatibleEmbeddingModel,
-} from '@ai-sdk/openai-compatible';
+} from '@ai-toolkit/openai-compatible';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { DeepInfraChatModelId } from './deepinfra-chat-options';
 import type { DeepInfraEmbeddingModelId } from './deepinfra-embedding-options';
 import type { DeepInfraCompletionModelId } from './deepinfra-completion-options';
@@ -100,7 +100,7 @@ export function createDeepInfra(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-deepinfra/${VERSION}`,
+      `ai-toolkit-deepinfra/${VERSION}`,
     );
 
   interface CommonModelConfig {

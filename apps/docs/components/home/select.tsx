@@ -1,5 +1,5 @@
-import { IconChevronDown } from '@vercel/geistdocs/assets/icons/icon-chevron-down';
-import { cn } from '@vercel/geistdocs/utils';
+import { IconChevronDown } from '@khulnasoft/geistdocs/assets/icons/icon-chevron-down';
+import { cn } from '@khulnasoft/geistdocs/utils';
 import type { ComponentProps } from 'react';
 
 /**

@@ -1,7 +1,7 @@
 import type {
   Experimental_VideoModelV4 as VideoModelV4,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -12,7 +12,7 @@ import {
   postToApi,
   resolve,
   zodSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   buildProdiaProviderMetadata,
   parseMultipart,

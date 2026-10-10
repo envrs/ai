@@ -5,8 +5,8 @@ import {
   type Experimental_VideoModelV4VideoData as VideoModelV4VideoData,
   type Experimental_VideoModelV4OperationWebhook as VideoModelV4OperationWebhook,
   type SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
-import { convertBase64ToUint8Array } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { convertBase64ToUint8Array } from '@ai-toolkit/provider-utils';
 import {
   afterEach,
   beforeEach,
@@ -1219,7 +1219,7 @@ describe('experimental_generateVideo', () => {
       });
 
       expect(startCallCount).toBe(2);
-      expect(seenKeys[0]).toMatch(/^aisdk_vid_/);
+      expect(seenKeys[0]).toMatch(/^ai-toolkit_vid_/);
       expect(seenKeys[1]).toBe(seenKeys[0]);
       expect(result.videos.length).toBe(1);
     });
@@ -1350,7 +1350,7 @@ describe('experimental_generateVideo', () => {
       expect(seenHeaders[0]?.['idempotency-key']).toBe('caller-key-cased');
       expect(
         Object.values(seenHeaders[0] ?? {}).filter(value =>
-          String(value).startsWith('aisdk_vid_'),
+          String(value).startsWith('ai-toolkit_vid_'),
         ),
       ).toHaveLength(0);
     });

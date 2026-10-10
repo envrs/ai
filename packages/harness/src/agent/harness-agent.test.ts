@@ -15,7 +15,7 @@ import type {
 import {
   tool,
   type Experimental_SandboxSession as SandboxSession,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { isStepCount, NoSuchToolError, Output } from 'ai';
 import { describe, expect, expectTypeOf, test, vi } from 'vitest';
 import { z } from 'zod/v4';
@@ -872,7 +872,7 @@ describe('HarnessAgent', () => {
     await session.destroy();
   });
 
-  test('exposes the AI SDK Agent contract surface', () => {
+  test('exposes the ai-toolkit Agent contract surface', () => {
     const { harness } = mockHarness({ script: () => [] });
     const agent = new HarnessAgent({
       harness,
@@ -3080,7 +3080,7 @@ describe('HarnessAgent', () => {
 
     expect(writeTextFile).toHaveBeenCalledWith({
       path: expect.stringMatching(
-        /^\/home\/agent\/\.ai-sdk-harness\/\.harness-bootstrap\/mock\/\.bootstrap-[0-9a-f]{16}\.ok$/,
+        /^\/home\/agent\/\.ai-toolkit-harness\/\.harness-bootstrap\/mock\/\.bootstrap-[0-9a-f]{16}\.ok$/,
       ),
       content: expect.any(String),
       abortSignal: undefined,
@@ -3188,7 +3188,7 @@ describe('HarnessAgent', () => {
         createSession,
       },
       sandboxConfig: {
-        workDir: 'ai-sdk',
+        workDir: 'ai-toolkit',
         bootstrapHash: 'repo-v1',
         onBootstrap: onSandboxBootstrap,
         onSession: onSandboxSession,
@@ -3205,12 +3205,12 @@ describe('HarnessAgent', () => {
     });
     expect(onSandboxBootstrap).toHaveBeenCalledWith({
       session: restrictedSession,
-      workDir: '/work/ai-sdk',
+      workDir: '/work/ai-toolkit',
       abortSignal: undefined,
     });
     expect(onSandboxSession).toHaveBeenCalledWith({
       session: restrictedSession,
-      sessionWorkDir: '/work/ai-sdk',
+      sessionWorkDir: '/work/ai-toolkit',
       abortSignal: undefined,
     });
 
@@ -3224,7 +3224,7 @@ describe('HarnessAgent', () => {
     const agent = new HarnessAgent({
       harness,
       sandboxConfig: {
-        workDir: 'ai-sdk',
+        workDir: 'ai-toolkit',
         bootstrapHash: 'repo-v1',
         onBootstrap: onSandboxBootstrap,
         onSession: onSandboxSession,
@@ -3245,7 +3245,7 @@ describe('HarnessAgent', () => {
     expect(onSandboxBootstrap).toHaveBeenCalledOnce();
     expect(onSandboxSession).toHaveBeenCalledWith({
       session: expect.any(Object),
-      sessionWorkDir: '/work/ai-sdk',
+      sessionWorkDir: '/work/ai-toolkit',
       abortSignal: undefined,
     });
 
@@ -3300,7 +3300,7 @@ describe('HarnessAgent', () => {
         providerId: 'mock-sandbox',
         createSession,
       },
-      sandboxConfig: { workDir: 'ai-sdk' },
+      sandboxConfig: { workDir: 'ai-toolkit' },
     });
 
     const session = await agent.createSession({ sessionId: 's1' });
@@ -3317,7 +3317,7 @@ describe('HarnessAgent', () => {
     // even exists — resolved straight from the plain `SandboxSession`'s HOME,
     // never the working directory.
     expect(markerWrite?.path).toMatch(
-      /^\/home\/agent\/\.ai-sdk-harness\/\.harness-bootstrap\/mock\/\.bootstrap-[0-9a-f]{16}\.ok$/,
+      /^\/home\/agent\/\.ai-toolkit-harness\/\.harness-bootstrap\/mock\/\.bootstrap-[0-9a-f]{16}\.ok$/,
     );
 
     await session.destroy();
@@ -3433,7 +3433,7 @@ describe('HarnessAgent', () => {
     });
     const agent = new HarnessAgent({
       harness,
-      sandboxConfig: { workDir: 'ai-sdk' },
+      sandboxConfig: { workDir: 'ai-toolkit' },
     });
 
     const session = await agent.createSession({
@@ -3450,7 +3450,7 @@ describe('HarnessAgent', () => {
     expect(readTextFile.mock.calls[0]![0]).toEqual(
       expect.objectContaining({
         path: expect.stringMatching(
-          /^\/home\/agent\/\.ai-sdk-harness\/\.harness-bootstrap\/mock\/\.bootstrap-[0-9a-f]{16}\.ok$/,
+          /^\/home\/agent\/\.ai-toolkit-harness\/\.harness-bootstrap\/mock\/\.bootstrap-[0-9a-f]{16}\.ok$/,
         ),
       }),
     );
@@ -3458,7 +3458,7 @@ describe('HarnessAgent', () => {
       [{ path: string }]
     >;
     expect(writeCalls.at(-1)?.[0]?.path).toMatch(
-      /^\/home\/agent\/\.ai-sdk-harness\/\.harness-bootstrap\/mock\/\.bootstrap-[0-9a-f]{16}\.ok$/,
+      /^\/home\/agent\/\.ai-toolkit-harness\/\.harness-bootstrap\/mock\/\.bootstrap-[0-9a-f]{16}\.ok$/,
     );
 
     await session.destroy();

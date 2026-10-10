@@ -3,7 +3,7 @@ import {
   type InferToolSetContext,
   type Tool,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { RealtimeToolDefinition } from '../types/realtime-model';
 
 export async function getRealtimeToolDefinitions<TOOLS extends ToolSet>({

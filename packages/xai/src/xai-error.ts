@@ -1,4 +1,4 @@
-import { createJsonErrorResponseHandler } from '@ai-sdk/provider-utils';
+import { createJsonErrorResponseHandler } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 const apiErrorSchema = z.object({

@@ -1,12 +1,12 @@
 import type { ModelRegistry } from '@earendil-works/pi-coding-agent';
-import { getAiGatewayAuthFromEnv } from '@ai-sdk/harness/utils';
+import { getAiGatewayAuthFromEnv } from '@ai-toolkit/harness/utils';
 
 type PiModel = ReturnType<ModelRegistry['getAll']>[number];
 
 /**
  * Default model id used when no `model` is configured AND gateway credentials
  * are available in the environment. Looked up from Pi's own model registry —
- * the entry must exist under the `vercel-ai-gateway` provider in
+ * the entry must exist under the `khulnasoft-ai-gateway` provider in
  * `@earendil-works/pi-ai`'s catalog.
  */
 export const DEFAULT_PI_GATEWAY_MODEL_ID = 'anthropic/claude-sonnet-4.6';
@@ -14,7 +14,7 @@ export const DEFAULT_PI_GATEWAY_MODEL_ID = 'anthropic/claude-sonnet-4.6';
 /*
  * A `"<provider>/<id>"` reference normally resolves under that provider, not
  * any entry whose flat `id` happens to equal the whole string. Routing proxies
- * (`vercel-ai-gateway`, `openrouter`) can carry another provider's id verbatim
+ * (`khulnasoft-ai-gateway`, `openrouter`) can carry another provider's id verbatim
  * as their own flat `id` (e.g. `id: "xai/grok-4.3"`), so this tier normally
  * wins over flat matching. An authenticated literal-id match remains usable
  * when the scoped provider is unauthenticated, matching Pi's own resolver.
@@ -69,10 +69,10 @@ export function createPiModelResolver({
     // When gateway creds are present, prefer the gateway-routed entry for the
     // given id. Pi's catalog lists the same model id under multiple providers
     // (e.g. `anthropic/claude-sonnet-4.6` exists under both `openrouter` and
-    // `vercel-ai-gateway`); without this preference Pi would dispatch through
+    // `khulnasoft-ai-gateway`); without this preference Pi would dispatch through
     // a provider we didn't register, which fails with "No API key found".
     const gatewayMatch = useGateway
-      ? models.find(m => m.provider === 'vercel-ai-gateway' && matches(m))
+      ? models.find(m => m.provider === 'khulnasoft-ai-gateway' && matches(m))
       : undefined;
     if (gatewayMatch) return gatewayMatch;
 

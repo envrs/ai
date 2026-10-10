@@ -14,7 +14,7 @@ import {
   type SkillsV4,
   type SpeechModelV4,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { DecisionModel } from '../decide/decision-result';
 import type { DecisionProvider } from '../decide/decision-provider';
 import { asProviderV4 } from '../model/as-provider-v4';

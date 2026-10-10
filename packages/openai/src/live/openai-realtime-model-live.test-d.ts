@@ -1,7 +1,7 @@
 import type {
   Experimental_RealtimeModelV4 as RealtimeModelV4,
   Experimental_RealtimeModelV4ServerEvent as RealtimeModelV4ServerEvent,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { expectTypeOf, it } from 'vitest';
 import {
   openai,

@@ -26,7 +26,7 @@ import type { LangGraphEventState } from './types';
 import type { StreamCallbacks } from './stream-callbacks';
 
 /**
- * Options for converting a LangChain stream to an AI SDK UIMessageStream.
+ * Options for converting a LangChain stream to an ai-toolkit UIMessageStream.
  */
 export interface ToUIMessageStreamOptions<
   TState = unknown,
@@ -47,17 +47,17 @@ export interface ToUIMessageStreamOptions<
 }
 
 /**
- * Converts AI SDK UIMessages to LangChain BaseMessage objects.
+ * Converts ai-toolkit UIMessages to LangChain BaseMessage objects.
  *
- * This function transforms the AI SDK's message format into LangChain's message
+ * This function transforms the ai-toolkit's message format into LangChain's message
  * format, enabling seamless integration between the two frameworks.
  *
- * @param messages - Array of AI SDK UIMessage objects to convert.
+ * @param messages - Array of ai-toolkit UIMessage objects to convert.
  * @returns Promise resolving to an array of LangChain BaseMessage objects.
  *
  * @example
  * ```ts
- * import { toBaseMessages } from '@ai-sdk/langchain';
+ * import { toBaseMessages } from '@ai-toolkit/langchain';
  *
  * const langchainMessages = await toBaseMessages(uiMessages);
  *
@@ -366,7 +366,7 @@ function isAbortError(error: unknown): boolean {
 }
 
 /**
- * Converts a LangChain stream to an AI SDK UIMessageStream.
+ * Converts a LangChain stream to an ai-toolkit UIMessageStream.
  *
  * This function automatically detects the stream type and handles:
  * - Direct model streams (AsyncIterable from `model.stream()`)

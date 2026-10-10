@@ -2,7 +2,7 @@ import {
   UnsupportedFunctionalityError,
   type LanguageModelV4CallOptions,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { MoonshotAIFunctionTool } from './moonshotai-chat-api-types';
 import type { MoonshotAIChatModelId } from './moonshotai-chat-options';
 import { normalizeJsonSchemaForMFJS } from './normalize-json-schema-for-mfjs';

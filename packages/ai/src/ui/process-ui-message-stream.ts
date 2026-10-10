@@ -1,5 +1,5 @@
-import type { JSONObject } from '@ai-sdk/provider';
-import { validateTypes, type FlexibleSchema } from '@ai-sdk/provider-utils';
+import type { JSONObject } from '@ai-toolkit/provider';
+import { validateTypes, type FlexibleSchema } from '@ai-toolkit/provider-utils';
 import { UIMessageStreamError } from '../error/ui-message-stream-error';
 import type { ProviderMetadata } from '../types';
 import type { FinishReason } from '../types/language-model';

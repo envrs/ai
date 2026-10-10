@@ -7,7 +7,7 @@ import { WorkflowAgent } from '../workflow-agent.js';
 
 async function getGlobalTelemetryIntegrationCount(): Promise<number | null> {
   'use step';
-  return globalThis.AI_SDK_TELEMETRY_INTEGRATIONS?.length ?? null;
+  return globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS?.length ?? null;
 }
 
 export async function agentStreamWithGlobalTelemetry(prompt: string) {
@@ -24,7 +24,7 @@ export async function agentStreamWithGlobalTelemetry(prompt: string) {
   return {
     text: result.steps.at(-1)?.text,
     integrationsInWorkflow:
-      globalThis.AI_SDK_TELEMETRY_INTEGRATIONS?.length ?? null,
+      globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS?.length ?? null,
     integrationsInStep: await getGlobalTelemetryIntegrationCount(),
   };
 }

@@ -1,5 +1,5 @@
 {
-  "name": "ai-sdk-bundler-fixture",
+  "name": "ai-toolkit-bundler-fixture",
   "private": true,
   "type": "module",
   "dependencies": {

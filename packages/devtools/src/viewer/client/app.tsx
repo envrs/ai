@@ -8,7 +8,7 @@ import {
   Loader2,
   GanttChart,
 } from 'lucide-react';
-import { AISDKLogo } from '@/components/icons';
+import { ai-toolkitLogo } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -257,7 +257,7 @@ function App({
     <div className="flex flex-col h-screen bg-background">
       <header className="flex justify-between items-center px-5 py-3 border-b border-border bg-card">
         <div className="flex items-center gap-2">
-          <AISDKLogo />
+          <ai-toolkitLogo />
           <span className="text-base font-medium text-muted-foreground">
             DevTools
           </span>

@@ -4,7 +4,7 @@ import {
   type Experimental_DecisionModelV4StatePart,
   type Experimental_DecisionModelV4Question,
   type Experimental_DecisionModelV4Input as DecisionQuestionInput,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { expectTypeOf, it } from 'vitest';
 import { DecisionMockModelV4 } from '../test/decision-mock-model-v4';
 import {

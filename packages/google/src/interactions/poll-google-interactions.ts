@@ -4,7 +4,7 @@ import {
   getFromApi,
   isAbortError,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { googleFailedResponseHandler } from '../google-error';
 import { cancelGoogleInteraction } from './cancel-google-interaction';
 import {

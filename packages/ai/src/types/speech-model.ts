@@ -2,10 +2,10 @@ import type {
   SpeechModelV2,
   SpeechModelV3,
   SpeechModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 /**
- * Speech model that is used by the AI SDK.
+ * Speech model that is used by the ai-toolkit.
  */
 export type SpeechModel =
   | string

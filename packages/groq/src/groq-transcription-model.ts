@@ -1,4 +1,4 @@
-import type { TranscriptionModelV4, SharedV4Warning } from '@ai-sdk/provider';
+import type { TranscriptionModelV4, SharedV4Warning } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -11,7 +11,7 @@ import {
   type ResponseHandler,
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { GroqConfig } from './groq-config';
 import { groqFailedResponseHandler } from './groq-error';

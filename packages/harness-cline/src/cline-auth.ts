@@ -1,8 +1,8 @@
-import type { HarnessV1Authentication } from '@ai-sdk/harness';
+import type { HarnessV1Authentication } from '@ai-toolkit/harness';
 import {
   getAiGatewayAuthFromEnv,
   isHarnessAuthenticationEnvironment,
-} from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness/utils';
 
 export type ClineAuthenticationMode = HarnessV1Authentication;
 

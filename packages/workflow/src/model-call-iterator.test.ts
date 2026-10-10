@@ -11,7 +11,7 @@ import type {
   LanguageModelV4StreamPart,
   LanguageModelV4ToolCall,
   LanguageModelV4ToolResultPart,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   tool,
   type Experimental_LanguageModelStreamPart,
@@ -19,7 +19,7 @@ import {
   type StepResult,
   type ToolSet,
 } from 'ai';
-import { jsonSchema } from '@ai-sdk/provider-utils';
+import { jsonSchema } from '@ai-toolkit/provider-utils';
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { z } from 'zod/v4';
 import type {

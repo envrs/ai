@@ -1,4 +1,4 @@
-import { APICallError, type LanguageModelV4Content } from '@ai-sdk/provider';
+import { APICallError, type LanguageModelV4Content } from '@ai-toolkit/provider';
 import { describe, expectTypeOf, it } from 'vitest';
 import {
   createOpenResponses,

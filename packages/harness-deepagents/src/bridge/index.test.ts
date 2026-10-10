@@ -68,7 +68,7 @@ vi.mock('deepagents', () => ({
   LocalShellBackend: class {},
 }));
 
-vi.mock('@ai-sdk/harness/bridge', () => ({
+vi.mock('@ai-toolkit/harness/bridge', () => ({
   runBridge: async ({
     onStart,
   }: {

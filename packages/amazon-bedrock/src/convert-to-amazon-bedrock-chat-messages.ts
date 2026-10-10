@@ -7,7 +7,7 @@ import {
   type LanguageModelV4Prompt,
   type LanguageModelV4ToolResultPart,
   type SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertToBase64,
   getTopLevelMediaType,
@@ -15,7 +15,7 @@ import {
   parseProviderOptions,
   resolveFullMediaType,
   stripFileExtension,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   BEDROCK_DOCUMENT_MIME_TYPES,
   BEDROCK_IMAGE_MIME_TYPES,

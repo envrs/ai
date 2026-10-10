@@ -7,7 +7,7 @@ import type {
   LanguageModelV3FinishReason,
   LanguageModelV3StreamPart,
   LanguageModelV3Usage,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { logV2CompatibilityWarning } from '../util/log-v2-compatibility-warning';
 
 export function asLanguageModelV3(
@@ -68,7 +68,7 @@ function convertV2StreamToV3(
             });
             break;
           default:
-            // TODO: AI SDK 6 - no casting (stream parts need to be mapped)
+            // TODO: ai-toolkit 6 - no casting (stream parts need to be mapped)
             controller.enqueue(chunk as LanguageModelV3StreamPart);
             break;
         }

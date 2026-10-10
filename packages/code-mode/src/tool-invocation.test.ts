@@ -9,13 +9,13 @@ import {
 } from '../dist/index.js';
 import { deferred, emptyMessages } from './utils/test-helpers.js';
 
-describe('AI SDK tool bridge', () => {
+describe('ai-toolkit tool bridge', () => {
   it('exports a serializable direct tool call marker', () => {
-    expect(DIRECT_TOOL_CALL).toBe('AI_SDK_DIRECT_TOOL_CALL');
-    expect(JSON.stringify(DIRECT_TOOL_CALL)).toBe('"AI_SDK_DIRECT_TOOL_CALL"');
+    expect(DIRECT_TOOL_CALL).toBe('ai-toolkit_DIRECT_TOOL_CALL');
+    expect(JSON.stringify(DIRECT_TOOL_CALL)).toBe('"ai-toolkit_DIRECT_TOOL_CALL"');
   });
 
-  it('calls an AI SDK tool with validated input', async () => {
+  it('calls an ai-toolkit tool with validated input', async () => {
     const add = vi.fn(async ({ a, b }: { a: number; b: number }) => ({
       sum: a + b,
     }));
@@ -171,7 +171,7 @@ describe('AI SDK tool bridge', () => {
     await expect(run).rejects.toThrow(/aborted|nested abort observed/i);
   });
 
-  it('returns an AI SDK tool that executes code mode', async () => {
+  it('returns an ai-toolkit tool that executes code mode', async () => {
     const codeMode = createCodeModeTool({
       add: tool({
         inputSchema: z.object({ a: z.number(), b: z.number() }),

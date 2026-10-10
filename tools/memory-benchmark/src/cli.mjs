@@ -23,7 +23,7 @@ const toolDirectory = path.resolve(
 );
 const workspaceDirectory = path.resolve(toolDirectory, '..', '..');
 const envPath = path.join(toolDirectory, '.env');
-const image = 'ai-sdk-memory-benchmark';
+const image = 'ai-toolkit-memory-benchmark';
 const workspacePackages = [
   'ai',
   'anthropic',
@@ -35,7 +35,7 @@ const workspacePackages = [
 ];
 
 const HELP = `
-AI SDK application memory benchmark
+ai-toolkit application memory benchmark
 
 Usage:
   pnpm benchmark:memory setup
@@ -162,11 +162,11 @@ async function buildImage() {
         'turbo',
         'prune',
         'ai',
-        '@ai-sdk/anthropic',
-        '@ai-sdk/google',
-        '@ai-sdk/mcp',
-        '@ai-sdk/openai',
-        '@ai-sdk/openai-compatible',
+        '@ai-toolkit/anthropic',
+        '@ai-toolkit/google',
+        '@ai-toolkit/mcp',
+        '@ai-toolkit/openai',
+        '@ai-toolkit/openai-compatible',
         '--docker',
         `--out-dir=${context}`,
       ],
@@ -289,7 +289,7 @@ async function runInContainer(options) {
   if (!apiKey) throw new Error(`Set ANTHROPIC_API_KEY in ${envPath}`);
 
   const output = options.output ?? (await nextRunDirectory());
-  const name = `ai-sdk-memory-benchmark-${process.pid}`;
+  const name = `ai-toolkit-memory-benchmark-${process.pid}`;
   let proxy;
 
   await buildImage();
@@ -350,11 +350,11 @@ async function runInner(options) {
       'turbo',
       'build',
       '--filter=ai...',
-      '--filter=@ai-sdk/anthropic...',
-      '--filter=@ai-sdk/google...',
-      '--filter=@ai-sdk/mcp...',
-      '--filter=@ai-sdk/openai...',
-      '--filter=@ai-sdk/openai-compatible...',
+      '--filter=@ai-toolkit/anthropic...',
+      '--filter=@ai-toolkit/google...',
+      '--filter=@ai-toolkit/mcp...',
+      '--filter=@ai-toolkit/openai...',
+      '--filter=@ai-toolkit/openai-compatible...',
     ],
     { cwd: workspaceDirectory },
   );
@@ -362,7 +362,7 @@ async function runInner(options) {
     const target = path.join(
       repository,
       'node_modules',
-      ...(packageName === 'ai' ? ['ai'] : ['@ai-sdk', packageName]),
+      ...(packageName === 'ai' ? ['ai'] : ['@ai-toolkit', packageName]),
     );
     await rm(target, { recursive: true, force: true });
     await symlink(
@@ -393,8 +393,8 @@ async function runInner(options) {
     cwd: toolDirectory,
     env: {
       ...process.env,
-      AI_SDK_BENCH_ROOT: path.join(toolDirectory, '.repos'),
-      AI_SDK_BENCH_FIXTURE: path.join(toolDirectory, 'fixtures', 'code-project'),
+      ai-toolkit_BENCH_ROOT: path.join(toolDirectory, '.repos'),
+      ai-toolkit_BENCH_FIXTURE: path.join(toolDirectory, 'fixtures', 'code-project'),
     },
   });
 }

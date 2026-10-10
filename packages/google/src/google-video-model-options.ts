@@ -1,4 +1,4 @@
-import { lazySchema, zodSchema } from '@ai-sdk/provider-utils';
+import { lazySchema, zodSchema } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 export type GoogleVideoModelOptions = {

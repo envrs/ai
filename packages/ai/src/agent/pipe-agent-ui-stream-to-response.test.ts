@@ -1,4 +1,4 @@
-import { convertArrayToReadableStream } from '@ai-sdk/provider-utils/test';
+import { convertArrayToReadableStream } from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it, vi } from 'vitest';
 import { createMockServerResponse } from '../test/mock-server-response';
 import { MockLanguageModelV4 } from '../test/mock-language-model-v4';

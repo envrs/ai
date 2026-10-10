@@ -1,4 +1,4 @@
-import type { JSONValue, LanguageModelV4Content } from '@ai-sdk/provider';
+import type { JSONValue, LanguageModelV4Content } from '@ai-toolkit/provider';
 import type { GoogleInteractionsStep } from './google-interactions-api';
 import {
   annotationsToSources,
@@ -74,7 +74,7 @@ function builtinToolNameFromResultType(type: string): string {
 }
 
 /**
- * Walks the `steps[]` array of an Interactions response and emits AI SDK
+ * Walks the `steps[]` array of an Interactions response and emits ai-toolkit
  * `LanguageModelV4Content[]`. Surfaces:
  *
  * - `model_output` steps: iterates `step.content[]` for `text` (with

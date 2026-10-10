@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4CallOptions,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { PerplexityAgentTool } from './perplexity-agent-api';
 
 export function preparePerplexityTools({

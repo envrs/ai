@@ -29,7 +29,7 @@ export const PlaygroundRecovery = () => {
       );
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'ai-sdk-playground-backup.json';
+      link.download = 'ai-toolkit-playground-backup.json';
       link.click();
       setTimeout(() => URL.revokeObjectURL(url), 1000);
       setMessage(
@@ -48,12 +48,12 @@ export const PlaygroundRecovery = () => {
         Recover your playground settings
       </h1>
       <p>
-        The AI SDK Playground has moved. Download your saved model panels,
+        The ai-toolkit Playground has moved. Download your saved model panels,
         settings, and pre-sign-in draft from this browser, then import the file
         on the new playground.
       </p>
       <p>
-        Open this page on <code>ai-sdk.dev</code> in the same browser profile
+        Open this page on <code>ai-toolkit.dev</code> in the same browser profile
         you used before the move. Other domains and Preview deployments cannot
         read that browser data.
       </p>
@@ -74,7 +74,7 @@ export const PlaygroundRecovery = () => {
         Authentication data and session cookies are not included.
       </p>
       <p>
-        Sign in with the same Vercel account to access saved history and custom
+        Sign in with the same khulnasoft account to access saved history and custom
         models. Copy messages that exist only in an open tab before reloading
         it, because those messages were never saved in browser storage.
       </p>

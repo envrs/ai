@@ -1,4 +1,4 @@
-import type { SkillsV4, SharedV4Warning } from '@ai-sdk/provider';
+import type { SkillsV4, SharedV4Warning } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertInlineFileDataToUint8Array,
@@ -8,7 +8,7 @@ import {
   resolve,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { anthropicFailedResponseHandler } from '../anthropic-error';
 import {
   anthropicSkillResponseSchema,

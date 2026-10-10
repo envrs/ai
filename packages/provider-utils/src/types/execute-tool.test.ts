@@ -8,7 +8,7 @@ describe('executeTool', () => {
   // Guards against re-introducing a "this-binding guard" (e.g. destructuring
   // `execute` off the tool before calling it), which would break class-based
   // tools that rely on `this` in `execute`.
-  // See https://github.com/vercel/ai/pull/15917#discussion_r3376474765
+  // See https://github.com/khulnasoft/ai/pull/15917#discussion_r3376474765
   it('preserves `this` for a class-based tool.execute', async () => {
     class CalculatorTool {
       readonly inputSchema = z.object({ a: z.number(), b: z.number() });

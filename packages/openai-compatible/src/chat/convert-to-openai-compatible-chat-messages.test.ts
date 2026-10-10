@@ -1,4 +1,4 @@
-import { NoSuchProviderReferenceError } from '@ai-sdk/provider';
+import { NoSuchProviderReferenceError } from '@ai-toolkit/provider';
 import { convertToOpenAICompatibleChatMessages } from './convert-to-openai-compatible-chat-messages';
 import { describe, it, expect } from 'vitest';
 

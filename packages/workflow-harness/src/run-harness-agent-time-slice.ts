@@ -5,7 +5,7 @@ import {
 } from './run-harness-agent';
 
 /*
- * Vercel Fluid Compute recycles a function instance at approximately 800
+ * khulnasoft Fluid Compute recycles a function instance at approximately 800
  * seconds. Completing a time slice at 750 seconds leaves a safety buffer so
  * the next invocation can reattach to the still-running sandbox.
  */

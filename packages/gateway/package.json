@@ -1,7 +1,7 @@
 {
-  "name": "@ai-sdk/gateway",
+  "name": "@ai-toolkit/gateway",
   "private": false,
-  "version": "4.0.110",
+  "version": "2.0.1",
   "type": "module",
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -25,7 +25,7 @@
     "build": "pnpm clean && tsdown",
     "build:watch": "pnpm clean && tsdown --watch",
     "clean": "del-cli docs *.tsbuildinfo",
-    "prepack": "mkdir -p docs && cp ../../content/providers/01-ai-sdk-providers/00-ai-gateway.mdx ./docs/",
+    "prepack": "mkdir -p docs && cp ../../content/providers/01-ai-toolkit-providers/00-ai-gateway.mdx ./docs/",
     "postpack": "del-cli docs",
     "generate-model-settings": "tsx scripts/generate-model-settings.ts",
     "type-check": "tsc --build",
@@ -44,14 +44,14 @@
     }
   },
   "dependencies": {
-    "@ai-sdk/provider": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*",
-    "@vercel/oidc": "3.2.0"
+    "@ai-toolkit/provider": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*",
+    "@khulnasoft/oidc": "3.2.0"
   },
   "devDependencies": {
-    "@ai-sdk/test-server": "workspace:*",
+    "@ai-toolkit/test-server": "workspace:*",
     "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "tsdown": "^0.23.0",
     "tsx": "4.23.12",
     "typescript": "6.0.3",
@@ -67,14 +67,14 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/gateway"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "keywords": [
     "ai"

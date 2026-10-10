@@ -3,7 +3,7 @@ import {
   type Context,
   withUserAgentSuffix,
   type ProviderOptions,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { InvalidResponseDataError } from '../error';
 import { logWarnings } from '../logger/log-warnings';
 import { resolveEmbeddingModel } from '../model/resolve-model';
@@ -39,7 +39,7 @@ const originalGenerateCallId = createIdGenerator({
  * @param runtimeContext - User-defined runtime context passed to callbacks and, when explicitly included, telemetry.
  *
  * @param providerOptions - Additional provider-specific options. They are passed through
- * to the provider from the AI SDK and enable provider-specific
+ * to the provider from the ai-toolkit and enable provider-specific
  * functionality that can be fully encapsulated in the provider.
  *
  * @returns A result object that contains the embedding, the value, and additional information.
@@ -98,7 +98,7 @@ export async function embed<RUNTIME_CONTEXT extends Context = Context>({
 
   /**
    * Additional provider-specific options. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: ProviderOptions;

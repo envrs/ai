@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import type { JSONSchema7 } from '@ai-sdk/provider';
+import type { JSONSchema7 } from '@ai-toolkit/provider';
 import { z } from 'zod/v3';
 import { getRefs } from '../refs';
 import { parseStringDef, zodPatterns } from './string';

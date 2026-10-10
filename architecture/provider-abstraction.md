@@ -1,6 +1,6 @@
 # Provider Abstraction Architecture
 
-This document explains how AI functions, model specifications, and provider implementations connect in the AI SDK.
+This document explains how AI functions, model specifications, and provider implementations connect in the ai-toolkit.
 It starts with an abstract high-level view and then details each V4 model type, including the AI functions that use it and small UML diagrams.
 
 ## High-Level Architecture
@@ -57,7 +57,7 @@ classDiagram
 
 The `reasoning` field on [`LanguageModelV4CallOptions`](packages/provider/src/language-model/v4/language-model-v4-call-options.ts) controls how much reasoning a model performs before responding. Possible values: `'provider-default'`, `'none'`, `'minimal'`, `'low'`, `'medium'`, `'high'`, `'xhigh'`, `'max'`.
 
-Use `isCustomReasoning(reasoning)` from `@ai-sdk/provider-utils` to check whether the caller supplied a custom value (anything other than `undefined` or `'provider-default'`). If it returns `false`, no action is needed. If `true`:
+Use `isCustomReasoning(reasoning)` from `@ai-toolkit/provider-utils` to check whether the caller supplied a custom value (anything other than `undefined` or `'provider-default'`). If it returns `false`, no action is needed. If `true`:
 
 1. **`'none'`** — Disable reasoning. Only some providers support this; others should emit an unsupported warning.
 2. **Any other value** — Map it to the provider's native configuration using one of two strategies:
@@ -66,7 +66,7 @@ Use `isCustomReasoning(reasoning)` from `@ai-sdk/provider-utils` to check whethe
 
 Providers that do **not** support reasoning configuration at the API level should emit an unsupported warning when `isCustomReasoning` returns `true`.
 
-Resolve explicit provider values before mapping the corresponding portable fields so warnings describe values actually sent. Preserve each adapter's existing handling of partial configuration: Bedrock fills missing thinking type, effort, or budget fields while preserving explicit values. An explicit budget on a budget-based model must not prevent deriving a missing enabled type. See the [reasoning precedence guide](../content/docs/03-ai-sdk-core/26-reasoning.mdx).
+Resolve explicit provider values before mapping the corresponding portable fields so warnings describe values actually sent. Preserve each adapter's existing handling of partial configuration: Bedrock fills missing thinking type, effort, or budget fields while preserving explicit values. An explicit budget on a budget-based model must not prevent deriving a missing enabled type. See the [reasoning precedence guide](../content/docs/03-ai-toolkit-core/26-reasoning.mdx).
 
 ### Embedding Model (`EmbeddingModelV4`)
 

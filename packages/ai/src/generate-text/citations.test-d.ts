@@ -2,7 +2,7 @@ import type {
   LanguageModelV4Citation,
   LanguageModelV4Text,
   LanguageModelV4StreamPart,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { expectTypeOf, it } from 'vitest';
 import type { Citation, TextUIPart } from '../index';
 import type { UIMessageChunk } from '../ui-message-stream/ui-message-chunks';

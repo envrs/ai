@@ -16,7 +16,7 @@ First, create a context that will hold your chat instance and provide methods to
 'use client';
 
 import React, { createContext, useContext, ReactNode, useState } from 'react';
-import { Chat } from '@ai-sdk/react';
+import { Chat } from '@ai-toolkit/react';
 import { DefaultChatTransport, UIMessage } from 'ai';
 
 interface ChatContextValue {
@@ -82,7 +82,7 @@ Create a component that displays messages and provides a button to clear the cha
 ```tsx filename='app/page.tsx'
 'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { useSharedChatContext } from './chat-context';
 import ChatInput from './chat-input';
 
@@ -120,7 +120,7 @@ export default function Chat() {
 Create an input component that uses the shared chat context to send messages.
 
 ```tsx filename='app/chat-input.tsx'
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { useState } from 'react';
 import { useSharedChatContext } from './chat-context';
 
@@ -156,7 +156,7 @@ export default function ChatInput() {
 
 ## Server
 
-Create an API route to handle the chat messages using the AI SDK.
+Create an API route to handle the chat messages using the ai-toolkit.
 
 ```tsx filename='app/api/chat/route.ts'
 import {
@@ -183,4 +183,4 @@ export async function POST(req: Request) {
 }
 ```
 
-<GithubLink link="https://github.com/vercel/ai/tree/main/examples/ai-e2e-next/app/chat/shared-context" />
+<GithubLink link="https://github.com/khulnasoft/ai/tree/main/examples/ai-e2e-next/app/chat/shared-context" />

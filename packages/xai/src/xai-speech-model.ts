@@ -1,4 +1,4 @@
-import type { SharedV4Warning, SpeechModelV4 } from '@ai-sdk/provider';
+import type { SharedV4Warning, SpeechModelV4 } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -12,7 +12,7 @@ import {
   WORKFLOW_SERIALIZE,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { xaiFailedResponseHandler } from './xai-error';
 import { xaiSpeechModelOptionsSchema } from './xai-speech-model-options';

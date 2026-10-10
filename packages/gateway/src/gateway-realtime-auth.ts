@@ -36,7 +36,7 @@ export const GATEWAY_TRANSCRIPTION_SUBPROTOCOL = 'ai-gateway-transcription.v1';
 /** Subprotocol prefix that carries the Gateway auth (bearer) token. */
 export const GATEWAY_AUTH_SUBPROTOCOL_PREFIX = 'ai-gateway-auth.';
 
-/** Subprotocol prefix that carries optional Vercel team scoping. */
+/** Subprotocol prefix that carries optional khulnasoft team scoping. */
 export const GATEWAY_TEAM_SUBPROTOCOL_PREFIX = 'ai-gateway-team.';
 
 /**
@@ -103,7 +103,7 @@ export function getGatewayRealtimeAuthToken(
 }
 
 /**
- * Server-side: extract the optional Vercel team ID or slug from the
+ * Server-side: extract the optional khulnasoft team ID or slug from the
  * `Sec-WebSocket-Protocol` header value. Team scoping is base64url-encoded so
  * arbitrary team slugs stay within the WebSocket subprotocol token grammar.
  */

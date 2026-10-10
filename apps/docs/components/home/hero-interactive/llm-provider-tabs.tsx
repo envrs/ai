@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@vercel/geistdocs/utils';
+import { cn } from '@khulnasoft/geistdocs/utils';
 import { motion } from 'motion/react';
 import { PROVIDERS, type Provider } from '@/lib/home/code-examples';
 import { ProviderLogo } from './provider-logo';

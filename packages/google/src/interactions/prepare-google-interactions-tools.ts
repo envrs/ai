@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4CallOptions,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type {
   GoogleInteractionsTool,
   GoogleInteractionsToolChoice,
@@ -14,10 +14,10 @@ export type PrepareGoogleInteractionsToolsResult = {
 };
 
 /**
- * Maps AI SDK tool definitions and `toolChoice` onto the Gemini Interactions
+ * Maps ai-toolkit tool definitions and `toolChoice` onto the Gemini Interactions
  * `tools[]` and `tool_choice` request fields.
  *
- * AI SDK function tools (`{ type: 'function', name, description, inputSchema }`)
+ * ai-toolkit function tools (`{ type: 'function', name, description, inputSchema }`)
  * map to Interactions `{ type: 'function', name, description, parameters }`,
  * with `parameters` passed through as plain JSON Schema (per
  * `googleapis/js-genai` `samples/interactions_tool_call_with_functions.ts` and

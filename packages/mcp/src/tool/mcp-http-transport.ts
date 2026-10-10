@@ -3,7 +3,7 @@ import {
   withUserAgentSuffix,
   getRuntimeEnvironmentUserAgent,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { MCPClientError } from '../error/mcp-client-error';
 import {
   parseJSONRPCMessage,
@@ -156,7 +156,7 @@ export class HttpMCPTransport implements MCPTransport {
 
     return withUserAgentSuffix(
       headers,
-      `ai-sdk/${VERSION}`,
+      `ai-toolkit/${VERSION}`,
       getRuntimeEnvironmentUserAgent(),
     );
   }

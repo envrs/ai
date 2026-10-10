@@ -2,11 +2,11 @@ import {
   APICallError,
   InvalidResponseDataError,
   InvalidArgumentError,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { afterEach, expect, it, vi } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { createOpenAI } from './openai-provider';
@@ -77,7 +77,7 @@ it('sends all primitives directly to Decisions with configured authentication an
     shared: 'call',
   });
   expect(new Headers(request?.headers).get('user-agent')).toContain(
-    'ai-sdk-openai/',
+    'ai-toolkit-openai/',
   );
   expect(JSON.parse(request?.body as string)).toEqual({
     model: 'gpt-6-luna',

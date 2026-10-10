@@ -7,7 +7,7 @@ import {
   type LanguageModelV4Prompt,
   type LanguageModelV4ProviderTool,
   type LanguageModelV4Usage,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   DelayedPromise,
   dynamicTool,
@@ -19,8 +19,8 @@ import {
   type Experimental_SandboxSession as SandboxSession,
   type ToolExecuteFunction,
   type ToolResultOutput,
-} from '@ai-sdk/provider-utils';
-import { mockId } from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils';
+import { mockId } from '@ai-toolkit/provider-utils/test';
 import {
   afterEach,
   assert,
@@ -583,7 +583,7 @@ describe('experimental_toolCallers', () => {
         }),
       },
       experimental_toolCallers: {
-        getDemand: ['AI_SDK_DIRECT_TOOL_CALL', 'programmatic'],
+        getDemand: ['ai-toolkit_DIRECT_TOOL_CALL', 'programmatic'],
       },
       prompt: 'Check demand.',
     });
@@ -640,7 +640,7 @@ describe('experimental_toolCallers', () => {
         }),
       },
       experimental_toolCallers: {
-        getInventory: ['direct', 'AI_SDK_DIRECT_TOOL_CALL'],
+        getInventory: ['direct', 'ai-toolkit_DIRECT_TOOL_CALL'],
       },
       prompt: 'Check inventory.',
     });
@@ -2292,7 +2292,7 @@ describe('generateText', () => {
     // This guards against re-introducing a "this-binding guard" that would
     // destructure these methods off the tool before calling them and thereby
     // break the binding.
-    // See https://github.com/vercel/ai/pull/15917#discussion_r3376474765
+    // See https://github.com/khulnasoft/ai/pull/15917#discussion_r3376474765
     it('should preserve `this` for execute and toModelOutput', async () => {
       class CalculatorTool {
         readonly inputSchema = z.object({ a: z.number(), b: z.number() });
@@ -6070,7 +6070,7 @@ describe('generateText', () => {
         expect(onFinishResult.finalStep.usage).toEqual(result.finalStep.usage);
       });
 
-      it('onFinishResult should expose deprecated AI SDK 6 final-step properties', () => {
+      it('onFinishResult should expose deprecated ai-toolkit 6 final-step properties', () => {
         expect(onFinishResult.reasoning).toEqual(result.finalStep.reasoning);
         expect(onFinishResult.reasoningText).toEqual(
           result.finalStep.reasoningText,
@@ -14051,7 +14051,7 @@ describe('generateText', () => {
 
   describe('telemetry integrations', () => {
     afterEach(() => {
-      globalThis.AI_SDK_TELEMETRY_INTEGRATIONS = undefined;
+      globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = undefined;
     });
 
     it('should call per-call integration listeners for all lifecycle events', async () => {
@@ -14117,7 +14117,7 @@ describe('generateText', () => {
     it('should call globally registered integration listeners', async () => {
       const events: string[] = [];
 
-      globalThis.AI_SDK_TELEMETRY_INTEGRATIONS = [
+      globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = [
         {
           onStart: async () => {
             events.push('global-onStart');
@@ -14151,7 +14151,7 @@ describe('generateText', () => {
     it('should only call per-call integrations when both global and per-call integrations are provided', async () => {
       const events: string[] = [];
 
-      globalThis.AI_SDK_TELEMETRY_INTEGRATIONS = [
+      globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = [
         {
           onStart: async () => {
             events.push('global');

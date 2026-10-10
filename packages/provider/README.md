@@ -1,1 +1,1 @@
-# AI SDK - Provider Language Model Specification
+# ai-toolkit - Provider Language Model Specification

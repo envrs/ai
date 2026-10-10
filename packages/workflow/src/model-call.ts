@@ -4,7 +4,7 @@ import type {
   LanguageModelV4Content,
   LanguageModelV4Source,
   SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type {
   Experimental_LanguageModelStreamPart,
   FinishReason,

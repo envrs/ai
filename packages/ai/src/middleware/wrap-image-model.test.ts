@@ -1,7 +1,7 @@
 import type {
   ImageModelV4CallOptions,
   ImageModelV4Middleware,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { wrapImageModel } from '../middleware/wrap-image-model';
 import { MockImageModelV4 } from '../test/mock-image-model-v4';
 import { describe, it, expect, vi } from 'vitest';

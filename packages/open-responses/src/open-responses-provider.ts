@@ -3,13 +3,13 @@ import {
   NoSuchModelError,
   type LanguageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   generateId,
   withUserAgentSuffix,
   type FetchFunction,
   type ResponseHandler,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   createOpenResponsesExtensionRegistry,
   type OpenResponsesExtensionRegistration,
@@ -90,7 +90,7 @@ export interface OpenResponsesProviderSettings {
   /**
    * User-agent suffix for requests.
    *
-   * @default `ai-sdk-open-responses/<version>`
+   * @default `ai-toolkit-open-responses/<version>`
    */
   userAgentSuffix?: string;
 
@@ -123,7 +123,7 @@ export function createOpenResponses(
           ? options.headers()
           : options.headers),
       },
-      options.userAgentSuffix ?? `ai-sdk-open-responses/${VERSION}`,
+      options.userAgentSuffix ?? `ai-toolkit-open-responses/${VERSION}`,
     );
 
   const createResponsesModel = (modelId: string) => {

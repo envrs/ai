@@ -1,4 +1,4 @@
-// Run after building @ai-sdk/workflow:
+// Run after building @ai-toolkit/workflow:
 // node packages/workflow/reproductions/issue-14617-empty-sse-loop.mjs
 import assert from 'node:assert/strict';
 import { once } from 'node:events';

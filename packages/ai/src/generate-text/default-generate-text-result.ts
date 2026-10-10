@@ -1,4 +1,4 @@
-import type { Context, ToolSet } from '@ai-sdk/provider-utils';
+import type { Context, ToolSet } from '@ai-toolkit/provider-utils';
 import { NoOutputGeneratedError } from '../error/no-output-generated-error';
 import type { LanguageModelUsage } from '../types/usage';
 import type { GenerateTextResult } from './generate-text-result';

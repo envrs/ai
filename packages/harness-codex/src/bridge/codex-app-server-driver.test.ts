@@ -9,7 +9,7 @@ import {
   handleAppServerRequest,
 } from './codex-app-server-driver';
 import type { StartMessage } from '../codex-bridge-protocol';
-import type { BridgeTurn } from '@ai-sdk/harness/bridge';
+import type { BridgeTurn } from '@ai-toolkit/harness/bridge';
 import { createCodexStepTracker } from './codex-step-tracker';
 import { createTrustedApplyPatchHook } from './codex-tool-filtering-hook';
 
@@ -922,8 +922,8 @@ describe('Codex app-server dynamic tools', () => {
     expect(first.specs).toEqual(second.specs);
     expect(names[0]).toBe('get_weather');
     expect(names.slice(1)).toEqual([
-      expect.stringMatching(/^ai_sdk_tool_[a-f0-9]{16}$/),
-      expect.stringMatching(/^ai_sdk_tool_[a-f0-9]{16}$/),
+      expect.stringMatching(/^ai-toolkit_tool_[a-f0-9]{16}$/),
+      expect.stringMatching(/^ai-toolkit_tool_[a-f0-9]{16}$/),
     ]);
     expect(
       names.map(name => first.originalNameByAlias.get(String(name))),

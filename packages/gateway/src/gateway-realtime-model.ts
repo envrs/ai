@@ -5,7 +5,7 @@ import type {
   Experimental_RealtimeModelV4ClientSecretResult as RealtimeModelV4ClientSecretResult,
   Experimental_RealtimeModelV4ServerEvent as RealtimeModelV4ServerEvent,
   Experimental_RealtimeModelV4SessionConfig as RealtimeModelV4SessionConfig,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { getGatewayRealtimeProtocols } from './gateway-realtime-auth';
 
 export type GatewayRealtimeModelConfig = {
@@ -28,7 +28,7 @@ export type GatewayRealtimeModelConfig = {
  * Realtime model backed by the AI Gateway.
  *
  * The Gateway normalizes realtime exactly like it normalizes every other
- * modality: the client speaks the normalized AI SDK realtime protocol and the
+ * modality: the client speaks the normalized ai-toolkit realtime protocol and the
  * Gateway translates to and from the upstream provider server-side. This model
  * is therefore a thin identity codec over that normalized protocol — only the
  * connection and authentication are Gateway-specific.
@@ -85,13 +85,13 @@ export class GatewayRealtimeModel implements RealtimeModelV4 {
   }
 
   parseServerEvent(raw: unknown): RealtimeModelV4ServerEvent {
-    // The Gateway emits normalized AI SDK realtime events, so no
+    // The Gateway emits normalized ai-toolkit realtime events, so no
     // provider-specific mapping is needed on the client.
     return raw as RealtimeModelV4ServerEvent;
   }
 
   serializeClientEvent(event: RealtimeModelV4ClientEvent): unknown {
-    // The Gateway accepts normalized AI SDK realtime events directly.
+    // The Gateway accepts normalized ai-toolkit realtime events directly.
     return event;
   }
 

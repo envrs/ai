@@ -15,7 +15,7 @@ import {
   type LanguageModelV4ToolApprovalRequest,
   type SharedV4ProviderMetadata,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createEventSourceResponseHandler,
@@ -30,7 +30,7 @@ import {
   WORKFLOW_SERIALIZE,
   type InferSchema,
   type ParseResult,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { normalizeOpenAIJsonSchema } from '../normalize-openai-json-schema';
 import {
   prepareOpenAIConfigForWorkflowDeserialize,
@@ -3032,7 +3032,7 @@ function createOpenAIResponsesChatCompletionsMismatchError({
     message:
       'Received a Chat Completions stream while using the OpenAI Responses API. ' +
       "The default OpenAI provider model uses the Responses API. If your custom baseURL targets a Chat Completions-compatible endpoint, use openai.chat('model-id') or createOpenAI(...).chat('model-id') instead. " +
-      'You can also use @ai-sdk/openai-compatible for OpenAI-compatible providers.',
+      'You can also use @ai-toolkit/openai-compatible for OpenAI-compatible providers.',
     url,
     requestBodyValues,
     responseHeaders,

@@ -1,1 +1,1 @@
-export { getErrorMessage } from '@ai-sdk/provider';
+export { getErrorMessage } from '@ai-toolkit/provider';

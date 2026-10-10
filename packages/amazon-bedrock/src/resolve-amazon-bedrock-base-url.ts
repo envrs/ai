@@ -1,9 +1,9 @@
-import { InvalidArgumentError } from '@ai-sdk/provider';
+import { InvalidArgumentError } from '@ai-toolkit/provider';
 import {
   isValidHostnamePart,
   loadOptionalSetting,
   withoutTrailingSlash,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 const AWS_PARTITION_DNS_SUFFIXES = [
   { regionPrefix: 'cn-', dnsSuffix: 'amazonaws.com.cn' },

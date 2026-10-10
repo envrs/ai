@@ -47,7 +47,7 @@ describe('runAgentTUI', () => {
         prompts: [undefined],
       }),
     );
-    const agent = createAISDKAgent();
+    const agent = createai-toolkitAgent();
 
     await runAgentTUI({ agent, title: 'Test Agent' });
 
@@ -60,7 +60,7 @@ describe('runAgentTUI', () => {
         prompts: [undefined],
       }),
     );
-    const agent = createAISDKAgent();
+    const agent = createai-toolkitAgent();
 
     await runAgentTUI({
       agent,
@@ -80,7 +80,7 @@ describe('runAgentTUI', () => {
         prompts: [undefined],
       }),
     );
-    const agent = createAISDKAgent();
+    const agent = createai-toolkitAgent();
 
     await runAgentTUI({
       agent,
@@ -103,7 +103,7 @@ describe('runAgentTUI', () => {
         prompts: [undefined],
       }),
     );
-    const agent = createAISDKAgent();
+    const agent = createai-toolkitAgent();
 
     await runAgentTUI({
       agent,
@@ -505,7 +505,7 @@ function createApprovalAgent(streamCalls: AgentTUIStreamCall[]): AgentTUIAgent {
   };
 }
 
-function createAISDKAgent(): Agent<any, any, any, any> {
+function createai-toolkitAgent(): Agent<any, any, any, any> {
   return { version: 'agent-v1' } as Agent<any, any, any, any>;
 }
 

@@ -1,15 +1,15 @@
 import type { SharedV4ProviderReference } from '../shared/v4/shared-v4-provider-reference';
-import { AISDKError } from './ai-sdk-error';
+import { ai-toolkitError } from './ai-toolkit-error';
 
 const name = 'AI_NoSuchProviderReferenceError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
 /**
  * Thrown when a provider reference cannot be resolved because the specified
  * provider is not found in the provider reference mapping.
  */
-export class NoSuchProviderReferenceError extends AISDKError {
+export class NoSuchProviderReferenceError extends ai-toolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly provider: string;
@@ -30,6 +30,6 @@ export class NoSuchProviderReferenceError extends AISDKError {
   }
 
   static isInstance(error: unknown): error is NoSuchProviderReferenceError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }

@@ -1,15 +1,15 @@
-import type { ProviderErrorStructure } from '@ai-sdk/openai-compatible';
+import type { ProviderErrorStructure } from '@ai-toolkit/openai-compatible';
 import {
   NoSuchModelError,
   type LanguageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { CerebrasChatLanguageModel } from './cerebras-chat-language-model';
 import type { CerebrasChatModelId } from './cerebras-chat-options';
 import { z } from 'zod/v4';
@@ -147,7 +147,7 @@ export function createCerebras(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-cerebras/${VERSION}`,
+      `ai-toolkit-cerebras/${VERSION}`,
     );
 
   const createLanguageModel = (modelId: CerebrasChatModelId) => {

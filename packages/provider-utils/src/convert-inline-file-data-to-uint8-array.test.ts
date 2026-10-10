@@ -1,4 +1,4 @@
-import { UnsupportedFunctionalityError } from '@ai-sdk/provider';
+import { UnsupportedFunctionalityError } from '@ai-toolkit/provider';
 import { describe, expect, it, vi } from 'vitest';
 import { convertInlineFileDataToUint8Array } from './convert-inline-file-data-to-uint8-array';
 

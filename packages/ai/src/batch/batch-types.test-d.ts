@@ -17,7 +17,7 @@ import type {
   LanguageModelV4CallOptions,
   LanguageModelV4GenerateResult,
   ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { expectTypeOf, it } from 'vitest';
 import {
   experimental_cancelBatch as cancelBatch,
@@ -45,7 +45,7 @@ import {
 } from '../index';
 import type { AsyncIterableStream } from '../util/async-iterable-stream';
 import type { ContentPart } from '../generate-text/content-part';
-import { jsonSchema, type ToolSet } from '@ai-sdk/provider-utils';
+import { jsonSchema, type ToolSet } from '@ai-toolkit/provider-utils';
 
 it('exposes typed Gateway async-job metadata', () => {
   expectTypeOf<

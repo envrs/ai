@@ -1,29 +1,29 @@
-# AI SDK - GMI Cloud Provider
+# ai-toolkit - GMI Cloud Provider
 
-The **GMI Cloud provider** for the [AI SDK](https://ai-sdk.dev/docs) contains language model support for [GMI Cloud](https://www.gmicloud.ai), offering GPU inference for open-weight models over an OpenAI-compatible API.
+The **GMI Cloud provider** for the [ai-toolkit](https://ai-toolkit.dev/docs) contains language model support for [GMI Cloud](https://www.gmicloud.ai), offering GPU inference for open-weight models over an OpenAI-compatible API.
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access GMI Cloud (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access GMI Cloud (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The GMI Cloud provider is available in the `@ai-sdk/gmicloud` module. You can install it with
+The GMI Cloud provider is available in the `@ai-toolkit/gmicloud` module. You can install it with
 
 ```bash
-npm i @ai-sdk/gmicloud
+npm i @ai-toolkit/gmicloud
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `gmicloud` from `@ai-sdk/gmicloud`:
+You can import the default provider instance `gmicloud` from `@ai-toolkit/gmicloud`:
 
 ```ts
-import { gmicloud } from '@ai-sdk/gmicloud';
+import { gmicloud } from '@ai-toolkit/gmicloud';
 ```
 
 The GMI Cloud API key is read from the `GMI_CLOUD_APIKEY` environment variable by default. For custom configuration, use `createGmicloud`:
 
 ```ts
-import { createGmicloud } from '@ai-sdk/gmicloud';
+import { createGmicloud } from '@ai-toolkit/gmicloud';
 
 const gmicloud = createGmicloud({
   apiKey: process.env.GMI_CLOUD_APIKEY ?? '',
@@ -33,7 +33,7 @@ const gmicloud = createGmicloud({
 ## Language Models
 
 ```ts
-import { gmicloud } from '@ai-sdk/gmicloud';
+import { gmicloud } from '@ai-toolkit/gmicloud';
 import { generateText } from 'ai';
 
 const { text } = await generateText({

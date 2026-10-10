@@ -1,6 +1,6 @@
-# @ai-sdk/workflow-harness
+# @ai-toolkit/workflow-harness
 
-Run an AI SDK `HarnessAgent` (Claude Code, Codex, Pi) as a **durable workflow**
+Run an ai-toolkit `HarnessAgent` (Claude Code, Codex, Pi) as a **durable workflow**
 using the [Workflow DevKit](https://www.npmjs.com/package/workflow). A turn can
 be divided into time slices or semantic agent steps.
 
@@ -23,8 +23,8 @@ compiled workflow bundle.
 `agent.ts`:
 
 ```ts
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { claudeCode } from '@ai-sdk/harness-claude-code';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { claudeCode } from '@ai-toolkit/harness-claude-code';
 
 export const agent = new HarnessAgent({ harness: claudeCode });
 ```
@@ -35,7 +35,7 @@ export const agent = new HarnessAgent({ harness: claudeCode });
 import {
   runHarnessAgentTimeSlice,
   type HarnessWorkflowState,
-} from '@ai-sdk/workflow-harness';
+} from '@ai-toolkit/workflow-harness';
 
 export async function timeSliceStep(
   state: HarnessWorkflowState,
@@ -46,7 +46,7 @@ export async function timeSliceStep(
   const {
     createVercelNetworkSandboxSession,
     resumeVercelNetworkSandboxSession,
-  } = await import('@ai-sdk/sandbox-vercel');
+  } = await import('@ai-toolkit/sandbox-khulnasoft');
   const sandboxId = `harness-${state.sessionId}`;
   const sandboxSession =
     state.resumeFrom == null && state.continueFrom == null
@@ -69,7 +69,7 @@ import {
   createHarnessWorkflowState,
   finalizeHarnessWorkflow,
   type HarnessWorkflowInput,
-} from '@ai-sdk/workflow-harness';
+} from '@ai-toolkit/workflow-harness';
 import { timeSliceStep } from './time-slice-step';
 
 export async function timeSliceWorkflow(input: {
@@ -93,8 +93,8 @@ and continue while the status is `ready_for_next_step`:
 `stepped-agent.ts`:
 
 ```ts
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import { claudeCode } from '@ai-sdk/harness-claude-code';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { claudeCode } from '@ai-toolkit/harness-claude-code';
 import { isStepCount } from 'ai';
 
 export const steppedAgent = new HarnessAgent({
@@ -109,7 +109,7 @@ export const steppedAgent = new HarnessAgent({
 import {
   runHarnessAgentStep,
   type HarnessWorkflowState,
-} from '@ai-sdk/workflow-harness';
+} from '@ai-toolkit/workflow-harness';
 
 export async function agentStep(
   state: HarnessWorkflowState,
@@ -120,7 +120,7 @@ export async function agentStep(
   const {
     createVercelNetworkSandboxSession,
     resumeVercelNetworkSandboxSession,
-  } = await import('@ai-sdk/sandbox-vercel');
+  } = await import('@ai-toolkit/sandbox-khulnasoft');
   const sandboxId = `harness-${state.sessionId}`;
   const sandboxSession =
     state.resumeFrom == null && state.continueFrom == null
@@ -143,7 +143,7 @@ import {
   createHarnessWorkflowState,
   finalizeHarnessWorkflow,
   type HarnessWorkflowInput,
-} from '@ai-sdk/workflow-harness';
+} from '@ai-toolkit/workflow-harness';
 import { agentStep } from './stepped-agent-step';
 
 export async function agentWorkflow(

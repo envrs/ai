@@ -5,7 +5,7 @@ import type {
 import type {
   HarnessV1BridgeToolWire,
   HarnessV1StreamPart,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import type { ACPToolCall } from '../../acp-tool-call';
 import type { ACPBuiltinToolMapping } from '../acp-v1-bridge-protocol';
 import { createACPStreamTranslator } from './stream-translator';

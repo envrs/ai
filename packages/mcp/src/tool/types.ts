@@ -1,10 +1,10 @@
 import { z } from 'zod/v4';
-import type { JSONObject } from '@ai-sdk/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 import type {
   FlexibleSchema,
   Tool,
   ToolExecutionOptions,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 export const LATEST_PROTOCOL_VERSION = '2026-07-28';
 export const LATEST_LEGACY_PROTOCOL_VERSION = '2025-11-25';

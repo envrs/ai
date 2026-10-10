@@ -6,12 +6,12 @@ import { Templates } from '@/components/docs/templates';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/resources/templates' },
-  title: 'AI SDK Templates',
+  title: 'ai-toolkit Templates',
   description:
-    'Official app templates, examples, and framework integrations built with the AI SDK.',
+    'Official app templates, examples, and framework integrations built with the ai-toolkit.',
   ...socialCard(
-    'AI SDK Templates',
-    'Official app templates, examples, and framework integrations built with the AI SDK.',
+    'ai-toolkit Templates',
+    'Official app templates, examples, and framework integrations built with the ai-toolkit.',
   ),
 };
 
@@ -27,7 +27,7 @@ const TemplatesPage = () => (
       <h1 className="font-semibold text-4xl text-gray-1000">Templates</h1>
       <p className="text-gray-900 text-xl">
         Start from official app templates, examples, and framework integrations
-        built with the AI SDK.
+        built with the ai-toolkit.
       </p>
     </div>
 
@@ -36,7 +36,7 @@ const TemplatesPage = () => (
         <h2 className="font-semibold text-2xl text-gray-1000">Starter Kits</h2>
         <Link
           className="inline-flex items-center gap-1 text-sm hover:underline"
-          href="https://vercel.com/templates?type=ai"
+          href="https://khulnasoft.com/templates?type=ai"
           rel="noopener noreferrer"
           target="_blank"
         >

@@ -1,6 +1,6 @@
 ---
 title: Get started with GPT-5
-description: Get started with GPT-5 using the AI SDK.
+description: Get started with GPT-5 using the ai-toolkit.
 tags: ['getting-started']
 ---
 
@@ -8,11 +8,11 @@ tags: ['getting-started']
 
 With the [release of OpenAI's GPT-5 model](https://openai.com/index/introducing-gpt-5), there has never been a better time to start building AI applications with advanced capabilities like verbosity control, web search, and native multi-modal understanding.
 
-The [AI SDK](/) is a powerful TypeScript toolkit for building AI applications with large language models (LLMs) like OpenAI GPT-5 alongside popular frameworks like React, Next.js, Vue, Svelte, Node.js, and more.
+The [ai-toolkit](/) is a powerful TypeScript toolkit for building AI applications with large language models (LLMs) like OpenAI GPT-5 alongside popular frameworks like React, Next.js, Vue, Svelte, Node.js, and more.
 
 <Note>
   This guide covers GPT-5-specific behavior. For current models and examples,
-  see the [OpenAI provider documentation](/providers/ai-sdk-providers/openai).
+  see the [OpenAI provider documentation](/providers/ai-toolkit-providers/openai).
 </Note>
 
 ## OpenAI GPT-5
@@ -85,17 +85,17 @@ Analyze the attached financial report and identify the most important metrics.
 - Consider using OpenAI's Prompt Optimizer tool for complex prompts
 - Document successful patterns for reuse
 
-## Getting Started with the AI SDK
+## Getting Started with the ai-toolkit
 
-The AI SDK is the TypeScript toolkit designed to help developers build AI-powered applications with React, Next.js, Vue, Svelte, Node.js, and more. Integrating LLMs into applications is complicated and heavily dependent on the specific model provider you use.
+The ai-toolkit is the TypeScript toolkit designed to help developers build AI-powered applications with React, Next.js, Vue, Svelte, Node.js, and more. Integrating LLMs into applications is complicated and heavily dependent on the specific model provider you use.
 
-The AI SDK abstracts away the differences between model providers, eliminates boilerplate code for building chatbots, and allows you to go beyond text output to generate rich, interactive components.
+The ai-toolkit abstracts away the differences between model providers, eliminates boilerplate code for building chatbots, and allows you to go beyond text output to generate rich, interactive components.
 
-At the center of the AI SDK is [AI SDK Core](/docs/ai-sdk-core/overview), which provides a unified API to call any LLM. The code snippet below is all you need to call OpenAI GPT-5 with the AI SDK:
+At the center of the ai-toolkit is [ai-toolkit Core](/docs/ai-toolkit-core/overview), which provides a unified API to call any LLM. The code snippet below is all you need to call OpenAI GPT-5 with the ai-toolkit:
 
 ```ts
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 
 const { text } = await generateText({
   model: openai('gpt-5'),
@@ -105,11 +105,11 @@ const { text } = await generateText({
 
 ### Generating Structured Data
 
-While text generation can be useful, you might want to generate structured JSON data. For example, you might want to extract information from text, classify data, or generate synthetic data. AI SDK Core provides [`generateText`](/docs/reference/ai-sdk-core/generate-text) and [`streamText`](/docs/reference/ai-sdk-core/stream-text) with `Output` to generate structured data, allowing you to constrain model outputs to a specific schema.
+While text generation can be useful, you might want to generate structured JSON data. For example, you might want to extract information from text, classify data, or generate synthetic data. ai-toolkit Core provides [`generateText`](/docs/reference/ai-toolkit-core/generate-text) and [`streamText`](/docs/reference/ai-toolkit-core/stream-text) with `Output` to generate structured data, allowing you to constrain model outputs to a specific schema.
 
 ```ts
 import { generateText, Output } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { z } from 'zod';
 
 const { output } = await generateText({
@@ -137,7 +137,7 @@ One of GPT-5's new features is verbosity control, allowing you to adjust respons
 
 ```ts
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 
 // Concise response
 const { text: conciseText } = await generateText({
@@ -168,7 +168,7 @@ GPT-5 can access real-time information through the integrated web search tool:
 
 ```ts
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 
 const result = await generateText({
   model: openai('gpt-5'),
@@ -189,7 +189,7 @@ const sources = result.sources;
 For transparency into GPT-5's thought process, enable reasoning summaries:
 
 ```ts
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { streamText } from 'ai';
 
 const result = streamText({
@@ -213,13 +213,13 @@ for await (const part of result.stream) {
 }
 ```
 
-### Using Tools with the AI SDK
+### Using Tools with the ai-toolkit
 
-GPT-5 supports tool calling out of the box, allowing it to interact with external systems and perform discrete tasks. Here's an example of using tool calling with the AI SDK:
+GPT-5 supports tool calling out of the box, allowing it to interact with external systems and perform discrete tasks. Here's an example of using tool calling with the ai-toolkit:
 
 ```ts
 import { generateText, tool } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { z } from 'zod';
 
 const { toolResults } = await generateText({
@@ -242,22 +242,22 @@ const { toolResults } = await generateText({
 
 ### Building Interactive Interfaces
 
-AI SDK Core can be paired with [AI SDK UI](/docs/ai-sdk-ui/overview), another powerful component of the AI SDK, to streamline the process of building chat, completion, and assistant interfaces with popular frameworks like Next.js, Nuxt, and SvelteKit.
+ai-toolkit Core can be paired with [ai-toolkit UI](/docs/ai-toolkit-ui/overview), another powerful component of the ai-toolkit, to streamline the process of building chat, completion, and assistant interfaces with popular frameworks like Next.js, Nuxt, and SvelteKit.
 
-AI SDK UI provides robust abstractions that simplify the complex tasks of managing chat streams and UI updates on the frontend, enabling you to develop dynamic AI-driven interfaces more efficiently.
+ai-toolkit UI provides robust abstractions that simplify the complex tasks of managing chat streams and UI updates on the frontend, enabling you to develop dynamic AI-driven interfaces more efficiently.
 
-With three main hooks — [`useChat`](/docs/reference/ai-sdk-ui/use-chat), [`useCompletion`](/docs/reference/ai-sdk-ui/use-completion), and [`useObject`](/docs/reference/ai-sdk-ui/use-object) — you can incorporate real-time chat capabilities, text completions, streamed JSON, and interactive assistant features into your app.
+With three main hooks — [`useChat`](/docs/reference/ai-toolkit-ui/use-chat), [`useCompletion`](/docs/reference/ai-toolkit-ui/use-completion), and [`useObject`](/docs/reference/ai-toolkit-ui/use-object) — you can incorporate real-time chat capabilities, text completions, streamed JSON, and interactive assistant features into your app.
 
-Let's explore building a chatbot with [Next.js](https://nextjs.org), the AI SDK, and OpenAI GPT-5:
+Let's explore building a chatbot with [Next.js](https://nextjs.org), the ai-toolkit, and OpenAI GPT-5:
 
-In a new Next.js application, first install the AI SDK and the OpenAI provider:
+In a new Next.js application, first install the ai-toolkit and the OpenAI provider:
 
-<Snippet text="pnpm install ai @ai-sdk/openai @ai-sdk/react" />
+<Snippet text="pnpm install ai @ai-toolkit/openai @ai-toolkit/react" />
 
 Then, create a route handler for the chat endpoint:
 
 ```tsx filename="app/api/chat/route.ts"
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -288,7 +288,7 @@ Finally, update the root page (`app/page.tsx`) to use the `useChat` hook:
 ```tsx filename="app/page.tsx"
 'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { useState } from 'react';
 
 export default function Page() {
@@ -335,7 +335,7 @@ The useChat hook on your root page (`app/page.tsx`) will make a request to your 
 
 Ready to get started? Here's how you can dive in:
 
-1. Explore the documentation at [ai-sdk.dev/docs](/docs) to understand the full capabilities of the AI SDK.
-2. Check out practical examples at [ai-sdk.dev/cookbook](/cookbook) to see the SDK in action and get inspired for your own projects.
-3. Dive deeper with advanced guides on topics like Retrieval-Augmented Generation (RAG) and multi-modal chat at [ai-sdk.dev/cookbook/guides](/cookbook/guides).
-4. Check out ready-to-deploy AI templates at [vercel.com/templates?type=ai](https://vercel.com/templates?type=ai).
+1. Explore the documentation at [ai-toolkit.dev/docs](/docs) to understand the full capabilities of the ai-toolkit.
+2. Check out practical examples at [ai-toolkit.dev/cookbook](/cookbook) to see the SDK in action and get inspired for your own projects.
+3. Dive deeper with advanced guides on topics like Retrieval-Augmented Generation (RAG) and multi-modal chat at [ai-toolkit.dev/cookbook/guides](/cookbook/guides).
+4. Check out ready-to-deploy AI templates at [khulnasoft.com/templates?type=ai](https://khulnasoft.com/templates?type=ai).

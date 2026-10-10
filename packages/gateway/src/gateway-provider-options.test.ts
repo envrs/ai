@@ -1,4 +1,4 @@
-import { safeValidateTypes } from '@ai-sdk/provider-utils';
+import { safeValidateTypes } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import {
   DECISION_FALLBACK_MAX_CONDITION_DEPTH,

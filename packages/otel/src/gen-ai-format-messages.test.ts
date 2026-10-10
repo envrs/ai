@@ -9,7 +9,7 @@ import {
   mapProviderName,
   mapOperationName,
 } from './gen-ai-format-messages';
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
 
 describe('mapProviderName', () => {
   it('should map known providers to well-known values', () => {

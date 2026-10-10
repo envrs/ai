@@ -1,6 +1,6 @@
 ---
 title: Helicone
-description: Helicone Provider for the AI SDK
+description: Helicone Provider for the ai-toolkit
 ---
 
 # Helicone
@@ -17,16 +17,16 @@ Learn more about Helicone's capabilities in the [Helicone Documentation](https:/
 
 ## Setup
 
-The Helicone provider is available in the `@helicone/ai-sdk-provider` package. You can install it with:
+The Helicone provider is available in the `@helicone/ai-toolkit-provider` package. You can install it with:
 
-<InstallPackages packages="@helicone/ai-sdk-provider" />
+<InstallPackages packages="@helicone/ai-toolkit-provider" />
 
 ## Get started
 
 To get started with Helicone, use the `createHelicone` function to create a provider instance. Then query any model you like.
 
 ```typescript
-import { createHelicone } from '@helicone/ai-sdk-provider';
+import { createHelicone } from '@helicone/ai-toolkit-provider';
 import { generateText } from 'ai';
 
 const helicone = createHelicone({
@@ -45,12 +45,12 @@ You can obtain your Helicone API key from the [Helicone Dashboard](https://us.he
 
 ## Examples
 
-Here are examples of using Helicone with the AI SDK.
+Here are examples of using Helicone with the ai-toolkit.
 
 ### `generateText`
 
 ```javascript
-import { createHelicone } from '@helicone/ai-sdk-provider';
+import { createHelicone } from '@helicone/ai-toolkit-provider';
 import { generateText } from 'ai';
 
 const helicone = createHelicone({

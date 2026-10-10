@@ -1,25 +1,25 @@
 ---
 title: Human-in-the-Loop with Next.js
-description: Add a human approval step to your agentic system with Next.js and the AI SDK
+description: Add a human approval step to your agentic system with Next.js and the ai-toolkit
 tags: ['next', 'agents', 'tool use']
 ---
 
 # Human-in-the-Loop with Next.js
 
-When building agentic systems, it's important to add human-in-the-loop (HITL) functionality to ensure that users can approve actions before the system executes them. The AI SDK provides built-in support for tool execution approval through the `needsApproval` property on tools.
+When building agentic systems, it's important to add human-in-the-loop (HITL) functionality to ensure that users can approve actions before the system executes them. The ai-toolkit provides built-in support for tool execution approval through the `needsApproval` property on tools.
 
-This recipe shows how to add a human approval step to a Next.js chatbot using the AI SDK's native tool execution approval feature.
+This recipe shows how to add a human approval step to a Next.js chatbot using the ai-toolkit's native tool execution approval feature.
 
 ## Background
 
-To understand how to implement this functionality, let's look at how tool calling works in a Next.js chatbot application with the AI SDK.
+To understand how to implement this functionality, let's look at how tool calling works in a Next.js chatbot application with the ai-toolkit.
 
 On the frontend, use the `useChat` hook to manage the message state and user interaction.
 
 ```tsx filename="app/page.tsx"
 'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 import { useState } from 'react';
 
@@ -77,7 +77,7 @@ import {
   createUIMessageStreamResponse,
   toUIMessageStream,
 } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { z } from 'zod';
 
 export async function POST(req: Request) {
@@ -106,7 +106,7 @@ export async function POST(req: Request) {
 }
 ```
 
-When a user asks the LLM for the weather in New York, the model generates a tool call with the city parameter. The AI SDK then runs the `execute` function automatically and returns the result.
+When a user asks the LLM for the weather in New York, the model generates a tool call with the city parameter. The ai-toolkit then runs the `execute` function automatically and returns the result.
 
 To add a HITL step, you add an approval gate between the tool call and the tool execution using `needsApproval`.
 
@@ -123,7 +123,7 @@ import {
   createUIMessageStreamResponse,
   toUIMessageStream,
 } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { z } from 'zod';
 
 export async function POST(req: Request) {
@@ -162,7 +162,7 @@ On the frontend, check for the `approval-requested` state and render approve/den
 ```tsx filename="app/page.tsx"
 'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import {
   DefaultChatTransport,
   lastAssistantMessageIsCompleteWithApprovalResponses,
@@ -272,7 +272,7 @@ Here's how the approval flow works:
 The `sendAutomaticallyWhen` option with `lastAssistantMessageIsCompleteWithApprovalResponses` automatically sends a message after all tool approvals in the last step have been responded to. Without this, you would need to call `sendMessage()` manually after each approval.
 
 ```tsx
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { lastAssistantMessageIsCompleteWithApprovalResponses } from 'ai';
 
 const { messages, addToolApprovalResponse } = useChat({
@@ -297,7 +297,7 @@ import {
   createUIMessageStreamResponse,
   toUIMessageStream,
 } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { z } from 'zod';
 
 export async function POST(req: Request) {
@@ -348,6 +348,6 @@ const result = streamText({
 
 ## Full Example
 
-To see tool approval in action, check out the [`/chat/tool-approval` page](https://github.com/vercel/ai/blob/main/examples/ai-e2e-next/app/chat/tool-approval/page.tsx) and its [route handler](https://github.com/vercel/ai/blob/main/examples/ai-e2e-next/app/api/chat/tool-approval/route.ts) in the `ai-e2e-next` example.
+To see tool approval in action, check out the [`/chat/tool-approval` page](https://github.com/khulnasoft/ai/blob/main/examples/ai-e2e-next/app/chat/tool-approval/page.tsx) and its [route handler](https://github.com/khulnasoft/ai/blob/main/examples/ai-e2e-next/app/api/chat/tool-approval/route.ts) in the `ai-e2e-next` example.
 
-For more details on tool execution approval, see the [Tool Execution Approval](/docs/ai-sdk-core/tools-and-tool-calling#tool-execution-approval) and [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage#tool-execution-approval) documentation.
+For more details on tool execution approval, see the [Tool Execution Approval](/docs/ai-toolkit-core/tools-and-tool-calling#tool-execution-approval) and [Chatbot Tool Usage](/docs/ai-toolkit-ui/chatbot-tool-usage#tool-execution-approval) documentation.

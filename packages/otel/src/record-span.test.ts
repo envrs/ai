@@ -1,4 +1,4 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import type { Span } from '@opentelemetry/api';
 import { RetryError } from 'ai';
 import { describe, it, expect, beforeEach } from 'vitest';

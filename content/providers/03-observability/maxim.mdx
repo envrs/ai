@@ -5,9 +5,9 @@ description: Evaluate & Observe LLM applications with Maxim
 
 # Maxim Observability
 
-[Maxim AI](https://getmaxim.ai) streamlines AI application development and deployment by applying traditional software best practices to non-deterministic AI workflows. Our evaluation and observability tools help teams maintain quality, reliability, and speed throughout the AI application lifecycle. Maxim integrates with the AI SDK to provide:
+[Maxim AI](https://getmaxim.ai) streamlines AI application development and deployment by applying traditional software best practices to non-deterministic AI workflows. Our evaluation and observability tools help teams maintain quality, reliability, and speed throughout the AI application lifecycle. Maxim integrates with the ai-toolkit to provide:
 
-- Automatic Observability – Adds tracing, logging, and metadata to AI SDK calls with a simple wrapper.
+- Automatic Observability – Adds tracing, logging, and metadata to ai-toolkit calls with a simple wrapper.
 
 - Unified Model Wrapping – Supports OpenAI, Anthropic, and Google etc. models uniformly.
 
@@ -15,15 +15,15 @@ description: Evaluate & Observe LLM applications with Maxim
 
 - Streaming & Structured Output Support – Handles streaming responses and structured outputs seamlessly.
 
-# Setting up Maxim with the AI SDK
+# Setting up Maxim with the ai-toolkit
 
 ## Requirements
 
 ```
 "ai"
-"@ai-sdk/openai"
-"@ai-sdk/anthropic"
-"@ai-sdk/google"
+"@ai-toolkit/openai"
+"@ai-toolkit/anthropic"
+"@ai-toolkit/google"
 "@maximai/maxim-js"
 ```
 
@@ -62,23 +62,23 @@ async function initializeMaxim() {
 }
 ```
 
-## Wrap AI SDK Models with Maxim
+## Wrap ai-toolkit Models with Maxim
 
 ```javascript
-import { openai } from '@ai-sdk/openai';
-import { wrapMaximAISDKModel } from '@maximai/maxim-js/vercel-ai-sdk';
+import { openai } from '@ai-toolkit/openai';
+import { wrapMaximai-toolkitModel } from '@maximai/maxim-js/khulnasoft-ai-toolkit';
 
-const model = wrapMaximAISDKModel(openai('gpt-6-astra'), logger);
+const model = wrapMaximai-toolkitModel(openai('gpt-6-astra'), logger);
 ```
 
 ## Make LLM calls using wrapped models
 
 ```javascript
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
-import { wrapMaximAISDKModel } from '@maximai/maxim-js/vercel-ai-sdk';
+import { openai } from '@ai-toolkit/openai';
+import { wrapMaximai-toolkitModel } from '@maximai/maxim-js/khulnasoft-ai-toolkit';
 
-const model = wrapMaximAISDKModel(openai('gpt-5'), logger);
+const model = wrapMaximai-toolkitModel(openai('gpt-5'), logger);
 
 // Generate text with automatic logging
 const response = await generateText({
@@ -91,9 +91,9 @@ const response = await generateText({
 console.log('Response:', response.text);
 ```
 
-## Working with Different AI SDK Functions
+## Working with Different ai-toolkit Functions
 
-The wrapped model works seamlessly with all Vercel AI SDK functions:
+The wrapped model works seamlessly with all khulnasoft ai-toolkit functions:
 
 ### **Structured Output**
 
@@ -138,7 +138,7 @@ for await (const textPart of textStream) {
 ### **Using Custom Metadata**
 
 ```ts
-import { MaximVercelProviderMetadata } from '@maximai/maxim-js/vercel-ai-sdk';
+import { MaximKhulnaSoftProviderMetadata } from '@maximai/maxim-js/khulnasoft-ai-toolkit';
 
 const response = await generateText({
   model: model,
@@ -150,7 +150,7 @@ const response = await generateText({
         type: 'demo',
         priority: 'high',
       },
-    } as MaximVercelProviderMetadata,
+    } as MaximKhulnaSoftProviderMetadata,
   },
 });
 ```
@@ -183,13 +183,13 @@ const response = await generateText({
 
 ```ts
 import { streamText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import {
-  wrapMaximAISDKModel,
-  MaximVercelProviderMetadata,
-} from '@maximai/maxim-js/vercel-ai-sdk';
+  wrapMaximai-toolkitModel,
+  MaximKhulnaSoftProviderMetadata,
+} from '@maximai/maxim-js/khulnasoft-ai-toolkit';
 
-const model = wrapMaximAISDKModel(openai('gpt-6-astra'), logger);
+const model = wrapMaximai-toolkitModel(openai('gpt-6-astra'), logger);
 
 const { textStream } = await streamText({
   model: model,
@@ -202,7 +202,7 @@ const { textStream } = await streamText({
         type: 'creative',
         format: 'streaming',
       },
-    } as MaximVercelProviderMetadata,
+    } as MaximKhulnaSoftProviderMetadata,
   },
 });
 
@@ -214,18 +214,18 @@ for await (const textPart of textStream) {
 ## Multiple Provider Support
 
 ```javascript
-import { openai } from '@ai-sdk/openai';
-import { anthropic } from '@ai-sdk/anthropic';
-import { google } from '@ai-sdk/google';
-import { wrapMaximAISDKModel } from '@maximai/maxim-js/vercel-ai-sdk';
+import { openai } from '@ai-toolkit/openai';
+import { anthropic } from '@ai-toolkit/anthropic';
+import { google } from '@ai-toolkit/google';
+import { wrapMaximai-toolkitModel } from '@maximai/maxim-js/khulnasoft-ai-toolkit';
 
 // Wrap different provider models
-const openaiModel = wrapMaximAISDKModel(openai('gpt-6-astra'), logger);
-const anthropicModel = wrapMaximAISDKModel(
+const openaiModel = wrapMaximai-toolkitModel(openai('gpt-6-astra'), logger);
+const anthropicModel = wrapMaximai-toolkitModel(
   anthropic('claude-sonnet-5-5'),
   logger,
 );
-const googleModel = wrapMaximAISDKModel(google('gemini-pro'), logger);
+const googleModel = wrapMaximai-toolkitModel(google('gemini-pro'), logger);
 
 // Use them with the same interface
 const responses = await Promise.all([
@@ -242,16 +242,16 @@ const responses = await Promise.all([
 ```ts
 // app/api/chat/route.ts
 import { streamText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import {
-  wrapMaximAISDKModel,
-  MaximVercelProviderMetadata,
-} from '@maximai/maxim-js/vercel-ai-sdk';
+  wrapMaximai-toolkitModel,
+  MaximKhulnaSoftProviderMetadata,
+} from '@maximai/maxim-js/khulnasoft-ai-toolkit';
 import { Maxim } from '@maximai/maxim-js';
 
 const maxim = new Maxim({ apiKey: process.env.MAXIM_API_KEY });
 const logger = await maxim.logger({ id: process.env.MAXIM_LOG_REPO_ID });
-const model = wrapMaximAISDKModel(openai('gpt-6-astra'), logger);
+const model = wrapMaximai-toolkitModel(openai('gpt-6-astra'), logger);
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
@@ -267,7 +267,7 @@ export async function POST(req: Request) {
           endpoint: '/api/chat',
           type: 'conversation',
         },
-      } as MaximVercelProviderMetadata,
+      } as MaximKhulnaSoftProviderMetadata,
     },
   });
 
@@ -309,9 +309,9 @@ export default function Chat() {
 
 ## Learn more
 
-- After setting up Maxim tracing for the Vercel AI SDK, you can explore other Maxim platform capabilities:
+- After setting up Maxim tracing for the khulnasoft ai-toolkit, you can explore other Maxim platform capabilities:
   - Prompt Management: Version, manage, and dynamically apply prompts across environments and agents.
   - Evaluations: Run automated and manual evaluations on traces, generations, and full agent trajectories.
   - Simulations: Test agents in real-world scenarios with simulated multi-turn interactions and workflows.
 
-For further details, checkout Vercel AI SDK's [Maxim integration documentation](https://www.getmaxim.ai/docs/sdk/typescript/integrations/vercel/vercel).
+For further details, checkout khulnasoft ai-toolkit's [Maxim integration documentation](https://www.getmaxim.ai/docs/sdk/typescript/integrations/khulnasoft/khulnasoft).

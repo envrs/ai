@@ -1,4 +1,4 @@
-import type { LanguageModelV4ToolResultOutput } from '@ai-sdk/provider';
+import type { LanguageModelV4ToolResultOutput } from '@ai-toolkit/provider';
 import { describe, expect, it, vi } from 'vitest';
 import {
   convertToGoogleMessages,

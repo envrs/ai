@@ -1,0 +1,99 @@
+---
+title: ai-toolkit Harnesses
+description: Learn how to use ai-toolkit harness adapters.
+---
+
+# ai-toolkit Harnesses
+
+ai-toolkit harness adapters connect `HarnessAgent` to established agent runtimes.
+They are separate from model providers, but they expose ai-toolkit-compatible stream
+and response primitives.
+
+<IndexCards
+  cards={[
+    {
+      title: 'Claude Code',
+      description: 'Use Claude Code through the ai-toolkit harness abstraction.',
+      href: '/providers/ai-toolkit-harnesses/claude-code',
+    },
+    {
+      title: 'Cline',
+      description: 'Use the Cline SDK through the ai-toolkit harness abstraction.',
+      href: '/providers/ai-toolkit-harnesses/cline',
+    },
+    {
+      title: 'Codex',
+      description: 'Use Codex through the ai-toolkit harness abstraction.',
+      href: '/providers/ai-toolkit-harnesses/codex',
+    },
+    {
+      title: 'Cursor',
+      description: 'Use Cursor through the ai-toolkit harness abstraction.',
+      href: '/providers/ai-toolkit-harnesses/cursor',
+    },
+    {
+      title: 'fx',
+      description: 'Use fx through the ai-toolkit harness abstraction.',
+      href: '/providers/ai-toolkit-harnesses/fx',
+    },
+    {
+      title: 'GitHub Copilot',
+      description: 'Use GitHub Copilot through the ai-toolkit harness abstraction.',
+      href: '/providers/ai-toolkit-harnesses/github-copilot',
+    },
+    {
+      title: 'Grok Build',
+      description: 'Use Grok Build through the ai-toolkit harness abstraction.',
+      href: '/providers/ai-toolkit-harnesses/grok-build',
+    },
+    {
+      title: 'OpenCode',
+      description: 'Use OpenCode through the ai-toolkit harness abstraction.',
+      href: '/providers/ai-toolkit-harnesses/opencode',
+    },
+    {
+      title: 'Pi',
+      description: 'Use Pi through the ai-toolkit harness abstraction.',
+      href: '/providers/ai-toolkit-harnesses/pi',
+    },
+    {
+      title: 'Agent Client Protocol',
+      description:
+        'Use any ACP compatible harness through the ai-toolkit harness abstraction.',
+      href: '/providers/ai-toolkit-harnesses/acp',
+    },
+  ]}
+/>
+
+## Usage
+
+All harness adapters are used with `HarnessAgent`:
+
+```ts
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import { codex } from '@ai-toolkit/harness-codex';
+import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+
+const agent = new HarnessAgent({
+  harness: codex,
+  model: 'gpt-5.6-luna',
+});
+
+const sandboxSession = await createVercelNetworkSandboxSession({
+  runtime: 'node24',
+  ports: [4000],
+  template: await agent.getSandboxTemplate(),
+});
+const session = await agent.createSession({ sandboxSession });
+try {
+  console.log(
+    (await agent.generate({ session, prompt: 'Inspect this project.' })).text,
+  );
+} finally {
+  await session.destroy();
+  await sandboxSession.destroy();
+}
+```
+
+Read the [Harnesses](/docs/ai-toolkit-harnesses) documentation for sessions,
+tools, UI, and terminal usage.

@@ -2,7 +2,7 @@ import type {
   InferToolInput,
   MaybePromiseLike,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 /**
  * Mapping of tool names to functions that refine parsed tool inputs.

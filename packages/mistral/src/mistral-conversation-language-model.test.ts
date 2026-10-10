@@ -2,13 +2,13 @@ import type {
   LanguageModelV4CallOptions,
   LanguageModelV4Prompt,
   LanguageModelV4ToolCall,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertReadableStreamToArray,
   mockId,
-} from '@ai-sdk/provider-utils/test';
-import type { FetchFunction } from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider-utils/test';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { createMistral } from './mistral-provider';
 

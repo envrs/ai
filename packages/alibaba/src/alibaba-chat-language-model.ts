@@ -7,7 +7,7 @@ import type {
   LanguageModelV4StreamPart,
   LanguageModelV4StreamResult,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createEventSourceResponseHandler,
@@ -25,7 +25,7 @@ import {
   WORKFLOW_DESERIALIZE,
   type InferSchema,
   type ParseResult,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import {
   alibabaLanguageModelChatOptions,
@@ -85,7 +85,7 @@ export class AlibabaChatLanguageModel implements LanguageModelV4 {
 
   /**
    * Builds request arguments for Alibaba API call.
-   * Converts AI SDK options to Alibaba API format.
+   * Converts ai-toolkit options to Alibaba API format.
    */
   private async getArgs({
     prompt,

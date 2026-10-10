@@ -3,12 +3,12 @@ import {
   type JSONObject,
   type RerankingModelV4CallOptions,
   type RerankingModelV4Result,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   createIdGenerator,
   type Context,
   type ProviderOptions,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { prepareRetries } from '../../src/util/prepare-retries';
 import { logWarnings } from '../logger/log-warnings';
 import { resolveRerankingModel } from '../model/resolve-model';
@@ -120,7 +120,7 @@ export async function rerank<
 
   /**
    * Additional provider-specific options. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerOptions?: ProviderOptions;

@@ -2,7 +2,7 @@ import {
   convertArrayToReadableStream,
   convertAsyncIterableToArray,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import {
   asAsyncIterableStream,
   createAsyncIterableStream,

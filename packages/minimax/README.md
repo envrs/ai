@@ -1,37 +1,37 @@
-# AI SDK - MiniMax Provider
+# ai-toolkit - MiniMax Provider
 
-The **[MiniMax provider](https://ai-sdk.dev/providers/ai-sdk-providers/minimax)** for the [AI SDK](https://ai-sdk.dev/docs) contains language model support for the [MiniMax](https://www.minimax.io/) platform, including the MiniMax-M model series.
+The **[MiniMax provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/minimax)** for the [ai-toolkit](https://ai-toolkit.dev/docs) contains language model support for the [MiniMax](https://www.minimax.io/) platform, including the MiniMax-M model series.
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access MiniMax (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access MiniMax (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The MiniMax provider is available in the `@ai-sdk/minimax` module. You can install it with
+The MiniMax provider is available in the `@ai-toolkit/minimax` module. You can install it with
 
 ```bash
-npm i @ai-sdk/minimax
+npm i @ai-toolkit/minimax
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `minimax` from `@ai-sdk/minimax`:
+You can import the default provider instance `minimax` from `@ai-toolkit/minimax`:
 
 ```ts
-import { minimax } from '@ai-sdk/minimax';
+import { minimax } from '@ai-toolkit/minimax';
 ```
 
 ## Language Model Example
 
 ```ts
-import { minimax } from '@ai-sdk/minimax';
+import { minimax } from '@ai-toolkit/minimax';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -43,7 +43,7 @@ const { text } = await generateText({
 ## Thinking Mode Example
 
 ```ts
-import { minimax } from '@ai-sdk/minimax';
+import { minimax } from '@ai-toolkit/minimax';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -60,7 +60,7 @@ const { text } = await generateText({
 ## Video Generation Example
 
 ```ts
-import { minimax } from '@ai-sdk/minimax';
+import { minimax } from '@ai-toolkit/minimax';
 import { experimental_generateVideo as generateVideo } from 'ai';
 
 const { video } = await generateVideo({
@@ -73,4 +73,4 @@ const { video } = await generateVideo({
 
 ## Documentation
 
-Please check out the **[MiniMax provider](https://ai-sdk.dev/providers/ai-sdk-providers/minimax)** for more information.
+Please check out the **[MiniMax provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/minimax)** for more information.

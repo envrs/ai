@@ -2,7 +2,7 @@ import type {
   ImageModelV4,
   LanguageModelV4Prompt,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertToBase64,
   generateId as defaultGenerateId,
@@ -12,7 +12,7 @@ import {
   WORKFLOW_DESERIALIZE,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { googleImageModelOptionsSchema } from './google-image-model-options';
 import type {
   GoogleImageModelId,

@@ -1,5 +1,5 @@
-import type { JSONSchema7 } from '@ai-sdk/provider';
-import { asSchema, jsonSchema } from '@ai-sdk/provider-utils';
+import type { JSONSchema7 } from '@ai-toolkit/provider';
+import { asSchema, jsonSchema } from '@ai-toolkit/provider-utils';
 import { dynamicTool, tool } from 'ai';
 import { describe, expect, it, vi } from 'vitest';
 import { z } from 'zod/v4';
@@ -47,7 +47,7 @@ describe('serializeToolSet', () => {
         isProviderExecuted: true,
         args: {
           maxUses: 5,
-          allowedDomains: ['vercel.com', 'nextjs.org'],
+          allowedDomains: ['khulnasoft.com', 'nextjs.org'],
         },
         inputSchema: jsonSchema({
           type: 'object',
@@ -64,7 +64,7 @@ describe('serializeToolSet', () => {
       id: 'anthropic.web_search_20250305',
       args: {
         maxUses: 5,
-        allowedDomains: ['vercel.com', 'nextjs.org'],
+        allowedDomains: ['khulnasoft.com', 'nextjs.org'],
       },
     });
   });
@@ -297,7 +297,7 @@ describe('resolveSerializableTools', () => {
         id: 'anthropic.web_search_20250305' as const,
         args: {
           maxUses: 5,
-          allowedDomains: ['vercel.com'],
+          allowedDomains: ['khulnasoft.com'],
         },
         inputSchema: {
           type: 'object' as const,
@@ -315,7 +315,7 @@ describe('resolveSerializableTools', () => {
     expect((webSearch as any).id).toBe('anthropic.web_search_20250305');
     expect((webSearch as any).args).toEqual({
       maxUses: 5,
-      allowedDomains: ['vercel.com'],
+      allowedDomains: ['khulnasoft.com'],
     });
   });
 

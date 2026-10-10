@@ -5,8 +5,8 @@ import {
 import { beforeEach, afterEach, describe, expect, it, vi } from 'vitest';
 
 // Mock provider-utils to control runtime environment detection
-vi.mock('@ai-sdk/provider-utils', async () => {
-  const actual = await vi.importActual('@ai-sdk/provider-utils');
+vi.mock('@ai-toolkit/provider-utils', async () => {
+  const actual = await vi.importActual('@ai-toolkit/provider-utils');
   return {
     ...actual,
     getRuntimeEnvironmentUserAgent: vi.fn(() => 'testenv'),
@@ -300,7 +300,7 @@ describe('Google Vertex Edge Auth', () => {
       'https://oauth2.googleapis.com/token',
       expect.objectContaining({
         headers: expect.objectContaining({
-          'user-agent': 'ai-sdk-google-vertex/0.0.0-test testenv',
+          'user-agent': 'ai-toolkit-google-vertex/0.0.0-test testenv',
         }),
       }),
     );

@@ -1,7 +1,7 @@
 import {
   HarnessCapabilityUnsupportedError,
   type HarnessV1Prompt,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import { z } from 'zod/v4';
 
 export const acpTextContentBlockSchema = z.object({

@@ -1,9 +1,9 @@
-import type { JSONValue } from '@ai-sdk/provider';
+import type { JSONValue } from '@ai-toolkit/provider';
 import {
   createProviderExecutedToolFactory,
   lazySchema,
   zodSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 const inputSchema = lazySchema(() =>

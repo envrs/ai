@@ -1,7 +1,7 @@
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { convertArrayToReadableStream, MockLanguageModelV4 } from 'ai/test';
 import type { MockResponseDescriptor } from './mock.js';
 
@@ -129,7 +129,7 @@ class SerializableMockLanguageModel extends MockLanguageModelV4 {
   }
 }
 
-// Workaround for SWC plugin bug (https://github.com/vercel/workflow/issues/1365):
+// Workaround for SWC plugin bug (https://github.com/khulnasoft/workflow/issues/1365):
 // `new ClassName(...)` in a step closure doesn't get closure vars hoisted
 // correctly. Wrapping the constructor call in a plain function (imported
 // from a separate file) fixes it.

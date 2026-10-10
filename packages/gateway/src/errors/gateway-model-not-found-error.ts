@@ -1,9 +1,9 @@
 import { z } from '../zod';
 import { GatewayError } from './gateway-error';
-import { lazySchema, zodSchema } from '@ai-sdk/provider-utils';
+import { lazySchema, zodSchema } from '@ai-toolkit/provider-utils';
 
 const name = 'GatewayModelNotFoundError';
-const marker = `vercel.ai.gateway.error.${name}`;
+const marker = `khulnasoft.ai.gateway.error.${name}`;
 const symbol = Symbol.for(marker);
 
 export const modelNotFoundParamSchema = lazySchema(() =>

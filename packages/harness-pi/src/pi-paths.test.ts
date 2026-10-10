@@ -59,16 +59,16 @@ describe('createPiPathMapper', () => {
     const mapper = createPiPathMapper({
       hostWorkDir,
       sandboxWorkDir,
-      readableRoots: [{ sandboxDir: '/home/vercel-sandbox/.agents/skills' }],
+      readableRoots: [{ sandboxDir: '/home/khulnasoft-sandbox/.agents/skills' }],
     });
     expect(
       mapper.toReadableSandboxPath(
-        '/home/vercel-sandbox/.agents/skills/weather-codes/SKILL.md',
+        '/home/khulnasoft-sandbox/.agents/skills/weather-codes/SKILL.md',
       ),
-    ).toBe('/home/vercel-sandbox/.agents/skills/weather-codes/SKILL.md');
+    ).toBe('/home/khulnasoft-sandbox/.agents/skills/weather-codes/SKILL.md');
     expect(() =>
       mapper.toSandboxPath(
-        '/home/vercel-sandbox/.agents/skills/weather-codes/SKILL.md',
+        '/home/khulnasoft-sandbox/.agents/skills/weather-codes/SKILL.md',
       ),
     ).toThrow(/escapes the workspace/);
   });
@@ -77,19 +77,19 @@ describe('createPiPathMapper', () => {
     const mapper = createPiPathMapper({
       hostWorkDir,
       sandboxWorkDir,
-      readableRoots: [{ sandboxDir: '/home/vercel-sandbox' }],
-      deniedRoots: ['/home/vercel-sandbox/.credentials'],
+      readableRoots: [{ sandboxDir: '/home/khulnasoft-sandbox' }],
+      deniedRoots: ['/home/khulnasoft-sandbox/.credentials'],
     });
 
     expect(() =>
-      mapper.toReadableSandboxPath('/home/vercel-sandbox/.credentials/token'),
+      mapper.toReadableSandboxPath('/home/khulnasoft-sandbox/.credentials/token'),
     ).toThrow(/inside a denied root/);
     expect(() =>
-      mapper.assertReadableSandboxPath('/home/vercel-sandbox/.credentials'),
+      mapper.assertReadableSandboxPath('/home/khulnasoft-sandbox/.credentials'),
     ).toThrow(/inside a denied root/);
     expect(
-      mapper.toReadableSandboxPath('/home/vercel-sandbox/.credentials-old/a'),
-    ).toBe('/home/vercel-sandbox/.credentials-old/a');
+      mapper.toReadableSandboxPath('/home/khulnasoft-sandbox/.credentials-old/a'),
+    ).toBe('/home/khulnasoft-sandbox/.credentials-old/a');
   });
 
   it('refuses workspace paths inside a denied root', () => {
@@ -139,14 +139,14 @@ describe('createPiPathMapper', () => {
     const mapper = createPiPathMapper({
       hostWorkDir,
       sandboxWorkDir,
-      homeDir: '/home/vercel-sandbox',
-      readableRoots: [{ sandboxDir: '/home/vercel-sandbox' }],
+      homeDir: '/home/khulnasoft-sandbox',
+      readableRoots: [{ sandboxDir: '/home/khulnasoft-sandbox' }],
     });
 
     expect(mapper.toReadableSandboxPath('~/notes.txt')).toBe(
-      '/home/vercel-sandbox/notes.txt',
+      '/home/khulnasoft-sandbox/notes.txt',
     );
-    expect(mapper.toReadableSandboxPath('~')).toBe('/home/vercel-sandbox');
+    expect(mapper.toReadableSandboxPath('~')).toBe('/home/khulnasoft-sandbox');
     expect(() => mapper.toSandboxPath('~/notes.txt')).toThrow(
       /escapes the workspace/,
     );

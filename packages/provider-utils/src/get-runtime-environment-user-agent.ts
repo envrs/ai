@@ -12,7 +12,7 @@ export function getRuntimeEnvironmentUserAgent(
   }
 
   if (globalThisAny.EdgeRuntime) {
-    return 'vercel-edge';
+    return 'khulnasoft-edge';
   }
 
   return '';

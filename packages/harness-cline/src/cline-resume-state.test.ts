@@ -1,4 +1,4 @@
-import type { Experimental_SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import {
   clineResumeStateSchema,
@@ -65,7 +65,7 @@ describe('resolveClinePrivateSessionDirectory', () => {
     });
 
     expect(privateSessionDir).toMatch(
-      /^\/sandbox\/home\/\.ai-sdk\/harness-cline\/[a-f0-9]{64}$/,
+      /^\/sandbox\/home\/\.ai-toolkit\/harness-cline\/[a-f0-9]{64}$/,
     );
     expect(privateSessionDir).toBe(
       resolveClinePrivateSessionDirectory({
@@ -88,7 +88,7 @@ describe('resolveClinePrivateSessionDirectory', () => {
 });
 
 describe('persist/pull history round trip', () => {
-  const privateSessionDir = '/sandbox/home/.ai-sdk/harness-cline/session-key';
+  const privateSessionDir = '/sandbox/home/.ai-toolkit/harness-cline/session-key';
   const messages = [
     {
       id: 'm1',
@@ -109,7 +109,7 @@ describe('persist/pull history round trip', () => {
       messages,
     });
     expect([...files.keys()]).toEqual([
-      '/sandbox/home/.ai-sdk/harness-cline/session-key/history.json',
+      '/sandbox/home/.ai-toolkit/harness-cline/session-key/history.json',
     ]);
 
     const restored = await pullHistoryFromSandbox({
@@ -134,7 +134,7 @@ describe('persist/pull history round trip', () => {
   it('returns undefined for corrupt history content', async () => {
     const files = new Map([
       [
-        '/sandbox/home/.ai-sdk/harness-cline/session-key/history.json',
+        '/sandbox/home/.ai-toolkit/harness-cline/session-key/history.json',
         'not json',
       ],
     ]);
@@ -151,7 +151,7 @@ describe('persist/pull history round trip', () => {
   it('returns undefined for history with unsafe prototype properties', async () => {
     const files = new Map([
       [
-        '/sandbox/home/.ai-sdk/harness-cline/session-key/history.json',
+        '/sandbox/home/.ai-toolkit/harness-cline/session-key/history.json',
         '[{"__proto__":{"polluted":true}}]',
       ],
     ]);

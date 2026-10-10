@@ -3,7 +3,7 @@ import {
   dynamicTool,
   jsonSchema,
   tool,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { z } from 'zod/v4';
 import { InvalidToolInputError } from '../error/invalid-tool-input-error';

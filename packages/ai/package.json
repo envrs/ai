@@ -2,7 +2,7 @@
   "name": "ai",
   "version": "7.0.137",
   "type": "module",
-  "description": "AI SDK by Vercel - build apps like ChatGPT, Claude, Gemini, and more with a single interface for any model using the Vercel AI Gateway or go direct to OpenAI, Anthropic, Google, or any other model provider.",
+  "description": "ai-toolkit by khulnasoft - build apps like ChatGPT, Claude, Gemini, and more with a single interface for any model using the khulnasoft AI Gateway or go direct to OpenAI, Anthropic, Google, or any other model provider.",
   "license": "Apache-2.0",
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -56,26 +56,26 @@
     }
   },
   "dependencies": {
-    "@ai-sdk/gateway": "workspace:*",
-    "@ai-sdk/provider": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*"
+    "@ai-toolkit/gateway": "workspace:*",
+    "@ai-toolkit/provider": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*"
   },
   "devDependencies": {
-    "@ai-sdk/amazon-bedrock": "workspace:*",
-    "@ai-sdk/deepseek": "workspace:*",
-    "@ai-sdk/google": "workspace:*",
-    "@ai-sdk/groq": "workspace:*",
-    "@ai-sdk/huggingface": "workspace:*",
-    "@ai-sdk/moonshotai": "workspace:*",
-    "@ai-sdk/openai": "workspace:*",
-    "@ai-sdk/test-server": "workspace:*",
-    "@ai-sdk/xai": "workspace:*",
+    "@ai-toolkit/amazon-bedrock": "workspace:*",
+    "@ai-toolkit/deepseek": "workspace:*",
+    "@ai-toolkit/google": "workspace:*",
+    "@ai-toolkit/groq": "workspace:*",
+    "@ai-toolkit/huggingface": "workspace:*",
+    "@ai-toolkit/moonshotai": "workspace:*",
+    "@ai-toolkit/openai": "workspace:*",
+    "@ai-toolkit/test-server": "workspace:*",
+    "@ai-toolkit/xai": "workspace:*",
     "@edge-runtime/vm": "^5.0.0",
     "@smithy/eventstream-codec": "^4.3.3",
     "@smithy/util-utf8": "^4.3.3",
     "@types/json-schema": "7.0.15",
     "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "esbuild": "^0.28.2",
     "tsdown": "^0.23.0",
     "tsx": "4.23.12",
@@ -92,18 +92,18 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/ai"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "keywords": [
     "ai",
-    "vercel",
+    "khulnasoft",
     "sdk",
     "llm",
     "mcp",

@@ -1,9 +1,9 @@
-import { AISDKError } from '@ai-sdk/provider';
+import { ai-toolkitError } from '@ai-toolkit/provider';
 import type { GenerateImageCall } from '../generate-image/generate-image-result';
 import type { ImageModelResponseMetadata } from '../types/image-model-response-metadata';
 
 const name = 'AI_NoImageGeneratedError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
 /**
@@ -12,7 +12,7 @@ const symbol = Symbol.for(marker);
  * - The model failed to generate a response.
  * - The model generated a response that could not be parsed.
  */
-export class NoImageGeneratedError extends AISDKError {
+export class NoImageGeneratedError extends ai-toolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   /**
@@ -43,6 +43,6 @@ export class NoImageGeneratedError extends AISDKError {
   }
 
   static isInstance(error: unknown): error is NoImageGeneratedError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }

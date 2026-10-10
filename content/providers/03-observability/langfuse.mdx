@@ -1,11 +1,11 @@
 ---
 title: Langfuse
-description: Monitor, evaluate and debug your AI SDK application with Langfuse
+description: Monitor, evaluate and debug your ai-toolkit application with Langfuse
 ---
 
 # Langfuse Observability
 
-[Langfuse](https://langfuse.com/) ([GitHub](https://github.com/langfuse/langfuse)) is an open source LLM engineering platform that helps teams to collaboratively develop, monitor, and debug AI applications. Langfuse integrates with the AI SDK to provide:
+[Langfuse](https://langfuse.com/) ([GitHub](https://github.com/langfuse/langfuse)) is an open source LLM engineering platform that helps teams to collaboratively develop, monitor, and debug AI applications. Langfuse integrates with the ai-toolkit to provide:
 
 - [Application traces](https://langfuse.com/docs/tracing)
 - Usage patterns
@@ -15,15 +15,15 @@ description: Monitor, evaluate and debug your AI SDK application with Langfuse
 
 ## Setup
 
-The AI SDK v7 uses a callback-based telemetry system. Langfuse integrates with it through `@langfuse/vercel-ai-sdk`, while `LangfuseSpanProcessor` exports the resulting OpenTelemetry spans to Langfuse.
+The ai-toolkit v7 uses a callback-based telemetry system. Langfuse integrates with it through `@langfuse/khulnasoft-ai-toolkit`, while `LangfuseSpanProcessor` exports the resulting OpenTelemetry spans to Langfuse.
 
-Install the AI SDK and Langfuse integration packages:
+Install the ai-toolkit and Langfuse integration packages:
 
 ```bash
-npm install ai @ai-sdk/openai @langfuse/client @langfuse/vercel-ai-sdk @langfuse/tracing @langfuse/otel @opentelemetry/sdk-node
+npm install ai @ai-toolkit/openai @langfuse/client @langfuse/khulnasoft-ai-toolkit @langfuse/tracing @langfuse/otel @opentelemetry/sdk-node
 ```
 
-The `@langfuse/vercel-ai-sdk` package targets AI SDK v7 and requires Node.js 22 or later.
+The `@langfuse/khulnasoft-ai-toolkit` package targets ai-toolkit v7 and requires Node.js 22 or later.
 
 You can set the Langfuse credentials via environment variables or directly to the `LangfuseSpanProcessor` constructor.
 
@@ -57,7 +57,7 @@ new LangfuseSpanProcessor({
 </Tab>
 </Tabs>
 
-Now register the Langfuse span processor with OpenTelemetry and register the Langfuse AI SDK telemetry integration once at application startup.
+Now register the Langfuse span processor with OpenTelemetry and register the Langfuse ai-toolkit telemetry integration once at application startup.
 
 <Tabs items={["Next.js","Node.js"]}>
 <Tab>
@@ -69,7 +69,7 @@ Create or update your `instrumentation.ts` file:
 ```ts filename="instrumentation.ts"
 import { registerTelemetry } from 'ai';
 import { LangfuseSpanProcessor } from '@langfuse/otel';
-import { LangfuseVercelAiSdkIntegration } from '@langfuse/vercel-ai-sdk';
+import { LangfuseVercelai-toolkitIntegration } from '@langfuse/khulnasoft-ai-toolkit';
 import { NodeSDK } from '@opentelemetry/sdk-node';
 
 export const langfuseSpanProcessor = new LangfuseSpanProcessor();
@@ -80,7 +80,7 @@ const sdk = new NodeSDK({
 
 sdk.start();
 
-registerTelemetry(new LangfuseVercelAiSdkIntegration());
+registerTelemetry(new LangfuseVercelai-toolkitIntegration());
 ```
 
 If you stream responses from a serverless route, flush the span processor after the response is scheduled so traces are exported before the function exits.
@@ -88,13 +88,13 @@ If you stream responses from a serverless route, flush the span processor after 
 </Tab>
 <Tab>
 
-Add `LangfuseSpanProcessor` to your OpenTelemetry setup and register `LangfuseVercelAiSdkIntegration` with the AI SDK:
+Add `LangfuseSpanProcessor` to your OpenTelemetry setup and register `LangfuseVercelai-toolkitIntegration` with the ai-toolkit:
 
 ```ts
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { registerTelemetry, generateText } from 'ai';
 import { LangfuseSpanProcessor } from '@langfuse/otel';
-import { LangfuseVercelAiSdkIntegration } from '@langfuse/vercel-ai-sdk';
+import { LangfuseVercelai-toolkitIntegration } from '@langfuse/khulnasoft-ai-toolkit';
 import { NodeSDK } from '@opentelemetry/sdk-node';
 
 const sdk = new NodeSDK({
@@ -102,7 +102,7 @@ const sdk = new NodeSDK({
 });
 
 sdk.start();
-registerTelemetry(new LangfuseVercelAiSdkIntegration());
+registerTelemetry(new LangfuseVercelai-toolkitIntegration());
 
 async function main() {
   const result = await generateText({
@@ -125,11 +125,11 @@ main().catch(console.error);
 </Tab>
 </Tabs>
 
-Done! Once the integration is registered, AI SDK v7 calls emit telemetry by default and Langfuse maps the spans into traces, generations, tool calls, embeddings, and reranks.
+Done! Once the integration is registered, ai-toolkit v7 calls emit telemetry by default and Langfuse maps the spans into traces, generations, tool calls, embeddings, and reranks.
 
 ## Example Application
 
-For the current setup, see Langfuse's [Vercel AI SDK integration guide](https://langfuse.com/integrations/frameworks/vercel-ai-sdk). Langfuse also maintains a sample repository at [langfuse/langfuse-vercel-ai-nextjs-example](https://github.com/langfuse/langfuse-vercel-ai-nextjs-example).
+For the current setup, see Langfuse's [khulnasoft ai-toolkit integration guide](https://langfuse.com/integrations/frameworks/khulnasoft-ai-toolkit). Langfuse also maintains a sample repository at [langfuse/langfuse-khulnasoft-ai-nextjs-example](https://github.com/langfuse/langfuse-khulnasoft-ai-nextjs-example).
 
 ## Configuration
 
@@ -164,7 +164,7 @@ const result = await propagateAttributes(
 
 ### Include Runtime Context in Langfuse Metadata
 
-AI SDK v7 excludes `runtimeContext` from telemetry events unless each top-level key is explicitly included. Langfuse maps included runtime context keys to observation metadata.
+ai-toolkit v7 excludes `runtimeContext` from telemetry events unless each top-level key is explicitly included. Langfuse maps included runtime context keys to observation metadata.
 
 ```ts
 const result = await generateText({
@@ -186,10 +186,10 @@ const result = await generateText({
 
 ### Link Langfuse Prompts to Generations
 
-You can link Langfuse Prompt Management versions to AI SDK model-call observations by passing the fetched prompt through `runtimeContext.langfusePrompt` and including that key in telemetry.
+You can link Langfuse Prompt Management versions to ai-toolkit model-call observations by passing the fetched prompt through `runtimeContext.langfusePrompt` and including that key in telemetry.
 
 ```typescript
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { generateText } from 'ai';
 import { LangfuseClient } from '@langfuse/client';
 
@@ -217,7 +217,7 @@ Langfuse maps included runtime context keys to observation metadata, except `lan
 
 ### Group Multiple Executions in One Trace
 
-Create an active Langfuse observation and run multiple AI SDK calls inside it. The AI SDK observations become children of the active observation.
+Create an active Langfuse observation and run multiple ai-toolkit calls inside it. The ai-toolkit observations become children of the active observation.
 
 ```ts
 import { propagateAttributes, startActiveObservation } from '@langfuse/tracing';
@@ -252,7 +252,7 @@ await sdk.shutdown();
 
 The resulting trace hierarchy will be:
 
-![Vercel nested trace in Langfuse UI](https://langfuse.com/images/docs/vercel-nested-trace.png)
+![khulnasoft nested trace in Langfuse UI](https://langfuse.com/images/docs/khulnasoft-nested-trace.png)
 
 ### Disable Tracking of Input/Output
 
@@ -271,7 +271,7 @@ const result = await generateText({
 
 ### Disable Telemetry for One Call
 
-Telemetry is enabled by default when a telemetry integration is registered. You can opt out for a single AI SDK call:
+Telemetry is enabled by default when a telemetry integration is registered. You can opt out for a single ai-toolkit call:
 
 ```ts
 const result = await generateText({
@@ -286,7 +286,7 @@ const result = await generateText({
 ## Troubleshooting
 
 - Make sure your application is on Node.js 22 or later.
-- Use the latest AI SDK package and install `@langfuse/vercel-ai-sdk`;
+- Use the latest ai-toolkit package and install `@langfuse/khulnasoft-ai-toolkit`;
 - If `runtimeContext` values are missing in Langfuse, add each top-level key to `telemetry.includeRuntimeContext`.
 - On Next.js, make sure that you only have a single instrumentation file.
 - If you use Sentry, make sure to either:
@@ -295,9 +295,9 @@ const result = await generateText({
 
 ## Learn more
 
-- After setting up Langfuse Tracing for the AI SDK, you can utilize any of the other Langfuse [platform features](https://langfuse.com/docs):
+- After setting up Langfuse Tracing for the ai-toolkit, you can utilize any of the other Langfuse [platform features](https://langfuse.com/docs):
   - [Prompt Management](https://langfuse.com/docs/prompts): Collaboratively manage and iterate on prompts, use them with low-latency in production.
   - [Evaluations](https://langfuse.com/docs/scores): Test the application holistically in development and production using user feedback, LLM-as-a-judge evaluators, manual reviews, or custom evaluation pipelines.
   - [Experiments](https://langfuse.com/docs/datasets): Iterate on prompts, models, and application design in a structured manner with datasets and evaluations.
-- For more information about Langfuse's AI SDK v7 integration, see the [Langfuse Vercel AI SDK integration guide](https://langfuse.com/integrations/frameworks/vercel-ai-sdk).
-- For more information, see the [telemetry documentation](/docs/ai-sdk-core/telemetry) of the AI SDK.
+- For more information about Langfuse's ai-toolkit v7 integration, see the [Langfuse khulnasoft ai-toolkit integration guide](https://langfuse.com/integrations/frameworks/khulnasoft-ai-toolkit).
+- For more information, see the [telemetry documentation](/docs/ai-toolkit-core/telemetry) of the ai-toolkit.

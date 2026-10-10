@@ -1,5 +1,5 @@
-import { asSchema } from '@ai-sdk/provider-utils';
-import type { ACPHarnessSettings } from '@ai-sdk/harness-acp';
+import { asSchema } from '@ai-toolkit/provider-utils';
+import type { ACPHarnessSettings } from '@ai-toolkit/harness-acp';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { createGitHubCopilot } from './github-copilot-harness';
 
@@ -11,7 +11,7 @@ const mocks = vi.hoisted(() => ({
   })),
 }));
 
-vi.mock('@ai-sdk/harness-acp', () => ({
+vi.mock('@ai-toolkit/harness-acp', () => ({
   createACP: mocks.createACP,
 }));
 
@@ -66,7 +66,7 @@ describe('createGitHubCopilot', () => {
           "task",
         ],
         "clientApp": {
-          "name": "ai-sdk-harness-github-copilot",
+          "name": "ai-toolkit-harness-github-copilot",
           "version": "0.0.0-test",
         },
         "credentialEnv": [
@@ -176,11 +176,11 @@ describe('createGitHubCopilot', () => {
       createGitHubCopilot();
 
       const credential = await lastSettings().credentialForwarding?.({
-        credential: `aisdkhc_${'A'.repeat(43)}`,
+        credential: `ai-toolkithc_${'A'.repeat(43)}`,
         environmentVariableName: name,
       });
 
-      expect(credential).toMatch(/^gho_aisdkhc[0-9a-f]{29}$/);
+      expect(credential).toMatch(/^gho_ai-toolkithc[0-9a-f]{29}$/);
       expect(credential).toHaveLength(40);
     },
   );
@@ -197,10 +197,10 @@ describe('createGitHubCopilot', () => {
     ).toBe('gho_real-credential');
     expect(
       await credentialForwarding({
-        credential: `aisdkhc_${'A'.repeat(43)}`,
+        credential: `ai-toolkithc_${'A'.repeat(43)}`,
         environmentVariableName: 'COPILOT_PROVIDER_API_KEY',
       }),
-    ).toBe(`aisdkhc_${'A'.repeat(43)}`);
+    ).toBe(`ai-toolkithc_${'A'.repeat(43)}`);
   });
 
   it('brokers GitHub credentials for the configured enterprise host', () => {

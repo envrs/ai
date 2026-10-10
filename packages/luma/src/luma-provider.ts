@@ -2,13 +2,13 @@ import {
   NoSuchModelError,
   type ImageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { LumaImageModel } from './luma-image-model';
 import type { LumaImageModelId } from './luma-image-settings';
 import { VERSION } from './version';
@@ -65,7 +65,7 @@ export function createLuma(options: LumaProviderSettings = {}): LumaProvider {
         })}`,
         ...options.headers,
       },
-      `ai-sdk-luma/${VERSION}`,
+      `ai-toolkit-luma/${VERSION}`,
     );
 
   const createImageModel = (modelId: LumaImageModelId) =>

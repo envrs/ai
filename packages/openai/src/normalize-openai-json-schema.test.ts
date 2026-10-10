@@ -1,7 +1,7 @@
 import {
   UnsupportedFunctionalityError,
   type JSONSchema7,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { normalizeOpenAIJsonSchema } from './normalize-openai-json-schema';
 

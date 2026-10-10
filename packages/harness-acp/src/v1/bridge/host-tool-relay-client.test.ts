@@ -22,7 +22,7 @@ describe('postHostToolRelay', () => {
     };
     const relay = await startHostToolRelay({
       tools: [{ name: 'weather', inputSchema: { type: 'object' } }],
-      serverName: 'ai-sdk-harness-tools',
+      serverName: 'ai-toolkit-harness-tools',
     });
     relay.bindTurn({ turn });
 

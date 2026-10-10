@@ -3,8 +3,8 @@ import {
   withUserAgentSuffix,
   getRuntimeEnvironmentUserAgent,
   type ParseResult,
-} from '@ai-sdk/provider-utils';
-import { EmptyResponseBodyError } from '@ai-sdk/provider';
+} from '@ai-toolkit/provider-utils';
+import { EmptyResponseBodyError } from '@ai-toolkit/provider';
 import { InvalidArgumentError } from '../error/invalid-argument-error';
 import { UIMessageStreamError } from '../error/ui-message-stream-error';
 import {
@@ -75,7 +75,7 @@ export async function callCompletionApi({
           'Content-Type': 'application/json',
           ...headers,
         },
-        `ai-sdk/${VERSION}`,
+        `ai-toolkit/${VERSION}`,
         getRuntimeEnvironmentUserAgent(),
       ),
       signal: abortController.signal,

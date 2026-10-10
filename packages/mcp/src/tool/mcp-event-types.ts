@@ -1,4 +1,4 @@
-import type { JSONObject } from '@ai-sdk/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 import type { MCPEventAdapter } from './mcp-events-adapter';
 import { z } from 'zod/v4';
 import { ResultSchema, type RequestOptions } from './types';

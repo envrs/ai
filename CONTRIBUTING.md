@@ -1,10 +1,10 @@
-# Contributing to the AI SDK
+# Contributing to the ai-toolkit
 
 We deeply appreciate your interest in contributing to our repository! Whether you're reporting bugs, suggesting enhancements, improving docs, sharing community projects, building provider integrations, or submitting pull requests, your contributions help improve the project for everyone.
 
 ## How We Value Contributions
 
-AI SDK maintenance is becoming increasingly automated. Maintainers and automated workflows will take on more of the routine work involved in reviewing new issues, triaging reports, reproducing bugs, and preparing bug fix pull requests.
+ai-toolkit maintenance is becoming increasingly automated. Maintainers and automated workflows will take on more of the routine work involved in reviewing new issues, triaging reports, reproducing bugs, and preparing bug fix pull requests.
 
 Because of this, the most helpful contribution is often a high-quality issue rather than a complete pull request. Clear bug reports, minimal reproductions, failing tests, precise documentation feedback, and thoughtful feature requests help us understand the problem and make better fixes for everyone.
 
@@ -18,7 +18,7 @@ Pull requests are still welcome, especially when they:
 
 You do not need to send a full implementation for maintainers to value your contribution. When an issue leads to a bug fix pull request, we will credit the issue author with co-authorship where appropriate. Pull request authors will also be credited when their work adds valuable input to resolving a bug report or improves the quality of the fix.
 
-We know this transition may feel different from how open source contribution has traditionally worked. We value our community and all the ways people help AI SDK grow. If this process creates friction or frustration, please open a `feedback` issue and tell us what is not working.
+We know this transition may feel different from how open source contribution has traditionally worked. We value our community and all the ways people help ai-toolkit grow. If this process creates friction or frustration, please open a `feedback` issue and tell us what is not working.
 
 ## Reporting Bugs
 
@@ -38,12 +38,12 @@ We're always looking for suggestions to make our project better. If you have an 
 
 ## Sharing Feedback
 
-Use the `feedback` issue type for community feedback, process feedback, or ideas about how to make AI SDK a better project to use and contribute to. This is the best place to tell us how the move toward more automated maintenance is affecting you.
+Use the `feedback` issue type for community feedback, process feedback, or ideas about how to make ai-toolkit a better project to use and contribute to. This is the best place to tell us how the move toward more automated maintenance is affecting you.
 
 ## Improving Documentation
 
 Documentation is crucial for understanding and using our project effectively.
-You can find the content of our docs under [`content`](https://github.com/vercel/ai/tree/main/content).
+You can find the content of our docs under [`content`](https://github.com/khulnasoft/ai/tree/main/content).
 
 To fix smaller typos, you can edit the code directly in GitHub or use Github.dev (press `.` in Github).
 
@@ -55,7 +55,7 @@ We welcome your contributions to our code and documentation. Here's how you can 
 
 ### Environment Setup
 
-AI SDK development requires pnpm v11 and Node v22.13, v24, or v26.
+ai-toolkit development requires pnpm v11 and Node v22.13, v24, or v26.
 
 ### Setting Up the Repository Locally
 
@@ -76,8 +76,8 @@ Tip: consider automating this so you don't have to remember it on every new work
 
 ### Running the Examples
 
-1. `cd examples/ai-functions` (for AI SDK Core, or another example folder)
-1. AI SDK Core examples: run e.g. `pnpm tsx src/stream-text/openai.ts`
+1. `cd examples/ai-functions` (for ai-toolkit Core, or another example folder)
+1. ai-toolkit Core examples: run e.g. `pnpm tsx src/stream-text/openai.ts`
    - For most examples, you need to provide relevant API keys, e.g. environment variables like `OPENAI_API_KEY`
 1. Other framework examples: run `pnpm dev` and go to the browser url
 
@@ -125,7 +125,7 @@ Here are the steps to submit them:
 
 9. **Respond to Feedback**: Stay receptive to and address any feedback or alteration requests from the project maintainers.
 
-Thank you for contributing to the AI SDK! Your efforts help us improve the project for everyone.
+Thank you for contributing to the ai-toolkit! Your efforts help us improve the project for everyone.
 
 ## Learn More
 

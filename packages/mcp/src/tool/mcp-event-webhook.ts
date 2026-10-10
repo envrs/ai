@@ -1,4 +1,4 @@
-import { safeParseJSON } from '@ai-sdk/provider-utils';
+import { safeParseJSON } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { MCP_EVENT_CALLBACK_KEY } from './mcp-events';
 import { verifyMCPEventSignature } from './mcp-event-signature';

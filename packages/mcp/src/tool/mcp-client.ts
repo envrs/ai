@@ -1,4 +1,4 @@
-import type { JSONObject, JSONSchema7, JSONValue } from '@ai-sdk/provider';
+import type { JSONObject, JSONSchema7, JSONValue } from '@ai-toolkit/provider';
 import {
   asSchema,
   dynamicTool,
@@ -11,7 +11,7 @@ import {
   type Tool,
   type ToolExecutionOptions,
   type ToolResultOutput,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { z } from 'zod/v4';
 import { createMCPEvents } from './mcp-events';
 import {
@@ -278,10 +278,10 @@ export interface MCPClientConfig {
    * initialize request.
    */
   initialInitializeResult?: InitializeResult;
-  /** Optional client name, defaults to 'ai-sdk-mcp-client' */
+  /** Optional client name, defaults to 'ai-toolkit-mcp-client' */
   clientName?: string;
   /**
-   * Optional client name, defaults to 'ai-sdk-mcp-client'
+   * Optional client name, defaults to 'ai-toolkit-mcp-client'
    *
    * @deprecated Use `clientName` instead.
    */
@@ -372,7 +372,7 @@ export interface MCPClient {
   }): Promise<CallToolResult>;
 
   /**
-   * Creates AI SDK tools from tool definitions.
+   * Creates ai-toolkit tools from tool definitions.
    */
   toolsFromDefinitions<TOOL_SCHEMAS extends ToolSchemas = 'automatic'>(
     definitions: ListToolsResult,
@@ -423,7 +423,7 @@ export interface MCPClient {
 /**
  * A lightweight MCP Client implementation
  *
- * The primary purpose of this client is tool conversion between MCP<>AI SDK
+ * The primary purpose of this client is tool conversion between MCP<>ai-toolkit
  * but can later be extended to support other MCP features
  *
  * Tool parameters are automatically inferred from the server's JSON schema
@@ -471,7 +471,7 @@ class DefaultMCPClient implements Omit<MCPClient, 'experimental_events'> {
     experimental_events: events,
     transport: transportConfig,
     name,
-    clientName = name ?? 'ai-sdk-mcp-client',
+    clientName = name ?? 'ai-toolkit-mcp-client',
     version = CLIENT_VERSION,
     onUncaughtError,
     maxRetries,
@@ -1208,7 +1208,7 @@ class DefaultMCPClient implements Omit<MCPClient, 'experimental_events'> {
   }
 
   /**
-   * Returns a set of AI SDK tools from the MCP server.
+   * Returns a set of ai-toolkit tools from the MCP server.
    * This fetches tool definitions and wraps them with execute functions.
    * @returns A record of tool names to their implementations
    */
@@ -1233,7 +1233,7 @@ class DefaultMCPClient implements Omit<MCPClient, 'experimental_events'> {
   }
 
   /**
-   * Creates AI SDK tools from tool definitions without fetching from the server.
+   * Creates ai-toolkit tools from tool definitions without fetching from the server.
    */
   toolsFromDefinitions<TOOL_SCHEMAS extends ToolSchemas = 'automatic'>(
     definitions: ListToolsResult,

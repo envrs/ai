@@ -1,5 +1,5 @@
-import type { LanguageModelV4ToolResultOutput } from '@ai-sdk/provider';
-import type { Tool } from '@ai-sdk/provider-utils';
+import type { LanguageModelV4ToolResultOutput } from '@ai-toolkit/provider';
+import type { Tool } from '@ai-toolkit/provider-utils';
 import type { ModelMessage } from 'ai';
 import {
   createDefaultDownloadFunction,

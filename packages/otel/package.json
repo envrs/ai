@@ -1,6 +1,6 @@
 {
-  "name": "@ai-sdk/otel",
-  "version": "1.0.137",
+  "name": "@ai-toolkit/otel",
+  "version": "2.0.1",
   "type": "module",
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -34,15 +34,15 @@
     }
   },
   "dependencies": {
-    "@ai-sdk/provider": "workspace:*",
+    "@ai-toolkit/provider": "workspace:*",
     "@opentelemetry/api": "1.9.1",
     "ai": "workspace:*"
   },
   "devDependencies": {
-    "@ai-sdk/provider-utils": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*",
     "@opentelemetry/sdk-trace-base": "2.7.1",
     "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "tsdown": "^0.23.0",
     "typescript": "6.0.3",
     "zod": "3.25.76"
@@ -54,14 +54,14 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/otel"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "keywords": [
     "ai",

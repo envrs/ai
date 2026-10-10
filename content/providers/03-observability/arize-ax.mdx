@@ -9,18 +9,18 @@ description: Trace, monitor, and evaluate LLM applications with Arize AX
 
 <Note>
   You can also find this guide in the [Arize AX
-  docs](https://arize.com/docs/ax/integrations/ts-js-agent-frameworks/vercel).
+  docs](https://arize.com/docs/ax/integrations/ts-js-agent-frameworks/khulnasoft).
 </Note>
 
 ## Setup
 
-Arize AX offers first-class OpenTelemetry integration and works directly with the AI SDK in both Next.js and Node.js environments.
+Arize AX offers first-class OpenTelemetry integration and works directly with the ai-toolkit in both Next.js and Node.js environments.
 
 <Note>
   Arize AX has an
-  [OpenInferenceSimpleSpanProcessor](https://github.com/Arize-ai/openinference/blob/main/js/packages/openinference-vercel/src/OpenInferenceSpanProcessor.ts#L32)
+  [OpenInferenceSimpleSpanProcessor](https://github.com/Arize-ai/openinference/blob/main/js/packages/openinference-khulnasoft/src/OpenInferenceSpanProcessor.ts#L32)
   and an
-  [OpenInferenceBatchSpanProcessor](https://github.com/Arize-ai/openinference/blob/main/js/packages/openinference-vercel/src/OpenInferenceSpanProcessor.ts#L86).
+  [OpenInferenceBatchSpanProcessor](https://github.com/Arize-ai/openinference/blob/main/js/packages/openinference-khulnasoft/src/OpenInferenceSpanProcessor.ts#L86).
   All of the examples below can be used with either the simple or the batch
   processor. For more information on simple / batch span processors see our
   [documentation](https://arize.com/docs/ax/observe/tracing/configure/batch-vs-simple-span-processor#batch-vs-simple-span-processor).
@@ -28,24 +28,24 @@ Arize AX offers first-class OpenTelemetry integration and works directly with th
 
 ### Next.js
 
-In Next.js applications, use one of the OpenInference span processors with `registerOtel` from `@vercel/otel`.
+In Next.js applications, use one of the OpenInference span processors with `registerOtel` from `@khulnasoft/otel`.
 
-First, install the required dependencies for the AI SDK, OpenTelemetry and OpenInference.
+First, install the required dependencies for the ai-toolkit, OpenTelemetry and OpenInference.
 
 ```bash
-npm install ai @ai-sdk/openai @ai-sdk/otel @vercel/otel @arizeai/openinference-vercel @opentelemetry/exporter-trace-otlp-proto
+npm install ai @ai-toolkit/openai @ai-toolkit/otel @khulnasoft/otel @arizeai/openinference-khulnasoft @opentelemetry/exporter-trace-otlp-proto
 ```
 
-Then, in your `instrumentation.ts` file add the following, including the AI SDK telemetry integration registration:
+Then, in your `instrumentation.ts` file add the following, including the ai-toolkit telemetry integration registration:
 
 ```typescript filename="instrumentation"
 import { registerTelemetry } from 'ai';
-import { LegacyOpenTelemetry } from '@ai-sdk/otel';
-import { registerOTel } from '@vercel/otel';
+import { LegacyOpenTelemetry } from '@ai-toolkit/otel';
+import { registerOTel } from '@khulnasoft/otel';
 import {
   isOpenInferenceSpan,
   OpenInferenceSimpleSpanProcessor,
-} from '@arizeai/openinference-vercel';
+} from '@arizeai/openinference-khulnasoft';
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
 
 registerTelemetry(new LegacyOpenTelemetry());
@@ -75,11 +75,11 @@ export function register() {
 
 Spans will show up in Arize AX under the project specified in the `model_id` field above.
 
-Once the integration is registered, telemetry is emitted automatically for all AI SDK calls:
+Once the integration is registered, telemetry is emitted automatically for all ai-toolkit calls:
 
 ```typescript
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 
 const result = await generateText({
   model: openai('gpt-6-luna'),
@@ -93,21 +93,21 @@ In Node.js you can use the `NodeSDK` or the `NodeTraceProvider`.
 
 #### NodeSDK
 
-First, install the required dependencies for the AI SDK, OpenTelemetry and OpenInference.
+First, install the required dependencies for the ai-toolkit, OpenTelemetry and OpenInference.
 
 ```bash
-npm install ai @ai-sdk/openai @ai-sdk/otel @opentelemetry/sdk-node @arizeai/openinference-vercel @opentelemetry/exporter-trace-otlp-proto @opentelemetry/resources
+npm install ai @ai-toolkit/openai @ai-toolkit/otel @opentelemetry/sdk-node @arizeai/openinference-khulnasoft @opentelemetry/exporter-trace-otlp-proto @opentelemetry/resources
 ```
 
 Then, in your instrumentation.ts file add the following:
 
 ```typescript
 import { registerTelemetry } from 'ai';
-import { LegacyOpenTelemetry } from '@ai-sdk/otel';
+import { LegacyOpenTelemetry } from '@ai-toolkit/otel';
 import {
   isOpenInferenceSpan,
   OpenInferenceSimpleSpanProcessor,
-} from '@arizeai/openinference-vercel';
+} from '@arizeai/openinference-khulnasoft';
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
 import { resourceFromAttributes } from '@opentelemetry/resources';
 import { NodeSDK } from '@opentelemetry/sdk-node';
@@ -137,7 +137,7 @@ registerTelemetry(new LegacyOpenTelemetry());
 
 Spans will show up in Arize AX under the project specified in the `model_id` field above.
 
-Once the integration is registered, telemetry is emitted automatically for all AI SDK calls:
+Once the integration is registered, telemetry is emitted automatically for all ai-toolkit calls:
 
 ```typescript
 const result = await generateText({
@@ -148,21 +148,21 @@ const result = await generateText({
 
 #### NodeTraceProvider
 
-First, install the required dependencies for the AI SDK, OpenTelemetry and OpenInference.
+First, install the required dependencies for the ai-toolkit, OpenTelemetry and OpenInference.
 
 ```bash
-npm install ai @ai-sdk/openai @ai-sdk/otel @opentelemetry/sdk-trace-node @arizeai/openinference-vercel @opentelemetry/exporter-trace-otlp-proto @opentelemetry/resources
+npm install ai @ai-toolkit/openai @ai-toolkit/otel @opentelemetry/sdk-trace-node @arizeai/openinference-khulnasoft @opentelemetry/exporter-trace-otlp-proto @opentelemetry/resources
 ```
 
 Then, in your instrumentation.ts file add the following:
 
 ```typescript
 import { registerTelemetry } from 'ai';
-import { LegacyOpenTelemetry } from '@ai-sdk/otel';
+import { LegacyOpenTelemetry } from '@ai-toolkit/otel';
 import {
   isOpenInferenceSpan,
   OpenInferenceSimpleSpanProcessor,
-} from '@arizeai/openinference-vercel';
+} from '@arizeai/openinference-khulnasoft';
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
 import { resourceFromAttributes } from '@opentelemetry/resources';
 import { NodeTracerProvider } from '@opentelemetry/sdk-trace-node';
@@ -191,7 +191,7 @@ registerTelemetry(new LegacyOpenTelemetry());
 
 Spans will show up in Arize AX under the project specified in the `model_id` field above.
 
-Once the integration is registered, telemetry is emitted automatically for all AI SDK calls:
+Once the integration is registered, telemetry is emitted automatically for all ai-toolkit calls:
 
 ```typescript
 const result = await generateText({

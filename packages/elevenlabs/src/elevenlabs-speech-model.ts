@@ -1,4 +1,4 @@
-import type { SpeechModelV4, SharedV4Warning } from '@ai-sdk/provider';
+import type { SpeechModelV4, SharedV4Warning } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createBinaryResponseHandler,
@@ -7,7 +7,7 @@ import {
   serializeModelOptions,
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { ElevenLabsConfig } from './elevenlabs-config';
 import { elevenlabsFailedResponseHandler } from './elevenlabs-error';
 import { elevenLabsSpeechModelOptionsSchema } from './elevenlabs-speech-model-options';

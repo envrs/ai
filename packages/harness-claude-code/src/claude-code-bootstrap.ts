@@ -1,5 +1,5 @@
-import type { HarnessV1Bootstrap } from '@ai-sdk/harness';
-import { createReadBridgeAsset } from '@ai-sdk/harness/utils';
+import type { HarnessV1Bootstrap } from '@ai-toolkit/harness';
+import { createReadBridgeAsset } from '@ai-toolkit/harness/utils';
 
 /*
  * Keep every asset URL literal so bundlers can emit each file separately.
@@ -16,13 +16,13 @@ const readBridgeAsset = createReadBridgeAsset({
 });
 
 /*
- * Bootstrap is derived state stored under `$HOME/.ai-sdk-harness`, outside
+ * Bootstrap is derived state stored under `$HOME/.ai-toolkit-harness`, outside
  * the agent's working directory. Snapshot-capable providers preserve the
  * installed CLI, bridge, and recipe marker there.
  *
  * The session work dir (`startOpts.sessionWorkDir`) lives under the sandbox's
  * default working directory, while the bridge-state dir lives under
- * `$HOME/.ai-sdk-harness/.agent-runs`. Claude's project history is keyed by
+ * `$HOME/.ai-toolkit-harness/.agent-runs`. Claude's project history is keyed by
  * the working directory, so the same work dir is needed across resumes.
  */
 export const CLAUDE_CODE_BOOTSTRAP_DIR = '.harness-bootstrap/claude-code';

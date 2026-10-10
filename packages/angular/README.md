@@ -1,10 +1,10 @@
-# AI SDK Angular
+# ai-toolkit Angular
 
-Angular UI components for the [AI SDK v6](https://ai-sdk.dev/docs).
+Angular UI components for the [ai-toolkit v6](https://ai-toolkit.dev/docs).
 
 ## Overview
 
-The `@ai-sdk/angular` package provides Angular-specific implementations using Angular signals for reactive state management:
+The `@ai-toolkit/angular` package provides Angular-specific implementations using Angular signals for reactive state management:
 
 - **Chat** - Multi-turn conversations with streaming responses
 - **Completion** - Single-turn text generation
@@ -13,7 +13,7 @@ The `@ai-sdk/angular` package provides Angular-specific implementations using An
 ## Installation
 
 ```bash
-npm install @ai-sdk/angular ai
+npm install @ai-toolkit/angular ai
 ```
 
 ### Peer Dependencies
@@ -30,7 +30,7 @@ Real-time conversation interface with streaming support.
 ```typescript
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Chat } from '@ai-sdk/angular';
+import { Chat } from '@ai-toolkit/angular';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -241,7 +241,7 @@ Single-turn text generation with streaming.
 
 ```typescript
 import { Component } from '@angular/core';
-import { Completion } from '@ai-sdk/angular';
+import { Completion } from '@ai-toolkit/angular';
 
 @Component({
   selector: 'app-completion',
@@ -363,7 +363,7 @@ Generate structured data with Zod schemas and streaming.
 
 ```typescript
 import { Component } from '@angular/core';
-import { StructuredObject } from '@ai-sdk/angular';
+import { StructuredObject } from '@ai-toolkit/angular';
 import { z } from 'zod';
 
 const schema = z.object({
@@ -487,7 +487,7 @@ structuredObject.stop();
 
 ## Server Implementation
 
-When you pass a string model ID (for example `openai/gpt-6-astra`), the AI SDK uses
+When you pass a string model ID (for example `openai/gpt-6-astra`), the ai-toolkit uses
 AI Gateway as the default provider, so no provider import is required.
 
 ### Express.js Chat Endpoint
@@ -621,7 +621,7 @@ pnpm test:update       # Update snapshots
 Full type safety with automatic type inference:
 
 ```typescript
-import { Chat, UIMessage, StructuredObject } from '@ai-sdk/angular';
+import { Chat, UIMessage, StructuredObject } from '@ai-toolkit/angular';
 import { z } from 'zod';
 
 // Custom message types

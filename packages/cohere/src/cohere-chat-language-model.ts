@@ -7,7 +7,7 @@ import type {
   LanguageModelV4StreamPart,
   LanguageModelV4StreamResult,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createEventSourceResponseHandler,
@@ -23,7 +23,7 @@ import {
   type InferSchema,
   type FetchFunction,
   type ParseResult,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import {
   cohereLanguageModelChatOptions,

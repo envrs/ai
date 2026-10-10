@@ -3,13 +3,13 @@ import {
   type Experimental_VideoModelV4 as VideoModelV4,
   type ImageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { TopazImageModel } from './topaz-image-model';
 import type { TopazImageModelId } from './topaz-image-settings';
 import { TopazVideoModel } from './topaz-video-model';
@@ -86,7 +86,7 @@ export function createTopaz(
         accept: 'application/json',
         ...options.headers,
       },
-      `ai-sdk-topaz/${VERSION}`,
+      `ai-toolkit-topaz/${VERSION}`,
     );
 
   const createImageModel = (modelId: TopazImageModelId): ImageModelV4 =>

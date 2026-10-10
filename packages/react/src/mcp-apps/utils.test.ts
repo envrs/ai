@@ -13,7 +13,7 @@ describe('getMCPAppFromToolPart', () => {
       toolMetadata: {
         clientName: 'local-mcp-apps',
         app: {
-          resourceUri: 'ui://ai-sdk-e2e/dashboard',
+          resourceUri: 'ui://ai-toolkit-e2e/dashboard',
           mimeType: 'text/html;profile=mcp-app',
           visibility: ['model', 'app'],
         },
@@ -23,7 +23,7 @@ describe('getMCPAppFromToolPart', () => {
     expect(getMCPAppFromToolPart(part)).toMatchInlineSnapshot(`
       {
         "mimeType": "text/html;profile=mcp-app",
-        "resourceUri": "ui://ai-sdk-e2e/dashboard",
+        "resourceUri": "ui://ai-toolkit-e2e/dashboard",
         "visibility": [
           "model",
           "app",

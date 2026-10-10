@@ -10,7 +10,7 @@ import {
   type LanguageModelV4Usage,
   type SharedV4ProviderMetadata,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   createProviderStreamError,
   delay,
@@ -24,7 +24,7 @@ import {
   type Experimental_SandboxSession as SandboxSession,
   type Tool,
   type ToolExecuteFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   convertArrayToReadableStream,
   convertAsyncIterableToArray,
@@ -32,7 +32,7 @@ import {
   convertResponseStreamToArray,
   isNodeVersionAtLeast,
   mockId,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import assert from 'node:assert';
 import {
   afterEach,
@@ -4498,7 +4498,7 @@ describe('streamText', () => {
           "connection": "keep-alive",
           "content-type": "text/event-stream",
           "x-accel-buffering": "no",
-          "x-vercel-ai-ui-message-stream": "v1",
+          "x-khulnasoft-ai-ui-message-stream": "v1",
         }
       `);
       expect(mockResponse.getDecodedChunks()).toMatchInlineSnapshot(`
@@ -4569,7 +4569,7 @@ describe('streamText', () => {
           "content-type": "text/event-stream",
           "custom-header": "custom-value",
           "x-accel-buffering": "no",
-          "x-vercel-ai-ui-message-stream": "v1",
+          "x-khulnasoft-ai-ui-message-stream": "v1",
         }
       `);
 
@@ -4730,7 +4730,7 @@ describe('streamText', () => {
           "connection": "keep-alive",
           "content-type": "text/event-stream",
           "x-accel-buffering": "no",
-          "x-vercel-ai-ui-message-stream": "v1",
+          "x-khulnasoft-ai-ui-message-stream": "v1",
         }
       `);
       expect(mockResponse.getDecodedChunks()).toMatchInlineSnapshot(`
@@ -4847,7 +4847,7 @@ describe('streamText', () => {
           "connection": "keep-alive",
           "content-type": "text/event-stream",
           "x-accel-buffering": "no",
-          "x-vercel-ai-ui-message-stream": "v1",
+          "x-khulnasoft-ai-ui-message-stream": "v1",
         }
       `);
       expect(mockResponse.getDecodedChunks()).toMatchInlineSnapshot(`
@@ -4905,7 +4905,7 @@ describe('streamText', () => {
           "connection": "keep-alive",
           "content-type": "text/event-stream",
           "x-accel-buffering": "no",
-          "x-vercel-ai-ui-message-stream": "v1",
+          "x-khulnasoft-ai-ui-message-stream": "v1",
         }
       `);
       expect(mockResponse.getDecodedChunks()).toMatchInlineSnapshot(`
@@ -6570,7 +6570,7 @@ describe('streamText', () => {
             "connection": "keep-alive",
             "content-type": "text/event-stream",
             "x-accel-buffering": "no",
-            "x-vercel-ai-ui-message-stream": "v1",
+            "x-khulnasoft-ai-ui-message-stream": "v1",
           }
         `);
 
@@ -6639,7 +6639,7 @@ describe('streamText', () => {
             "content-type": "text/event-stream",
             "custom-header": "custom-value",
             "x-accel-buffering": "no",
-            "x-vercel-ai-ui-message-stream": "v1",
+            "x-khulnasoft-ai-ui-message-stream": "v1",
           }
         `);
       expect(await convertResponseStreamToArray(response))
@@ -14575,7 +14575,7 @@ describe('streamText', () => {
           );
         });
 
-        it('onFinishResult should expose deprecated AI SDK 6 final-step properties', async () => {
+        it('onFinishResult should expose deprecated ai-toolkit 6 final-step properties', async () => {
           const finalStep = await result.finalStep;
 
           expect(onFinishResult.reasoning).toEqual(finalStep.reasoning);
@@ -23752,7 +23752,7 @@ describe('streamText', () => {
           }),
         },
         experimental_toolCallers: {
-          getDemand: ['AI_SDK_DIRECT_TOOL_CALL', 'programmatic'],
+          getDemand: ['ai-toolkit_DIRECT_TOOL_CALL', 'programmatic'],
         },
         prompt: 'Check demand.',
       });
@@ -32579,7 +32579,7 @@ describe('streamText', () => {
 
   describe('telemetry integrations', () => {
     afterEach(() => {
-      globalThis.AI_SDK_TELEMETRY_INTEGRATIONS = undefined;
+      globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = undefined;
     });
 
     it('should call per-call integration listeners for all lifecycle events', async () => {
@@ -32658,7 +32658,7 @@ describe('streamText', () => {
     it('should call globally registered integration listeners', async () => {
       const events: string[] = [];
 
-      globalThis.AI_SDK_TELEMETRY_INTEGRATIONS = [
+      globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = [
         {
           onStart: async () => {
             events.push('global-onStart');
@@ -32690,7 +32690,7 @@ describe('streamText', () => {
     it('should only call per-call integrations when both global and per-call integrations are provided', async () => {
       const events: string[] = [];
 
-      globalThis.AI_SDK_TELEMETRY_INTEGRATIONS = [
+      globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = [
         {
           onStart: async () => {
             events.push('global');

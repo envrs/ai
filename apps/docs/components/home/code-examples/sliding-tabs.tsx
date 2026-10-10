@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@vercel/geistdocs/utils';
+import { cn } from '@khulnasoft/geistdocs/utils';
 import { type KeyboardEvent, useLayoutEffect, useRef, useState } from 'react';
 
 /** Horizontal tab list with an indicator that slides to the active tab. */

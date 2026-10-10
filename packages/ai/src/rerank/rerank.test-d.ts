@@ -1,4 +1,4 @@
-import type { Context } from '@ai-sdk/provider-utils';
+import type { Context } from '@ai-toolkit/provider-utils';
 import { describe, it, expectTypeOf } from 'vitest';
 import { MockRerankingModelV4 } from '../test/mock-reranking-model-v4';
 import { rerank } from './rerank';

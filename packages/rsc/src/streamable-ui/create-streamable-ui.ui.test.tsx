@@ -1,4 +1,4 @@
-import { delay } from '@ai-sdk/provider-utils';
+import { delay } from '@ai-toolkit/provider-utils';
 import { createStreamableUI } from './create-streamable-ui';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 

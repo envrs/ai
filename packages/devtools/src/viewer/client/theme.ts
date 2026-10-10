@@ -1,4 +1,4 @@
-export const THEME_STORAGE_KEY = 'ai-sdk-devtools-theme';
+export const THEME_STORAGE_KEY = 'ai-toolkit-devtools-theme';
 
 export type Theme = 'dark' | 'light';
 

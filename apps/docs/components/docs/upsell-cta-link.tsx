@@ -1,10 +1,10 @@
 'use client';
 
-import { track } from '@vercel/analytics/react';
+import { track } from '@khulnasoft/analytics/react';
 import Link from 'next/link';
 
 const TARGET_URL =
-  'https://vercel.com/signup?utm_source=ai-sdk_site&utm_medium=docs_card&utm_content=sign-up';
+  'https://khulnasoft.com/signup?utm_source=ai-toolkit_site&utm_medium=docs_card&utm_content=sign-up';
 
 /** The upsell card's tracked call-to-action (the card itself is server-rendered). */
 export const UpsellCtaLink = () => (

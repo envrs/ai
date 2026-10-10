@@ -1,7 +1,7 @@
 /**
  * Pi VFS — global Node `fs` monkey-patch that redirects reads/writes against a
  * mount point (the session's sandbox working directory, e.g.
- * `/vercel/sandbox/<harnessId>-<sessionId>/...`) to a real backing directory on
+ * `/khulnasoft/sandbox/<harnessId>-<sessionId>/...`) to a real backing directory on
  * the host. The mount point is a sandbox path that does not exist on the host,
  * so the redirect never shadows real host files.
  *

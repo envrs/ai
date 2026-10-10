@@ -6,7 +6,7 @@ import {
   fetchUntrustedUrl,
   withUserAgentSuffix,
   getRuntimeEnvironmentUserAgent,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { VERSION } from '../../version';
 
 /**
@@ -32,7 +32,7 @@ export const download = async ({
   try {
     const headers = withUserAgentSuffix(
       {},
-      `ai-sdk/${VERSION}`,
+      `ai-toolkit/${VERSION}`,
       getRuntimeEnvironmentUserAgent(),
     );
 

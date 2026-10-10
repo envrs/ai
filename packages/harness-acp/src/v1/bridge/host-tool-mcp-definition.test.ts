@@ -1,4 +1,4 @@
-import { HarnessBridgeCapabilityUnsupportedError } from '@ai-sdk/harness/bridge';
+import { HarnessBridgeCapabilityUnsupportedError } from '@ai-toolkit/harness/bridge';
 import { describe, expect, it } from 'vitest';
 import { createHostToolMcpServerDefinition } from './host-tool-mcp-definition';
 
@@ -13,26 +13,26 @@ describe('createHostToolMcpServerDefinition', () => {
     const definition = createHostToolMcpServerDefinition({
       mcpTransport: 'stdio',
       relay,
-      serverName: 'ai-sdk-harness-tools',
+      serverName: 'ai-toolkit-harness-tools',
       catalogPath: '/state/host-tools.json',
       initialization: {},
       harnessId: 'example-acp',
     });
 
     expect(definition).toMatchObject({
-      name: 'ai-sdk-harness-tools',
+      name: 'ai-toolkit-harness-tools',
       args: [expect.stringContaining('host-tool-mcp.mjs')],
       env: [
         {
-          name: 'AI_SDK_ACP_HOST_TOOLS_FILE',
+          name: 'ai-toolkit_ACP_HOST_TOOLS_FILE',
           value: '/state/host-tools.json',
         },
         {
-          name: 'AI_SDK_ACP_HOST_TOOL_RELAY_URL',
+          name: 'ai-toolkit_ACP_HOST_TOOL_RELAY_URL',
           value: 'http://127.0.0.1:5001/invoke',
         },
         {
-          name: 'AI_SDK_ACP_HOST_TOOL_RELAY_CREDENTIAL',
+          name: 'ai-toolkit_ACP_HOST_TOOL_RELAY_CREDENTIAL',
           value: 'relay-credential',
         },
       ],
@@ -44,7 +44,7 @@ describe('createHostToolMcpServerDefinition', () => {
     const definition = createHostToolMcpServerDefinition({
       mcpTransport: 'http',
       relay,
-      serverName: 'ai-sdk-harness-tools',
+      serverName: 'ai-toolkit-harness-tools',
       catalogPath: '/state/host-tools.json',
       initialization: {
         agentCapabilities: { mcpCapabilities: { http: true, sse: true } },
@@ -54,7 +54,7 @@ describe('createHostToolMcpServerDefinition', () => {
 
     expect(definition).toEqual({
       type: 'http',
-      name: 'ai-sdk-harness-tools',
+      name: 'ai-toolkit-harness-tools',
       url: 'http://127.0.0.1:5001/mcp',
       headers: [{ name: 'Authorization', value: 'Bearer relay-credential' }],
     });
@@ -65,7 +65,7 @@ describe('createHostToolMcpServerDefinition', () => {
       createHostToolMcpServerDefinition({
         mcpTransport: 'http',
         relay,
-        serverName: 'ai-sdk-harness-tools',
+        serverName: 'ai-toolkit-harness-tools',
         catalogPath: '/state/host-tools.json',
         initialization: {
           agentCapabilities: { mcpCapabilities: { http: false, sse: false } },
@@ -88,7 +88,7 @@ describe('createHostToolMcpServerDefinition', () => {
       createHostToolMcpServerDefinition({
         mcpTransport: 'http',
         relay,
-        serverName: 'ai-sdk-harness-tools',
+        serverName: 'ai-toolkit-harness-tools',
         catalogPath: '/state/host-tools.json',
         initialization: {},
         harnessId: 'github-copilot',
@@ -107,7 +107,7 @@ describe('createHostToolMcpServerDefinition', () => {
       createHostToolMcpServerDefinition({
         mcpTransport: 'http',
         relay: { ...relay, mcpUrl: undefined },
-        serverName: 'ai-sdk-harness-tools',
+        serverName: 'ai-toolkit-harness-tools',
         catalogPath: '/state/host-tools.json',
         initialization: {
           agentCapabilities: { mcpCapabilities: { http: true, sse: true } },

@@ -6,13 +6,13 @@ import {
   type HarnessV1CredentialForwarding,
   type HarnessV1MintBridgeTokenCallback,
   type HarnessV1PortEndpoint,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   createCredentialRequestTransformation,
   type SandboxChannelReconnectOptions,
-} from '@ai-sdk/harness/utils';
-import { createACP, type ACPAuthenticationMode } from '@ai-sdk/harness-acp';
-import { tool } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/utils';
+import { createACP, type ACPAuthenticationMode } from '@ai-toolkit/harness-acp';
+import { tool } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { VERSION } from './version';
 import { resolveGrokBuildSubscriptionEnvironment } from './grok-build-subscription';
@@ -22,7 +22,7 @@ declare const __GROK_BUILD_IMPLEMENTATION_PACKAGE_JSON__: string;
 declare const __GROK_BUILD_IMPLEMENTATION_PNPM_LOCK_YAML__: string;
 declare const __GROK_BUILD_IMPLEMENTATION_PNPM_WORKSPACE_YAML__: string;
 
-const GROK_BUILD_CLIENT_APP = `ai-sdk-harness-grok-build/${VERSION}`;
+const GROK_BUILD_CLIENT_APP = `ai-toolkit-harness-grok-build/${VERSION}`;
 const GROK_BUILD_IMPLEMENTATION_PACKAGE_JSON =
   __GROK_BUILD_IMPLEMENTATION_PACKAGE_JSON__;
 const GROK_BUILD_IMPLEMENTATION_PNPM_LOCK =

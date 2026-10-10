@@ -5,8 +5,8 @@ import type {
   Experimental_RealtimeModelV4ClientSecretResult as RealtimeModelV4ClientSecretResult,
   Experimental_RealtimeModelV4ServerEvent as RealtimeModelV4ServerEvent,
   Experimental_RealtimeModelV4SessionConfig as RealtimeModelV4SessionConfig,
-} from '@ai-sdk/provider';
-import type { FetchFunction } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 import {
   getRealtimeBaseURL,
   getRealtimeWebSocketURL,

@@ -1,4 +1,4 @@
-export type { AnthropicProviderOptions } from '@ai-sdk/anthropic';
+export type { AnthropicProviderOptions } from '@ai-toolkit/anthropic';
 
 export type {
   AmazonBedrockEmbeddingModelOptions,

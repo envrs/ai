@@ -1,31 +1,31 @@
-# AI SDK - Cerebras Provider
+# ai-toolkit - Cerebras Provider
 
-The **Cerebras provider** for the [AI SDK](https://ai-sdk.dev/docs) contains language model support for [Cerebras](https://cerebras.ai), offering high-speed AI model inference powered by Cerebras Wafer-Scale Engines and CS-3 systems.
+The **Cerebras provider** for the [ai-toolkit](https://ai-toolkit.dev/docs) contains language model support for [Cerebras](https://cerebras.ai), offering high-speed AI model inference powered by Cerebras Wafer-Scale Engines and CS-3 systems.
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access Cerebras (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access Cerebras (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The Cerebras provider is available in the `@ai-sdk/cerebras` module. You can install it with
+The Cerebras provider is available in the `@ai-toolkit/cerebras` module. You can install it with
 
 ```bash
-npm i @ai-sdk/cerebras
+npm i @ai-toolkit/cerebras
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `cerebras` from `@ai-sdk/cerebras`:
+You can import the default provider instance `cerebras` from `@ai-toolkit/cerebras`:
 
 ```ts
-import { cerebras } from '@ai-sdk/cerebras';
+import { cerebras } from '@ai-toolkit/cerebras';
 ```
 
 ## Available Models
@@ -36,7 +36,7 @@ https://inference-docs.cerebras.ai/models/overview
 ## Example
 
 ```ts
-import { cerebras } from '@ai-sdk/cerebras';
+import { cerebras } from '@ai-toolkit/cerebras';
 import { generateText } from 'ai';
 
 const { text } = await generateText({

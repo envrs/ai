@@ -1,4 +1,4 @@
-import { createGeistdocs } from '@vercel/geistdocs/next';
+import { createGeistdocs } from '@khulnasoft/geistdocs/next';
 import type { NextConfig } from 'next';
 import { exampleRedirects } from './lib/example-redirects';
 import { legacyRedirects } from './lib/legacy-redirects';
@@ -13,7 +13,7 @@ const config: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   experimental: {
-    // Cap static-generation workers: the Vercel build machine exposes 30
+    // Cap static-generation workers: the khulnasoft build machine exposes 30
     // cores, and ~29 concurrent prerender workers OOM the container during
     // "Generating static pages". Local 12-core builds peak fine at 11.
     cpus: 8,
@@ -21,7 +21,7 @@ const config: NextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: 'e742qlubrjnjqpp0.public.blob.vercel-storage.com',
+        hostname: 'e742qlubrjnjqpp0.public.blob.khulnasoft-storage.com',
         protocol: 'https',
       },
       {
@@ -58,16 +58,16 @@ const config: NextConfig = {
   ],
   redirects: () => [
     ...versionHostRedirects,
-    // AI SDK 4 is archived separately so it remains available without adding
+    // ai-toolkit 4 is archived separately so it remains available without adding
     // its content families to this app's already memory-intensive build.
     {
       source: '/v4',
-      destination: 'https://v4.ai-sdk.dev/docs/introduction',
+      destination: 'https://v4.ai-toolkit.dev/docs/introduction',
       permanent: true,
     },
     {
       source: '/v4/:path*',
-      destination: 'https://v4.ai-sdk.dev/:path*',
+      destination: 'https://v4.ai-toolkit.dev/:path*',
       permanent: true,
     },
     {
@@ -82,7 +82,7 @@ const config: NextConfig = {
     },
     {
       source: '/v7/docs/harnesses/overview',
-      destination: '/docs/ai-sdk-harnesses/overview',
+      destination: '/docs/ai-toolkit-harnesses/overview',
       permanent: true,
     },
     {
@@ -97,7 +97,7 @@ const config: NextConfig = {
     },
     {
       source: '/v7/providers',
-      destination: '/providers/ai-sdk-providers',
+      destination: '/providers/ai-toolkit-providers',
       permanent: true,
     },
     {
@@ -107,8 +107,8 @@ const config: NextConfig = {
     },
     ...legacyRedirects,
     {
-      source: '/providers/ai-sdk-providers/google-generative-ai',
-      destination: '/providers/ai-sdk-providers/google',
+      source: '/providers/ai-toolkit-providers/google-generative-ai',
+      destination: '/providers/ai-toolkit-providers/google',
       permanent: true,
     },
     {
@@ -126,37 +126,37 @@ const config: NextConfig = {
     // overview sibling exists (see scripts/sync-content-utils.mjs).
     {
       source:
-        '/docs/:section(foundations|agents|ai-sdk-core|ai-sdk-harnesses|ai-sdk-ui|ai-sdk-rsc)',
+        '/docs/:section(foundations|agents|ai-toolkit-core|ai-toolkit-harnesses|ai-toolkit-ui|ai-toolkit-rsc)',
       destination: '/docs/:section/overview',
       permanent: true,
     },
     {
       source:
-        '/docs/:section(foundations|agents|ai-sdk-core|ai-sdk-harnesses|ai-sdk-ui|ai-sdk-rsc).md',
+        '/docs/:section(foundations|agents|ai-toolkit-core|ai-toolkit-harnesses|ai-toolkit-ui|ai-toolkit-rsc).md',
       destination: '/docs/:section/overview.md',
       permanent: true,
     },
     {
       source:
-        '/v6/docs/:section(foundations|agents|ai-sdk-core|ai-sdk-ui|ai-sdk-rsc)',
+        '/v6/docs/:section(foundations|agents|ai-toolkit-core|ai-toolkit-ui|ai-toolkit-rsc)',
       destination: '/v6/docs/:section/overview',
       permanent: true,
     },
     {
       source:
-        '/v6/docs/:section(foundations|agents|ai-sdk-core|ai-sdk-ui|ai-sdk-rsc).md',
+        '/v6/docs/:section(foundations|agents|ai-toolkit-core|ai-toolkit-ui|ai-toolkit-rsc).md',
       destination: '/v6/docs/:section/overview.md',
       permanent: true,
     },
     {
       source:
-        '/v5/docs/:section(foundations|agents|ai-sdk-core|ai-sdk-ui|ai-sdk-rsc)',
+        '/v5/docs/:section(foundations|agents|ai-toolkit-core|ai-toolkit-ui|ai-toolkit-rsc)',
       destination: '/v5/docs/:section/overview',
       permanent: true,
     },
     {
       source:
-        '/v5/docs/:section(foundations|agents|ai-sdk-core|ai-sdk-ui|ai-sdk-rsc).md',
+        '/v5/docs/:section(foundations|agents|ai-toolkit-core|ai-toolkit-ui|ai-toolkit-rsc).md',
       destination: '/v5/docs/:section/overview.md',
       permanent: true,
     },
@@ -172,12 +172,12 @@ const config: NextConfig = {
     },
     {
       source: '/v6/providers',
-      destination: '/v6/providers/ai-sdk-providers',
+      destination: '/v6/providers/ai-toolkit-providers',
       permanent: false,
     },
     {
       source: '/v5/providers',
-      destination: '/v5/providers/ai-sdk-providers',
+      destination: '/v5/providers/ai-toolkit-providers',
       permanent: true,
     },
     // Legacy resource URLs, mirroring production.
@@ -201,17 +201,17 @@ const config: NextConfig = {
     ...exampleRedirects,
     {
       source: '/elements',
-      destination: 'https://elements.ai-sdk.dev',
+      destination: 'https://elements.ai-toolkit.dev',
       permanent: true,
     },
     {
       source: '/elements/:path*',
-      destination: 'https://elements.ai-sdk.dev/:path*',
+      destination: 'https://elements.ai-toolkit.dev/:path*',
       permanent: true,
     },
     {
       source: '/model-library',
-      destination: 'https://vercel.com/docs/ai-gateway',
+      destination: 'https://khulnasoft.com/docs/ai-gateway',
       permanent: true,
     },
     {
@@ -219,7 +219,7 @@ const config: NextConfig = {
       destination: '/llms.txt',
       permanent: true,
     },
-    // The cookbook family root mirrors production (ai-sdk.dev/cookbook):
+    // The cookbook family root mirrors production (ai-toolkit.dev/cookbook):
     // the legacy app permanently redirects it to the Recipes landing page.
     ...['', '/v6', '/v5'].flatMap(prefix => [
       {
@@ -254,63 +254,63 @@ const config: NextConfig = {
       ]),
     ]),
     {
-      source: '/docs/ai-sdk-core/prompts',
+      source: '/docs/ai-toolkit-core/prompts',
       destination: '/docs/foundations/prompts',
       permanent: true,
     },
     {
-      source: '/docs/ai-sdk-core/prompts.md',
+      source: '/docs/ai-toolkit-core/prompts.md',
       destination: '/docs/foundations/prompts.md',
       permanent: true,
     },
     {
-      source: '/v6/docs/ai-sdk-core/prompts',
+      source: '/v6/docs/ai-toolkit-core/prompts',
       destination: '/v6/docs/foundations/prompts',
       permanent: true,
     },
     {
-      source: '/v6/docs/ai-sdk-core/prompts.md',
+      source: '/v6/docs/ai-toolkit-core/prompts.md',
       destination: '/v6/docs/foundations/prompts.md',
       permanent: true,
     },
     {
-      source: '/v5/docs/ai-sdk-core/prompts',
+      source: '/v5/docs/ai-toolkit-core/prompts',
       destination: '/v5/docs/foundations/prompts',
       permanent: true,
     },
     {
-      source: '/v5/docs/ai-sdk-core/prompts.md',
+      source: '/v5/docs/ai-toolkit-core/prompts.md',
       destination: '/v5/docs/foundations/prompts.md',
       permanent: true,
     },
     {
-      source: '/docs/reference/ai-sdk-core/validate-json-rpc-message',
-      destination: '/docs/reference/ai-sdk-core/create-mcp-client',
+      source: '/docs/reference/ai-toolkit-core/validate-json-rpc-message',
+      destination: '/docs/reference/ai-toolkit-core/create-mcp-client',
       permanent: false,
     },
     {
-      source: '/docs/reference/ai-sdk-core/validate-json-rpc-message.md',
-      destination: '/docs/reference/ai-sdk-core/create-mcp-client.md',
+      source: '/docs/reference/ai-toolkit-core/validate-json-rpc-message.md',
+      destination: '/docs/reference/ai-toolkit-core/create-mcp-client.md',
       permanent: false,
     },
     {
-      source: '/v6/docs/reference/ai-sdk-core/validate-json-rpc-message',
-      destination: '/v6/docs/reference/ai-sdk-core/create-mcp-client',
+      source: '/v6/docs/reference/ai-toolkit-core/validate-json-rpc-message',
+      destination: '/v6/docs/reference/ai-toolkit-core/create-mcp-client',
       permanent: false,
     },
     {
-      source: '/v6/docs/reference/ai-sdk-core/validate-json-rpc-message.md',
-      destination: '/v6/docs/reference/ai-sdk-core/create-mcp-client.md',
+      source: '/v6/docs/reference/ai-toolkit-core/validate-json-rpc-message.md',
+      destination: '/v6/docs/reference/ai-toolkit-core/create-mcp-client.md',
       permanent: false,
     },
     {
-      source: '/v5/docs/reference/ai-sdk-core/validate-json-rpc-message',
-      destination: '/v5/docs/reference/ai-sdk-core/create-mcp-client',
+      source: '/v5/docs/reference/ai-toolkit-core/validate-json-rpc-message',
+      destination: '/v5/docs/reference/ai-toolkit-core/create-mcp-client',
       permanent: false,
     },
     {
-      source: '/v5/docs/reference/ai-sdk-core/validate-json-rpc-message.md',
-      destination: '/v5/docs/reference/ai-sdk-core/create-mcp-client.md',
+      source: '/v5/docs/reference/ai-toolkit-core/validate-json-rpc-message.md',
+      destination: '/v5/docs/reference/ai-toolkit-core/create-mcp-client.md',
       permanent: false,
     },
   ],

@@ -3,7 +3,7 @@ import {
   type Experimental_SandboxSession,
   type ToolApprovalResponse,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   hasToolCall,
   isStepCount,
@@ -26,7 +26,7 @@ import type {
 import { runPrompt } from './run-prompt';
 import type { HarnessAgentToolApprovalConfiguration } from '../harness-agent-settings';
 
-const WORK_DIR = '/vercel/sandbox/claude-code-abc123';
+const WORK_DIR = '/khulnasoft/sandbox/claude-code-abc123';
 const sandboxSession = {} as Experimental_SandboxSession;
 
 function fakeSession(
@@ -396,7 +396,7 @@ describe('runPrompt workDir stripping', () => {
         {
           type: 'tool-input-delta',
           id: 'c1',
-          delta: '{"path":"/vercel/sandbox/claude',
+          delta: '{"path":"/khulnasoft/sandbox/claude',
         },
         {
           type: 'tool-input-delta',

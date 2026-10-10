@@ -1,4 +1,4 @@
-import { InvalidArgumentError } from '@ai-sdk/provider';
+import { InvalidArgumentError } from '@ai-toolkit/provider';
 import { generateImage, wrapImageModel } from 'ai';
 import { describe, expect, it, vi } from 'vitest';
 import { editSvgResponseFixture } from './__fixtures__/quiverai-fixtures';

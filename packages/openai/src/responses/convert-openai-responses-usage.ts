@@ -1,5 +1,5 @@
-import type { JSONObject, LanguageModelV4Usage } from '@ai-sdk/provider';
-import { createNullLanguageModelUsage } from '@ai-sdk/provider-utils';
+import type { JSONObject, LanguageModelV4Usage } from '@ai-toolkit/provider';
+import { createNullLanguageModelUsage } from '@ai-toolkit/provider-utils';
 
 export type OpenAIResponsesUsage = JSONObject & {
   input_tokens: number;

@@ -41,11 +41,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // We rely exclusively on an explicit env flag to avoid false positives in
 // monorepos where /dist paths are common.
 //
-//   AI_SDK_DEVTOOLS_DEV=true  → use dev mode (Vite proxy)
-//   AI_SDK_DEVTOOLS_DEV=false → use production mode (serve built client)
+//   ai-toolkit_DEVTOOLS_DEV=true  → use dev mode (Vite proxy)
+//   ai-toolkit_DEVTOOLS_DEV=false → use production mode (serve built client)
 //
 // If the flag is unset, default to production mode.
-const devEnv = process.env.AI_SDK_DEVTOOLS_DEV;
+const devEnv = process.env.ai-toolkit_DEVTOOLS_DEV;
 const isDevMode = devEnv !== undefined && devEnv !== 'false' && devEnv !== '0';
 // __dirname points at packages/devtools/src/viewer, so ../.. is the package root.
 const projectRoot = path.resolve(__dirname, '../..');
@@ -291,7 +291,7 @@ app.get('*', async c => {
       <html>
         <head>
           <meta charset="UTF-8">
-          <title>AI SDK DevTools</title>
+          <title>ai-toolkit DevTools</title>
           <style>
             body { font-family: system-ui, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #0a0a0a; color: #fafafa; }
             .container { text-align: center; }
@@ -331,10 +331,10 @@ export const startViewer = (port = 4983) => {
     },
     () => {
       if (isDevMode) {
-        console.log(`🔍 AI SDK DevTools API running on port ${port}`);
+        console.log(`🔍 ai-toolkit DevTools API running on port ${port}`);
         console.log(`   Open http://localhost:5173 for the dev UI`);
       } else {
-        console.log(`🔍 AI SDK DevTools running at http://localhost:${port}`);
+        console.log(`🔍 ai-toolkit DevTools running at http://localhost:${port}`);
       }
     },
   );
@@ -343,12 +343,12 @@ export const startViewer = (port = 4983) => {
     if (err.code === 'EADDRINUSE') {
       console.error(`\n❌ Port ${port} is already in use.`);
       console.error(
-        `\n   This likely means AI SDK DevTools is already running.`,
+        `\n   This likely means ai-toolkit DevTools is already running.`,
       );
       console.error(`   Open http://localhost:${port} in your browser.\n`);
-      console.error(`   To use a different port, set AI_SDK_DEVTOOLS_PORT:\n`);
+      console.error(`   To use a different port, set ai-toolkit_DEVTOOLS_PORT:\n`);
       console.error(
-        `   AI_SDK_DEVTOOLS_PORT=4984 npx @ai-sdk/devtools@latest\n`,
+        `   ai-toolkit_DEVTOOLS_PORT=4984 npx @ai-toolkit/devtools@latest\n`,
       );
       process.exit(1);
     }
@@ -364,8 +364,8 @@ const isDirectRun =
   process.argv[1]?.endsWith('/server.js');
 
 if (isDirectRun) {
-  const port = process.env.AI_SDK_DEVTOOLS_PORT
-    ? parseInt(process.env.AI_SDK_DEVTOOLS_PORT)
+  const port = process.env.ai-toolkit_DEVTOOLS_PORT
+    ? parseInt(process.env.ai-toolkit_DEVTOOLS_PORT)
     : 4983;
   startViewer(port);
 }

@@ -23,7 +23,7 @@ import {
   type HarnessV1StreamPart,
   harnessStateDirectoryPath,
   harnessSessionDataDirectoryPath,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   applyCredentialForwarding,
   classifyDiskLog,
@@ -45,13 +45,13 @@ import {
   withBridgeToken,
   writeSkills,
   type SandboxChannelReconnectOptions,
-} from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness/utils';
 import {
   safeParseJSON,
   tool,
   type Experimental_SandboxSession as SandboxSession,
   type Experimental_SandboxProcess,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { WebSocket } from 'ws';
 import { z } from 'zod/v4';
 import {
@@ -82,7 +82,7 @@ type ClaudeCodeRespawnStrategy = 'replay' | 'rerun';
 /**
  * Value to use in User-Agent and `x-client-app` headers.
  */
-const CLAUDE_CODE_CLIENT_APP = `ai-sdk-harness-claude-code/${VERSION}`;
+const CLAUDE_CODE_CLIENT_APP = `ai-toolkit-harness-claude-code/${VERSION}`;
 
 export type ClaudeCodeHarnessSettings = {
   readonly auth?: ClaudeCodeAuthenticationMode;
@@ -1331,7 +1331,7 @@ async function resolveBridgeEndpoint({
  * Wait for the bridge's `bridge-hello` message to arrive on the freshly
  * opened WebSocket before any other host-side code touches it.
  *
- * Some sandbox runtimes (Vercel in particular) complete the WS upgrade
+ * Some sandbox runtimes (khulnasoft in particular) complete the WS upgrade
  * with the host long before the connection is actually forwarded to the
  * sandbox-side bridge. Anything sent in that gap is silently dropped —
  * including the `start` message we send next. The bridge emits

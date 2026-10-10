@@ -1,15 +1,15 @@
-# AI SDK - just-bash Sandbox
+# ai-toolkit - just-bash Sandbox
 
 _This package is **experimental**._
 
-Sandbox session implementation for [`just-bash`](https://github.com/vercel-labs/just-bash), an in-process JavaScript bash environment with a virtual filesystem.
+Sandbox session implementation for [`just-bash`](https://github.com/khulnasoft-labs/just-bash), an in-process JavaScript bash environment with a virtual filesystem.
 
 `just-bash` sandboxes do not expose ports, so they cannot be used with features that require actual network sandboxes.
 
 ## Setup
 
 ```bash
-npm i @ai-sdk/sandbox-just-bash
+npm i @ai-toolkit/sandbox-just-bash
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ npm i @ai-sdk/sandbox-just-bash
 Each creation produces a fresh in-memory sandbox and applies an optional harness template.
 
 ```ts
-import { createJustBashNetworkSandboxSession } from '@ai-sdk/sandbox-just-bash';
+import { createJustBashNetworkSandboxSession } from '@ai-toolkit/sandbox-just-bash';
 
 const networkSandboxSession = await createJustBashNetworkSandboxSession({
   cwd: '/work',
@@ -36,5 +36,5 @@ await networkSandboxSession.destroy();
 ### Use cases
 
 - Create a fresh in-memory session with `createJustBashNetworkSandboxSession()` and pass it to `HarnessAgent.createSession({ sandboxSession })`. An optional `sandboxId` only labels its wrapper and cannot enforce uniqueness.
-- Take a network sandbox session's process-restricted subset with `networkSandboxSession.restricted()` and use it with AI SDK tools that accept `experimental_sandbox`.
-- Adapt an existing native `Sandbox` with `createJustBashSandboxSessionFromNativeSandbox(nativeSandbox)` for AI SDK tools. `resumeJustBashNetworkSandboxSession()` reports that cross-process resume is unsupported.
+- Take a network sandbox session's process-restricted subset with `networkSandboxSession.restricted()` and use it with ai-toolkit tools that accept `experimental_sandbox`.
+- Adapt an existing native `Sandbox` with `createJustBashSandboxSessionFromNativeSandbox(nativeSandbox)` for ai-toolkit tools. `resumeJustBashNetworkSandboxSession()` reports that cross-process resume is unsupported.

@@ -1,6 +1,6 @@
 import type { Citation } from '../types/citation';
-import type { JSONObject } from '@ai-sdk/provider';
-import type { Context, IdGenerator, ToolSet } from '@ai-sdk/provider-utils';
+import type { JSONObject } from '@ai-toolkit/provider';
+import type { Context, IdGenerator, ToolSet } from '@ai-toolkit/provider-utils';
 import type { ServerResponse } from 'node:http';
 import type {
   CallWarning,
@@ -308,7 +308,7 @@ export interface StreamTextResult<
 
   /**
    * Additional provider-specific metadata from the last step.
-   * Metadata is passed through from the provider to the AI SDK and
+   * Metadata is passed through from the provider to the ai-toolkit and
    * enables provider-specific results that can be fully encapsulated in the provider.
    *
    * @deprecated Use `finalStep.providerMetadata` instead.

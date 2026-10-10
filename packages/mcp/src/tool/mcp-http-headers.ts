@@ -1,4 +1,4 @@
-import { convertUint8ArrayToBase64, isRecord } from '@ai-sdk/provider-utils';
+import { convertUint8ArrayToBase64, isRecord } from '@ai-toolkit/provider-utils';
 
 type HeaderValueType = 'boolean' | 'integer' | 'string';
 

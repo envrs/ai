@@ -1,4 +1,4 @@
-import type { Context, ToolSet } from '@ai-sdk/provider-utils';
+import type { Context, ToolSet } from '@ai-toolkit/provider-utils';
 import type {
   CallWarning,
   FinishReason,
@@ -152,7 +152,7 @@ export interface GenerateTextResult<
 
   /**
    * Additional provider-specific metadata from the final step. They are passed
-   * through from the provider to the AI SDK and enable provider-specific
+   * through from the provider to the ai-toolkit and enable provider-specific
    * results that can be fully encapsulated in the provider.
    *
    * @deprecated Use `finalStep.providerMetadata` instead.

@@ -5,7 +5,7 @@ import {
   type JSONObject,
   type SharedV4Warning,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   connectToWebSocket,
@@ -24,7 +24,7 @@ import {
   type WebSocketConnection,
   type WebSocketConstructor,
   type WebSocketLike,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { googleVertexFailedResponseHandler } from '../google-vertex-error';
 import {

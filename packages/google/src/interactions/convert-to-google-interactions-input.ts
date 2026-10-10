@@ -3,7 +3,7 @@ import type {
   LanguageModelV4Prompt,
   LanguageModelV4ToolResultOutput,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertToBase64,
   getTopLevelMediaType,
@@ -11,7 +11,7 @@ import {
   resolveFullMediaType,
   resolveProviderReference,
   secureJsonParse,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type {
   GoogleInteractionsContent,
   GoogleInteractionsContentBlock,
@@ -36,7 +36,7 @@ export type ConvertToGoogleInteractionsInputResult = {
 };
 
 /**
- * Converts an AI SDK `LanguageModelV4Prompt` into the Gemini Interactions
+ * Converts an ai-toolkit `LanguageModelV4Prompt` into the Gemini Interactions
  * request shape (`{ input: Array<Step>, system_instruction }`).
  *
  * Prior assistant content round-trips as discrete steps:
@@ -270,7 +270,7 @@ export function convertToGoogleInteractionsInput({
 }
 
 /**
- * Maps a single AI SDK `LanguageModelV4FilePart` to a Gemini Interactions
+ * Maps a single ai-toolkit `LanguageModelV4FilePart` to a Gemini Interactions
  * content block (`image` / `audio` / `document` / `video`).
  */
 function convertFilePartToContent({

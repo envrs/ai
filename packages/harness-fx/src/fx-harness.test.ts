@@ -1,5 +1,5 @@
-import type { HarnessV1BuiltinTool } from '@ai-sdk/harness';
-import type { ACPHarnessSettings } from '@ai-sdk/harness-acp';
+import type { HarnessV1BuiltinTool } from '@ai-toolkit/harness';
+import type { ACPHarnessSettings } from '@ai-toolkit/harness-acp';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { z } from 'zod/v4';
 import { createFx } from './fx-harness';
@@ -9,7 +9,7 @@ const mocks = vi.hoisted(() => ({
   createACP: vi.fn(),
 }));
 
-vi.mock('@ai-sdk/harness-acp', () => ({
+vi.mock('@ai-toolkit/harness-acp', () => ({
   createACP: mocks.createACP,
 }));
 
@@ -189,16 +189,16 @@ describe('createFx', () => {
           },
         },
         "clientApp": {
-          "name": "ai-sdk-harness-fx",
+          "name": "ai-toolkit-harness-fx",
           "version": "0.0.0-test",
         },
         "credentialEnv": [
           "VERCEL_OIDC_TOKEN",
           "AI_GATEWAY_API_KEY",
-          "AI_SDK_FX_CHATGPT_ACCESS_TOKEN",
-          "AI_SDK_FX_CHATGPT_ACCOUNT_ID",
-          "AI_SDK_FX_GROK_ACCESS_TOKEN",
-          "AI_SDK_FX_GROK_ACCOUNT_ID",
+          "ai-toolkit_FX_CHATGPT_ACCESS_TOKEN",
+          "ai-toolkit_FX_CHATGPT_ACCOUNT_ID",
+          "ai-toolkit_FX_GROK_ACCESS_TOKEN",
+          "ai-toolkit_FX_GROK_ACCOUNT_ID",
         ],
         "executable": "fx",
         "harnessId": "fx",
@@ -434,7 +434,7 @@ describe('createFx', () => {
     expect(
       isMcpToolCall({
         toolCallId: 'host-tool-call',
-        title: 'mcp_ai-sdk-harness-tools_weather',
+        title: 'mcp_ai-toolkit-harness-tools_weather',
       }),
     ).toBe(false);
     expect(
@@ -471,7 +471,7 @@ describe('createFx', () => {
     ).toEqual([
       {
         match: {
-          host: 'ai-gateway.vercel.sh',
+          host: 'ai-gateway.khulnasoft.sh',
           headers: [
             {
               key: { exact: 'Authorization' },
@@ -483,7 +483,7 @@ describe('createFx', () => {
           headers: {
             'x-tenant': 'acme',
             Authorization: 'Bearer oidc-secret',
-            'x-client-app': 'ai-sdk-harness-fx/0.0.0-test',
+            'x-client-app': 'ai-toolkit-harness-fx/0.0.0-test',
           },
         },
       },
@@ -497,7 +497,7 @@ describe('createFx', () => {
     ).toEqual([
       {
         match: {
-          host: 'ai-gateway.vercel.sh',
+          host: 'ai-gateway.khulnasoft.sh',
           headers: [
             {
               key: { exact: 'Authorization' },
@@ -508,7 +508,7 @@ describe('createFx', () => {
         transform: {
           headers: {
             Authorization: 'Bearer gateway-secret',
-            'x-client-app': 'ai-sdk-harness-fx/0.0.0-test',
+            'x-client-app': 'ai-toolkit-harness-fx/0.0.0-test',
           },
         },
       },
@@ -539,7 +539,7 @@ describe('createFx', () => {
         transform: {
           headers: {
             Authorization: 'Bearer gateway-secret',
-            'x-client-app': 'ai-sdk-harness-fx/0.0.0-test',
+            'x-client-app': 'ai-toolkit-harness-fx/0.0.0-test',
           },
         },
       },
@@ -562,12 +562,12 @@ describe('createFx', () => {
     expect(
       settings.credentialBrokering?.({
         env: {
-          AI_SDK_FX_CHATGPT_ACCESS_TOKEN: accessToken,
-          AI_SDK_FX_CHATGPT_ACCOUNT_ID: 'account-1',
+          ai-toolkit_FX_CHATGPT_ACCESS_TOKEN: accessToken,
+          ai-toolkit_FX_CHATGPT_ACCOUNT_ID: 'account-1',
         },
         sandboxEnv: {
-          AI_SDK_FX_CHATGPT_ACCESS_TOKEN: 'sandbox-access',
-          AI_SDK_FX_CHATGPT_ACCOUNT_ID: 'sandbox-account',
+          ai-toolkit_FX_CHATGPT_ACCESS_TOKEN: 'sandbox-access',
+          ai-toolkit_FX_CHATGPT_ACCOUNT_ID: 'sandbox-account',
         },
       }),
     ).toEqual([
@@ -585,7 +585,7 @@ describe('createFx', () => {
         transform: {
           headers: {
             Authorization: `Bearer ${accessToken}`,
-            'x-client-app': `ai-sdk-harness-fx/${VERSION}`,
+            'x-client-app': `ai-toolkit-harness-fx/${VERSION}`,
           },
         },
       },
@@ -599,12 +599,12 @@ describe('createFx', () => {
 
     const files = settings.authenticationFiles?.({
       env: {
-        AI_SDK_FX_CHATGPT_ACCESS_TOKEN: accessToken,
-        AI_SDK_FX_CHATGPT_ACCOUNT_ID: 'account-1',
+        ai-toolkit_FX_CHATGPT_ACCESS_TOKEN: accessToken,
+        ai-toolkit_FX_CHATGPT_ACCOUNT_ID: 'account-1',
       },
       sandboxEnv: {
-        AI_SDK_FX_CHATGPT_ACCESS_TOKEN: 'sandbox-access',
-        AI_SDK_FX_CHATGPT_ACCOUNT_ID: 'sandbox-account',
+        ai-toolkit_FX_CHATGPT_ACCESS_TOKEN: 'sandbox-access',
+        ai-toolkit_FX_CHATGPT_ACCOUNT_ID: 'sandbox-account',
       },
       credentialBrokeringAvailable: true,
     });
@@ -651,7 +651,7 @@ describe('createFx', () => {
         transform: {
           headers: {
             Authorization: 'Bearer explicit-gateway-key',
-            'x-client-app': 'ai-sdk-harness-fx/0.0.0-test',
+            'x-client-app': 'ai-toolkit-harness-fx/0.0.0-test',
           },
         },
       },

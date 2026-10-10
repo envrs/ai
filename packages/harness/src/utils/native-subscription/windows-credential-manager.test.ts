@@ -37,15 +37,15 @@ describe('readWindowsCredentialManagerPassword', () => {
         '-NonInteractive',
         '-Command',
         expect.stringContaining(
-          '[AISDKCredentialManager]::Read($env:AI_SDK_WINDOWS_CREDENTIAL_MANAGER_TARGET)',
+          '[ai-toolkitCredentialManager]::Read($env:ai-toolkit_WINDOWS_CREDENTIAL_MANAGER_TARGET)',
         ),
       ],
       {
         env: {
           ...process.env,
-          AI_SDK_WINDOWS_CREDENTIAL_MANAGER_SOURCE:
+          ai-toolkit_WINDOWS_CREDENTIAL_MANAGER_SOURCE:
             expect.stringContaining('CredReadW'),
-          AI_SDK_WINDOWS_CREDENTIAL_MANAGER_TARGET: 'account.service',
+          ai-toolkit_WINDOWS_CREDENTIAL_MANAGER_TARGET: 'account.service',
         },
         windowsHide: true,
       },

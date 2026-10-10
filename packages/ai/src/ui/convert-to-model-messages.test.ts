@@ -1,5 +1,5 @@
-import { tool, type ModelMessage } from '@ai-sdk/provider-utils';
-import { convertArrayToReadableStream } from '@ai-sdk/provider-utils/test';
+import { tool, type ModelMessage } from '@ai-toolkit/provider-utils';
+import { convertArrayToReadableStream } from '@ai-toolkit/provider-utils/test';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import z from 'zod/v4';
 import type { UIMessageChunk } from '../ui-message-stream/ui-message-chunks';
@@ -40,11 +40,11 @@ async function recordAssistantMessageFromChunks<
 
 describe('convertToModelMessages', () => {
   beforeEach(() => {
-    globalThis.AI_SDK_LOG_WARNINGS = false;
+    globalThis.ai-toolkit_LOG_WARNINGS = false;
   });
 
   afterEach(() => {
-    delete globalThis.AI_SDK_LOG_WARNINGS;
+    delete globalThis.ai-toolkit_LOG_WARNINGS;
   });
 
   describe('system message', () => {
@@ -941,7 +941,7 @@ describe('convertToModelMessages', () => {
 
       it('should handle assistant message with tool output error that has raw input', async () => {
         const warningLogger = vi.fn();
-        globalThis.AI_SDK_LOG_WARNINGS = warningLogger;
+        globalThis.ai-toolkit_LOG_WARNINGS = warningLogger;
 
         const result = await convertToModelMessages([
           {

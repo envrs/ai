@@ -1,5 +1,5 @@
-import type { JSONValue } from '@ai-sdk/provider';
-import { safeParseJSON } from '@ai-sdk/provider-utils';
+import type { JSONValue } from '@ai-toolkit/provider';
+import { safeParseJSON } from '@ai-toolkit/provider-utils';
 import { fixJson } from './fix-json';
 
 export async function parsePartialJson(jsonText: string | undefined): Promise<{

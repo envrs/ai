@@ -1,6 +1,6 @@
 {
-  "name": "@ai-sdk/gmicloud",
-  "version": "3.0.38",
+  "name": "@ai-toolkit/gmicloud",
+  "version": "2.0.1",
   "type": "module",
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -24,7 +24,7 @@
     "build": "pnpm clean && tsdown",
     "build:watch": "pnpm clean && tsdown --watch",
     "clean": "del-cli docs *.tsbuildinfo",
-    "prepack": "mkdir -p docs && cp ../../content/providers/01-ai-sdk-providers/100-gmicloud.mdx ./docs/",
+    "prepack": "mkdir -p docs && cp ../../content/providers/01-ai-toolkit-providers/100-gmicloud.mdx ./docs/",
     "postpack": "del-cli docs",
     "type-check": "tsc --build",
     "test": "pnpm test:node && pnpm test:edge",
@@ -42,13 +42,13 @@
     }
   },
   "dependencies": {
-    "@ai-sdk/openai-compatible": "workspace:*",
-    "@ai-sdk/provider": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*"
+    "@ai-toolkit/openai-compatible": "workspace:*",
+    "@ai-toolkit/provider": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "tsdown": "^0.23.0",
     "typescript": "6.0.3",
     "zod": "3.25.76"
@@ -63,17 +63,17 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/gmicloud"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "keywords": [
     "ai"
   ],
-  "description": "The **GMI Cloud provider** for the [AI SDK](https://ai-sdk.dev/docs) contains language model support for [GMI Cloud](https://www.gmicloud.ai), offering GPU inference for open-weight models over an OpenAI-compatible API."
+  "description": "The **GMI Cloud provider** for the [ai-toolkit](https://ai-toolkit.dev/docs) contains language model support for [GMI Cloud](https://www.gmicloud.ai), offering GPU inference for open-weight models over an OpenAI-compatible API."
 }

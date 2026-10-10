@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 /**
  * Browser window chrome around interactive cookbook demos (ported from the
- * legacy ai-sdk.dev app).
+ * legacy ai-toolkit.dev app).
  */
 export const Browser = ({ children }: { children: ReactNode }) => (
   <div className="not-prose my-6 rounded-lg border border-gray-alpha-400 bg-background-100">

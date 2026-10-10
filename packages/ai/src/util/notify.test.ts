@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { Callback } from './callback';
 import { notify } from './notify';
-import { delay } from '@ai-sdk/provider-utils';
+import { delay } from '@ai-toolkit/provider-utils';
 
 describe('notify', () => {
   beforeEach(() => {

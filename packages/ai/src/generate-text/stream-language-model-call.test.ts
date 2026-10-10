@@ -1,12 +1,12 @@
 import type {
   LanguageModelV4StreamPart,
   LanguageModelV4Usage,
-} from '@ai-sdk/provider';
-import { tool, type ToolSet } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { tool, type ToolSet } from '@ai-toolkit/provider-utils';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it, vi } from 'vitest';
 import { z } from 'zod/v4';
 import { NoSuchToolError } from '../error/no-such-tool-error';

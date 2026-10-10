@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
-import { convertUint8ArrayToBase64 } from '@ai-sdk/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
+import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
 import { describe, it, expect, vi } from 'vitest';
 import { createAnthropic } from '../anthropic-provider';
 

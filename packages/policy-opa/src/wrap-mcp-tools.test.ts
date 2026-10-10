@@ -1,4 +1,4 @@
-import { jsonSchema, tool } from '@ai-sdk/provider-utils';
+import { jsonSchema, tool } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { wrapMcpTools } from './wrap-mcp-tools';
 

@@ -3,9 +3,9 @@ import {
   IconMessage,
   IconSparkles,
   IconWrench,
-} from '@vercel/geistdocs/assets/icons';
-import { IconArrowUpRight } from '@vercel/geistdocs/assets/icons/icon-arrow-up-right';
-import { LogoNextjs, LogoSvelteKit } from '@vercel/geistdocs/assets/logos';
+} from '@khulnasoft/geistdocs/assets/icons';
+import { IconArrowUpRight } from '@khulnasoft/geistdocs/assets/icons/icon-arrow-up-right';
+import { LogoNextjs, LogoSvelteKit } from '@khulnasoft/geistdocs/assets/logos';
 import Link from 'next/link';
 import { type ReactNode, useId } from 'react';
 import {
@@ -85,7 +85,7 @@ const supportItems = [
     icon: <IconWrench size={16} />,
     button: {
       label: 'Open GitHub Issue',
-      href: 'https://github.com/vercel/ai/issues/new?assignees=&labels=&projects=&template=1.bug_report.yml',
+      href: 'https://github.com/khulnasoft/ai/issues/new?assignees=&labels=&projects=&template=1.bug_report.yml',
     },
   },
   {
@@ -95,7 +95,7 @@ const supportItems = [
     icon: <IconSparkles size={16} />,
     button: {
       label: 'Request Feature',
-      href: 'https://github.com/vercel/ai/issues/new?assignees=&labels=&projects=&template=2.feature_request.yml',
+      href: 'https://github.com/khulnasoft/ai/issues/new?assignees=&labels=&projects=&template=2.feature_request.yml',
     },
   },
   {
@@ -105,7 +105,7 @@ const supportItems = [
     icon: <IconMessage size={16} />,
     button: {
       label: 'Ask a question',
-      href: 'https://github.com/vercel/ai/discussions',
+      href: 'https://github.com/khulnasoft/ai/discussions',
     },
   },
   {

@@ -3,7 +3,7 @@ import {
   type JSONSchema7,
   type JSONSchema7Definition,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 /**
  * Normalizes JSON Schema for OpenAI structured outputs.

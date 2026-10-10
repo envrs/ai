@@ -1,4 +1,4 @@
-import type { SharedV4ProviderReference } from '@ai-sdk/provider';
+import type { SharedV4ProviderReference } from '@ai-toolkit/provider';
 
 /**
  * A mapping of provider names to provider-specific file identifiers.

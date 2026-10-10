@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4GenerateResult,
   LanguageModelV4StreamPart,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { tool, type ModelMessage, type ToolSet } from 'ai';
 import { verifyToolApprovalSignature } from 'ai/internal';
 import { MockLanguageModelV4, convertArrayToReadableStream } from 'ai/test';

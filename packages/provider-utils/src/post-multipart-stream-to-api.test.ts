@@ -1,4 +1,4 @@
-import { APICallError } from '@ai-sdk/provider';
+import { APICallError } from '@ai-toolkit/provider';
 import { describe, expect, it, vi } from 'vitest';
 import { postMultipartStreamToApi } from './post-multipart-stream-to-api';
 import {
@@ -65,7 +65,7 @@ describe('postMultipartStreamToApi', () => {
     expect(init.method).toBe('POST');
     expect(init.duplex).toBe('half');
     expect(init.headers['content-type']).toMatch(
-      /^multipart\/form-data; boundary=ai-sdk-multipart-/,
+      /^multipart\/form-data; boundary=ai-toolkit-multipart-/,
     );
     expect(init.headers.authorization).toBe('Bearer test');
 

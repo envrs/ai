@@ -1,4 +1,4 @@
-# AI SDK OpenCode Harness
+# ai-toolkit OpenCode Harness
 
 The OpenCode harness connects `HarnessAgent` to OpenCode through a sandboxed
 bridge.
@@ -10,7 +10,7 @@ dedicated adapter option. For example, OpenCode supports selecting a model for
 an individual agent:
 
 ```ts
-import { createOpenCode } from '@ai-sdk/harness-opencode';
+import { createOpenCode } from '@ai-toolkit/harness-opencode';
 
 const adapter = createOpenCode({
   openCodeConfig: {
@@ -38,4 +38,4 @@ With `includeRawChunks` enabled, `opencode.compaction` raw events expose
 the normalized `compaction` part, whose `harnessMetadata.opencode.messageId`
 identifies the same operation.
 
-See the AI SDK documentation for usage.
+See the ai-toolkit documentation for usage.

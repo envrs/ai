@@ -1,4 +1,4 @@
-import { cn } from '@vercel/geistdocs/utils';
+import { cn } from '@khulnasoft/geistdocs/utils';
 import type { ComponentProps } from 'react';
 
 export function BrowserRoot({ className, ...props }: ComponentProps<'div'>) {

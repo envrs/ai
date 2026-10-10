@@ -1,40 +1,40 @@
 ---
 title: Telnyx
-description: Telnyx provider for AI SDK 7
+description: Telnyx provider for ai-toolkit 7
 ---
 
 # Telnyx
 
-[Telnyx](https://telnyx.com/) provides an AI SDK provider for the [Vercel AI SDK](https://ai-sdk.dev), giving developers access to chat models, embeddings, speech-to-text, and text-to-speech through a single package.
+[Telnyx](https://telnyx.com/) provides an ai-toolkit provider for the [khulnasoft ai-toolkit](https://ai-toolkit.dev), giving developers access to chat models, embeddings, speech-to-text, and text-to-speech through a single package.
 
 The Telnyx provider is a good fit if you want:
 
 - **One package for multiple AI capabilities**: chat, embeddings, transcription, and speech generation
 - **OpenAI-compatible model access**: use Telnyx-hosted models through a familiar API pattern
 - **Speech support in the same provider**: combine text and voice workflows in one integration
-- **Simple setup**: standard API key configuration with the AI SDK
+- **Simple setup**: standard API key configuration with the ai-toolkit
 
 Learn more in the [Telnyx documentation](https://developers.telnyx.com/docs/inference/getting-started).
 
 ## Setup
 
-The `@telnyx/ai-sdk-provider` package (v2.0.0+) supports AI SDK 7 and the Provider V4 specification.
+The `@telnyx/ai-toolkit-provider` package (v2.0.0+) supports ai-toolkit 7 and the Provider V4 specification.
 
-Install it alongside AI SDK 7:
+Install it alongside ai-toolkit 7:
 
 <Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
   <Tab>
-    <Snippet text="pnpm add @telnyx/ai-sdk-provider ai@^7 zod" dark />
+    <Snippet text="pnpm add @telnyx/ai-toolkit-provider ai@^7 zod" dark />
   </Tab>
   <Tab>
-    <Snippet text="npm install @telnyx/ai-sdk-provider ai@^7 zod" dark />
+    <Snippet text="npm install @telnyx/ai-toolkit-provider ai@^7 zod" dark />
   </Tab>
   <Tab>
-    <Snippet text="yarn add @telnyx/ai-sdk-provider ai@^7 zod" dark />
+    <Snippet text="yarn add @telnyx/ai-toolkit-provider ai@^7 zod" dark />
   </Tab>
 
   <Tab>
-    <Snippet text="bun add @telnyx/ai-sdk-provider ai@^7 zod" dark />
+    <Snippet text="bun add @telnyx/ai-toolkit-provider ai@^7 zod" dark />
   </Tab>
 </Tabs>
 
@@ -49,7 +49,7 @@ export TELNYX_API_KEY="your_api_key_here"
 To create a Telnyx provider instance, use the `createTelnyx` function:
 
 ```typescript
-import { createTelnyx } from '@telnyx/ai-sdk-provider';
+import { createTelnyx } from '@telnyx/ai-toolkit-provider';
 
 const telnyx = createTelnyx({
   apiKey: process.env.TELNYX_API_KEY,
@@ -63,7 +63,7 @@ You can also use the default `telnyx` export when `TELNYX_API_KEY` is set in you
 ### `generateText`
 
 ```typescript
-import { telnyx } from '@telnyx/ai-sdk-provider';
+import { telnyx } from '@telnyx/ai-toolkit-provider';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -77,7 +77,7 @@ console.log(text);
 ### `embed`
 
 ```typescript
-import { telnyx } from '@telnyx/ai-sdk-provider';
+import { telnyx } from '@telnyx/ai-toolkit-provider';
 import { embed } from 'ai';
 
 const { embedding } = await embed({
@@ -91,7 +91,7 @@ console.log(embedding);
 ### `transcribe`
 
 ```typescript
-import { telnyx } from '@telnyx/ai-sdk-provider';
+import { telnyx } from '@telnyx/ai-toolkit-provider';
 import { transcribe } from 'ai';
 import { readFile } from 'node:fs/promises';
 
@@ -106,7 +106,7 @@ console.log(result.text);
 ### `generateSpeech`
 
 ```typescript
-import { telnyx } from '@telnyx/ai-sdk-provider';
+import { telnyx } from '@telnyx/ai-toolkit-provider';
 import { generateSpeech } from 'ai';
 
 const { audio } = await generateSpeech({
@@ -120,8 +120,8 @@ await audio.writeToFile('./speech.mp3');
 
 ## Additional Resources
 
-- [Telnyx Provider Repository](https://github.com/team-telnyx/ai-sdk-provider)
-- [NPM Package](https://www.npmjs.com/package/@telnyx/ai-sdk-provider)
+- [Telnyx Provider Repository](https://github.com/team-telnyx/ai-toolkit-provider)
+- [NPM Package](https://www.npmjs.com/package/@telnyx/ai-toolkit-provider)
 - [Telnyx AI Inference Docs](https://developers.telnyx.com/docs/inference/getting-started)
 - [Telnyx Model Catalog](https://developers.telnyx.com/docs/inference/models)
 - [Telnyx Speech Docs](https://developers.telnyx.com/docs/tts-stt/overview)

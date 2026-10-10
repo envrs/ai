@@ -1,6 +1,6 @@
 /**
  * Products and projects on the /resources/showcase page (ported from the
- * legacy ai-sdk.dev app).
+ * legacy ai-toolkit.dev app).
  */
 export interface ShowcaseProject {
   name: string;
@@ -64,12 +64,12 @@ export const showcaseProjects: ShowcaseProject[] = [
   },
   {
     name: '2txt',
-    link: 'https://2txt.vercel.app',
+    link: 'https://2txt.khulnasoft.app',
     image: '2txt.png',
   },
   {
-    name: 'Vercel AI templates',
-    link: 'https://vercel.com/templates?type=ai',
+    name: 'khulnasoft AI templates',
+    link: 'https://khulnasoft.com/templates?type=ai',
     image: 'templates.png',
   },
 ];

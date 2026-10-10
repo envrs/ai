@@ -1,4 +1,4 @@
-import { EmptyResponseBodyError } from '@ai-sdk/provider';
+import { EmptyResponseBodyError } from '@ai-toolkit/provider';
 import { createAmazonBedrockEventStreamResponseHandler } from './amazon-bedrock-event-stream-response-handler';
 import { EventStreamCodec } from '@smithy/eventstream-codec';
 import { z } from 'zod/v4';

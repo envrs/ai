@@ -2,7 +2,7 @@ import { expectTypeOf, it } from 'vitest';
 import type {
   Experimental_DecisionModelV4 as DecisionModelV4,
   ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { decide } from '../decide/decide';
 import type { Provider } from '../types/provider';
 import type { DecisionModel } from '../decide/decision-result';
@@ -48,7 +48,7 @@ it('infers aliases and returns v4 decision models', () => {
   registry.decisionModel('missing|route');
   // @ts-expect-error - wrong separator
   registry.decisionModel('custom:route');
-  globalThis.AI_SDK_DEFAULT_PROVIDER = provider;
+  globalThis.ai-toolkit_DEFAULT_PROVIDER = provider;
 });
 
 it('preserves question and Choice inference for string models and reused readonly questions', async () => {

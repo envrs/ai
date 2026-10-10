@@ -1,4 +1,4 @@
-import type { HarnessV1StreamPart } from '@ai-sdk/harness';
+import type { HarnessV1StreamPart } from '@ai-toolkit/harness';
 import { mapUsage } from './opencode-usage';
 import { asOpenCodeObject } from './opencode-types';
 

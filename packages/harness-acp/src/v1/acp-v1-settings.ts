@@ -5,8 +5,8 @@ import type {
   HarnessV1PermissionMode,
   HarnessV1RequestTransformation,
   HarnessV1StreamPart,
-} from '@ai-sdk/harness';
-import type { ToolResultPart } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness';
+import type { ToolResultPart } from '@ai-toolkit/provider-utils';
 import type { ACPToolCall } from '../acp-tool-call';
 
 export type ACPSerializablePrimitive = string | number | boolean | null;

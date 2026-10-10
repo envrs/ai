@@ -1,4 +1,4 @@
-import { asSchema, safeValidateTypes } from '@ai-sdk/provider-utils';
+import { asSchema, safeValidateTypes } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { browserbaseFetch } from './browserbase-fetch';
 

@@ -12,7 +12,7 @@ const sizes = {
 } as const;
 
 /**
- * Pill badge matching the legacy @vercel/geist `<Badge>` variants used on
+ * Pill badge matching the legacy @khulnasoft/geist `<Badge>` variants used on
  * the /resources/recipes landing page.
  */
 export const Badge = ({

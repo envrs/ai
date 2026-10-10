@@ -1,6 +1,6 @@
 # File Uploads Architecture
 
-This document explains how file uploads and provider references work in the AI SDK, covering the spec, the top-level API, provider implementations, and how provider references flow through messages.
+This document explains how file uploads and provider references work in the ai-toolkit, covering the spec, the top-level API, provider implementations, and how provider references flow through messages.
 
 ## High-Level Architecture
 
@@ -99,10 +99,10 @@ const provider = {
 
 ### 3. Handle provider references in message conversion
 
-In the message conversion code (e.g. `convert-to-myprovider-messages.ts`), check for provider references in file parts and resolve them using `resolveProviderReference` from `@ai-sdk/provider-utils`:
+In the message conversion code (e.g. `convert-to-myprovider-messages.ts`), check for provider references in file parts and resolve them using `resolveProviderReference` from `@ai-toolkit/provider-utils`:
 
 ```ts
-import { isProviderReference, resolveProviderReference } from '@ai-sdk/provider-utils';
+import { isProviderReference, resolveProviderReference } from '@ai-toolkit/provider-utils';
 
 // Inside the file part handling:
 case 'file': {
@@ -126,7 +126,7 @@ case 'file': {
 Providers that don't support file uploads should add a guard at the top of their `case 'file':` block to throw `UnsupportedFunctionalityError` when a provider reference is encountered:
 
 ```ts
-import { isProviderReference } from '@ai-sdk/provider-utils';
+import { isProviderReference } from '@ai-toolkit/provider-utils';
 
 case 'file': {
   if (isProviderReference(part.data)) {

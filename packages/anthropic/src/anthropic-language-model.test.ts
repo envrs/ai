@@ -6,13 +6,13 @@ import {
   type LanguageModelV4Prompt,
   type LanguageModelV4StreamPart,
   type LanguageModelV4StreamResult,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertReadableStreamToArray,
   mockId,
-} from '@ai-sdk/provider-utils/test';
-import { asSchema } from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider-utils/test';
+import { asSchema } from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import fs from 'node:fs';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { z } from 'zod/v4';
@@ -2226,7 +2226,7 @@ describe('AnthropicLanguageModel', () => {
         'test-header': 'test-value',
       });
       expect(server.calls[0].requestUserAgent).toContain(
-        `ai-sdk-anthropic/0.0.0-test`,
+        `ai-toolkit-anthropic/0.0.0-test`,
       );
     });
 
@@ -3740,14 +3740,14 @@ describe('AnthropicLanguageModel', () => {
                 type: 'server_tool_use',
                 id: 'srvtoolu_code',
                 name: 'code_execution',
-                input: { code: 'search("AI SDK")' },
+                input: { code: 'search("ai-toolkit")' },
                 caller: { type: 'direct' },
               },
               {
                 type: 'server_tool_use',
                 id: 'srvtoolu_search',
                 name: 'web_search',
-                input: { query: 'AI SDK' },
+                input: { query: 'ai-toolkit' },
                 caller: {
                   type: 'code_execution_20260120',
                   tool_id: 'srvtoolu_code',

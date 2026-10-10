@@ -1,4 +1,4 @@
-import type { Experimental_SandboxSession as SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import { describe, expect, it, vi } from 'vitest';
 import type {
   HarnessV1,
@@ -75,7 +75,7 @@ describe('prepareHarnessSandboxTemplate', () => {
         createSession,
       },
       sandboxConfig: {
-        workDir: 'ai-sdk',
+        workDir: 'ai-toolkit',
         bootstrapHash: 'repo-v1',
         onBootstrap: onSandboxBootstrap,
       },
@@ -88,7 +88,7 @@ describe('prepareHarnessSandboxTemplate', () => {
     });
     expect(onSandboxBootstrap).toHaveBeenCalledWith({
       session,
-      workDir: '/work/ai-sdk',
+      workDir: '/work/ai-toolkit',
       abortSignal: undefined,
     });
     expect(stop).toHaveBeenCalledTimes(1);
@@ -124,7 +124,7 @@ describe('prepareHarnessSandboxTemplate', () => {
       writeTextFile.mock.calls as unknown as Array<[{ path: string }]>
     ).map(call => call[0].path);
     expect(writtenPaths).toContain(
-      '/home/agent/.ai-sdk-harness/.harness-bootstrap/mock/bridge.mjs',
+      '/home/agent/.ai-toolkit-harness/.harness-bootstrap/mock/bridge.mjs',
     );
   });
 });

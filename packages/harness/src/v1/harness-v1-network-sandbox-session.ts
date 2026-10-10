@@ -1,5 +1,5 @@
 import { posix } from 'node:path';
-import type { Experimental_SandboxSession as SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 
 /**
  * Connection details for a sandbox-exposed port. Headers are scoped to the
@@ -14,7 +14,7 @@ export type HarnessV1PortEndpoint = {
  * Fixed directory, relative to the sandbox's own HOME, that holds every
  * piece of state the harness machinery generates.
  */
-const HARNESS_V1_STATE_DIRECTORY_NAME = '.ai-sdk-harness';
+const HARNESS_V1_STATE_DIRECTORY_NAME = '.ai-toolkit-harness';
 
 /**
  * Fixed, non-configurable path for harness-generated state (bootstrap files,

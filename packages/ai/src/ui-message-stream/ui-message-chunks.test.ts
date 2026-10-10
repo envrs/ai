@@ -1,6 +1,6 @@
-import { TypeValidationError } from '@ai-sdk/provider';
-import { parseJsonEventStream, validateTypes } from '@ai-sdk/provider-utils';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
+import { TypeValidationError } from '@ai-toolkit/provider';
+import { parseJsonEventStream, validateTypes } from '@ai-toolkit/provider-utils';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
 import { describe, expect, expectTypeOf, it } from 'vitest';
 import { uiMessageChunkSchema, type UIMessageChunk } from './ui-message-chunks';
 
@@ -44,7 +44,7 @@ describe('uiMessageChunkSchema', () => {
       toolCallId: 'call-123',
       output: { ok: true },
       optionalFieldFromNewerServer: {
-        addedIn: 'future-ai-sdk-version',
+        addedIn: 'future-ai-toolkit-version',
       },
     };
 
@@ -60,7 +60,7 @@ describe('uiMessageChunkSchema', () => {
         {
           "rawValue": {
             "optionalFieldFromNewerServer": {
-              "addedIn": "future-ai-sdk-version",
+              "addedIn": "future-ai-toolkit-version",
             },
             "output": {
               "ok": true,
@@ -71,7 +71,7 @@ describe('uiMessageChunkSchema', () => {
           "success": true,
           "value": {
             "optionalFieldFromNewerServer": {
-              "addedIn": "future-ai-sdk-version",
+              "addedIn": "future-ai-toolkit-version",
             },
             "output": {
               "ok": true,

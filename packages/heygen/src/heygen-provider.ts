@@ -2,13 +2,13 @@ import {
   NoSuchModelError,
   type ProviderV4,
   type Experimental_VideoModelV4 as VideoModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { HeyGenVideoModel } from './heygen-video-model';
 import type { HeyGenVideoModelId } from './heygen-video-settings';
 import { VERSION } from './version';
@@ -49,7 +49,7 @@ export function createHeyGen(
             }),
             ...options.headers,
           },
-          `ai-sdk-heygen/${VERSION}`,
+          `ai-toolkit-heygen/${VERSION}`,
         ),
       fetch: options.fetch,
     });

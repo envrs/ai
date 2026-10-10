@@ -1042,7 +1042,7 @@ describe('createEmitStreamEvent', () => {
             type: 'tool_use',
             id: 'external-tool',
             name: 'mcp__context7__query-docs',
-            input: { libraryId: '/vercel/next.js' },
+            input: { libraryId: '/khulnasoft/next.js' },
           },
           {
             type: 'tool_use',
@@ -1079,7 +1079,7 @@ describe('createEmitStreamEvent', () => {
       [
         {
           "dynamic": true,
-          "input": "{"libraryId":"/vercel/next.js"}",
+          "input": "{"libraryId":"/khulnasoft/next.js"}",
           "nativeName": "mcp__context7__query-docs",
           "providerExecuted": true,
           "toolCallId": "external-tool",

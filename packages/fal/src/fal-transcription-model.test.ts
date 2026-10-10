@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { createFal } from './fal-provider';
 import { FalTranscriptionModel } from './fal-transcription-model';
 import { readFile } from 'node:fs/promises';
@@ -85,7 +85,7 @@ describe('doGenerate', () => {
       });
 
       expect(result.text).toMatchInlineSnapshot(
-        `"Hello from the Versal AISDK."`,
+        `"Hello from the Versal ai-toolkit."`,
       );
     });
   });

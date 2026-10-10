@@ -21,19 +21,19 @@ test('legacy redirects preserve representative production destinations', () => {
   for (const [source, destination, permanent] of [
     ['/docs', '/docs/introduction', true],
     ['/docs/guides/rag-chatbot', '/cookbook/guides/rag-chatbot', true],
-    ['/docs/ai-core/generate-text', '/docs/ai-sdk-core/generate-text', true],
-    ['/docs/api-reference/use-chat', '/docs/reference/ai-sdk-ui/use-chat', true],
+    ['/docs/ai-core/generate-text', '/docs/ai-toolkit-core/generate-text', true],
+    ['/docs/api-reference/use-chat', '/docs/reference/ai-toolkit-ui/use-chat', true],
     ['/docs/fundamentals/prompts', '/docs/foundations/prompts', true],
-    ['/providers/legacy-providers/fireworks', '/providers/ai-sdk-providers/fireworks', true],
+    ['/providers/legacy-providers/fireworks', '/providers/ai-toolkit-providers/fireworks', true],
     [
-      '/docs/providers/ai-sdk-providers/google-geneative-ai',
-      '/providers/ai-sdk-providers/google',
+      '/docs/providers/ai-toolkit-providers/google-geneative-ai',
+      '/providers/ai-toolkit-providers/google',
       true,
     ],
-    ['/api/object', '/docs/reference/ai-sdk-ui/use-object', true],
+    ['/api/object', '/docs/reference/ai-toolkit-ui/use-object', true],
     ['/getting-started/nextjs-app-router', '/docs/getting-started/nextjs-app-router', true],
     ['/repo', 'https://github.com/vercel/ai', false],
-    ['/stream-data', '/docs/reference/ai-sdk-ui/stream-data', true],
+    ['/stream-data', '/docs/reference/ai-toolkit-ui/stream-data', true],
   ]) {
     assert.deepEqual(redirects.get(source), { source, destination, permanent });
   }
@@ -41,19 +41,19 @@ test('legacy redirects preserve representative production destinations', () => {
 
 test('evaluation URLs permanently redirect to decision pages and preserve query parameters', async () => {
   for (const [source, destination] of [
-    ['/docs/ai-sdk-core/evaluation', '/docs/ai-sdk-core/decisions'],
-    ['/docs/reference/ai-sdk-core/evaluate', '/docs/reference/ai-sdk-core/decide'],
+    ['/docs/ai-toolkit-core/evaluation', '/docs/ai-toolkit-core/decisions'],
+    ['/docs/reference/ai-toolkit-core/evaluate', '/docs/reference/ai-toolkit-core/decide'],
     [
-      '/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error',
-      '/docs/reference/ai-sdk-errors/ai-decision-unsupported-question-type-error',
+      '/docs/reference/ai-toolkit-errors/ai-evaluation-unsupported-question-type-error',
+      '/docs/reference/ai-toolkit-errors/ai-decision-unsupported-question-type-error',
     ],
   ]) {
     const response = await unstable_getResponseFromNextConfig({
-      url: `https://ai-sdk.dev${source}?ref=bookmark`,
+      url: `https://ai-toolkit.dev${source}?ref=bookmark`,
       nextConfig: { redirects: () => legacyRedirects },
     });
     assert.equal(response.status, 308);
-    assert.equal(getRedirectUrl(response), `https://ai-sdk.dev${destination}?ref=bookmark`);
+    assert.equal(getRedirectUrl(response), `https://ai-toolkit.dev${destination}?ref=bookmark`);
   }
 });
 

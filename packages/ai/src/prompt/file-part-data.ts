@@ -1,11 +1,11 @@
-import type { LanguageModelV4FilePart } from '@ai-sdk/provider';
+import type { LanguageModelV4FilePart } from '@ai-toolkit/provider';
 import {
   isBuffer,
   isProviderReference,
   type DataContent,
   type FilePart,
   type ProviderReference,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { InvalidDataContentError } from './invalid-data-content-error';
 import { splitDataUrl } from './split-data-url';
 

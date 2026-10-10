@@ -1,5 +1,5 @@
 import { z } from 'zod/v4';
-import { createJsonErrorResponseHandler } from '@ai-sdk/provider-utils';
+import { createJsonErrorResponseHandler } from '@ai-toolkit/provider-utils';
 
 // Error shape returned by the Deepgram APIs, e.g.
 // {"err_code":"INVALID_QUERY_PARAMETER","err_msg":"Invalid 'model' value of ...","request_id":"..."}

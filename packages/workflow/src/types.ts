@@ -1,11 +1,11 @@
 /**
- * Shared types for AI SDK V4.
+ * Shared types for ai-toolkit V4.
  */
-import type { LanguageModelV4 } from '@ai-sdk/provider';
+import type { LanguageModelV4 } from '@ai-toolkit/provider';
 
 /**
- * Language model type for AI SDK V4.
+ * Language model type for ai-toolkit V4.
  *
- * This is a simple alias for LanguageModelV4 from @ai-sdk/provider.
+ * This is a simple alias for LanguageModelV4 from @ai-toolkit/provider.
  */
 export type CompatibleLanguageModel = LanguageModelV4;

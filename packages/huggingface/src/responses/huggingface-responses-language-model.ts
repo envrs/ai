@@ -8,7 +8,7 @@ import {
   type LanguageModelV4StreamPart,
   type LanguageModelV4StreamResult,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createEventSourceResponseHandler,
@@ -21,7 +21,7 @@ import {
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
   type ParseResult,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { HuggingFaceConfig } from '../huggingface-config';
 import { huggingfaceFailedResponseHandler } from '../huggingface-error';

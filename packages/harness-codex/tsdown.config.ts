@@ -17,12 +17,12 @@ export default defineConfig(
       entry: { 'bridge/index': 'src/bridge/index.ts' },
       outExtensions: () => ({ js: '.mjs' }),
       dts: false,
-      // The shared bridge runtime (`@ai-sdk/harness/bridge`) must be INLINED —
+      // The shared bridge runtime (`@ai-toolkit/harness/bridge`) must be INLINED —
       // the sandbox only installs the bridge's own deps, so a bare import would
       // not resolve there. tsdown externalizes package.json deps by default, hence
       // the explicit override.
       deps: {
-        alwaysBundle: [/^@ai-sdk\/harness(?:\/|$)/],
+        alwaysBundle: [/^@ai-toolkit\/harness(?:\/|$)/],
         neverBundle: true,
       },
       define: {

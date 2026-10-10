@@ -3,7 +3,7 @@ import {
   type Context,
   type InferToolSetContext,
   type ModelMessage,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { describe, expectTypeOf, it } from 'vitest';
 import { z } from 'zod/v4';
 import type { ToolApprovalConfiguration } from './tool-approval-configuration';

@@ -3,7 +3,7 @@ import {
   type FlexibleSchema,
   type IdGenerator,
   type InferSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { InvalidArgumentError } from '../error/invalid-argument-error';
 import type { FinishReason } from '../types/language-model';
 import type { UIMessageChunk } from '../ui-message-stream/ui-message-chunks';
@@ -207,7 +207,7 @@ export interface ChatInit<UI_MESSAGE extends UIMessage> {
 
   /**
    * A way to provide a function that is going to be used for ids for messages and the chat.
-   * If not provided the default AI SDK `generateId` is used.
+   * If not provided the default ai-toolkit `generateId` is used.
    */
   generateId?: IdGenerator;
 

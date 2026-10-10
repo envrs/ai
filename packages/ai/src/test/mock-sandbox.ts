@@ -1,7 +1,7 @@
 import type {
   Experimental_SandboxSession,
   Experimental_SandboxProcess,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 /**
  * No-op stubs for the file and spawn methods on `Experimental_SandboxSession`,

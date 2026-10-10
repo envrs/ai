@@ -1,4 +1,4 @@
-import type { JSONObject } from '@ai-sdk/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 import { MCPClientError } from '../error/mcp-client-error';
 import type { MCPEvents } from './mcp-event-types';
 import type { RequestOptions } from './types';

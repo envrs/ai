@@ -10,8 +10,8 @@ describe('gateway headers', () => {
     expect(GATEWAY_AUTH_METHOD_HEADER).toBe('ai-gateway-auth-method');
   });
 
-  it('should export the correct Vercel AI Gateway team header name', () => {
-    expect(VERCEL_AI_GATEWAY_TEAM_HEADER).toBe('x-vercel-ai-gateway-team');
+  it('should export the correct khulnasoft AI Gateway team header name', () => {
+    expect(VERCEL_AI_GATEWAY_TEAM_HEADER).toBe('x-khulnasoft-ai-gateway-team');
   });
 });
 

@@ -1,7 +1,7 @@
-import { convertArrayToReadableStream } from '@ai-sdk/provider-utils/test';
+import { convertArrayToReadableStream } from '@ai-toolkit/provider-utils/test';
 import { smoothStream } from './smooth-stream';
 import type { TextStreamPart } from './stream-text-result';
-import type { ToolSet } from '@ai-sdk/provider-utils';
+import type { ToolSet } from '@ai-toolkit/provider-utils';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 describe('smoothStream', () => {

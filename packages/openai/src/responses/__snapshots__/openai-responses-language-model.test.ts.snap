@@ -342,7 +342,7 @@ between entities that can be used as input for other models or other natural
 language processing tasks.
 
 In the next section, you will learn about the difference between models 
-providers and models, and which ones are available in the AI SDK.",
+providers and models, and which ones are available in the ai-toolkit.",
         },
       ],
     },
@@ -672,7 +672,7 @@ exports[`OpenAIResponsesLanguageModel > doGenerate > mcp tool approval > should 
   },
   {
     "dynamic": true,
-    "input": "{"alias":"","description":"","max_clicks":100,"password":"","url":"https://ai-sdk.dev/"}",
+    "input": "{"alias":"","description":"","max_clicks":100,"password":"","url":"https://ai-toolkit.dev/"}",
     "providerExecuted": true,
     "toolCallId": "id-0",
     "toolName": "mcp.create_short_url",
@@ -729,7 +729,7 @@ exports[`OpenAIResponsesLanguageModel > doGenerate > mcp tool approval > should 
   },
   {
     "dynamic": true,
-    "input": "{"alias":"","description":"","max_clicks":100,"password":"","url":"https://ai-sdk.dev/"}",
+    "input": "{"alias":"","description":"","max_clicks":100,"password":"","url":"https://ai-toolkit.dev/"}",
     "providerExecuted": true,
     "toolCallId": "id-0",
     "toolName": "mcp.create_short_url",
@@ -747,7 +747,7 @@ exports[`OpenAIResponsesLanguageModel > doGenerate > mcp tool approval > should 
 [
   {
     "dynamic": true,
-    "input": "{"alias":"","description":"","max_clicks":100,"password":"","url":"https://ai-sdk.dev/"}",
+    "input": "{"alias":"","description":"","max_clicks":100,"password":"","url":"https://ai-toolkit.dev/"}",
     "providerExecuted": true,
     "toolCallId": "mcp_04f6b17429cf2b02006949a6908fc4819686c02f71f7faecc6",
     "toolName": "mcp.create_short_url",
@@ -760,12 +760,12 @@ exports[`OpenAIResponsesLanguageModel > doGenerate > mcp tool approval > should 
       },
     },
     "result": {
-      "arguments": "{"alias":"","description":"","max_clicks":100,"password":"","url":"https://ai-sdk.dev/"}",
+      "arguments": "{"alias":"","description":"","max_clicks":100,"password":"","url":"https://ai-toolkit.dev/"}",
       "name": "create_short_url",
       "output": "✅ Short URL created: https://zip1.io/oMAchr
 🔤 Generated code: oMAchr
 🔢 Max clicks: 100
-🔗 Original URL: https://ai-sdk.dev/
+🔗 Original URL: https://ai-toolkit.dev/
 
 📊 View stats: https://zip1.io/stats/oMAchr",
       "serverLabel": "zip1",
@@ -784,7 +784,7 @@ exports[`OpenAIResponsesLanguageModel > doGenerate > mcp tool approval > should 
     "text": "Done — I created a short link for you.
 
 Short URL: https://zip1.io/oMAchr
-Original URL: https://ai-sdk.dev/
+Original URL: https://ai-toolkit.dev/
 Max clicks: 100
 Stats page: https://zip1.io/stats/oMAchr
 
@@ -3888,7 +3888,7 @@ between entities that can be used as input for other models or other natural
 language processing tasks.
 
 In the next section, you will learn about the difference between models 
-providers and models, and which ones are available in the AI SDK.",
+providers and models, and which ones are available in the ai-toolkit.",
         },
       ],
     },
@@ -7117,7 +7117,7 @@ exports[`OpenAIResponsesLanguageModel > doStream > mcp tool approval > should st
   },
   {
     "dynamic": true,
-    "input": "{"alias":"","description":"Shortened link for ai-sdk.dev","max_clicks":100,"password":"","url":"https://ai-sdk.dev/"}",
+    "input": "{"alias":"","description":"Shortened link for ai-toolkit.dev","max_clicks":100,"password":"","url":"https://ai-toolkit.dev/"}",
     "providerExecuted": true,
     "toolCallId": "id-0",
     "toolName": "mcp.create_short_url",
@@ -7844,7 +7844,7 @@ exports[`OpenAIResponsesLanguageModel > doStream > mcp tool approval > should st
   },
   {
     "dynamic": true,
-    "input": "{"alias":"","description":"Shortened link for ai-sdk.dev","max_clicks":100,"password":"","url":"https://ai-sdk.dev/"}",
+    "input": "{"alias":"","description":"Shortened link for ai-toolkit.dev","max_clicks":100,"password":"","url":"https://ai-toolkit.dev/"}",
     "providerExecuted": true,
     "toolCallId": "id-0",
     "toolName": "mcp.create_short_url",
@@ -7909,7 +7909,7 @@ exports[`OpenAIResponsesLanguageModel > doStream > mcp tool approval > should st
   },
   {
     "dynamic": true,
-    "input": "{"alias":"","description":"Shortened link for ai-sdk.dev","max_clicks":100,"password":"","url":"https://ai-sdk.dev/"}",
+    "input": "{"alias":"","description":"Shortened link for ai-toolkit.dev","max_clicks":100,"password":"","url":"https://ai-toolkit.dev/"}",
     "providerExecuted": true,
     "toolCallId": "mcp_04a97b4fce127879006949a87c14248195ac23dfe0854c03d3",
     "toolName": "mcp.create_short_url",
@@ -7922,13 +7922,13 @@ exports[`OpenAIResponsesLanguageModel > doStream > mcp tool approval > should st
       },
     },
     "result": {
-      "arguments": "{"alias":"","description":"Shortened link for ai-sdk.dev","max_clicks":100,"password":"","url":"https://ai-sdk.dev/"}",
+      "arguments": "{"alias":"","description":"Shortened link for ai-toolkit.dev","max_clicks":100,"password":"","url":"https://ai-toolkit.dev/"}",
       "name": "create_short_url",
       "output": "✅ Short URL created: https://zip1.io/UDKvlw
 🔤 Generated code: UDKvlw
 🔢 Max clicks: 100
-📄 Description: Shortened link for ai-sdk.dev
-🔗 Original URL: https://ai-sdk.dev/
+📄 Description: Shortened link for ai-toolkit.dev
+🔗 Original URL: https://ai-toolkit.dev/
 
 📊 View stats: https://zip1.io/stats/UDKvlw",
       "serverLabel": "zip1",
@@ -11577,7 +11577,7 @@ exports[`OpenAIResponsesLanguageModel > doStream > web search tool > should hand
   {
     "result": {
       "action": {
-        "query": "Vercel AI SDK next version features",
+        "query": "Vercel ai-toolkit next version features",
         "type": "search",
       },
     },

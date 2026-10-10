@@ -2,10 +2,10 @@ import {
   APICallError,
   UnsupportedFunctionalityError,
   type LanguageModelV4Prompt,
-} from '@ai-sdk/provider';
-import { isProviderStreamError } from '@ai-sdk/provider-utils';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider';
+import { isProviderStreamError } from '@ai-toolkit/provider-utils';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import fs from 'node:fs';
 import { beforeEach, describe, expect, it } from 'vitest';
 import type {

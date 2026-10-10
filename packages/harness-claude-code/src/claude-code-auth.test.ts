@@ -48,7 +48,7 @@ describe('resolveClaudeCodeEnv', () => {
     );
     expect(env.AI_GATEWAY_API_KEY).toBe('gw-explicit');
     expect(env.ANTHROPIC_API_KEY).toBe('gw-explicit');
-    expect(env.ANTHROPIC_BASE_URL).toBe('https://ai-gateway.vercel.sh');
+    expect(env.ANTHROPIC_BASE_URL).toBe('https://ai-gateway.khulnasoft.sh');
   });
 
   it('uses gateway auth from the environment', () => {
@@ -86,8 +86,8 @@ describe('resolveClaudeCodeEnv', () => {
     );
     expect(env.AI_GATEWAY_API_KEY).toBe('oidc-auto');
     expect(env.ANTHROPIC_API_KEY).toBe('oidc-auto');
-    expect(env.AI_GATEWAY_BASE_URL).toBe('https://ai-gateway.vercel.sh');
-    expect(env.ANTHROPIC_BASE_URL).toBe('https://ai-gateway.vercel.sh');
+    expect(env.AI_GATEWAY_BASE_URL).toBe('https://ai-gateway.khulnasoft.sh');
+    expect(env.ANTHROPIC_BASE_URL).toBe('https://ai-gateway.khulnasoft.sh');
   });
 
   it('auto-detects direct anthropic when only ANTHROPIC_API_KEY is set', () => {
@@ -144,26 +144,26 @@ describe('resolveClaudeCodeEnv', () => {
       undefined,
       {
         ANTHROPIC_API_KEY: 'sk-auto',
-        ANTHROPIC_BASE_URL: 'https://ai-gateway.vercel.sh',
+        ANTHROPIC_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
       },
       { readApiKeyHelper: noHelper },
     );
     expect(env).toEqual({
       ANTHROPIC_API_KEY: 'sk-auto',
-      ANTHROPIC_BASE_URL: 'https://ai-gateway.vercel.sh',
+      ANTHROPIC_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
     });
   });
 
   it('forwards a base URL alongside the apiKeyHelper-supplied credentials', () => {
     const env = resolveClaudeCodeEnv(
       undefined,
-      { ANTHROPIC_BASE_URL: 'https://ai-gateway.vercel.sh' },
+      { ANTHROPIC_BASE_URL: 'https://ai-gateway.khulnasoft.sh' },
       { readApiKeyHelper: () => 'vck_from_helper' },
     );
     expect(env).toEqual({
       ANTHROPIC_API_KEY: 'vck_from_helper',
       ANTHROPIC_AUTH_TOKEN: 'vck_from_helper',
-      ANTHROPIC_BASE_URL: 'https://ai-gateway.vercel.sh',
+      ANTHROPIC_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
     });
   });
 
@@ -218,8 +218,8 @@ describe('resolveClaudeCodeEnv', () => {
     ).toEqual({
       AI_GATEWAY_API_KEY: 'gw-mode',
       ANTHROPIC_API_KEY: 'gw-mode',
-      AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh',
-      ANTHROPIC_BASE_URL: 'https://ai-gateway.vercel.sh',
+      AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
+      ANTHROPIC_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
     });
   });
 });

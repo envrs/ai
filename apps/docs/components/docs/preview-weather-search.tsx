@@ -23,7 +23,7 @@ const messages: SimulationMessage<WeatherResult>[] = [
 
 /**
  * Simulated weather lookup: a user question, a tool call, and a streamed
- * `<WeatherCard />` (ported from the legacy ai-sdk.dev app).
+ * `<WeatherCard />` (ported from the legacy ai-toolkit.dev app).
  */
 export const WeatherSearchSimulation = ({
   isPlaying = false,

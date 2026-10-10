@@ -23,7 +23,7 @@ describe('getRuntimeEnvironmentUserAgent', () => {
       getRuntimeEnvironmentUserAgent({
         EdgeRuntime: true,
       }),
-    ).toBe('vercel-edge');
+    ).toBe('khulnasoft-edge');
   });
 
   it('should return the correct user agent for Node.js', () => {

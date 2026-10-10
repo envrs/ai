@@ -1,7 +1,7 @@
 import { describe, expectTypeOf, it } from 'vitest';
 import { generateObject } from './generate-object';
 import { z } from 'zod/v4';
-import type { JSONValue } from '@ai-sdk/provider';
+import type { JSONValue } from '@ai-toolkit/provider';
 
 describe('generateObject', () => {
   it('should not accept timeout option', async () => {

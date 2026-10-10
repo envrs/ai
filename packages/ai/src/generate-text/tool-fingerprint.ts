@@ -1,4 +1,4 @@
-import { asSchema, type ToolSet } from '@ai-sdk/provider-utils';
+import { asSchema, type ToolSet } from '@ai-toolkit/provider-utils';
 import { hashCanonical } from '../util/canonical-hash';
 
 /**

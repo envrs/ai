@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { createVoyage } from '../voyage-provider';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import fs from 'node:fs';

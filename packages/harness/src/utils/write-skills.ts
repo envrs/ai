@@ -3,11 +3,11 @@ import path from 'node:path';
 import {
   safeParseJSON,
   type Experimental_SandboxSession,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { HarnessV1Skill } from '../v1';
 import { shellQuote } from './shell-quote';
 
-const SKILLS_MANIFEST_FILENAME = '.ai-sdk-harness-skills.json';
+const SKILLS_MANIFEST_FILENAME = '.ai-toolkit-harness-skills.json';
 const SKILLS_MANIFEST_VERSION = 1;
 const SAFE_MANIFEST_SKILL_NAME = /^[A-Za-z0-9._-]+$/;
 
@@ -303,7 +303,7 @@ async function readSkillsManifest({
   if (content == null) return undefined;
   const parsed = await safeParseJSON({ text: content });
   if (!parsed.success || !isSkillsManifest(parsed.value)) {
-    throw new Error(`Invalid AI SDK harness skills manifest: ${manifestPath}`);
+    throw new Error(`Invalid ai-toolkit harness skills manifest: ${manifestPath}`);
   }
   return parsed.value;
 }
@@ -383,7 +383,7 @@ async function assertSkillDirectoryAvailable({
   });
   if (result.exitCode !== 0) {
     throw new Error(
-      `Cannot write harness skill '${skillName}': ${skillDir} already exists and is not owned by the AI SDK harness.`,
+      `Cannot write harness skill '${skillName}': ${skillDir} already exists and is not owned by the ai-toolkit harness.`,
     );
   }
 }

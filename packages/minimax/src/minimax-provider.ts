@@ -3,15 +3,15 @@ import {
   type Experimental_VideoModelV4,
   type LanguageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   generateId,
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
-import { AnthropicLanguageModel } from '@ai-sdk/anthropic/internal';
+} from '@ai-toolkit/provider-utils';
+import { AnthropicLanguageModel } from '@ai-toolkit/anthropic/internal';
 import type { MiniMaxChatModelId } from './minimax-chat-options';
 import { MiniMaxVideoModel } from './minimax-video-model';
 import type { MiniMaxVideoModelId } from './minimax-video-settings';
@@ -100,7 +100,7 @@ export function createMiniMax(
         }),
         ...options.headers,
       },
-      `ai-sdk-minimax/${VERSION}`,
+      `ai-toolkit-minimax/${VERSION}`,
     );
 
   const createChatModel = (modelId: MiniMaxChatModelId) =>
@@ -123,7 +123,7 @@ export function createMiniMax(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-minimax/${VERSION}`,
+      `ai-toolkit-minimax/${VERSION}`,
     );
 
   const createVideoModel = (modelId: MiniMaxVideoModelId) =>

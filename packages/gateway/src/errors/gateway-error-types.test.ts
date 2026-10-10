@@ -53,7 +53,7 @@ describe('GatewayAuthenticationError', () => {
       });
 
       expect(error.message).toContain('Invalid API key');
-      expect(error.message).toContain('vercel.com/d?to=');
+      expect(error.message).toContain('khulnasoft.com/d?to=');
       expect(error.statusCode).toBe(401);
     });
 
@@ -64,7 +64,7 @@ describe('GatewayAuthenticationError', () => {
       });
 
       expect(error.message).toContain('Invalid OIDC token');
-      expect(error.message).toContain('npx vercel link');
+      expect(error.message).toContain('npx khulnasoft link');
       expect(error.statusCode).toBe(401);
     });
 
@@ -87,7 +87,7 @@ describe('GatewayAuthenticationError', () => {
       });
 
       expect(error.message).toContain('Invalid API key');
-      expect(error.message).toContain('vercel.com/d?to=');
+      expect(error.message).toContain('khulnasoft.com/d?to=');
       expect(error.statusCode).toBe(401);
     });
 
@@ -285,9 +285,9 @@ describe('Cross-realm instance checking', () => {
     const error = new GatewayAuthenticationError();
 
     // Simulate different realm by creating a new instance in different context
-    const gatewayErrorMarker = Symbol.for('vercel.ai.gateway.error');
+    const gatewayErrorMarker = Symbol.for('khulnasoft.ai.gateway.error');
     const authErrorMarker = Symbol.for(
-      'vercel.ai.gateway.error.GatewayAuthenticationError',
+      'khulnasoft.ai.gateway.error.GatewayAuthenticationError',
     );
 
     // Verify the symbols are present

@@ -1,37 +1,37 @@
-# AI SDK - Google Provider
+# ai-toolkit - Google Provider
 
-The **[Google provider](https://ai-sdk.dev/providers/ai-sdk-providers/google)** for the [AI SDK](https://ai-sdk.dev/docs) contains language model support for the [Google Generative AI](https://ai.google/discover/generativeai/) APIs.
+The **[Google provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/google)** for the [ai-toolkit](https://ai-toolkit.dev/docs) contains language model support for the [Google Generative AI](https://ai.google/discover/generativeai/) APIs.
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access Google (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access Google (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The Google provider is available in the `@ai-sdk/google` module. You can install it with
+The Google provider is available in the `@ai-toolkit/google` module. You can install it with
 
 ```bash
-npm i @ai-sdk/google
+npm i @ai-toolkit/google
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `google` from `@ai-sdk/google`:
+You can import the default provider instance `google` from `@ai-toolkit/google`:
 
 ```ts
-import { google } from '@ai-sdk/google';
+import { google } from '@ai-toolkit/google';
 ```
 
 ## Example
 
 ```ts
-import { google } from '@ai-sdk/google';
+import { google } from '@ai-toolkit/google';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -42,4 +42,4 @@ const { text } = await generateText({
 
 ## Documentation
 
-Please check out the **[Google provider documentation](https://ai-sdk.dev/providers/ai-sdk-providers/google)** for more information.
+Please check out the **[Google provider documentation](https://ai-toolkit.dev/providers/ai-toolkit-providers/google)** for more information.

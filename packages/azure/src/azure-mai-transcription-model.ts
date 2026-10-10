@@ -4,7 +4,7 @@ import {
   type Experimental_TranscriptionModelV4StreamPart as TranscriptionModelV4StreamPart,
   type SharedV4Warning,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   connectToWebSocket,
   convertToBase64,
@@ -14,7 +14,7 @@ import {
   type WebSocketConnection,
   type WebSocketConstructor,
   type WebSocketLike,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { AzureTranscriptionModelMaiOptions } from './azure-mai-transcription-model-options';
 
 type StreamOptions = Parameters<

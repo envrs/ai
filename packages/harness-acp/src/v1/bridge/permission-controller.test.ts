@@ -1,4 +1,4 @@
-import type { BridgeEvent, BridgeTurn } from '@ai-sdk/harness/bridge';
+import type { BridgeEvent, BridgeTurn } from '@ai-toolkit/harness/bridge';
 import type {
   RequestPermissionRequest,
   ToolCallUpdate,

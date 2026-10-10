@@ -4,7 +4,7 @@ import {
   type Experimental_DecisionModelV4 as DecisionModelV4,
   type Experimental_DecisionModelV4Answer as DecisionModelV4Answer,
   type Experimental_DecisionModelV4Input as DecisionModelV4Input,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertUint8ArrayToBase64,
@@ -16,7 +16,7 @@ import {
   serializeModelOptions,
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import {
   prepareOpenAIConfigForWorkflowDeserialize,

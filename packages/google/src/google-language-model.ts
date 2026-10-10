@@ -11,7 +11,7 @@ import type {
   JSONObject,
   SharedV4ProviderMetadata,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertJsonResponseToolStream,
@@ -34,7 +34,7 @@ import {
   type InferSchema,
   type ParseResult,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import {
   convertGoogleUsage,

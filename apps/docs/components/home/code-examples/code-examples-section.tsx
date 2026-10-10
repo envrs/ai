@@ -1,8 +1,8 @@
 'use client';
 
-import { IconArrowUpRightSmall } from '@vercel/geistdocs/assets/icons/icon-arrow-up-right-small';
-import { Button } from '@vercel/geistdocs/components/button';
-import { cn } from '@vercel/geistdocs/utils';
+import { IconArrowUpRightSmall } from '@khulnasoft/geistdocs/assets/icons/icon-arrow-up-right-small';
+import { Button } from '@khulnasoft/geistdocs/components/button';
+import { cn } from '@khulnasoft/geistdocs/utils';
 import { Fragment, useState } from 'react';
 import { CORE_EXAMPLES, type Mode } from '@/lib/home/code-examples';
 import { UI_EXAMPLES } from '@/lib/home/ui-examples';
@@ -43,7 +43,7 @@ const UI_PREVIEW_IDS: Record<string, string> = {
 const SECTIONS: Section[] = [
   {
     id: 'core',
-    label: 'AI SDK Core',
+    label: 'ai-toolkit Core',
     description:
       'A unified API for generating text, structured objects, tool calls, and building agents with LLMs.',
     hasModes: true,
@@ -57,7 +57,7 @@ const SECTIONS: Section[] = [
   },
   {
     id: 'ui',
-    label: 'AI SDK UI',
+    label: 'ai-toolkit UI',
     description:
       'A set of framework-agnostic hooks for quickly building chat and generative user interfaces.',
     hasModes: false,
@@ -128,7 +128,7 @@ export function CodeExamplesSection() {
 
   return (
     <section
-      aria-label="Explore the AI SDK"
+      aria-label="Explore the ai-toolkit"
       className="grid grid-cols-1 gap-10 py-12 md:py-20 lg:grid-cols-12 lg:gap-8"
       data-testid="home-code-examples"
     >
@@ -176,7 +176,7 @@ export function CodeExamplesSection() {
         <Button
           className="self-start rounded-full"
           Component="a"
-          href="https://playground.ai-sdk.dev"
+          href="https://playground.ai-toolkit.dev"
           rel="noopener noreferrer"
           suffix={<IconArrowUpRightSmall aria-hidden="true" />}
           target="_blank"

@@ -4,7 +4,7 @@ import {
   type Experimental_SandboxSession as SandboxSession,
   type Tool,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { mockSandboxSessionFileStubs } from '../test/mock-sandbox';
 import { prepareTools } from './prepare-tools';

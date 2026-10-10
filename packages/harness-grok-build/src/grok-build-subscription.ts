@@ -1,14 +1,14 @@
 import { chmod, readFile, rename, writeFile } from 'node:fs/promises';
 import { homedir } from 'node:os';
 import { join, resolve } from 'node:path';
-import type { ACPAuthenticationMode } from '@ai-sdk/harness-acp';
+import type { ACPAuthenticationMode } from '@ai-toolkit/harness-acp';
 import {
   isAccessTokenExpiringSoon,
   isHarnessAuthenticationEnvironment,
   refreshOAuthAccessToken,
   shouldResolveNativeSubscription,
-} from '@ai-sdk/harness/utils';
-import { isRecord, safeParseJSON } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/harness/utils';
+import { isRecord, safeParseJSON } from '@ai-toolkit/provider-utils';
 
 const XAI_CLIENT_ID = 'b1a00492-073a-47ea-816f-4c329264a828';
 const GROK_SUBSCRIPTION_BASE_URL = 'https://cli-chat-proxy.grok.com/v1';

@@ -42,7 +42,7 @@ async function startVideoStep(
       ...(hasIdempotencyKey
         ? {}
         : {
-            'idempotency-key': `aisdk_workflow_video_${getStepMetadata().stepId}`,
+            'idempotency-key': `ai-toolkit_workflow_video_${getStepMetadata().stepId}`,
           }),
     },
   });

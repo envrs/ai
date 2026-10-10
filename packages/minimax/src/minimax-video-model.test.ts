@@ -3,9 +3,9 @@ import type {
   SharedV4ProviderOptions,
   Experimental_VideoModelV4 as VideoModelV4,
   Experimental_VideoModelV4File,
-} from '@ai-sdk/provider';
-import { DownloadError, type FetchFunction } from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider';
+import { DownloadError, type FetchFunction } from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it } from 'vitest';
 import { MiniMaxVideoModel } from './minimax-video-model';
 import type { MiniMaxVideoModelId } from './minimax-video-settings';

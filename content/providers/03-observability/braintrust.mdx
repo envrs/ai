@@ -5,20 +5,20 @@ description: Monitoring and tracing LLM applications with Braintrust
 
 # Braintrust Observability
 
-Braintrust is an end-to-end platform for building AI applications. When building with the AI SDK, you can integrate Braintrust to [log](https://www.braintrust.dev/docs/guides/logging), monitor, and take action on real-world interactions.
+Braintrust is an end-to-end platform for building AI applications. When building with the ai-toolkit, you can integrate Braintrust to [log](https://www.braintrust.dev/docs/guides/logging), monitor, and take action on real-world interactions.
 
 ## Setup
 
-Braintrust natively supports OpenTelemetry and works out of the box with the AI SDK, either via Next.js or Node.js.
+Braintrust natively supports OpenTelemetry and works out of the box with the ai-toolkit, either via Next.js or Node.js.
 
 ### Next.js
 
-If you are using Next.js, use the Braintrust exporter with `@vercel/otel`:
+If you are using Next.js, use the Braintrust exporter with `@khulnasoft/otel`:
 
 ```typescript filename="instrumentation"
 import { registerTelemetry } from 'ai';
-import { LegacyOpenTelemetry } from '@ai-sdk/otel';
-import { registerOTel } from '@vercel/otel';
+import { LegacyOpenTelemetry } from '@ai-toolkit/otel';
+import { registerOTel } from '@khulnasoft/otel';
 import { BraintrustExporter } from 'braintrust';
 
 registerTelemetry(new LegacyOpenTelemetry());
@@ -40,7 +40,7 @@ Once the integration is registered, telemetry is captured automatically. You can
 
 ```typescript
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 
 const result = await generateText({
   model: openai('gpt-6-luna'),
@@ -56,7 +56,7 @@ const result = await generateText({
 The integration supports streaming functions like `streamText`. Each streamed call will produce `ai.streamText` spans in Braintrust.
 
 ```typescript
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { streamText } from 'ai';
 
 export async function POST(req: Request) {
@@ -80,7 +80,7 @@ If you are using Node.js without a framework, you must configure the `NodeSDK` d
 First, install the necessary dependencies:
 
 ```bash
-npm install ai @ai-sdk/openai @ai-sdk/otel braintrust @opentelemetry/sdk-node @opentelemetry/sdk-trace-base zod
+npm install ai @ai-toolkit/openai @ai-toolkit/otel braintrust @opentelemetry/sdk-node @opentelemetry/sdk-trace-base zod
 ```
 
 Then, set up the OpenTelemetry SDK:
@@ -88,8 +88,8 @@ Then, set up the OpenTelemetry SDK:
 ```typescript
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import { registerTelemetry, generateText, tool, isStepCount } from 'ai';
-import { LegacyOpenTelemetry } from '@ai-sdk/otel';
-import { openai } from '@ai-sdk/openai';
+import { LegacyOpenTelemetry } from '@ai-toolkit/otel';
+import { openai } from '@ai-toolkit/openai';
 import { z } from 'zod';
 import { BraintrustSpanProcessor } from 'braintrust';
 

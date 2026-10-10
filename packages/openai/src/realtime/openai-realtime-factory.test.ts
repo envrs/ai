@@ -1,7 +1,7 @@
 import {
   InvalidArgumentError,
   UnsupportedFunctionalityError,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import {
   createOpenAI,

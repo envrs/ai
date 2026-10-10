@@ -19,7 +19,7 @@ import {
   type HarnessV1StreamPart,
   harnessStateDirectoryPath,
   harnessSessionDataDirectoryPath,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   applyCredentialForwarding,
   createBridgeToken,
@@ -38,12 +38,12 @@ import {
   withBridgeToken,
   writeSkills,
   type SandboxChannelReconnectOptions,
-} from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness/utils';
 import {
   tool,
   type Experimental_SandboxProcess,
   type Experimental_SandboxSession as SandboxSession,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { WebSocket } from 'ws';
 import { z } from 'zod/v4';
 import {
@@ -69,7 +69,7 @@ type DeepAgentsChannel = SandboxChannel<OutboundMessage, InboundMessage>;
 /**
  * Value to use in User-Agent and `x-client-app` headers.
  */
-const DEEPAGENTS_CLIENT_APP = `ai-sdk-harness-deepagents/${VERSION}`;
+const DEEPAGENTS_CLIENT_APP = `ai-toolkit-harness-deepagents/${VERSION}`;
 
 export type DeepAgentsThinkingConfig =
   | {
@@ -139,7 +139,7 @@ export type DeepAgentsHarnessSettings = {
   readonly mcpServers?: Record<string, unknown>;
 };
 
-// Every model-callable DeepAgents built-in, keyed by what the bridge emits (commonName ?? nativeName); all must be listed or AI SDK throws AI_NoSuchToolError.
+// Every model-callable DeepAgents built-in, keyed by what the bridge emits (commonName ?? nativeName); all must be listed or ai-toolkit throws AI_NoSuchToolError.
 const DEEPAGENTS_BUILTIN_TOOLS = {
   read: commonTool('read', {
     nativeName: 'read_file',
@@ -404,7 +404,7 @@ export function createDeepAgents(
       }
       const env = {
         ...forwardedAuthEnvironment,
-        AI_SDK_HARNESS_CLIENT_APP: DEEPAGENTS_CLIENT_APP,
+        ai-toolkit_HARNESS_CLIENT_APP: DEEPAGENTS_CLIENT_APP,
         BRIDGE_CHANNEL_TOKEN: token,
         BRIDGE_WS_PORT: String(port),
       };

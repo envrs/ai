@@ -1,6 +1,6 @@
 import { homedir } from 'node:os';
 import { resolve } from 'node:path';
-import { isHarnessAuthenticationEnvironment } from '@ai-sdk/harness/utils';
+import { isHarnessAuthenticationEnvironment } from '@ai-toolkit/harness/utils';
 import { resolvePiEnv, type PiAuthenticationMode } from './pi-auth';
 
 export function resolvePiSubscriptionAgentDir({

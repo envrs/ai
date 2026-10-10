@@ -1,4 +1,4 @@
-import { createAgentsRoute } from '@vercel/geistdocs/routes/agents';
+import { createAgentsRoute } from '@khulnasoft/geistdocs/routes/agents';
 import { config } from '@/lib/geistdocs/config';
 
 const agentsRoute = createAgentsRoute({ config });

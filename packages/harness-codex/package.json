@@ -1,6 +1,6 @@
 {
-  "name": "@ai-sdk/harness-codex",
-  "version": "1.0.150",
+  "name": "@ai-toolkit/harness-codex",
+  "version": "2.0.1",
   "type": "module",
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -36,9 +36,9 @@
     }
   },
   "dependencies": {
-    "@ai-sdk/harness": "workspace:*",
-    "@ai-sdk/provider": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*",
+    "@ai-toolkit/harness": "workspace:*",
+    "@ai-toolkit/provider": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*",
     "ws": "^8.21.0"
   },
   "peerDependencies": {
@@ -48,7 +48,7 @@
     "@openai/codex": "0.160.1",
     "@types/node": "22.19.19",
     "@types/ws": "^8.5.13",
-    "@vercel/ai-tsconfig": "workspace:*",
+    "@khulnasoft/ai-tsconfig": "workspace:*",
     "tsdown": "^0.23.0",
     "typescript": "6.0.3",
     "zod": "3.25.76"
@@ -60,14 +60,14 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://ai-sdk.dev/docs",
+  "homepage": "https://ai-toolkit.dev/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/ai",
+    "url": "https://github.com/khulnasoft/ai",
     "directory": "packages/harness-codex"
   },
   "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
+    "url": "https://github.com/khulnasoft/ai/issues"
   },
   "keywords": [
     "ai",

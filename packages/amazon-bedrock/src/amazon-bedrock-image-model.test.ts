@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { createAmazonBedrock } from './amazon-bedrock-provider';
 import { AmazonBedrockImageModel } from './amazon-bedrock-image-model';
 import type { AmazonBedrockImageModelOptions } from './amazon-bedrock-image-model-options';

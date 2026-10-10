@@ -272,8 +272,8 @@ describe('OpenCode GitLab direct access', () => {
     >;
 
     expect(providers.custom).toEqual({ options: { apiKey: 'custom' } });
-    expect(providers['ai-sdk-gitlab-anthropic']).toMatchObject({
-      npm: '@ai-sdk/anthropic',
+    expect(providers['ai-toolkit-gitlab-anthropic']).toMatchObject({
+      npm: '@ai-toolkit/anthropic',
       api: 'https://cloud.gitlab.test/ai/v1/proxy/anthropic/v1',
       models: {
         'duo-chat-sonnet-4-5': {
@@ -281,14 +281,14 @@ describe('OpenCode GitLab direct access', () => {
         },
       },
     });
-    expect(providers['ai-sdk-gitlab-openai-chat']).toMatchObject({
-      npm: '@ai-sdk/openai-compatible',
+    expect(providers['ai-toolkit-gitlab-openai-chat']).toMatchObject({
+      npm: '@ai-toolkit/openai-compatible',
       models: {
         'duo-chat-gpt-5-4': { id: 'gpt-5.4-2026-03-05' },
       },
     });
-    expect(providers['ai-sdk-gitlab-openai-responses']).toMatchObject({
-      npm: '@ai-sdk/openai',
+    expect(providers['ai-toolkit-gitlab-openai-responses']).toMatchObject({
+      npm: '@ai-toolkit/openai',
       models: {
         'duo-chat-gpt-5-6-sol': { id: 'gpt-5.6-sol' },
       },
@@ -301,13 +301,13 @@ describe('OpenCode GitLab direct access', () => {
         model: 'gitlab/duo-chat-sonnet-4-5',
         provider: 'gitlab',
       }),
-    ).toBe('ai-sdk-gitlab-anthropic/duo-chat-sonnet-4-5');
+    ).toBe('ai-toolkit-gitlab-anthropic/duo-chat-sonnet-4-5');
     expect(
       resolveOpenCodeGitLabSubscriptionModel({
         model: 'duo-chat-gpt-5-4',
         provider: 'gitlab',
       }),
-    ).toBe('ai-sdk-gitlab-openai-chat/duo-chat-gpt-5-4');
+    ).toBe('ai-toolkit-gitlab-openai-chat/duo-chat-gpt-5-4');
     expect(() =>
       resolveOpenCodeGitLabSubscriptionModel({
         model: 'gitlab/duo-workflow',

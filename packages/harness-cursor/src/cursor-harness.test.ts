@@ -1,4 +1,4 @@
-import type { ACPHarnessSettings } from '@ai-sdk/harness-acp';
+import type { ACPHarnessSettings } from '@ai-toolkit/harness-acp';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { createCursor } from './cursor-harness';
 
@@ -6,7 +6,7 @@ const mocks = vi.hoisted(() => ({
   createACP: vi.fn(),
 }));
 
-vi.mock('@ai-sdk/harness-acp', () => ({
+vi.mock('@ai-toolkit/harness-acp', () => ({
   createACP: mocks.createACP,
 }));
 
@@ -70,7 +70,7 @@ describe('createCursor', () => {
           "reportBugfixResults",
         ],
         "clientApp": {
-          "name": "ai-sdk-harness-cursor",
+          "name": "ai-toolkit-harness-cursor",
           "version": "0.0.0-test",
         },
         "credentialEnv": [
@@ -175,7 +175,7 @@ describe('createCursor', () => {
     ).toEqual([
       {
         match: {
-          host: 'ai-gateway.vercel.sh',
+          host: 'ai-gateway.khulnasoft.sh',
           path: { startsWith: '/cursor/v1' },
         },
         transform: { headers: { 'x-tenant': 'acme' } },
@@ -245,9 +245,9 @@ describe('createCursor', () => {
     expect(
       settings.isMcpToolCall?.({
         toolCallId: 'call-1',
-        title: 'ai-sdk-harness-tools: weather',
+        title: 'ai-toolkit-harness-tools: weather',
         rawInput: {
-          providerIdentifier: 'ai-sdk-harness-tools',
+          providerIdentifier: 'ai-toolkit-harness-tools',
           toolName: 'weather',
           args: { city: 'Lima' },
         },

@@ -1,7 +1,7 @@
 import type {
   Experimental_EvaluationModelV4,
   Experimental_DecisionModelV4Result,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { afterEach, expect, it, vi } from 'vitest';
 import {
   experimental_decide,
@@ -59,7 +59,7 @@ it('keeps the function alias and accepts existing model implementations', async 
 
 it('resolves deprecated provider factories through default, custom, and registry access', async () => {
   const legacy = new LegacyProvider();
-  vi.stubGlobal('AI_SDK_DEFAULT_PROVIDER', legacy);
+  vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', legacy);
   const registry = createProviderRegistry({ legacy }, { separator: '|' });
   const custom = customProvider({ fallbackProvider: legacy });
   const aliases = customProvider({
@@ -104,7 +104,7 @@ it('prefers new model maps and factories and supports direct deprecated model ca
     ).answers,
   ).toEqual(result.answers);
   vi.stubGlobal(
-    'AI_SDK_DEFAULT_PROVIDER',
+    'ai-toolkit_DEFAULT_PROVIDER',
     Object.assign(new MockProviderV4(), {
       decisionModel: () => model,
       evaluationModel: deprecated,

@@ -1,5 +1,5 @@
-import type { HarnessV1Bootstrap } from '@ai-sdk/harness';
-import { createReadBridgeAsset } from '@ai-sdk/harness/utils';
+import type { HarnessV1Bootstrap } from '@ai-toolkit/harness';
+import { createReadBridgeAsset } from '@ai-toolkit/harness/utils';
 
 /*
  * Keep every asset URL literal so bundlers can emit each file separately.
@@ -12,7 +12,7 @@ const readBridgeAsset = createReadBridgeAsset({
 });
 
 /*
- * Bootstrap is derived state stored under `$HOME/.ai-sdk-harness`, outside
+ * Bootstrap is derived state stored under `$HOME/.ai-toolkit-harness`, outside
  * the agent's working directory. Snapshot-capable providers preserve the
  * installed CLI, bridge, and recipe marker there.
  *
@@ -20,7 +20,7 @@ const readBridgeAsset = createReadBridgeAsset({
  * default working directory — the provider's persistent mount — so any files
  * the agent edits survive both detach -> attach and stop -> snapshot -> resume
  * cycles. Session-specific harness state lives under
- * `$HOME/.ai-sdk-harness/.agent-runs`, outside the agent workdir.
+ * `$HOME/.ai-toolkit-harness/.agent-runs`, outside the agent workdir.
  */
 export const CODEX_BOOTSTRAP_DIR = '.harness-bootstrap/codex';
 

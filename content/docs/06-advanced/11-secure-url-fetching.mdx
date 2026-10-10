@@ -1,12 +1,12 @@
 ---
 title: Secure URL Fetching
-description: How the AI SDK protects server-side fetches of URLs returned by model providers, and how to harden your deployment further.
+description: How the ai-toolkit protects server-side fetches of URLs returned by model providers, and how to harden your deployment further.
 ---
 
 # Secure URL Fetching
 
 Many providers return a **URL in their response body** — a generated image,
-audio, or video to download, or a polling URL to check job status. The AI SDK
+audio, or video to download, or a polling URL to check job status. The ai-toolkit
 fetches these server-side and returns the result to your code. Because that URL
 comes from an external service, a malicious or compromised provider (or anyone
 able to tamper with the response) could point it at an internal address such as
@@ -47,13 +47,13 @@ A blocked URL surfaces as a `DownloadError`.
 
 ## Fetching untrusted URLs directly
 
-For custom integrations using `@ai-sdk/provider-utils`, use `fetchUntrustedUrl`
+For custom integrations using `@ai-toolkit/provider-utils`, use `fetchUntrustedUrl`
 when the URL comes from a response or other untrusted input. It validates URLs
 and redirects and withholds credentials and unknown custom headers on the first
 request unless the URL matches a configured origin:
 
 ```ts
-import { fetchUntrustedUrl } from '@ai-sdk/provider-utils';
+import { fetchUntrustedUrl } from '@ai-toolkit/provider-utils';
 
 const response = await fetchUntrustedUrl({
   url: result.downloadUrl,
@@ -153,7 +153,7 @@ const safeFetch: typeof fetch = (input, init) =>
 ```
 
 ```ts
-import { createFal } from '@ai-sdk/fal';
+import { createFal } from '@ai-toolkit/fal';
 
 const fal = createFal({ fetch: safeFetch });
 ```

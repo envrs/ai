@@ -4,7 +4,7 @@ import {
   type LanguageModelV4Prompt,
   type LanguageModelV4ToolResultOutput,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertToBase64,
   getTopLevelMediaType,
@@ -13,7 +13,7 @@ import {
   resolveFullMediaType,
   resolveProviderReference,
   secureJsonParse,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type {
   GoogleContent,
   GoogleContentPart,

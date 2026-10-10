@@ -6,8 +6,8 @@ import {
   OpenAIResponsesLanguageModel,
   OpenAISpeechModel,
   OpenAITranscriptionModel,
-} from '@ai-sdk/openai/internal';
-import { DeepSeekChatLanguageModel } from '@ai-sdk/deepseek/internal';
+} from '@ai-toolkit/openai/internal';
+import { DeepSeekChatLanguageModel } from '@ai-toolkit/deepseek/internal';
 import {
   InvalidArgumentError,
   UnsupportedFunctionalityError,
@@ -18,7 +18,7 @@ import {
   type SharedV4Warning,
   type SpeechModelV4,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   isValidHostnamePart,
   loadApiKey,
@@ -32,7 +32,7 @@ import {
   withUserAgentSuffix,
   type FetchFunction,
   type WebSocketConstructor,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   azureImageModelOptions,
   isMAIImageModel,
@@ -284,7 +284,7 @@ export function createAzure(
         ...authHeaders,
         ...options.headers,
       },
-      `ai-sdk-azure/${VERSION}`,
+      `ai-toolkit-azure/${VERSION}`,
     );
   };
 

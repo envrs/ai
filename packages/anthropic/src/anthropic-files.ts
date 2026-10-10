@@ -2,7 +2,7 @@ import type {
   FilesV4,
   FilesV4UploadFileCallOptions,
   FilesV4UploadFileResult,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertInlineFileDataToUint8Array,
@@ -11,7 +11,7 @@ import {
   postFormDataToApi,
   zodSchema,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { anthropicFailedResponseHandler } from './anthropic-error';
 

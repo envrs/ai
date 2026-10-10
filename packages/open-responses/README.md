@@ -1,22 +1,22 @@
-# AI SDK - Open Responses Provider
+# ai-toolkit - Open Responses Provider
 
-The **[Open Responses provider](https://ai-sdk.dev/providers/ai-sdk-providers/open-responses)** for the [AI SDK](https://ai-sdk.dev/docs)
+The **[Open Responses provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/open-responses)** for the [ai-toolkit](https://ai-toolkit.dev/docs)
 contains language model support for [Open Responses](https://www.openresponses.org/) compatible APIs.
 
 ## Setup
 
-The Open Responses provider is available in the `@ai-sdk/open-responses` module. You can install it with
+The Open Responses provider is available in the `@ai-toolkit/open-responses` module. You can install it with
 
 ```bash
-npm i @ai-sdk/open-responses
+npm i @ai-toolkit/open-responses
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
@@ -24,7 +24,7 @@ npx skills add vercel/ai
 Create an Open Responses provider instance using `createOpenResponses`:
 
 ```ts
-import { createOpenResponses } from '@ai-sdk/open-responses';
+import { createOpenResponses } from '@ai-toolkit/open-responses';
 
 const openResponses = createOpenResponses({
   name: 'aProvider',
@@ -37,7 +37,7 @@ You can use this instance to access models served by any Open Responses compatib
 ## Example
 
 ```ts
-import { createOpenResponses } from '@ai-sdk/open-responses';
+import { createOpenResponses } from '@ai-toolkit/open-responses';
 import { generateText } from 'ai';
 
 const openResponses = createOpenResponses({
@@ -54,4 +54,4 @@ const { text } = await generateText({
 
 ## Documentation
 
-Please check out the **[Open Responses provider documentation](https://ai-sdk.dev/providers/ai-sdk-providers/open-responses)** for more information.
+Please check out the **[Open Responses provider documentation](https://ai-toolkit.dev/providers/ai-toolkit-providers/open-responses)** for more information.

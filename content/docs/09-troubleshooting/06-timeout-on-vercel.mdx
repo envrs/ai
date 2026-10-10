@@ -1,18 +1,18 @@
 ---
-title: Getting Timeouts When Deploying on Vercel
-description: Learn how to fix timeouts and cut off responses when deploying to Vercel.
+title: Getting Timeouts When Deploying on khulnasoft
+description: Learn how to fix timeouts and cut off responses when deploying to khulnasoft.
 ---
 
-# Getting Timeouts When Deploying on Vercel
+# Getting Timeouts When Deploying on khulnasoft
 
 ## Issue
 
-Streaming with the AI SDK works in my local development environment.
-However, when I'm deploying to Vercel, longer responses get chopped off in the UI and I'm seeing timeouts in the Vercel logs or I'm seeing the error: `Uncaught (in promise) Error: Connection closed`.
+Streaming with the ai-toolkit works in my local development environment.
+However, when I'm deploying to khulnasoft, longer responses get chopped off in the UI and I'm seeing timeouts in the khulnasoft logs or I'm seeing the error: `Uncaught (in promise) Error: Connection closed`.
 
 ## Solution
 
-With Vercel's [Fluid Compute](https://vercel.com/docs/fluid-compute), the default function duration is now **5 minutes (300 seconds)** across all plans. This should be sufficient for most streaming applications.
+With khulnasoft's [Fluid Compute](https://khulnasoft.com/docs/fluid-compute), the default function duration is now **5 minutes (300 seconds)** across all plans. This should be sufficient for most streaming applications.
 
 If you need to extend the timeout for longer-running processes, you can increase the `maxDuration` setting:
 
@@ -30,7 +30,7 @@ export const maxDuration = 600;
 
 ### Other Frameworks
 
-For other frameworks, you can set timeouts in your `vercel.json` file:
+For other frameworks, you can set timeouts in your `khulnasoft.json` file:
 
 ```json
 {
@@ -48,7 +48,7 @@ For other frameworks, you can set timeouts in your `vercel.json` file:
 
 ### Maximum Duration Limits
 
-The maximum duration you can set depends on your Vercel plan:
+The maximum duration you can set depends on your khulnasoft plan:
 
 - **Hobby**: Up to 300 seconds (5 minutes)
 - **Pro**: Up to 800 seconds (~13 minutes)
@@ -56,5 +56,5 @@ The maximum duration you can set depends on your Vercel plan:
 
 ## Learn more
 
-- [Fluid Compute Default Settings](https://vercel.com/docs/fluid-compute#default-settings-by-plan)
-- [Configuring Maximum Duration for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/duration)
+- [Fluid Compute Default Settings](https://khulnasoft.com/docs/fluid-compute#default-settings-by-plan)
+- [Configuring Maximum Duration for khulnasoft Functions](https://khulnasoft.com/docs/functions/configuring-functions/duration)

@@ -7,7 +7,7 @@ import {
   type CallToolResult,
   type Tool,
 } from '@modelcontextprotocol/sdk/types.js';
-import type { HarnessV1BridgeToolWire } from '@ai-sdk/harness';
+import type { HarnessV1BridgeToolWire } from '@ai-toolkit/harness';
 
 declare const __PACKAGE_VERSION__: string | undefined;
 
@@ -49,7 +49,7 @@ export function createHostToolMCPServer({
   let catalogAcknowledgmentError: unknown;
   const server = new Server(
     {
-      name: '@ai-sdk/harness-acp-host-tools',
+      name: '@ai-toolkit/harness-acp-host-tools',
       version: VERSION,
     },
     { capabilities: { tools: { listChanged: true } } },
@@ -163,7 +163,7 @@ function toCallToolResult({
     ],
     ...(result.isError ? { isError: true } : {}),
     _meta: {
-      'ai-sdk-harness-acp-correlation': result.correlationToken,
+      'ai-toolkit-harness-acp-correlation': result.correlationToken,
     },
   };
 }

@@ -1,10 +1,10 @@
-# Zod and AI SDK
+# Zod and ai-toolkit
 
 ## Background
 
-The AI SDK allows users to use Zod 3, Zod 4, and Zod 4 mini schemas directly.
+The ai-toolkit allows users to use Zod 3, Zod 4, and Zod 4 mini schemas directly.
 
-Incorrect internal implementations can lead to infinite recursion and OOM issues such as [#7351](https://github.com/vercel/ai/issues/7351).
+Incorrect internal implementations can lead to infinite recursion and OOM issues such as [#7351](https://github.com/khulnasoft/ai/issues/7351).
 
 ## Rules
 
@@ -23,7 +23,7 @@ For Zod 4 usage:
 
 ## Related issues
 
-- [OOM bug report](https://github.com/vercel/ai/issues/7351)
+- [OOM bug report](https://github.com/khulnasoft/ai/issues/7351)
 
 ## References
 

@@ -11,4 +11,4 @@ export type {
   GrokBuildHarnessSettings,
 } from './grok-build-harness';
 export { VERSION } from './version';
-export type { JSONObject } from '@ai-sdk/provider';
+export type { JSONObject } from '@ai-toolkit/provider';

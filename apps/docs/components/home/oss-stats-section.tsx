@@ -7,7 +7,7 @@ export async function OssStatsSection() {
   const stats = await fetchOssStats();
   return (
     <dl
-      aria-label="AI SDK community"
+      aria-label="ai-toolkit community"
       className="grid grid-cols-2 gap-x-6 gap-y-10 py-12 md:grid-cols-4 md:py-20"
     >
       {[

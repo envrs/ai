@@ -24,7 +24,7 @@ import {
   type HarnessV1StreamPart,
   harnessStateDirectoryPath,
   harnessSessionDataDirectoryPath,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import {
   applyCredentialForwarding,
   classifyDiskLog,
@@ -46,13 +46,13 @@ import {
   writeSkills,
   type SandboxChannelReconnectOptions,
   type WriteSkillsResult,
-} from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness/utils';
 import {
   safeParseJSON,
   tool,
   type Experimental_SandboxProcess,
   type Experimental_SandboxSession as SandboxSession,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { WebSocket } from 'ws';
 import { z } from 'zod/v4';
 import {
@@ -87,7 +87,7 @@ type OpenCodeRespawnStrategy = 'replay' | 'rerun';
 /**
  * Value to use in User-Agent and `x-client-app` headers.
  */
-const OPENCODE_CLIENT_APP = `ai-sdk-harness-opencode/${VERSION}`;
+const OPENCODE_CLIENT_APP = `ai-toolkit-harness-opencode/${VERSION}`;
 
 export type OpenCodeHarnessSettings = {
   readonly auth?: OpenCodeAuthenticationMode;
@@ -552,7 +552,7 @@ export function createOpenCode(
                 accessToken: subscriptionAccessToken,
               }),
             }),
-        AI_SDK_HARNESS_CLIENT_APP: OPENCODE_CLIENT_APP,
+        ai-toolkit_HARNESS_CLIENT_APP: OPENCODE_CLIENT_APP,
         BRIDGE_CHANNEL_TOKEN: token,
         BRIDGE_WS_PORT: String(port),
         ...(respawnStrategy === 'replay'

@@ -9,7 +9,7 @@ import type {
   SkillsV4,
   SpeechModelV4,
   TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { describe, expectTypeOf, it } from 'vitest';
 import { customProvider } from './custom-provider';
 import { MockEmbeddingModelV2 } from '../test/mock-embedding-model-v2';

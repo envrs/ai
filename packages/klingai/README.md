@@ -1,31 +1,31 @@
-# AI SDK - Kling AI Provider
+# ai-toolkit - Kling AI Provider
 
-The **Kling AI provider** for the [AI SDK](https://ai-sdk.dev/docs) contains video model support for the [Kling AI API](https://app.klingai.com/global/dev/document-api/quickStart/productIntroduction/overview).
+The **Kling AI provider** for the [ai-toolkit](https://ai-toolkit.dev/docs) contains video model support for the [Kling AI API](https://app.klingai.com/global/dev/document-api/quickStart/productIntroduction/overview).
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access Kling AI (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access Kling AI (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The Kling AI provider is available in the `@ai-sdk/klingai` module. You can install it with:
+The Kling AI provider is available in the `@ai-toolkit/klingai` module. You can install it with:
 
 ```bash
-npm i @ai-sdk/klingai
+npm i @ai-toolkit/klingai
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `klingai` from `@ai-sdk/klingai`:
+You can import the default provider instance `klingai` from `@ai-toolkit/klingai`:
 
 ```ts
-import { klingai } from '@ai-sdk/klingai';
+import { klingai } from '@ai-toolkit/klingai';
 ```
 
 ## Video Models
@@ -41,7 +41,7 @@ Generate video from a text prompt.
 Available models: `kling-v1-t2v`, `kling-v1.6-t2v`, `kling-v2-master-t2v`, `kling-v2.1-master-t2v`, `kling-v2.5-turbo-t2v`, `kling-v2.6-t2v`, `kling-v3.0-t2v`
 
 ```ts
-import { klingai } from '@ai-sdk/klingai';
+import { klingai } from '@ai-toolkit/klingai';
 import { experimental_generateVideo } from 'ai';
 
 const { videos } = await experimental_generateVideo({
@@ -64,7 +64,7 @@ Generate video from a start frame image, with optional end frame control.
 Available models: `kling-v1-i2v`, `kling-v1.5-i2v`, `kling-v1.6-i2v`, `kling-v2-master-i2v`, `kling-v2.1-i2v`, `kling-v2.1-master-i2v`, `kling-v2.5-turbo-i2v`, `kling-v2.6-i2v`, `kling-v3.0-i2v`
 
 ```ts
-import { klingai } from '@ai-sdk/klingai';
+import { klingai } from '@ai-toolkit/klingai';
 import { experimental_generateVideo } from 'ai';
 
 const { videos } = await experimental_generateVideo({
@@ -92,7 +92,7 @@ Generate video using a reference motion video.
 Available models: `kling-v2.6-motion-control`, `kling-v3.0-motion-control`
 
 ```ts
-import { klingai } from '@ai-sdk/klingai';
+import { klingai } from '@ai-toolkit/klingai';
 import { experimental_generateVideo } from 'ai';
 
 const { videos } = await experimental_generateVideo({
@@ -145,7 +145,7 @@ KLINGAI_API_KEY=your-api-key
 Or pass it directly:
 
 ```ts
-import { createKlingAI } from '@ai-sdk/klingai';
+import { createKlingAI } from '@ai-toolkit/klingai';
 
 const klingai = createKlingAI({
   apiKey: 'your-api-key',
@@ -162,7 +162,7 @@ KLINGAI_SECRET_KEY=your-secret-key
 ```
 
 ```ts
-import { createKlingAI } from '@ai-sdk/klingai';
+import { createKlingAI } from '@ai-toolkit/klingai';
 
 const klingai = createKlingAI({
   accessKey: 'your-access-key',

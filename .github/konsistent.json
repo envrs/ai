@@ -2,7 +2,7 @@
   "$schema": "../node_modules/konsistent/konsistent.schema.json",
   "version": "v1",
   "conventionSources": {
-    "aisdk": "konsistent-provider"
+    "ai-toolkit": "konsistent-provider"
   },
   "conventions": [
     {
@@ -11,18 +11,18 @@
       "paths": ["packages/*"],
       "must": [
         {
-          "use": "aisdk/package-must-have-package-and-docs-files",
+          "use": "ai-toolkit/package-must-have-package-and-docs-files",
           "excludeFiles": ["packages/test-server"]
         },
         {
-          "use": "aisdk/package-must-have-index",
+          "use": "ai-toolkit/package-must-have-index",
           "excludeFiles": ["packages/codemod"]
         },
         {
-          "use": "aisdk/package-must-have-changelog"
+          "use": "ai-toolkit/package-must-have-changelog"
         },
         {
-          "use": "aisdk/package-must-have-tsdown-config",
+          "use": "ai-toolkit/package-must-have-tsdown-config",
           "excludeFiles": ["packages/svelte"]
         }
       ]
@@ -37,7 +37,7 @@
       ],
       "must": [
         {
-          "use": "aisdk/package-must-import-zod-from-v4"
+          "use": "ai-toolkit/package-must-import-zod-from-v4"
         }
       ]
     },
@@ -73,33 +73,33 @@
       ],
       "must": [
         {
-          "use": "aisdk/provider-package-must-export-provider-creator-and-settings",
+          "use": "ai-toolkit/provider-package-must-export-provider-creator-and-settings",
           "excludeFiles": ["packages/azure/src/index.ts"]
         },
-        "aisdk/provider-package-must-export-instance-case-1",
+        "ai-toolkit/provider-package-must-export-instance-case-1",
         {
-          "use": "aisdk/provider-package-must-export-instance-case-2",
+          "use": "ai-toolkit/provider-package-must-export-instance-case-2",
           "excludeFiles": [
             "packages/openai-compatible/src/index.ts",
             "packages/open-responses/src/index.ts"
           ]
         },
         {
-          "use": "aisdk/provider-file-must-export-provider-class-and-settings-type",
+          "use": "ai-toolkit/provider-file-must-export-provider-class-and-settings-type",
           "excludeFiles": [
             "packages/google-vertex/src/google-vertex-provider.ts"
           ]
         },
-        "aisdk/provider-file-must-export-provider-instance-case-1",
+        "ai-toolkit/provider-file-must-export-provider-instance-case-1",
         {
-          "use": "aisdk/provider-file-must-export-provider-instance-case-2",
+          "use": "ai-toolkit/provider-file-must-export-provider-instance-case-2",
           "excludeFiles": [
             "packages/openai-compatible/src/openai-compatible-provider.ts",
             "packages/open-responses/src/open-responses-provider.ts"
           ]
         },
         {
-          "use": "aisdk/provider-model-file-must-export-model-class",
+          "use": "ai-toolkit/provider-model-file-must-export-model-class",
           "excludeFiles": [
             "${providerId}-realtime-model.ts",
             "${providerId}-video-model.ts",
@@ -107,22 +107,22 @@
           ]
         },
         {
-          "use": "aisdk/provider-model-file-with-subtype-must-export-model-class",
+          "use": "ai-toolkit/provider-model-file-with-subtype-must-export-model-class",
           "excludeFiles": [
             "${providerId}-speech-translation-model.ts",
             "packages/deepinfra/src/deepinfra-chat-language-model.ts",
             "packages/moonshotai/src/moonshotai-chat-language-model.ts"
           ]
         },
-        "aisdk/provider-realtime-model-file-must-export-model-class",
-        "aisdk/provider-speech-translation-model-file-must-export-model-class",
-        "aisdk/provider-video-model-file-must-export-model-class",
+        "ai-toolkit/provider-realtime-model-file-must-export-model-class",
+        "ai-toolkit/provider-speech-translation-model-file-must-export-model-class",
+        "ai-toolkit/provider-video-model-file-must-export-model-class",
         {
-          "use": "aisdk/provider-decision-model-file-must-export-model-class",
+          "use": "ai-toolkit/provider-decision-model-file-must-export-model-class",
           "excludeFiles": ["packages/gateway/src/gateway-decision-model.ts"]
         },
         {
-          "use": "aisdk/provider-model-file-must-have-matching-model-options-file",
+          "use": "ai-toolkit/provider-model-file-must-have-matching-model-options-file",
           "excludeFiles": [
             "${providerId}-realtime-model.ts",
             "${providerId}-video-model.ts",
@@ -138,7 +138,7 @@
           ]
         },
         {
-          "use": "aisdk/provider-model-file-with-subtype-must-have-matching-model-options-file",
+          "use": "ai-toolkit/provider-model-file-with-subtype-must-have-matching-model-options-file",
           "excludeFiles": [
             "${providerId}-speech-translation-model.ts",
             "packages/deepinfra/src/deepinfra-chat-language-model.ts",
@@ -146,26 +146,26 @@
           ]
         },
         {
-          "use": "aisdk/provider-realtime-model-file-must-have-matching-model-options-file",
+          "use": "ai-toolkit/provider-realtime-model-file-must-have-matching-model-options-file",
           "excludeFiles": ["packages/gateway/src/gateway-realtime-model.ts"]
         },
         {
-          "use": "aisdk/provider-speech-translation-model-file-must-have-matching-model-options-file",
+          "use": "ai-toolkit/provider-speech-translation-model-file-must-have-matching-model-options-file",
           "excludeFiles": [
             "packages/gateway/src/gateway-speech-translation-model.ts"
           ]
         },
         {
-          "use": "aisdk/provider-video-model-file-must-have-matching-model-options-file",
+          "use": "ai-toolkit/provider-video-model-file-must-have-matching-model-options-file",
           "excludeFiles": ["packages/gateway/src/gateway-video-model.ts"]
         },
-        "aisdk/provider-language-model-file-must-import-workflow-serialization",
-        "aisdk/provider-model-options-file-must-export-model-options-type",
+        "ai-toolkit/provider-language-model-file-must-import-workflow-serialization",
+        "ai-toolkit/provider-model-options-file-must-export-model-options-type",
         {
-          "use": "aisdk/provider-model-options-file-with-subtype-must-export-model-options-type",
+          "use": "ai-toolkit/provider-model-options-file-with-subtype-must-export-model-options-type",
           "excludeFiles": ["${providerId}-speech-translation-model-options.ts"]
         },
-        "aisdk/provider-speech-translation-model-options-file-must-export-model-options-type"
+        "ai-toolkit/provider-speech-translation-model-options-file-must-export-model-options-type"
       ]
     },
     {
@@ -348,7 +348,7 @@
             "importTypes": [
               {
                 "name": "HarnessV1",
-                "from": "@ai-sdk/harness"
+                "from": "@ai-toolkit/harness"
               }
             ],
             "exportFunctions": [
@@ -398,21 +398,21 @@
             "importValues": [
               {
                 "name": "createBridgeToken",
-                "from": "@ai-sdk/harness/utils"
+                "from": "@ai-toolkit/harness/utils"
               },
               {
                 "name": "withBridgeToken",
-                "from": "@ai-sdk/harness/utils"
+                "from": "@ai-toolkit/harness/utils"
               },
               {
                 "name": "resolveSandboxCredentialEnvironment",
-                "from": "@ai-sdk/harness/utils"
+                "from": "@ai-toolkit/harness/utils"
               }
             ],
             "importTypes": [
               {
                 "name": "SandboxChannelReconnectOptions",
-                "from": "@ai-sdk/harness/utils"
+                "from": "@ai-toolkit/harness/utils"
               }
             ],
             "exportTypes": [
@@ -445,7 +445,7 @@
           "if": {
             "hasValueImport": {
               "name": "createACP",
-              "from": "@ai-sdk/harness-acp"
+              "from": "@ai-toolkit/harness-acp"
             }
           },
           "must": {
@@ -477,7 +477,7 @@
             "importTypes": [
               {
                 "name": "SandboxChannelReconnectOptions",
-                "from": "@ai-sdk/harness/utils"
+                "from": "@ai-toolkit/harness/utils"
               }
             ],
             "exportTypes": [
@@ -516,11 +516,11 @@
             "importValues": [
               {
                 "name": "createBridgeToken",
-                "from": "@ai-sdk/harness/utils"
+                "from": "@ai-toolkit/harness/utils"
               },
               {
                 "name": "withBridgeToken",
-                "from": "@ai-sdk/harness/utils"
+                "from": "@ai-toolkit/harness/utils"
               }
             ]
           }
@@ -534,7 +534,7 @@
             "importValues": [
               {
                 "name": "writeSkills",
-                "from": "@ai-sdk/harness/utils"
+                "from": "@ai-toolkit/harness/utils"
               }
             ]
           }
@@ -548,7 +548,7 @@
             "importValues": [
               {
                 "name": "writeSkills",
-                "from": "@ai-sdk/harness/utils"
+                "from": "@ai-toolkit/harness/utils"
               }
             ]
           }
@@ -591,7 +591,7 @@
             "importValues": [
               {
                 "name": "getAiGatewayAuthFromEnv",
-                "from": "@ai-sdk/harness/utils"
+                "from": "@ai-toolkit/harness/utils"
               }
             ],
             "exportTypes": ["${harnessId.toPascalCase()}AuthenticationMode"],
@@ -616,11 +616,11 @@
             "importTypes": [
               {
                 "name": "HarnessV1RequestTransformation",
-                "from": "@ai-sdk/harness"
+                "from": "@ai-toolkit/harness"
               },
               {
                 "name": "HarnessV1RequestTransformationSources",
-                "from": "@ai-sdk/harness"
+                "from": "@ai-toolkit/harness"
               }
             ],
             "exportConstants": [
@@ -674,13 +674,13 @@
             "importValues": [
               {
                 "name": "createReadBridgeAsset",
-                "from": "@ai-sdk/harness/utils"
+                "from": "@ai-toolkit/harness/utils"
               }
             ],
             "importTypes": [
               {
                 "name": "HarnessV1Bootstrap",
-                "from": "@ai-sdk/harness"
+                "from": "@ai-toolkit/harness"
               }
             ],
             "declareConstants": ["readBridgeAsset"],
@@ -703,7 +703,7 @@
             "importValues": [
               {
                 "name": "runBridge",
-                "from": "@ai-sdk/harness/bridge"
+                "from": "@ai-toolkit/harness/bridge"
               },
               {
                 "name": "createEmitStreamEvent",
@@ -717,11 +717,11 @@
               },
               {
                 "name": "BridgeEvent",
-                "from": "@ai-sdk/harness/bridge"
+                "from": "@ai-toolkit/harness/bridge"
               },
               {
                 "name": "BridgeTurn",
-                "from": "@ai-sdk/harness/bridge"
+                "from": "@ai-toolkit/harness/bridge"
               }
             ],
             "declareFunctions": [
@@ -742,7 +742,7 @@
             "importValues": [
               {
                 "name": "runBridge",
-                "from": "@ai-sdk/harness/bridge"
+                "from": "@ai-toolkit/harness/bridge"
               },
               {
                 "name": "createEmitStreamEvent",
@@ -756,11 +756,11 @@
               },
               {
                 "name": "BridgeEvent",
-                "from": "@ai-sdk/harness/bridge"
+                "from": "@ai-toolkit/harness/bridge"
               },
               {
                 "name": "BridgeTurn",
-                "from": "@ai-sdk/harness/bridge"
+                "from": "@ai-toolkit/harness/bridge"
               }
             ],
             "declareFunctions": [
@@ -843,20 +843,20 @@
             "importTypes": [
               {
                 "name": "HarnessV1NetworkSandboxSession",
-                "from": "@ai-sdk/harness"
+                "from": "@ai-toolkit/harness"
               },
               {
                 "name": "HarnessV1SandboxSessionCreateOptions",
-                "from": "@ai-sdk/harness"
+                "from": "@ai-toolkit/harness"
               },
               {
                 "name": "HarnessV1SandboxSessionResumeOptions",
-                "from": "@ai-sdk/harness"
+                "from": "@ai-toolkit/harness"
               },
               {
                 "name": "Experimental_SandboxSession",
                 "alias": "SandboxSession",
-                "from": "@ai-sdk/provider-utils"
+                "from": "@ai-toolkit/provider-utils"
               }
             ],
             "exportFunctions": [
@@ -926,12 +926,12 @@
               {
                 "name": "Experimental_SandboxSession",
                 "alias": "SandboxSession",
-                "from": "@ai-sdk/provider-utils"
+                "from": "@ai-toolkit/provider-utils"
               },
               {
                 "name": "Experimental_SandboxProcess",
                 "alias": "SandboxProcess",
-                "from": "@ai-sdk/provider-utils"
+                "from": "@ai-toolkit/provider-utils"
               }
             ],
             "exportClasses": [
@@ -950,12 +950,12 @@
             "importTypes": [
               {
                 "name": "HarnessV1NetworkSandboxSession",
-                "from": "@ai-sdk/harness"
+                "from": "@ai-toolkit/harness"
               },
               {
                 "name": "Experimental_SandboxSession",
                 "alias": "SandboxSession",
-                "from": "@ai-sdk/provider-utils"
+                "from": "@ai-toolkit/provider-utils"
               }
             ],
             "importValues": [
@@ -976,22 +976,22 @@
       ]
     },
     {
-      "name": "harness-bridge-must-not-import-core-ai-sdk-packages",
-      "description": "Harness bridge code must not import AI SDK packages that are unavailable in the isolated bridge runtime.",
+      "name": "harness-bridge-must-not-import-core-ai-toolkit-packages",
+      "description": "Harness bridge code must not import ai-toolkit packages that are unavailable in the isolated bridge runtime.",
       "paths": ["packages/harness-*/src/**/bridge/*.ts"],
       "mustNot": {
         "importValuesFrom": [
           "ai",
           "ai/*",
-          "@ai-sdk/*",
-          "!@ai-sdk/harness/bridge"
+          "@ai-toolkit/*",
+          "!@ai-toolkit/harness/bridge"
         ],
         "importTypesFrom": [
           "ai",
           "ai/*",
-          "@ai-sdk/*",
-          "!@ai-sdk/harness",
-          "!@ai-sdk/harness/bridge"
+          "@ai-toolkit/*",
+          "!@ai-toolkit/harness",
+          "!@ai-toolkit/harness/bridge"
         ]
       }
     }

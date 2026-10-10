@@ -6,7 +6,7 @@ import {
   stripWorkDir,
 } from './strip-work-dir';
 
-const WORK_DIR = '/vercel/sandbox/claude-code-abc123';
+const WORK_DIR = '/khulnasoft/sandbox/claude-code-abc123';
 
 describe('stripWorkDir', () => {
   it('strips the prefix from a tool-call input string', () => {

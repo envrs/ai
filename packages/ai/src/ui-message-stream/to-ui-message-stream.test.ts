@@ -1,8 +1,8 @@
-import { DelayedPromise } from '@ai-sdk/provider-utils';
+import { DelayedPromise } from '@ai-toolkit/provider-utils';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it, vi } from 'vitest';
 import type { TextStreamPart } from '../generate-text/stream-text-result';
 import type { LanguageModelUsage } from '../types/usage';

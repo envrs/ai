@@ -1,4 +1,4 @@
-import { APICallError, EmptyResponseBodyError } from '@ai-sdk/provider';
+import { APICallError, EmptyResponseBodyError } from '@ai-toolkit/provider';
 import { describe, expect, it, vi } from 'vitest';
 import { InvalidArgumentError } from '../error/invalid-argument-error';
 import { UIMessageStreamError } from '../error/ui-message-stream-error';

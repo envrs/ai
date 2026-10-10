@@ -1,5 +1,5 @@
 /**
- * WorkflowAgent compatibility test suite — ported from AI SDK's ToolLoopAgent tests.
+ * WorkflowAgent compatibility test suite — ported from ai-toolkit's ToolLoopAgent tests.
  *
  * These passing tests adapt ToolLoopAgent's stream tests to WorkflowAgent and
  * cover shared option names, callbacks, and tool behavior. See
@@ -10,7 +10,7 @@
  * - WorkflowAgent.stream() accepts `prompt` or `messages` and an optional writable.
  * - WorkflowAgent returns WorkflowAgentStreamResult (not StreamTextResult with consumeStream())
  */
-import type { LanguageModelV4StreamPart } from '@ai-sdk/provider';
+import type { LanguageModelV4StreamPart } from '@ai-toolkit/provider';
 import {
   dynamicTool,
   tool,
@@ -1005,7 +1005,7 @@ describe('WorkflowAgent (ToolLoopAgent compat)', () => {
                   "abortSignal": undefined,
                   "frequencyPenalty": undefined,
                   "headers": {
-                    "user-agent": "ai-sdk-agent/workflow",
+                    "user-agent": "ai-toolkit-agent/workflow",
                   },
                   "includeRawChunks": false,
                   "maxOutputTokens": 500,
@@ -1229,7 +1229,7 @@ describe('WorkflowAgent (ToolLoopAgent compat)', () => {
                   "abortSignal": undefined,
                   "frequencyPenalty": undefined,
                   "headers": {
-                    "user-agent": "ai-sdk-agent/workflow",
+                    "user-agent": "ai-toolkit-agent/workflow",
                   },
                   "includeRawChunks": false,
                   "maxOutputTokens": undefined,
@@ -2515,7 +2515,7 @@ describe('WorkflowAgent (ToolLoopAgent compat)', () => {
 
   describe('telemetry integrations', () => {
     afterEach(() => {
-      (globalThis as any).AI_SDK_TELEMETRY_INTEGRATIONS = undefined;
+      (globalThis as any).ai-toolkit_TELEMETRY_INTEGRATIONS = undefined;
     });
 
     describe('stream', () => {
@@ -2654,7 +2654,7 @@ describe('WorkflowAgent (ToolLoopAgent compat)', () => {
       it('should call globally registered integration listeners', async () => {
         const events: string[] = [];
 
-        (globalThis as any).AI_SDK_TELEMETRY_INTEGRATIONS = [
+        (globalThis as any).ai-toolkit_TELEMETRY_INTEGRATIONS = [
           {
             onStart: async () => {
               events.push('global-onStart');

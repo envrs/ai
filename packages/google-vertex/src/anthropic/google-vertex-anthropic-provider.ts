@@ -3,18 +3,18 @@ import {
   NoSuchModelError,
   type LanguageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   isValidHostnamePart,
   loadOptionalSetting,
   withoutTrailingSlash,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   anthropicTools,
   AnthropicLanguageModel,
-} from '@ai-sdk/anthropic/internal';
+} from '@ai-toolkit/anthropic/internal';
 import type { GoogleVertexAnthropicModelId } from './google-vertex-anthropic-options';
 
 type GoogleVertexAnthropicTools = Pick<

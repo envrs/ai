@@ -17,7 +17,7 @@ Here is a list of instructions that will help the AI model to come up with a bet
 - If you need to create temporary files for testing, create them in `packages/codemod/`, and remove them when done.
 ```
 
-Depending on the complexity of the changes, you can instruct the AI to review changes directly from a pull request, e.g. https://github.com/vercel/ai/pull/5750.diff. If that doesn't yield a useful result, try describing the breaking change such as in the example below
+Depending on the complexity of the changes, you can instruct the AI to review changes directly from a pull request, e.g. https://github.com/khulnasoft/ai/pull/5750.diff. If that doesn't yield a useful result, try describing the breaking change such as in the example below
 
 ## Example
 

@@ -89,7 +89,7 @@ const Images = ({ images }: { images: Artwork[] }) => {
 
 /**
  * Simulated media search: the model calls `searchImages` and renders artwork
- * thumbnails inline (ported from the legacy ai-sdk.dev app; artwork served
+ * thumbnails inline (ported from the legacy ai-toolkit.dev app; artwork served
  * from this app's `/images`).
  */
 export const MediaSearchSimulation = ({

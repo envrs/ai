@@ -1,9 +1,9 @@
-import { InvalidPromptError } from '@ai-sdk/provider';
+import { InvalidPromptError } from '@ai-toolkit/provider';
 import {
   asArray,
   safeValidateTypes,
   type ModelMessage,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from '../util/zod';
 import { modelMessageSchema } from './message';
 import type { Instructions, Prompt } from './prompt';

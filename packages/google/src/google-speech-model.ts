@@ -2,7 +2,7 @@ import {
   InvalidArgumentError,
   type SpeechModelV4,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -15,7 +15,7 @@ import {
   WORKFLOW_SERIALIZE,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { googleFailedResponseHandler } from './google-error';
 import { googleSpeechResponseSchema } from './google-speech-api';
 import { getGoogleSpeechInput } from './google-speech-input';

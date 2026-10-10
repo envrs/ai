@@ -1,5 +1,5 @@
-import type { JSONObject } from '@ai-sdk/provider';
-import type { Context, ProviderOptions } from '@ai-sdk/provider-utils';
+import type { JSONObject } from '@ai-toolkit/provider';
+import type { Context, ProviderOptions } from '@ai-toolkit/provider-utils';
 import type { ProviderMetadata } from '../types';
 import type { Warning } from '../types/warning';
 

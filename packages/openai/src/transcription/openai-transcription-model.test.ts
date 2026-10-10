@@ -5,9 +5,9 @@ import path from 'node:path';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
-import { UnsupportedFunctionalityError } from '@ai-sdk/provider';
+} from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
+import { UnsupportedFunctionalityError } from '@ai-toolkit/provider';
 import { createOpenAI } from '../openai-provider';
 import { OpenAITranscriptionModel } from './openai-transcription-model';
 import { describe, it, expect, vi } from 'vitest';
@@ -145,7 +145,7 @@ describe('doGenerate', () => {
     });
 
     expect(server.calls[0].requestUserAgent).toContain(
-      `ai-sdk-openai/0.0.0-test`,
+      `ai-toolkit-openai/0.0.0-test`,
     );
   });
 
@@ -424,7 +424,7 @@ describe('doGenerate', () => {
       type: 'json-value',
       body: {
         task: 'transcribe',
-        text: 'Hello from the Vercel AI SDK!',
+        text: 'Hello from the khulnasoft ai-toolkit!',
         _request_id: 'req_1234',
       },
     };
@@ -452,7 +452,7 @@ describe('doGenerate', () => {
           "body": {
             "_request_id": "req_1234",
             "task": "transcribe",
-            "text": "Hello from the Vercel AI SDK!",
+            "text": "Hello from the khulnasoft ai-toolkit!",
           },
           "headers": {
             "content-length": "85",
@@ -462,7 +462,7 @@ describe('doGenerate', () => {
           "timestamp": 1970-01-01T00:00:00.000Z,
         },
         "segments": [],
-        "text": "Hello from the Vercel AI SDK!",
+        "text": "Hello from the khulnasoft ai-toolkit!",
         "warnings": [],
       }
     `);

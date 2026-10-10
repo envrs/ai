@@ -1,4 +1,4 @@
-import { HarnessBridgeCapabilityUnsupportedError } from '@ai-sdk/harness/bridge';
+import { HarnessBridgeCapabilityUnsupportedError } from '@ai-toolkit/harness/bridge';
 import type * as acp from '@agentclientprotocol/sdk';
 import { describe, expect, it, vi } from 'vitest';
 import {

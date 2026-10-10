@@ -1,4 +1,4 @@
-import { tool, type ModelMessage, type ToolSet } from '@ai-sdk/provider-utils';
+import { tool, type ModelMessage, type ToolSet } from '@ai-toolkit/provider-utils';
 import { describe, expectTypeOf, it } from 'vitest';
 import { z } from 'zod/v4';
 import type { DynamicToolCall, StaticToolCall } from './tool-call';

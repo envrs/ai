@@ -1,5 +1,5 @@
-import type { LanguageModelV4Usage } from '@ai-sdk/provider';
-import { createNullLanguageModelUsage } from '@ai-sdk/provider-utils';
+import type { LanguageModelV4Usage } from '@ai-toolkit/provider';
+import { createNullLanguageModelUsage } from '@ai-toolkit/provider-utils';
 
 export type GoogleTokenDetail = {
   modality: string;

@@ -3,7 +3,7 @@ import type {
   LanguageModelV4StreamPart,
   SharedV4ProviderMetadata,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { convertGoogleInteractionsUsage } from './convert-google-interactions-usage';
 import { type GoogleInteractionsResponse } from './google-interactions-api';
 import { mapGoogleInteractionsFinishReason } from './map-google-interactions-finish-reason';

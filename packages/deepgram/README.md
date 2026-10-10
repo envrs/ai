@@ -1,32 +1,32 @@
-# AI SDK - Deepgram Provider
+# ai-toolkit - Deepgram Provider
 
-The **[Deepgram provider](https://ai-sdk.dev/providers/ai-sdk-providers/deepgram)** for the [AI SDK](https://ai-sdk.dev/docs)
+The **[Deepgram provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/deepgram)** for the [ai-toolkit](https://ai-toolkit.dev/docs)
 contains transcription model support for the Deepgram transcription API and speech model support for the Deepgram text-to-speech API.
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access Deepgram (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access Deepgram (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The Deepgram provider is available in the `@ai-sdk/deepgram` module. You can install it with
+The Deepgram provider is available in the `@ai-toolkit/deepgram` module. You can install it with
 
 ```bash
-npm i @ai-sdk/deepgram
+npm i @ai-toolkit/deepgram
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Provider Instance
 
-You can import the default provider instance `deepgram` from `@ai-sdk/deepgram`:
+You can import the default provider instance `deepgram` from `@ai-toolkit/deepgram`:
 
 ```ts
-import { deepgram } from '@ai-sdk/deepgram';
+import { deepgram } from '@ai-toolkit/deepgram';
 ```
 
 ## Examples
@@ -34,13 +34,13 @@ import { deepgram } from '@ai-sdk/deepgram';
 ### Transcription
 
 ```ts
-import { deepgram } from '@ai-sdk/deepgram';
+import { deepgram } from '@ai-toolkit/deepgram';
 import { transcribe } from 'ai';
 
 const { text } = await transcribe({
   model: deepgram.transcription('nova-3'),
   audio: new URL(
-    'https://github.com/vercel/ai/raw/refs/heads/main/examples/ai-functions/data/galileo.mp3',
+    'https://github.com/khulnasoft/ai/raw/refs/heads/main/examples/ai-functions/data/galileo.mp3',
   ),
 });
 ```
@@ -48,13 +48,13 @@ const { text } = await transcribe({
 ### Transcription with Language Detection
 
 ```ts
-import { deepgram } from '@ai-sdk/deepgram';
+import { deepgram } from '@ai-toolkit/deepgram';
 import { transcribe } from 'ai';
 
 const { text, language } = await transcribe({
   model: deepgram.transcription('nova-3'),
   audio: new URL(
-    'https://github.com/vercel/ai/raw/refs/heads/main/examples/ai-functions/data/galileo.mp3',
+    'https://github.com/khulnasoft/ai/raw/refs/heads/main/examples/ai-functions/data/galileo.mp3',
   ),
   providerOptions: {
     deepgram: {
@@ -67,7 +67,7 @@ const { text, language } = await transcribe({
 ### Text-to-Speech
 
 ```ts
-import { deepgram } from '@ai-sdk/deepgram';
+import { deepgram } from '@ai-toolkit/deepgram';
 import { generateSpeech } from 'ai';
 
 const { audio } = await generateSpeech({
@@ -79,4 +79,4 @@ const { audio } = await generateSpeech({
 
 ## Documentation
 
-Please check out the **[Deepgram provider documentation](https://ai-sdk.dev/providers/ai-sdk-providers/deepgram)** for more information.
+Please check out the **[Deepgram provider documentation](https://ai-toolkit.dev/providers/ai-toolkit-providers/deepgram)** for more information.

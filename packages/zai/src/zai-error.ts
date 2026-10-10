@@ -1,4 +1,4 @@
-import type { ProviderErrorStructure } from '@ai-sdk/openai-compatible';
+import type { ProviderErrorStructure } from '@ai-toolkit/openai-compatible';
 import { z } from 'zod/v4';
 
 const zaiErrorDetailsSchema = z.object({

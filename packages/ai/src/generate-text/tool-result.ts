@@ -1,9 +1,9 @@
-import type { JSONObject } from '@ai-sdk/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 import type {
   InferToolInput,
   InferToolOutput,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { ProviderMetadata } from '../types';
 import type { ValueOf } from '../../src/util/value-of';
 

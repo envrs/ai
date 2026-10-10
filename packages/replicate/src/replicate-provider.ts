@@ -2,14 +2,14 @@ import {
   NoSuchModelError,
   type Experimental_VideoModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   validateBaseURL,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { ReplicateImageModel } from './replicate-image-model';
 import type { ReplicateImageModelId } from './replicate-image-settings';
 import { ReplicateVideoModel } from './replicate-video-model';
@@ -88,7 +88,7 @@ export function createReplicate(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-replicate/${VERSION}`,
+      `ai-toolkit-replicate/${VERSION}`,
     );
 
   const createImageModel = (modelId: ReplicateImageModelId) =>

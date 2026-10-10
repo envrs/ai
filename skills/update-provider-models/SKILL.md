@@ -1,13 +1,13 @@
 ---
 name: update-provider-models
-description: Add new or remove obsolete model IDs for existing AI SDK providers. Use when adding a model to a provider, removing an obsolete model, or processing a list of model changes from an issue. Triggers on "add model", "remove model", "new model ID", "obsolete model", "update model IDs".
+description: Add new or remove obsolete model IDs for existing ai-toolkit providers. Use when adding a model to a provider, removing an obsolete model, or processing a list of model changes from an issue. Triggers on "add model", "remove model", "new model ID", "obsolete model", "update model IDs".
 metadata:
   internal: true
 ---
 
 ## Update Provider Model IDs
 
-This skill covers adding new model IDs and removing obsolete ones across the AI SDK codebase. Each workflow uses search to discover all locations that need changes.
+This skill covers adding new model IDs and removing obsolete ones across the ai-toolkit codebase. Each workflow uses search to discover all locations that need changes.
 
 You may be asked to add or remove a single model ID, or to process a list of multiple model ID changes from an issue. For each model ID, follow the appropriate workflow:
 
@@ -120,16 +120,16 @@ Where reasonable, replace references to the older or preview model with the new 
 ### Step 7: Run Tests
 
 ```bash
-pnpm --filter @ai-sdk/<provider> test
-pnpm --filter @ai-sdk/gateway test
+pnpm --filter @ai-toolkit/<provider> test
+pnpm --filter @ai-toolkit/gateway test
 ```
 
 Also run tests for any other affected packages:
 
 ```bash
-pnpm --filter @ai-sdk/openai-compatible test  # if snapshots/tests were updated
-pnpm --filter @ai-sdk/amazon-bedrock test     # if Bedrock options were updated
-pnpm --filter @ai-sdk/google-vertex test      # if Vertex options were updated
+pnpm --filter @ai-toolkit/openai-compatible test  # if snapshots/tests were updated
+pnpm --filter @ai-toolkit/amazon-bedrock test     # if Bedrock options were updated
+pnpm --filter @ai-toolkit/google-vertex test      # if Vertex options were updated
 ```
 
 </adding-new-model>
@@ -185,7 +185,7 @@ Remove the `| 'model-id'` line from union types and entries from const arrays in
 ### Step 7: Run Tests
 
 ```bash
-pnpm --filter @ai-sdk/<provider> test
+pnpm --filter @ai-toolkit/<provider> test
 ```
 
 Also run tests for any other affected packages (same as Workflow A Step 7).

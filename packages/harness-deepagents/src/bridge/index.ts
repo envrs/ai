@@ -1,4 +1,4 @@
-// In-sandbox turn driver on `@ai-sdk/harness/bridge`; third-party imports stay external (tsdown) and install in-sandbox from src/bridge/package.json — keep import/externals/deps in sync.
+// In-sandbox turn driver on `@ai-toolkit/harness/bridge`; third-party imports stay external (tsdown) and install in-sandbox from src/bridge/package.json — keep import/externals/deps in sync.
 
 import { randomUUID } from 'node:crypto';
 import { argv, env as procEnv } from 'node:process';
@@ -6,7 +6,7 @@ import {
   runBridge,
   type BridgeEvent,
   type BridgeTurn,
-} from '@ai-sdk/harness/bridge';
+} from '@ai-toolkit/harness/bridge';
 import { ChatAnthropic } from '@langchain/anthropic';
 import { tool } from '@langchain/core/tools';
 import { Command, MemorySaver, Overwrite } from '@langchain/langgraph';
@@ -37,7 +37,7 @@ import {
 } from './persistent-memory-saver';
 import { createBuiltinToolFilteringMiddleware } from './tool-filtering';
 
-const HARNESS_CLIENT_APP = procEnv.AI_SDK_HARNESS_CLIENT_APP;
+const HARNESS_CLIENT_APP = procEnv.ai-toolkit_HARNESS_CLIENT_APP;
 
 function parseArgs(rawArgs: string[]): Record<string, string> {
   const out: Record<string, string> = {};

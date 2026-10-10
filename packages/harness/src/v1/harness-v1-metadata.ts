@@ -1,9 +1,9 @@
-import type { JSONValue } from '@ai-sdk/provider';
+import type { JSONValue } from '@ai-toolkit/provider';
 
 /**
  * Adapter-namespaced opaque data attached to harness events.
  *
- * Mirrors the `providerMetadata` pattern from `@ai-sdk/provider`, but lives
+ * Mirrors the `providerMetadata` pattern from `@ai-toolkit/provider`, but lives
  * in the harness namespace because a harness is a peer concept to a
  * provider, not a kind of provider.
  *

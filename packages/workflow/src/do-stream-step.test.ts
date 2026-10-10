@@ -1,4 +1,4 @@
-import { APICallError, type LanguageModelV4StreamPart } from '@ai-sdk/provider';
+import { APICallError, type LanguageModelV4StreamPart } from '@ai-toolkit/provider';
 import { MockLanguageModelV4, convertArrayToReadableStream } from 'ai/test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { doStreamStep } from './do-stream-step.js';

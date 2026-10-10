@@ -1,4 +1,4 @@
-import type { ModelMessage, ToolResultPart } from '@ai-sdk/provider-utils';
+import type { ModelMessage, ToolResultPart } from '@ai-toolkit/provider-utils';
 
 /**
  * Extract client-provided tool results from the trailing tool message.

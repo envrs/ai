@@ -1,14 +1,14 @@
 # Add new provider
 
-## `@ai-sdk/<provider>` vs 3rd party package
+## `@ai-toolkit/<provider>` vs 3rd party package
 
 Every provider is welcome to create a 3rd party package. We are happy to link to it from our documentation.
 
-If you would prefer a 1st party `@ai-sdk/<provider>` package, please create an issue first to discuss.
+If you would prefer a 1st party `@ai-toolkit/<provider>` package, please create an issue first to discuss.
 
 ## Example
 
-https://github.com/vercel/ai/pull/18595/changes
+https://github.com/khulnasoft/ai/pull/18595/changes
 
 ## How
 
@@ -17,8 +17,8 @@ https://github.com/vercel/ai/pull/18595/changes
 3. Create changeset for new package with `major`
 4. Add workflow serialization support to all model classes (see [providers.md#workflow-serialization](providers.md#workflow-serialization))
 5. Add examples to `examples/ai-functions/src/<function>/<provider>/` depending on what model types the provider supports. Name the entry example `basic.ts` and use descriptive `kebab-case` names for the rest. Do not create flat files like `examples/ai-functions/src/generate-speech/<provider>.ts`.
-6. Add documentation in `content/providers/01-ai-sdk-providers/<last number + 10>-<provider>.mdx`
-7. Bootstrap the npm package and Trusted Publisher (Vercel IT team) — see [Bootstrapping a new `@ai-sdk/*` package](./releases.md#bootstrapping-a-new-ai-sdk-package). This is required before the first automated release can publish the package with provenance.
+6. Add documentation in `content/providers/01-ai-toolkit-providers/<last number + 10>-<provider>.mdx`
+7. Bootstrap the npm package and Trusted Publisher (khulnasoft IT team) — see [Bootstrapping a new `@ai-toolkit/*` package](./releases.md#bootstrapping-a-new-ai-toolkit-package). This is required before the first automated release can publish the package with provenance.
 
 See also [providers.md](providers.md) and
 [secure-url-handling.md](secure-url-handling.md) (when fetching URLs that come

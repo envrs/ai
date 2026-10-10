@@ -1,5 +1,5 @@
-import { InvalidArgumentError } from '@ai-sdk/provider';
-import { convertUint8ArrayToBase64 } from '@ai-sdk/provider-utils';
+import { InvalidArgumentError } from '@ai-toolkit/provider';
+import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { prepareQuiverAIImageReference } from './prepare-quiverai-image-reference';
 

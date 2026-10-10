@@ -1,8 +1,8 @@
 import type {
   HarnessV1NetworkSandboxSession,
   HarnessV1PortEndpoint,
-} from '@ai-sdk/harness';
-import type * as HarnessUtils from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness';
+import type * as HarnessUtils from '@ai-toolkit/harness/utils';
 import type * as NodeFsPromises from 'node:fs/promises';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { createDeepAgents } from './deepagents-harness';
@@ -60,7 +60,7 @@ const webSocketMocks = vi.hoisted(() => {
 
 vi.mock('ws', () => ({ WebSocket: webSocketMocks.WebSocket }));
 
-vi.mock('@ai-sdk/harness/utils', async importOriginal => {
+vi.mock('@ai-toolkit/harness/utils', async importOriginal => {
   const actual = await importOriginal<typeof HarnessUtils>();
   class FakeSandboxChannel {
     constructor({
@@ -138,7 +138,7 @@ function fakeSandboxSession({
   const session = {
     run: async ({ command }: { command: string }) => ({
       exitCode: 0,
-      stdout: command === 'printf "%s" "$HOME"' ? '/home/vercel-sandbox' : '',
+      stdout: command === 'printf "%s" "$HOME"' ? '/home/khulnasoft-sandbox' : '',
       stderr: '',
     }),
     readTextFile: async () => null,
@@ -162,7 +162,7 @@ function fakeSandboxSession({
   };
   return {
     id: 'test-sandbox',
-    defaultWorkingDirectory: '/vercel/sandbox',
+    defaultWorkingDirectory: '/khulnasoft/sandbox',
     restricted: () => session,
     ports: [4319],
     async getPortEndpoint() {
@@ -181,7 +181,7 @@ async function startTurn() {
   const harness = createDeepAgents();
   const session = await harness.doStart({
     sessionId: 'test-session',
-    sessionWorkDir: '/vercel/sandbox/deepagents-test-session',
+    sessionWorkDir: '/khulnasoft/sandbox/deepagents-test-session',
     sandboxSession: fakeSandboxSession(),
   } as unknown as Parameters<typeof harness.doStart>[0]);
   const control = await session.doPromptTurn({
@@ -251,19 +251,19 @@ describe('createDeepAgents', () => {
     const harness = createDeepAgents();
     const session = await harness.doStart({
       sessionId: 'test-session',
-      sessionWorkDir: '/vercel/sandbox/deepagents-test-session',
+      sessionWorkDir: '/khulnasoft/sandbox/deepagents-test-session',
       sandboxSession: fakeSandboxSession({ spawnEnvs, spawns }),
     } as unknown as Parameters<typeof harness.doStart>[0]);
 
-    expect(spawnEnvs.at(0)?.AI_SDK_HARNESS_CLIENT_APP).toBe(
-      'ai-sdk-harness-deepagents/0.0.0-test',
+    expect(spawnEnvs.at(0)?.ai-toolkit_HARNESS_CLIENT_APP).toBe(
+      'ai-toolkit-harness-deepagents/0.0.0-test',
     );
     expect(spawnEnvs.at(0)?.BRIDGE_CHANNEL_TOKEN).toMatch(/^[a-f0-9]{64}$/);
     expect(spawns.at(0)).toContain(
-      "node '/home/vercel-sandbox/.ai-sdk-harness/.harness-bootstrap/deepagents/bridge.mjs'",
+      "node '/home/khulnasoft-sandbox/.ai-toolkit-harness/.harness-bootstrap/deepagents/bridge.mjs'",
     );
     expect(spawns.at(0)).toContain(
-      "--bootstrap-dir '/home/vercel-sandbox/.ai-sdk-harness/.harness-bootstrap/deepagents'",
+      "--bootstrap-dir '/home/khulnasoft-sandbox/.ai-toolkit-harness/.harness-bootstrap/deepagents'",
     );
     const control = await session.doPromptTurn({
       model: 'agent-model',
@@ -286,7 +286,7 @@ describe('createDeepAgents', () => {
     const harness = createDeepAgents();
     const session = await harness.doStart({
       sessionId: 'test-session',
-      sessionWorkDir: '/vercel/sandbox/deepagents-test-session',
+      sessionWorkDir: '/khulnasoft/sandbox/deepagents-test-session',
       sandboxSession: fakeSandboxSession({ spawns }),
       resumeFrom: {
         type: 'resume-session',
@@ -308,7 +308,7 @@ describe('createDeepAgents', () => {
     }).doStart({
       sessionId: 'gateway',
       headers: { 'x-tenant': 'acme' },
-      sessionWorkDir: '/vercel/sandbox/deepagents-gateway',
+      sessionWorkDir: '/khulnasoft/sandbox/deepagents-gateway',
       sandboxSession: fakeSandboxSession(),
     } as unknown as Parameters<
       ReturnType<typeof createDeepAgents>['doStart']
@@ -332,7 +332,7 @@ describe('createDeepAgents', () => {
     }).doStart({
       sessionId: 'direct',
       headers: { 'x-tenant': 'acme' },
-      sessionWorkDir: '/vercel/sandbox/deepagents-direct',
+      sessionWorkDir: '/khulnasoft/sandbox/deepagents-direct',
       sandboxSession: fakeSandboxSession(),
     } as unknown as Parameters<
       ReturnType<typeof createDeepAgents>['doStart']
@@ -373,7 +373,7 @@ describe('createDeepAgents', () => {
 
     const session = await harness.doStart({
       sessionId: 'test-session',
-      sessionWorkDir: '/vercel/sandbox/deepagents-test-session',
+      sessionWorkDir: '/khulnasoft/sandbox/deepagents-test-session',
       sandboxSession,
     } as unknown as Parameters<typeof harness.doStart>[0]);
 
@@ -393,7 +393,7 @@ describe('createDeepAgents', () => {
     ]);
     expect(forwardedCredentials).toEqual([
       {
-        credential: expect.stringMatching(/^aisdkhc_[A-Za-z0-9_-]{43}$/),
+        credential: expect.stringMatching(/^ai-toolkithc_[A-Za-z0-9_-]{43}$/),
         environmentVariableName: 'ANTHROPIC_API_KEY',
       },
     ]);
@@ -416,7 +416,7 @@ describe('createDeepAgents', () => {
     const session = await harness.doStart({
       sessionId: 'test-session',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/deepagents-test-session',
+      sessionWorkDir: '/khulnasoft/sandbox/deepagents-test-session',
       resumeFrom: {
         type: 'resume-session',
         harnessId: 'deepagents',
@@ -431,7 +431,7 @@ describe('createDeepAgents', () => {
 
     expect(spawnEnvs[0]?.ANTHROPIC_API_KEY).toBe('saved-anthropic-placeholder');
     expect(spawnEnvs[0]?.AI_GATEWAY_API_KEY).toMatch(
-      /^aisdkhc_[A-Za-z0-9_-]{43}$/,
+      /^ai-toolkithc_[A-Za-z0-9_-]{43}$/,
     );
     expect(JSON.stringify(spawnEnvs[0])).not.toContain(
       'current-gateway-secret',
@@ -439,7 +439,7 @@ describe('createDeepAgents', () => {
     expect(addRequestTransformations).toHaveBeenCalledWith([
       {
         match: {
-          host: 'ai-gateway.vercel.sh',
+          host: 'ai-gateway.khulnasoft.sh',
           headers: [
             {
               key: { exact: 'x-api-key' },
@@ -470,7 +470,7 @@ describe('createDeepAgents', () => {
 
     const session = await harness.doStart({
       sessionId: 'test-session',
-      sessionWorkDir: '/vercel/sandbox/deepagents-test-session',
+      sessionWorkDir: '/khulnasoft/sandbox/deepagents-test-session',
       sandboxSession: fakeSandboxSession({ spawnEnvs }),
     } as unknown as Parameters<typeof harness.doStart>[0]);
 
@@ -494,7 +494,7 @@ describe('createDeepAgents', () => {
     });
     const identitySession = await identityHarness.doStart({
       sessionId: 'identity-session',
-      sessionWorkDir: '/vercel/sandbox/deepagents-identity-session',
+      sessionWorkDir: '/khulnasoft/sandbox/deepagents-identity-session',
       sandboxSession: fakeSandboxSession(),
     } as unknown as Parameters<typeof identityHarness.doStart>[0]);
 
@@ -514,7 +514,7 @@ describe('createDeepAgents', () => {
     const harness = createDeepAgents({ mcpServers });
     const session = await harness.doStart({
       sessionId: 'test-session',
-      sessionWorkDir: '/vercel/sandbox/deepagents-test-session',
+      sessionWorkDir: '/khulnasoft/sandbox/deepagents-test-session',
       sandboxSession: fakeSandboxSession(),
     } as unknown as Parameters<typeof harness.doStart>[0]);
 
@@ -540,7 +540,7 @@ describe('createDeepAgents', () => {
     });
     const session = await harness.doStart({
       sessionId: 'test-session',
-      sessionWorkDir: '/vercel/sandbox/deepagents-test-session',
+      sessionWorkDir: '/khulnasoft/sandbox/deepagents-test-session',
       sandboxSession: fakeSandboxSession(),
     } as unknown as Parameters<typeof harness.doStart>[0]);
 
@@ -557,8 +557,8 @@ describe('createDeepAgents', () => {
         "prompt": "Think carefully.",
         "skillsChanged": false,
         "skillsPaths": [
-          "/vercel/sandbox/deepagents-test-session/.agents/skills",
-          "/home/vercel-sandbox/.agents/skills",
+          "/khulnasoft/sandbox/deepagents-test-session/.agents/skills",
+          "/home/khulnasoft-sandbox/.agents/skills",
         ],
         "thinking": {
           "display": "summarized",
@@ -597,7 +597,7 @@ describe('createDeepAgents', () => {
     });
     const session = await harness.doStart({
       sessionId: 'test-session',
-      sessionWorkDir: '/vercel/sandbox/deepagents-test-session',
+      sessionWorkDir: '/khulnasoft/sandbox/deepagents-test-session',
       sandboxSession,
     });
 
@@ -613,7 +613,7 @@ describe('createDeepAgents', () => {
 
     const attachedSession = await harness.doStart({
       sessionId: 'test-session',
-      sessionWorkDir: '/vercel/sandbox/deepagents-test-session',
+      sessionWorkDir: '/khulnasoft/sandbox/deepagents-test-session',
       sandboxSession,
       resumeFrom,
     });

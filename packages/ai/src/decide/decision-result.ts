@@ -3,7 +3,7 @@ import type {
   Experimental_EvaluationModelV4 as EvaluationModelV4,
   Experimental_DecisionModelV4Result as DecisionModelV4Result,
   Experimental_DecisionModelV4Question as DecisionQuestion,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 export type DecisionModel = string | DecisionModelV4 | EvaluationModelV4;
 

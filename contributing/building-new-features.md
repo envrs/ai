@@ -6,4 +6,4 @@
    - always test follow up message
    - consider testing with store: false
 
-Example: https://github.com/vercel/ai/pull/8691
+Example: https://github.com/khulnasoft/ai/pull/8691

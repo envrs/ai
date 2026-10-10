@@ -1,5 +1,5 @@
-import type { HarnessV1Bootstrap } from '@ai-sdk/harness';
-import { createReadBridgeAsset } from '@ai-sdk/harness/utils';
+import type { HarnessV1Bootstrap } from '@ai-toolkit/harness';
+import { createReadBridgeAsset } from '@ai-toolkit/harness/utils';
 
 /*
  * Keep every asset URL literal so bundlers can emit each file separately.
@@ -12,7 +12,7 @@ const readBridgeAsset = createReadBridgeAsset({
 });
 
 /*
- * Bootstrap is derived state stored under `$HOME/.ai-sdk-harness`, outside
+ * Bootstrap is derived state stored under `$HOME/.ai-toolkit-harness`, outside
  * the agent's working directory. Snapshot-capable providers preserve its
  * installation and recipe marker there.
  */

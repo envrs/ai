@@ -1,5 +1,5 @@
-import type { HarnessV1PermissionMode } from '@ai-sdk/harness';
-import { HarnessBridgeCapabilityUnsupportedError } from '@ai-sdk/harness/bridge';
+import type { HarnessV1PermissionMode } from '@ai-toolkit/harness';
+import { HarnessBridgeCapabilityUnsupportedError } from '@ai-toolkit/harness/bridge';
 import * as acp from '@agentclientprotocol/sdk';
 import type {
   ACPPermissionModeMapping,

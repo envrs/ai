@@ -1,4 +1,4 @@
-import type { SharedV4Warning, TranscriptionModelV4 } from '@ai-sdk/provider';
+import type { SharedV4Warning, TranscriptionModelV4 } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createJsonResponseHandler,
@@ -7,7 +7,7 @@ import {
   serializeModelOptions,
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { DeepgramTranscriptionAPITypes } from './deepgram-api-types';
 import type { DeepgramConfig } from './deepgram-config';

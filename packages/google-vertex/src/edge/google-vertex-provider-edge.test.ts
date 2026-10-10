@@ -1,4 +1,4 @@
-import { resolve } from '@ai-sdk/provider-utils';
+import { resolve } from '@ai-toolkit/provider-utils';
 import { createGoogleVertex as createVertexEdge } from './google-vertex-provider-edge';
 import { createGoogleVertex as createGoogleVertexOriginal } from '../google-vertex-provider-base';
 import * as edgeAuth from './google-vertex-auth-edge';

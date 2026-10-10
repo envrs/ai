@@ -1,12 +1,12 @@
 'use client';
 
-import { IconForward10Seconds10 } from '@vercel/geistdocs/assets/icons/icon-forward-10-seconds-10';
-import { IconPause } from '@vercel/geistdocs/assets/icons/icon-pause';
-import { IconPlayFill } from '@vercel/geistdocs/assets/icons/icon-play-fill';
-import { IconRewind10Seconds } from '@vercel/geistdocs/assets/icons/icon-rewind-10-seconds';
-import { IconSpeakerOff } from '@vercel/geistdocs/assets/icons/icon-speaker-off';
-import { IconSpeakerVolumeLoud } from '@vercel/geistdocs/assets/icons/icon-speaker-volume-loud';
-import { cn } from '@vercel/geistdocs/utils';
+import { IconForward10Seconds10 } from '@khulnasoft/geistdocs/assets/icons/icon-forward-10-seconds-10';
+import { IconPause } from '@khulnasoft/geistdocs/assets/icons/icon-pause';
+import { IconPlayFill } from '@khulnasoft/geistdocs/assets/icons/icon-play-fill';
+import { IconRewind10Seconds } from '@khulnasoft/geistdocs/assets/icons/icon-rewind-10-seconds';
+import { IconSpeakerOff } from '@khulnasoft/geistdocs/assets/icons/icon-speaker-off';
+import { IconSpeakerVolumeLoud } from '@khulnasoft/geistdocs/assets/icons/icon-speaker-volume-loud';
+import { cn } from '@khulnasoft/geistdocs/utils';
 import { type ReactNode, useEffect, useRef, useState } from 'react';
 import { IMAGE_SRC, SPEECH_AUDIO_SRC, VIDEO_SRC } from '../media-assets';
 import {

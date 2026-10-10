@@ -1,7 +1,7 @@
-import { AISDKError, NoSuchModelError } from '@ai-sdk/provider';
+import { ai-toolkitError, NoSuchModelError } from '@ai-toolkit/provider';
 
 const name = 'AI_NoSuchProviderError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
 export class NoSuchProviderError extends NoSuchModelError {
@@ -40,6 +40,6 @@ export class NoSuchProviderError extends NoSuchModelError {
   }
 
   static isInstance(error: unknown): error is NoSuchProviderError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }

@@ -1,4 +1,4 @@
-import { tool } from '@ai-sdk/provider-utils';
+import { tool } from '@ai-toolkit/provider-utils';
 import { describe, expect, it, vi } from 'vitest';
 import { z as z3 } from 'zod/v3';
 import { z as z4 } from 'zod/v4';

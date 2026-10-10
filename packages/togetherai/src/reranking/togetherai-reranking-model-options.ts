@@ -2,7 +2,7 @@ import {
   lazySchema,
   zodSchema,
   type FlexibleSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 // see https://docs.together.ai/docs/serverless-models#rerank-models

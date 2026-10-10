@@ -1,13 +1,13 @@
 import { describe, it, expect, vi, beforeEach, type Mock } from 'vitest';
 import { createGmicloud } from './gmicloud-provider';
-import { loadApiKey } from '@ai-sdk/provider-utils';
-import { OpenAICompatibleChatLanguageModel } from '@ai-sdk/openai-compatible';
+import { loadApiKey } from '@ai-toolkit/provider-utils';
+import { OpenAICompatibleChatLanguageModel } from '@ai-toolkit/openai-compatible';
 import { gmicloudErrorStructure } from './gmicloud-error';
 
 const OpenAICompatibleChatLanguageModelMock =
   OpenAICompatibleChatLanguageModel as unknown as Mock;
 
-vi.mock('@ai-sdk/openai-compatible', () => ({
+vi.mock('@ai-toolkit/openai-compatible', () => ({
   OpenAICompatibleChatLanguageModel: vi.fn(),
 }));
 
@@ -15,8 +15,8 @@ vi.mock('./version', () => ({
   VERSION: '0.0.0-test',
 }));
 
-vi.mock('@ai-sdk/provider-utils', async () => {
-  const actual = await vi.importActual('@ai-sdk/provider-utils');
+vi.mock('@ai-toolkit/provider-utils', async () => {
+  const actual = await vi.importActual('@ai-toolkit/provider-utils');
   return {
     ...actual,
     loadApiKey: vi.fn().mockReturnValue('mock-api-key'),
@@ -46,7 +46,7 @@ describe('createGmicloud', () => {
     expect(headers).toEqual(
       expect.objectContaining({
         authorization: 'Bearer mock-api-key',
-        'user-agent': 'ai-sdk-gmicloud/0.0.0-test',
+        'user-agent': 'ai-toolkit-gmicloud/0.0.0-test',
       }),
     );
   });

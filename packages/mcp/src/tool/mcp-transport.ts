@@ -1,4 +1,4 @@
-import type { FetchFunction } from '@ai-sdk/provider-utils';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 import { MCPClientError } from '../error/mcp-client-error';
 import type { JSONRPCMessage } from './json-rpc-message';
 import { SseMCPTransport } from './mcp-sse-transport';

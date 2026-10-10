@@ -22,7 +22,7 @@ describe('resolveClineAuthentication', () => {
     ).resolves.toEqual({
       environment: {
         AI_GATEWAY_API_KEY: 'gateway-key',
-        AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh',
+        AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
       },
     });
     expect(readSubscription).not.toHaveBeenCalled();
@@ -139,11 +139,11 @@ describe('resolveClineEnv', () => {
       }),
     ).toEqual({
       AI_GATEWAY_API_KEY: 'gateway-key',
-      AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh',
+      AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
     });
   });
 
-  it('uses a Vercel OIDC token and custom Gateway URL', () => {
+  it('uses a khulnasoft OIDC token and custom Gateway URL', () => {
     expect(
       resolveClineEnv({
         auth: 'ai-gateway',
@@ -198,7 +198,7 @@ describe('resolveClineEnv', () => {
       }),
     ).toEqual({
       AI_GATEWAY_API_KEY: 'gateway-key',
-      AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh',
+      AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
     });
   });
 
@@ -224,7 +224,7 @@ describe('resolveClineEnv', () => {
         env: { CLINE_API_KEY: 'cline-key' },
       }),
     ).toEqual({
-      AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh',
+      AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
     });
   });
 });

@@ -7,15 +7,15 @@ import {
 import { GatewayFetchMetadata } from './gateway-fetch-metadata';
 import { GatewaySpendReport } from './gateway-spend-report';
 import { GatewayGenerationInfoFetcher } from './gateway-generation-info';
-import { NoSuchModelError } from '@ai-sdk/provider';
+import { NoSuchModelError } from '@ai-toolkit/provider';
 import { GatewayEmbeddingModel } from './gateway-embedding-model';
 import { GatewayImageModel } from './gateway-image-model';
 import { GatewayVideoModel } from './gateway-video-model';
 import { GatewayRerankingModel } from './gateway-reranking-model';
 import { GatewaySpeechModel } from './gateway-speech-model';
 import { GatewayTranscriptionModel } from './gateway-transcription-model';
-import { getVercelOidcToken, getVercelRequestId } from './vercel-environment';
-import { resolve } from '@ai-sdk/provider-utils';
+import { getVercelOidcToken, getVercelRequestId } from './khulnasoft-environment';
+import { resolve } from '@ai-toolkit/provider-utils';
 import { GatewayBatch } from './gateway-batch';
 import { GatewayLanguageModel } from './gateway-language-model';
 import {
@@ -85,7 +85,7 @@ vi.mock('./gateway-fetch-metadata', () => ({
   }),
 }));
 
-vi.mock('./vercel-environment', () => ({
+vi.mock('./khulnasoft-environment', () => ({
   getVercelOidcToken: vi.fn(),
   getVercelRequestId: vi.fn(),
 }));
@@ -295,7 +295,7 @@ describe('GatewayProvider', () => {
         'custom-header': 'value',
         'ai-gateway-protocol-version': expect.any(String),
         'ai-gateway-auth-method': 'api-key',
-        'user-agent': 'ai-sdk-gateway/0.0.0-test',
+        'user-agent': 'ai-toolkit-gateway/0.0.0-test',
       });
     });
 
@@ -336,14 +336,14 @@ describe('GatewayProvider', () => {
         'custom-header': 'value',
         'ai-gateway-protocol-version': expect.any(String),
         'ai-gateway-auth-method': 'oidc',
-        'user-agent': 'ai-sdk-gateway/0.0.0-test',
+        'user-agent': 'ai-toolkit-gateway/0.0.0-test',
       });
     });
 
     it('should use apiKey and teamIdOrSlug for language model requests', async () => {
       const provider = createGateway({
         apiKey: 'vca_test-token',
-        teamIdOrSlug: 'vercel',
+        teamIdOrSlug: 'khulnasoft',
         headers: { 'Custom-Header': 'value' },
       });
 
@@ -356,10 +356,10 @@ describe('GatewayProvider', () => {
       expect(headers).toEqual({
         authorization: 'Bearer vca_test-token',
         'custom-header': 'value',
-        'x-vercel-ai-gateway-team': 'vercel',
+        'x-khulnasoft-ai-gateway-team': 'khulnasoft',
         'ai-gateway-protocol-version': expect.any(String),
         'ai-gateway-auth-method': 'api-key',
-        'user-agent': 'ai-sdk-gateway/0.0.0-test',
+        'user-agent': 'ai-toolkit-gateway/0.0.0-test',
       });
       expect(getVercelOidcToken).not.toHaveBeenCalled();
     });
@@ -367,7 +367,7 @@ describe('GatewayProvider', () => {
     it('should use apiKey and teamIdOrSlug for non-language model requests', async () => {
       const provider = createGateway({
         apiKey: 'vca_test-token',
-        teamIdOrSlug: 'vercel',
+        teamIdOrSlug: 'khulnasoft',
       });
 
       const model = provider.imageModel('openai/gpt-image-1');
@@ -381,7 +381,7 @@ describe('GatewayProvider', () => {
 
       expect(headers).toMatchObject({
         authorization: 'Bearer vca_test-token',
-        'x-vercel-ai-gateway-team': 'vercel',
+        'x-khulnasoft-ai-gateway-team': 'khulnasoft',
         'ai-gateway-auth-method': 'api-key',
       });
       expect(getVercelOidcToken).not.toHaveBeenCalled();
@@ -399,7 +399,7 @@ describe('GatewayProvider', () => {
       const config = constructorCall[1];
       const headers = (await resolve(config.headers))!;
 
-      expect(headers['x-vercel-ai-gateway-team']).toBe("team-o'brien");
+      expect(headers['x-khulnasoft-ai-gateway-team']).toBe("team-o'brien");
     });
 
     it('should omit team header for apiKey requests without teamIdOrSlug', async () => {
@@ -412,11 +412,11 @@ describe('GatewayProvider', () => {
       const headers = (await resolve(config.headers))!;
 
       expect(headers['authorization']).toBe('Bearer vca_test-token');
-      expect(headers).not.toHaveProperty('x-vercel-ai-gateway-team');
+      expect(headers).not.toHaveProperty('x-khulnasoft-ai-gateway-team');
     });
 
     it('should pass teamIdOrSlug with OIDC requests', async () => {
-      const provider = createGateway({ teamIdOrSlug: 'vercel' });
+      const provider = createGateway({ teamIdOrSlug: 'khulnasoft' });
 
       provider('test-model');
 
@@ -425,7 +425,7 @@ describe('GatewayProvider', () => {
       const headers = (await resolve(config.headers))!;
 
       expect(headers['authorization']).toBe('Bearer mock-oidc-token');
-      expect(headers['x-vercel-ai-gateway-team']).toBe('vercel');
+      expect(headers['x-khulnasoft-ai-gateway-team']).toBe('khulnasoft');
       expect(headers['ai-gateway-auth-method']).toBe('oidc');
     });
 
@@ -493,7 +493,7 @@ describe('GatewayProvider', () => {
         'custom-header': 'value',
         'ai-gateway-protocol-version': expect.any(String),
         'ai-gateway-auth-method': 'api-key',
-        'user-agent': 'ai-sdk-gateway/0.0.0-test',
+        'user-agent': 'ai-toolkit-gateway/0.0.0-test',
       });
       expect(config.fetch).toBe(customFetch);
 
@@ -541,7 +541,7 @@ describe('GatewayProvider', () => {
         'custom-header': 'value',
         'ai-gateway-protocol-version': expect.any(String),
         'ai-gateway-auth-method': 'api-key',
-        'user-agent': 'ai-sdk-gateway/0.0.0-test',
+        'user-agent': 'ai-toolkit-gateway/0.0.0-test',
       });
       expect(config.fetch).toBe(customFetch);
 
@@ -632,7 +632,7 @@ describe('GatewayProvider', () => {
         'custom-header': 'value',
         'ai-gateway-protocol-version': expect.any(String),
         'ai-gateway-auth-method': 'api-key',
-        'user-agent': 'ai-sdk-gateway/0.0.0-test',
+        'user-agent': 'ai-toolkit-gateway/0.0.0-test',
       });
       expect(config.fetch).toBe(customFetch);
     });
@@ -690,7 +690,7 @@ describe('GatewayProvider', () => {
         'custom-header': 'value',
         'ai-gateway-protocol-version': expect.any(String),
         'ai-gateway-auth-method': 'api-key',
-        'user-agent': 'ai-sdk-gateway/0.0.0-test',
+        'user-agent': 'ai-toolkit-gateway/0.0.0-test',
       });
       expect(config.fetch).toBe(customFetch);
     });
@@ -882,7 +882,7 @@ describe('GatewayProvider', () => {
       // Check that GatewayFetchMetadata was instantiated with the default baseURL
       expect(GatewayFetchMetadata).toHaveBeenCalledWith(
         expect.objectContaining({
-          baseURL: 'https://ai-gateway.vercel.sh/v4/ai',
+          baseURL: 'https://ai-gateway.khulnasoft.sh/v4/ai',
         }),
       );
     });
@@ -905,7 +905,7 @@ describe('GatewayProvider', () => {
 
       const config = getGatewayImageModelInternalConfig(model);
       expect(config.provider).toBe('gateway');
-      expect(config.baseURL).toBe('https://ai-gateway.vercel.sh/v4/ai');
+      expect(config.baseURL).toBe('https://ai-gateway.khulnasoft.sh/v4/ai');
     });
 
     it('should expose videoModel on the default provider and construct model', () => {
@@ -918,7 +918,7 @@ describe('GatewayProvider', () => {
 
       const config = getGatewayVideoModelInternalConfig(model);
       expect(config.provider).toBe('gateway');
-      expect(config.baseURL).toBe('https://ai-gateway.vercel.sh/v4/ai');
+      expect(config.baseURL).toBe('https://ai-gateway.khulnasoft.sh/v4/ai');
     });
 
     it('should expose speechModel on the default provider and construct model', () => {
@@ -931,7 +931,7 @@ describe('GatewayProvider', () => {
 
       const config = getGatewaySpeechModelInternalConfig(model);
       expect(config.provider).toBe('gateway');
-      expect(config.baseURL).toBe('https://ai-gateway.vercel.sh/v4/ai');
+      expect(config.baseURL).toBe('https://ai-gateway.khulnasoft.sh/v4/ai');
     });
 
     it('should expose transcriptionModel on the default provider and construct model', () => {
@@ -946,7 +946,7 @@ describe('GatewayProvider', () => {
 
       const config = getGatewayTranscriptionModelInternalConfig(model);
       expect(config.provider).toBe('gateway');
-      expect(config.baseURL).toBe('https://ai-gateway.vercel.sh/v4/ai');
+      expect(config.baseURL).toBe('https://ai-gateway.khulnasoft.sh/v4/ai');
     });
 
     it('should override default baseURL when provided', async () => {
@@ -1001,7 +1001,7 @@ describe('GatewayProvider', () => {
       // Verify that the API key was used in the Authorization header
       expect(headers['authorization']).toBe(`Bearer ${testApiKey}`);
       expect(headers['ai-gateway-auth-method']).toBe('api-key');
-      expect(headers['user-agent']).toBe('ai-sdk-gateway/0.0.0-test');
+      expect(headers['user-agent']).toBe('ai-toolkit-gateway/0.0.0-test');
 
       // Verify getVercelOidcToken was never called
       expect(getVercelOidcToken).not.toHaveBeenCalled();
@@ -1012,7 +1012,7 @@ describe('GatewayProvider', () => {
 
       const testProvider = createGateway({
         apiKey: 'vca_test-token',
-        teamIdOrSlug: 'vercel',
+        teamIdOrSlug: 'khulnasoft',
       });
 
       await testProvider.getAvailableModels();
@@ -1021,14 +1021,14 @@ describe('GatewayProvider', () => {
       const headers = (await resolve(config.headers))!;
 
       expect(headers['authorization']).toBe('Bearer vca_test-token');
-      expect(headers['x-vercel-ai-gateway-team']).toBe('vercel');
+      expect(headers['x-khulnasoft-ai-gateway-team']).toBe('khulnasoft');
       expect(getVercelOidcToken).not.toHaveBeenCalled();
     });
 
     it('should use OIDC and teamIdOrSlug for getAvailableModels when no apiKey is configured', async () => {
       vi.mocked(getVercelOidcToken).mockResolvedValue('oidc-token');
 
-      const testProvider = createGateway({ teamIdOrSlug: 'vercel' });
+      const testProvider = createGateway({ teamIdOrSlug: 'khulnasoft' });
 
       await testProvider.getAvailableModels();
 
@@ -1037,7 +1037,7 @@ describe('GatewayProvider', () => {
 
       expect(headers['authorization']).toBe('Bearer oidc-token');
       expect(headers['ai-gateway-auth-method']).toBe('oidc');
-      expect(headers['x-vercel-ai-gateway-team']).toBe('vercel');
+      expect(headers['x-khulnasoft-ai-gateway-team']).toBe('khulnasoft');
       expect(getVercelOidcToken).toHaveBeenCalled();
     });
   });
@@ -1429,11 +1429,11 @@ describe('GatewayProvider', () => {
     });
 
     describe('Real-world usage scenarios', () => {
-      it('should work in Vercel deployment with OIDC', async () => {
-        // Simulate Vercel deployment environment
+      it('should work in khulnasoft deployment with OIDC', async () => {
+        // Simulate khulnasoft deployment environment
         process.env = {
           ...originalEnv,
-          VERCEL_OIDC_TOKEN: 'vercel-deployment-oidc-token',
+          VERCEL_OIDC_TOKEN: 'khulnasoft-deployment-oidc-token',
           VERCEL_DEPLOYMENT_ID: 'dpl_12345',
           VERCEL_ENV: 'production',
           VERCEL_REGION: 'iad1',
@@ -1443,7 +1443,7 @@ describe('GatewayProvider', () => {
         delete process.env.AI_GATEWAY_API_KEY;
 
         vi.mocked(getVercelOidcToken).mockResolvedValue(
-          'vercel-deployment-oidc-token',
+          'khulnasoft-deployment-oidc-token',
         );
 
         const provider = createGateway();
@@ -1454,7 +1454,7 @@ describe('GatewayProvider', () => {
         const headers = (await resolve(config.headers))!;
 
         expect(headers['authorization']).toBe(
-          'Bearer vercel-deployment-oidc-token',
+          'Bearer khulnasoft-deployment-oidc-token',
         );
         expect(headers['ai-gateway-auth-method']).toBe('oidc');
         expect(getVercelOidcToken).toHaveBeenCalled();
@@ -1509,7 +1509,7 @@ describe('GatewayProvider', () => {
       expect(credits).toEqual({ balance: '150.50', total_used: '75.25' });
       expect(GatewayFetchMetadata).toHaveBeenCalledWith(
         expect.objectContaining({
-          baseURL: 'https://ai-gateway.vercel.sh/v4/ai',
+          baseURL: 'https://ai-gateway.khulnasoft.sh/v4/ai',
           headers: expect.any(Function),
           fetch: undefined,
         }),
@@ -1519,7 +1519,7 @@ describe('GatewayProvider', () => {
     it('should pass teamIdOrSlug to the credits fetcher via the team header', async () => {
       const provider = createGateway({
         apiKey: 'vca_test-token',
-        teamIdOrSlug: 'vercel',
+        teamIdOrSlug: 'khulnasoft',
       });
 
       await provider.getCredits();
@@ -1530,7 +1530,7 @@ describe('GatewayProvider', () => {
       )();
       expect(headers).toMatchObject({
         authorization: 'Bearer vca_test-token',
-        'x-vercel-ai-gateway-team': 'vercel',
+        'x-khulnasoft-ai-gateway-team': 'khulnasoft',
       });
     });
 
@@ -1590,7 +1590,7 @@ describe('GatewayProvider', () => {
         'ai-gateway-protocol-version': '0.0.1',
         'ai-gateway-auth-method': 'api-key',
         'custom-header': 'custom-value',
-        'user-agent': 'ai-sdk-gateway/0.0.0-test',
+        'user-agent': 'ai-toolkit-gateway/0.0.0-test',
       });
     });
 
@@ -1619,7 +1619,7 @@ describe('GatewayProvider', () => {
       expect(report).toEqual(mockResults);
       expect(GatewaySpendReport).toHaveBeenCalledWith(
         expect.objectContaining({
-          baseURL: 'https://ai-gateway.vercel.sh/v4/ai',
+          baseURL: 'https://ai-gateway.khulnasoft.sh/v4/ai',
           headers: expect.any(Function),
           fetch: undefined,
         }),

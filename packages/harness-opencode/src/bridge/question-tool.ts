@@ -1,7 +1,7 @@
 import type {
   HarnessV1QuestionsToolInput,
   HarnessV1QuestionsToolOutput,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import type { QuestionInfo } from '@opencode-ai/sdk/v2';
 
 export type OpenCodeQuestionRequest = {

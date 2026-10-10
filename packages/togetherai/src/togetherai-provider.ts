@@ -2,20 +2,20 @@ import {
   OpenAICompatibleChatLanguageModel,
   OpenAICompatibleCompletionLanguageModel,
   OpenAICompatibleEmbeddingModel,
-} from '@ai-sdk/openai-compatible';
+} from '@ai-toolkit/openai-compatible';
 import type {
   EmbeddingModelV4,
   ImageModelV4,
   LanguageModelV4,
   ProviderV4,
   RerankingModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { TogetherAIRerankingModel } from './reranking/togetherai-reranking-model';
 import type { TogetherAIRerankingModelId } from './reranking/togetherai-reranking-model-options';
 import type { TogetherAIChatModelId } from './togetherai-chat-options';
@@ -136,7 +136,7 @@ export function createTogetherAI(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-togetherai/${VERSION}`,
+      `ai-toolkit-togetherai/${VERSION}`,
     );
 
   interface CommonModelConfig {

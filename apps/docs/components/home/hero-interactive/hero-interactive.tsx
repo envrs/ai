@@ -1,7 +1,7 @@
 'use client';
 
-import { cn } from '@vercel/geistdocs/utils';
-import { IconArrowUpRightSmall } from '@vercel/geistdocs/assets/icons/icon-arrow-up-right-small';
+import { cn } from '@khulnasoft/geistdocs/utils';
+import { IconArrowUpRightSmall } from '@khulnasoft/geistdocs/assets/icons/icon-arrow-up-right-small';
 import { useState } from 'react';
 import {
   HERO_EXAMPLES,
@@ -77,7 +77,7 @@ export function HeroInteractive({ className }: { className?: string }) {
         See all{' '}
         <a
           className="inline-flex items-center font-medium text-gray-1000 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/ai-gateway/models"
+          href="https://khulnasoft.com/ai-gateway/models"
           rel="noopener noreferrer"
           target="_blank"
         >

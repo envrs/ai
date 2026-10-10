@@ -142,7 +142,7 @@ export const generateMetadata = async ({
     notFound();
   }
 
-  const description = `Use the ${tool.name} tool in your AI SDK agent with just a few lines of code.`;
+  const description = `Use the ${tool.name} tool in your ai-toolkit agent with just a few lines of code.`;
 
   return {
     title: tool.name,

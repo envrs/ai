@@ -1,7 +1,7 @@
-import { AISDKError } from '@ai-sdk/provider';
+import { ai-toolkitError } from '@ai-toolkit/provider';
 
 const name = 'AI_HarnessError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
 /**
@@ -9,7 +9,7 @@ const symbol = Symbol.for(marker);
  * adapter. Specific failure modes (e.g. unsupported capability) extend this
  * class.
  */
-export class HarnessError extends AISDKError {
+export class HarnessError extends ai-toolkitError {
   private readonly [symbol] = true;
 
   constructor({ message, cause }: { message: string; cause?: unknown }) {
@@ -17,6 +17,6 @@ export class HarnessError extends AISDKError {
   }
 
   static isInstance(error: unknown): error is HarnessError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }

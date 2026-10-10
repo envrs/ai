@@ -393,7 +393,7 @@ function resolveDeepAgentsModelId({
   return configuredModel;
 }
 
-// LangChain reports some built-in tool args wrapped as `{ input: "<json>" }`; unwrap to the inner JSON so AI SDK validates the real shape.
+// LangChain reports some built-in tool args wrapped as `{ input: "<json>" }`; unwrap to the inner JSON so ai-toolkit validates the real shape.
 function toToolCallInput(raw: unknown): string {
   if (
     raw &&

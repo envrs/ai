@@ -1,4 +1,4 @@
-import type { JSONObject } from '@ai-sdk/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 import { isJSONSerializable } from './is-json-serializable';
 import type { Resolvable } from './resolve';
 import { SerializationError } from './serialization-error';

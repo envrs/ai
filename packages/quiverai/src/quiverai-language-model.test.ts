@@ -3,14 +3,14 @@ import {
   InvalidArgumentError,
   type LanguageModelV4,
   type LanguageModelV4Prompt,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider-utils';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it } from 'vitest';
 import { streamText, StreamProviderError } from 'ai';
 import { createQuiverAI } from './quiverai-provider';
@@ -113,7 +113,7 @@ describe('QuiverAI language model', () => {
         'x-custom': 'custom-value',
       });
       expect(
-        server.calls[0].requestUserAgent?.match(/ai-sdk-quiverai\//g),
+        server.calls[0].requestUserAgent?.match(/ai-toolkit-quiverai\//g),
       ).toHaveLength(1);
       const requestBody = await server.calls[0].requestBodyJson;
       expect(requestBody).toMatchObject({
@@ -325,9 +325,9 @@ describe('QuiverAI language model', () => {
       authorization: 'Bearer test-api-key',
       'content-type': 'application/json',
     });
-    expect(server.calls[0].requestUserAgent).toContain('ai-sdk-quiverai/');
+    expect(server.calls[0].requestUserAgent).toContain('ai-toolkit-quiverai/');
     expect(
-      server.calls[0].requestUserAgent?.match(/ai-sdk-quiverai\//g),
+      server.calls[0].requestUserAgent?.match(/ai-toolkit-quiverai\//g),
     ).toHaveLength(1);
     expect(await server.calls[0].requestBodyJson).toEqual({
       model: 'arrow-2',

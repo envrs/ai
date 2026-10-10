@@ -1,4 +1,4 @@
-import { InvalidArgumentError } from '@ai-sdk/provider';
+import { InvalidArgumentError } from '@ai-toolkit/provider';
 
 export function validateBaseURL(baseURL: string | undefined) {
   if (baseURL?.trim() === '') {

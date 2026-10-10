@@ -2,7 +2,7 @@ import type {
   DataContent,
   ReasoningFilePart,
   ReasoningPart,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { ProviderMetadata } from '../types/provider-metadata';
 import { DefaultGeneratedFile, type GeneratedFile } from './generated-file';
 
@@ -28,7 +28,7 @@ export interface ReasoningOutput {
 
   /**
    * Additional provider-specific metadata. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerMetadata?: ProviderMetadata;
@@ -48,7 +48,7 @@ export interface ReasoningFileOutput {
 
   /**
    * Additional provider-specific metadata. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerMetadata?: ProviderMetadata;

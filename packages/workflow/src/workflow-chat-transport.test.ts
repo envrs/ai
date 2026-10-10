@@ -654,7 +654,7 @@ describe('WorkflowChatTransport', () => {
         initialStartIndex: -50,
       });
 
-      // Reproduces the exact pattern from vercel/workflow#1835: a resume that
+      // Reproduces the exact pattern from khulnasoft/workflow#1835: a resume that
       // lands inside an open reasoning-0 part. The deltas + end for it should
       // be dropped; everything after the next start-step flows through.
       mockFetch.mockResolvedValueOnce({
@@ -823,7 +823,7 @@ describe('WorkflowChatTransport', () => {
       });
 
       // The resume landed between tool-input-start and tool-input-available.
-      // tool-input-available is self-contained (the AI SDK creates the part
+      // tool-input-available is self-contained (the ai-toolkit creates the part
       // from it directly), so it establishes the call id and the subsequent
       // tool-output-available must pass through instead of being dropped.
       mockFetch.mockResolvedValueOnce({

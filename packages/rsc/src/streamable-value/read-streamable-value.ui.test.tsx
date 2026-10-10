@@ -1,4 +1,4 @@
-import { delay } from '@ai-sdk/provider-utils';
+import { delay } from '@ai-toolkit/provider-utils';
 import { createStreamableValue } from './create-streamable-value';
 import { readStreamableValue } from './read-streamable-value';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';

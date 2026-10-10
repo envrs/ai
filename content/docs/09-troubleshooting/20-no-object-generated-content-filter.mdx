@@ -12,7 +12,7 @@ When using structured output generation with OpenAI, you may encounter a `NoObje
 ```typescript
 // Problematic code - incompatible schema types
 import { generateText, Output } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { z } from 'zod';
 
 const result = await generateText({
@@ -41,7 +41,7 @@ Replace `.nullish()` and `.optional()` with `.nullable()` in your Zod schemas wh
 
 ```typescript
 import { generateText, Output } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { z } from 'zod';
 
 // Correct approach - use .nullable()
@@ -72,5 +72,5 @@ console.log(result.output);
 
 ## Related Information
 
-- For more details on structured output generation, see [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- For OpenAI-specific structured output configuration, see [OpenAI Provider - Structured Outputs](/providers/ai-sdk-providers/openai#structured-outputs)
+- For more details on structured output generation, see [Generating Structured Data](/docs/ai-toolkit-core/generating-structured-data)
+- For OpenAI-specific structured output configuration, see [OpenAI Provider - Structured Outputs](/providers/ai-toolkit-providers/openai#structured-outputs)

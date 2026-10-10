@@ -1,7 +1,7 @@
 import {
   TooManyEmbeddingValuesForCallError,
   type EmbeddingModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createJsonResponseHandler,
@@ -11,7 +11,7 @@ import {
   serializeModelOptions,
   WORKFLOW_SERIALIZE,
   WORKFLOW_DESERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { googleVertexFailedResponseHandler } from './google-vertex-error';
 import {
@@ -46,7 +46,7 @@ export class GoogleVertexEmbeddingModel implements EmbeddingModelV4 {
   }
 
   // gemini-embedding-2 models only support :embedContent (one value per call),
-  // not the :predict batch endpoint. https://github.com/vercel/ai/issues/15853
+  // not the :predict batch endpoint. https://github.com/khulnasoft/ai/issues/15853
   get maxEmbeddingsPerCall(): number {
     return usesEmbedContentEndpoint(this.modelId) ? 1 : 250;
   }

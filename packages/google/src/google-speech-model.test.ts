@@ -1,8 +1,8 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { createGoogle } from './google-provider';
 import { GoogleSpeechModel } from './google-speech-model';
 import { describe, it, expect, vi } from 'vitest';
-import { convertBase64ToUint8Array } from '@ai-sdk/provider-utils';
+import { convertBase64ToUint8Array } from '@ai-toolkit/provider-utils';
 
 vi.mock('./version', () => ({
   VERSION: '0.0.0-test',
@@ -190,10 +190,10 @@ describe('doGenerate', () => {
   it('should send the text and the default voice', async () => {
     prepareJsonResponse();
 
-    await model.doGenerate({ text: 'Hello from the AI SDK!' });
+    await model.doGenerate({ text: 'Hello from the ai-toolkit!' });
 
     expect(await server.calls[0].requestBodyJson).toStrictEqual({
-      contents: [{ role: 'user', parts: [{ text: 'Hello from the AI SDK!' }] }],
+      contents: [{ role: 'user', parts: [{ text: 'Hello from the ai-toolkit!' }] }],
       generationConfig: {
         responseModalities: ['AUDIO'],
         speechConfig: {
@@ -206,7 +206,7 @@ describe('doGenerate', () => {
   it('should use the provided voice', async () => {
     prepareJsonResponse();
 
-    await model.doGenerate({ text: 'Hello from the AI SDK!', voice: 'Puck' });
+    await model.doGenerate({ text: 'Hello from the ai-toolkit!', voice: 'Puck' });
 
     expect(await server.calls[0].requestBodyJson).toMatchObject({
       generationConfig: {
@@ -228,7 +228,7 @@ describe('doGenerate', () => {
     });
 
     await provider.speech('gemini-2.5-flash-preview-tts').doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       headers: {
         'Custom-Request-Header': 'request-header-value',
       },
@@ -241,14 +241,14 @@ describe('doGenerate', () => {
       'custom-request-header': 'request-header-value',
     });
     expect(server.calls[0].requestUserAgent).toContain(
-      'ai-sdk-google/0.0.0-test',
+      'ai-toolkit-google/0.0.0-test',
     );
   });
 
   it('should wrap PCM audio in a WAV container by default', async () => {
     prepareJsonResponse();
 
-    const result = await model.doGenerate({ text: 'Hello from the AI SDK!' });
+    const result = await model.doGenerate({ text: 'Hello from the ai-toolkit!' });
     const audio = result.audio as Uint8Array;
 
     // 44-byte WAV header + 8 bytes PCM payload.
@@ -274,7 +274,7 @@ describe('doGenerate', () => {
   it('should derive the WAV sample rate from the response mime type', async () => {
     prepareJsonResponse({ mimeType: 'audio/L16;rate=16000' });
 
-    const result = await model.doGenerate({ text: 'Hello from the AI SDK!' });
+    const result = await model.doGenerate({ text: 'Hello from the ai-toolkit!' });
     const audio = result.audio as Uint8Array;
 
     expect(dataView(audio).getUint32(24, true)).toBe(16000);
@@ -284,7 +284,7 @@ describe('doGenerate', () => {
     prepareJsonResponse();
 
     const result = await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       outputFormat: 'pcm',
     });
 
@@ -298,7 +298,7 @@ describe('doGenerate', () => {
     prepareJsonResponse();
 
     const result = await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       speed: 1.5,
       language: 'en',
     });
@@ -432,7 +432,7 @@ describe('doGenerate', () => {
   it('should expose sample rate and mime type in provider metadata', async () => {
     prepareJsonResponse();
 
-    const result = await model.doGenerate({ text: 'Hello from the AI SDK!' });
+    const result = await model.doGenerate({ text: 'Hello from the ai-toolkit!' });
 
     expect(result.providerMetadata).toStrictEqual({
       google: { sampleRate: 24000, mimeType: 'audio/L16;rate=24000' },
@@ -442,7 +442,7 @@ describe('doGenerate', () => {
   it('should return empty audio when no inline data is present', async () => {
     prepareJsonResponse({ parts: [{ text: 'no audio here' }] });
 
-    const result = await model.doGenerate({ text: 'Hello from the AI SDK!' });
+    const result = await model.doGenerate({ text: 'Hello from the ai-toolkit!' });
 
     expect(result.audio).toStrictEqual(new Uint8Array(0));
   });
@@ -461,7 +461,7 @@ describe('doGenerate', () => {
     });
 
     const result = await customModel.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
     });
 
     expect(result.response).toMatchObject({
@@ -475,7 +475,7 @@ describe('doGenerate', () => {
     prepareJsonResponse();
 
     const beforeDate = new Date();
-    const result = await model.doGenerate({ text: 'Hello from the AI SDK!' });
+    const result = await model.doGenerate({ text: 'Hello from the ai-toolkit!' });
     const afterDate = new Date();
 
     expect(result.response.timestamp.getTime()).toBeGreaterThanOrEqual(
@@ -490,7 +490,7 @@ describe('doGenerate', () => {
   it('should have no warnings on the happy path', async () => {
     prepareJsonResponse();
 
-    const result = await model.doGenerate({ text: 'Hello from the AI SDK!' });
+    const result = await model.doGenerate({ text: 'Hello from the ai-toolkit!' });
 
     expect(result.warnings).toEqual([]);
   });

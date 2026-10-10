@@ -4,7 +4,7 @@ import {
   type Experimental_DecisionModelV4 as DecisionModelV4,
   type Experimental_DecisionModelV4Answer as DecisionModelV4Answer,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createJsonResponseHandler,
@@ -17,7 +17,7 @@ import {
   WORKFLOW_DESERIALIZE,
   type FetchFunction,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   typesafeDecisionResponseSchema,
   typesafeFailedResponseHandler,
@@ -118,7 +118,7 @@ export class DecisionTypeSafeAiModel implements DecisionModelV4 {
             {
               Authorization: `Bearer ${loadApiKey({ apiKey: undefined, environmentVariableName: 'TYPESAFE_AI_API_KEY', description: 'TypeSafe' })}`,
             },
-            `ai-sdk-typesafe-ai/${VERSION}`,
+            `ai-toolkit-typesafe-ai/${VERSION}`,
           )
         : await resolve(this.config.headers);
     const {

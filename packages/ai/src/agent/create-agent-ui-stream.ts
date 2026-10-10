@@ -4,7 +4,7 @@ import type {
   Experimental_SandboxSession as SandboxSession,
   Tool,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type {
   GenerateTextOnStepEndCallback,
   GenerateTextOnStepFinishCallback,

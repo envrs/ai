@@ -1,10 +1,10 @@
 import fs from 'node:fs';
 
-import { convertUint8ArrayToBase64 } from '@ai-sdk/provider-utils';
+import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { describe, it, expect, vi } from 'vitest';
 import { createGoogle } from '../google-provider';
 import { GoogleSpeechTranslationModel } from './google-speech-translation-model';

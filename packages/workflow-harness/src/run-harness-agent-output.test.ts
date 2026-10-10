@@ -5,8 +5,8 @@ import type {
   HarnessV1PromptTurnOptions,
   HarnessV1Session,
   HarnessV1StreamPart,
-} from '@ai-sdk/harness';
-import { HarnessAgent, type HarnessAgentSession } from '@ai-sdk/harness/agent';
+} from '@ai-toolkit/harness';
+import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import { jsonSchema, Output } from 'ai';
 import { describe, expect, test, vi } from 'vitest';
 import { createHarnessWorkflowState } from './harness-workflow-state';

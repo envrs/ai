@@ -1,6 +1,6 @@
-# AI SDK - Valibot Schema Support
+# ai-toolkit - Valibot Schema Support
 
-Allows you to use [Valibot](https://valibot.dev/) schemas with AI SDK.
+Allows you to use [Valibot](https://valibot.dev/) schemas with ai-toolkit.
 
 The `valibotSchema` function supports both validation and JSON schema conversion
 for Valibot schemas.
@@ -8,14 +8,14 @@ for Valibot schemas.
 ## Setup
 
 ```bash
-npm install @ai-sdk/valibot
+npm install @ai-toolkit/valibot
 ```
 
 ## Example
 
 ```ts
-import { anthropic } from '@ai-sdk/anthropic';
-import { valibotSchema } from '@ai-sdk/valibot';
+import { anthropic } from '@ai-toolkit/anthropic';
+import { valibotSchema } from '@ai-toolkit/valibot';
 import { generateText, Output } from 'ai';
 import * as v from 'valibot';
 

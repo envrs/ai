@@ -2,7 +2,7 @@ import type {
   Experimental_VideoModelV3,
   Experimental_VideoModelV4,
   SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 /**
  * A video model can be a string (model ID) or a video model object.

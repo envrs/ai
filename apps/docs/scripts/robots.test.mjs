@@ -16,8 +16,8 @@ let moduleId = 0;
 async function robotsWithEnv(overrides = {}) {
   const env = {
     VERCEL_ENV: 'production',
-    VERCEL_PROJECT_PRODUCTION_URL: 'ai-sdk-docs.vercel.sh',
-    NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: 'ai-sdk.dev',
+    VERCEL_PROJECT_PRODUCTION_URL: 'ai-toolkit-docs.vercel.sh',
+    NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: 'ai-toolkit.dev',
     ...overrides,
   };
   const previous = Object.fromEntries(
@@ -45,7 +45,7 @@ async function robotsWithEnv(overrides = {}) {
 
 const indexable = {
   rules: { userAgent: '*', allow: '/' },
-  sitemap: 'https://ai-sdk.dev/sitemap.xml',
+  sitemap: 'https://ai-toolkit.dev/sitemap.xml',
 };
 const blocked = { rules: { userAgent: '*', disallow: '/' } };
 
@@ -55,7 +55,7 @@ test('production allows indexing before the canonical domain is transferred', as
 
 test('production allows indexing after the canonical domain is transferred', async () => {
   assert.deepEqual(
-    await robotsWithEnv({ VERCEL_PROJECT_PRODUCTION_URL: 'ai-sdk.dev' }),
+    await robotsWithEnv({ VERCEL_PROJECT_PRODUCTION_URL: 'ai-toolkit.dev' }),
     indexable,
   );
 });
@@ -63,7 +63,7 @@ test('production allows indexing after the canonical domain is transferred', asy
 test('the canonical URL can include its HTTPS scheme', async () => {
   assert.deepEqual(
     await robotsWithEnv({
-      NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: 'https://ai-sdk.dev',
+      NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: 'https://ai-toolkit.dev',
     }),
     indexable,
   );
@@ -79,12 +79,12 @@ test('production remains blocked without the expected canonical origin', async (
   for (const canonicalUrl of [
     undefined,
     'not a valid URL',
-    'ai-sdk-docs.vercel.sh',
-    'http://ai-sdk.dev',
+    'ai-toolkit-docs.vercel.sh',
+    'http://ai-toolkit.dev',
   ]) {
     assert.deepEqual(
       await robotsWithEnv({
-        VERCEL_PROJECT_PRODUCTION_URL: 'ai-sdk.dev',
+        VERCEL_PROJECT_PRODUCTION_URL: 'ai-toolkit.dev',
         NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: canonicalUrl,
       }),
       blocked,

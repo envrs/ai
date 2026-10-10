@@ -2,7 +2,7 @@ import path from 'node:path';
 import {
   safeParseJSON,
   type Experimental_SandboxSession,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { shellQuote } from './shell-quote';
 
 const INSTRUCTIONS_METADATA_VERSION = 1;
@@ -251,7 +251,7 @@ function resolveInstructionsFilePath({
   const base = path.posix.basename(targetPath);
   const metadataPath = path.posix.join(
     dir,
-    `.${base}.ai-sdk-harness-instructions.json`,
+    `.${base}.ai-toolkit-harness-instructions.json`,
   );
 
   return { targetPath, metadataPath };
@@ -274,7 +274,7 @@ async function readInstructionsMetadata({
   const parsed = await safeParseJSON({ text: content });
   if (!parsed.success || !isInstructionsMetadata(parsed.value)) {
     throw new Error(
-      `Invalid AI SDK harness instructions metadata: ${metadataPath}`,
+      `Invalid ai-toolkit harness instructions metadata: ${metadataPath}`,
     );
   }
   return parsed.value;

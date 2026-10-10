@@ -7,7 +7,7 @@ import type {
   LanguageModelV4StreamResult,
   SharedV4ProviderMetadata,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createEventSourceResponseHandler,
@@ -19,7 +19,7 @@ import {
   WORKFLOW_SERIALIZE,
   type FetchFunction,
   type ParseResult,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { openaiFailedResponseHandler } from '../openai-error';
 import {
   createOpenAIProviderStreamError,

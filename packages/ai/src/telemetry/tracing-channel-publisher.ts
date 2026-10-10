@@ -1,7 +1,7 @@
 import type * as diagnosticsChannelModule from 'node:diagnostics_channel';
 import type * as asyncHooksModule from 'node:async_hooks';
 import {
-  AI_SDK_TELEMETRY_TRACING_CHANNEL,
+  ai-toolkit_TELEMETRY_TRACING_CHANNEL,
   type TelemetryTracingChannelMessage,
 } from './tracing-channel';
 import { isNodeRuntime } from '../util/is-node-runtime';
@@ -54,7 +54,7 @@ function loadBuiltinModule<T>(id: string): T | undefined {
 }
 
 /**
- * Runs an async operation inside the AI SDK telemetry tracing channel when
+ * Runs an async operation inside the ai-toolkit telemetry tracing channel when
  * tracing subscribers may exist. Without Node diagnostics-channel support,
  * without tracingChannel support, or when the runtime reports no subscribers,
  * this is a direct pass-through.
@@ -69,7 +69,7 @@ export async function runWithTracingChannelSpan<T>(
 ): Promise<T> {
   const diagnosticsChannel = await loadDiagnosticsChannel();
   const tracingChannel = diagnosticsChannel?.tracingChannel?.(
-    AI_SDK_TELEMETRY_TRACING_CHANNEL,
+    ai-toolkit_TELEMETRY_TRACING_CHANNEL,
   );
 
   if (tracingChannel == null || tracingChannel.hasSubscribers === false) {
@@ -145,7 +145,7 @@ export function openTelemetryChannelSpanContext({
   );
   const asyncHooks = loadBuiltinModule<AsyncHooks>('node:async_hooks');
   const tracingChannel = diagnosticsChannel?.tracingChannel?.(
-    AI_SDK_TELEMETRY_TRACING_CHANNEL,
+    ai-toolkit_TELEMETRY_TRACING_CHANNEL,
   );
 
   if (

@@ -1,5 +1,5 @@
-import { InvalidArgumentError } from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { InvalidArgumentError } from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import fs from 'node:fs';
 import { describe, expect, it, vi } from 'vitest';
 import { createMistral } from './mistral-provider';
@@ -108,7 +108,7 @@ describe('doGenerate', () => {
           temperature: 0.2,
           timestampGranularities: ['segment', 'word'],
           diarize: true,
-          contextBias: ['Vercel', 'AI_SDK'],
+          contextBias: ['khulnasoft', 'ai-toolkit'],
         },
       },
     });
@@ -120,8 +120,8 @@ describe('doGenerate', () => {
     ]);
     expect(capturedFormData!.get('diarize')).toBe('true');
     expect(capturedFormData!.getAll('context_bias')).toEqual([
-      'Vercel',
-      'AI_SDK',
+      'khulnasoft',
+      'ai-toolkit',
     ]);
   });
 
@@ -132,7 +132,7 @@ describe('doGenerate', () => {
         mediaType: 'audio/wav',
         providerOptions: {
           mistral: {
-            contextBias: ['AI SDK'],
+            contextBias: ['ai-toolkit'],
           },
         },
       }),
@@ -202,7 +202,7 @@ describe('doGenerate', () => {
       'custom-request-header': 'request-header-value',
     });
     expect(server.calls[0].requestUserAgent).toContain(
-      'ai-sdk-mistral/0.0.0-test',
+      'ai-toolkit-mistral/0.0.0-test',
     );
     expect(customFetch.mock.calls[0]![1]?.signal).toBe(abortController.signal);
   });

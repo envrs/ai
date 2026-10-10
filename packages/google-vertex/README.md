@@ -1,25 +1,25 @@
-# AI SDK - Google Vertex AI Provider
+# ai-toolkit - Google Vertex AI Provider
 
-The **[Google Vertex provider](https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex)** for the [AI SDK](https://ai-sdk.dev/docs) contains language model support for the [Google Vertex AI](https://cloud.google.com/vertex-ai) APIs.
+The **[Google Vertex provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/google-vertex)** for the [ai-toolkit](https://ai-toolkit.dev/docs) contains language model support for the [Google Vertex AI](https://cloud.google.com/vertex-ai) APIs.
 
 This library includes a Google Vertex Anthropic provider and a Google Vertex MaaS provider. These providers closely follow the core Google Vertex library's usage patterns. See more in the [Google Vertex Anthropic Provider](#google-vertex-anthropic-provider) and [Google Vertex MaaS Provider](#google-vertex-maas-provider) sections below.
 
-> **Deploying to Vercel?** With Vercel's AI Gateway you can access Google Vertex AI (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://vercel.com/ai-gateway).
+> **Deploying to khulnasoft?** With khulnasoft's AI Gateway you can access Google Vertex AI (and hundreds of models from other providers) — no additional packages, API keys, or extra cost. [Get started with AI Gateway](https://khulnasoft.com/ai-gateway).
 
 ## Setup
 
-The Google Vertex provider is available in the `@ai-sdk/google-vertex` module. You can install it with
+The Google Vertex provider is available in the `@ai-toolkit/google-vertex` module. You can install it with
 
 ```bash
-npm i @ai-sdk/google-vertex
+npm i @ai-toolkit/google-vertex
 ```
 
 ## Skill for Coding Agents
 
-If you use coding agents such as Claude Code or Cursor, we highly recommend adding the AI SDK skill to your repository:
+If you use coding agents such as Claude Code or Cursor, we highly recommend adding the ai-toolkit skill to your repository:
 
 ```shell
-npx skills add vercel/ai
+npx skills add khulnasoft/ai
 ```
 
 ## Google Vertex Provider
@@ -28,10 +28,10 @@ The Google Vertex provider has two different authentication implementations depe
 
 ### Node.js Runtime
 
-The Node.js runtime is the default runtime supported by the AI SDK. You can use the default provider instance to generate text with the `gemini-3.8-flash` model like this:
+The Node.js runtime is the default runtime supported by the ai-toolkit. You can use the default provider instance to generate text with the `gemini-3.8-flash` model like this:
 
 ```ts
-import { vertex } from '@ai-sdk/google-vertex';
+import { vertex } from '@ai-toolkit/google-vertex';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -44,12 +44,12 @@ This provider supports all standard Google Cloud authentication options through 
 
 ### Edge Runtime
 
-The Edge runtime is supported through the `@ai-sdk/google-vertex/edge` module. Note the additional sub-module path `/edge` required to differentiate the Edge provider from the Node.js provider.
+The Edge runtime is supported through the `@ai-toolkit/google-vertex/edge` module. Note the additional sub-module path `/edge` required to differentiate the Edge provider from the Node.js provider.
 
 You can use the default provider instance to generate text with the `gemini-3.8-flash` model like this:
 
 ```ts
-import { vertex } from '@ai-sdk/google-vertex/edge';
+import { vertex } from '@ai-toolkit/google-vertex/edge';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -67,7 +67,7 @@ The Google Vertex Anthropic provider is available for both Node.js and Edge runt
 ### Node.js Runtime
 
 ```ts
-import { vertexAnthropic } from '@ai-sdk/google-vertex/anthropic';
+import { vertexAnthropic } from '@ai-toolkit/google-vertex/anthropic';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -79,7 +79,7 @@ const { text } = await generateText({
 ### Edge Runtime
 
 ```ts
-import { vertexAnthropic } from '@ai-sdk/google-vertex/anthropic/edge';
+import { vertexAnthropic } from '@ai-toolkit/google-vertex/anthropic/edge';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -97,7 +97,7 @@ The Google Vertex Anthropic provider supports prompt caching for Anthropic Claud
 To enable prompt caching, you can use the `cacheControl` property in the settings. Here is an example demonstrating how to enable prompt caching:
 
 ```ts
-import { vertexAnthropic } from '@ai-sdk/google-vertex/anthropic';
+import { vertexAnthropic } from '@ai-toolkit/google-vertex/anthropic';
 import { generateText } from 'ai';
 import fs from 'node:fs';
 
@@ -146,7 +146,7 @@ main().catch(console.error);
 You can create a custom provider instance using the `createVertex` function. This allows you to specify additional configuration options. Below is an example with the default Node.js provider which includes a `googleAuthOptions` object.
 
 ```ts
-import { createVertex } from '@ai-sdk/google-vertex';
+import { createVertex } from '@ai-toolkit/google-vertex';
 import { generateText } from 'ai';
 
 const customProvider = createVertex({
@@ -171,7 +171,7 @@ The `googleAuthOptions` object is not present in the Edge provider options but c
 The Edge provider supports a `googleCredentials` option rather than `googleAuthOptions`. This can be used to specify the Google Cloud service account credentials and will take precedence over the environment variables used otherwise.
 
 ```ts
-import { createVertex } from '@ai-sdk/google-vertex/edge';
+import { createVertex } from '@ai-toolkit/google-vertex/edge';
 import { generateText } from 'ai';
 
 const customProvider = createVertex({
@@ -194,7 +194,7 @@ const { text } = await generateText({
 The Google Vertex Anthropic provider custom configuration is analogous to the above:
 
 ```ts
-import { createVertexAnthropic } from '@ai-sdk/google-vertex/anthropic';
+import { createVertexAnthropic } from '@ai-toolkit/google-vertex/anthropic';
 import { generateText } from 'ai';
 
 const customProvider = createVertexAnthropic({
@@ -211,7 +211,7 @@ const { text } = await generateText({
 And for the Edge runtime:
 
 ```ts
-import { vertexAnthropic } from '@ai-sdk/google-vertex/anthropic/edge';
+import { vertexAnthropic } from '@ai-toolkit/google-vertex/anthropic/edge';
 import { generateText } from 'ai';
 
 const customProvider = createVertexAnthropic({
@@ -232,7 +232,7 @@ The Google Vertex MaaS (Model as a Service) provider offers access to partner an
 ### Node.js Runtime
 
 ```ts
-import { vertexMaas } from '@ai-sdk/google-vertex/maas';
+import { vertexMaas } from '@ai-toolkit/google-vertex/maas';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -244,7 +244,7 @@ const { text } = await generateText({
 ### Edge Runtime
 
 ```ts
-import { vertexMaas } from '@ai-sdk/google-vertex/maas/edge';
+import { vertexMaas } from '@ai-toolkit/google-vertex/maas/edge';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -256,7 +256,7 @@ const { text } = await generateText({
 ### Google Vertex MaaS Provider Custom Configuration
 
 ```ts
-import { createVertexMaas } from '@ai-sdk/google-vertex/maas';
+import { createVertexMaas } from '@ai-toolkit/google-vertex/maas';
 import { generateText } from 'ai';
 
 const customProvider = createVertexMaas({
@@ -273,7 +273,7 @@ const { text } = await generateText({
 And for the Edge runtime:
 
 ```ts
-import { createVertexMaas } from '@ai-sdk/google-vertex/maas/edge';
+import { createVertexMaas } from '@ai-toolkit/google-vertex/maas/edge';
 import { generateText } from 'ai';
 
 const customProvider = createVertexMaas({
@@ -289,4 +289,4 @@ const { text } = await generateText({
 
 ## Documentation
 
-Please check out the **[Google Vertex provider](https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex)** for more information.
+Please check out the **[Google Vertex provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/google-vertex)** for more information.

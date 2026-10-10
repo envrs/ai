@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { Experimental_SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession } from '@ai-toolkit/provider-utils';
 import { writeInstructions } from './write-instructions';
 
 function makeSandbox() {
@@ -56,7 +56,7 @@ describe('writeInstructions', () => {
     expect(
       JSON.parse(
         state.files.get(
-          '/home/user/.AGENTS.md.ai-sdk-harness-instructions.json',
+          '/home/user/.AGENTS.md.ai-toolkit-harness-instructions.json',
         )!,
       ),
     ).toEqual({
@@ -91,7 +91,7 @@ describe('writeInstructions', () => {
     expect(
       JSON.parse(
         state.files.get(
-          '/home/user/.AGENTS.md.ai-sdk-harness-instructions.json',
+          '/home/user/.AGENTS.md.ai-toolkit-harness-instructions.json',
         )!,
       ),
     ).toEqual({
@@ -134,7 +134,7 @@ describe('writeInstructions', () => {
     expect(
       JSON.parse(
         state.files.get(
-          '/home/user/.AGENTS.md.ai-sdk-harness-instructions.json',
+          '/home/user/.AGENTS.md.ai-toolkit-harness-instructions.json',
         )!,
       ),
     ).toEqual({
@@ -202,7 +202,7 @@ describe('writeInstructions', () => {
       '# Project Guidelines\n\nBe thorough.\n',
     );
     expect(
-      state.files.has('/home/user/.AGENTS.md.ai-sdk-harness-instructions.json'),
+      state.files.has('/home/user/.AGENTS.md.ai-toolkit-harness-instructions.json'),
     ).toBe(false);
   });
 
@@ -230,7 +230,7 @@ describe('writeInstructions', () => {
     });
     expect(state.files.has('/home/user/AGENTS.md')).toBe(false);
     expect(
-      state.files.has('/home/user/.AGENTS.md.ai-sdk-harness-instructions.json'),
+      state.files.has('/home/user/.AGENTS.md.ai-toolkit-harness-instructions.json'),
     ).toBe(false);
   });
 
@@ -314,10 +314,10 @@ describe('writeInstructions', () => {
       'Claude instructions.\n',
     );
     expect(
-      state.files.has('/home/user/.AGENTS.md.ai-sdk-harness-instructions.json'),
+      state.files.has('/home/user/.AGENTS.md.ai-toolkit-harness-instructions.json'),
     ).toBe(true);
     expect(
-      state.files.has('/home/user/.CLAUDE.md.ai-sdk-harness-instructions.json'),
+      state.files.has('/home/user/.CLAUDE.md.ai-toolkit-harness-instructions.json'),
     ).toBe(true);
 
     await writeInstructions({
@@ -329,13 +329,13 @@ describe('writeInstructions', () => {
 
     expect(state.files.has('/home/user/CLAUDE.md')).toBe(false);
     expect(
-      state.files.has('/home/user/.CLAUDE.md.ai-sdk-harness-instructions.json'),
+      state.files.has('/home/user/.CLAUDE.md.ai-toolkit-harness-instructions.json'),
     ).toBe(false);
     expect(state.files.get('/home/user/AGENTS.md')).toBe(
       'Codex instructions.\n',
     );
     expect(
-      state.files.has('/home/user/.AGENTS.md.ai-sdk-harness-instructions.json'),
+      state.files.has('/home/user/.AGENTS.md.ai-toolkit-harness-instructions.json'),
     ).toBe(true);
   });
 
@@ -357,7 +357,7 @@ describe('writeInstructions', () => {
     );
     expect(
       state.files.has(
-        '/home/user/.claude/.CLAUDE.md.ai-sdk-harness-instructions.json',
+        '/home/user/.claude/.CLAUDE.md.ai-toolkit-harness-instructions.json',
       ),
     ).toBe(true);
   });

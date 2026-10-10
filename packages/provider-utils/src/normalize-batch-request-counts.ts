@@ -1,4 +1,4 @@
-import type { Experimental_BatchV4Status as BatchV4Status } from '@ai-sdk/provider';
+import type { Experimental_BatchV4Status as BatchV4Status } from '@ai-toolkit/provider';
 
 /**
  * Normalizes complete batch request counts.

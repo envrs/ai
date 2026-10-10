@@ -15,8 +15,8 @@ jobs:
       - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         id: app-token
         with:
-          app-id: ${{ vars.VERCEL_AI_SDK_GITHUB_APP_CLIENT_ID }}
-          private-key: ${{ secrets.VERCEL_AI_SDK_GITHUB_APP_PRIVATE_KEY_PKCS8 }}
+          app-id: ${{ vars.VERCEL_ai-toolkit_GITHUB_APP_CLIENT_ID }}
+          private-key: ${{ secrets.VERCEL_ai-toolkit_GITHUB_APP_PRIVATE_KEY_PKCS8 }}
 
       - name: Create issue
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
@@ -47,7 +47,7 @@ jobs:
             }
 
             await github.rest.issues.create({
-              owner: 'vercel',
+              owner: 'khulnasoft',
               repo: 'ai',
               title: `🤖 Provider model changes - ${provider}`,
               body: lines.join('\n'),

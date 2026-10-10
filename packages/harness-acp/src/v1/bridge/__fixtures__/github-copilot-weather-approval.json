@@ -3,7 +3,7 @@
     "type": "update",
     "value": {
       "toolCallId": "call_Hiiu3DojfZiulcj6OujlcpEq",
-      "title": "ai-sdk-harness-tools-get_weather",
+      "title": "ai-toolkit-harness-tools-get_weather",
       "kind": "read",
       "status": "pending",
       "rawInput": {

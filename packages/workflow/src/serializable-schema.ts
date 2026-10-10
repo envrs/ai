@@ -5,19 +5,19 @@
  * serialized by the workflow runtime. These helpers extract JSON Schema from
  * schemas, then reconstruct tools with Ajv validation inside step functions.
  *
- * Uses `asSchema()` from `@ai-sdk/provider-utils` for JSON Schema extraction,
+ * Uses `asSchema()` from `@ai-toolkit/provider-utils` for JSON Schema extraction,
  * which supports Standard Schema compatible libraries. When libraries adopt
  * `~standard.jsonSchema` (Standard Schema v2), extraction can be simplified
  * to use that interface directly.
  */
-import type { JSONObject, JSONSchema7 } from '@ai-sdk/provider';
+import type { JSONObject, JSONSchema7 } from '@ai-toolkit/provider';
 import {
   asSchema,
   type Experimental_SandboxSession as SandboxSession,
   type InferToolSetContext,
   jsonSchema,
   type Tool,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { dynamicTool, tool, type ToolSet } from 'ai';
 import Ajv, { type ErrorObject } from 'ajv';
 import Ajv2020 from 'ajv/dist/2020.js';
@@ -161,7 +161,7 @@ function formatAjvError(error: ErrorObject): string {
  *
  * Wraps each tool's JSON Schema with `jsonSchema()` and validates tool call
  * arguments against the schema using Ajv. This provides runtime type safety
- * equivalent to using zod schemas directly with the AI SDK.
+ * equivalent to using zod schemas directly with the ai-toolkit.
  */
 export function resolveSerializableTools(
   tools: Record<string, SerializableToolDef>,

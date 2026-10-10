@@ -419,7 +419,7 @@ describe('createEmitStreamEvent', () => {
     });
     emitStreamEvent({
       type: 'session.next.tool.success',
-      properties: { callID: 'tool-1', result: 'vercel/next.js' },
+      properties: { callID: 'tool-1', result: 'khulnasoft/next.js' },
     });
 
     expect(emitted).toMatchInlineSnapshot(`
@@ -434,7 +434,7 @@ describe('createEmitStreamEvent', () => {
         },
         {
           "dynamic": true,
-          "result": "vercel/next.js",
+          "result": "khulnasoft/next.js",
           "toolCallId": "tool-1",
           "toolName": "context7_resolve-library-id",
           "type": "tool-result",

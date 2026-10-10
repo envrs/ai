@@ -1,5 +1,5 @@
 import { citationSchema } from '../types/citation';
-import { TypeValidationError, type JSONObject } from '@ai-sdk/provider';
+import { TypeValidationError, type JSONObject } from '@ai-toolkit/provider';
 import {
   lazySchema,
   safeValidateTypes,
@@ -8,7 +8,7 @@ import {
   type FlexibleSchema,
   type MaybePromiseLike,
   type Tool,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { InvalidArgumentError } from '../error';
 import { jsonValueSchema } from '../types/json-value';
 import { getOwn } from '../util/get-own';

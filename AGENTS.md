@@ -1,13 +1,13 @@
 # AGENTS.md
 
-This file provides context for AI coding assistants (Cursor, GitHub Copilot, Claude Code, etc.) working with the Vercel AI SDK repository.
+This file provides context for AI coding assistants (Cursor, GitHub Copilot, Claude Code, etc.) working with the khulnasoft ai-toolkit repository.
 
 ## Project Overview
 
-The **AI SDK** by Vercel is a TypeScript/JavaScript SDK for building AI-powered applications with Large Language Models (LLMs). It provides a unified interface for multiple AI providers and framework integrations.
+The **ai-toolkit** by khulnasoft is a TypeScript/JavaScript SDK for building AI-powered applications with Large Language Models (LLMs). It provides a unified interface for multiple AI providers and framework integrations.
 
-- **Repository**: https://github.com/vercel/ai
-- **Documentation**: https://ai-sdk.dev/docs
+- **Repository**: https://github.com/khulnasoft/ai
+- **Documentation**: https://ai-toolkit.dev/docs
 - **License**: Apache-2.0
 
 ## Repository Structure
@@ -19,8 +19,8 @@ This is a **monorepo** using pnpm workspaces and Turborepo.
 | Directory                 | Description                                                                          |
 | ------------------------- | ------------------------------------------------------------------------------------ |
 | `packages/ai`             | Main SDK package (`ai` on npm)                                                       |
-| `packages/provider`       | Provider interface specifications (`@ai-sdk/provider`)                               |
-| `packages/provider-utils` | Shared utilities for providers and core (`@ai-sdk/provider-utils`)                   |
+| `packages/provider`       | Provider interface specifications (`@ai-toolkit/provider`)                               |
+| `packages/provider-utils` | Shared utilities for providers and core (`@ai-toolkit/provider-utils`)                   |
 | `packages/<provider>`     | AI provider implementations (openai, anthropic, google, azure, amazon-bedrock, etc.) |
 | `packages/<framework>`    | UI framework integrations (react, vue, svelte, angular, rsc)                         |
 | `packages/codemod`        | Automated migrations for major releases                                              |
@@ -32,9 +32,9 @@ This is a **monorepo** using pnpm workspaces and Turborepo.
 ### Core Package Dependencies
 
 ```
-ai ─────────────────┬──▶ @ai-sdk/provider-utils ──▶ @ai-sdk/provider
+ai ─────────────────┬──▶ @ai-toolkit/provider-utils ──▶ @ai-toolkit/provider
                     │
-@ai-sdk/<provider> ─┴──▶ @ai-sdk/provider-utils ──▶ @ai-sdk/provider
+@ai-toolkit/<provider> ─┴──▶ @ai-toolkit/provider-utils ──▶ @ai-toolkit/provider
 ```
 
 ## Development Setup
@@ -112,10 +112,10 @@ pnpm tsx src/stream-text/openai/basic.ts    # Run a specific example
 | --------------------------------------------- | --------------------------------------------- |
 | Core functions (`generateText`, `streamText`) | `ai`                                          |
 | Tool/schema utilities (`tool`, `jsonSchema`)  | `ai`                                          |
-| Provider implementations                      | `@ai-sdk/<provider>` (e.g., `@ai-sdk/openai`) |
-| Error classes                                 | `ai` (re-exports from `@ai-sdk/provider`)     |
-| Provider type interfaces (`LanguageModelV4`)  | `@ai-sdk/provider`                            |
-| Provider implementation utilities             | `@ai-sdk/provider-utils`                      |
+| Provider implementations                      | `@ai-toolkit/<provider>` (e.g., `@ai-toolkit/openai`) |
+| Error classes                                 | `ai` (re-exports from `@ai-toolkit/provider`)     |
+| Provider type interfaces (`LanguageModelV4`)  | `@ai-toolkit/provider`                            |
+| Provider implementation utilities             | `@ai-toolkit/provider-utils`                      |
 
 ## Coding Standards
 
@@ -150,7 +150,7 @@ import * as z4 from 'zod/v4';
 ### JSON parsing
 
 Never use `JSON.parse` directly in production code to prevent security risks.
-Instead use `parseJSON` or `safeParseJSON` from `@ai-sdk/provider-utils`.
+Instead use `parseJSON` or `safeParseJSON` from `@ai-toolkit/provider-utils`.
 
 ### Type Checking
 
@@ -171,16 +171,16 @@ This ensures your changes don't introduce type errors across the codebase, inclu
 
 ## Error Pattern
 
-Errors extend `AISDKError` from `@ai-sdk/provider` and use a marker pattern for `instanceof` checks:
+Errors extend `ai-toolkitError` from `@ai-toolkit/provider` and use a marker pattern for `instanceof` checks:
 
 ```typescript
-import { AISDKError } from '@ai-sdk/provider';
+import { ai-toolkitError } from '@ai-toolkit/provider';
 
 const name = 'AI_MyError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class MyError extends AISDKError {
+export class MyError extends ai-toolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   constructor({ message, cause }: { message: string; cause?: unknown }) {
@@ -188,7 +188,7 @@ export class MyError extends AISDKError {
   }
 
   static isInstance(error: unknown): error is MyError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }
 ```
@@ -214,9 +214,9 @@ For an overview of the project's key philosophies that guide decision making, se
 
 The SDK uses a layered provider architecture following the adapter pattern:
 
-1. **Specifications** (`@ai-sdk/provider`): Defines interfaces like `LanguageModelV4`
-2. **Utilities** (`@ai-sdk/provider-utils`): Shared code for implementing providers
-3. **Providers** (`@ai-sdk/<provider>`): Concrete implementations for each AI service
+1. **Specifications** (`@ai-toolkit/provider`): Defines interfaces like `LanguageModelV4`
+2. **Utilities** (`@ai-toolkit/provider-utils`): Shared code for implementing providers
+3. **Providers** (`@ai-toolkit/<provider>`): Concrete implementations for each AI service
 4. **Core** (`ai`): High-level functions like `generateText`, `streamText`, `generateObject`
 
 For a focused conceptual walkthrough of AI functions, model specifications, and provider implementations, see `architecture/provider-abstraction.md`.
@@ -239,7 +239,7 @@ For a focused conceptual walkthrough of AI functions, model specifications, and 
 - Every `getFromApi` call in this repository must set `validateUrl` explicitly
   (the option is optional for backwards compatibility with external callers, but
   omitting it skips validation — never rely on that; the
-  `ai-sdk/require-validate-url` oxlint rule fails `pnpm check` otherwise). Use
+  `ai-toolkit/require-validate-url` oxlint rule fails `pnpm check` otherwise). Use
   `true` when the URL comes from a provider response body (image/audio/video
   download or a polling URL); use `false` only for URLs built from a configured
   `baseURL`.

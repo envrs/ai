@@ -4,7 +4,7 @@ import {
   type Experimental_SpeechTranslationModelV4StreamOptions as SpeechTranslationModelV4StreamOptions,
   type Experimental_SpeechTranslationModelV4StreamPart as SpeechTranslationModelV4StreamPart,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   connectToWebSocket,
@@ -18,7 +18,7 @@ import {
   waitForWebSocketBufferDrain,
   type WebSocketConnection,
   type WebSocketLike,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { OpenAIConfig } from '../openai-config';
 import {
   openAISpeechTranslationModelOptions,

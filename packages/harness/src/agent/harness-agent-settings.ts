@@ -17,7 +17,7 @@ import type {
   MaybePromiseLike,
   SystemModelMessage,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type {
   ActiveTools,
   AgentCallParameters,
@@ -125,7 +125,7 @@ export type HarnessAgentSettings<
   /**
    * The harness adapter driving the underlying agent runtime. Its
    * `builtinTools` are merged with the user-defined `tools` and exposed to
-   * AI SDK consumers in the typed `tool-call` stream.
+   * ai-toolkit consumers in the typed `tool-call` stream.
    */
   readonly harness: THarness;
 
@@ -349,7 +349,7 @@ export type HarnessAgentSettings<
   readonly permissionMode?: HarnessAgentPermissionMode;
 
   /**
-   * Per custom-tool approval statuses. This mirrors AI SDK `toolApproval`
+   * Per custom-tool approval statuses. This mirrors ai-toolkit `toolApproval`
    * object configuration for host-executed tools, without callback support.
    *
    * `not-applicable` and `approved` run the tool, `user-approval` pauses the
@@ -375,10 +375,10 @@ export type HarnessAgentSettings<
   readonly onSandboxSession?: HarnessAgentSandboxConfig['onSession'];
 
   /**
-   * Telemetry configuration. The harness drives AI SDK's pluggable
+   * Telemetry configuration. The harness drives ai-toolkit's pluggable
    * `Telemetry` integration contract from the turn lifecycle, so a harness turn
    * appears in a consumer's traces with the same span shape as `streamText`.
-   * Register an integration here (e.g. `@ai-sdk/otel`) or globally via
+   * Register an integration here (e.g. `@ai-toolkit/otel`) or globally via
    * `registerTelemetry`. The harness itself stays OpenTelemetry-agnostic.
    */
   readonly telemetry?: TelemetryOptions;

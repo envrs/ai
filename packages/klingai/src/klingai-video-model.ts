@@ -1,5 +1,5 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   NoSuchModelError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4CallOptions as VideoModelV4CallOptions,
@@ -7,7 +7,7 @@ import {
   type Experimental_VideoModelV4OperationStartResult as VideoModelV4OperationStartResult,
   type Experimental_VideoModelV4OperationStatusResult as VideoModelV4OperationStatusResult,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertUint8ArrayToBase64,
@@ -19,7 +19,7 @@ import {
   postJsonToApi,
   type Resolvable,
   resolve,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { klingaiFailedResponseHandler } from './klingai-error';
 import {
@@ -287,7 +287,7 @@ export class KlingAIVideoModel implements VideoModelV4 {
 
     const taskId = createResponse.data?.task_id;
     if (!taskId) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'KLINGAI_VIDEO_GENERATION_ERROR',
         message: `No task_id returned from KlingAI API. Response: ${JSON.stringify(createResponse)}`,
       });
@@ -414,7 +414,7 @@ export class KlingAIVideoModel implements VideoModelV4 {
     currentDate: Date,
   ) {
     if (!finalResponse?.data?.task_result?.videos?.length) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'KLINGAI_VIDEO_GENERATION_ERROR',
         message: `No videos in response. Response: ${JSON.stringify(finalResponse)}`,
       });
@@ -445,7 +445,7 @@ export class KlingAIVideoModel implements VideoModelV4 {
     }
 
     if (videos.length === 0) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'KLINGAI_VIDEO_GENERATION_ERROR',
         message: 'No valid video URLs in response',
       });
@@ -739,7 +739,7 @@ export class KlingAIVideoModel implements VideoModelV4 {
       !klingaiOptions?.characterOrientation ||
       !klingaiOptions?.mode
     ) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'KLINGAI_VIDEO_MISSING_OPTIONS',
         message:
           'KlingAI Motion Control requires providerOptions.klingai with videoUrl, characterOrientation, and mode.',

@@ -1,12 +1,12 @@
-import { AISDKError, getErrorMessage } from '@ai-sdk/provider';
+import { ai-toolkitError, getErrorMessage } from '@ai-toolkit/provider';
 import type { InvalidToolInputError } from './invalid-tool-input-error';
 import type { NoSuchToolError } from './no-such-tool-error';
 
 const name = 'AI_ToolCallRepairError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class ToolCallRepairError extends AISDKError {
+export class ToolCallRepairError extends ai-toolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly originalError: NoSuchToolError | InvalidToolInputError;
@@ -25,6 +25,6 @@ export class ToolCallRepairError extends AISDKError {
   }
 
   static isInstance(error: unknown): error is ToolCallRepairError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }

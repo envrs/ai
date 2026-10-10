@@ -1,17 +1,17 @@
 import { createBedrockMantle } from './bedrock-mantle-provider';
-import { NoSuchModelError } from '@ai-sdk/provider';
+import { NoSuchModelError } from '@ai-toolkit/provider';
 import {
   OpenAIChatLanguageModel,
   OpenAIResponsesLanguageModel,
-} from '@ai-sdk/openai/internal';
-import type * as ProviderUtilsModule from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/openai/internal';
+import type * as ProviderUtilsModule from '@ai-toolkit/provider-utils';
 import {
   createApiKeyFetchFunction,
   createSigV4FetchFunction,
 } from '../amazon-bedrock-sigv4-fetch';
 import { vi, describe, beforeEach, it, expect } from 'vitest';
 
-vi.mock('@ai-sdk/provider-utils', async importOriginal => {
+vi.mock('@ai-toolkit/provider-utils', async importOriginal => {
   const actual = await importOriginal<typeof ProviderUtilsModule>();
   return {
     ...actual,
@@ -36,8 +36,8 @@ vi.mock('@ai-sdk/provider-utils', async importOriginal => {
   };
 });
 
-vi.mock('@ai-sdk/openai/internal', async () => {
-  const originalModule = await vi.importActual('@ai-sdk/openai/internal');
+vi.mock('@ai-toolkit/openai/internal', async () => {
+  const originalModule = await vi.importActual('@ai-toolkit/openai/internal');
   return {
     ...originalModule,
     OpenAIChatLanguageModel: vi.fn(),
@@ -268,7 +268,7 @@ describe('bedrock-mantle-provider', () => {
 
     const resolvedHeaders = config.headers!();
     expect(resolvedHeaders).toMatchObject(customHeaders);
-    expect(resolvedHeaders['user-agent']).toContain('ai-sdk-amazon-bedrock/');
+    expect(resolvedHeaders['user-agent']).toContain('ai-toolkit-amazon-bedrock/');
   });
 
   it('should use createApiKeyFetchFunction when apiKey is provided', () => {

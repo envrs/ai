@@ -3,12 +3,12 @@ import {
   type LanguageModelV4ProviderTool,
   type LanguageModelV4Prompt,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertToBase64,
   getTopLevelMediaType,
   resolveFullMediaType,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   asOpenResponsesExtensionRecord,
   getOpenResponsesExtensionItemTypes,

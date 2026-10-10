@@ -72,7 +72,7 @@ export const WeatherSearch = () => (
 
 /**
  * Play/pause card around a looping generative-UI simulation (ported from the
- * legacy ai-sdk.dev app).
+ * legacy ai-toolkit.dev app).
  */
 export const CardPlayer = ({
   description,

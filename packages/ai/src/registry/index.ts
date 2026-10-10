@@ -1,4 +1,4 @@
-import type { ProviderV3, ProviderV4 } from '@ai-sdk/provider';
+import type { ProviderV3, ProviderV4 } from '@ai-toolkit/provider';
 import type { DecisionProviderRegistry } from './provider-registry';
 
 export { customProvider } from './custom-provider';

@@ -6,7 +6,7 @@ import {
   type LanguageModelV4Message,
   type LanguageModelV4Prompt,
   type SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertBase64ToUint8Array,
   convertToBase64,
@@ -19,7 +19,7 @@ import {
   secureJsonParse,
   validateTypes,
   type ToolNameMapping,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   anthropicFallbackContentSchema,
   anthropicReasoningMetadataSchema,

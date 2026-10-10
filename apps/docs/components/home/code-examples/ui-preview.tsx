@@ -1,9 +1,9 @@
 'use client';
 
-import { IconBell } from '@vercel/geistdocs/assets/icons/icon-bell';
-import { IconCheckCircleFill } from '@vercel/geistdocs/assets/icons/icon-check-circle-fill';
-import { IconLocation } from '@vercel/geistdocs/assets/icons/icon-location';
-import { IconSun } from '@vercel/geistdocs/assets/icons/icon-sun';
+import { IconBell } from '@khulnasoft/geistdocs/assets/icons/icon-bell';
+import { IconCheckCircleFill } from '@khulnasoft/geistdocs/assets/icons/icon-check-circle-fill';
+import { IconLocation } from '@khulnasoft/geistdocs/assets/icons/icon-location';
+import { IconSun } from '@khulnasoft/geistdocs/assets/icons/icon-sun';
 import type { ReactNode } from 'react';
 import {
   AssistantBubble,

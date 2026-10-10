@@ -1,7 +1,7 @@
 import type {
   HarnessV1BuiltinToolFiltering,
   HarnessV1NetworkSandboxSession,
-} from '@ai-sdk/harness';
+} from '@ai-toolkit/harness';
 import type {
   AgentMessage,
   AgentRunInput,
@@ -31,7 +31,7 @@ const clineMock = vi.hoisted(() => ({
   outputText: '',
 }));
 
-vi.mock('@ai-sdk/harness/utils', async importOriginal => ({
+vi.mock('@ai-toolkit/harness/utils', async importOriginal => ({
   ...(await importOriginal()),
   resolveSandboxHomeDir: vi.fn(async () => '/sandbox/home'),
   shellQuote: vi.fn((value: string) => value),
@@ -739,8 +739,8 @@ describe('createClineSession model configuration', () => {
           headers: {
             'x-custom': 'custom',
             'x-agent': 'agent',
-            'User-Agent': 'ai-sdk-harness-cline/0.0.0-test',
-            'x-client-app': 'ai-sdk-harness-cline/0.0.0-test',
+            'User-Agent': 'ai-toolkit-harness-cline/0.0.0-test',
+            'x-client-app': 'ai-toolkit-harness-cline/0.0.0-test',
           },
         },
         {
@@ -751,8 +751,8 @@ describe('createClineSession model configuration', () => {
           headers: {
             'x-custom': 'custom',
             'x-agent': 'agent',
-            'User-Agent': 'ai-sdk-harness-cline/0.0.0-test',
-            'x-client-app': 'ai-sdk-harness-cline/0.0.0-test',
+            'User-Agent': 'ai-toolkit-harness-cline/0.0.0-test',
+            'x-client-app': 'ai-toolkit-harness-cline/0.0.0-test',
           },
         },
       ]);
@@ -769,7 +769,7 @@ describe('createClineSession model configuration', () => {
     const session = await createSession({
       settings: {
         authEnv: {
-          AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh',
+          AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
         },
         apiKey: 'direct-key',
       },
@@ -780,10 +780,10 @@ describe('createClineSession model configuration', () => {
         {
           providerId: 'cline',
           apiKeyEnv: [],
-          baseUrl: 'https://ai-gateway.vercel.sh/v1',
+          baseUrl: 'https://ai-gateway.khulnasoft.sh/v1',
           headers: {
-            'User-Agent': 'ai-sdk-harness-cline/0.0.0-test',
-            'x-client-app': 'ai-sdk-harness-cline/0.0.0-test',
+            'User-Agent': 'ai-toolkit-harness-cline/0.0.0-test',
+            'x-client-app': 'ai-toolkit-harness-cline/0.0.0-test',
           },
         },
       ]);
@@ -1155,7 +1155,7 @@ async function createSession(
       isAuthenticationEnvironmentOverride: false,
       ...input.settings,
     },
-    clientApp: 'ai-sdk-harness-cline/0.0.0-test',
+    clientApp: 'ai-toolkit-harness-cline/0.0.0-test',
     isResume: input.isResume ?? false,
     ...(input.builtinToolFiltering
       ? { builtinToolFiltering: input.builtinToolFiltering }

@@ -152,7 +152,7 @@ const titleOf = mdx => {
  * of clean entry names for the parent meta.json.
  *
  * Folders that contain both an `index.mdx` and an `overview.mdx` drop the
- * index (legacy ai-sdk.dev card-grid landing pages): Geistdocs' sidebar
+ * index (legacy ai-toolkit.dev card-grid landing pages): Geistdocs' sidebar
  * surfaces folder index pages as a synthetic "Overview" item, which would
  * duplicate the real Overview page. `next.config.ts` redirects the folder
  * URL to the overview page. Frontmatter signals on the dropped index (such

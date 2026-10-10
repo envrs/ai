@@ -1,12 +1,12 @@
-import type { LanguageModelV4CallOptions } from '@ai-sdk/provider';
+import type { LanguageModelV4CallOptions } from '@ai-toolkit/provider';
 import {
   type Experimental_SandboxSession as SandboxSession,
   tool,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { mockSandboxSessionFileStubs } from '../test/mock-sandbox';
 import { z } from 'zod/v4';
@@ -133,7 +133,7 @@ describe('createAgentUIStreamResponse', () => {
             "abortSignal": undefined,
             "frequencyPenalty": undefined,
             "headers": {
-              "user-agent": "ai-sdk-agent/tool-loop",
+              "user-agent": "ai-toolkit-agent/tool-loop",
             },
             "includeRawChunks": false,
             "maxOutputTokens": undefined,

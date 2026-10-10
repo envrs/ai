@@ -1,7 +1,7 @@
 import type {
   EmbeddingModelV4,
   SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createJsonErrorResponseHandler,
@@ -15,7 +15,7 @@ import {
   WORKFLOW_DESERIALIZE,
   zodSchema,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from './zod';
 import { asGatewayError } from './errors';
 import { parseAuthMethod } from './errors/parse-auth-method';

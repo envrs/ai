@@ -1,4 +1,4 @@
-import { GeistdocsDocsLayout } from '@vercel/geistdocs/layout';
+import { GeistdocsDocsLayout } from '@khulnasoft/geistdocs/layout';
 import { getRootLang } from '@/lib/geistdocs/root-params';
 import type { ReactNode } from 'react';
 import { VersionSelect } from '@/components/docs/version-select';

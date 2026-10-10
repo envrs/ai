@@ -1,4 +1,4 @@
-import type { SharedV4ProviderMetadata } from '@ai-sdk/provider';
+import type { SharedV4ProviderMetadata } from '@ai-toolkit/provider';
 
 /**
  * Extracts provider-specific metadata from API responses.

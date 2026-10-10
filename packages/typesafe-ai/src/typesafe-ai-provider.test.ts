@@ -1,4 +1,4 @@
-import { NoSuchModelError } from '@ai-sdk/provider';
+import { NoSuchModelError } from '@ai-toolkit/provider';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { createTypeSafeAi, typeSafeAi } from './typesafe-ai-provider';
 

@@ -1,6 +1,6 @@
-import { JSONParseError } from '@ai-sdk/provider';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { JSONParseError } from '@ai-toolkit/provider';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { createOpenAI } from './openai-provider';
 
@@ -345,7 +345,7 @@ describe('OpenAI batch service', () => {
         type: 'unsupported',
         feature: 'batch result conversion for tool "image"',
         details:
-          'OpenAI may return output for this tool that AI SDK text batches cannot currently convert.',
+          'OpenAI may return output for this tool that ai-toolkit text batches cannot currently convert.',
       },
     });
   });
@@ -1056,7 +1056,7 @@ describe('OpenAI batch service', () => {
                         id: 'ws_test',
                         status,
                         ...(withAction
-                          ? { action: { type: 'search', query: 'AI SDK' } }
+                          ? { action: { type: 'search', query: 'ai-toolkit' } }
                           : {}),
                       },
                     ],
@@ -1301,7 +1301,7 @@ describe('OpenAI batch service', () => {
           status: 'failed',
           error: {
             message:
-              'OpenAI returned an unsupported "image_generation_call" output item in an AI SDK text batch.',
+              'OpenAI returned an unsupported "image_generation_call" output item in an ai-toolkit text batch.',
             code: 'unsupported_content',
           },
         },

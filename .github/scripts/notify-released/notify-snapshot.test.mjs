@@ -16,11 +16,11 @@ test('selectSnapshotPackages selects and sorts public packages from the current 
           version: '0.0.0-12345678-20260811180950',
         },
         {
-          name: '@ai-sdk/provider',
+          name: '@ai-toolkit/provider',
           version: '4.0.0',
         },
         {
-          name: '@ai-sdk/code-mode',
+          name: '@ai-toolkit/code-mode',
           version: '0.0.0-12345678-20260811180950',
         },
         {
@@ -29,7 +29,7 @@ test('selectSnapshotPackages selects and sorts public packages from the current 
           private: true,
         },
         {
-          name: '@ai-sdk/other-snapshot',
+          name: '@ai-toolkit/other-snapshot',
           version: '0.0.0-87654321-20260811180950',
         },
       ],
@@ -37,7 +37,7 @@ test('selectSnapshotPackages selects and sorts public packages from the current 
     ),
     [
       {
-        name: '@ai-sdk/code-mode',
+        name: '@ai-toolkit/code-mode',
         version: '0.0.0-12345678-20260811180950',
       },
       {
@@ -124,7 +124,7 @@ test('createSnapshotComment lists npm-linked package versions and the workflow r
     createSnapshotComment(
       [
         {
-          name: '@ai-sdk/code-mode',
+          name: '@ai-toolkit/code-mode',
           version: '0.0.0-12345678-20260811180950',
         },
       ],
@@ -134,7 +134,7 @@ test('createSnapshotComment lists npm-linked package versions and the workflow r
 
 | Package | Version |
 | --- | --- |
-| \`@ai-sdk/code-mode\` | [0.0.0-12345678-20260811180950](https://www.npmjs.com/package/%40ai-sdk%2Fcode-mode/v/0.0.0-12345678-20260811180950) |
+| \`@ai-toolkit/code-mode\` | [0.0.0-12345678-20260811180950](https://www.npmjs.com/package/%40ai-toolkit%2Fcode-mode/v/0.0.0-12345678-20260811180950) |
 
 [View workflow run](https://github.com/vercel/ai/actions/runs/123)`,
   );

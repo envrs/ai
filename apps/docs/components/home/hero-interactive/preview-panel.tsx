@@ -1,8 +1,8 @@
 'use client';
 
-import { cn } from '@vercel/geistdocs/utils';
-import { IconSpeakerOff } from '@vercel/geistdocs/assets/icons/icon-speaker-off';
-import { IconSpeakerVolumeLoud } from '@vercel/geistdocs/assets/icons/icon-speaker-volume-loud';
+import { cn } from '@khulnasoft/geistdocs/utils';
+import { IconSpeakerOff } from '@khulnasoft/geistdocs/assets/icons/icon-speaker-off';
+import { IconSpeakerVolumeLoud } from '@khulnasoft/geistdocs/assets/icons/icon-speaker-volume-loud';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   getChatPreview,

@@ -1,4 +1,4 @@
-import { InvalidResponseDataError } from '@ai-sdk/provider';
+import { InvalidResponseDataError } from '@ai-toolkit/provider';
 import { readFileSync } from 'node:fs';
 import { expect, it, vi } from 'vitest';
 import { createAnthropic } from './anthropic-provider';

@@ -3,12 +3,12 @@ import {
   type TranscriptionModelV4,
   type SpeechModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { DeepgramTranscriptionModel } from './deepgram-transcription-model';
 import type { DeepgramTranscriptionModelId } from './deepgram-transcription-options';
 import { DeepgramSpeechModel } from './deepgram-speech-model';
@@ -73,7 +73,7 @@ export function createDeepgram(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-deepgram/${VERSION}`,
+      `ai-toolkit-deepgram/${VERSION}`,
     );
 
   const createTranscriptionModel = (modelId: DeepgramTranscriptionModelId) =>

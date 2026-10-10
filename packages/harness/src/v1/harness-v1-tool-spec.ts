@@ -1,4 +1,4 @@
-import type { JSONSchema7 } from '@ai-sdk/provider';
+import type { JSONSchema7 } from '@ai-toolkit/provider';
 
 /**
  * Description of a host-defined tool that the harness should make available

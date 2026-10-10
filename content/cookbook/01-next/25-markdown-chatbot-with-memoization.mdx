@@ -1,6 +1,6 @@
 ---
 title: Markdown Chatbot with Streamdown
-description: Render streaming Markdown responses with Streamdown, Next.js, and the AI SDK.
+description: Render streaming Markdown responses with Streamdown, Next.js, and the ai-toolkit.
 tags: ['next', 'streaming', 'chatbot', 'markdown']
 ---
 
@@ -34,7 +34,7 @@ Pass each text part to `Streamdown`. Set `isAnimating` when that part is streami
 ```tsx filename='app/page.tsx'
 'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { DefaultChatTransport } from 'ai';
 import { useState } from 'react';
 import { Streamdown } from 'streamdown';

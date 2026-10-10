@@ -1,8 +1,8 @@
 import {
   InvalidResponseDataError,
   type EmbeddingModelV4,
-} from '@ai-sdk/provider';
-import { EXPERIMENTAL_EMBEDDING_MODEL_PROVIDER_OPTIONS_TRANSFORMER } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { EXPERIMENTAL_EMBEDDING_MODEL_PROVIDER_OPTIONS_TRANSFORMER } from '@ai-toolkit/provider-utils';
 import assert from 'node:assert';
 import {
   afterEach,

@@ -60,16 +60,16 @@ export {};
 declare const key: unique symbol;
 type Warning = { type: 'other'; message: string };
 declare global {
-  interface AISDKGlobalTypes {
+  interface ai-toolkitGlobalTypes {
     [key]: {
       provider: { specificationVersion: '${isV5 ? 'v2' : 'v3'}' };
       logWarnings: ${isV5 ? '(warnings: Warning[]) => void' : '(options: { warnings: Warning[]; provider?: string; model?: string }) => void'};
       telemetry: ${isV5 ? 'never' : "{ onEnd?: (event: { version: 'v6' }) => void }"};
     };
   }
-  var AI_SDK_DEFAULT_PROVIDER: AISDKGlobalTypes[keyof AISDKGlobalTypes]['provider'] | undefined;
-  var AI_SDK_LOG_WARNINGS: AISDKGlobalTypes[keyof AISDKGlobalTypes]['logWarnings'] | undefined | false;
-  ${isV5 ? '' : "var AI_SDK_TELEMETRY_INTEGRATIONS: Array<AISDKGlobalTypes[keyof AISDKGlobalTypes]['telemetry']> | undefined;"}
+  var ai-toolkit_DEFAULT_PROVIDER: ai-toolkitGlobalTypes[keyof ai-toolkitGlobalTypes]['provider'] | undefined;
+  var ai-toolkit_LOG_WARNINGS: ai-toolkitGlobalTypes[keyof ai-toolkitGlobalTypes]['logWarnings'] | undefined | false;
+  ${isV5 ? '' : "var ai-toolkit_TELEMETRY_INTEGRATIONS: Array<ai-toolkitGlobalTypes[keyof ai-toolkitGlobalTypes]['telemetry']> | undefined;"}
 }
 `,
         );
@@ -78,22 +78,22 @@ declare global {
       files.set(
         path.resolve('test/global-assignments.ts'),
         `
-globalThis.AI_SDK_DEFAULT_PROVIDER = { specificationVersion: 'v4' };
+globalThis.ai-toolkit_DEFAULT_PROVIDER = { specificationVersion: 'v4' };
 // @ts-expect-error Invalid providers remain rejected.
-globalThis.AI_SDK_DEFAULT_PROVIDER = { specificationVersion: 'invalid' };
+globalThis.ai-toolkit_DEFAULT_PROVIDER = { specificationVersion: 'invalid' };
 const logger = (options: { warnings: Array<{ type: 'other'; message: string }> }) => {};
-globalThis.AI_SDK_LOG_WARNINGS = logger;
-globalThis.AI_SDK_LOG_WARNINGS = false;
+globalThis.ai-toolkit_LOG_WARNINGS = logger;
+globalThis.ai-toolkit_LOG_WARNINGS = false;
 // @ts-expect-error Only callbacks, false, or undefined are accepted.
-globalThis.AI_SDK_LOG_WARNINGS = true;
-globalThis.AI_SDK_TELEMETRY_INTEGRATIONS = [{ onEnd: (event: { version: 'v7' }) => {} }];
+globalThis.ai-toolkit_LOG_WARNINGS = true;
+globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = [{ onEnd: (event: { version: 'v7' }) => {} }];
 // @ts-expect-error Invalid telemetry remains rejected.
-globalThis.AI_SDK_TELEMETRY_INTEGRATIONS = [false];
-${versions.includes('v5') ? "globalThis.AI_SDK_LOG_WARNINGS = (warnings: Array<{ type: 'other'; message: string }>) => {};" : ''}
+globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = [false];
+${versions.includes('v5') ? "globalThis.ai-toolkit_LOG_WARNINGS = (warnings: Array<{ type: 'other'; message: string }>) => {};" : ''}
 ${
   versions.length === 0
     ? `
-globalThis.AI_SDK_LOG_WARNINGS = ({ warnings, provider, model }) => {
+globalThis.ai-toolkit_LOG_WARNINGS = ({ warnings, provider, model }) => {
   const message: string = warnings[0].message;
   // @ts-expect-error Warning options retain their contextual types.
   const invalid: number = warnings[0].message;

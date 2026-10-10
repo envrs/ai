@@ -1,4 +1,4 @@
-import type { JSONObject } from '@ai-sdk/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 import type { SpeechModelResponseMetadata } from '../types/speech-model-response-metadata';
 import type { Warning } from '../types/warning';
 import type { GeneratedAudioFile } from './generated-audio-file';

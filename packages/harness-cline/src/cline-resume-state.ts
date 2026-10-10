@@ -3,7 +3,7 @@ import path from 'node:path';
 import {
   safeParseJSON,
   type Experimental_SandboxSession,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { AgentMessage } from '@cline/agents';
 import { z } from 'zod/v4';
 
@@ -46,7 +46,7 @@ export function resolveClinePrivateSessionDirectory(input: {
   const sessionKey = createHash('sha256').update(input.sessionId).digest('hex');
   const privateSessionDir = path.posix.join(
     input.sandboxHomeDir,
-    '.ai-sdk',
+    '.ai-toolkit',
     'harness-cline',
     sessionKey,
   );

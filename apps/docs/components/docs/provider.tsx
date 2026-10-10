@@ -1,6 +1,6 @@
 'use client';
 
-import { GeistdocsProvider } from '@vercel/geistdocs/layout';
+import { GeistdocsProvider } from '@khulnasoft/geistdocs/layout';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import type { ComponentProps } from 'react';
 

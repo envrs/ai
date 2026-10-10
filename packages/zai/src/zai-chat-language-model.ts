@@ -1,4 +1,4 @@
-import { OpenAICompatibleChatLanguageModel } from '@ai-sdk/openai-compatible';
+import { OpenAICompatibleChatLanguageModel } from '@ai-toolkit/openai-compatible';
 import type {
   LanguageModelV4,
   LanguageModelV4CallOptions,
@@ -7,14 +7,14 @@ import type {
   LanguageModelV4StreamPart,
   LanguageModelV4StreamResult,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   parseProviderOptions,
   serializeModelOptions,
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { ZaiChatModelId } from './zai-chat-options';
 import { zaiLanguageModelChatOptions } from './zai-chat-language-model-options';
 import { zaiErrorStructure } from './zai-error';

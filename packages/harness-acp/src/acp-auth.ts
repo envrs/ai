@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto';
 import {
   getAiGatewayAuthFromEnv,
   isHarnessAuthenticationEnvironment,
-} from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness/utils';
 import type {
   ACPAuthentication,
   ACPAuthenticationMode as ACPV1AuthenticationMode,
@@ -10,7 +10,7 @@ import type {
 } from './v1';
 import type { ACPResolvedProviderAuthentication } from './v1/bridge/acp-v1-bridge-environment';
 
-const DEFAULT_AI_GATEWAY_BASE_URL = 'https://ai-gateway.vercel.sh';
+const DEFAULT_AI_GATEWAY_BASE_URL = 'https://ai-gateway.khulnasoft.sh';
 
 export type ACPAuthenticationMode = ACPV1AuthenticationMode;
 
@@ -102,8 +102,8 @@ export function resolveACPProviderAuthentication({
   readonly env: Record<string, string>;
 } {
   const clientAppEnv = {
-    AI_SDK_ACP_CLIENT_APP_NAME: auth.clientApp.name,
-    AI_SDK_ACP_CLIENT_APP_VERSION: auth.clientApp.version,
+    ai-toolkit_ACP_CLIENT_APP_NAME: auth.clientApp.name,
+    ai-toolkit_ACP_CLIENT_APP_VERSION: auth.clientApp.version,
   };
   const resolvedEnv = resolveACPAuthenticationEnvironment({
     auth: auth.mode,
@@ -161,8 +161,8 @@ export function resolveACPProviderAuthentication({
           : providerAuthentication.gateway.env,
     },
     env: {
-      AI_SDK_ACP_GATEWAY_API_KEY: apiKey,
-      AI_SDK_ACP_GATEWAY_BASE_URL: gateway.baseUrl,
+      ai-toolkit_ACP_GATEWAY_API_KEY: apiKey,
+      ai-toolkit_ACP_GATEWAY_BASE_URL: gateway.baseUrl,
       ...clientAppEnv,
     },
   };

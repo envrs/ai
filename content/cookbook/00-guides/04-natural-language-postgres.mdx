@@ -14,17 +14,17 @@ The application will:
 - Explain query components in plain English
 - Create a chart to visualise query results
 
-You can find a completed version of this project at [natural-language-postgres.vercel.app](https://natural-language-postgres.vercel.app).
+You can find a completed version of this project at [natural-language-postgres.khulnasoft.app](https://natural-language-postgres.khulnasoft.app).
 
 ## Project setup
 
 This project uses the following stack:
 
 - [Next.js](https://nextjs.org) (App Router)
-- [AI SDK](/docs)
+- [ai-toolkit](/docs)
 - [OpenAI](https://openai.com)
 - [Zod](https://zod.dev)
-- [Postgres](https://www.postgresql.org/) with [Neon through the Vercel Marketplace](https://vercel.com/marketplace/neon)
+- [Postgres](https://www.postgresql.org/) with [Neon through the khulnasoft Marketplace](https://khulnasoft.com/marketplace/neon)
 - [shadcn-ui](https://ui.shadcn.com) and [TailwindCSS](https://tailwindcss.com) for styling
 - [Recharts](https://recharts.org) for data visualization
 
@@ -36,7 +36,7 @@ Clone the starter repository and check out the `starter` branch:
 
 <Snippet
   text={[
-    'git clone https://github.com/vercel-labs/natural-language-postgres',
+    'git clone https://github.com/khulnasoft-labs/natural-language-postgres',
     'cd natural-language-postgres',
     'git checkout starter',
   ]}
@@ -76,16 +76,16 @@ POSTGRES_DATABASE="..."
 <Note>
   You will need a Postgres database to complete this tutorial. If you don't have
   Postgres setup on your local machine you can: - Create a free Postgres
-  database with Vercel (recommended - see instructions below); or - Follow [this
+  database with khulnasoft (recommended - see instructions below); or - Follow [this
   guide](https://www.prisma.io/dataguide/postgresql/setting-up-a-local-postgresql-database)
   to set it up locally
 </Note>
 
-#### Setting up Postgres with Vercel
+#### Setting up Postgres with khulnasoft
 
-To set up a Postgres instance on your Vercel account:
+To set up a Postgres instance on your khulnasoft account:
 
-1. Go to [Vercel.com](https://vercel.com) and make sure you're logged in
+1. Go to [khulnasoft.com](https://khulnasoft.com) and make sure you're logged in
 1. Navigate to your team homepage
 1. Click on the **Integrations** tab
 1. Click **Browse Marketplace**
@@ -173,7 +173,7 @@ As a reminder, this application will have three main features:
 2. Create a chart from the query results
 3. Explain SQL queries in plain English
 
-For each of these features, you'll use the AI SDK via [ Server Actions ](https://react.dev/reference/rsc/server-actions) to interact with OpenAI's GPT-6 Astra and GPT-6 Luna models. Server Actions are a powerful React Server Component feature that allows you to call server-side functions directly from your frontend code.
+For each of these features, you'll use the ai-toolkit via [ Server Actions ](https://react.dev/reference/rsc/server-actions) to interact with OpenAI's GPT-6 Astra and GPT-6 Luna models. Server Actions are a powerful React Server Component feature that allows you to call server-side functions directly from your frontend code.
 
 Let's start with generating a SQL query from natural language.
 
@@ -210,7 +210,7 @@ Only retrieval queries are allowed.
 For things like industry, company names and other string fields, use the ILIKE operator and convert both the search term and the field to lowercase using LOWER() function. For example: LOWER(industry) ILIKE LOWER('%search_term%').
 
 Note: select_investors is a comma-separated list of investors. Trim whitespace to ensure you're grouping properly. Note, some fields may be null or have only one value.
-When answering questions about a specific field, ensure you are selecting the identifying column (ie. what is Vercel's valuation would select company and valuation').
+When answering questions about a specific field, ensure you are selecting the identifying column (ie. what is khulnasoft's valuation would select company and valuation').
 
 The industries available are:
 - healthcare & life sciences
@@ -259,7 +259,7 @@ Add a new action. This action should be asynchronous and take in one parameter -
 export const generateQuery = async (input: string) => {};
 ```
 
-In this action, you'll use the `generateText` function with `Output` from the AI SDK which allows you to constrain the model's output to a pre-defined schema. This process, sometimes called structured output, ensures the model returns only the SQL query without any additional prefixes, explanations, or formatting that would require manual parsing.
+In this action, you'll use the `generateText` function with `Output` from the ai-toolkit which allows you to constrain the model's output to a pre-defined schema. This process, sometimes called structured output, ensures the model returns only the SQL query without any additional prefixes, explanations, or formatting that would require manual parsing.
 
 ```ts filename="app/actions.ts"
 /* ...other imports... */

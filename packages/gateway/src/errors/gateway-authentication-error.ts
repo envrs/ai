@@ -1,7 +1,7 @@
 import { GatewayError } from './gateway-error';
 
 const name = 'GatewayAuthenticationError';
-const marker = `vercel.ai.gateway.error.${name}`;
+const marker = `khulnasoft.ai.gateway.error.${name}`;
 const symbol = Symbol.for(marker);
 
 /**
@@ -53,28 +53,28 @@ export class GatewayAuthenticationError extends GatewayError {
     if (apiKeyProvided) {
       contextualMessage = `AI Gateway authentication failed: Invalid API key or token.
 
-Create a new API key: https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%2Fapi-keys
+Create a new API key: https://khulnasoft.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%2Fapi-keys
 
-Provide an API key or Vercel access token via 'apiKey' option or 'AI_GATEWAY_API_KEY' environment variable.`;
+Provide an API key or khulnasoft access token via 'apiKey' option or 'AI_GATEWAY_API_KEY' environment variable.`;
     } else if (oidcTokenProvided) {
       contextualMessage = `AI Gateway authentication failed: Invalid OIDC token.
 
-Run 'npx vercel link' to link your project, then 'vc env pull' to fetch the token.
+Run 'npx khulnasoft link' to link your project, then 'vc env pull' to fetch the token.
 
-Alternatively, use an API key: https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%2Fapi-keys
-or pass a Vercel access token via the 'apiKey' option.`;
+Alternatively, use an API key: https://khulnasoft.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%2Fapi-keys
+or pass a khulnasoft access token via the 'apiKey' option.`;
     } else {
       contextualMessage = `AI Gateway authentication failed: No authentication provided.
 
 Option 1 - API key:
-Create an API key: https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%2Fapi-keys
+Create an API key: https://khulnasoft.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%2Fapi-keys
 Provide via 'apiKey' option or 'AI_GATEWAY_API_KEY' environment variable.
 
-Option 2 - Vercel access token:
-Pass a Vercel personal access token or Vercel app access token via the 'apiKey' option.
+Option 2 - khulnasoft access token:
+Pass a khulnasoft personal access token or khulnasoft app access token via the 'apiKey' option.
 
 Option 3 - OIDC token:
-Run 'npx vercel link' to link your project, then 'vc env pull' to fetch the token.`;
+Run 'npx khulnasoft link' to link your project, then 'vc env pull' to fetch the token.`;
     }
 
     return new GatewayAuthenticationError({

@@ -1,4 +1,4 @@
-import { createLlmsRoute } from '@vercel/geistdocs/routes/llms';
+import { createLlmsRoute } from '@khulnasoft/geistdocs/routes/llms';
 import { v7Sources } from '@/lib/geistdocs/source';
 import { resolveModelPlaceholders } from '@/lib/geistdocs/model-placeholders';
 

@@ -3,7 +3,7 @@ import type {
   LanguageModelV4CallOptions,
   LanguageModelV4FunctionTool,
   LanguageModelV4ProviderTool,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { describe, expect, it, vi } from 'vitest';
 import type { PolicyClient } from '../policy-client';
 import { opaCapabilityMiddleware } from './opa-capability-middleware';

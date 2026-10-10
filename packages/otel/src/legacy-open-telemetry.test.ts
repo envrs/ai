@@ -2,13 +2,13 @@ import type {
   EmbeddingModelV4,
   LanguageModelV4StreamPart,
   LanguageModelV4Usage,
-} from '@ai-sdk/provider';
-import { tool } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { tool } from '@ai-toolkit/provider-utils';
 import {
   convertArrayToReadableStream,
   convertAsyncIterableToArray,
   mockId,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import * as assert from 'node:assert';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import {

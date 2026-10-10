@@ -2,12 +2,12 @@ import {
   NoSuchModelError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { resolveKlingAIAuthToken } from './klingai-auth';
 import { KlingAIVideoModel } from './klingai-video-model';
 import type { KlingAIVideoModelId } from './klingai-video-settings';
@@ -88,7 +88,7 @@ export function createKlingAI(
         Authorization: `Bearer ${token}`,
         ...options.headers,
       },
-      `ai-sdk-klingai/${VERSION}`,
+      `ai-toolkit-klingai/${VERSION}`,
     );
   };
 

@@ -1,5 +1,5 @@
-import type { HarnessV1BridgeToolWire } from '@ai-sdk/harness';
-import { HarnessBridgeCapabilityUnsupportedError } from '@ai-sdk/harness/bridge';
+import type { HarnessV1BridgeToolWire } from '@ai-toolkit/harness';
+import { HarnessBridgeCapabilityUnsupportedError } from '@ai-toolkit/harness/bridge';
 import type { HostToolRelay } from './host-tool-relay';
 
 /*

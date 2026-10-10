@@ -1,5 +1,5 @@
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
-import { asArray } from '@ai-sdk/provider-utils';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
+import { asArray } from '@ai-toolkit/provider-utils';
 import type { Instructions } from '../prompt/prompt';
 import type { LanguageModelMiddleware } from '../types';
 

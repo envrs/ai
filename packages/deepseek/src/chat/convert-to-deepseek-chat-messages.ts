@@ -5,14 +5,14 @@ import {
   type LanguageModelV4FilePart,
   type LanguageModelV4Prompt,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertToBase64,
   getTopLevelMediaType,
   parseProviderOptions,
   resolveFullMediaType,
   resolveProviderReference,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type {
   DeepSeekChatPrompt,
   DeepSeekContentPart,

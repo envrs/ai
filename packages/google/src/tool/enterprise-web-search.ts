@@ -2,7 +2,7 @@ import {
   createProviderExecutedToolFactory,
   lazySchema,
   zodSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 // https://cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise

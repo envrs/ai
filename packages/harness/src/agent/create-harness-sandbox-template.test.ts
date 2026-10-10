@@ -1,4 +1,4 @@
-import type { Experimental_SandboxSession as SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import { describe, expect, it, vi } from 'vitest';
 import type { HarnessV1, HarnessV1Bootstrap } from '../v1';
 import { createHarnessSandboxTemplate } from './create-harness-sandbox-template';

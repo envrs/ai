@@ -36,7 +36,7 @@ export async function fetchOssStats(fetcher: typeof fetch = fetch) {
   const getContributors = async () => {
     try {
       const response = await fetcher(
-        'https://api.github.com/repos/vercel/ai/contributors?per_page=1&anon=true',
+        'https://api.github.com/repos/khulnasoft/ai/contributors?per_page=1&anon=true',
         { signal: AbortSignal.timeout(3000) },
       );
       if (!response.ok) return FALLBACK_STATS.contributors;
@@ -57,7 +57,7 @@ export async function fetchOssStats(fetcher: typeof fetch = fetch) {
       FALLBACK_STATS.downloads,
     ),
     getCount(
-      'https://api.github.com/repos/vercel/ai',
+      'https://api.github.com/repos/khulnasoft/ai',
       'stargazers_count',
       FALLBACK_STATS.stars,
     ),

@@ -1,6 +1,6 @@
 ---
 title: Stream Text with Chat Prompt
-description: Learn how to stream text with chat prompt using the AI SDK and React Server Components.
+description: Learn how to stream text with chat prompt using the ai-toolkit and React Server Components.
 tags: ['rsc', 'chat']
 ---
 
@@ -32,7 +32,7 @@ Let's create a simple conversation between a user and a model, and place a butto
 
 import { useState } from 'react';
 import { Message, continueConversation } from './actions';
-import { readStreamableValue } from '@ai-sdk/rsc';
+import { readStreamableValue } from '@ai-toolkit/rsc';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -94,7 +94,7 @@ Now, let's implement the `continueConversation` function that will insert the us
 'use server';
 
 import { streamText } from 'ai';
-import { createStreamableValue } from '@ai-sdk/rsc';
+import { createStreamableValue } from '@ai-toolkit/rsc';
 
 export interface Message {
   role: 'user' | 'assistant';

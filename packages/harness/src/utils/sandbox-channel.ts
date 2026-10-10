@@ -2,7 +2,7 @@ import {
   safeParseJSON,
   safeValidateTypes,
   type FlexibleSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { WebSocket } from 'ws';
 import { sleep } from './sleep';
 
@@ -94,7 +94,7 @@ type BufferedEvent<TOut extends { type: string }> = {
  * copy, while the non-enumerable property leaves protocol payloads unchanged.
  */
 const sandboxChannelEventCheckpointSymbol = Symbol.for(
-  'vercel.ai.harness.sandboxChannelEventCheckpoint',
+  'khulnasoft.ai.harness.sandboxChannelEventCheckpoint',
 );
 
 type SandboxChannelEventCheckpoint = {

@@ -310,7 +310,7 @@ describe('createEmitStreamEvent', () => {
       event: 'on_tool_start',
       name: 'mcp__memory__search',
       run_id: 'mcp-run',
-      data: { input: { query: 'AI SDK' } },
+      data: { input: { query: 'ai-toolkit' } },
     });
     emitStreamEvent({
       event: 'on_tool_end',
@@ -329,7 +329,7 @@ describe('createEmitStreamEvent', () => {
       [
         {
           "dynamic": true,
-          "input": "{"query":"AI SDK"}",
+          "input": "{"query":"ai-toolkit"}",
           "nativeName": "mcp__memory__search",
           "providerExecuted": true,
           "toolCallId": "mcp-run",

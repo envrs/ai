@@ -1,8 +1,8 @@
-import type { TypeValidationError } from '@ai-sdk/provider';
+import type { TypeValidationError } from '@ai-toolkit/provider';
 import { GatewayError } from './gateway-error';
 
 const name = 'GatewayResponseError';
-const marker = `vercel.ai.gateway.error.${name}`;
+const marker = `khulnasoft.ai.gateway.error.${name}`;
 const symbol = Symbol.for(marker);
 
 /**

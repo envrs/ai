@@ -3,7 +3,7 @@ import {
   type Experimental_DecisionModelV4 as DecisionModelV4,
   type Experimental_DecisionModelV4State as DecisionModelV4State,
   type SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertUint8ArrayToBase64,
@@ -16,7 +16,7 @@ import {
   resolve,
   zodSchema,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from './zod';
 import { asGatewayError } from './errors';
 import { parseAuthMethod } from './errors/parse-auth-method';

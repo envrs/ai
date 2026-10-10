@@ -1,4 +1,4 @@
-import { createProviderExecutedToolFactory } from '@ai-sdk/provider-utils';
+import { createProviderExecutedToolFactory } from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 
 const viewXVideoOutputSchema = z.object({

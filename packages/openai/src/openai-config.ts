@@ -1,7 +1,7 @@
 import type {
   FetchFunction,
   WebSocketConstructor,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 type OpenAIHeaders = Record<string, string | undefined>;
 
@@ -21,7 +21,7 @@ export type OpenAIConfig = {
    * Whether Responses API message input items must include an explicit
    * `type: 'message'` discriminator.
    *
-   * @see https://github.com/vercel/ai/issues/20180
+   * @see https://github.com/khulnasoft/ai/issues/20180
    */
   explicitMessageItemType?: boolean;
   /**

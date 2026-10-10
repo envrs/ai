@@ -5,8 +5,8 @@ import type {
   LanguageModelV4StreamPart,
   LanguageModelV4ToolCallPart,
   LanguageModelV4ToolResultPart,
-} from '@ai-sdk/provider';
-import type { MaybePromiseLike } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import type { MaybePromiseLike } from '@ai-toolkit/provider-utils';
 
 export type OpenResponsesNamespacedType = `${string}:${string}`;
 
@@ -53,7 +53,7 @@ export type OpenResponsesExtensionStreamPart = Exclude<
 interface OpenResponsesExtensionBase {
   /**
    * Extension ID in `<implementor>.<extension>` format. For extensions that
-   * encode a provider tool, this is also the AI SDK provider-tool ID.
+   * encode a provider tool, this is also the ai-toolkit provider-tool ID.
    */
   id: LanguageModelV4ProviderTool['id'];
 
@@ -64,7 +64,7 @@ interface OpenResponsesExtensionBase {
   toolType?: OpenResponsesNamespacedType;
 
   /**
-   * Encodes an AI SDK provider tool. Return `undefined` when its arguments
+   * Encodes an ai-toolkit provider tool. Return `undefined` when its arguments
    * cannot be encoded. The adapter adds the registered tool type and omits a
    * specific tool choice that selects the omitted tool.
    */
@@ -91,7 +91,7 @@ type OpenResponsesExtensionItemCodec<Type extends string> = {
   itemTypes?: readonly OpenResponsesNamespacedType[];
 
   /**
-   * Decodes a completed registered item into AI SDK content parts. The adapter
+   * Decodes a completed registered item into ai-toolkit content parts. The adapter
    * adds a custom replay part containing the original item and reference
    * metadata to the returned parts.
    */
@@ -101,7 +101,7 @@ type OpenResponsesExtensionItemCodec<Type extends string> = {
   }): MaybePromiseLike<OpenResponsesExtensionContentPart[] | undefined>;
 
   /**
-   * Encodes an AI SDK history part when no original wire item is available.
+   * Encodes an ai-toolkit history part when no original wire item is available.
    * Every returned item must use one of the registered item types.
    */
   encodeInputItem?(options: {

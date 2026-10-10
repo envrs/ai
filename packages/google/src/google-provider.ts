@@ -12,7 +12,7 @@ import type {
   SpeechModelV4,
   Experimental_SpeechTranslationModelV4 as SpeechTranslationModelV4,
   TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   generateId,
   loadApiKey,
@@ -20,8 +20,8 @@ import {
   withUserAgentSuffix,
   type FetchFunction,
   type WebSocketConstructor,
-} from '@ai-sdk/provider-utils';
-import { Experimental_DecisionLanguageModel as DecisionLanguageModel } from '@ai-sdk/provider-utils/experimental-decision';
+} from '@ai-toolkit/provider-utils';
+import { Experimental_DecisionLanguageModel as DecisionLanguageModel } from '@ai-toolkit/provider-utils/experimental-decision';
 import { VERSION } from './version';
 import { GoogleEmbeddingModel } from './google-embedding-model';
 import type { GoogleEmbeddingModelId } from './google-embedding-model-options';
@@ -276,7 +276,7 @@ export function createGoogle(
         }),
         ...options.headers,
       },
-      `ai-sdk-google/${VERSION}`,
+      `ai-toolkit-google/${VERSION}`,
     );
 
   const getSupportedUrls = (

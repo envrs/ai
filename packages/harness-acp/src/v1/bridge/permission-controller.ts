@@ -1,5 +1,5 @@
-import type { HarnessV1PermissionMode } from '@ai-sdk/harness';
-import type { BridgeTurn } from '@ai-sdk/harness/bridge';
+import type { HarnessV1PermissionMode } from '@ai-toolkit/harness';
+import type { BridgeTurn } from '@ai-toolkit/harness/bridge';
 import type {
   RequestPermissionRequest,
   RequestPermissionResponse,

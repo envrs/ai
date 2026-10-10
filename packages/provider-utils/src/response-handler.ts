@@ -2,7 +2,7 @@ import {
   APICallError,
   EmptyResponseBodyError,
   InvalidArgumentError,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { DownloadError } from './download-error';
 import { extractResponseHeaders } from './extract-response-headers';
 import { handleFetchError } from './handle-fetch-error';

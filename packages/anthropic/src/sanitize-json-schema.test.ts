@@ -1,4 +1,4 @@
-import type { JSONSchema7 } from '@ai-sdk/provider';
+import type { JSONSchema7 } from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { sanitizeJsonSchema } from './sanitize-json-schema';
 

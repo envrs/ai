@@ -1,4 +1,4 @@
-import { NoSuchProviderReferenceError } from '@ai-sdk/provider';
+import { NoSuchProviderReferenceError } from '@ai-toolkit/provider';
 import { resolveProviderReference } from './resolve-provider-reference';
 import { describe, it, expect } from 'vitest';
 

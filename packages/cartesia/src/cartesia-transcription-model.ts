@@ -5,7 +5,7 @@ import {
   type Experimental_TranscriptionModelV4StreamPart as TranscriptionModelV4StreamPart,
   type SharedV4Warning,
   type TranscriptionModelV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   connectToWebSocket,
@@ -23,7 +23,7 @@ import {
   WORKFLOW_DESERIALIZE,
   type WebSocketConnection,
   type WebSocketLike,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { CartesiaConfig } from './cartesia-config';
 import { cartesiaFailedResponseHandler } from './cartesia-error';

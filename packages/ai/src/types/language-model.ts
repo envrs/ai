@@ -1,11 +1,11 @@
-import type { GatewayModelId } from '@ai-sdk/gateway';
+import type { GatewayModelId } from '@ai-toolkit/gateway';
 import type {
   LanguageModelV2,
   LanguageModelV3,
   LanguageModelV4,
   SharedV4Warning,
   LanguageModelV4Source,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 
 declare global {
   /**
@@ -16,7 +16,7 @@ declare global {
    * 1. Register based on Model IDs from a provider package:
    * @example
    * ```typescript
-   * import { openai } from '@ai-sdk/openai';
+   * import { openai } from '@ai-toolkit/openai';
    * type OpenAIResponsesModelId = Parameters<typeof openai>[0];
    *
    * declare global {
@@ -53,7 +53,7 @@ export type GlobalProviderModelId = [keyof RegisteredProviderModels] extends [
       | RegisteredProviderModels[keyof RegisteredProviderModels];
 
 /**
- * Language model that is used by the AI SDK.
+ * Language model that is used by the ai-toolkit.
  */
 export type LanguageModel =
   | GlobalProviderModelId

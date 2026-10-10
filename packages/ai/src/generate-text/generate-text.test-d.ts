@@ -1,4 +1,4 @@
-import type { JSONValue } from '@ai-sdk/provider';
+import type { JSONValue } from '@ai-toolkit/provider';
 import {
   experimental_toolCaller,
   tool,
@@ -6,7 +6,7 @@ import {
   type ModelMessage,
   type SystemModelMessage,
   type Tool,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { describe, expectTypeOf, it } from 'vitest';
 import { z } from 'zod/v4';
 import { ToolLoopAgent } from '../agent';
@@ -63,7 +63,7 @@ describe('generateText types', () => {
         }),
       } as const;
       const toolCallers = {
-        getInventory: ['AI_SDK_DIRECT_TOOL_CALL', 'code_mode'],
+        getInventory: ['ai-toolkit_DIRECT_TOOL_CALL', 'code_mode'],
       } as const;
 
       generateText({
@@ -112,7 +112,7 @@ describe('generateText types', () => {
   });
 
   describe('onFinish compatibility', () => {
-    it('should expose deprecated AI SDK 6 properties', async () => {
+    it('should expose deprecated ai-toolkit 6 properties', async () => {
       await generateText({
         model: new MockLanguageModelV4(),
         prompt: 'Hello',

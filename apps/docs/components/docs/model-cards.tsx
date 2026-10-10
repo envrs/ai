@@ -1,4 +1,4 @@
-import { Badge } from '@vercel/geistdocs/components/badge';
+import { Badge } from '@khulnasoft/geistdocs/components/badge';
 import {
   IconApi,
   IconDisplay,
@@ -6,14 +6,14 @@ import {
   IconSandbox,
   IconSparkles,
   IconWrench,
-} from '@vercel/geistdocs/assets/icons';
+} from '@khulnasoft/geistdocs/assets/icons';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { ResolveHref } from '@/components/docs/resolve-href';
 
 /**
  * Capability flags shown as badges on a provider card. Mirrors the
- * production ai-sdk.dev model cards.
+ * production ai-toolkit.dev model cards.
  */
 interface ModelFeatures {
   image?: boolean;
@@ -214,12 +214,12 @@ export const ModelCard = ({
   </Link>
 );
 
-/** Mirrors production ai-sdk.dev's official provider cards. */
+/** Mirrors production ai-toolkit.dev's official provider cards. */
 const OFFICIAL_MODELS: ModelCardData[] = [
   {
-    title: 'Vercel AI Gateway',
-    logo: { src: '/images/icons/vercel.svg', invert: true },
-    href: '/providers/ai-sdk-providers/ai-gateway',
+    title: 'khulnasoft AI Gateway',
+    logo: { src: '/images/icons/khulnasoft.svg', invert: true },
+    href: '/providers/ai-toolkit-providers/ai-gateway',
     color: '000000',
     features: {
       imageGeneration: true,
@@ -232,7 +232,7 @@ const OFFICIAL_MODELS: ModelCardData[] = [
   {
     title: 'OpenAI',
     logo: { src: '/images/icons/openai.svg', invert: true },
-    href: '/providers/ai-sdk-providers/openai',
+    href: '/providers/ai-toolkit-providers/openai',
     color: '00aaff',
     features: {
       imageGeneration: true,
@@ -245,17 +245,17 @@ const OFFICIAL_MODELS: ModelCardData[] = [
   {
     title: 'Anthropic',
     logo: { src: '/images/icons/anthropic.svg', invert: true },
-    href: '/providers/ai-sdk-providers/anthropic',
+    href: '/providers/ai-toolkit-providers/anthropic',
     color: '000000',
     features: { image: true, object: true, tool: true, stream: true },
   },
   {
     title: 'Google Generative AI',
     logo: { src: '/images/icons/google.svg' },
-    href: '/providers/ai-sdk-providers/google',
+    href: '/providers/ai-toolkit-providers/google',
     versionedHrefs: {
-      '/v5': '/providers/ai-sdk-providers/google-generative-ai',
-      '/v6': '/providers/ai-sdk-providers/google-generative-ai',
+      '/v5': '/providers/ai-toolkit-providers/google-generative-ai',
+      '/v6': '/providers/ai-toolkit-providers/google-generative-ai',
     },
     color: '00ff33',
     features: { image: true, object: true, tool: true, stream: true },
@@ -263,7 +263,7 @@ const OFFICIAL_MODELS: ModelCardData[] = [
   {
     title: 'xAI Grok',
     logo: { src: '/images/icons/xai-black.svg', invert: true },
-    href: '/providers/ai-sdk-providers/xai',
+    href: '/providers/ai-toolkit-providers/xai',
     color: '2a3275',
     features: {
       image: true,
@@ -276,14 +276,14 @@ const OFFICIAL_MODELS: ModelCardData[] = [
   {
     title: 'Azure',
     logo: { src: '/images/icons/azure.svg' },
-    href: '/providers/ai-sdk-providers/azure',
+    href: '/providers/ai-toolkit-providers/azure',
     color: '0089D6',
     features: { image: true, object: true, tool: true, stream: true },
   },
   {
     title: 'Amazon Bedrock',
     logo: { src: '/images/icons/aws.svg' },
-    href: '/providers/ai-sdk-providers/amazon-bedrock',
+    href: '/providers/ai-toolkit-providers/amazon-bedrock',
     color: 'FF9900',
     features: {
       image: true,
@@ -296,28 +296,28 @@ const OFFICIAL_MODELS: ModelCardData[] = [
   {
     title: 'Groq',
     logo: { src: '/images/icons/groq.svg' },
-    href: '/providers/ai-sdk-providers/groq',
+    href: '/providers/ai-toolkit-providers/groq',
     color: '000000',
     features: { image: true, object: true, tool: true, stream: true },
   },
   {
     title: 'Fal AI',
     logo: { src: '/images/icons/fal.svg', invert: true },
-    href: '/providers/ai-sdk-providers/fal',
+    href: '/providers/ai-toolkit-providers/fal',
     color: 'ed0548',
     features: { imageGeneration: true },
   },
   {
     title: 'DeepInfra',
     logo: { src: '/images/icons/deepinfra.svg' },
-    href: '/providers/ai-sdk-providers/deepinfra',
+    href: '/providers/ai-toolkit-providers/deepinfra',
     color: '2a3275',
     features: { image: true, object: true, tool: true, stream: true },
   },
   {
     title: 'Google Vertex AI',
     logo: { src: '/images/icons/google.svg' },
-    href: '/providers/ai-sdk-providers/google-vertex',
+    href: '/providers/ai-toolkit-providers/google-vertex',
     color: '00ff33',
     features: {
       imageGeneration: true,
@@ -330,49 +330,49 @@ const OFFICIAL_MODELS: ModelCardData[] = [
   {
     title: 'Mistral',
     logo: { src: '/images/icons/mistral.svg' },
-    href: '/providers/ai-sdk-providers/mistral',
+    href: '/providers/ai-toolkit-providers/mistral',
     color: 'ff6600',
     features: { image: true, object: true, tool: true, stream: true },
   },
   {
     title: 'Together.ai',
     logo: { src: '/images/icons/togetherai.svg' },
-    href: '/providers/ai-sdk-providers/togetherai',
+    href: '/providers/ai-toolkit-providers/togetherai',
     color: '0f6fff',
     features: { object: true, tool: true, stream: true },
   },
   {
     title: 'Cohere',
     logo: { src: '/images/icons/cohere.svg' },
-    href: '/providers/ai-sdk-providers/cohere',
+    href: '/providers/ai-toolkit-providers/cohere',
     color: '355146',
     features: { tool: true, stream: true },
   },
   {
     title: 'Fireworks',
     logo: { src: '/images/icons/fireworks.svg', invert: true },
-    href: '/providers/ai-sdk-providers/fireworks',
+    href: '/providers/ai-toolkit-providers/fireworks',
     color: '5019c5',
     features: { imageGeneration: true, object: true, tool: true, stream: true },
   },
   {
     title: 'DeepSeek',
     logo: { src: '/images/icons/deepseek.svg' },
-    href: '/providers/ai-sdk-providers/deepseek',
+    href: '/providers/ai-toolkit-providers/deepseek',
     color: '4f6bff',
     features: { object: true, tool: true, stream: true },
   },
   {
     title: 'Cerebras',
     logo: { src: '/images/icons/cerebras.svg' },
-    href: '/providers/ai-sdk-providers/cerebras',
+    href: '/providers/ai-toolkit-providers/cerebras',
     color: 'f05929',
     features: { object: true, tool: true, stream: true },
   },
   {
     title: 'Perplexity',
     logo: { src: '/images/icons/perplexity.svg' },
-    href: '/providers/ai-sdk-providers/perplexity',
+    href: '/providers/ai-toolkit-providers/perplexity',
     color: '20808D',
     features: { image: true, object: true, tool: true, stream: true },
     versionedFeatures: {
@@ -383,14 +383,14 @@ const OFFICIAL_MODELS: ModelCardData[] = [
   {
     title: 'Luma AI',
     logo: { src: '/images/icons/luma.png' },
-    href: '/providers/ai-sdk-providers/luma',
+    href: '/providers/ai-toolkit-providers/luma',
     color: '004dff',
     features: { imageGeneration: true },
   },
   {
     title: 'Baseten',
     logo: { src: '/images/icons/baseten.svg' },
-    href: '/providers/ai-sdk-providers/baseten',
+    href: '/providers/ai-toolkit-providers/baseten',
     color: '16D767',
     features: { object: true, tool: true },
   },

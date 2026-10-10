@@ -10,8 +10,8 @@ By default, tools with an `execute` function run automatically when the model ca
 `toolApproval` is useful for tools that can modify data, spend money, execute code, send messages, access private data, or perform any other sensitive action.
 
 <Note>
-  `toolApproval` applies to tools executed by the AI SDK. Provider-executed
-  tools run provider-side and do not use AI SDK tool approvals.
+  `toolApproval` applies to tools executed by the ai-toolkit. Provider-executed
+  tools run provider-side and do not use ai-toolkit tool approvals.
 </Note>
 
 ## Statuses
@@ -219,7 +219,7 @@ When streaming an agent to a chat UI, approval requests appear as tool parts wit
 ```tsx highlight="7-9,17-40"
 'use client';
 
-import { useChat } from '@ai-sdk/react';
+import { useChat } from '@ai-toolkit/react';
 import { lastAssistantMessageIsCompleteWithApprovalResponses } from 'ai';
 
 export default function Chat() {
@@ -349,6 +349,6 @@ Every serverless instance that might handle a request needs the same secret, sin
 ## Related APIs
 
 - Use `toolApproval` with `ToolLoopAgent`, `generateText`, and `streamText`.
-- Author approval rules as code with [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals) (`@ai-sdk/policy-opa`).
+- Author approval rules as code with [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals) (`@ai-toolkit/policy-opa`).
 - Use `needsApproval` only with [`WorkflowAgent`](/docs/agents/workflow-agent), where approvals suspend and resume durable workflow execution.
 - Subagent tools cannot use `toolApproval`; see [Subagents](/docs/agents/subagents#no-tool-approvals-in-subagents).

@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, type Mock } from 'vitest';
 import { createXai } from './xai-provider';
-import { loadApiKey } from '@ai-sdk/provider-utils';
+import { loadApiKey } from '@ai-toolkit/provider-utils';
 import { XaiResponsesLanguageModel } from './responses/xai-responses-language-model';
 import { XaiImageModel } from './xai-image-model';
 import { XaiVideoModel } from './xai-video-model';
@@ -34,8 +34,8 @@ vi.mock('./xai-transcription-model', () => ({
   XaiTranscriptionModel: vi.fn(),
 }));
 
-vi.mock('@ai-sdk/provider-utils', async () => {
-  const actual = await vi.importActual('@ai-sdk/provider-utils');
+vi.mock('@ai-toolkit/provider-utils', async () => {
+  const actual = await vi.importActual('@ai-toolkit/provider-utils');
   return {
     ...actual,
     loadApiKey: vi.fn().mockReturnValue('mock-api-key'),
@@ -141,7 +141,7 @@ describe('xAIProvider', () => {
       expect(headers).toMatchObject({
         authorization: 'Bearer mock-api-key',
         'custom-header': 'test-value',
-        'user-agent': 'ai-sdk-xai/0.0.0-test',
+        'user-agent': 'ai-toolkit-xai/0.0.0-test',
       });
     });
   });
@@ -187,7 +187,7 @@ describe('xAIProvider', () => {
       expect(headers).toMatchObject({
         authorization: 'Bearer mock-api-key',
         'custom-header': 'test-value',
-        'user-agent': 'ai-sdk-xai/0.0.0-test',
+        'user-agent': 'ai-toolkit-xai/0.0.0-test',
       });
     });
 
@@ -230,7 +230,7 @@ describe('xAIProvider', () => {
       expect(constructorCall[1].headers()).toMatchObject({
         authorization: 'Bearer mock-api-key',
         'custom-header': 'test-value',
-        'user-agent': 'ai-sdk-xai/0.0.0-test',
+        'user-agent': 'ai-toolkit-xai/0.0.0-test',
       });
     });
 
@@ -270,7 +270,7 @@ describe('xAIProvider', () => {
       expect(constructorCall[1].headers()).toMatchObject({
         authorization: 'Bearer mock-api-key',
         'custom-header': 'test-value',
-        'user-agent': 'ai-sdk-xai/0.0.0-test',
+        'user-agent': 'ai-toolkit-xai/0.0.0-test',
       });
     });
 

@@ -1,4 +1,4 @@
-import type { LanguageModelV4Citation } from '@ai-sdk/provider';
+import type { LanguageModelV4Citation } from '@ai-toolkit/provider';
 import { z, type ZodType } from '../util/zod';
 import { providerMetadataSchema } from './provider-metadata';
 

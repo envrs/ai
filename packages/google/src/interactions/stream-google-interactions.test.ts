@@ -1,5 +1,5 @@
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it } from 'vitest';
 import { streamGoogleInteractionEvents } from './stream-google-interactions';
 
@@ -157,7 +157,7 @@ describe('streamGoogleInteractionEvents', () => {
 
   it('fires POST /interactions/{id}/cancel when the abort signal fires mid-stream', async () => {
     const { TestResponseController } =
-      await import('@ai-sdk/test-server/with-vitest');
+      await import('@ai-toolkit/test-server/with-vitest');
     const controller = new TestResponseController();
     server.urls[STREAM_URL].response = {
       type: 'controlled-stream',

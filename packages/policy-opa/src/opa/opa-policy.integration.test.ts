@@ -6,7 +6,7 @@
  * decides, `generateText` either runs `tool.execute` or returns an
  * execution-denied result.
  */
-import { jsonSchema } from '@ai-sdk/provider-utils';
+import { jsonSchema } from '@ai-toolkit/provider-utils';
 import { generateText, isStepCount, tool } from 'ai';
 import { MockLanguageModelV3 } from 'ai/test';
 import { describe, expect, it, vi } from 'vitest';

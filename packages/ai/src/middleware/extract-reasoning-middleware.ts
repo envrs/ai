@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4Content,
   LanguageModelV4StreamPart,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import type { LanguageModelMiddleware } from '../types/language-model-middleware';
 import { InvalidArgumentError } from '../error/invalid-argument-error';
 import { createIdMap } from '../util/create-id-map';
@@ -129,7 +129,7 @@ export function extractReasoningMiddleware({
           >({
             transform: (chunk, controller) => {
               // do not send `text-start` before `reasoning-start`
-              // https://github.com/vercel/ai/issues/7774
+              // https://github.com/khulnasoft/ai/issues/7774
               if (chunk.type === 'text-start') {
                 delayedTextStarts[chunk.id] = chunk;
                 return;

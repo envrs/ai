@@ -1,23 +1,23 @@
 ---
 title: 'Mem0'
-description: 'Learn how to use the Mem0 AI SDK provider for the AI SDK.'
+description: 'Learn how to use the Mem0 ai-toolkit provider for the ai-toolkit.'
 ---
 
 # Mem0 Provider
 
-The [Mem0 Provider](https://github.com/mem0ai/mem0/tree/main/vercel-ai-sdk) is a library developed by [**Mem0**](https://mem0.ai)
-to integrate with the AI SDK.
+The [Mem0 Provider](https://github.com/mem0ai/mem0/tree/main/khulnasoft-ai-toolkit) is a library developed by [**Mem0**](https://mem0.ai)
+to integrate with the ai-toolkit.
 This library brings enhanced AI interaction capabilities to your applications by introducing persistent memory functionality.
 
 <Note type="info">
-  🎉 Exciting news! Mem0 AI SDK now supports <strong>Tools Call</strong>.
+  🎉 Exciting news! Mem0 ai-toolkit now supports <strong>Tools Call</strong>.
 </Note>
 
 ## Setup
 
-The Mem0 provider is available in the `@mem0/vercel-ai-provider` module. You can install it with:
+The Mem0 provider is available in the `@mem0/khulnasoft-ai-provider` module. You can install it with:
 
-<InstallPackages packages="@mem0/vercel-ai-provider" />
+<InstallPackages packages="@mem0/khulnasoft-ai-provider" />
 
 ## Provider Instance
 
@@ -26,7 +26,7 @@ First, get your **Mem0 API Key** from the [Mem0 Dashboard](https://app.mem0.ai/d
 Then initialize the `Mem0 Client` in your application:
 
 ```ts
-import { createMem0 } from '@mem0/vercel-ai-provider';
+import { createMem0 } from '@mem0/khulnasoft-ai-provider';
 
 const mem0 = createMem0({
   provider: 'openai',
@@ -57,8 +57,8 @@ const mem0 = createMem0({
 - Add Memories to Enhance Context:
 
 ```ts
-import { LanguageModelV4Prompt } from '@ai-sdk/provider';
-import { addMemories } from '@mem0/vercel-ai-provider';
+import { LanguageModelV4Prompt } from '@ai-toolkit/provider';
+import { addMemories } from '@mem0/khulnasoft-ai-provider';
 
 const messages: LanguageModelV4Prompt = [
   { role: 'user', content: [{ type: 'text', text: 'I love red cars.' }] },
@@ -108,7 +108,7 @@ You can use language models from **OpenAI**, **Anthropic**, **Cohere**, and **Gr
 
 ```ts
 import { generateText } from 'ai';
-import { createMem0 } from '@mem0/vercel-ai-provider';
+import { createMem0 } from '@mem0/khulnasoft-ai-provider';
 
 const mem0 = createMem0();
 
@@ -122,7 +122,7 @@ const { text } = await generateText({
 
 ```ts
 import { generateText } from 'ai';
-import { createMem0 } from '@mem0/vercel-ai-provider';
+import { createMem0 } from '@mem0/khulnasoft-ai-provider';
 
 const mem0 = createMem0();
 
@@ -144,7 +144,7 @@ const { text } = await generateText({
 
 ```ts
 import { streamText } from 'ai';
-import { createMem0 } from '@mem0/vercel-ai-provider';
+import { createMem0 } from '@mem0/khulnasoft-ai-provider';
 
 const mem0 = createMem0();
 
@@ -165,7 +165,7 @@ for await (const textPart of textStream) {
 
 ```ts
 import { generateText } from 'ai';
-import { createMem0 } from '@mem0/vercel-ai-provider';
+import { createMem0 } from '@mem0/khulnasoft-ai-provider';
 import { z } from 'zod';
 
 const mem0 = createMem0({
@@ -236,11 +236,11 @@ The Mem0 provider supports the following LLM providers:
 
 ## Help
 
-- For more details on Vercel AI SDK, visit the [Vercel AI SDK documentation](/docs/introduction).
+- For more details on khulnasoft ai-toolkit, visit the [khulnasoft ai-toolkit documentation](/docs/introduction).
 - For Mem0 documentation, refer to the [Mem0 Platform](https://app.mem0.ai/).
 - If you need further assistance, please feel free to reach out to us through following methods:
 
 ## References
 
-- [Mem0 AI SDK Docs](https://docs.mem0.ai/integrations/vercel-ai-sdk#getting-started)
+- [Mem0 ai-toolkit Docs](https://docs.mem0.ai/integrations/khulnasoft-ai-toolkit#getting-started)
 - [Mem0 documentation](https://docs.mem0.ai)

@@ -1,4 +1,4 @@
-import { HarnessCapabilityUnsupportedError } from '@ai-sdk/harness';
+import { HarnessCapabilityUnsupportedError } from '@ai-toolkit/harness';
 import { Sandbox } from 'just-bash';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { JustBashNetworkSandboxSession } from './just-bash-network-sandbox-session';

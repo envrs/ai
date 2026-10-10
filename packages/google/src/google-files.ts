@@ -1,10 +1,10 @@
 import {
-  AISDKError,
+  ai-toolkitError,
   type FilesV4,
   type FilesV4UploadFileCallOptions,
   type FilesV4UploadFileResult,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertInlineFileDataToUint8Array,
@@ -15,7 +15,7 @@ import {
   zodSchema,
   getFromApi,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import { googleFailedResponseHandler } from './google-error';
 
@@ -101,7 +101,7 @@ export class GoogleFiles implements FilesV4 {
 
     if (!initResponse.ok) {
       const errorBody = await initResponse.text();
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'GOOGLE_FILES_UPLOAD_ERROR',
         message: `Failed to initiate resumable upload: ${initResponse.status} ${errorBody}`,
       });
@@ -109,7 +109,7 @@ export class GoogleFiles implements FilesV4 {
 
     const uploadUrl = initResponse.headers.get('x-goog-upload-url');
     if (!uploadUrl) {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'GOOGLE_FILES_UPLOAD_ERROR',
         message: 'No upload URL returned from initiation request',
       });
@@ -127,7 +127,7 @@ export class GoogleFiles implements FilesV4 {
 
     if (!uploadResponse.ok) {
       const errorBody = await uploadResponse.text();
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'GOOGLE_FILES_UPLOAD_ERROR',
         message: `Failed to upload file data: ${uploadResponse.status} ${errorBody}`,
       });
@@ -145,7 +145,7 @@ export class GoogleFiles implements FilesV4 {
 
     while (file.state === 'PROCESSING') {
       if (Date.now() - startTime > pollTimeoutMs) {
-        throw new AISDKError({
+        throw new ai-toolkitError({
           name: 'GOOGLE_FILES_UPLOAD_TIMEOUT',
           message: `File processing timed out after ${pollTimeoutMs}ms`,
         });
@@ -175,7 +175,7 @@ export class GoogleFiles implements FilesV4 {
     }
 
     if (file.state === 'FAILED') {
-      throw new AISDKError({
+      throw new ai-toolkitError({
         name: 'GOOGLE_FILES_UPLOAD_FAILED',
         message: `File processing failed for ${file.name}`,
       });

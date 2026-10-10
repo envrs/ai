@@ -3,7 +3,7 @@
  *
  * Surfaces non-fatal issues such as unsupported options or quirks of the
  * underlying agent runtime. These compatibility variants are also accepted by
- * the AI SDK's `CallWarning` result type.
+ * the ai-toolkit's `CallWarning` result type.
  */
 export type HarnessV1CallWarning =
   | {

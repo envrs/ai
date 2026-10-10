@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { LogoIconVercelSvg } from '@vercel/geistdocs/assets/logos';
+import { LogoIconVercelSvg } from '@khulnasoft/geistdocs/assets/logos';
 import { Snippet } from '@/components/docs/snippet';
 
 export const metadata: Metadata = {
   title: 'Get your API key',
   description:
-    'Connect the AI SDK to AI Gateway or configure a dedicated model provider.',
+    'Connect the ai-toolkit to AI Gateway or configure a dedicated model provider.',
 };
 
 const code = (value: string) => (
@@ -24,16 +24,16 @@ export default function UnauthenticatedAiGatewayPage() {
         <h2>AI Gateway</h2>
         <p>
           The{' '}
-          <Link href="/providers/ai-sdk-providers/ai-gateway" prefetch={true}>
-            Vercel AI Gateway
+          <Link href="/providers/ai-toolkit-providers/ai-gateway" prefetch={true}>
+            khulnasoft AI Gateway
           </Link>{' '}
-          gives the AI SDK access to models from OpenAI, Anthropic, Google, and
+          gives the ai-toolkit access to models from OpenAI, Anthropic, Google, and
           other providers. Authenticate with an{' '}
-          <a href="https://vercel.com/docs/ai-gateway/getting-started#set-up-your-api-key">
+          <a href="https://khulnasoft.com/docs/ai-gateway/getting-started#set-up-your-api-key">
             AI Gateway API key
           </a>{' '}
           or{' '}
-          <a href="https://vercel.com/docs/ai-gateway/authentication#oidc-token">
+          <a href="https://khulnasoft.com/docs/ai-gateway/authentication#oidc-token">
             OIDC
           </a>
           .
@@ -41,7 +41,7 @@ export default function UnauthenticatedAiGatewayPage() {
         <p>
           <a
             className="not-prose inline-flex items-center gap-2 rounded-md border border-gray-400 bg-background-100 px-4 py-2 text-sm font-medium no-underline hover:bg-background-200"
-            href="https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%2Fapi-keys%3Futm_source%3Dgateway-models-page%26showCreateKeyModal%3Dtrue&title=Get+Started+with+Vercel+AI+Gateway"
+            href="https://khulnasoft.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%2Fapi-keys%3Futm_source%3Dgateway-models-page%26showCreateKeyModal%3Dtrue&title=Get+Started+with+khulnasoft+AI+Gateway"
           >
             <LogoIconVercelSvg />
             Get an API key
@@ -52,7 +52,7 @@ export default function UnauthenticatedAiGatewayPage() {
         <p>
           AI Gateway is the default{' '}
           <Link
-            href="/docs/ai-sdk-core/provider-management#global-provider-configuration"
+            href="/docs/ai-toolkit-core/provider-management#global-provider-configuration"
             prefetch={true}
           >
             global provider
@@ -70,19 +70,19 @@ const { text } = await generateText({
         <h2>Using dedicated providers</h2>
         <p>
           You can use{' '}
-          <Link href="/providers/ai-sdk-providers" prefetch={true}>
+          <Link href="/providers/ai-toolkit-providers" prefetch={true}>
             first-party providers
           </Link>
           , OpenAI-compatible providers, and community providers directly.
         </p>
-        <Snippet text="pnpm add @ai-sdk/anthropic" />
-        {code(`import { anthropic } from '@ai-sdk/anthropic';
+        <Snippet text="pnpm add @ai-toolkit/anthropic" />
+        {code(`import { anthropic } from '@ai-toolkit/anthropic';
 
 model: anthropic('claude-sonnet-4-5');`)}
 
         <h2>Custom providers</h2>
         <p>
-          You can implement the AI SDK model specification to integrate another
+          You can implement the ai-toolkit model specification to integrate another
           model service. See{' '}
           <Link
             href="/providers/community-providers/custom-providers"

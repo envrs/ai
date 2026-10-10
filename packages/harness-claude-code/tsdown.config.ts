@@ -17,7 +17,7 @@ export default defineConfig(
       entry: { 'bridge/index': 'src/bridge/index.ts' },
       outExtensions: () => ({ js: '.mjs' }),
       dts: false,
-      // The shared bridge runtime (`@ai-sdk/harness/bridge`) must be INLINED —
+      // The shared bridge runtime (`@ai-toolkit/harness/bridge`) must be INLINED —
       // the sandbox only installs the bridge's own deps, so a bare import would
       // not resolve there. tsdown externalizes package.json deps by default, hence
       // the explicit override.
@@ -25,7 +25,7 @@ export default defineConfig(
       // bundle them into bridge.mjs. ws and zod are also installed by the
       // bridge's pnpm install step so the host package's own copy is irrelevant.
       deps: {
-        alwaysBundle: [/^@ai-sdk\/harness(?:\/|$)/],
+        alwaysBundle: [/^@ai-toolkit\/harness(?:\/|$)/],
         neverBundle: true,
       },
       define: {

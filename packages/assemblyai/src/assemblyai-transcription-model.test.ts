@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { AssemblyAITranscriptionModel } from './assemblyai-transcription-model';
 import { createAssemblyAI } from './assemblyai-provider';
 import { readFile } from 'node:fs/promises';
@@ -450,8 +450,8 @@ describe('doGenerate', () => {
       mediaType: 'audio/wav',
       providerOptions: {
         assemblyai: {
-          prompt: 'This is a conversation about the AI SDK.',
-          keytermsPrompt: ['Vercel', 'AI SDK'],
+          prompt: 'This is a conversation about the ai-toolkit.',
+          keytermsPrompt: ['khulnasoft', 'ai-toolkit'],
           temperature: 0.2,
           removeAudioTags: 'speaker',
           domain: 'medical-v1',
@@ -462,8 +462,8 @@ describe('doGenerate', () => {
     const requestBody = await server.calls[1].requestBodyJson;
     expect(requestBody).toMatchObject({
       speech_models: ['universal-3-5-pro'],
-      prompt: 'This is a conversation about the AI SDK.',
-      keyterms_prompt: ['Vercel', 'AI SDK'],
+      prompt: 'This is a conversation about the ai-toolkit.',
+      keyterms_prompt: ['khulnasoft', 'ai-toolkit'],
       temperature: 0.2,
       remove_audio_tags: 'speaker',
       domain: 'medical-v1',
@@ -523,7 +523,7 @@ describe('doGenerate', () => {
         audio: audioData,
         mediaType: 'audio/wav',
         providerOptions: {
-          assemblyai: { wordBoost: ['Vercel'], boostParam: 'high' },
+          assemblyai: { wordBoost: ['khulnasoft'], boostParam: 'high' },
         },
       });
 
@@ -561,7 +561,7 @@ describe('doGenerate', () => {
         audio: audioData,
         mediaType: 'audio/wav',
         providerOptions: {
-          assemblyai: { redactStaticEntities: { TOOL: ['Vercel'] } },
+          assemblyai: { redactStaticEntities: { TOOL: ['khulnasoft'] } },
         },
       });
 
@@ -656,7 +656,7 @@ describe('doGenerate', () => {
       'custom-request-header': 'request-header-value',
     });
     expect(server.calls[0].requestUserAgent).toContain(
-      `ai-sdk-assemblyai/0.0.0-test`,
+      `ai-toolkit-assemblyai/0.0.0-test`,
     );
   });
 

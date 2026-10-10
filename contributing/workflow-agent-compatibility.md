@@ -1,11 +1,11 @@
 # WorkflowAgent generation compatibility
 
-This is the Phase 1 baseline for [#20813](https://github.com/vercel/ai/issues/20813).
+This is the Phase 1 baseline for [#20813](https://github.com/khulnasoft/ai/issues/20813).
 It distinguishes existing `WorkflowAgent.stream()` behavior from the planned
 `WorkflowAgent.generate()` contract. Generate remains unimplemented in this phase.
 
 The target is the current repository's `ToolLoopAgent.generate()`, not an older
-AI SDK release. The characterization tests must pass before extracting shared
+ai-toolkit release. The characterization tests must pass before extracting shared
 execution. Known gaps below are work to resolve or document, not permanent
 requirements to retain bugs.
 
@@ -196,9 +196,9 @@ tool/step timing, and ToolLoopAgent's call-options schema are not promised.
 
 ## Phase 6 proposal: defer standalone text exports
 
-**Status:** proposed for the [WorkflowAgent.generate stack](https://github.com/vercel/ai/issues/20813), pending review. This assessment describes the Phase 5 implementation, not an already released API. It does not add exports.
+**Status:** proposed for the [WorkflowAgent.generate stack](https://github.com/khulnasoft/ai/issues/20813), pending review. This assessment describes the Phase 5 implementation, not an already released API. It does not add exports.
 
-Recommend shipping `WorkflowAgent.generate()` before exposing standalone `generateText` or `streamText` from `@ai-sdk/workflow`. One-off summarization, structured extraction, or a single durable model step can use a locally constructed agent. Callers that want a one-step limit can set `stopWhen: isStepCount(1)`; that limit is explicit because the new agent generation default is 20 steps. Streaming jobs can already supply a writable to `agent.stream()`.
+Recommend shipping `WorkflowAgent.generate()` before exposing standalone `generateText` or `streamText` from `@ai-toolkit/workflow`. One-off summarization, structured extraction, or a single durable model step can use a locally constructed agent. Callers that want a one-step limit can set `stopWhen: isStepCount(1)`; that limit is explicit because the new agent generation default is 20 steps. Streaming jobs can already supply a writable to `agent.stream()`.
 
 Standalone functions would make those one-off calls shorter and allow function-oriented APIs without agent configuration. That benefit is real, but it does not yet justify another public contract for defaults, inference, lifecycle callbacks, approval continuation, errors, and streaming delivery. Reusable instructions, tools and preparation still fit the agent API naturally.
 

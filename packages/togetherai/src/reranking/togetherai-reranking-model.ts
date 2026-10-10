@@ -1,4 +1,4 @@
-import type { RerankingModelV4 } from '@ai-sdk/provider';
+import type { RerankingModelV4 } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createJsonErrorResponseHandler,
@@ -6,7 +6,7 @@ import {
   parseProviderOptions,
   postJsonToApi,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   togetheraiErrorSchema,
   togetheraiRerankingResponseSchema,

@@ -1,7 +1,7 @@
 // Long-running bridge that runs inside a sandbox alongside the `claude` CLI.
 // The generic transport — WebSocket server, token auth, single-flight
 // reconnect, the in-memory event log + `seq`, resume replay, and the
-// lifecycle/meta files — lives in the shared `@ai-sdk/harness/bridge` runtime.
+// lifecycle/meta files — lives in the shared `@ai-toolkit/harness/bridge` runtime.
 // This file supplies only the Claude-specific turn driver.
 
 import {
@@ -10,7 +10,7 @@ import {
   type BridgeTurn,
   type Experimental_BridgeUserMessage,
   type Experimental_BridgeUserMessageQueue,
-} from '@ai-sdk/harness/bridge';
+} from '@ai-toolkit/harness/bridge';
 import { createCompactionLatch } from './compaction-latch';
 import type { StartMessage } from '../claude-code-bridge-protocol';
 import { randomUUID } from 'node:crypto';
@@ -23,7 +23,7 @@ import { argv, env as procEnv, stdout } from 'node:process';
  * bridge installs *inside the sandbox* from `src/bridge/package.json` (and
  * its pinned `pnpm-lock.yaml`). That bridge package.json — NOT this host
  * package — is the single source of truth for these packages and their
- * versions; the published `@ai-sdk/harness-claude-code` package does not
+ * versions; the published `@ai-toolkit/harness-claude-code` package does not
  * provide them at runtime.
  *
  * When adding or changing a third-party import here you MUST keep all three

@@ -1,6 +1,6 @@
 ---
 title: Interfaze
-description: Interfaze Provider for the AI SDK
+description: Interfaze Provider for the ai-toolkit
 ---
 
 # Interfaze
@@ -11,16 +11,16 @@ Learn more in the [Interfaze documentation](https://interfaze.ai/docs).
 
 ## Setup
 
-The Interfaze provider is available in the `@interfaze-ai/ai-sdk` module. You can install it with:
+The Interfaze provider is available in the `@interfaze-ai/ai-toolkit` module. You can install it with:
 
-<InstallPackages packages="@interfaze-ai/ai-sdk" />
+<InstallPackages packages="@interfaze-ai/ai-toolkit" />
 
 ## Provider Instance
 
 Import the default `interfaze` instance, or build one with `createInterfaze`:
 
 ```ts
-import { createInterfaze, interfaze } from '@interfaze-ai/ai-sdk';
+import { createInterfaze, interfaze } from '@interfaze-ai/ai-toolkit';
 
 const model = interfaze('interfaze-beta'); // reads INTERFAZE_API_KEY
 
@@ -34,7 +34,7 @@ You can obtain your API key from the [Interfaze dashboard](https://interfaze.ai)
 Create a model with the provider instance and use it with `generateText` / `streamText`:
 
 ```ts
-import { interfaze } from '@interfaze-ai/ai-sdk';
+import { interfaze } from '@interfaze-ai/ai-toolkit';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
@@ -50,7 +50,7 @@ A web search backs the answer here — the sources land on `providerMetadata.int
 Interfaze supports structured output with `generateText` and `streamText`. Use `Output.object` with a Zod schema to generate a typed object, including when extracting data from an image (OCR runs under the hood):
 
 ```ts
-import { interfaze } from '@interfaze-ai/ai-sdk';
+import { interfaze } from '@interfaze-ai/ai-toolkit';
 import { generateText, Output } from 'ai';
 import { z } from 'zod';
 
@@ -108,7 +108,7 @@ const { text } = await generateText({
 
 ## Multimodal
 
-Images, audio, video, and documents all use standard AI SDK content parts. Pass a public URL — Interfaze fetches it server-side, so nothing is downloaded and re-encoded on the way out — or raw bytes:
+Images, audio, video, and documents all use standard ai-toolkit content parts. Pass a public URL — Interfaze fetches it server-side, so nothing is downloaded and re-encoded on the way out — or raw bytes:
 
 | Kind      | Types                                                                                                                                               |
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -182,6 +182,6 @@ const interfaze = createInterfaze({
 
 ## Additional Resources
 
-- [`@interfaze-ai/ai-sdk` on npm](https://www.npmjs.com/package/@interfaze-ai/ai-sdk)
-- [`@interfaze-ai/ai-sdk` on GitHub](https://github.com/InterfazeAI/interfaze-ai-sdk)
+- [`@interfaze-ai/ai-toolkit` on npm](https://www.npmjs.com/package/@interfaze-ai/ai-toolkit)
+- [`@interfaze-ai/ai-toolkit` on GitHub](https://github.com/InterfazeAI/interfaze-ai-toolkit)
 - [Interfaze documentation](https://interfaze.ai/docs)

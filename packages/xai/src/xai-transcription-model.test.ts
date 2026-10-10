@@ -1,12 +1,12 @@
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider-utils/test';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { createXai } from './xai-provider';
 import { XaiTranscriptionModel } from './xai-transcription-model';
@@ -70,7 +70,7 @@ function prepareJsonResponse(headers?: Record<string, string>) {
     type: 'json-value',
     headers,
     body: {
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       language: 'en',
       duration: 2.5,
       words: [
@@ -80,7 +80,7 @@ function prepareJsonResponse(headers?: Record<string, string>) {
           end: 1,
         },
         {
-          text: 'from the AI SDK!',
+          text: 'from the ai-toolkit!',
           start: 1,
           end: 2.5,
         },
@@ -129,7 +129,7 @@ describe('doGenerate', () => {
           multichannel: true,
           channels: 2,
           diarize: true,
-          keyterm: ['AI SDK', 'Grok'],
+          keyterm: ['ai-toolkit', 'Grok'],
           fillerWords: true,
         },
       },
@@ -153,7 +153,7 @@ describe('doGenerate', () => {
     server.urls[url].response = {
       type: 'json-value',
       body: {
-        text: 'Hello from the AI SDK!',
+        text: 'Hello from the ai-toolkit!',
         language: 'en',
         duration: 2.5,
         words: [
@@ -164,7 +164,7 @@ describe('doGenerate', () => {
             speaker: 0,
           },
           {
-            text: 'from the AI SDK!',
+            text: 'from the ai-toolkit!',
             start: 1,
             end: 2.5,
             speaker: 1,
@@ -193,7 +193,7 @@ describe('doGenerate', () => {
             speaker: 0,
           },
           {
-            text: 'from the AI SDK!',
+            text: 'from the ai-toolkit!',
             start: 1,
             end: 2.5,
             speaker: 1,
@@ -227,7 +227,7 @@ describe('doGenerate', () => {
     const fetchMock = vi.fn().mockResolvedValue(
       new Response(
         JSON.stringify({
-          text: 'Hello from the AI SDK!',
+          text: 'Hello from the ai-toolkit!',
         }),
         {
           status: 200,
@@ -254,7 +254,7 @@ describe('doGenerate', () => {
           multichannel: true,
           channels: 2,
           diarize: true,
-          keyterm: ['AI SDK', 'Grok'],
+          keyterm: ['ai-toolkit', 'Grok'],
           fillerWords: true,
         },
       },
@@ -279,7 +279,7 @@ describe('doGenerate', () => {
 
   it('should send the model id and vad_threshold before the file field', async () => {
     const fetchMock = vi.fn().mockResolvedValue(
-      new Response(JSON.stringify({ text: 'Hello from the AI SDK!' }), {
+      new Response(JSON.stringify({ text: 'Hello from the ai-toolkit!' }), {
         status: 200,
         headers: { 'content-type': 'application/json' },
       }),
@@ -330,7 +330,7 @@ describe('doGenerate', () => {
 
   it('should keep the model id across a workflow serialization round trip', async () => {
     const fetchMock = vi.fn().mockResolvedValue(
-      new Response(JSON.stringify({ text: 'Hello from the AI SDK!' }), {
+      new Response(JSON.stringify({ text: 'Hello from the ai-toolkit!' }), {
         status: 200,
         headers: { 'content-type': 'application/json' },
       }),
@@ -381,7 +381,7 @@ describe('doGenerate', () => {
       'custom-provider-header': 'provider-header-value',
       'custom-request-header': 'request-header-value',
     });
-    expect(server.calls[0].requestUserAgent).toContain('ai-sdk-xai/0.0.0-test');
+    expect(server.calls[0].requestUserAgent).toContain('ai-toolkit-xai/0.0.0-test');
   });
 
   it('should extract text, segments, language, and duration', async () => {
@@ -393,7 +393,7 @@ describe('doGenerate', () => {
     });
 
     expect(result).toMatchObject({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       language: 'en',
       durationInSeconds: 2.5,
       segments: [
@@ -403,7 +403,7 @@ describe('doGenerate', () => {
           endSecond: 1,
         },
         {
-          text: 'from the AI SDK!',
+          text: 'from the ai-toolkit!',
           startSecond: 1,
           endSecond: 2.5,
         },
@@ -445,7 +445,7 @@ describe('doGenerate', () => {
     server.urls[url].response = {
       type: 'json-value',
       body: {
-        text: 'Hello from the AI SDK!',
+        text: 'Hello from the ai-toolkit!',
         language: '',
       },
     };
@@ -456,7 +456,7 @@ describe('doGenerate', () => {
     });
 
     expect(result).toMatchObject({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       language: undefined,
       durationInSeconds: undefined,
       segments: [],
@@ -504,7 +504,7 @@ describe('doStream', () => {
         xai: {
           language: 'en',
           diarize: true,
-          keyterm: ['AI SDK', 'Grok'],
+          keyterm: ['ai-toolkit', 'Grok'],
           streaming: {
             interimResults: true,
             endpointing: 500,

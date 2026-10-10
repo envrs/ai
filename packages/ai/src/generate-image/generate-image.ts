@@ -6,14 +6,14 @@ import {
   type ImageModelV4ProviderMetadata,
   type ImageModelV4Result,
   type JSONObject,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   convertBase64ToUint8Array,
   detectMediaType,
   withUserAgentSuffix,
   type DataContent,
   type ProviderOptions,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { NoImageGeneratedError } from '../error/no-image-generated-error';
 import {
   DefaultGeneratedFile,

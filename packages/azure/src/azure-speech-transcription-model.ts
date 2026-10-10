@@ -1,4 +1,4 @@
-import type { TranscriptionModelV4 } from '@ai-sdk/provider';
+import type { TranscriptionModelV4 } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertBase64ToUint8Array,
@@ -7,7 +7,7 @@ import {
   mediaTypeToExtension,
   postFormDataToApi,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from 'zod/v4';
 import type { AzureTranscriptionProviderMetadata } from './azure-transcription-provider-metadata';
 import type { AzureTranscriptionModelSpeechOptions } from './azure-speech-transcription-model-options';

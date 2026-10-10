@@ -5,7 +5,7 @@ import {
   type Experimental_SandboxSession as SandboxSession,
   type ModelMessage,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { generateText } from '../generate-text/generate-text';
 import type {
   GenerateTextOnStartCallback,
@@ -179,7 +179,7 @@ export class ToolLoopAgent<
 
   /**
    * Tags outgoing requests so usage can be attributed to ToolLoopAgent. Chains
-   * with the `ai/<version>` and `ai-sdk/<provider>/<version>` suffixes added
+   * with the `ai/<version>` and `ai-toolkit/<provider>/<version>` suffixes added
    * downstream by generateText/streamText and the provider.
    */
   private agentHeaders(preparedCall: {
@@ -187,7 +187,7 @@ export class ToolLoopAgent<
   }): Record<string, string> {
     return withUserAgentSuffix(
       (preparedCall.headers as Record<string, string | undefined>) ?? {},
-      'ai-sdk-agent/tool-loop',
+      'ai-toolkit-agent/tool-loop',
     );
   }
 

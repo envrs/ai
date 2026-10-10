@@ -1,4 +1,4 @@
-import { convertUint8ArrayToBase64 } from '@ai-sdk/provider-utils';
+import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
 import { afterEach, describe, expect, it } from 'vitest';
 import { createMCPClient, type MCPClient } from './mcp-client';
 import {
@@ -20,7 +20,7 @@ const uiTool = {
   inputSchema: { type: 'object' },
   _meta: {
     ui: {
-      resourceUri: 'ui://ai-sdk-e2e/dashboard',
+      resourceUri: 'ui://ai-toolkit-e2e/dashboard',
       visibility: ['model', 'app'],
     },
   },
@@ -32,7 +32,7 @@ const appOnlyTool = {
   inputSchema: { type: 'object' },
   _meta: {
     ui: {
-      resourceUri: 'ui://ai-sdk-e2e/dashboard',
+      resourceUri: 'ui://ai-toolkit-e2e/dashboard',
       visibility: ['app'],
     },
   },
@@ -69,14 +69,14 @@ describe('MCP Apps helpers', () => {
   it('reads normalized tool metadata', () => {
     expect(getMCPAppToolMeta(uiTool)).toMatchInlineSnapshot(`
       {
-        "resourceUri": "ui://ai-sdk-e2e/dashboard",
+        "resourceUri": "ui://ai-toolkit-e2e/dashboard",
         "visibility": [
           "model",
           "app",
         ],
       }
     `);
-    expect(getMCPAppResourceUri(uiTool)).toBe('ui://ai-sdk-e2e/dashboard');
+    expect(getMCPAppResourceUri(uiTool)).toBe('ui://ai-toolkit-e2e/dashboard');
   });
 
   it('supports the legacy flat resource URI metadata key', () => {
@@ -126,7 +126,7 @@ describe('MCP Apps helpers', () => {
     expect(getMCPAppResourceUris({ tools: [plainTool, uiTool, appOnlyTool] }))
       .toMatchInlineSnapshot(`
       [
-        "ui://ai-sdk-e2e/dashboard",
+        "ui://ai-toolkit-e2e/dashboard",
       ]
     `);
   });
@@ -136,7 +136,7 @@ describe('MCP Apps helpers', () => {
       transport: new MockMCPTransport({
         resourceContents: [
           {
-            uri: 'ui://ai-sdk-e2e/dashboard',
+            uri: 'ui://ai-toolkit-e2e/dashboard',
             mimeType: MCP_APP_MIME_TYPE,
             text: '<!doctype html><html></html>',
             _meta: { ui: { prefersBorder: true } },
@@ -149,7 +149,7 @@ describe('MCP Apps helpers', () => {
     expect(
       await readMCPAppResource({
         client,
-        uri: 'ui://ai-sdk-e2e/dashboard',
+        uri: 'ui://ai-toolkit-e2e/dashboard',
       }),
     ).toMatchInlineSnapshot(`
       {
@@ -158,7 +158,7 @@ describe('MCP Apps helpers', () => {
           "prefersBorder": true,
         },
         "mimeType": "text/html;profile=mcp-app",
-        "uri": "ui://ai-sdk-e2e/dashboard",
+        "uri": "ui://ai-toolkit-e2e/dashboard",
       }
     `);
   });
@@ -168,11 +168,11 @@ describe('MCP Apps helpers', () => {
 
     expect(
       getMCPAppResourceFromReadResult({
-        uri: 'ui://ai-sdk-e2e/dashboard',
+        uri: 'ui://ai-toolkit-e2e/dashboard',
         resource: {
           contents: [
             {
-              uri: 'ui://ai-sdk-e2e/dashboard',
+              uri: 'ui://ai-toolkit-e2e/dashboard',
               mimeType: MCP_APP_MIME_TYPE,
               blob: convertUint8ArrayToBase64(new TextEncoder().encode(html)),
             },
@@ -184,18 +184,18 @@ describe('MCP Apps helpers', () => {
         "html": "<!doctype html><html>blob</html>",
         "meta": undefined,
         "mimeType": "text/html;profile=mcp-app",
-        "uri": "ui://ai-sdk-e2e/dashboard",
+        "uri": "ui://ai-toolkit-e2e/dashboard",
       }
     `);
   });
 
   it('drops malformed and non-string _meta.ui fields', () => {
     const resource = getMCPAppResourceFromReadResult({
-      uri: 'ui://ai-sdk-e2e/dashboard',
+      uri: 'ui://ai-toolkit-e2e/dashboard',
       resource: {
         contents: [
           {
-            uri: 'ui://ai-sdk-e2e/dashboard',
+            uri: 'ui://ai-toolkit-e2e/dashboard',
             mimeType: MCP_APP_MIME_TYPE,
             text: '<!doctype html>',
             _meta: {

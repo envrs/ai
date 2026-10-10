@@ -1,7 +1,7 @@
 import type {
   LanguageModelV4FunctionTool,
   LanguageModelV4ProviderTool,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { createToolNameMapping } from './create-tool-name-mapping';
 

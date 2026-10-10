@@ -1,13 +1,13 @@
-import { AISDKError } from '@ai-sdk/provider';
+import { ai-toolkitError } from '@ai-toolkit/provider';
 
 const name = 'AI_MCPClientOAuthError';
-const marker = `vercel.ai.error.${name}`;
+const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
 /**
  * An error occurred with the MCP client within the OAuth flow.
  */
-export class MCPClientOAuthError extends AISDKError {
+export class MCPClientOAuthError extends ai-toolkitError {
   private readonly [symbol] = true;
 
   constructor({
@@ -23,7 +23,7 @@ export class MCPClientOAuthError extends AISDKError {
   }
 
   static isInstance(error: unknown): error is MCPClientOAuthError {
-    return AISDKError.hasMarker(error, marker);
+    return ai-toolkitError.hasMarker(error, marker);
   }
 }
 export class ServerError extends MCPClientOAuthError {
@@ -43,7 +43,7 @@ export class UnauthorizedClientError extends MCPClientOAuthError {
 }
 
 const mismatchName = 'AI_AuthorizationServerMismatchError';
-const mismatchMarker = `vercel.ai.error.${mismatchName}`;
+const mismatchMarker = `khulnasoft.ai.error.${mismatchName}`;
 const mismatchSymbol = Symbol.for(mismatchMarker);
 
 export class AuthorizationServerMismatchError extends MCPClientOAuthError {
@@ -56,7 +56,7 @@ export class AuthorizationServerMismatchError extends MCPClientOAuthError {
   }
 
   static isInstance(error: unknown): error is AuthorizationServerMismatchError {
-    return AISDKError.hasMarker(error, mismatchMarker);
+    return ai-toolkitError.hasMarker(error, mismatchMarker);
   }
 }
 

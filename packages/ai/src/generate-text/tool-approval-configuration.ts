@@ -7,7 +7,7 @@ import type {
   ModelMessage,
   ToolExecutionOptions,
   ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type { TypedToolCall } from './tool-call';
 
 /**

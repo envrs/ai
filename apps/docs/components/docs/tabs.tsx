@@ -9,7 +9,7 @@ import {
 } from 'react';
 
 /**
- * Positional tabs matching the legacy ai-sdk.dev API:
+ * Positional tabs matching the legacy ai-toolkit.dev API:
  * `<Tabs items={['a', 'b']}><Tab>…</Tab><Tab>…</Tab></Tabs>`
  */
 export const Tabs = ({

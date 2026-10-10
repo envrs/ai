@@ -1,4 +1,4 @@
-import { createSearchRoute } from '@vercel/geistdocs/routes/search';
+import { createSearchRoute } from '@khulnasoft/geistdocs/routes/search';
 import { config } from '@/lib/geistdocs/config';
 import { v5Sources, v6Sources, v7Sources } from '@/lib/geistdocs/source';
 

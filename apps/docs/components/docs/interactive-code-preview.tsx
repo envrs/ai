@@ -3,18 +3,18 @@
 import {
   IconChevronDownSmall,
   IconWrench,
-} from '@vercel/geistdocs/assets/icons';
-import { IconArrowUpRight } from '@vercel/geistdocs/assets/icons/icon-arrow-up-right';
-import { LogoIconVercelSvg } from '@vercel/geistdocs/assets/logos';
-import { CodeBlock } from '@vercel/geistdocs/components/code-block';
+} from '@khulnasoft/geistdocs/assets/icons';
+import { IconArrowUpRight } from '@khulnasoft/geistdocs/assets/icons/icon-arrow-up-right';
+import { LogoIconVercelSvg } from '@khulnasoft/geistdocs/assets/logos';
+import { CodeBlock } from '@khulnasoft/geistdocs/components/code-block';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from '@vercel/geistdocs/components/dropdown-menu';
-import { geistShikiTheme } from '@vercel/geistdocs/shiki-theme';
+} from '@khulnasoft/geistdocs/components/dropdown-menu';
+import { geistShikiTheme } from '@khulnasoft/geistdocs/shiki-theme';
 import Link from 'next/link';
 import type { HighlighterCore as ShikiHighlighter } from 'shiki/core';
 import {
@@ -34,10 +34,10 @@ import {
 } from '@/lib/geistdocs/model-placeholders';
 
 /**
- * Faithful port of production ai-sdk.dev's InteractiveCodePreview
+ * Faithful port of production ai-toolkit.dev's InteractiveCodePreview
  * (legacy `apps/studio/components/docs/interactive-code-preview.tsx`),
  * adapted to Geistdocs primitives:
- * - `@vercel/geist` CodeBlock -> Geistdocs CodeBlock + client-side shiki
+ * - `@khulnasoft/geist` CodeBlock -> Geistdocs CodeBlock + client-side shiki
  * - geist Tabs -> local accessible tablist
  * - cmdk Command + Popover -> Geistdocs DropdownMenu
  * - swr -> plain `fetch` in an effect (no new dependencies)
@@ -50,7 +50,7 @@ const cx = (...classes: (string | false | null | undefined)[]): string =>
 
 const identityHref: ResolveHref = href => href;
 
-const GATEWAY_MODELS_URL = 'https://ai-gateway.vercel.sh/v1/models';
+const GATEWAY_MODELS_URL = 'https://ai-gateway.khulnasoft.sh/v1/models';
 
 const MODEL_KIND_GATEWAY_TYPES: Record<ModelKind, string> = {
   text: 'language',
@@ -144,7 +144,7 @@ const GATEWAY_LOGO_PROVIDERS = new Set([
   'stepfun',
   'tencent',
   'thinkingmachines',
-  'vercel',
+  'khulnasoft',
   'xai',
   'xiaomi',
   'zai',
@@ -196,7 +196,7 @@ const providerTitles: Record<string, string> = {
   morph: 'Morph',
   perplexity: 'Perplexity',
   stealth: 'Stealth',
-  vercel: 'Vercel',
+  khulnasoft: 'khulnasoft',
   zai: 'Z.AI',
 };
 
@@ -225,7 +225,7 @@ const providerPreferredModels: Partial<
   },
 };
 
-// First-party providers with official AI SDK packages
+// First-party providers with official ai-toolkit packages
 export const FIRST_PARTY_PROVIDERS = [
   'openai',
   'anthropic',
@@ -237,7 +237,7 @@ export const FIRST_PARTY_PROVIDERS = [
   'perplexity',
   'cohere',
   'amazon',
-  'vercel',
+  'khulnasoft',
 ];
 
 const MODEL_KIND_PROVIDER_ALLOWLISTS: Record<ModelKind, string[]> = {
@@ -316,7 +316,7 @@ function parseModels(data: GatewayResponse | null): ModelOption[] {
       continue;
     }
 
-    // Gateway lists xAI models under spacexai; the SDK package is @ai-sdk/xai.
+    // Gateway lists xAI models under spacexai; the SDK package is @ai-toolkit/xai.
     const provider = model.owned_by === 'spacexai' ? 'xai' : model.owned_by;
     const code = model.id.split('/')[1] || model.id;
     models.push({
@@ -360,7 +360,7 @@ function parseModels(data: GatewayResponse | null): ModelOption[] {
  * Lazy module-level shiki singleton. Uses the fine-grained core API with a
  * single grammar instead of the full `shiki` bundle: importing the bundle
  * puts all ~350 grammars into the client compile graph, which blows past
- * the Vercel build container's memory. The dynamic imports also keep the
+ * the khulnasoft build container's memory. The dynamic imports also keep the
  * highlighter out of the initial client bundle; the plain-text fallback
  * renders until it resolves.
  */
@@ -840,7 +840,7 @@ export const InteractiveCodePreview = ({
       const exportName = sdkInfo?.export ?? selectedModel.provider;
       result = result.replace(
         /__PROVIDER_IMPORT__/g,
-        `import { ${exportName} } from "@ai-sdk/${pkgName}"`,
+        `import { ${exportName} } from "@ai-toolkit/${pkgName}"`,
       );
     } else {
       // custom

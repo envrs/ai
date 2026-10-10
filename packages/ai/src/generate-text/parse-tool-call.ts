@@ -1,4 +1,4 @@
-import type { LanguageModelV4ToolCall } from '@ai-sdk/provider';
+import type { LanguageModelV4ToolCall } from '@ai-toolkit/provider';
 import {
   asSchema,
   safeParseJSON,
@@ -6,7 +6,7 @@ import {
   type InferToolInput,
   type ModelMessage,
   type ToolSet,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { InvalidToolInputError } from '../error/invalid-tool-input-error';
 import { NoSuchToolError } from '../error/no-such-tool-error';
 import { ToolCallRepairError } from '../error/tool-call-repair-error';
@@ -117,7 +117,7 @@ export async function parseToolCall<TOOLS extends ToolSet>({
     const input = parsedInput.success ? parsedInput.value : toolCall.input;
     const tool = getOwn(tools, toolCall.toolName);
 
-    // TODO AI SDK 6: special invalid tool call parts
+    // TODO ai-toolkit 6: special invalid tool call parts
     return {
       type: 'tool-call',
       toolCallId: toolCall.toolCallId,

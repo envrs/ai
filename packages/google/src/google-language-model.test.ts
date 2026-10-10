@@ -2,13 +2,13 @@ import {
   LanguageModelV4ProviderTool,
   type JSONSchema7,
   type LanguageModelV4Prompt,
-} from '@ai-sdk/provider';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+} from '@ai-toolkit/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import {
   WORKFLOW_DESERIALIZE,
   WORKFLOW_SERIALIZE,
-} from '@ai-sdk/provider-utils';
-import { convertReadableStreamToArray } from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils';
+import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
 import {
   GoogleLanguageModel,
   getGroundingMetadataSchema,
@@ -2516,7 +2516,7 @@ describe('doGenerate', () => {
       }
     `);
     expect(server.calls[0].requestUserAgent).toContain(
-      `ai-sdk-google/0.0.0-test`,
+      `ai-toolkit-google/0.0.0-test`,
     );
   });
 

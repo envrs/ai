@@ -1,4 +1,4 @@
-import type { FlexibleSchema } from '@ai-sdk/provider-utils';
+import type { FlexibleSchema } from '@ai-toolkit/provider-utils';
 import {
   useObject,
   type UseObjectHelpers,

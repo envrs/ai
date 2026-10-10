@@ -11,7 +11,7 @@ import {
   type JSONValue,
   type SharedV4ProviderMetadata,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   convertUint8ArrayToBase64,
@@ -21,7 +21,7 @@ import {
   postJsonToApi,
   resolve,
   type Resolvable,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from './zod';
 import type { GatewayConfig } from './gateway-config';
 import { asGatewayError } from './errors';

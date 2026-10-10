@@ -1,8 +1,8 @@
-import { tool } from '@ai-sdk/provider-utils';
+import { tool } from '@ai-toolkit/provider-utils';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it, beforeEach, vi } from 'vitest';
 import { z } from 'zod/v4';
 import { MockLanguageModelV4 } from '../test/mock-language-model-v4';

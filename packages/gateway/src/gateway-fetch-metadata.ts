@@ -6,7 +6,7 @@ import {
   lazySchema,
   resolve,
   zodSchema,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { z } from './zod';
 import { asGatewayError } from './errors';
 import type { GatewayConfig } from './gateway-config';
@@ -65,7 +65,7 @@ export class GatewayFetchMetadata {
 
       // The credits endpoint selects the team from the `teamId` / `slug`
       // query parameter rather than the team header, so forward it there.
-      // Without it, tokens that can access multiple teams (e.g. Vercel access
+      // Without it, tokens that can access multiple teams (e.g. khulnasoft access
       // tokens) cannot be scoped to a team and the request is rejected.
       const url = new URL('/v1/credits', baseUrl.origin);
       const teamIdOrSlug = getTeamIdOrSlug(headers);

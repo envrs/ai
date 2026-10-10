@@ -3,8 +3,8 @@
 import {
   createTestServer,
   TestResponseController,
-} from '@ai-sdk/test-server/with-vitest';
-import { mockId } from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/test-server/with-vitest';
+import { mockId } from '@ai-toolkit/provider-utils/test';
 import {
   cleanup,
   fireEvent,

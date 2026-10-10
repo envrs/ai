@@ -1,5 +1,5 @@
-import { createOpenAI } from '@ai-sdk/openai';
-import { InvalidResponseDataError } from '@ai-sdk/provider';
+import { createOpenAI } from '@ai-toolkit/openai';
+import { InvalidResponseDataError } from '@ai-toolkit/provider';
 import { expect, it, vi } from 'vitest';
 import { decide } from './decide';
 

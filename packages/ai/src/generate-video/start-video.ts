@@ -2,13 +2,13 @@ import type {
   Experimental_VideoModelV4CallOptions,
   Experimental_VideoModelV4FrameType,
   JSONValue,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   generateId,
   withUserAgentSuffix,
   type DataContent,
   type ProviderOptions,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { resolveVideoModel } from '../model/resolve-model';
 import type {
   VideoModel,
@@ -197,7 +197,7 @@ export async function experimental_startVideo({
       ...withUserAgentSuffix(headers ?? {}, `ai/${VERSION}`),
       ...(callerIdempotencyKey
         ? {}
-        : { 'idempotency-key': `aisdk_vid_${generateId()}` }),
+        : { 'idempotency-key': `ai-toolkit_vid_${generateId()}` }),
     },
     abortSignal,
     webhookUrl,

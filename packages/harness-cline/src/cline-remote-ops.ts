@@ -1,6 +1,6 @@
 import path from 'node:path';
-import { shellQuote } from '@ai-sdk/harness/utils';
-import type { Experimental_SandboxSession } from '@ai-sdk/provider-utils';
+import { shellQuote } from '@ai-toolkit/harness/utils';
+import type { Experimental_SandboxSession } from '@ai-toolkit/provider-utils';
 
 /**
  * Sandbox-backed implementations of the Cline harness's built-in tools.

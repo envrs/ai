@@ -130,7 +130,7 @@ between entities that can be used as input for other models or other natural
 language processing tasks.
 
 In the next section, you will learn about the difference between models 
-providers and models, and which ones are available in the AI SDK.",
+providers and models, and which ones are available in the ai-toolkit.",
         },
       ],
     },
@@ -1250,7 +1250,7 @@ between entities that can be used as input for other models or other natural
 language processing tasks.
 
 In the next section, you will learn about the difference between models 
-providers and models, and which ones are available in the AI SDK.",
+providers and models, and which ones are available in the ai-toolkit.",
         },
       ],
     },

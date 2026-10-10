@@ -5,21 +5,21 @@ import {
   type LanguageModelV4,
   type ProviderV4,
   type SkillsV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   isValidHostnamePart,
   loadOptionalSetting,
   loadSetting,
   withoutTrailingSlash,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import {
   AnthropicFiles,
   AnthropicLanguageModel,
   AnthropicSkills,
   anthropicTools,
   type AnthropicModelId,
-} from '@ai-sdk/anthropic/internal';
+} from '@ai-toolkit/anthropic/internal';
 import {
   createApiKeyFetchFunction,
   createSigV4FetchFunction,

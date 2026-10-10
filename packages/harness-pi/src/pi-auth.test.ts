@@ -111,7 +111,7 @@ describe('resolvePiEnv', () => {
       }),
     ).toEqual({
       AI_GATEWAY_API_KEY: 'gw',
-      AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh',
+      AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
     });
   });
 
@@ -138,7 +138,7 @@ describe('resolvePiEnv', () => {
       }),
     ).toEqual({
       AI_GATEWAY_API_KEY: 'oidc',
-      AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh',
+      AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
     });
   });
 
@@ -174,7 +174,7 @@ describe('resolvePiEnv', () => {
       }),
     ).toEqual({
       AI_GATEWAY_API_KEY: 'gw-mode',
-      AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh',
+      AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
     });
 
     expect(
@@ -415,19 +415,19 @@ describe('registerPiProviders', () => {
     });
 
     expect(registries.setRuntimeApiKey).toHaveBeenCalledWith(
-      'vercel-ai-gateway',
+      'khulnasoft-ai-gateway',
       'gw-key',
     );
     expect(registries.registerProvider).toHaveBeenCalledWith(
-      'vercel-ai-gateway',
+      'khulnasoft-ai-gateway',
       {
         apiKey: 'gw-key',
         baseUrl: 'https://gw.example',
         authHeader: true,
         headers: {
           'x-tenant': 'acme',
-          'User-Agent': 'ai-sdk-harness-pi/0.0.0-test',
-          'x-client-app': 'ai-sdk-harness-pi/0.0.0-test',
+          'User-Agent': 'ai-toolkit-harness-pi/0.0.0-test',
+          'x-client-app': 'ai-toolkit-harness-pi/0.0.0-test',
         },
       },
     );
@@ -452,7 +452,7 @@ describe('registerPiProviders', () => {
     expect(registeredProviders).toEqual([
       'anthropic',
       'openai',
-      'vercel-ai-gateway',
+      'khulnasoft-ai-gateway',
     ]);
     const anthropicCall = registries.registerProvider.mock.calls.find(
       call => call[0] === 'anthropic',
@@ -461,11 +461,11 @@ describe('registerPiProviders', () => {
       authorization: 'Bearer tok',
     });
     const gatewayCall = registries.registerProvider.mock.calls.find(
-      call => call[0] === 'vercel-ai-gateway',
+      call => call[0] === 'khulnasoft-ai-gateway',
     );
     expect(gatewayCall?.[1].headers).toEqual({
-      'User-Agent': 'ai-sdk-harness-pi/0.0.0-test',
-      'x-client-app': 'ai-sdk-harness-pi/0.0.0-test',
+      'User-Agent': 'ai-toolkit-harness-pi/0.0.0-test',
+      'x-client-app': 'ai-toolkit-harness-pi/0.0.0-test',
     });
   });
 
@@ -586,7 +586,7 @@ describe('registerPiProviders', () => {
     });
     expect(resolvedEnv).toEqual({
       AI_GATEWAY_API_KEY: 'gw',
-      AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh',
+      AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
     });
 
     const registries = await registerProviders({
@@ -595,7 +595,7 @@ describe('registerPiProviders', () => {
     });
     const providers = registries.registerProvider.mock.calls.map(c => c[0]);
 
-    expect(providers).toEqual(['vercel-ai-gateway']);
+    expect(providers).toEqual(['khulnasoft-ai-gateway']);
   });
 
   it('registers nothing when ai-gateway mode has no gateway credentials', async () => {
@@ -633,7 +633,7 @@ describe('registerPiProviders', () => {
     });
     expect(resolvedEnv).toEqual({
       AI_GATEWAY_API_KEY: 'gw',
-      AI_GATEWAY_BASE_URL: 'https://ai-gateway.vercel.sh',
+      AI_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
     });
 
     const registries = await registerProviders({
@@ -642,7 +642,7 @@ describe('registerPiProviders', () => {
     });
     const providers = registries.registerProvider.mock.calls.map(c => c[0]);
 
-    expect(providers).toEqual(['vercel-ai-gateway']);
+    expect(providers).toEqual(['khulnasoft-ai-gateway']);
   });
 
   it('auto mode falls back to other providers when no gateway credentials exist', async () => {
@@ -711,6 +711,6 @@ describe('registerPiProviders', () => {
       .map(c => c[0])
       .sort();
 
-    expect(providers).toEqual(['mistral', 'openai', 'vercel-ai-gateway']);
+    expect(providers).toEqual(['mistral', 'openai', 'khulnasoft-ai-gateway']);
   });
 });

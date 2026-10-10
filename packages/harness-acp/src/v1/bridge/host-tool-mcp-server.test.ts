@@ -99,7 +99,7 @@ describe('createHostToolMCPServer', () => {
     expect(result).toMatchInlineSnapshot(`
       {
         "_meta": {
-          "ai-sdk-harness-acp-correlation": "opaque-token",
+          "ai-toolkit-harness-acp-correlation": "opaque-token",
         },
         "content": [
           {
@@ -172,7 +172,7 @@ describe('createHostToolMCPServer', () => {
       .toMatchInlineSnapshot(`
         {
           "_meta": {
-            "ai-sdk-harness-acp-correlation": "failure-token",
+            "ai-toolkit-harness-acp-correlation": "failure-token",
           },
           "content": [
             {

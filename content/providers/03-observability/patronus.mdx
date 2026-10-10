@@ -1,13 +1,13 @@
 ---
 title: Patronus
-description: Monitor, evaluate and debug your AI SDK application with Patronus
+description: Monitor, evaluate and debug your ai-toolkit application with Patronus
 ---
 
 # Patronus Observability
 
 [Patronus AI](https://patronus.ai) provides an end-to-end system to evaluate, monitor and improve performance of an LLM system, enabling developers to ship AI products safely and confidently. Learn more [here](https://docs.patronus.ai/docs).
 
-When you build with the AI SDK, you can stream OpenTelemetry (OTEL) traces straight into Patronus and pair every generation with rich automatic evaluations.
+When you build with the ai-toolkit, you can stream OpenTelemetry (OTEL) traces straight into Patronus and pair every generation with rich automatic evaluations.
 
 ## Setup
 
@@ -22,14 +22,14 @@ OTEL_EXPORTER_OTLP_ENDPOINT=https://otel.patronus.ai/v1/traces
 OTEL_EXPORTER_OTLP_HEADERS="x-api-key=<PATRONUS_API_KEY>"
 ```
 
-#### With `@vercel/otel`
+#### With `@khulnasoft/otel`
 
 ```ts filename="instrumentation.ts"
-import { registerOTel } from '@vercel/otel';
+import { registerOTel } from '@khulnasoft/otel';
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http';
 import { BatchSpanProcessor } from '@opentelemetry/sdk-trace-node';
 import { registerTelemetry } from 'ai';
-import { LegacyOpenTelemetry } from '@ai-sdk/otel';
+import { LegacyOpenTelemetry } from '@ai-toolkit/otel';
 
 export function register() {
   registerOTel({
@@ -58,11 +58,11 @@ registerTelemetry(new LegacyOpenTelemetry());
 
 ### 2. Register the integration and enable telemetry
 
-Once you've installed `@ai-sdk/otel` and added `registerTelemetry` to your `instrumentation.ts`, telemetry is captured automatically. Pass `telemetry` to attach metadata:
+Once you've installed `@ai-toolkit/otel` and added `registerTelemetry` to your `instrumentation.ts`, telemetry is captured automatically. Pass `telemetry` to attach metadata:
 
 ```ts
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 
 const result = await generateText({
   model: openai('gpt-6-astra'),
@@ -83,7 +83,7 @@ Every attribute inside `metadata` becomes an OTEL attribute and is indexed by Pa
 ```ts filename="app/api/chat/route.ts"
 import { trace } from '@opentelemetry/api';
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 
 export async function POST(req: Request) {
   const body = await req.json();

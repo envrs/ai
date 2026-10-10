@@ -1,4 +1,4 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { createMistral } from './mistral-provider';
 import { MistralSpeechModel } from './mistral-speech-model';
@@ -50,12 +50,12 @@ describe('doGenerate', () => {
     prepareJsonResponse();
 
     await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
     });
 
     expect(await server.calls[0].requestBodyJson).toStrictEqual({
       model: modelId,
-      input: 'Hello from the AI SDK!',
+      input: 'Hello from the ai-toolkit!',
       response_format: 'mp3',
       stream: false,
     });
@@ -67,7 +67,7 @@ describe('doGenerate', () => {
     prepareJsonResponse();
 
     await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       voice: 'voice-id',
     });
 
@@ -80,7 +80,7 @@ describe('doGenerate', () => {
     prepareJsonResponse();
 
     await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       voice: 'voice-id',
       providerOptions: {
         mistral: {
@@ -91,7 +91,7 @@ describe('doGenerate', () => {
 
     expect(await server.calls[0].requestBodyJson).toStrictEqual({
       model: modelId,
-      input: 'Hello from the AI SDK!',
+      input: 'Hello from the ai-toolkit!',
       ref_audio: 'cmVmZXJlbmNlLWF1ZGlv',
       response_format: 'mp3',
       stream: false,
@@ -104,7 +104,7 @@ describe('doGenerate', () => {
       prepareJsonResponse();
 
       await model.doGenerate({
-        text: 'Hello from the AI SDK!',
+        text: 'Hello from the ai-toolkit!',
         outputFormat,
       });
 
@@ -118,7 +118,7 @@ describe('doGenerate', () => {
     prepareJsonResponse();
 
     const result = await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       outputFormat: 'aac',
     });
 
@@ -137,7 +137,7 @@ describe('doGenerate', () => {
     prepareJsonResponse();
 
     const result = await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       instructions: 'Speak cheerfully',
       speed: 1.2,
       language: 'en',
@@ -170,7 +170,7 @@ describe('doGenerate', () => {
     });
 
     await customProvider.speech(modelId).doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       headers: {
         'Custom-Request-Header': 'request-header-value',
       },
@@ -183,7 +183,7 @@ describe('doGenerate', () => {
       'custom-request-header': 'request-header-value',
     });
     expect(server.calls[0].requestUserAgent).toContain(
-      'ai-sdk-mistral/0.0.0-test',
+      'ai-toolkit-mistral/0.0.0-test',
     );
   });
 
@@ -202,7 +202,7 @@ describe('doGenerate', () => {
     });
 
     await customProvider.speech(modelId).doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
     });
 
     expect(customFetch.mock.calls[0]![0]).toBe(customUrl);
@@ -221,7 +221,7 @@ describe('doGenerate', () => {
     });
 
     await customProvider.speech(modelId).doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
     });
 
     expect(customFetch).toHaveBeenCalledOnce();
@@ -232,7 +232,7 @@ describe('doGenerate', () => {
     prepareJsonResponse({ audioData: 'YXVkaW8=' });
 
     const result = await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
     });
 
     expect(result.audio).toBe('YXVkaW8=');
@@ -252,7 +252,7 @@ describe('doGenerate', () => {
     });
 
     const result = await customModel.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
     });
 
     expect(result.response).toMatchObject({
@@ -271,7 +271,7 @@ describe('doGenerate', () => {
     prepareJsonResponse();
 
     const result = await model.doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       providerOptions: {
         mistral: {
           refAudio: 'sensitive-reference-audio',
@@ -282,7 +282,7 @@ describe('doGenerate', () => {
     expect(result.request?.body).toBe(
       JSON.stringify({
         model: modelId,
-        input: 'Hello from the AI SDK!',
+        input: 'Hello from the ai-toolkit!',
         ref_audio: '[redacted]',
         response_format: 'mp3',
         stream: false,
@@ -306,7 +306,7 @@ describe('doGenerate', () => {
 
     await expect(
       model.doGenerate({
-        text: 'Hello from the AI SDK!',
+        text: 'Hello from the ai-toolkit!',
         providerOptions: {
           mistral: {
             refAudio: 'sensitive-reference-audio',
@@ -337,7 +337,7 @@ describe('doGenerate', () => {
     });
 
     await customProvider.speech(modelId).doGenerate({
-      text: 'Hello from the AI SDK!',
+      text: 'Hello from the ai-toolkit!',
       abortSignal: abortController.signal,
     });
 

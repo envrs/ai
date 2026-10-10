@@ -1,8 +1,8 @@
 import {
   HarnessCapabilityUnsupportedError,
   type HarnessV1NetworkSandboxSession,
-} from '@ai-sdk/harness';
-import type * as HarnessUtils from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness';
+import type * as HarnessUtils from '@ai-toolkit/harness/utils';
 import type * as NodeFsPromises from 'node:fs/promises';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { createCodex } from './codex-harness';
@@ -59,7 +59,7 @@ const webSocketMocks = vi.hoisted(() => {
 
 vi.mock('ws', () => ({ WebSocket: webSocketMocks.WebSocket }));
 
-vi.mock('@ai-sdk/harness/utils', async importOriginal => {
+vi.mock('@ai-toolkit/harness/utils', async importOriginal => {
   const actual = await importOriginal<typeof HarnessUtils>();
   class FakeSandboxChannel {
     private readonly listeners = new Map<
@@ -165,9 +165,9 @@ function fakeNetworkSandboxSessionForStartupSuccess({
         exitCode: 0,
         stdout:
           command === 'pwd'
-            ? '/vercel/sandbox\n'
+            ? '/khulnasoft/sandbox\n'
             : command === 'printf "%s" "$HOME"'
-              ? '/home/vercel-sandbox'
+              ? '/home/khulnasoft-sandbox'
               : '',
         stderr: '',
       };
@@ -201,7 +201,7 @@ function fakeNetworkSandboxSessionForStartupSuccess({
   };
   return {
     id: 'test-sandbox',
-    defaultWorkingDirectory: '/vercel/sandbox',
+    defaultWorkingDirectory: '/khulnasoft/sandbox',
     restricted: () => session,
     ports: [4319],
     async getPortEndpoint() {
@@ -254,7 +254,7 @@ describe('createCodex adapter', () => {
         spawns: [],
         writes: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/codex-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
     });
     const control = await session.doPromptTurn({
       skills: [],
@@ -296,7 +296,7 @@ describe('createCodex adapter', () => {
       harness.doStart({
         sessionId: 's1',
         sandboxSession: {} as HarnessV1NetworkSandboxSession,
-        sessionWorkDir: '/vercel/sandbox/codex-s1',
+        sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
         permissionMode: 'allow-edits',
       }),
     ).rejects.toBeInstanceOf(HarnessCapabilityUnsupportedError);
@@ -306,12 +306,12 @@ describe('createCodex adapter', () => {
     const harness = createCodex();
     const sandboxSession = {
       id: 'test-sandbox',
-      defaultWorkingDirectory: '/vercel/sandbox',
+      defaultWorkingDirectory: '/khulnasoft/sandbox',
       restricted: () =>
         ({
           run: async () => ({
             exitCode: 0,
-            stdout: '/home/vercel-sandbox',
+            stdout: '/home/khulnasoft-sandbox',
             stderr: '',
           }),
           readTextFile: async () => null,
@@ -330,7 +330,7 @@ describe('createCodex adapter', () => {
       harness.doStart({
         sessionId: 's1',
         sandboxSession,
-        sessionWorkDir: '/vercel/sandbox/codex-s1',
+        sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
       }),
     ).rejects.toBeInstanceOf(HarnessCapabilityUnsupportedError);
   });
@@ -350,7 +350,7 @@ describe('createCodex adapter', () => {
       }).doStart({
         sessionId: 's1',
         sandboxSession,
-        sessionWorkDir: '/vercel/sandbox/codex-s1',
+        sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
       }),
     ).rejects.toThrow(/explicit `port`/);
 
@@ -358,7 +358,7 @@ describe('createCodex adapter', () => {
       createCodex({ port: 4319 }).doStart({
         sessionId: 's1',
         sandboxSession,
-        sessionWorkDir: '/vercel/sandbox/codex-s1',
+        sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
       }),
     ).rejects.toThrow(/explicit `portEndpoint`/);
   });
@@ -382,7 +382,7 @@ describe('createCodex adapter', () => {
     }).doStart({
       sessionId: 's1',
       sandboxSession: networkSession.restricted(),
-      sessionWorkDir: '/vercel/sandbox/codex-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
     });
 
     expect(runs).toContain('printf "%s" "$HOME"');
@@ -416,7 +416,7 @@ describe('createCodex adapter', () => {
       }).doStart({
         sessionId: 's1',
         sandboxSession: networkSession.restricted(),
-        sessionWorkDir: '/vercel/sandbox/codex-s1',
+        sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
       }),
     ).rejects.toThrow(/does not expose an id/);
   });
@@ -436,19 +436,19 @@ describe('createCodex adapter', () => {
         spawnEnvs,
         writes,
       }),
-      sessionWorkDir: '/vercel/sandbox/codex-s1; env > /tmp/workdir-leak #',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1; env > /tmp/workdir-leak #',
     });
 
     const sessionStateDir =
-      '/home/vercel-sandbox/.ai-sdk-harness/.agent-runs/s1%3B%20env%20%3E%20%2Ftmp%2Fleak%20%23';
+      '/home/khulnasoft-sandbox/.ai-toolkit-harness/.agent-runs/s1%3B%20env%20%3E%20%2Ftmp%2Fleak%20%23';
     expect(runs).toContain(
-      `mkdir -p '/vercel/sandbox/codex-s1; env > /tmp/workdir-leak #' '${sessionStateDir}/bridge'`,
+      `mkdir -p '/khulnasoft/sandbox/codex-s1; env > /tmp/workdir-leak #' '${sessionStateDir}/bridge'`,
     );
     expect(spawns).toEqual([
-      `node '/home/vercel-sandbox/.ai-sdk-harness/.harness-bootstrap/codex/bridge.mjs' --workdir '/vercel/sandbox/codex-s1; env > /tmp/workdir-leak #' --bridge-state-dir '${sessionStateDir}/bridge'`,
+      `node '/home/khulnasoft-sandbox/.ai-toolkit-harness/.harness-bootstrap/codex/bridge.mjs' --workdir '/khulnasoft/sandbox/codex-s1; env > /tmp/workdir-leak #' --bridge-state-dir '${sessionStateDir}/bridge'`,
     ]);
-    expect(spawnEnvs.at(0)?.AI_SDK_HARNESS_CLIENT_APP).toBe(
-      'ai-sdk-harness-codex/0.0.0-test',
+    expect(spawnEnvs.at(0)?.ai-toolkit_HARNESS_CLIENT_APP).toBe(
+      'ai-toolkit-harness-codex/0.0.0-test',
     );
     expect(spawnEnvs.at(0)?.BRIDGE_CHANNEL_TOKEN).toMatch(/^[a-f0-9]{64}$/);
     await session.doDestroy();
@@ -463,7 +463,7 @@ describe('createCodex adapter', () => {
         spawns: [],
         writes: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/codex-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
     });
     const firstControl = await session.doPromptTurn({
       skills: [],
@@ -511,7 +511,7 @@ describe('createCodex adapter', () => {
         spawns: [],
         writes: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/codex-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
       builtinToolFiltering,
     });
     const control = await session.doPromptTurn({
@@ -542,7 +542,7 @@ describe('createCodex adapter', () => {
         spawns: [],
         writes: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/codex-gateway',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-gateway',
     });
     const gatewayControl = await gatewaySession.doPromptTurn({
       skills: [],
@@ -571,7 +571,7 @@ describe('createCodex adapter', () => {
         spawns: [],
         writes: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/codex-direct',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-direct',
     });
     const directControl = await directSession.doPromptTurn({
       skills: [],
@@ -619,7 +619,7 @@ describe('createCodex adapter', () => {
     const session = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/codex-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
     });
 
     expect(addRequestTransformations).toHaveBeenCalledWith([
@@ -641,7 +641,7 @@ describe('createCodex adapter', () => {
     ]);
     expect(forwardedCredentials).toEqual([
       {
-        credential: expect.stringMatching(/^aisdkhc_[A-Za-z0-9_-]{43}$/),
+        credential: expect.stringMatching(/^ai-toolkithc_[A-Za-z0-9_-]{43}$/),
         environmentVariableName: 'CODEX_API_KEY',
       },
     ]);
@@ -677,7 +677,7 @@ describe('createCodex adapter', () => {
     const session = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/codex-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
     });
 
     expect(forwardedCredentials).toEqual([
@@ -709,7 +709,7 @@ describe('createCodex adapter', () => {
     const identitySession = await identityHarness.doStart({
       sessionId: 's2',
       sandboxSession: identitySandboxSession,
-      sessionWorkDir: '/vercel/sandbox/codex-s2',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s2',
     });
 
     expect(warn).toHaveBeenCalledExactlyOnceWith(
@@ -736,7 +736,7 @@ describe('createCodex adapter', () => {
     }).doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/codex-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
       resumeFrom: {
         type: 'resume-session',
         harnessId: 'codex',
@@ -751,7 +751,7 @@ describe('createCodex adapter', () => {
 
     expect(spawnEnvs[0]?.CODEX_API_KEY).toBe('saved-codex-placeholder');
     expect(spawnEnvs[0]?.AI_GATEWAY_API_KEY).toMatch(
-      /^aisdkhc_[A-Za-z0-9_-]{43}$/,
+      /^ai-toolkithc_[A-Za-z0-9_-]{43}$/,
     );
     expect(JSON.stringify(spawnEnvs[0])).not.toContain(
       'current-gateway-secret',
@@ -759,7 +759,7 @@ describe('createCodex adapter', () => {
     expect(addRequestTransformations).toHaveBeenCalledWith([
       {
         match: {
-          host: 'ai-gateway.vercel.sh',
+          host: 'ai-gateway.khulnasoft.sh',
           path: { startsWith: '/v1' },
           headers: [
             {
@@ -794,11 +794,11 @@ describe('createCodex adapter', () => {
     const session = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/codex-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
     });
 
     const sandboxCredential = spawnEnvs.at(0)?.CODEX_API_KEY;
-    expect(sandboxCredential).toMatch(/^aisdkhc_[A-Za-z0-9_-]{43}$/);
+    expect(sandboxCredential).toMatch(/^ai-toolkithc_[A-Za-z0-9_-]{43}$/);
 
     expect(addRequestTransformations).toHaveBeenCalledWith([
       {
@@ -835,7 +835,7 @@ describe('createCodex adapter', () => {
         spawns: [],
         writes: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/codex-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
     });
     const control = await session.doPromptTurn({
       skills: [],
@@ -868,7 +868,7 @@ describe('createCodex adapter', () => {
         spawns: [],
         writes: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/codex-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
     });
     const control = await session.doPromptTurn({
       skills: [],
@@ -911,7 +911,7 @@ describe('createCodex adapter', () => {
     const session = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/codex-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
     });
 
     expect(mintBridgeToken).toHaveBeenCalledExactlyOnceWith('test-sandbox');
@@ -927,7 +927,7 @@ describe('createCodex adapter', () => {
     const attachedSession = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/codex-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
       resumeFrom,
     });
     expect(mintBridgeToken).toHaveBeenCalledTimes(1);
@@ -949,14 +949,14 @@ describe('createCodex adapter', () => {
     const session = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/codex-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
     });
 
     const resumeFrom = await session.doDetach();
     const attachedSession = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/codex-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/codex-s1',
       resumeFrom,
     });
 

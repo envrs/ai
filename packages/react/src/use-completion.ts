@@ -3,7 +3,7 @@ import {
   type CompletionRequestOptions,
   type UseCompletionOptions,
 } from 'ai';
-import { normalizeHeaders } from '@ai-sdk/provider-utils';
+import { normalizeHeaders } from '@ai-toolkit/provider-utils';
 import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import useSWR from 'swr';
 import { throttle } from './throttle';

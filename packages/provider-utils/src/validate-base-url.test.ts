@@ -1,4 +1,4 @@
-import { InvalidArgumentError } from '@ai-sdk/provider';
+import { InvalidArgumentError } from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { validateBaseURL } from './validate-base-url';
 

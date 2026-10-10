@@ -4,13 +4,13 @@ import {
   type ImageModelV4,
   type LanguageModelV4,
   type ProviderV4,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   loadApiKey,
   withoutTrailingSlash,
   withUserAgentSuffix,
   type FetchFunction,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { ProdiaImageModel } from './prodia-image-model';
 import type { ProdiaImageModelId } from './prodia-image-settings';
 import { ProdiaLanguageModel } from './prodia-language-model';
@@ -90,7 +90,7 @@ export function createProdia(
         })}`,
         ...options.headers,
       },
-      `ai-sdk-prodia/${VERSION}`,
+      `ai-toolkit-prodia/${VERSION}`,
     );
 
   const createImageModel = (modelId: ProdiaImageModelId) =>

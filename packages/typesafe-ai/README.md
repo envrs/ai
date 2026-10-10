@@ -1,19 +1,19 @@
-# AI SDK TypeSafe Provider
+# ai-toolkit TypeSafe Provider
 
-The **[TypeSafe provider](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai)**
-for the [AI SDK](https://ai-sdk.dev/docs) decides answers to Choice, Score, and Boolean
+The **[TypeSafe provider](https://ai-toolkit.dev/providers/ai-toolkit-providers/typesafe-ai)**
+for the [ai-toolkit](https://ai-toolkit.dev/docs) decides answers to Choice, Score, and Boolean
 questions using TypeSafe's System One models.
 
 ## Setup
 
 ```sh
-pnpm add @ai-sdk/typesafe-ai ai
+pnpm add @ai-toolkit/typesafe-ai ai
 ```
 
 Set `TYPESAFE_AI_API_KEY`, then pass a decision model instance:
 
 ```ts
-import { typeSafeAi } from '@ai-sdk/typesafe-ai';
+import { typeSafeAi } from '@ai-toolkit/typesafe-ai';
 import { experimental_decide } from 'ai';
 
 const result = await experimental_decide({
@@ -58,5 +58,5 @@ Native distributions and scores are preserved. TypeSafe returns rounded values;
 without changing the numbers. TypeSafe confidence is separate from probability:
 find it at `result.providerMetadata.typesafe.confidence[questionId]`.
 
-See the [provider documentation](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai)
+See the [provider documentation](https://ai-toolkit.dev/providers/ai-toolkit-providers/typesafe-ai)
 and [TypeSafe API reference](https://docs.typesafe.ai/api).

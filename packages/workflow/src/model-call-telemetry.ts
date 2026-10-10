@@ -1,5 +1,5 @@
-import type { LanguageModelV4Prompt } from '@ai-sdk/provider';
-import { createIdGenerator } from '@ai-sdk/provider-utils';
+import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
+import { createIdGenerator } from '@ai-toolkit/provider-utils';
 import type { LanguageModel, ModelMessage } from 'ai';
 import { createTelemetryDispatcher } from 'ai/internal';
 import { buildModelStepResult } from './build-model-step-result.js';
@@ -43,7 +43,7 @@ export function shouldDispatchModelCallTelemetryInStep(telemetry?: {
   return (
     telemetry?.isEnabled !== false &&
     telemetry?.integrations == null &&
-    globalThis.AI_SDK_TELEMETRY_INTEGRATIONS == null
+    globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS == null
   );
 }
 

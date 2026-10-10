@@ -1,4 +1,4 @@
-import type { Experimental_SandboxProcess } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxProcess } from '@ai-toolkit/provider-utils';
 
 const DEFAULT_TAIL_LIMIT = 20;
 

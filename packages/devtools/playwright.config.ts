@@ -13,7 +13,7 @@ export default defineConfig({
     baseURL,
   },
   webServer: {
-    command: `AI_SDK_DEVTOOLS_PORT=${port} pnpm tsx src/viewer/server.ts`,
+    command: `ai-toolkit_DEVTOOLS_PORT=${port} pnpm tsx src/viewer/server.ts`,
     url: baseURL,
     reuseExistingServer: false,
   },

@@ -1,5 +1,5 @@
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
-import { APICallError } from '@ai-sdk/provider';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
+import { APICallError } from '@ai-toolkit/provider';
 import { createDeepgram } from './deepgram-provider';
 import { DeepgramSpeechModel } from './deepgram-speech-model';
 import { describe, it, expect, vi } from 'vitest';
@@ -75,7 +75,7 @@ describe('doGenerate', () => {
     });
 
     expect(server.calls[0].requestUserAgent).toContain(
-      `ai-sdk-deepgram/0.0.0-test`,
+      `ai-toolkit-deepgram/0.0.0-test`,
     );
   });
 

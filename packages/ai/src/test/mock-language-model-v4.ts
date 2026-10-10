@@ -3,7 +3,7 @@ import type {
   LanguageModelV4CallOptions,
   LanguageModelV4GenerateResult,
   LanguageModelV4StreamResult,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { notImplemented } from './not-implemented';
 
 export class MockLanguageModelV4 implements LanguageModelV4 {

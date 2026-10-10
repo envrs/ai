@@ -36,7 +36,7 @@ export const ToolCallLabel = ({ children }: { children: ReactNode }) => (
 /**
  * Replays `messages` one turn per second while `isPlaying`, holds on the
  * finished conversation for `holdDelay`, then starts over (ported from the
- * legacy ai-sdk.dev CardPlayer simulations). Paused or unmounted replays
+ * legacy ai-toolkit.dev CardPlayer simulations). Paused or unmounted replays
  * schedule no timers.
  */
 export const ConversationReplay = <TResult,>({

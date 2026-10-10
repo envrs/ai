@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import type { LanguageModelV4Prompt, SharedV4Warning } from '@ai-sdk/provider';
-import { createToolNameMapping } from '@ai-sdk/provider-utils';
+import type { LanguageModelV4Prompt, SharedV4Warning } from '@ai-toolkit/provider';
+import { createToolNameMapping } from '@ai-toolkit/provider-utils';
 import { convertToAnthropicPrompt } from './convert-to-anthropic-prompt';
 import { CacheControlValidator } from './get-cache-control';
 
@@ -292,7 +292,7 @@ describe('orphaned programmatic callers', () => {
               toolCallId: 'search-call',
               toolName: 'web_search',
               providerExecuted: true,
-              input: { query: 'AI SDK' },
+              input: { query: 'ai-toolkit' },
               providerOptions: caller,
             },
             {
@@ -316,7 +316,7 @@ describe('orphaned programmatic callers', () => {
         type: 'server_tool_use',
         id: 'search-call',
         name: 'web_search',
-        input: { query: 'AI SDK' },
+        input: { query: 'ai-toolkit' },
         cache_control: undefined,
       },
       {
@@ -3138,7 +3138,7 @@ describe('assistant messages', () => {
           content: [
             {
               input: {
-                url: 'https://raw.githubusercontent.com/vercel/ai/blob/main/examples/ai-functions/data/ai.pdf',
+                url: 'https://raw.githubusercontent.com/khulnasoft/ai/blob/main/examples/ai-functions/data/ai.pdf',
               },
               providerExecuted: true,
               toolCallId: 'srvtoolu_011cNtbtzFARKPcAcp7w4nh9',
@@ -3150,7 +3150,7 @@ describe('assistant messages', () => {
                 type: 'json',
                 value: {
                   type: 'web_fetch_result',
-                  url: 'https://raw.githubusercontent.com/vercel/ai/blob/main/examples/ai-functions/data/ai.pdf',
+                  url: 'https://raw.githubusercontent.com/khulnasoft/ai/blob/main/examples/ai-functions/data/ai.pdf',
                   retrievedAt: '2025-01-01T00:00:00.000Z',
                   content: {
                     type: 'document',
@@ -3187,7 +3187,7 @@ describe('assistant messages', () => {
                   "cache_control": undefined,
                   "id": "srvtoolu_011cNtbtzFARKPcAcp7w4nh9",
                   "input": {
-                    "url": "https://raw.githubusercontent.com/vercel/ai/blob/main/examples/ai-functions/data/ai.pdf",
+                    "url": "https://raw.githubusercontent.com/khulnasoft/ai/blob/main/examples/ai-functions/data/ai.pdf",
                   },
                   "name": "web_fetch",
                   "type": "server_tool_use",
@@ -3209,7 +3209,7 @@ describe('assistant messages', () => {
                     },
                     "retrieved_at": "2025-01-01T00:00:00.000Z",
                     "type": "web_fetch_result",
-                    "url": "https://raw.githubusercontent.com/vercel/ai/blob/main/examples/ai-functions/data/ai.pdf",
+                    "url": "https://raw.githubusercontent.com/khulnasoft/ai/blob/main/examples/ai-functions/data/ai.pdf",
                   },
                   "tool_use_id": "srvtoolu_011cNtbtzFARKPcAcp7w4nh9",
                   "type": "web_fetch_tool_result",
@@ -4220,7 +4220,7 @@ describe('assistant messages', () => {
                 toolName: 'code_execution',
                 input: {
                   type: 'programmatic-tool-call',
-                  code: 'await web_search({ query: "AI SDK" })',
+                  code: 'await web_search({ query: "ai-toolkit" })',
                 },
                 providerExecuted: true,
                 providerOptions: {
@@ -4231,7 +4231,7 @@ describe('assistant messages', () => {
                 type: 'tool-call',
                 toolCallId: 'web-search-call-1',
                 toolName: 'web_search',
-                input: { query: 'AI SDK' },
+                input: { query: 'ai-toolkit' },
                 providerExecuted: true,
                 providerOptions: caller,
               },

@@ -2,7 +2,7 @@ import {
   InvalidResponseDataError,
   type LanguageModelV4StreamPart,
   type SharedV4ProviderMetadata,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import { generateId as defaultGenerateId } from './generate-id';
 import {
   startsWithStructuredValue,

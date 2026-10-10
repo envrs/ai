@@ -1,9 +1,9 @@
 import {
   HarnessCapabilityUnsupportedError,
   type HarnessV1NetworkSandboxSession,
-} from '@ai-sdk/harness';
-import { HarnessAgent } from '@ai-sdk/harness/agent';
-import type * as HarnessUtils from '@ai-sdk/harness/utils';
+} from '@ai-toolkit/harness';
+import { HarnessAgent } from '@ai-toolkit/harness/agent';
+import type * as HarnessUtils from '@ai-toolkit/harness/utils';
 import type * as NodeFsPromises from 'node:fs/promises';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { z } from 'zod/v4';
@@ -102,7 +102,7 @@ const wsMock = vi.hoisted(() => {
   };
 });
 
-vi.mock('@ai-sdk/harness/utils', async importOriginal => {
+vi.mock('@ai-toolkit/harness/utils', async importOriginal => {
   const actual = await importOriginal<typeof HarnessUtils>();
   class FakeSandboxChannel {
     private readonly connect: (options: {
@@ -209,7 +209,7 @@ function fakeNetworkSandboxSessionForStartupFailure({
   const session = {
     run: async ({ command }: { command: string }) => ({
       exitCode: 0,
-      stdout: command === 'printf "%s" "$HOME"' ? '/home/vercel-sandbox' : '',
+      stdout: command === 'printf "%s" "$HOME"' ? '/home/khulnasoft-sandbox' : '',
       stderr: '',
     }),
     readTextFile: async () => null,
@@ -223,7 +223,7 @@ function fakeNetworkSandboxSessionForStartupFailure({
   };
   return {
     id: 'test-sandbox',
-    defaultWorkingDirectory: '/vercel/sandbox',
+    defaultWorkingDirectory: '/khulnasoft/sandbox',
     restricted: () => session,
     ports: [port],
     async getPortEndpoint() {
@@ -256,7 +256,7 @@ function fakeNetworkSandboxSessionForStartupSuccess({
     run: async ({ command }: { command: string }) => {
       runs.push(command);
       if (command === 'printf "%s" "$HOME"') {
-        return { exitCode: 0, stdout: '/home/vercel-sandbox', stderr: '' };
+        return { exitCode: 0, stdout: '/home/khulnasoft-sandbox', stderr: '' };
       }
       return { exitCode: 0, stdout: '', stderr: '' };
     },
@@ -289,7 +289,7 @@ function fakeNetworkSandboxSessionForStartupSuccess({
   };
   return {
     id: 'test-sandbox',
-    defaultWorkingDirectory: '/vercel/sandbox',
+    defaultWorkingDirectory: '/khulnasoft/sandbox',
     restricted: () => session,
     ports: [4319],
     async getPortEndpoint() {
@@ -319,7 +319,7 @@ async function startWithFakeBridgeSocket(startupTimeoutMs = 50) {
       writes: [],
       runs: [],
     }),
-    sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+    sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
   });
 }
 
@@ -438,12 +438,12 @@ describe('createClaudeCode adapter', () => {
     });
     const sandboxSession = {
       id: 'test-sandbox',
-      defaultWorkingDirectory: '/vercel/sandbox',
+      defaultWorkingDirectory: '/khulnasoft/sandbox',
       restricted: () =>
         ({
           run: async () => ({
             exitCode: 0,
-            stdout: '/home/vercel-sandbox',
+            stdout: '/home/khulnasoft-sandbox',
             stderr: '',
           }),
           readTextFile: async () => null,
@@ -462,7 +462,7 @@ describe('createClaudeCode adapter', () => {
       harness.doStart({
         sessionId: 's1',
         sandboxSession,
-        sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+        sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
       }),
     ).rejects.toBeInstanceOf(HarnessCapabilityUnsupportedError);
   });
@@ -483,16 +483,16 @@ describe('createClaudeCode adapter', () => {
         writes,
       }),
       sessionWorkDir:
-        '/vercel/sandbox/claude-code-s1; env > /tmp/workdir-leak #',
+        '/khulnasoft/sandbox/claude-code-s1; env > /tmp/workdir-leak #',
     });
 
     const sessionStateDir =
-      '/home/vercel-sandbox/.ai-sdk-harness/.agent-runs/s1%3B%20env%20%3E%20%2Ftmp%2Fleak%20%23';
+      '/home/khulnasoft-sandbox/.ai-toolkit-harness/.agent-runs/s1%3B%20env%20%3E%20%2Ftmp%2Fleak%20%23';
     expect(runs).toContain(
-      `mkdir -p '/vercel/sandbox/claude-code-s1; env > /tmp/workdir-leak #' '${sessionStateDir}/bridge'`,
+      `mkdir -p '/khulnasoft/sandbox/claude-code-s1; env > /tmp/workdir-leak #' '${sessionStateDir}/bridge'`,
     );
     expect(spawns).toEqual([
-      `node '/home/vercel-sandbox/.ai-sdk-harness/.harness-bootstrap/claude-code/bridge.mjs' --workdir '/vercel/sandbox/claude-code-s1; env > /tmp/workdir-leak #' --bridge-state-dir '${sessionStateDir}/bridge'`,
+      `node '/home/khulnasoft-sandbox/.ai-toolkit-harness/.harness-bootstrap/claude-code/bridge.mjs' --workdir '/khulnasoft/sandbox/claude-code-s1; env > /tmp/workdir-leak #' --bridge-state-dir '${sessionStateDir}/bridge'`,
     ]);
     await session.doDestroy();
   });
@@ -506,7 +506,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
     const control = await session.doPromptTurn({
       model: 'agent-model',
@@ -533,7 +533,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
 
     await session.doPromptTurn({
@@ -563,7 +563,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
 
     await session.doPromptTurn({
@@ -576,7 +576,7 @@ describe('createClaudeCode adapter', () => {
     expect(sentMessages.at(-1)).toMatchObject({
       type: 'start',
       env: {
-        CLAUDE_AGENT_SDK_CLIENT_APP: 'ai-sdk-harness-claude-code/0.0.0-test',
+        CLAUDE_AGENT_SDK_CLIENT_APP: 'ai-toolkit-harness-claude-code/0.0.0-test',
       },
     });
     expect(spawnEnvs.at(0)?.BRIDGE_CHANNEL_TOKEN).toMatch(/^[a-f0-9]{64}$/);
@@ -595,7 +595,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-gateway',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-gateway',
     });
     await gatewaySession.doPromptTurn({
       skills: [],
@@ -619,7 +619,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-direct',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-direct',
     });
     await directSession.doPromptTurn({
       skills: [],
@@ -661,7 +661,7 @@ describe('createClaudeCode adapter', () => {
     const session = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
 
     await session.doPromptTurn({
@@ -688,7 +688,7 @@ describe('createClaudeCode adapter', () => {
     ]);
     expect(forwardedCredentials).toEqual([
       {
-        credential: expect.stringMatching(/^aisdkhc_[A-Za-z0-9_-]{43}$/),
+        credential: expect.stringMatching(/^ai-toolkithc_[A-Za-z0-9_-]{43}$/),
         environmentVariableName: 'ANTHROPIC_API_KEY',
       },
     ]);
@@ -724,7 +724,7 @@ describe('createClaudeCode adapter', () => {
     }).doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
       resumeFrom: {
         type: 'resume-session',
         harnessId: 'claude-code',
@@ -746,7 +746,7 @@ describe('createClaudeCode adapter', () => {
     const sandboxEnv = lastStart().env as Record<string, string>;
     expect(sandboxEnv.ANTHROPIC_API_KEY).toBe('saved-anthropic-placeholder');
     expect(sandboxEnv.AI_GATEWAY_API_KEY).toMatch(
-      /^aisdkhc_[A-Za-z0-9_-]{43}$/,
+      /^ai-toolkithc_[A-Za-z0-9_-]{43}$/,
     );
     expect(JSON.stringify(sandboxEnv)).not.toContain('current-gateway-secret');
     expect(JSON.stringify(spawnEnvs[0])).not.toContain(
@@ -754,7 +754,7 @@ describe('createClaudeCode adapter', () => {
     );
     expect(addRequestTransformations.mock.calls[0]?.[0]).toContainEqual({
       match: {
-        host: 'ai-gateway.vercel.sh',
+        host: 'ai-gateway.khulnasoft.sh',
         headers: [
           {
             key: { exact: 'x-api-key' },
@@ -786,7 +786,7 @@ describe('createClaudeCode adapter', () => {
     const session = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
 
     await session.doPromptTurn({
@@ -848,7 +848,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
 
     await session.doPromptTurn({
@@ -885,7 +885,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s2',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s2',
     });
 
     expect(warn).toHaveBeenCalledExactlyOnceWith(
@@ -919,7 +919,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
 
     await session.doPromptTurn({
@@ -971,7 +971,7 @@ describe('createClaudeCode adapter', () => {
     const session = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
 
     expect(mintBridgeToken).toHaveBeenCalledExactlyOnceWith('test-sandbox');
@@ -987,7 +987,7 @@ describe('createClaudeCode adapter', () => {
     const attachedSession = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
       resumeFrom,
     });
     expect(mintBridgeToken).toHaveBeenCalledTimes(1);
@@ -1005,7 +1005,7 @@ describe('createClaudeCode adapter', () => {
     const session = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
       resumeFrom: {
         type: 'resume-session',
         harnessId: 'claude-code',
@@ -1018,7 +1018,7 @@ describe('createClaudeCode adapter', () => {
     const attachedSession = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
       resumeFrom,
     });
     const control = await attachedSession.doPromptTurn({
@@ -1075,14 +1075,14 @@ describe('createClaudeCode adapter', () => {
     const session = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
 
     const resumeFrom = await session.doDetach();
     const attachedSession = await harness.doStart({
       sessionId: 's1',
       sandboxSession,
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
       resumeFrom,
     });
 
@@ -1108,7 +1108,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
 
     expect(spawnEnvs.at(0)).not.toHaveProperty('CLAUDE_AGENT_SDK_CLIENT_APP');
@@ -1125,7 +1125,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
     const control = await session.doPromptTurn({
       skills: [],
@@ -1152,7 +1152,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
     const control = await session.doPromptTurn({
       skills: [],
@@ -1176,7 +1176,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
     const control = await session.doPromptTurn({
       skills: [],
@@ -1203,7 +1203,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
     const control = await session.doPromptTurn({
       skills: [],
@@ -1227,7 +1227,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
 
     const abort = new AbortController();
@@ -1263,7 +1263,7 @@ describe('createClaudeCode adapter', () => {
         writes: [],
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
       continueFrom: {
         type: 'continue-turn',
         harnessId: 'claude-code',
@@ -1294,7 +1294,7 @@ describe('createClaudeCode adapter', () => {
         writes,
         runs,
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
     const control = await session.doPromptTurn({
       skills: [
@@ -1331,16 +1331,16 @@ describe('createClaudeCode adapter', () => {
     const bridgeMetaWrite = writes.find(write =>
       write.path.endsWith('/bridge-meta.json'),
     );
-    expect(runs).toContain("mkdir -p '/home/vercel-sandbox/.claude/skills'");
+    expect(runs).toContain("mkdir -p '/home/khulnasoft-sandbox/.claude/skills'");
     expect(bridgeMetaWrite).toEqual({
-      path: '/home/vercel-sandbox/.ai-sdk-harness/.agent-runs/s1/bridge/bridge-meta.json',
+      path: '/home/khulnasoft-sandbox/.ai-toolkit-harness/.agent-runs/s1/bridge/bridge-meta.json',
       content: JSON.stringify({ type: 'claude-code', state: 'starting' }),
     });
     expect(skillWrites.map(write => write.path)).toEqual(
       expect.arrayContaining([
-        '/home/vercel-sandbox/.claude/skills/weather-forecast/SKILL.md',
-        '/home/vercel-sandbox/.claude/skills/weather-forecast/reference.md',
-        '/home/vercel-sandbox/.claude/skills/weather-codes/SKILL.md',
+        '/home/khulnasoft-sandbox/.claude/skills/weather-forecast/SKILL.md',
+        '/home/khulnasoft-sandbox/.claude/skills/weather-forecast/reference.md',
+        '/home/khulnasoft-sandbox/.claude/skills/weather-codes/SKILL.md',
       ]),
     );
     expect(skillWrites).toHaveLength(3);
@@ -1364,7 +1364,7 @@ describe('createClaudeCode adapter', () => {
         writes,
         runs: [],
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
     await expect(
       session.doPromptTurn({
@@ -1396,7 +1396,7 @@ describe('createClaudeCode adapter', () => {
         writes,
         runs,
       }),
-      sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+      sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
     });
     await expect(
       session.doPromptTurn({
@@ -1417,7 +1417,7 @@ describe('createClaudeCode adapter', () => {
       false,
     );
     expect(runs).not.toContain(
-      "mkdir -p '/home/vercel-sandbox/.claude/skills'",
+      "mkdir -p '/home/khulnasoft-sandbox/.claude/skills'",
     );
     await session.doDestroy();
   });
@@ -1441,7 +1441,7 @@ describe('createClaudeCode adapter', () => {
       await harness.doStart({
         sessionId: 's1',
         sandboxSession,
-        sessionWorkDir: '/vercel/sandbox/claude-code-s1',
+        sessionWorkDir: '/khulnasoft/sandbox/claude-code-s1',
       });
     } catch (err) {
       error = err;

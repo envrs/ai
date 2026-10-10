@@ -1,4 +1,4 @@
-import type { JSONSchema7 } from '@ai-sdk/provider';
+import type { JSONSchema7 } from '@ai-toolkit/provider';
 import { z } from 'zod/v4';
 
 export type PerplexityAgentTool =

@@ -1,4 +1,4 @@
-import type { SandboxChannelReconnectOptions } from '@ai-sdk/harness/utils';
+import type { SandboxChannelReconnectOptions } from '@ai-toolkit/harness/utils';
 import { describe, expectTypeOf, test } from 'vitest';
 import { createOpenCode, type OpenCodeHarnessSettings } from './index';
 

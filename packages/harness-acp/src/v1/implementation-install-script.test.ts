@@ -35,7 +35,7 @@ describe('getImplementationInstallScript', () => {
       executable: 'acp-agent',
     } as const satisfies ACPImplementation;
     const temporaryDirectory = await mkdtemp(
-      join(tmpdir(), 'ai-sdk-harness-acp-install-'),
+      join(tmpdir(), 'ai-toolkit-harness-acp-install-'),
     );
     const implementationDirectory = join(
       temporaryDirectory,
@@ -93,7 +93,7 @@ describe('getImplementationInstallScript', () => {
       executable: 'acp-agent',
     } as const satisfies ACPImplementation;
     const temporaryDirectory = await mkdtemp(
-      join(tmpdir(), 'ai-sdk-harness-acp-install-'),
+      join(tmpdir(), 'ai-toolkit-harness-acp-install-'),
     );
     const scriptPath = join(temporaryDirectory, 'install.sh');
     await writeFile(

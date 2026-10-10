@@ -1,4 +1,4 @@
-import type { Experimental_SandboxSession } from '@ai-sdk/provider-utils';
+import type { Experimental_SandboxSession } from '@ai-toolkit/provider-utils';
 
 export type HarnessV1SandboxTemplate = {
   readonly identity: string;

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { InvalidArgumentError } from '@ai-sdk/provider';
+import { InvalidArgumentError } from '@ai-toolkit/provider';
 import { createReplicate } from './replicate-provider';
 import { ReplicateImageModel } from './replicate-image-model';
 import { ReplicateVideoModel } from './replicate-video-model';

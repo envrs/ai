@@ -41,7 +41,7 @@ export type FilesV4UploadFileResult = {
 
   /**
    * Additional provider-specific metadata. They are passed through
-   * to the provider from the AI SDK and enable provider-specific
+   * to the provider from the ai-toolkit and enable provider-specific
    * functionality that can be fully encapsulated in the provider.
    */
   providerMetadata?: SharedV4ProviderMetadata;

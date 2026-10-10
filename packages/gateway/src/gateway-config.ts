@@ -2,7 +2,7 @@ import type {
   FetchFunction,
   Resolvable,
   WebSocketConstructor,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 
 export type GatewayConfig = {
   baseURL: string;

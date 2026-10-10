@@ -5,11 +5,11 @@ import type {
   LanguageModelV4StreamPart,
   SharedV4ProviderMetadata,
   SharedV4Warning,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   createProviderStreamError,
   type ParseResult,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import type {
   GoogleInteractionsEvent,
   GoogleInteractionsUsage,

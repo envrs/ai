@@ -1,5 +1,5 @@
 import { expectTypeOf } from 'vitest';
-import type { JSONObject } from '@ai-sdk/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 import type { EmbedStartEvent } from '../embed/embed-events';
 import type { GenerateObjectStartEvent } from '../generate-object/structured-output-events';
 import type { GenerateTextStartEvent } from '../generate-text/generate-text-events';

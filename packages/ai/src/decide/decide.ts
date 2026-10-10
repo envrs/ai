@@ -2,13 +2,13 @@ import {
   Experimental_DecisionRefusalError as DecisionRefusalError,
   Experimental_DecisionUnsupportedQuestionTypeError as DecisionUnsupportedQuestionTypeError,
   type Experimental_DecisionModelV4Question as DecisionQuestion,
-} from '@ai-sdk/provider';
+} from '@ai-toolkit/provider';
 import {
   createIdGenerator,
   withUserAgentSuffix,
   type Context,
   type ProviderOptions,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { prepareDecisionState, type DecisionState } from './decision-state';
 import { resolveDecisionModel } from '../model/resolve-model';
 import { logWarnings } from '../logger/log-warnings';

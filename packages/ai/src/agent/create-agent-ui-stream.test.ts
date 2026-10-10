@@ -1,8 +1,8 @@
-import { type Context, tool } from '@ai-sdk/provider-utils';
+import { type Context, tool } from '@ai-toolkit/provider-utils';
 import {
   convertArrayToReadableStream,
   convertReadableStreamToArray,
-} from '@ai-sdk/provider-utils/test';
+} from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it, vi } from 'vitest';
 import { z } from 'zod/v4';
 import { MockLanguageModelV4 } from '../test/mock-language-model-v4';
@@ -309,7 +309,7 @@ describe('createAgentUIStream', () => {
             role: 'user',
             parts: [
               { type: 'text', text: 'What project?' },
-              { type: 'data-context', data: { project: 'AI SDK' } },
+              { type: 'data-context', data: { project: 'ai-toolkit' } },
             ],
           },
         ],
@@ -344,7 +344,7 @@ describe('createAgentUIStream', () => {
           role: 'user',
           content: [
             { type: 'text', text: 'What project?' },
-            { type: 'text', text: 'Project: AI SDK' },
+            { type: 'text', text: 'Project: ai-toolkit' },
           ],
         },
       ]);
@@ -363,7 +363,7 @@ describe('createAgentUIStream', () => {
             role: 'user',
             parts: [
               { type: 'text', text: 'Hello' },
-              { type: 'data-context', data: { project: 'AI SDK' } },
+              { type: 'data-context', data: { project: 'ai-toolkit' } },
             ],
           },
         ],

@@ -1,4 +1,4 @@
-const marker = Symbol.for('vercel.ai.providerStreamError');
+const marker = Symbol.for('khulnasoft.ai.providerStreamError');
 
 export type ProviderStreamError = {
   readonly message: string;
@@ -11,7 +11,7 @@ export type ProviderStreamError = {
 
 /**
  * Adds provider-owned status and retry metadata to a stream error payload
- * without requiring provider packages to depend on AI SDK Core.
+ * without requiring provider packages to depend on ai-toolkit Core.
  */
 export function createProviderStreamError({
   message,

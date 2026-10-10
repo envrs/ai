@@ -2,8 +2,8 @@ import {
   UnsupportedFunctionalityError,
   type LanguageModelV4CallOptions,
   type SharedV4Warning,
-} from '@ai-sdk/provider';
-import { validateTypes } from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider';
+import { validateTypes } from '@ai-toolkit/provider-utils';
 import { fileSearchArgsSchema } from '../tool/file-search';
 import { imageGenerationArgsSchema } from '../tool/image-generation';
 import { mcpServerArgsSchema } from '../tool/mcp-server';

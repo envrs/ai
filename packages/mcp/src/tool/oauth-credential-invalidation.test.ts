@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import type { FetchFunction } from '@ai-sdk/provider-utils';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 import { auth, type OAuthClientProvider } from './oauth';
 import type { OAuthTokens } from './oauth-types';
 import { InvalidGrantError } from '../error/oauth-error';

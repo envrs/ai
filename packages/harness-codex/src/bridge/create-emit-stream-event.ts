@@ -1,5 +1,5 @@
-import type { HarnessV1BuiltinToolName } from '@ai-sdk/harness';
-import type { BridgeTurn } from '@ai-sdk/harness/bridge';
+import type { HarnessV1BuiltinToolName } from '@ai-toolkit/harness';
+import type { BridgeTurn } from '@ai-toolkit/harness/bridge';
 import { randomUUID } from 'node:crypto';
 import type { CodexStepTracker } from './codex-step-tracker';
 

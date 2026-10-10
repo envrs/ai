@@ -1,5 +1,5 @@
-import type { FetchFunction } from '@ai-sdk/provider-utils';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { describe, expect, it, vi } from 'vitest';
 import { FireworksImageModel } from './fireworks-image-model';
 import type { FireworksImageModelOptions } from './fireworks-image-model-options';

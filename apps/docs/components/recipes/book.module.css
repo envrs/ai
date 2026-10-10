@@ -1,5 +1,5 @@
 /* 3D book cover for the Recipes guides grid (simple variant of the legacy
-   ai-sdk.dev Book component). Consumes the Geist --ds-* variables provided
+   ai-toolkit.dev Book component). Consumes the Geist --ds-* variables provided
    by @vercel/geistdocs/styles.css. */
 
 .perspective {

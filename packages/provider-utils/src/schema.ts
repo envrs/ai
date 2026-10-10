@@ -1,4 +1,4 @@
-import { TypeValidationError, type JSONSchema7 } from '@ai-sdk/provider';
+import { TypeValidationError, type JSONSchema7 } from '@ai-toolkit/provider';
 import type {
   StandardSchemaV1,
   StandardJSONSchemaV1,
@@ -12,7 +12,7 @@ import { zod3ToJsonSchema } from './to-json-schema/zod3-to-json-schema';
 /**
  * Used to mark schemas so we can support both Zod and custom schemas.
  */
-const schemaSymbol = Symbol.for('vercel.ai.schema');
+const schemaSymbol = Symbol.for('khulnasoft.ai.schema');
 
 export type ValidationResult<OBJECT> =
   | { success: true; value: OBJECT }

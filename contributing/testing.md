@@ -45,7 +45,7 @@ You can use our examples under `/examples/ai-functions` to generate test fixture
 For `generateText`, log the raw response output to the console and copy it into a new test fixture.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { generateText } from 'ai';
 import { run } from '../lib/run';
 
@@ -64,7 +64,7 @@ run(async () => {
 For `streamText`, you need to set `includeRawChunks` to `true` and use the special `saveRawChunks` helper. Run the script from the `/example/ai-functions` folder via `pnpm tsx src/stream-text/script-name.ts`. The result is then stored in the `/examples/ai-functions/output` folder. You can copy it to your fixtures folder and rename it.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { streamText } from 'ai';
 import { run } from '../lib/run';
 import { saveRawChunks } from '../lib/save-raw-chunks';
@@ -85,7 +85,7 @@ run(async () => {
 For `embedMany`, log the raw response body from the first response. Note that `embedMany` returns `responses` (plural, an array) not `response`.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
+import { openai } from '@ai-toolkit/openai';
 import { embedMany } from 'ai';
 import { run } from '../lib/run';
 

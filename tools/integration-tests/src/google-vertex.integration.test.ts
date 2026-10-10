@@ -1,5 +1,5 @@
-import { createGoogleVertex } from '@ai-sdk/google-vertex/edge';
-import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { createGoogleVertex } from '@ai-toolkit/google-vertex/edge';
+import { createTestServer } from '@ai-toolkit/test-server/with-vitest';
 import { generateText, type ModelMessage, streamText } from 'ai';
 import { describe, expect, it } from 'vitest';
 

@@ -5,7 +5,7 @@ import {
   isAbortError,
   type FetchFunction,
   type ParseResult,
-} from '@ai-sdk/provider-utils';
+} from '@ai-toolkit/provider-utils';
 import { googleFailedResponseHandler } from '../google-error';
 import { cancelGoogleInteraction } from './cancel-google-interaction';
 import {
