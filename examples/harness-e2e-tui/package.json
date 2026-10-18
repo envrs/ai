@@ -13,10 +13,9 @@
     "@ai-toolkit/harness-deepagents": "workspace:*",
     "@ai-toolkit/harness-opencode": "workspace:*",
     "@ai-toolkit/harness-pi": "workspace:*",
-    "@ai-toolkit/sandbox-vercel": "workspace:*",
     "@ai-toolkit/tui": "workspace:*",
     "@earendil-works/pi-coding-agent": "^1.0.3",
-    "@vercel/sandbox": "^3.0.0",
+    "@khulnasoft/sandbox": "^1.0.0",
     "ai": "workspace:*",
     "dotenv": "16.4.5",
     "zod": "3.25.76"

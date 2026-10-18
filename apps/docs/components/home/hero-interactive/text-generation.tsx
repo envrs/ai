@@ -1,7 +1,9 @@
 'use client';
 
-import { cn } from '@khulnasoft/geistdocs/utils';
 import { useEffect, useState } from 'react';
+
+const cn = (...classes: (string | false | null | undefined)[]): string =>
+  classes.filter(Boolean).join(' ');
 
 export function ChatBubble({
   message,

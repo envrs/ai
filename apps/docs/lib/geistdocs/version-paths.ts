@@ -1,5 +1,5 @@
-import { collectVersionPaths } from '@khulnasoft/geistdocs/source';
-import type { GeistdocsVersionPaths } from '@khulnasoft/geistdocs/versions';
+import { collectVersionPaths } from '@/lib/ds/source';
+import type { GeistdocsVersionPaths } from '@/lib/ds/versions';
 import {
   recipesV5Source,
   recipesV6Source,

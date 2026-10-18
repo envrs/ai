@@ -20,12 +20,12 @@ run(async () => {
           {
             frameType: 'first_frame',
             image:
-              'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
+              'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
           },
           {
             frameType: 'last_frame',
             image:
-              'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-dog.png',
+              'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-dog.png',
           },
         ],
         providerOptions: {

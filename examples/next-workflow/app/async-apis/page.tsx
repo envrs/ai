@@ -19,7 +19,7 @@ type PageStatus = 'idle' | 'running' | 'complete' | 'error';
 
 export default function AsyncApisPage() {
   const [repositoryUrl, setRepositoryUrl] = useState(
-    'https://github.com/vercel/ai',
+    'https://github.com/khulnasoft/ai',
   );
   const [repository, setRepository] = useState<AsyncApisRepository>();
   const [maintainers, setMaintainers] = useState<MaintainerState[]>([]);

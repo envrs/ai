@@ -1,9 +1,5 @@
 'use client';
 
-import { IconForward10Seconds10 } from '@khulnasoft/geistdocs/assets/icons/icon-forward-10-seconds-10';
-import { IconPause } from '@khulnasoft/geistdocs/assets/icons/icon-pause';
-import { IconPlayFill } from '@khulnasoft/geistdocs/assets/icons/icon-play-fill';
-import { IconRewind10Seconds } from '@khulnasoft/geistdocs/assets/icons/icon-rewind-10-seconds';
 import { type RefObject, useCallback, useEffect, useState } from 'react';
 import { SPEECH_AUDIO_SRC } from '../media-assets';
 
@@ -112,7 +108,14 @@ export function AudioPlayer({
             onClick={() => seek(-SKIP_SECONDS)}
             type="button"
           >
-            <IconRewind10Seconds size={12} />
+            <svg
+              aria-hidden="true"
+              className="size-3"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+            </svg>
           </button>
           <button
             aria-label={isPlaying ? 'Pause' : 'Play'}
@@ -120,7 +123,25 @@ export function AudioPlayer({
             onClick={togglePlay}
             type="button"
           >
-            {isPlaying ? <IconPause /> : <IconPlayFill className="pl-0.5" />}
+            {isPlaying ? (
+              <svg
+                aria-hidden="true"
+                className="size-4"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+              </svg>
+            ) : (
+              <svg
+                aria-hidden="true"
+                className="size-4 pl-0.5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            )}
           </button>
           <button
             aria-label={`Forward ${SKIP_SECONDS} seconds`}
@@ -128,7 +149,14 @@ export function AudioPlayer({
             onClick={() => seek(SKIP_SECONDS)}
             type="button"
           >
-            <IconForward10Seconds10 size={12} />
+            <svg
+              aria-hidden="true"
+              className="size-3"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+            </svg>
           </button>
         </div>
       </div>

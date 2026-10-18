@@ -778,7 +778,7 @@ export function createFeatureTestSuite({
                         {
                           type: 'file',
                           mediaType: 'image',
-                          data: 'https://github.com/vercel/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
+                          data: 'https://github.com/khulnasoft/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
                         },
                       ],
                     },
@@ -836,7 +836,7 @@ export function createFeatureTestSuite({
                         {
                           type: 'file',
                           mediaType: 'image',
-                          data: 'https://github.com/vercel/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
+                          data: 'https://github.com/khulnasoft/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
                         },
                       ],
                     },

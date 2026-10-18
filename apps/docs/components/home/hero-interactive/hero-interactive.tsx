@@ -1,7 +1,5 @@
 'use client';
 
-import { cn } from '@khulnasoft/geistdocs/utils';
-import { IconArrowUpRightSmall } from '@khulnasoft/geistdocs/assets/icons/icon-arrow-up-right-small';
 import { useState } from 'react';
 import {
   HERO_EXAMPLES,
@@ -16,6 +14,9 @@ import { LlmProviderSelector } from './llm-provider-selector';
 import { LlmProviderTabs } from './llm-provider-tabs';
 import { PreviewPanel } from './preview-panel';
 import { useRevealIntoView } from './use-reveal-into-view';
+
+const cn = (...classes: (string | false | null | undefined)[]): string =>
+  classes.filter(Boolean).join(' ');
 
 export function HeroInteractive({ className }: { className?: string }) {
   const [provider, setProvider] = useState<Provider>('grok');
@@ -82,7 +83,19 @@ export function HeroInteractive({ className }: { className?: string }) {
           target="_blank"
         >
           supported LLM models
-          <IconArrowUpRightSmall aria-hidden="true" />
+          <svg
+            aria-hidden="true"
+            className="ml-0.5 size-3"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M7 17 17 7" />
+            <path d="M7 7h10v10" />
+          </svg>
         </a>
       </p>
     </div>

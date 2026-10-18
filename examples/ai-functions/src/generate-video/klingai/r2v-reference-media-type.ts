@@ -15,7 +15,7 @@ run(async () => {
           'The two characters meet and walk together through a sunny park',
         inputReferences: [
           {
-            data: 'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-dog.png',
+            data: 'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-dog.png',
             mediaType: 'image/png',
           },
           {

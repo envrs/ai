@@ -1,12 +1,8 @@
-import { IconChevronDown } from '@khulnasoft/geistdocs/assets/icons/icon-chevron-down';
-import { cn } from '@khulnasoft/geistdocs/utils';
 import type { ComponentProps } from 'react';
 
-/**
- * Native select styled like Geistcn's small `Select`: the browser arrow is
- * replaced by a Geist chevron, and focus swaps the border for Geist's
- * focus border instead of the default outline.
- */
+const cn = (...classes: (string | false | null | undefined)[]): string =>
+  classes.filter(Boolean).join(' ');
+
 export function Select({ className, ...props }: ComponentProps<'select'>) {
   return (
     <span className="group relative inline-flex items-center">
@@ -17,10 +13,18 @@ export function Select({ className, ...props }: ComponentProps<'select'>) {
         )}
         {...props}
       />
-      <IconChevronDown
+      <svg
         aria-hidden="true"
-        className="pointer-events-none absolute right-3 size-(--ds-control-decoration-size) text-gray-700 transition-colors duration-150 ease-in group-hover:text-gray-1000"
-      />
+        className="pointer-events-none absolute right-3 size-3 text-gray-700 transition-colors duration-150 ease-in group-hover:text-gray-1000"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+      >
+        <path d="m6 9 6 6 6-6" />
+      </svg>
     </span>
   );
 }

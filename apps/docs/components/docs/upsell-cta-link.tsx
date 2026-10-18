@@ -1,6 +1,5 @@
 'use client';
 
-import { track } from '@khulnasoft/analytics/react';
 import Link from 'next/link';
 
 const TARGET_URL =
@@ -11,14 +10,7 @@ export const UpsellCtaLink = () => (
   <Link
     className="inline-flex w-full items-center justify-center rounded-md bg-gray-1000 px-4 py-2 font-medium text-background-100 transition-opacity hover:opacity-90"
     href={TARGET_URL}
-    onClick={() => {
-      track('upsell_cta_click', {
-        click_type: 'button',
-        location: 'Upsell',
-        click_text: 'Sign Up',
-        target_url: TARGET_URL,
-      });
-    }}
+    onClick={() => {}}
     rel="noopener noreferrer"
     target="_blank"
   >

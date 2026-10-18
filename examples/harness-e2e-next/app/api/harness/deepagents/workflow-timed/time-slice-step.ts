@@ -3,7 +3,7 @@ import {
   type HarnessWorkflowState,
 } from '@ai-toolkit/workflow-harness';
 
-// Slice step in its own module; the agent is dynamically imported so its `@vercel/sandbox` deps stay out of the workflow bundle. See the claude-code slice step for the full rationale.
+// Slice step in its own module; the agent is dynamically imported so its `@khulnasoft/sandbox` deps stay out of the workflow bundle. See the claude-code slice step for the full rationale.
 
 // Demo budget lowered from the 750s production default so slicing is observable.
 const DEMO_TIME_SLICE_SECONDS = 30;

@@ -1,4 +1,4 @@
-import { Badge } from '@khulnasoft/geistdocs/components/badge';
+import { Badge } from '@/lib/ds/ui';
 import {
   IconApi,
   IconDisplay,
@@ -6,7 +6,7 @@ import {
   IconSandbox,
   IconSparkles,
   IconWrench,
-} from '@khulnasoft/geistdocs/assets/icons';
+} from '@/lib/ds/icons';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { ResolveHref } from '@/components/docs/resolve-href';

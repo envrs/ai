@@ -1,13 +1,7 @@
-import { createGeistdocs } from '@khulnasoft/geistdocs/next';
 import type { NextConfig } from 'next';
 import { exampleRedirects } from './lib/example-redirects';
 import { legacyRedirects } from './lib/legacy-redirects';
 import { versionHostRedirects } from './lib/version-host-redirects';
-
-// createGeistdocs composes Fumadocs MDX and discovers App Router pages and
-// route handlers so createProxy can recover unknown agent/Markdown requests.
-// Restart `next dev` after adding, deleting, or renaming routes.
-const withGeistdocs = createGeistdocs();
 
 const config: NextConfig = {
   cacheComponents: true,
@@ -316,4 +310,4 @@ const config: NextConfig = {
   ],
 };
 
-export default withGeistdocs(config);
+export default config;

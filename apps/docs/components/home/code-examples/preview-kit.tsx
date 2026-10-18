@@ -1,8 +1,8 @@
 'use client';
 
-import { IconArrowUp } from '@khulnasoft/geistdocs/assets/icons/icon-arrow-up';
-import { IconSparkles } from '@khulnasoft/geistdocs/assets/icons/icon-sparkles';
-import { cn } from '@khulnasoft/geistdocs/utils';
+import { IconArrowUp } from '@/lib/ds/icons';
+import { IconSparkles } from '@/lib/ds/icons';
+import { cn } from '@/lib/ds/utils';
 import { type CSSProperties, type ReactNode, useEffect, useState } from 'react';
 
 const CHAR_MS = 26;

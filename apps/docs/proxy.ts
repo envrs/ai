@@ -1,4 +1,3 @@
-import { createProxy } from '@khulnasoft/geistdocs/proxy';
 import {
   type NextFetchEvent,
   type NextRequest,
@@ -6,6 +5,7 @@ import {
 } from 'next/server';
 import { config as geistdocsConfig } from '@/lib/geistdocs/config';
 import { trackMdRequest } from '@/lib/geistdocs/md-tracking';
+import { createProxy } from '@/lib/ds/proxy';
 import { playgroundTransitionResponse } from '@/lib/playground-urls';
 
 const proxy = createProxy({

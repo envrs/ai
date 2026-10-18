@@ -1,4 +1,4 @@
-import { Callout } from '@khulnasoft/geistdocs/components/callout';
+import { Callout } from '@/lib/ds/ui';
 import type { ReactNode } from 'react';
 
 /**

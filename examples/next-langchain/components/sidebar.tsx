@@ -78,7 +78,7 @@ export function Sidebar() {
           <ExternalLink className="w-3 h-3 ml-auto" strokeWidth={2} />
         </a>
         <a
-          href="https://github.com/vercel/ai/tree/main/examples/next-langchain"
+          href="https://github.com/khulnasoft/ai/tree/main/examples/next-langchain"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-3 py-2 text-sm text-[var(--foreground-secondary)] hover:text-[var(--foreground)] hover:bg-[var(--background-tertiary)] rounded-lg transition-colors"

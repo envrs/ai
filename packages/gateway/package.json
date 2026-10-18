@@ -46,7 +46,7 @@
   "dependencies": {
     "@ai-toolkit/provider": "workspace:*",
     "@ai-toolkit/provider-utils": "workspace:*",
-    "@khulnasoft/oidc": "3.2.0"
+    "@khulnasoft/oidc": "1.0.0"
   },
   "devDependencies": {
     "@ai-toolkit/test-server": "workspace:*",

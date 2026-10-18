@@ -32,7 +32,7 @@ test('legacy redirects preserve representative production destinations', () => {
     ],
     ['/api/object', '/docs/reference/ai-toolkit-ui/use-object', true],
     ['/getting-started/nextjs-app-router', '/docs/getting-started/nextjs-app-router', true],
-    ['/repo', 'https://github.com/vercel/ai', false],
+    ['/repo', 'https://github.com/khulnasoft/ai', false],
     ['/stream-data', '/docs/reference/ai-toolkit-ui/stream-data', true],
   ]) {
     assert.deepEqual(redirects.get(source), { source, destination, permanent });

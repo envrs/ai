@@ -3,18 +3,18 @@
 import {
   IconChevronDownSmall,
   IconWrench,
-} from '@khulnasoft/geistdocs/assets/icons';
-import { IconArrowUpRight } from '@khulnasoft/geistdocs/assets/icons/icon-arrow-up-right';
-import { LogoIconVercelSvg } from '@khulnasoft/geistdocs/assets/logos';
-import { CodeBlock } from '@khulnasoft/geistdocs/components/code-block';
+} from '@/lib/ds/icons';
+import { IconArrowUpRight } from '@/lib/ds/icons';
+import { LogoIconVercelSvg } from '@/lib/ds/logos';
+import { CodeBlock } from '@/lib/ds/ui';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from '@khulnasoft/geistdocs/components/dropdown-menu';
-import { geistShikiTheme } from '@khulnasoft/geistdocs/shiki-theme';
+} from '@/lib/ds/dropdown-menu';
+import { geistShikiTheme } from '@/lib/ds/shiki-theme';
 import Link from 'next/link';
 import type { HighlighterCore as ShikiHighlighter } from 'shiki/core';
 import {

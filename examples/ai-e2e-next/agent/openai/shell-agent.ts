@@ -1,5 +1,5 @@
 import { openai } from '@ai-toolkit/openai';
-import { Sandbox } from '@vercel/sandbox';
+import { Sandbox } from '@khulnasoft/sandbox';
 import { ToolLoopAgent, type InferAgentUIMessage } from 'ai';
 // warning: this is a demo sandbox that is shared across chats on localhost
 let globalSandboxName: string | null = null;

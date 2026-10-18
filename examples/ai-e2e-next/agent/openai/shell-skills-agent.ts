@@ -1,5 +1,5 @@
 import { openai } from '@ai-toolkit/openai';
-import { Sandbox } from '@vercel/sandbox';
+import { Sandbox } from '@khulnasoft/sandbox';
 import { ToolLoopAgent, type InferAgentUIMessage } from 'ai';
 import { readFileSync } from 'fs';
 import { join } from 'path';

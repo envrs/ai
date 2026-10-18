@@ -15,7 +15,7 @@ run(async () => {
         resolution: '1280x720',
         duration: 3,
         inputReferences: [
-          'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
+          'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
         ],
         providerOptions: {
           alibaba: {

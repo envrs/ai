@@ -14,7 +14,7 @@ run(async () => {
         model: alibaba.video('wan3.0-video'),
         prompt: {
           image:
-            'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
+            'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
           text: 'The cat slowly turns its head and blinks',
         },
         resolution: '1280x720',

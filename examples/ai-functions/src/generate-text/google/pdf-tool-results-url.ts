@@ -14,7 +14,7 @@ run(async () => {
         // https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-reference/function-calling#functionresponsepart docs.
         // The API doesn't error, but the model clearly doesn't see the image because it makes up something else.
         pdfUrl:
-          'https://github.com/vercel/ai/blob/main/examples/ai-functions/data/ai.pdf?raw=true',
+          'https://github.com/khulnasoft/ai/blob/main/examples/ai-functions/data/ai.pdf?raw=true',
       };
     },
     toModelOutput({ output }) {

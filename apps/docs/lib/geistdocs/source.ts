@@ -1,4 +1,4 @@
-import { createVersionedSources } from '@khulnasoft/geistdocs/source';
+import { createVersionedSources } from '@/lib/ds/source';
 import {
   cookbookV5,
   cookbookV6,

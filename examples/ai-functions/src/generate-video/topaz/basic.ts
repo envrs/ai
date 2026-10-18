@@ -13,7 +13,7 @@ run(async () => {
         // generateVideo requires a prompt, but Topaz only enhances the input.
         prompt: '',
         inputReferences: [
-          'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/prudence.mp4',
+          'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/prudence.mp4',
         ],
         // The output resolution. The source is 360x640.
         resolution: '1080x1920',

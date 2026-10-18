@@ -7,7 +7,7 @@ import {
  * The slice step lives in its own step-only module and the agent is imported
  * dynamically inside the step body. The Workflow DevKit stubs each `'use step'`
  * in the workflow bundle, so a dynamic import inside the body is dropped from
- * it — keeping the agent and its `@vercel/sandbox` deps (which use Node APIs)
+ * it — keeping the agent and its `@khulnasoft/sandbox` deps (which use Node APIs)
  * out of the no-`require` workflow runtime. A static top-level import can't be:
  * importing the sandbox acquisition helper at module scope would pull its
  * Node-only dependencies into the workflow bundle.

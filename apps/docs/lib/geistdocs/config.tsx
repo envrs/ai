@@ -1,4 +1,4 @@
-import { defineConfig } from '@khulnasoft/geistdocs/config';
+import { defineConfig } from '@/lib/ds/config';
 import {
   content,
   Logo,

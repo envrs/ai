@@ -1,7 +1,7 @@
 'use client';
 
-import { IconCheck } from '@khulnasoft/geistdocs/assets/icons/icon-check';
-import { IconCopy } from '@khulnasoft/geistdocs/assets/icons/icon-copy';
+import { IconCheck } from '@/lib/ds/icons';
+import { IconCopy } from '@/lib/ds/icons';
 import { useEffect, useRef, useState } from 'react';
 
 /**

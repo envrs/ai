@@ -2,7 +2,7 @@
 
 This example shows how to use the [AI SDK](https://ai-sdk.dev/docs) with [Next.js](https://nextjs.org/) and [OpenAI](https://openai.com) to create a ChatGPT-like AI-powered streaming chat bot with rate limits using [Vercel KV](https://vercel.com/docs/storage/vercel-kv).
 
-![CleanShot 2023-08-09 at 16 11 13](https://github.com/vercel/ai/assets/28986134/a10d96dc-dbd3-4d05-85a3-217b5cb18060)
+![CleanShot 2023-08-09 at 16 11 13](https://github.com/khulnasoft/ai/assets/28986134/a10d96dc-dbd3-4d05-85a3-217b5cb18060)
 
 ## Deploy your own
 
@@ -15,15 +15,15 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
 
 ```bash
-npx create-next-app --example https://github.com/vercel/ai/tree/main/examples/next-openai-upstash-rate-limits next-openai-upstash-rate-limits-app
+npx create-next-app --example https://github.com/khulnasoft/ai/tree/main/examples/next-openai-upstash-rate-limits next-openai-upstash-rate-limits-app
 ```
 
 ```bash
-yarn create next-app --example https://github.com/vercel/ai/tree/main/examples/next-openai-upstash-rate-limits next-openai-upstash-rate-limits-app
+yarn create next-app --example https://github.com/khulnasoft/ai/tree/main/examples/next-openai-upstash-rate-limits next-openai-upstash-rate-limits-app
 ```
 
 ```bash
-pnpm create next-app --example https://github.com/vercel/ai/tree/main/examples/next-openai-upstash-rate-limits next-openai-upstash-rate-limits-app
+pnpm create next-app --example https://github.com/khulnasoft/ai/tree/main/examples/next-openai-upstash-rate-limits next-openai-upstash-rate-limits-app
 ```
 
 To run the example locally you need to:

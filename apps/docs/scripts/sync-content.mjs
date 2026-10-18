@@ -79,7 +79,7 @@ const fetchRef = (ref) => {
       label: "GitHub tarball",
       run: () =>
         execSync(
-          `curl -sfL https://codeload.github.com/vercel/ai/tar.gz/${ref} | tar -xz -C "${target}" --strip-components=1 "ai-${ref}/content"`,
+          `curl -sfL https://codeload.github.com/khulnasoft/ai/tar.gz/${ref} | tar -xz -C "${target}" --strip-components=1 "ai-${ref}/content"`,
           { stdio: "pipe", shell: "/bin/bash" }
         ),
     },

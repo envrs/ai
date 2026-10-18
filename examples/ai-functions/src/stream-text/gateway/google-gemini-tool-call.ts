@@ -5,7 +5,7 @@ import { isStepCount, streamText, tool } from 'ai';
 import { z } from 'zod';
 
 /**
- * Verification for https://github.com/vercel/ai/issues/11413
+ * Verification for https://github.com/khulnasoft/ai/issues/11413
  *
  * Simulates gateway cross-provider failover scenarios between Google AI Studio
  * and Vertex AI. Both providers share the same GoogleLanguageModel

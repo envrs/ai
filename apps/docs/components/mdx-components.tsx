@@ -1,5 +1,3 @@
-import { createMdxComponents } from '@khulnasoft/geistdocs/mdx';
-import { LogoIconVercelSvg } from '@khulnasoft/geistdocs/assets/logos';
 import type { MDXComponents } from 'mdx/types';
 import type { ComponentProps, ComponentType, JSX } from 'react';
 import { ExampleLinks } from '@/components/docs/example-links';
@@ -58,7 +56,7 @@ export const getMdxComponents = ({
   );
 
   return {
-    ...createMdxComponents({ a: VersionedLink }),
+    a: VersionedLink,
     CodeTemplate: props => (
       <CodeTemplate {...props} versionPrefix={versionPrefix} />
     ),
@@ -98,7 +96,6 @@ export const getMdxComponents = ({
       <QuickstartFrameworkCards {...props} resolveHref={resolveVersionedHref} />
     ),
     Support: props => <Support {...props} resolveHref={resolveVersionedHref} />,
-    VercelIcon: LogoIconVercelSvg,
     Snippet,
     Tabs,
     Tab,

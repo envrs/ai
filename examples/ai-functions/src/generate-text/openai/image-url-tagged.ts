@@ -16,7 +16,7 @@ run(async () => {
             data: {
               type: 'url',
               url: new URL(
-                'https://github.com/vercel/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
+                'https://github.com/khulnasoft/ai/blob/main/examples/ai-functions/data/comic-cat.png?raw=true',
               ),
             },
           },

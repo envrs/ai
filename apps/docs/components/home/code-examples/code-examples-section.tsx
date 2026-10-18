@@ -1,8 +1,8 @@
 'use client';
 
-import { IconArrowUpRightSmall } from '@khulnasoft/geistdocs/assets/icons/icon-arrow-up-right-small';
-import { Button } from '@khulnasoft/geistdocs/components/button';
-import { cn } from '@khulnasoft/geistdocs/utils';
+import { IconArrowUpRightSmall } from '@/lib/ds/icons';
+import { Button } from '@/lib/ds/ui';
+import { cn } from '@/lib/ds/utils';
 import { Fragment, useState } from 'react';
 import { CORE_EXAMPLES, type Mode } from '@/lib/home/code-examples';
 import { UI_EXAMPLES } from '@/lib/home/ui-examples';

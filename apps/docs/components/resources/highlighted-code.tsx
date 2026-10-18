@@ -1,5 +1,5 @@
-import { CodeBlock } from '@khulnasoft/geistdocs/components/code-block';
-import { geistShikiTheme } from '@khulnasoft/geistdocs/shiki-theme';
+import { CodeBlock } from '@/lib/ds/ui';
+import { geistShikiTheme } from '@/lib/ds/shiki-theme';
 import { cacheLife } from 'next/cache';
 import type { HighlighterCore as ShikiHighlighter } from 'shiki/core';
 

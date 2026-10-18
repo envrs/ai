@@ -1,4 +1,4 @@
-import { createSitemapMarkdownRoute } from '@khulnasoft/geistdocs/routes/sitemap';
+import { createSitemapMarkdownRoute } from '@/lib/ds/routes-sitemap';
 import { config } from '@/lib/geistdocs/config';
 import {
   cookbookV6Source,

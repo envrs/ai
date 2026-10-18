@@ -12,7 +12,7 @@ run(async () => {
         model: xai.video('grok-imagine-video-1.5'),
         prompt: {
           image:
-            'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
+            'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
           text: 'The cat slowly turns its head and blinks',
         },
         duration: 5,

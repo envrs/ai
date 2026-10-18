@@ -5,7 +5,7 @@ import {
 
 /*
  * Slice step in its own step-only module; the agent is dynamically imported
- * inside the step body so it (and its `@vercel/sandbox` deps) stay out of the
+ * inside the step body so it (and its `@khulnasoft/sandbox` deps) stay out of the
  * workflow bundle's restricted runtime. See the claude-code slice step for the
  * full rationale.
  *

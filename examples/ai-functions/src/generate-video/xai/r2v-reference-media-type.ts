@@ -21,7 +21,7 @@ run(async () => {
             mediaType: 'image/png',
           },
           {
-            data: 'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-dog.png',
+            data: 'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-dog.png',
             mediaType: 'image/png',
           },
         ],

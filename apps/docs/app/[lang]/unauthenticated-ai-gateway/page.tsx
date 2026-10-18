@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { LogoIconVercelSvg } from '@khulnasoft/geistdocs/assets/logos';
+import { LogoIconVercelSvg } from '@/lib/ds/logos';
 import { Snippet } from '@/components/docs/snippet';
 
 export const metadata: Metadata = {

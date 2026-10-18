@@ -1,4 +1,4 @@
-import { createLlmsRoute } from '@khulnasoft/geistdocs/routes/llms';
+import { createLlmsRoute } from '@/lib/ds/routes-llms';
 import { v5Sources } from '@/lib/geistdocs/source';
 import { resolveModelPlaceholders } from '@/lib/geistdocs/model-placeholders';
 import { prefixVersionedMarkdownLinks } from '@/lib/geistdocs/version-markdown';

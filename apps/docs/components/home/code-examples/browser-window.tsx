@@ -1,4 +1,4 @@
-import { cn } from '@khulnasoft/geistdocs/utils';
+import { cn } from '@/lib/ds/utils';
 import type { ComponentProps } from 'react';
 
 export function BrowserRoot({ className, ...props }: ComponentProps<'div'>) {

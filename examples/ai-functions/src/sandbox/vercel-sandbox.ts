@@ -5,7 +5,7 @@ import {
   type Experimental_SandboxProcess,
 } from '@ai-toolkit/provider-utils';
 import { type Experimental_SandboxSession as SandboxSession } from 'ai';
-import type { Command, Sandbox as VercelSandboxSDK } from '@vercel/sandbox';
+import type { Command, Sandbox as VercelSandboxSDK } from '@khulnasoft/sandbox';
 import {
   bytesToStream,
   collectStream,

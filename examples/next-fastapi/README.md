@@ -16,7 +16,7 @@ This example depends on local AI SDK workspace packages, so run it from a clone 
 1. Clone the repository, or use an existing checkout:
 
    ```bash
-   git clone https://github.com/vercel/ai.git
+   git clone https://github.com/khulnasoft/ai.git
    cd ai
    ```
 

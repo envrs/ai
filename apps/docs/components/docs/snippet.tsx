@@ -1,7 +1,7 @@
 'use client';
 
-import { IconCheck, IconCopy } from '@khulnasoft/geistdocs/assets/icons';
-import { Button } from '@khulnasoft/geistdocs/components/button';
+import { IconCheck, IconCopy } from '@/lib/ds/icons';
+import { Button } from '@/lib/ds/ui';
 import { useEffect, useRef, useState } from 'react';
 
 const COPIED_RESET_MS = 1500;

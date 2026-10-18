@@ -1,4 +1,4 @@
-import type { TrackMarkdownRequestEvent } from '@khulnasoft/geistdocs/proxy';
+import type { TrackMarkdownRequestEvent } from '@/lib/ds/proxy';
 import { siteId } from '@/geistdocs';
 
 const PLATFORM_URL = 'https://geistdocs.com/md-tracking';

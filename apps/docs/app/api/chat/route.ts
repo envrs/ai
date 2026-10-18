@@ -1,4 +1,4 @@
-import { createChatRoute } from '@khulnasoft/geistdocs/routes/chat';
+import { createChatRoute } from '@/lib/ds/routes-chat';
 import { config } from '@/lib/geistdocs/config';
 import { sources } from '@/lib/geistdocs/source';
 

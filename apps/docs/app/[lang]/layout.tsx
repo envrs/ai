@@ -1,11 +1,9 @@
 import '../global.css';
 import '@/lib/geistdocs/site-url-warning';
-import { Analytics } from '@khulnasoft/analytics/next';
-import { Footer } from '@khulnasoft/geistdocs/footer';
-import { Navbar } from '@khulnasoft/geistdocs/navbar';
 import type { Metadata, Viewport } from 'next';
 import { DocsProvider } from '@/components/docs/provider';
 import { config } from '@/lib/geistdocs/config';
+import { Footer, Navbar } from '@/lib/ds/layout';
 import { mono, sans } from '@/lib/geistdocs/fonts';
 import { getRootLang } from '@/lib/geistdocs/root-params';
 import { isSiteUrlConfigured, siteUrl } from '@/lib/geistdocs/site-url';
@@ -56,7 +54,6 @@ const RootLayout = async ({ children }: LayoutProps<'/[lang]'>) => {
           <Navbar config={config} />
           {children}
           <Footer />
-          <Analytics />
         </DocsProvider>
       </body>
     </html>

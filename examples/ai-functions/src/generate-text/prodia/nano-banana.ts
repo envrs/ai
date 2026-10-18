@@ -13,7 +13,7 @@ run(async () => {
           {
             type: 'file',
             mediaType: 'image',
-            data: 'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
+            data: 'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
           },
           {
             type: 'text',

@@ -1,8 +1,5 @@
 'use client';
 
-import { cn } from '@khulnasoft/geistdocs/utils';
-import { IconSpeakerOff } from '@khulnasoft/geistdocs/assets/icons/icon-speaker-off';
-import { IconSpeakerVolumeLoud } from '@khulnasoft/geistdocs/assets/icons/icon-speaker-volume-loud';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   getChatPreview,
@@ -15,6 +12,9 @@ import { AudioPlayer } from './speech-generation';
 import { ChatBubble } from './text-generation';
 import { TranscriptionPlayer } from './transcription-generation';
 import { VideoGenerationPreview } from './video-generation';
+
+const cn = (...classes: (string | false | null | undefined)[]): string =>
+  classes.filter(Boolean).join(' ');
 
 export function PreviewPanel({
   kind,
@@ -32,7 +32,6 @@ export function PreviewPanel({
   const speechAudioRef = useRef<HTMLAudioElement>(null);
   const [isMuted, setIsMuted] = useState(true);
 
-  // Replay the preview when the capability or provider changes.
   useEffect(() => {
     const kindChanged = prevKindRef.current !== kind;
     const providerChanged = prevProviderRef.current !== selectedProvider;
@@ -49,20 +48,16 @@ export function PreviewPanel({
     }
   }, [kind, selectedProvider]);
 
-  // Preload the image and video so switching tabs feels instant.
   useEffect(() => {
     const img = new Image();
     img.src = IMAGE_SRC;
 
-    // `<link rel="preload" as="video">` isn't supported, so warm the cache
-    // with a detached video element instead.
     const video = document.createElement('video');
     video.preload = 'auto';
     video.muted = true;
     video.src = VIDEO_SRC;
   }, []);
 
-  // Mute again when the user leaves the browser tab.
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (!document.hidden) return;
@@ -151,9 +146,35 @@ export function PreviewPanel({
           type="button"
         >
           {isMuted ? (
-            <IconSpeakerOff size={16} />
+            <svg
+              aria-hidden="true"
+              className="size-4"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M11 5 6 9H2v6h4l5 4V5z" />
+              <line x1="23" y1="9" x2="17" y2="15" />
+              <line x1="17" y1="9" x2="23" y2="15" />
+            </svg>
           ) : (
-            <IconSpeakerVolumeLoud size={16} />
+            <svg
+              aria-hidden="true"
+              className="size-4"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M11 5 6 9H2v6h4l5 4V5z" />
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+            </svg>
           )}
         </button>
       )}

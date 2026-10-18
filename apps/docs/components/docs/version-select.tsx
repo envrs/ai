@@ -1,10 +1,10 @@
 'use client';
 
-import type { GeistdocsVersionConfig } from '@khulnasoft/geistdocs/config';
+import type { GeistdocsVersionConfig } from '@/lib/ds/config';
 import {
   GeistdocsRouteSelect,
   type GeistdocsVersionPaths,
-} from '@khulnasoft/geistdocs/versions';
+} from '@/lib/ds/versions';
 
 /** Version glyph from the production ai-toolkit.dev version switcher. */
 const VersionGlyph = () => (

@@ -1,12 +1,11 @@
 import { transformerMetaHighlight } from '@shikijs/transformers';
-import {
-  defineGeistdocsSourceConfig,
-  geistdocsFrontmatterSchema,
-  geistdocsMetaSchema,
-  geistShikiTheme,
-} from '@khulnasoft/geistdocs/source-config';
 import { rehypeCodeDefaultOptions } from 'fumadocs-core/mdx-plugins';
-import { defineDocs } from 'fumadocs-mdx/config';
+import {
+  defineConfig,
+  defineDocs,
+  frontmatterSchema,
+  metaSchema,
+} from 'fumadocs-mdx/config';
 import {
   rehypeCodeTemplates,
   remarkCodeTemplates,
@@ -16,13 +15,13 @@ const createDocsCollection = (dir: string) =>
   defineDocs({
     dir,
     docs: {
-      schema: geistdocsFrontmatterSchema,
+      schema: frontmatterSchema,
       postprocess: {
         includeProcessedMarkdown: true,
       },
     },
     meta: {
-      schema: geistdocsMetaSchema,
+      schema: metaSchema,
     },
   });
 
@@ -36,14 +35,12 @@ export const cookbookV5 = createDocsCollection('content/v5/cookbook');
 export const cookbookV6 = createDocsCollection('content/v6/cookbook');
 export const cookbookV7 = createDocsCollection('content/v7/cookbook');
 
-export default defineGeistdocsSourceConfig({
+export default defineConfig({
   mdxOptions: {
     remarkPlugins: [remarkCodeTemplates],
     rehypePlugins: defaults => [rehypeCodeTemplates, ...defaults],
     rehypeCodeOptions: {
-      // Themes are overridden by defineGeistdocsSourceConfig at runtime, but
-      // required at the type level when passing rehypeCodeOptions.
-      themes: { light: geistShikiTheme, dark: geistShikiTheme },
+      themes: { light: 'github-light', dark: 'github-dark' },
       transformers: [
         ...(rehypeCodeDefaultOptions.transformers ?? []),
         // Supports `{1,3-5}` fence meta produced by the sync-content

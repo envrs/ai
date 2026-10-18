@@ -3,7 +3,7 @@ import {
   type SandboxAgentUIMessage,
 } from '@/agent/openai/sandbox-agent';
 import { createAgentUIStreamResponse } from 'ai';
-import { Sandbox } from '@vercel/sandbox';
+import { Sandbox } from '@khulnasoft/sandbox';
 import { VercelSandboxSession } from '@/sandbox/vercel-sandbox';
 
 async function getSandbox(sandboxName?: string) {

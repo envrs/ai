@@ -1,4 +1,4 @@
-import { createNotFoundRoute } from '@khulnasoft/geistdocs/routes/not-found';
+import { createNotFoundRoute } from '@/lib/ds/routes-not-found';
 import { config } from '@/lib/geistdocs/config';
 
 // Backstop for unmatched application paths: agents and Markdown requests

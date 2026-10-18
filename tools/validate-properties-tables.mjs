@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Validates <PropertiesTable> usage in content/**/*.mdx.
 //
-// The docs are rendered downstream (vercel/ai-studio), which maps every
+// The docs are rendered downstream (khulnasoft/ai-studio), which maps every
 // parameter through camelToKebab(parameter.name). A parameter object that is
 // missing its `name` field crashes the static prerender with
 // "Cannot read properties of undefined (reading 'replace')". Nothing in this

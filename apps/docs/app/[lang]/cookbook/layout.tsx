@@ -1,4 +1,4 @@
-import { GeistdocsDocsLayout } from '@khulnasoft/geistdocs/layout';
+import { GeistdocsDocsLayout } from '@/lib/ds/layout';
 import { getRootLang } from '@/lib/geistdocs/root-params';
 import type { ReactNode } from 'react';
 import { VersionSelect } from '@/components/docs/version-select';
@@ -25,7 +25,7 @@ const CookbookLayout = async ({ children }: { children: ReactNode }) => {
           </div>
         ) : null
       }
-      tree={cookbookV7Source.source.pageTree[lang]}
+      tree={cookbookV7Source.loader.pageTree[lang]}
     >
       {children}
     </GeistdocsDocsLayout>

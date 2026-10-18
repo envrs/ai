@@ -1,5 +1,5 @@
-import { Logoai-toolkit } from '@khulnasoft/geistdocs/assets/logos/logo-ai-toolkit';
-import type { GeistdocsConfig } from '@khulnasoft/geistdocs/config';
+import { LogoaiToolkit } from '@/lib/ds/logos';
+import type { GeistdocsConfig } from '@/lib/ds/config';
 
 export const title = 'ai-toolkit';
 
@@ -13,7 +13,7 @@ export const siteId = 'ai-toolkit';
 // accessible name on the wordmark link.
 export const Logo = () => (
   <>
-    <Logoai-toolkit />
+    <LogoaiToolkit />
     <span className="sr-only">ai-toolkit</span>
   </>
 );

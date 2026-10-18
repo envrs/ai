@@ -9,7 +9,7 @@ run(async () => {
     // Topaz enhances an image you supply, so the input image is the prompt.
     prompt: {
       images: [
-        'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
+        'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
       ],
     },
     size: '2048x2048',

@@ -1,4 +1,4 @@
-import { createDocsMarkdownRoute } from '@khulnasoft/geistdocs/routes/llms';
+import { createDocsMarkdownRoute } from '@/lib/ds/routes-llms';
 import { cookbookV5Source } from '@/lib/geistdocs/source';
 import { resolveModelPlaceholders } from '@/lib/geistdocs/model-placeholders';
 import { prefixVersionedMarkdownLinks } from '@/lib/geistdocs/version-markdown';

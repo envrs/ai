@@ -1,5 +1,5 @@
-import { Badge } from '@khulnasoft/geistdocs/components/badge';
-import { Button } from '@khulnasoft/geistdocs/components/button';
+import { Badge } from '@/lib/ds/ui';
+import { Button } from '@/lib/ds/ui';
 import {
   CommandPromptContent,
   CommandPromptCopy,
@@ -10,18 +10,18 @@ import {
   CommandPromptTrigger,
   CommandPromptTriggerDivider,
   CommandPromptViewport,
-} from '@khulnasoft/geistdocs/components/command-prompt';
-import { LogoIconAngularSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-angular-svg';
-import { LogoIconNuxtSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-nuxt-svg';
-import { LogoIconReactSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-react-svg';
-import { LogoIconSolidstartSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-solidstart-svg';
-import { LogoIconSvelteSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-svelte-svg';
-import { LogoIconVueSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-vue-svg';
-import { LogoNextJs } from '@khulnasoft/geistdocs/assets/logos/logo-next-js';
-import { IconArrowDown } from '@khulnasoft/geistdocs/assets/icons/icon-arrow-down';
-import { IconRoute } from '@khulnasoft/geistdocs/assets/icons/icon-route';
-import { IconShieldCheck } from '@khulnasoft/geistdocs/assets/icons/icon-shield-check';
-import { IconToggleOn } from '@khulnasoft/geistdocs/assets/icons/icon-toggle-on';
+} from '@/lib/ds/command-prompt';
+import { LogoIconAngularSvg } from '@/lib/ds/logos';
+import { LogoIconNuxtSvg } from '@/lib/ds/logos';
+import { LogoIconReactSvg } from '@/lib/ds/logos';
+import { LogoIconSolidstartSvg } from '@/lib/ds/logos';
+import { LogoIconSvelteSvg } from '@/lib/ds/logos';
+import { LogoIconVueSvg } from '@/lib/ds/logos';
+import { LogoNextJs } from '@/lib/ds/logos';
+import { IconArrowDown } from '@/lib/ds/icons';
+import { IconRoute } from '@/lib/ds/icons';
+import { IconShieldCheck } from '@/lib/ds/icons';
+import { IconToggleOn } from '@/lib/ds/icons';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { PROMPT_TEMPLATES } from '@/lib/home/prompt-templates';

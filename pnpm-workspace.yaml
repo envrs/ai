@@ -28,6 +28,9 @@ minimumReleaseAgeExclude:
   - '@langfuse/vercel-ai-toolkit'
   - '@ai-sdk/*'
   - '@vercel/geistdocs'
+  - '@khulnasoft/oidc'
+  - '@khulnasoft/detect-agent'
+  - '@khulnasoft/sandbox'
 
 allowBuilds:
   '@google/genai': false

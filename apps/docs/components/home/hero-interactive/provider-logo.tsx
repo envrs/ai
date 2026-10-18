@@ -1,29 +1,31 @@
-import { LogoIconAnthropicSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-anthropic-svg';
-import { LogoIconDeepseekSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-deepseek-svg';
-import { LogoIconElevenlabsSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-elevenlabs-svg';
-import { LogoIconGoogleSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-google-svg';
-import { LogoIconGrokSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-grok-svg';
-import { LogoIconMetaSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-meta-svg';
-import { LogoIconMistralSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-mistral-svg';
-import { LogoIconMoonshotSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-moonshot-svg';
-import { LogoIconOpenAiSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-open-ai-svg';
-import { LogoIconPerplexitySvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-perplexity-svg';
-import { LogoIconZaiSvg } from '@khulnasoft/geistdocs/assets/logos/logo-icon-zai-svg';
-import { cn } from '@khulnasoft/geistdocs/utils';
 import type { Provider } from '@/lib/home/code-examples';
 
-const LOGOS: Record<Provider, typeof LogoIconGrokSvg> = {
-  grok: LogoIconGrokSvg,
-  openai: LogoIconOpenAiSvg,
-  anthropic: LogoIconAnthropicSvg,
-  google: LogoIconGoogleSvg,
-  mistral: LogoIconMistralSvg,
-  meta: LogoIconMetaSvg,
-  perplexity: LogoIconPerplexitySvg,
-  deepseek: LogoIconDeepseekSvg,
-  moonshot: LogoIconMoonshotSvg,
-  zai: LogoIconZaiSvg,
-  elevenlabs: LogoIconElevenlabsSvg,
+const PROVIDER_LABELS: Record<Provider, string> = {
+  grok: 'Grok',
+  openai: 'OpenAI',
+  anthropic: 'Anthropic',
+  google: 'Google',
+  mistral: 'Mistral',
+  meta: 'Meta',
+  perplexity: 'Perplexity',
+  deepseek: 'DeepSeek',
+  moonshot: 'Moonshot',
+  zai: 'Z.AI',
+  elevenlabs: 'ElevenLabs',
+};
+
+const PROVIDER_COLORS: Record<Provider, string> = {
+  grok: '#000000',
+  openai: '#10a37f',
+  anthropic: '#d97757',
+  google: '#4285f4',
+  mistral: '#ff6600',
+  meta: '#0082fb',
+  perplexity: '#20808d',
+  deepseek: '#4f6bff',
+  moonshot: '#7c3aed',
+  zai: '#0066ff',
+  elevenlabs: '#000000',
 };
 
 export function ProviderLogo({
@@ -35,12 +37,36 @@ export function ProviderLogo({
   muted?: boolean;
   className?: string;
 }) {
-  const Logo = LOGOS[provider];
+  const label = PROVIDER_LABELS[provider];
+  const initial = label.slice(0, 1);
+
   return (
-    <Logo
+    <svg
       aria-hidden="true"
-      className={cn(muted ? 'text-gray-900' : 'text-gray-1000', className)}
-      size={16}
-    />
+      className={`${muted ? 'text-gray-900' : 'text-gray-1000'} ${className ?? ''}`}
+      viewBox="0 0 16 16"
+      role="img"
+      width="16"
+      height="16"
+    >
+      <circle
+        cx="8"
+        cy="8"
+        r="7"
+        fill={PROVIDER_COLORS[provider]}
+        opacity={muted ? 0.4 : 1}
+      />
+      <text
+        x="8"
+        y="8"
+        textAnchor="middle"
+        dominantBaseline="central"
+        fill="#fff"
+        fontSize="8"
+        fontWeight="600"
+      >
+        {initial}
+      </text>
+    </svg>
   );
 }

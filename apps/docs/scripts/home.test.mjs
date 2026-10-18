@@ -25,7 +25,7 @@ test('examples use current model factories and stream/tool APIs', () => {
 test('stats combine npm downloads, GitHub stars, and contributor pagination', async () => {
   const stats = await fetchOssStats(async url => {
     if (url.includes('npmjs')) return Response.json({ downloads: 30_400_000 });
-    if (url.includes('contributors')) return new Response('[]', { headers: { link: '<https://api.github.com/repos/vercel/ai/contributors?per_page=1&anon=true&page=728>; rel="last"' } });
+    if (url.includes('contributors')) return new Response('[]', { headers: { link: '<https://api.github.com/repos/khulnasoft/ai/contributors?per_page=1&anon=true&page=728>; rel="last"' } });
     return Response.json({ stargazers_count: 27_200 });
   });
   assert.deepEqual(stats, { downloads: '30.4M', stars: '27.2K', contributors: '728+' });

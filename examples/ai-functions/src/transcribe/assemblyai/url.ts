@@ -6,7 +6,7 @@ run(async () => {
   const result = await transcribe({
     model: assemblyai.transcription('universal-3-5-pro'),
     audio: new URL(
-      'https://github.com/vercel/ai/raw/refs/heads/main/examples/ai-functions/data/galileo.mp3',
+      'https://github.com/khulnasoft/ai/raw/refs/heads/main/examples/ai-functions/data/galileo.mp3',
     ),
   });
 

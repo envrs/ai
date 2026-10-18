@@ -37,7 +37,7 @@
   "dependencies": {
     "@ai-toolkit/harness": "workspace:*",
     "@ai-toolkit/provider-utils": "workspace:*",
-    "@khulnasoft/sandbox": "^2.0.1 || ^3.0.0"
+    "@khulnasoft/sandbox": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "22.19.19",

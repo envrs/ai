@@ -1,21 +1,35 @@
 'use client';
 
-import { GeistdocsProvider } from '@khulnasoft/geistdocs/layout';
 import { useSelectedLayoutSegment } from 'next/navigation';
-import type { ComponentProps } from 'react';
+import type { ReactNode } from 'react';
+import { GeistdocsProvider } from '@/lib/ds/layout';
+import type { GeistdocsConfig } from '@/lib/ds/config';
 
-/** Mounted in [lang]/layout so the first segment identifies the docs version. */
-export const DocsProvider = (
-  props: Omit<ComponentProps<typeof GeistdocsProvider>, 'search'>,
-) => {
+/**
+ * Mounted in `[lang]/layout` so the first URL segment identifies the docs
+ * version. The segment is forwarded as the search tag so search results stay
+ * scoped to the version being read.
+ */
+export const DocsProvider = ({
+  children,
+  config,
+  lang,
+}: {
+  children: ReactNode;
+  config?: GeistdocsConfig;
+  lang: string;
+}) => {
   const segment = useSelectedLayoutSegment();
   const version = segment === 'v5' || segment === 'v6' ? segment : 'v7';
 
   return (
     <GeistdocsProvider
-      {...props}
+      config={config}
+      lang={lang}
       // The tag becomes part of the search URL and the client's cache key.
       search={{ options: { tag: version } }}
-    />
+    >
+      {children}
+    </GeistdocsProvider>
   );
 };

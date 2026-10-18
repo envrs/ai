@@ -1,5 +1,5 @@
-import { MobileDocsBar } from '@khulnasoft/geistdocs/mobile-docs-bar';
-import { createDocsPage } from '@khulnasoft/geistdocs/pages/docs';
+import { MobileDocsBar } from '@/lib/ds/mobile-docs-bar';
+import { createDocsPage } from '@/lib/ds/pages-docs';
 import { Upsell } from '@/components/docs/upsell';
 import { getMdxComponents } from '@/components/mdx-components';
 import { config } from '@/lib/geistdocs/config';

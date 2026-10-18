@@ -12,7 +12,7 @@ run(async () => {
         model: byteDance.video('dreamina-seedance-2-0-260128'),
         prompt: {
           image:
-            'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
+            'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
           text: 'Create a vertical animated scene featuring the cat from [Image 1] and the dog from [Image 2] playing together.',
         },
         aspectRatio: '9:16',
@@ -21,7 +21,7 @@ run(async () => {
         providerOptions: {
           bytedance: {
             referenceImages: [
-              'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-dog.png',
+              'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-dog.png',
             ],
             watermark: false,
           } satisfies ByteDanceVideoModelOptions,

@@ -1,9 +1,11 @@
 'use client';
 
-import { cn } from '@khulnasoft/geistdocs/utils';
 import { motion } from 'motion/react';
 import { PROVIDERS, type Provider } from '@/lib/home/code-examples';
 import { ProviderLogo } from './provider-logo';
+
+const cn = (...classes: (string | false | null | undefined)[]): string =>
+  classes.filter(Boolean).join(' ');
 
 export function LlmProviderTabs({
   selectedProvider,

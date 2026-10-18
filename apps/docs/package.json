@@ -2,7 +2,7 @@
   "name": "ai-toolkit-docs",
   "version": "0.0.0",
   "private": true,
-  "description": "Documentation site for the ai-toolkit (ai-toolkit.dev), built with @khulnasoft/geistdocs.",
+  "description": "Documentation site for the ai-toolkit (ai-toolkit.dev).",
   "scripts": {
     "sync-content": "node scripts/sync-content.mjs",
     "dev:site": "pnpm sync-content && fumadocs-mdx && next dev",
@@ -15,8 +15,7 @@
   "dependencies": {
     "@shikijs/langs": "3.23.0",
     "@shikijs/transformers": "3.23.0",
-    "@khulnasoft/analytics": "^2.0.1",
-    "@khulnasoft/geistdocs": "2.9.1",
+
     "fumadocs-core": "16.2.2",
     "fumadocs-mdx": "14.0.4",
     "fumadocs-ui": "16.2.2",

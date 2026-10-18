@@ -14,13 +14,13 @@ export async function bootstrapAiSdkCodingRepo({
 }): Promise<void> {
   const cloneResult = await session.run({
     command:
-      'test -d .git || git clone --depth 1 https://github.com/vercel/ai.git .',
+      'test -d .git || git clone --depth 1 https://github.com/khulnasoft/ai.git .',
     workingDirectory: workDir,
     abortSignal,
   });
   if (cloneResult.exitCode !== 0) {
     throw new Error(
-      `Failed to clone vercel/ai (exit ${cloneResult.exitCode}): ${cloneResult.stderr}`,
+      `Failed to clone khulnasoft/ai (exit ${cloneResult.exitCode}): ${cloneResult.stderr}`,
     );
   }
 
@@ -60,7 +60,7 @@ export async function refreshAiSdkCodingRepo({
   });
   if (pullResult.exitCode !== 0) {
     throw new Error(
-      `Failed to update vercel/ai (exit ${pullResult.exitCode}): ${pullResult.stderr}`,
+      `Failed to update khulnasoft/ai (exit ${pullResult.exitCode}): ${pullResult.stderr}`,
     );
   }
   const afterPull = await gitHead({

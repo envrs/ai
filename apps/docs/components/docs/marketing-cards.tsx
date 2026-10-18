@@ -3,9 +3,9 @@ import {
   IconMessage,
   IconSparkles,
   IconWrench,
-} from '@khulnasoft/geistdocs/assets/icons';
-import { IconArrowUpRight } from '@khulnasoft/geistdocs/assets/icons/icon-arrow-up-right';
-import { LogoNextjs, LogoSvelteKit } from '@khulnasoft/geistdocs/assets/logos';
+} from '@/lib/ds/icons';
+import { IconArrowUpRight } from '@/lib/ds/icons';
+import { LogoNextjs, LogoSvelteKit } from '@/lib/ds/logos';
 import Link from 'next/link';
 import { type ReactNode, useId } from 'react';
 import {

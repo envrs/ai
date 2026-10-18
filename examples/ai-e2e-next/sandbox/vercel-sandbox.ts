@@ -5,7 +5,7 @@ import {
   type Experimental_SandboxProcess,
 } from '@ai-toolkit/provider-utils';
 import { type Experimental_SandboxSession as SandboxSession } from 'ai';
-import type { Command, Sandbox as VercelSandboxSDK } from '@vercel/sandbox';
+import type { Command, Sandbox as VercelSandboxSDK } from '@khulnasoft/sandbox';
 import {
   bytesToStream,
   collectStream,
@@ -25,7 +25,7 @@ const rootDirectory = '/vercel/sandbox';
 // 1. Run `vercel link`.
 // 2. Run `vercel env pull` to write VERCEL_OIDC_TOKEN to .env.local.
 //
-// Without OIDC, @vercel/sandbox reports a missing `x-vercel-oidc-token`
+// Without OIDC, @khulnasoft/sandbox reports a missing `x-vercel-oidc-token`
 // header when creating or retrieving sandboxes.
 export class VercelSandboxSession implements SandboxSession {
   constructor(public readonly sandbox: VercelSandboxSDK) {}

@@ -1,12 +1,12 @@
 'use client';
 
-import { cn } from '@khulnasoft/geistdocs/utils';
-import { IconChevronLeft } from '@khulnasoft/geistdocs/assets/icons/icon-chevron-left';
-import { IconChevronRight } from '@khulnasoft/geistdocs/assets/icons/icon-chevron-right';
 import { AnimatePresence, motion } from 'motion/react';
 import { useRef, useState } from 'react';
 import { PROVIDERS, type Provider } from '@/lib/home/code-examples';
 import { ProviderLogo } from './provider-logo';
+
+const cn = (...classes: (string | false | null | undefined)[]): string =>
+  classes.filter(Boolean).join(' ');
 
 export function LlmProviderSelector({
   selectedProvider,
@@ -47,7 +47,18 @@ export function LlmProviderSelector({
         onClick={() => navigate(-1)}
         type="button"
       >
-        <IconChevronLeft size={16} />
+        <svg
+          aria-hidden="true"
+          className="size-4"
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
       </button>
 
       <span
@@ -86,7 +97,18 @@ export function LlmProviderSelector({
         onClick={() => navigate(1)}
         type="button"
       >
-        <IconChevronRight size={16} />
+        <svg
+          aria-hidden="true"
+          className="size-4"
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path d="m9 18 6-6-6-6" />
+        </svg>
       </button>
     </div>
   );

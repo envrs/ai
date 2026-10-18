@@ -1,8 +1,8 @@
 'use client';
 
-import { CodeBlock } from '@khulnasoft/geistdocs/components/code-block';
-import { geistShikiTheme } from '@khulnasoft/geistdocs/shiki-theme';
-import { cn } from '@khulnasoft/geistdocs/utils';
+import { CodeBlock } from '@/lib/ds/ui';
+import { geistShikiTheme } from '@/lib/ds/shiki-theme';
+import { cn } from '@/lib/ds/utils';
 import { useEffect, useState } from 'react';
 import type { HighlighterCore } from 'shiki/core';
 import type { Mode } from '@/lib/home/code-examples';

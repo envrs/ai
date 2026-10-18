@@ -24,8 +24,8 @@ run(async () => {
           xai: {
             mode: 'reference-to-video',
             referenceImageUrls: [
-              'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
-              'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-dog.png',
+              'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
+              'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-dog.png',
             ],
             pollTimeoutMs: 600000, // 10 minutes
           } satisfies XaiVideoModelOptions,

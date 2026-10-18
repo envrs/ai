@@ -15,7 +15,7 @@ run(async () => {
         frameImages: [
           {
             image:
-              'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
+              'https://raw.githubusercontent.com/khulnasoft/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
             frameType: 'first_frame',
           },
         ],

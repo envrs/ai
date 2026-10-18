@@ -1,5 +1,5 @@
-import { IconArrowUpRight } from '@khulnasoft/geistdocs/assets/icons/icon-arrow-up-right';
-import { Button } from '@khulnasoft/geistdocs/components/button';
+import { IconArrowUpRight } from '@/lib/ds/icons';
+import { Button } from '@/lib/ds/ui';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 

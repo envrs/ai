@@ -3,7 +3,7 @@ import {
   createVercelNetworkSandboxSessionFromNativeSandbox,
   createVercelSandboxSessionFromNativeSandbox,
 } from '@ai-toolkit/sandbox-vercel';
-import { Sandbox } from '@vercel/sandbox';
+import { Sandbox } from '@khulnasoft/sandbox';
 import { createCodexACP } from './_create';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

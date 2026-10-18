@@ -3,7 +3,7 @@ import {
   createVercelNetworkSandboxSessionFromNativeSandbox,
   createVercelSandboxSessionFromNativeSandbox,
 } from '@ai-toolkit/sandbox-vercel';
-import { Sandbox } from '@vercel/sandbox';
+import { Sandbox } from '@khulnasoft/sandbox';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';
 import { createDeepAgents } from './_create';
