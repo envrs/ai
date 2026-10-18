@@ -31,7 +31,7 @@ import { z } from './zod';
 import { asGatewayError, createGatewayErrorFromResponse } from './errors';
 import { parseAuthMethod } from './errors/parse-auth-method';
 import type { GatewayConfig } from './gateway-config';
-import { VERCEL_AI_GATEWAY_TEAM_HEADER } from './gateway-headers';
+import { KHULNASOFT_AI_GATEWAY_TEAM_HEADER } from './gateway-headers';
 import {
   GATEWAY_TRANSCRIPTION_SUBPROTOCOL,
   getGatewayTranscriptionProtocols,
@@ -257,7 +257,7 @@ function getProtocolsFromHeaders(
   return token == null
     ? [GATEWAY_TRANSCRIPTION_SUBPROTOCOL]
     : getGatewayTranscriptionProtocols(token, {
-        teamIdOrSlug: normalizedHeaders[VERCEL_AI_GATEWAY_TEAM_HEADER],
+        teamIdOrSlug: normalizedHeaders[KHULNASOFT_AI_GATEWAY_TEAM_HEADER],
       });
 }
 

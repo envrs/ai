@@ -5,7 +5,7 @@ import {
   IconWrench,
 } from '@/lib/ds/icons';
 import { IconArrowUpRight } from '@/lib/ds/icons';
-import { LogoIconVercelSvg } from '@/lib/ds/logos';
+import { LogoIconKhulnasoftSvg } from '@/lib/ds/logos';
 import { CodeBlock } from '@/lib/ds/ui';
 import {
   DropdownMenu,
@@ -542,7 +542,7 @@ const CrosshairIcon = ({ size = 14 }: { size?: number }) => (
 );
 
 const TABS: { id: TabType; title: string; icon: ReactNode }[] = [
-  { id: 'gateway', title: 'Gateway', icon: <LogoIconVercelSvg size={13} /> },
+  { id: 'gateway', title: 'Gateway', icon: <LogoIconKhulnasoftSvg size={13} /> },
   { id: 'provider', title: 'Provider', icon: <CrosshairIcon size={14} /> },
   { id: 'custom', title: 'Custom', icon: <IconWrench size={14} /> },
 ];

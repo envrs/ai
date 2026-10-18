@@ -4,7 +4,7 @@ import type {
   TranscriptionModelV4,
 } from '@ai-toolkit/provider';
 import { LangfuseSpanProcessor } from '@langfuse/otel';
-import { LangfuseVercelAiSdkIntegration } from '@langfuse/vercel-ai-sdk';
+import { LangfuseKhulnasoftAiSdkIntegration } from '@langfuse/vercel-ai-sdk';
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import {
   experimental_streamTranscribe as streamTranscribe,
@@ -25,7 +25,7 @@ const sdk = new NodeSDK({
 sdk.start();
 registerTelemetry(
   consoleTelemetry,
-  new LangfuseVercelAiSdkIntegration(),
+  new LangfuseKhulnasoftAiSdkIntegration(),
   new OpenTelemetry(),
 );
 

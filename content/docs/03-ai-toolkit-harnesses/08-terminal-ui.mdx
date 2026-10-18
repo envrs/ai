@@ -19,7 +19,7 @@ session for the lifetime of the terminal UI.
 ```ts filename='tui.ts'
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import { codex } from '@ai-toolkit/harness-codex';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import { runAgentTUI, type AgentTUIAgent } from '@ai-toolkit/tui';
 
 const agent = new HarnessAgent({
@@ -52,7 +52,7 @@ function createTUIAgent({
   } as AgentTUIAgent;
 }
 
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),

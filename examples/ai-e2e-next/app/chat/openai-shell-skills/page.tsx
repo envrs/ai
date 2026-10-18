@@ -25,8 +25,8 @@ export default function ChatOpenAIShellSkills() {
         OpenAI Shell Tool (Local Skills)
       </h1>
       <h2 className="pb-2 mb-4 border-b text-black">
-        Note: This example requires a Vercel OIDC Token to run commands with
-        Vercel Sandbox. Local skills are attached to the shell environment.
+        Note: This example requires a Khulnasoft OIDC Token to run commands with
+        Khulnasoft Sandbox. Local skills are attached to the shell environment.
       </h2>
 
       {messages.map(message => (

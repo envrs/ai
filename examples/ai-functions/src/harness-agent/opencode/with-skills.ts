@@ -1,6 +1,6 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import { createOpenCode } from './_create';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';
 
@@ -55,7 +55,7 @@ End the document with the version tag on a line by itself, prefixed with \`v\`.`
     ],
   });
 
-  const sandboxSession = await createVercelNetworkSandboxSession({
+  const sandboxSession = await createKhulnasoftNetworkSandboxSession({
     runtime: 'node24',
     ports: [4000],
     timeout: 10 * 60 * 1000,

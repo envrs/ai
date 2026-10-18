@@ -4,19 +4,19 @@ import type {
 } from '@ai-toolkit/harness';
 import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import { Sandbox } from '@khulnasoft/sandbox';
-import { VercelNetworkSandboxSession } from './khulnasoft-network-sandbox-session';
-import { VercelSandboxSession } from './khulnasoft-sandbox-session';
+import { KhulnasoftNetworkSandboxSession } from './khulnasoft-network-sandbox-session';
+import { KhulnasoftSandboxSession } from './khulnasoft-sandbox-session';
 import {
-  VERCEL_PROVIDER_ID,
+  KHULNASOFT_PROVIDER_ID,
   createLiveSandboxFromSnapshot,
   ensureTemplateSnapshot,
   getSandboxLookupParams,
-  withVercelSandboxAuthenticationError,
+  withKhulnasoftSandboxAuthenticationError,
   withDefaultSandboxSettings,
   type BaseCreateSandboxParams,
 } from './utils';
 
-type VercelSandboxCreateParams = NonNullable<
+type KhulnasoftSandboxCreateParams = NonNullable<
   Parameters<typeof Sandbox.create>[0]
 >;
 
@@ -24,8 +24,8 @@ type DistributiveOmit<T, K extends keyof any> = T extends unknown
   ? Omit<T, K>
   : never;
 
-type VercelSandboxCreationSettings = DistributiveOmit<
-  VercelSandboxCreateParams,
+type KhulnasoftSandboxCreationSettings = DistributiveOmit<
+  KhulnasoftSandboxCreateParams,
   'onResume'
 > & {
   sandbox?: never;
@@ -33,22 +33,22 @@ type VercelSandboxCreationSettings = DistributiveOmit<
 };
 
 /**
- * Settings for `createVercelSandbox`. Two mutually-exclusive shapes:
+ * Settings for `createKhulnasoftSandbox`. Two mutually-exclusive shapes:
  *
  * - `{ sandbox }` — wrap an already-created `@khulnasoft/sandbox` `Sandbox`. The
  *   caller owns its lifecycle; the provider's `stop()` and `destroy()` are
  *   no-ops.
- * - {@link VercelSandboxCreateParams} fields — provider creates the underlying
+ * - {@link KhulnasoftSandboxCreateParams} fields — provider creates the underlying
  *   sandbox. When the adapter declares a bootstrap recipe the provider uses
  *   `Sandbox.getOrCreate` to maintain a persistent named template snapshot
  *   keyed by the recipe identity, and forks an ephemeral sandbox per session
  *   from the snapshot. Use `name` to override the auto-derived template name.
  *
- * @deprecated Use `VercelNetworkSandboxSessionCreateOptions` for new sessions.
+ * @deprecated Use `KhulnasoftNetworkSandboxSessionCreateOptions` for new sessions.
  */
-export type VercelSandboxSettings =
+export type KhulnasoftSandboxSettings =
   | { sandbox: Sandbox }
-  | VercelSandboxCreationSettings;
+  | KhulnasoftSandboxCreationSettings;
 
 const SESSION_NAME_PREFIX = 'ai-toolkit-harness-session';
 
@@ -56,30 +56,30 @@ function sessionSandboxName(sessionId: string): string {
   return `${SESSION_NAME_PREFIX}-${sessionId}`;
 }
 
-/** @deprecated Use `createVercelNetworkSandboxSession` instead. */
-export function createVercelSandbox(
-  settings: VercelSandboxSettings = {} as VercelSandboxSettings,
+/** @deprecated Use `createKhulnasoftNetworkSandboxSession` instead. */
+export function createKhulnasoftSandbox(
+  settings: KhulnasoftSandboxSettings = {} as KhulnasoftSandboxSettings,
 ): HarnessV1SandboxProvider {
   console.warn(
-    'createVercelSandbox is deprecated. Use createVercelNetworkSandboxSession and HarnessAgent.createSession({ sandboxSession }) instead.',
+    'createKhulnasoftSandbox is deprecated. Use createKhulnasoftNetworkSandboxSession and HarnessAgent.createSession({ sandboxSession }) instead.',
   );
-  return new VercelSandboxProvider(settings);
+  return new KhulnasoftSandboxProvider(settings);
 }
 
 /**
  * `HarnessV1SandboxProvider` implementation backed by `@khulnasoft/sandbox`.
- * Construct one via {@link createVercelSandbox} at module scope and pass it
+ * Construct one via {@link createKhulnasoftSandbox} at module scope and pass it
  * to a `HarnessAgent` (or call `createSession()` directly if you want raw
  * access to a network sandbox session).
  */
-/** @deprecated Use `createVercelNetworkSandboxSession` instead. */
-export class VercelSandboxProvider implements HarnessV1SandboxProvider {
+/** @deprecated Use `createKhulnasoftNetworkSandboxSession` instead. */
+export class KhulnasoftSandboxProvider implements HarnessV1SandboxProvider {
   readonly specificationVersion = 'harness-sandbox-v1' as const;
-  readonly providerId = VERCEL_PROVIDER_ID;
+  readonly providerId = KHULNASOFT_PROVIDER_ID;
 
-  constructor(private readonly settings: VercelSandboxSettings) {
+  constructor(private readonly settings: KhulnasoftSandboxSettings) {
     console.warn(
-      'VercelSandboxProvider is deprecated. Use createVercelNetworkSandboxSession instead.',
+      'KhulnasoftSandboxProvider is deprecated. Use createKhulnasoftNetworkSandboxSession instead.',
     );
   }
 
@@ -95,7 +95,7 @@ export class VercelSandboxProvider implements HarnessV1SandboxProvider {
     options?.abortSignal?.throwIfAborted();
 
     if ('sandbox' in this.settings && this.settings.sandbox != null) {
-      return new VercelNetworkSandboxSession({
+      return new KhulnasoftNetworkSandboxSession({
         sandbox: this.settings.sandbox,
         ownsLifecycle: false,
       });
@@ -130,7 +130,7 @@ export class VercelSandboxProvider implements HarnessV1SandboxProvider {
       : {};
 
     if (identity == null || onFirstCreate == null) {
-      const sandbox = await withVercelSandboxAuthenticationError({
+      const sandbox = await withKhulnasoftSandboxAuthenticationError({
         settings: this.settings,
         operation: () =>
           Sandbox.create({
@@ -139,11 +139,11 @@ export class VercelSandboxProvider implements HarnessV1SandboxProvider {
             ...(options?.abortSignal ? { signal: options.abortSignal } : {}),
           }),
       });
-      return new VercelNetworkSandboxSession({ sandbox, ownsLifecycle: true });
+      return new KhulnasoftNetworkSandboxSession({ sandbox, ownsLifecycle: true });
     }
 
     const templateName = explicitName ?? `ai-toolkit-harness-${identity}`;
-    const snapshotId = await withVercelSandboxAuthenticationError({
+    const snapshotId = await withKhulnasoftSandboxAuthenticationError({
       settings: this.settings,
       operation: () =>
         ensureTemplateSnapshot({
@@ -153,14 +153,14 @@ export class VercelSandboxProvider implements HarnessV1SandboxProvider {
           abortSignal: options?.abortSignal,
           snapshotCache: getSnapshotCache(),
           onCreate: async sbx => {
-            await onFirstCreate(new VercelSandboxSession(sbx), {
+            await onFirstCreate(new KhulnasoftSandboxSession(sbx), {
               abortSignal: options?.abortSignal,
             });
           },
         }),
     });
 
-    const fork = await withVercelSandboxAuthenticationError({
+    const fork = await withKhulnasoftSandboxAuthenticationError({
       settings: this.settings,
       operation: () =>
         createLiveSandboxFromSnapshot({
@@ -170,7 +170,7 @@ export class VercelSandboxProvider implements HarnessV1SandboxProvider {
           abortSignal: options?.abortSignal,
         }),
     });
-    return new VercelNetworkSandboxSession({
+    return new KhulnasoftNetworkSandboxSession({
       sandbox: fork,
       ownsLifecycle: true,
     });
@@ -184,13 +184,13 @@ export class VercelSandboxProvider implements HarnessV1SandboxProvider {
 
     // Wrap-existing case: caller owns the sandbox. Same session as createSession.
     if ('sandbox' in this.settings && this.settings.sandbox != null) {
-      return new VercelNetworkSandboxSession({
+      return new KhulnasoftNetworkSandboxSession({
         sandbox: this.settings.sandbox,
         ownsLifecycle: false,
       });
     }
 
-    const sandbox = await withVercelSandboxAuthenticationError({
+    const sandbox = await withKhulnasoftSandboxAuthenticationError({
       settings: this.settings,
       operation: () =>
         Sandbox.get({
@@ -199,7 +199,7 @@ export class VercelSandboxProvider implements HarnessV1SandboxProvider {
           ...(options.abortSignal ? { signal: options.abortSignal } : {}),
         }),
     });
-    return new VercelNetworkSandboxSession({ sandbox, ownsLifecycle: true });
+    return new KhulnasoftNetworkSandboxSession({ sandbox, ownsLifecycle: true });
   };
 }
 

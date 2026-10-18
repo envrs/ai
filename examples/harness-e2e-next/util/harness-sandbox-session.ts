@@ -5,8 +5,8 @@ import type {
   HarnessAgentResumeSessionState,
 } from '@ai-toolkit/harness/agent';
 import {
-  createVercelNetworkSandboxSession,
-  resumeVercelNetworkSandboxSession,
+  createKhulnasoftNetworkSandboxSession,
+  resumeKhulnasoftNetworkSandboxSession,
 } from '@ai-toolkit/sandbox-vercel';
 
 export async function acquireHarnessSandboxSession({
@@ -24,10 +24,10 @@ export async function acquireHarnessSandboxSession({
 }): Promise<HarnessV1NetworkSandboxSession> {
   const sandboxId = `ai-sdk-harness-session-${sessionId}`;
   if (resumeFrom != null || continueFrom != null) {
-    return resumeVercelNetworkSandboxSession({ sandboxId });
+    return resumeKhulnasoftNetworkSandboxSession({ sandboxId });
   }
 
-  return createVercelNetworkSandboxSession({
+  return createKhulnasoftNetworkSandboxSession({
     sandboxId,
     runtime: 'node24',
     ...(ports == null ? {} : { ports }),

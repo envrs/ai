@@ -27,7 +27,7 @@ export type DistributiveOmit<T, K extends keyof any> = T extends unknown
  * full surface — every option khulnasoft supports, including its native
  * `NetworkPolicy` — is available without us re-declaring it.
  */
-export type VercelSandboxCreateParams = DistributiveOmit<
+export type KhulnasoftSandboxCreateParams = DistributiveOmit<
   NonNullable<Parameters<typeof Sandbox.create>[0]>,
   'onResume'
 >;
@@ -38,11 +38,11 @@ export type VercelSandboxCreateParams = DistributiveOmit<
  * are typed as present.
  */
 export type BaseCreateSandboxParams = Exclude<
-  VercelSandboxCreateParams,
+  KhulnasoftSandboxCreateParams,
   { source: { type: 'snapshot'; snapshotId: string } }
 >;
 
-export const VERCEL_PROVIDER_ID = 'khulnasoft-sandbox';
+export const KHULNASOFT_PROVIDER_ID = 'khulnasoft-sandbox';
 
 /**
  * 30 minutes. The `@khulnasoft/sandbox` SDK defaults to 5 minutes which is
@@ -61,12 +61,12 @@ type SandboxLookupParams = {
   token?: string;
 };
 
-type VercelSandboxAuthenticationSettings = SandboxLookupParams & {
+type KhulnasoftSandboxAuthenticationSettings = SandboxLookupParams & {
   sandbox?: Sandbox;
 };
 
 export function getSandboxLookupParams(
-  settings: VercelSandboxAuthenticationSettings,
+  settings: KhulnasoftSandboxAuthenticationSettings,
 ): SandboxLookupParams {
   if ('sandbox' in settings && settings.sandbox != null) {
     return {};
@@ -81,21 +81,21 @@ export function getSandboxLookupParams(
   };
 }
 
-const VERCEL_SANDBOX_AUTHENTICATION_MESSAGE =
-  'khulnasoft Sandbox authentication failed. Set VERCEL_OIDC_TOKEN, or pass token, teamId, and projectId to createVercelSandbox(), then verify that they can access khulnasoft Sandbox.';
+const KHULNASOFT_SANDBOX_AUTHENTICATION_MESSAGE =
+  'khulnasoft Sandbox authentication failed. Set KHULNASOFT_OIDC_TOKEN, or pass token, teamId, and projectId to createKhulnasoftSandbox(), then verify that they can access khulnasoft Sandbox.';
 
-export async function withVercelSandboxAuthenticationError<T>({
+export async function withKhulnasoftSandboxAuthenticationError<T>({
   settings,
   operation,
 }: {
-  settings: VercelSandboxAuthenticationSettings;
+  settings: KhulnasoftSandboxAuthenticationSettings;
   operation: () => Promise<T>;
 }): Promise<T> {
   try {
     return await operation();
   } catch (error) {
     if (
-      !isVercelSandboxAuthenticationFailure({
+      !isKhulnasoftSandboxAuthenticationFailure({
         error,
         hasConfiguredCredentials: hasConfiguredCredentials(settings),
       })
@@ -103,23 +103,23 @@ export async function withVercelSandboxAuthenticationError<T>({
       throw error;
     }
     throw new HarnessSandboxAuthenticationError({
-      message: VERCEL_SANDBOX_AUTHENTICATION_MESSAGE,
-      sandboxProviderId: VERCEL_PROVIDER_ID,
+      message: KHULNASOFT_SANDBOX_AUTHENTICATION_MESSAGE,
+      sandboxProviderId: KHULNASOFT_PROVIDER_ID,
       cause: error,
     });
   }
 }
 
 function hasConfiguredCredentials(
-  settings: VercelSandboxAuthenticationSettings,
+  settings: KhulnasoftSandboxAuthenticationSettings,
 ): boolean {
-  if (process.env.VERCEL_OIDC_TOKEN) return true;
+  if (process.env.KHULNASOFT_OIDC_TOKEN) return true;
   if ('sandbox' in settings && settings.sandbox != null) return true;
   const { token, teamId, projectId } = getSandboxLookupParams(settings);
   return Boolean(token && teamId && projectId);
 }
 
-function isVercelSandboxAuthenticationFailure({
+function isKhulnasoftSandboxAuthenticationFailure({
   error,
   hasConfiguredCredentials,
 }: {
@@ -148,13 +148,13 @@ function isVercelSandboxAuthenticationFailure({
       }
       if (
         typeof candidate.name === 'string' &&
-        VERCEL_AUTHENTICATION_ERROR_NAMES.has(candidate.name)
+        KHULNASOFT_AUTHENTICATION_ERROR_NAMES.has(candidate.name)
       ) {
         return true;
       }
       if (
         typeof candidate.message === 'string' &&
-        VERCEL_AUTHENTICATION_ERROR_MESSAGE.test(candidate.message)
+        KHULNASOFT_AUTHENTICATION_ERROR_MESSAGE.test(candidate.message)
       ) {
         return true;
       }
@@ -175,16 +175,16 @@ function isVercelSandboxAuthenticationFailure({
   return false;
 }
 
-const VERCEL_AUTHENTICATION_ERROR_NAMES = new Set([
+const KHULNASOFT_AUTHENTICATION_ERROR_NAMES = new Set([
   'AccessTokenMissingError',
   'LocalOidcContextError',
   'OAuthError',
   'RefreshAccessTokenFailedError',
-  'VercelOidcContextError',
-  'VercelOidcTokenError',
+  'KhulnasoftOidcContextError',
+  'KhulnasoftOidcTokenError',
 ]);
 
-const VERCEL_AUTHENTICATION_ERROR_MESSAGE =
+const KHULNASOFT_AUTHENTICATION_ERROR_MESSAGE =
   /Could not get credentials from OIDC context|No authentication found|Failed to (?:retrieve|refresh) authentication token|Missing credentials parameters to access the khulnasoft API|Authentication failed/i;
 
 export function hasExplicitSandboxEnvironment(params: object): boolean {

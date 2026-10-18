@@ -42,14 +42,14 @@ configuration.
 ```ts
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { githubCopilot } from '@ai-toolkit/harness-github-copilot';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
 const agent = new HarnessAgent({
   harness: githubCopilot,
   model: 'gpt-5.5',
 });
 
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),
@@ -78,7 +78,7 @@ try {
 }
 ```
 
-To use this agent with khulnasoft Sandbox, provide `VERCEL_OIDC_TOKEN` and one of
+To use this agent with khulnasoft Sandbox, provide `KHULNASOFT_OIDC_TOKEN` and one of
 the variables listed under [authentication](#authentication) in the host
 environment.
 
@@ -149,7 +149,7 @@ authentication. Set one or more of these environment variables:
 - `COPILOT_GITHUB_TOKEN`
 - `GH_TOKEN`
 - `GITHUB_TOKEN`
-- `VERCEL_OIDC_TOKEN`
+- `KHULNASOFT_OIDC_TOKEN`
 - `AI_GATEWAY_API_KEY`
 - `AI_GATEWAY_BASE_URL`
 
@@ -160,7 +160,7 @@ authentication is selected.
 For direct authentication, GitHub Copilot checks the three GitHub token
 variables in the listed order. Fine-grained personal access tokens require the
 **Copilot Requests** permission; classic personal access tokens are unsupported.
-For AI Gateway, the adapter uses `VERCEL_OIDC_TOKEN` or `AI_GATEWAY_API_KEY` and
+For AI Gateway, the adapter uses `KHULNASOFT_OIDC_TOKEN` or `AI_GATEWAY_API_KEY` and
 honors `AI_GATEWAY_BASE_URL`.
 
 When the sandbox supports request transformations, the adapter brokers each
@@ -200,7 +200,7 @@ GitHub Copilot runs inside the sandbox through `@ai-toolkit/harness-acp`. It
 requires a network sandbox with at least one exposed port:
 
 ```ts
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),

@@ -35,14 +35,14 @@ import { claudeCode, createClaudeCode } from '@ai-toolkit/harness-claude-code';
 ```ts
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { claudeCode } from '@ai-toolkit/harness-claude-code';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
 const agent = new HarnessAgent({
   harness: claudeCode,
   model: 'claude-sonnet-4-6',
 });
 
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),
@@ -71,7 +71,7 @@ try {
 }
 ```
 
-To use this agent, ensure environment variables include `VERCEL_OIDC_TOKEN` for
+To use this agent, ensure environment variables include `KHULNASOFT_OIDC_TOKEN` for
 khulnasoft Sandbox, and one of the variables listed under [authentication](#authentication)
 for Claude Code.
 
@@ -153,7 +153,7 @@ forwarding.
 
 Supported environment variables:
 
-- `VERCEL_OIDC_TOKEN`
+- `KHULNASOFT_OIDC_TOKEN`
 - `AI_GATEWAY_API_KEY`
 - `AI_GATEWAY_BASE_URL`
 - `ANTHROPIC_API_KEY`
@@ -189,7 +189,7 @@ Claude Code requires a network sandbox with at least one exposed port,
 e.g. `@ai-toolkit/sandbox-khulnasoft`:
 
 ```ts
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),

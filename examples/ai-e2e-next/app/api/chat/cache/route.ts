@@ -8,7 +8,7 @@ import {
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
 
-// simple cache implementation, use Vercel KV or a similar service for production
+// simple cache implementation, use Khulnasoft KV or a similar service for production
 const cache = new Map<string, string>();
 
 export async function POST(req: Request) {

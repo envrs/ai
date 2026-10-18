@@ -118,11 +118,11 @@ describe('createPiModelResolver', () => {
     expect(resolve(undefined)).toEqual(defaultGatewayModel);
   });
 
-  it('looks up the gateway default when VERCEL_OIDC_TOKEN is set', async () => {
+  it('looks up the gateway default when KHULNASOFT_OIDC_TOKEN is set', async () => {
     const resolve = createPiModelResolver({
       modelRegistry: await makeRegistry([defaultGatewayModel]),
       env: {
-        VERCEL_OIDC_TOKEN: 'oidc-token',
+        KHULNASOFT_OIDC_TOKEN: 'oidc-token',
       },
     });
     expect(resolve(undefined)).toEqual(defaultGatewayModel);

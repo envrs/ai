@@ -27,7 +27,7 @@ run(async () => {
         tools,
         toolChoice: { type: 'tool', toolName: 'web_search' },
         prompt:
-          'Search the web for the latest Vercel news and summarize the most recent announcement with its source.',
+          'Search the web for the latest Khulnasoft news and summarize the most recent announcement with its source.',
       },
     ],
   });

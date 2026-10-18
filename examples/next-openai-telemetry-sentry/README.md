@@ -4,9 +4,9 @@ This example shows how to use the [AI SDK](https://ai-sdk.dev/docs) with [Next.j
 
 ## Deploy your own
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=ai-sdk-example):
+Deploy the example using [Khulnasoft](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=ai-sdk-example):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fai%2Ftree%2Fmain%2Fexamples%2Fnext-openai-telemetry-sentry&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys&project-name=khulnasoft-ai-openai-telemetry-sentry&repository-name=khulnasoft-ai-openai-telemetry-sentry)
+[![Deploy with Khulnasoft](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fai%2Ftree%2Fmain%2Fexamples%2Fnext-openai-telemetry-sentry&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys&project-name=khulnasoft-ai-openai-telemetry-sentry&repository-name=khulnasoft-ai-openai-telemetry-sentry)
 
 ## How to use
 
@@ -43,7 +43,7 @@ To learn more about OpenAI, Next.js, and the AI SDK take a look at the following
 
 - [AI SDK docs](https://ai-sdk.dev/docs)
 - [AI SDK telemetry support](https://ai-sdk.dev/docs/ai-sdk-core/telemetry)
-- [Vercel AI Playground](https://ai-sdk.dev/playground)
+- [Khulnasoft AI Playground](https://ai-sdk.dev/playground)
 - [OpenAI Documentation](https://platform.openai.com/docs) - learn about OpenAI features and API.
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Sentry Documentation](https://docs.sentry.io) - learn about Sentry features and API.

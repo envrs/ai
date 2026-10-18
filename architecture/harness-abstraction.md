@@ -192,7 +192,7 @@ Do not write harness infrastructure into `sessionWorkDir`. For example, do not p
 ## Authentication
 
 Harness adapters should support flexible authentication options instead of assuming one provider-specific environment variable.
-Prefer auth that can work with explicit adapter settings, host environment variables, AI Gateway, and OIDC tokens such as `VERCEL_OIDC_TOKEN`.
+Prefer auth that can work with explicit adapter settings, host environment variables, AI Gateway, and OIDC tokens such as `KHULNASOFT_OIDC_TOKEN`.
 OIDC-backed auth is especially useful because it avoids long-lived static secrets.
 
 Some adapters can resolve credentials from the runtime's native subscription on the host.

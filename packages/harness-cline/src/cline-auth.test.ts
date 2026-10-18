@@ -148,7 +148,7 @@ describe('resolveClineEnv', () => {
       resolveClineEnv({
         auth: 'ai-gateway',
         env: {
-          VERCEL_OIDC_TOKEN: 'oidc-token',
+          KHULNASOFT_OIDC_TOKEN: 'oidc-token',
           AI_GATEWAY_BASE_URL: 'https://gateway.example',
         },
       }),

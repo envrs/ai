@@ -428,7 +428,7 @@ async function generateMaintainerVideo(
 function canReceiveFalWebhook(): boolean {
   const localBaseUrl = process.env.WORKFLOW_LOCAL_BASE_URL;
   if (localBaseUrl == null || localBaseUrl.length === 0) {
-    return process.env.VERCEL === '1';
+    return process.env.KHULNASOFT === '1';
   }
 
   try {

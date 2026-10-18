@@ -47,7 +47,7 @@ describe('OpenCode auth', () => {
       resolveOpenCodeEnv({
         auth: undefined,
         processEnv: {
-          VERCEL_OIDC_TOKEN: 'oidc-token',
+          KHULNASOFT_OIDC_TOKEN: 'oidc-token',
           AI_GATEWAY_BASE_URL: 'https://gateway.example',
         },
       }),
@@ -281,7 +281,7 @@ describe('resolveOpenCodeAuthenticationMode', () => {
     expect(
       resolveOpenCodeAuthenticationMode({
         auth: undefined,
-        processEnv: { VERCEL_OIDC_TOKEN: 'oidc-token' },
+        processEnv: { KHULNASOFT_OIDC_TOKEN: 'oidc-token' },
       }),
     ).toBe('ai-gateway');
   });

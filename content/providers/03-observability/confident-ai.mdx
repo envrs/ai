@@ -41,7 +41,7 @@ CONFIDENT_API_KEY="YOUR-PROJECT-API-KEY"
 
 ### 3. Register the Telemetry Integration
 
-The `createVercelAITracer()` function returns a tracer that maps ai-toolkit spans onto
+The `createKhulnasoftAITracer()` function returns a tracer that maps ai-toolkit spans onto
 Confident AI's span types. Pass it to `OpenTelemetry` and register that once at
 application startup, before any ai-toolkit call. `init()` sets up the exporter that
 ships the spans to your project:
@@ -50,11 +50,11 @@ ships the spans to your project:
 import { registerTelemetry } from 'ai';
 import { OpenTelemetry } from '@ai-toolkit/otel';
 import { init } from 'confident-trace';
-import { createVercelAITracer } from 'confident-trace/khulnasoft-ai';
+import { createKhulnasoftAITracer } from 'confident-trace/khulnasoft-ai';
 
 export function register() {
   init();
-  registerTelemetry(new OpenTelemetry({ tracer: createVercelAITracer() }));
+  registerTelemetry(new OpenTelemetry({ tracer: createKhulnasoftAITracer() }));
 }
 ```
 
@@ -67,10 +67,10 @@ import { generateText, registerTelemetry } from 'ai';
 import { openai } from '@ai-toolkit/openai';
 import { OpenTelemetry } from '@ai-toolkit/otel';
 import { init } from 'confident-trace';
-import { createVercelAITracer } from 'confident-trace/khulnasoft-ai';
+import { createKhulnasoftAITracer } from 'confident-trace/khulnasoft-ai';
 
 const runtime = init();
-registerTelemetry(new OpenTelemetry({ tracer: createVercelAITracer() }));
+registerTelemetry(new OpenTelemetry({ tracer: createKhulnasoftAITracer() }));
 
 try {
   const { text } = await generateText({

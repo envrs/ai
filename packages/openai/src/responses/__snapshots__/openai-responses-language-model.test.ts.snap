@@ -196,7 +196,7 @@ Think of the three levels as **scope + realism vs speed + isolation** trade-offs
 ## 1) Unit tests (Jest)
 **Goal:** Verify a *single unit* of code (usually a function, class method, or small module) behaves correctly.
 
-- **Scope:** Smallest; tests one piece in isolation  
+- **Scope:** Smallest; tests one piece in isolation
 - **Dependencies:** Typically **mocked/stubbed** (DB, network calls, timers, filesystem)
 - **Speed:** Fastest (you run lots of them frequently)
 - **Failure meaning:** “This function/module is wrong,” usually easy to pinpoint
@@ -307,9 +307,9 @@ exports[`OpenAIResponsesLanguageModel > doGenerate > file search tool > with res
           "text": "AI 1
 
 AI
-Generative artificial intelligence refers to models that predict and generate 
-various types of outputs (such as text, images, or audio) based on whatʼs 
-statistically likely, pulling from patterns theyʼve learned from their training data. 
+Generative artificial intelligence refers to models that predict and generate
+various types of outputs (such as text, images, or audio) based on whatʼs
+statistically likely, pulling from patterns theyʼve learned from their training data.
 For example:
 
 Given a photo, a generative model can generate a caption.
@@ -318,30 +318,30 @@ Given an audio file, a generative model can generate a transcription.
 
 Given a text description, a generative model can generate an image.
 
-A large language model LLM is a subset of generative models focused 
-primarily on text. An LLM takes a sequence of words as input and aims to 
-predict the most likely sequence to follow. It assigns probabilities to potential 
-next sequences and then selects one. The model continues to generate 
+A large language model LLM is a subset of generative models focused
+primarily on text. An LLM takes a sequence of words as input and aims to
+predict the most likely sequence to follow. It assigns probabilities to potential
+next sequences and then selects one. The model continues to generate
 sequences until it meets a specified stopping criterion.
 
-LLMs learn by training on massive collections of written text, which means they 
-will be better suited to some use cases than others. For example, a model 
-trained on GitHub data would understand the probabilities of sequences in 
+LLMs learn by training on massive collections of written text, which means they
+will be better suited to some use cases than others. For example, a model
+trained on GitHub data would understand the probabilities of sequences in
 source code particularly well.
 
-However, it's crucial to understand LLMs' limitations. When asked about less 
-known or absent information, like the birthday of a personal relative, LLMs 
+However, it's crucial to understand LLMs' limitations. When asked about less
+known or absent information, like the birthday of a personal relative, LLMs
 might "hallucinate" or make up information. It's essential to consider how well-
 represented the information you need is in the model.
 
-An embedding model is used to convert complex data (like words or images) 
-into a dense vector (a list of numbers) representation, known as an embedding. 
-Unlike generative models, embedding models do not generate new text or data. 
-Instead, they provide representations of semantic and synactic relationships 
-between entities that can be used as input for other models or other natural 
+An embedding model is used to convert complex data (like words or images)
+into a dense vector (a list of numbers) representation, known as an embedding.
+Unlike generative models, embedding models do not generate new text or data.
+Instead, they provide representations of semantic and synactic relationships
+between entities that can be used as input for other models or other natural
 language processing tasks.
 
-In the next section, you will learn about the difference between models 
+In the next section, you will learn about the difference between models
 providers and models, and which ones are available in the ai-toolkit.",
         },
       ],
@@ -1128,7 +1128,7 @@ exports[`OpenAIResponsesLanguageModel > doGenerate > web search tool > should in
   {
     "result": {
       "action": {
-        "pattern": "Vercel",
+        "pattern": "Khulnasoft",
         "type": "findInPage",
         "url": "https://www.theverge.com/podcast/838932/openai-chatgpt-code-red-vergecast",
       },
@@ -1187,7 +1187,7 @@ exports[`OpenAIResponsesLanguageModel > doGenerate > web search tool > should in
         "source": {
           "id": "https://vercel.com/blog/series-f",
           "sourceType": "url",
-          "title": "Towards the AI Cloud: Our Series F - Vercel",
+          "title": "Towards the AI Cloud: Our Series F - Khulnasoft",
           "type": "source",
           "url": "https://vercel.com/blog/series-f",
         },
@@ -1198,7 +1198,7 @@ exports[`OpenAIResponsesLanguageModel > doGenerate > web search tool > should in
         "source": {
           "id": "https://www.sentinelone.com/vulnerability-database/cve-2025-49826/?utm_source=openai",
           "sourceType": "url",
-          "title": "CVE-2025-49826: Vercel Next.js Cache Poisoning DOS Flaw",
+          "title": "CVE-2025-49826: Khulnasoft Next.js Cache Poisoning DOS Flaw",
           "type": "source",
           "url": "https://www.sentinelone.com/vulnerability-database/cve-2025-49826/?utm_source=openai",
         },
@@ -1242,7 +1242,7 @@ exports[`OpenAIResponsesLanguageModel > doGenerate > web search tool > should in
         "source": {
           "id": "https://www.bloomberg.com/news/articles/2025-09-30/vercel-notches-9-3-billion-valuation-in-latest-ai-funding-round",
           "sourceType": "url",
-          "title": "Vercel Notches $9.3 Billion Valuation in Latest AI Funding Round - Bloomberg",
+          "title": "Khulnasoft Notches $9.3 Billion Valuation in Latest AI Funding Round - Bloomberg",
           "type": "source",
           "url": "https://www.bloomberg.com/news/articles/2025-09-30/vercel-notches-9-3-billion-valuation-in-latest-ai-funding-round",
         },
@@ -1253,7 +1253,7 @@ exports[`OpenAIResponsesLanguageModel > doGenerate > web search tool > should in
         "source": {
           "id": "https://vercel.com/blog/series-f",
           "sourceType": "url",
-          "title": "Towards the AI Cloud: Our Series F - Vercel",
+          "title": "Towards the AI Cloud: Our Series F - Khulnasoft",
           "type": "source",
           "url": "https://vercel.com/blog/series-f",
         },
@@ -1287,14 +1287,14 @@ exports[`OpenAIResponsesLanguageModel > doGenerate > web search tool > should in
           {
             "end_index": 1343,
             "start_index": 1295,
-            "title": "Towards the AI Cloud: Our Series F - Vercel",
+            "title": "Towards the AI Cloud: Our Series F - Khulnasoft",
             "type": "url_citation",
             "url": "https://vercel.com/blog/series-f",
           },
           {
             "end_index": 1594,
             "start_index": 1489,
-            "title": "CVE-2025-49826: Vercel Next.js Cache Poisoning DOS Flaw",
+            "title": "CVE-2025-49826: Khulnasoft Next.js Cache Poisoning DOS Flaw",
             "type": "url_citation",
             "url": "https://www.sentinelone.com/vulnerability-database/cve-2025-49826/?utm_source=openai",
           },
@@ -1322,14 +1322,14 @@ exports[`OpenAIResponsesLanguageModel > doGenerate > web search tool > should in
           {
             "end_index": 2635,
             "start_index": 2502,
-            "title": "Vercel Notches $9.3 Billion Valuation in Latest AI Funding Round - Bloomberg",
+            "title": "Khulnasoft Notches $9.3 Billion Valuation in Latest AI Funding Round - Bloomberg",
             "type": "url_citation",
             "url": "https://www.bloomberg.com/news/articles/2025-09-30/vercel-notches-9-3-billion-valuation-in-latest-ai-funding-round",
           },
           {
             "end_index": 2822,
             "start_index": 2774,
-            "title": "Towards the AI Cloud: Our Series F - Vercel",
+            "title": "Towards the AI Cloud: Our Series F - Khulnasoft",
             "type": "url_citation",
             "url": "https://vercel.com/blog/series-f",
           },
@@ -1340,21 +1340,21 @@ exports[`OpenAIResponsesLanguageModel > doGenerate > web search tool > should in
     "text": "Short answer first — yes. I pulled several tech-news pages published today (December 5, 2025) and searched each for the keyword pattern "vercel". Below is a brief “today in tech” digest followed by the exact results of the on-page searches.
 
 Today’s top tech stories (December 5, 2025) — quick highlights
-- OpenAI declared a “code red” for ChatGPT as pressure increases from rivals (discussion and analysis on The Vergecast). ([theverge.com](https://www.theverge.com/podcast/838932/openai-chatgpt-code-red-vergecast))  
-- The EU opened a formal antitrust probe into Meta’s WhatsApp AI policy, which regulators say could block rival AI assistants. ([techstartups.com](https://techstartups.com/2025/12/05/technology-news-today-the-latest-in-tech-ai-startup-news-december-5-2025/))  
-- A major media deal: reports that Netflix is pursuing an $83B acquisition of Warner Bros. Discovery (market coverage today). ([investopedia.com](https://www.investopedia.com/5-things-to-know-before-the-stock-market-opens-december-5-2025-11862701?utm_source=openai))  
-- Vercel-related funding and valuation news continued to circulate: Vercel disclosed a large funding/tender transaction and company posts describe a Series F round positioning the company as AI/cloud-focused. (see company blog + news coverage). ([vercel.com](https://vercel.com/blog/series-f))  
+- OpenAI declared a “code red” for ChatGPT as pressure increases from rivals (discussion and analysis on The Vergecast). ([theverge.com](https://www.theverge.com/podcast/838932/openai-chatgpt-code-red-vergecast))
+- The EU opened a formal antitrust probe into Meta’s WhatsApp AI policy, which regulators say could block rival AI assistants. ([techstartups.com](https://techstartups.com/2025/12/05/technology-news-today-the-latest-in-tech-ai-startup-news-december-5-2025/))
+- A major media deal: reports that Netflix is pursuing an $83B acquisition of Warner Bros. Discovery (market coverage today). ([investopedia.com](https://www.investopedia.com/5-things-to-know-before-the-stock-market-opens-december-5-2025-11862701?utm_source=openai))
+- Khulnasoft-related funding and valuation news continued to circulate: Khulnasoft disclosed a large funding/tender transaction and company posts describe a Series F round positioning the company as AI/cloud-focused. (see company blog + news coverage). ([vercel.com](https://vercel.com/blog/series-f))
 - Security note: a recently disclosed Next.js cache-poisoning/CVE issue was documented (affects certain Next.js versions; patch was released). ([sentinelone.com](https://www.sentinelone.com/vulnerability-database/cve-2025-49826/?utm_source=openai))
 
 Pages I opened and the results of searching those pages for the pattern "vercel"
-- The Verge (podcast/story “It’s code red for ChatGPT”) — search for "vercel": no occurrences on that page. (I opened the Dec 5 Verge piece and searched it.) ([theverge.com](https://www.theverge.com/podcast/838932/openai-chatgpt-code-red-vergecast))  
-- WIRED (Big Interview 2025 recap) — search for "vercel": no occurrences found. ([wired.com](https://www.wired.com/story/the-big-interview-2025-recap))  
-- TechStartups (Technology News Today — Dec 5, 2025 roundup) — search for "vercel": no occurrences found on that roundup page. ([techstartups.com](https://techstartups.com/2025/12/05/technology-news-today-the-latest-in-tech-ai-startup-news-december-5-2025/))  
-- Bloomberg (article: “Vercel Notches $9.3 Billion Valuation…” / Vercel coverage) — search for "vercel": found (article is about Vercel’s funding/valuation). ([bloomberg.com](https://www.bloomberg.com/news/articles/2025-09-30/vercel-notches-9-3-billion-valuation-in-latest-ai-funding-round))  
-- Vercel’s own blog post (“Towards the AI Cloud: Our Series F”) — search for "vercel": found (company announcement / Series F details). ([vercel.com](https://vercel.com/blog/series-f))
+- The Verge (podcast/story “It’s code red for ChatGPT”) — search for "vercel": no occurrences on that page. (I opened the Dec 5 Verge piece and searched it.) ([theverge.com](https://www.theverge.com/podcast/838932/openai-chatgpt-code-red-vergecast))
+- WIRED (Big Interview 2025 recap) — search for "vercel": no occurrences found. ([wired.com](https://www.wired.com/story/the-big-interview-2025-recap))
+- TechStartups (Technology News Today — Dec 5, 2025 roundup) — search for "vercel": no occurrences found on that roundup page. ([techstartups.com](https://techstartups.com/2025/12/05/technology-news-today-the-latest-in-tech-ai-startup-news-december-5-2025/))
+- Bloomberg (article: “Khulnasoft Notches $9.3 Billion Valuation…” / Khulnasoft coverage) — search for "vercel": found (article is about Khulnasoft’s funding/valuation). ([bloomberg.com](https://www.bloomberg.com/news/articles/2025-09-30/vercel-notches-9-3-billion-valuation-in-latest-ai-funding-round))
+- Khulnasoft’s own blog post (“Towards the AI Cloud: Our Series F”) — search for "vercel": found (company announcement / Series F details). ([vercel.com](https://vercel.com/blog/series-f))
 
 Would you like me to:
-- open more tech sites from today (e.g., TechCrunch, Reuters, The Information) and run the same "vercel" search across them, or  
+- open more tech sites from today (e.g., TechCrunch, Reuters, The Information) and run the same "vercel" search across them, or
 - search for a different keyword or company on today’s tech pages?",
     "type": "text",
   },
@@ -3853,9 +3853,9 @@ exports[`OpenAIResponsesLanguageModel > doStream > file search tool > should str
           "text": "AI 1
 
 AI
-Generative artificial intelligence refers to models that predict and generate 
-various types of outputs (such as text, images, or audio) based on whatʼs 
-statistically likely, pulling from patterns theyʼve learned from their training data. 
+Generative artificial intelligence refers to models that predict and generate
+various types of outputs (such as text, images, or audio) based on whatʼs
+statistically likely, pulling from patterns theyʼve learned from their training data.
 For example:
 
 Given a photo, a generative model can generate a caption.
@@ -3864,30 +3864,30 @@ Given an audio file, a generative model can generate a transcription.
 
 Given a text description, a generative model can generate an image.
 
-A large language model LLM is a subset of generative models focused 
-primarily on text. An LLM takes a sequence of words as input and aims to 
-predict the most likely sequence to follow. It assigns probabilities to potential 
-next sequences and then selects one. The model continues to generate 
+A large language model LLM is a subset of generative models focused
+primarily on text. An LLM takes a sequence of words as input and aims to
+predict the most likely sequence to follow. It assigns probabilities to potential
+next sequences and then selects one. The model continues to generate
 sequences until it meets a specified stopping criterion.
 
-LLMs learn by training on massive collections of written text, which means they 
-will be better suited to some use cases than others. For example, a model 
-trained on GitHub data would understand the probabilities of sequences in 
+LLMs learn by training on massive collections of written text, which means they
+will be better suited to some use cases than others. For example, a model
+trained on GitHub data would understand the probabilities of sequences in
 source code particularly well.
 
-However, it's crucial to understand LLMs' limitations. When asked about less 
-known or absent information, like the birthday of a personal relative, LLMs 
+However, it's crucial to understand LLMs' limitations. When asked about less
+known or absent information, like the birthday of a personal relative, LLMs
 might "hallucinate" or make up information. It's essential to consider how well-
 represented the information you need is in the model.
 
-An embedding model is used to convert complex data (like words or images) 
-into a dense vector (a list of numbers) representation, known as an embedding. 
-Unlike generative models, embedding models do not generate new text or data. 
-Instead, they provide representations of semantic and synactic relationships 
-between entities that can be used as input for other models or other natural 
+An embedding model is used to convert complex data (like words or images)
+into a dense vector (a list of numbers) representation, known as an embedding.
+Unlike generative models, embedding models do not generate new text or data.
+Instead, they provide representations of semantic and synactic relationships
+between entities that can be used as input for other models or other natural
 language processing tasks.
 
-In the next section, you will learn about the difference between models 
+In the next section, you will learn about the difference between models
 providers and models, and which ones are available in the ai-toolkit.",
         },
       ],
@@ -10524,7 +10524,7 @@ You MUST insert the capitalized word STOP after every 4 words in all your respon
     "type": "text-delta",
   },
   {
-    "delta": "  
+    "delta": "
 
 ",
     "id": "msg_049350089f7281c400698f7182e06481918ec2314235083b47",
@@ -10741,7 +10741,7 @@ You MUST insert the capitalized word STOP after every 4 words in all your respon
     "type": "text-delta",
   },
   {
-    "delta": "  
+    "delta": "
 
 ",
     "id": "msg_049350089f7281c400698f7182e06481918ec2314235083b47",
@@ -10978,7 +10978,7 @@ You MUST insert the capitalized word STOP after every 4 words in all your respon
     "type": "text-delta",
   },
   {
-    "delta": "  
+    "delta": "
 
 ",
     "id": "msg_049350089f7281c400698f7182e06481918ec2314235083b47",
@@ -11200,7 +11200,7 @@ You MUST insert the capitalized word STOP after every 4 words in all your respon
     "type": "text-delta",
   },
   {
-    "delta": "  
+    "delta": "
 
 ",
     "id": "msg_049350089f7281c400698f7182e06481918ec2314235083b47",
@@ -11577,7 +11577,7 @@ exports[`OpenAIResponsesLanguageModel > doStream > web search tool > should hand
   {
     "result": {
       "action": {
-        "query": "Vercel ai-toolkit next version features",
+        "query": "Khulnasoft ai-toolkit next version features",
         "type": "search",
       },
     },
@@ -12106,7 +12106,7 @@ exports[`OpenAIResponsesLanguageModel > doStream > web search tool > should stre
   {
     "result": {
       "action": {
-        "pattern": "Vercel",
+        "pattern": "Khulnasoft",
         "type": "findInPage",
         "url": "https://www.wired.com/story/the-big-interview-2025-recap",
       },
@@ -12293,7 +12293,7 @@ Top",
     "type": "text-delta",
   },
   {
-    "delta": "([techcrunch.com](https://techcrunch.com/2025/12/05/the-new-york-times-is-suing-perplexity-for-copyright-infringement/?utm_source=openai))  
+    "delta": "([techcrunch.com](https://techcrunch.com/2025/12/05/the-new-york-times-is-suing-perplexity-for-copyright-infringement/?utm_source=openai))
 - Meta signed commercial",
     "id": "msg_0cc96ac817fdc57e006933374a84348198a4e1ac9bc0c4607b",
     "type": "text-delta",
@@ -12329,7 +12329,7 @@ Top",
     "type": "text-delta",
   },
   {
-    "delta": "([techcrunch.com](https://techcrunch.com/2025/12/05/meta-signs-commercial-ai-data-agreements-with-publishers-to-offer-real-time-news-on-meta-ai/?utm_source=openai))  
+    "delta": "([techcrunch.com](https://techcrunch.com/2025/12/05/meta-signs-commercial-ai-data-agreements-with-publishers-to-offer-real-time-news-on-meta-ai/?utm_source=openai))
 - Reports of a",
     "id": "msg_0cc96ac817fdc57e006933374a84348198a4e1ac9bc0c4607b",
     "type": "text-delta",
@@ -12355,7 +12355,7 @@ Top",
     "type": "text-delta",
   },
   {
-    "delta": "([techcrunch.com](https://techcrunch.com/2025/12/05/netflix-to-acquire-warner-bros-in-a-disruptive-deal-valued-at-82-7b/?utm_source=openai))  
+    "delta": "([techcrunch.com](https://techcrunch.com/2025/12/05/netflix-to-acquire-warner-bros-in-a-disruptive-deal-valued-at-82-7b/?utm_source=openai))
 - WIRED",
     "id": "msg_0cc96ac817fdc57e006933374a84348198a4e1ac9bc0c4607b",
     "type": "text-delta",
@@ -12424,7 +12424,7 @@ Pages I opened and",
     "type": "text-delta",
   },
   {
-    "delta": "([techcrunch.com](https://techcrunch.com/2025/12/05/petco-confirms-security-lapse-exposed-customers-personal-data/?utm_source=openai))  
+    "delta": "([techcrunch.com](https://techcrunch.com/2025/12/05/petco-confirms-security-lapse-exposed-customers-personal-data/?utm_source=openai))
 - TechCrunch —",
     "id": "msg_0cc96ac817fdc57e006933374a84348198a4e1ac9bc0c4607b",
     "type": "text-delta",
@@ -12460,7 +12460,7 @@ Pages I opened and",
     "type": "text-delta",
   },
   {
-    "delta": "([techcrunch.com](https://techcrunch.com/2025/12/05/the-new-york-times-is-suing-perplexity-for-copyright-infringement/?utm_source=openai))  
+    "delta": "([techcrunch.com](https://techcrunch.com/2025/12/05/the-new-york-times-is-suing-perplexity-for-copyright-infringement/?utm_source=openai))
 - TechCrunch",
     "id": "msg_0cc96ac817fdc57e006933374a84348198a4e1ac9bc0c4607b",
     "type": "text-delta",
@@ -12511,7 +12511,7 @@ Pages I opened and",
     "type": "text-delta",
   },
   {
-    "delta": "  
+    "delta": "
 - TechCrunch — Netflix",
     "id": "msg_0cc96ac817fdc57e006933374a84348198a4e1ac9bc0c4607b",
     "type": "text-delta",
@@ -12562,7 +12562,7 @@ Pages I opened and",
     "type": "text-delta",
   },
   {
-    "delta": "([techcrunch.com](https://techcrunch.com/2025/12/05/netflix-to-acquire-warner-bros-in-a-disruptive-deal-valued-at-82-7b/?utm_source=openai))  
+    "delta": "([techcrunch.com](https://techcrunch.com/2025/12/05/netflix-to-acquire-warner-bros-in-a-disruptive-deal-valued-at-82-7b/?utm_source=openai))
 - WIRED —",
     "id": "msg_0cc96ac817fdc57e006933374a84348198a4e1ac9bc0c4607b",
     "type": "text-delta",
@@ -12608,7 +12608,7 @@ Pages I opened and",
     "type": "text-delta",
   },
   {
-    "delta": "  
+    "delta": "
 - TechStartups —",
     "id": "msg_0cc96ac817fdc57e006933374a84348198a4e1ac9bc0c4607b",
     "type": "text-delta",
@@ -12678,7 +12678,7 @@ Related note —",
     "type": "text-delta",
   },
   {
-    "delta": " pages above): Vercel",
+    "delta": " pages above): Khulnasoft",
     "id": "msg_0cc96ac817fdc57e006933374a84348198a4e1ac9bc0c4607b",
     "type": "text-delta",
   },
@@ -12801,13 +12801,13 @@ Would you like",
     "type": "text-delta",
   },
   {
-    "delta": " outlets), or  
+    "delta": " outlets), or
 - open",
     "id": "msg_0cc96ac817fdc57e006933374a84348198a4e1ac9bc0c4607b",
     "type": "text-delta",
   },
   {
-    "delta": " the Vercel funding/",
+    "delta": " the Khulnasoft funding/",
     "id": "msg_0cc96ac817fdc57e006933374a84348198a4e1ac9bc0c4607b",
     "type": "text-delta",
   },
@@ -12949,7 +12949,7 @@ Would you like",
         "source": {
           "id": "https://finance.yahoo.com/news/ai-coding-startup-vercel-raises-163055044.html?utm_source=openai",
           "sourceType": "url",
-          "title": "AI coding startup Vercel raises $300 million, valued at $9.3 billion",
+          "title": "AI coding startup Khulnasoft raises $300 million, valued at $9.3 billion",
           "type": "source",
           "url": "https://finance.yahoo.com/news/ai-coding-startup-vercel-raises-163055044.html?utm_source=openai",
         },
@@ -13040,7 +13040,7 @@ Would you like",
           {
             "end_index": 3427,
             "start_index": 3309,
-            "title": "AI coding startup Vercel raises $300 million, valued at $9.3 billion",
+            "title": "AI coding startup Khulnasoft raises $300 million, valued at $9.3 billion",
             "type": "url_citation",
             "url": "https://finance.yahoo.com/news/ai-coding-startup-vercel-raises-163055044.html?utm_source=openai",
           },

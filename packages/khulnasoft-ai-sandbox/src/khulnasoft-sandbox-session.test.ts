@@ -1,6 +1,6 @@
 import type { Sandbox } from '@khulnasoft/sandbox';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { VercelSandboxSession } from './khulnasoft-sandbox-session';
+import { KhulnasoftSandboxSession } from './khulnasoft-sandbox-session';
 
 const decoder = new TextDecoder();
 
@@ -67,11 +67,11 @@ function makeMockSandbox(overrides: Partial<Sandbox> = {}): {
   return { sandbox, spies: { runCommand, writeFiles, readFileToBuffer } };
 }
 
-describe('VercelSandboxSession', () => {
+describe('KhulnasoftSandboxSession', () => {
   describe('description', () => {
     it('mentions the sandbox name', () => {
       const { sandbox } = makeMockSandbox();
-      expect(new VercelSandboxSession(sandbox).description).toContain(
+      expect(new KhulnasoftSandboxSession(sandbox).description).toContain(
         'sbx_test',
       );
     });
@@ -89,7 +89,7 @@ describe('VercelSandboxSession', () => {
       });
       spies.runCommand.mockResolvedValueOnce(handle);
 
-      const vsbx = new VercelSandboxSession(sandbox);
+      const vsbx = new KhulnasoftSandboxSession(sandbox);
       const result = await vsbx.run({ command: 'echo hi' });
 
       expect(spies.runCommand).toHaveBeenCalledWith(
@@ -104,7 +104,7 @@ describe('VercelSandboxSession', () => {
         makeMockCommand({ logs: [], exitCode: 0 }).handle,
       );
 
-      await new VercelSandboxSession(sandbox).run({
+      await new KhulnasoftSandboxSession(sandbox).run({
         command: 'ls',
         workingDirectory: '/work',
       });
@@ -119,7 +119,7 @@ describe('VercelSandboxSession', () => {
       const ac = new AbortController();
       ac.abort();
       await expect(
-        new VercelSandboxSession(sandbox).run({
+        new KhulnasoftSandboxSession(sandbox).run({
           command: 'echo',
           abortSignal: ac.signal,
         }),
@@ -135,7 +135,7 @@ describe('VercelSandboxSession', () => {
       );
 
       const bytes = new Uint8Array([0, 1, 2, 255]);
-      await new VercelSandboxSession(sandbox).writeBinaryFile({
+      await new KhulnasoftSandboxSession(sandbox).writeBinaryFile({
         path: '/work/sub/file.bin',
         content: bytes,
       });
@@ -155,7 +155,7 @@ describe('VercelSandboxSession', () => {
         makeMockCommand({ logs: [], exitCode: 0 }).handle,
       );
 
-      await new VercelSandboxSession(sandbox).writeTextFile({
+      await new KhulnasoftSandboxSession(sandbox).writeTextFile({
         path: '/work/hello.txt',
         content: 'hi',
       });
@@ -170,7 +170,7 @@ describe('VercelSandboxSession', () => {
       const { sandbox, spies } = makeMockSandbox();
       spies.readFileToBuffer.mockResolvedValueOnce(Buffer.from([1, 2, 3]));
 
-      const out = await new VercelSandboxSession(sandbox).readBinaryFile({
+      const out = await new KhulnasoftSandboxSession(sandbox).readBinaryFile({
         path: '/work/x',
       });
       expect(out).toEqual(new Uint8Array([1, 2, 3]));
@@ -180,7 +180,7 @@ describe('VercelSandboxSession', () => {
       const { sandbox, spies } = makeMockSandbox();
       spies.readFileToBuffer.mockResolvedValueOnce(null);
       expect(
-        await new VercelSandboxSession(sandbox).readBinaryFile({
+        await new KhulnasoftSandboxSession(sandbox).readBinaryFile({
           path: '/missing',
         }),
       ).toBeNull();
@@ -192,7 +192,7 @@ describe('VercelSandboxSession', () => {
         Object.assign(new Error('ENOENT: no such file'), { code: 'ENOENT' }),
       );
       expect(
-        await new VercelSandboxSession(sandbox).readBinaryFile({
+        await new KhulnasoftSandboxSession(sandbox).readBinaryFile({
           path: '/missing',
         }),
       ).toBeNull();
@@ -202,7 +202,7 @@ describe('VercelSandboxSession', () => {
       const { sandbox, spies } = makeMockSandbox();
       spies.readFileToBuffer.mockResolvedValueOnce(Buffer.from('a\nb\nc\nd\n'));
 
-      const out = await new VercelSandboxSession(sandbox).readTextFile({
+      const out = await new KhulnasoftSandboxSession(sandbox).readTextFile({
         path: '/x',
         startLine: 2,
         endLine: 3,
@@ -217,7 +217,7 @@ describe('VercelSandboxSession', () => {
       );
 
       const payload = new TextEncoder().encode('streamed');
-      await new VercelSandboxSession(sandbox).writeFile({
+      await new KhulnasoftSandboxSession(sandbox).writeFile({
         path: '/work/streamed.txt',
         content: new ReadableStream<Uint8Array>({
           start(controller) {
@@ -230,7 +230,7 @@ describe('VercelSandboxSession', () => {
       expect(files[0].content).toEqual(payload);
 
       spies.readFileToBuffer.mockResolvedValueOnce(Buffer.from(payload));
-      const stream = await new VercelSandboxSession(sandbox).readFile({
+      const stream = await new KhulnasoftSandboxSession(sandbox).readFile({
         path: '/work/streamed.txt',
       });
       expect(stream).not.toBeNull();
@@ -255,7 +255,7 @@ describe('VercelSandboxSession', () => {
       });
       baseSandbox.spies.runCommand.mockResolvedValueOnce(handle);
 
-      const proc = await new VercelSandboxSession(baseSandbox.sandbox).spawn({
+      const proc = await new KhulnasoftSandboxSession(baseSandbox.sandbox).spawn({
         command: 'node x.js',
       });
 
@@ -277,7 +277,7 @@ describe('VercelSandboxSession', () => {
     it('surfaces non-zero exit codes via wait()', async () => {
       const { handle } = makeMockCommand({ exitCode: 7 });
       baseSandbox.spies.runCommand.mockResolvedValueOnce(handle);
-      const proc = await new VercelSandboxSession(baseSandbox.sandbox).spawn({
+      const proc = await new KhulnasoftSandboxSession(baseSandbox.sandbox).spawn({
         command: 'exit 7',
       });
       expect((await proc.wait()).exitCode).toBe(7);
@@ -286,7 +286,7 @@ describe('VercelSandboxSession', () => {
     it('kill() delegates to the underlying command', async () => {
       const { handle, spies } = makeMockCommand({});
       baseSandbox.spies.runCommand.mockResolvedValueOnce(handle);
-      const proc = await new VercelSandboxSession(baseSandbox.sandbox).spawn({
+      const proc = await new KhulnasoftSandboxSession(baseSandbox.sandbox).spawn({
         command: 'sleep 10',
       });
       await proc.kill();
@@ -298,7 +298,7 @@ describe('VercelSandboxSession', () => {
       baseSandbox.spies.runCommand.mockResolvedValueOnce(handle);
       const ac = new AbortController();
 
-      const proc = await new VercelSandboxSession(baseSandbox.sandbox).spawn({
+      const proc = await new KhulnasoftSandboxSession(baseSandbox.sandbox).spawn({
         command: 'sleep 10',
         abortSignal: ac.signal,
       });

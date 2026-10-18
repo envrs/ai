@@ -11,7 +11,7 @@ import type {
   Sandbox,
 } from '@khulnasoft/sandbox';
 
-const VERCEL_PROVIDER_ID = 'khulnasoft-sandbox';
+const KHULNASOFT_PROVIDER_ID = 'khulnasoft-sandbox';
 
 type NetworkAccessPolicy =
   | { readonly mode: 'allow-all' }
@@ -49,7 +49,7 @@ type CurrentPolicyInspection = {
  * single structure, so every mutation must be composed here before replacing
  * that structure through `sandbox.update()`.
  */
-export class VercelNetworkPolicyManager {
+export class KhulnasoftNetworkPolicyManager {
   readonly #sandbox: Sandbox;
   #state: ManagedPolicyState | undefined;
   #mutationQueue: Promise<void> = Promise.resolve();
@@ -334,7 +334,7 @@ function composeNetworkPolicy({
       appendRule({
         rulesByHost,
         host,
-        rule: toVercelRequestTransformationRule(transformation),
+        rule: toKhulnasoftRequestTransformationRule(transformation),
       });
     }
   }
@@ -366,16 +366,16 @@ function composeNetworkPolicy({
     rules => rules.length > 0,
   );
   if (!hasActiveRules) {
-    return toVercelAccessPolicy(accessPolicy);
+    return toKhulnasoftAccessPolicy(accessPolicy);
   }
 
   return {
     allow: Object.fromEntries(rulesByHost),
-    ...(accessPolicy.mode !== 'custom' ? {} : toVercelSubnets(accessPolicy)),
+    ...(accessPolicy.mode !== 'custom' ? {} : toKhulnasoftSubnets(accessPolicy)),
   };
 }
 
-function toVercelAccessPolicy(
+function toKhulnasoftAccessPolicy(
   accessPolicy: NetworkAccessPolicy,
 ): NetworkPolicy {
   if (accessPolicy.mode === 'allow-all' || accessPolicy.mode === 'deny-all') {
@@ -386,11 +386,11 @@ function toVercelAccessPolicy(
     ...(accessPolicy.allowedHosts.length === 0
       ? {}
       : { allow: [...accessPolicy.allowedHosts] }),
-    ...toVercelSubnets(accessPolicy),
+    ...toKhulnasoftSubnets(accessPolicy),
   };
 }
 
-function toVercelSubnets(
+function toKhulnasoftSubnets(
   accessPolicy: Extract<NetworkAccessPolicy, { mode: 'custom' }>,
 ): Pick<Exclude<NetworkPolicy, string>, 'subnets'> {
   if (
@@ -497,7 +497,7 @@ function appendRule({
   rulesByHost.set(host, rules);
 }
 
-function toVercelRequestTransformationRule(
+function toKhulnasoftRequestTransformationRule(
   transformation: HarnessV1RequestTransformation,
 ): NetworkPolicyRule {
   const {
@@ -748,7 +748,7 @@ function createPolicyConflictError(
   message: string,
 ): HarnessCapabilityUnsupportedError {
   return new HarnessCapabilityUnsupportedError({
-    harnessId: VERCEL_PROVIDER_ID,
+    harnessId: KHULNASOFT_PROVIDER_ID,
     message,
   });
 }

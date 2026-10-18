@@ -505,7 +505,7 @@ export function createFx(
       path: '.fx/AGENTS.md',
     },
     credentialEnv: [
-      'VERCEL_OIDC_TOKEN',
+      'KHULNASOFT_OIDC_TOKEN',
       'AI_GATEWAY_API_KEY',
       ...FX_SUBSCRIPTION_ENVIRONMENT_VARIABLES,
     ],
@@ -536,9 +536,9 @@ export function createFx(
       const environmentVariableName = suppliedAuthenticationEnvironment
         ? env.AI_GATEWAY_API_KEY
           ? 'AI_GATEWAY_API_KEY'
-          : 'VERCEL_OIDC_TOKEN'
-        : env.VERCEL_OIDC_TOKEN
-          ? 'VERCEL_OIDC_TOKEN'
+          : 'KHULNASOFT_OIDC_TOKEN'
+        : env.KHULNASOFT_OIDC_TOKEN
+          ? 'KHULNASOFT_OIDC_TOKEN'
           : 'AI_GATEWAY_API_KEY';
       const credential = env[environmentVariableName];
       const sandboxCredential = sandboxEnv?.[environmentVariableName];

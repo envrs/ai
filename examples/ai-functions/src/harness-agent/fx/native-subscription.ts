@@ -1,16 +1,16 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import { run } from '../../lib/run';
 import { createFx } from './_create';
 
 run(async () => {
   delete process.env.AI_GATEWAY_API_KEY;
-  delete process.env.VERCEL_OIDC_TOKEN;
+  delete process.env.KHULNASOFT_OIDC_TOKEN;
 
   const agent = new HarnessAgent({
     harness: createFx({ auth: 'direct' }),
   });
-  const sandboxSession = await createVercelNetworkSandboxSession({
+  const sandboxSession = await createKhulnasoftNetworkSandboxSession({
     runtime: 'node24',
     ports: [4000],
     timeout: 10 * 60 * 1000,

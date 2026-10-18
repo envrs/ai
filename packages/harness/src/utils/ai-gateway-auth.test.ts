@@ -2,12 +2,12 @@ import { describe, expect, it } from 'vitest';
 import { getAiGatewayAuthFromEnv } from './ai-gateway-auth';
 
 describe('getAiGatewayAuthFromEnv', () => {
-  it('prefers AI_GATEWAY_API_KEY over VERCEL_OIDC_TOKEN', () => {
+  it('prefers AI_GATEWAY_API_KEY over KHULNASOFT_OIDC_TOKEN', () => {
     expect(
       getAiGatewayAuthFromEnv({
         env: {
           AI_GATEWAY_API_KEY: 'gateway-key',
-          VERCEL_OIDC_TOKEN: 'oidc-token',
+          KHULNASOFT_OIDC_TOKEN: 'oidc-token',
         },
       }),
     ).toEqual({
@@ -30,9 +30,9 @@ describe('getAiGatewayAuthFromEnv', () => {
     });
   });
 
-  it('falls back to VERCEL_OIDC_TOKEN', () => {
+  it('falls back to KHULNASOFT_OIDC_TOKEN', () => {
     expect(
-      getAiGatewayAuthFromEnv({ env: { VERCEL_OIDC_TOKEN: 'oidc-token' } }),
+      getAiGatewayAuthFromEnv({ env: { KHULNASOFT_OIDC_TOKEN: 'oidc-token' } }),
     ).toEqual({
       apiKey: 'oidc-token',
       baseUrl: 'https://ai-gateway.khulnasoft.sh',

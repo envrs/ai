@@ -5,38 +5,38 @@ import {
 } from '@ai-toolkit/harness';
 import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import { Sandbox } from '@khulnasoft/sandbox';
-import { VercelNetworkSandboxSession } from './khulnasoft-network-sandbox-session';
-import { VercelSandboxSession } from './khulnasoft-sandbox-session';
+import { KhulnasoftNetworkSandboxSession } from './khulnasoft-network-sandbox-session';
+import { KhulnasoftSandboxSession } from './khulnasoft-sandbox-session';
 import {
   createLiveSandboxFromSnapshot,
   ensureTemplateSnapshot,
   getSandboxLookupParams,
-  withVercelSandboxAuthenticationError,
+  withKhulnasoftSandboxAuthenticationError,
   withDefaultSandboxSettings,
   type BaseCreateSandboxParams,
   type DistributiveOmit,
   type Prettify,
-  type VercelSandboxCreateParams,
+  type KhulnasoftSandboxCreateParams,
 } from './utils';
 
-export type VercelNativeSandboxSession = Sandbox;
+export type KhulnasoftNativeSandboxSession = Sandbox;
 
-type VercelSandboxCreationSettings = VercelSandboxCreateParams & {
+type KhulnasoftSandboxCreationSettings = KhulnasoftSandboxCreateParams & {
   sandbox?: never;
   name?: string;
 };
 
-type VercelCreationSettings = DistributiveOmit<
-  VercelSandboxCreationSettings,
+type KhulnasoftCreationSettings = DistributiveOmit<
+  KhulnasoftSandboxCreationSettings,
   'sandbox'
 >;
-export type VercelNetworkSandboxSessionCreateOptions = Prettify<
-  HarnessV1SandboxSessionCreateOptions<VercelCreationSettings> & {
+export type KhulnasoftNetworkSandboxSessionCreateOptions = Prettify<
+  HarnessV1SandboxSessionCreateOptions<KhulnasoftCreationSettings> & {
     sandbox?: never;
   }
 >;
 
-type VercelLookupSettings = DistributiveOmit<
+type KhulnasoftLookupSettings = DistributiveOmit<
   NonNullable<Parameters<typeof Sandbox.get>[0]>,
   'name' | 'resume'
 > & {
@@ -44,27 +44,27 @@ type VercelLookupSettings = DistributiveOmit<
   resume?: never;
 };
 
-export type VercelNetworkSandboxSessionResumeOptions = Prettify<
-  HarnessV1SandboxSessionResumeOptions<VercelLookupSettings>
+export type KhulnasoftNetworkSandboxSessionResumeOptions = Prettify<
+  HarnessV1SandboxSessionResumeOptions<KhulnasoftLookupSettings>
 >;
 
 export {
   DEFAULT_SANDBOX_TIMEOUT_MS,
   DEFAULT_SANDBOX_RUNTIME,
-  VERCEL_PROVIDER_ID,
+  KHULNASOFT_PROVIDER_ID,
   getSandboxLookupParams,
   hasExplicitSandboxEnvironment,
   pollForTemplateSnapshot,
-  withVercelSandboxAuthenticationError,
+  withKhulnasoftSandboxAuthenticationError,
 } from './utils';
 export type { BaseCreateSandboxParams } from './utils';
 
-export async function createVercelNetworkSandboxSession(
-  options: VercelNetworkSandboxSessionCreateOptions = {},
+export async function createKhulnasoftNetworkSandboxSession(
+  options: KhulnasoftNetworkSandboxSessionCreateOptions = {},
 ): Promise<HarnessV1NetworkSandboxSession> {
   if ('sandbox' in options) {
     throw new Error(
-      'createVercelNetworkSandboxSession: use createVercelNetworkSandboxSessionFromNativeSandbox for an existing sandbox.',
+      'createKhulnasoftNetworkSandboxSession: use createKhulnasoftNetworkSandboxSessionFromNativeSandbox for an existing sandbox.',
     );
   }
   const {
@@ -79,7 +79,7 @@ export async function createVercelNetworkSandboxSession(
   const { name, ...creationOptions } = nativeOptions;
   if (sandboxId != null && name != null && sandboxId !== name) {
     throw new Error(
-      'createVercelNetworkSandboxSession: sandboxId and name must match when both are provided.',
+      'createKhulnasoftNetworkSandboxSession: sandboxId and name must match when both are provided.',
     );
   }
   const liveName = sandboxId ?? name;
@@ -89,7 +89,7 @@ export async function createVercelNetworkSandboxSession(
   } as BaseCreateSandboxParams);
   const settings = options;
   if (template == null) {
-    const sandbox = await withVercelSandboxAuthenticationError({
+    const sandbox = await withKhulnasoftSandboxAuthenticationError({
       settings,
       operation: () =>
         Sandbox.create({
@@ -97,7 +97,7 @@ export async function createVercelNetworkSandboxSession(
           ...(liveName != null ? { name: liveName } : {}),
         }),
     });
-    return createVercelNetworkSandboxSessionFromNativeSandbox(sandbox);
+    return createKhulnasoftNetworkSandboxSessionFromNativeSandbox(sandbox);
   }
 
   const selection =
@@ -111,7 +111,7 @@ export async function createVercelNetworkSandboxSession(
     await crypto.subtle.digest('SHA-256', new TextEncoder().encode(material)),
   );
   const templateName = `ai-toolkit-harness-v2-${Array.from(digest.slice(0, 12), byte => byte.toString(16).padStart(2, '0')).join('')}`;
-  const snapshotId = await withVercelSandboxAuthenticationError({
+  const snapshotId = await withKhulnasoftSandboxAuthenticationError({
     settings,
     operation: () =>
       ensureTemplateSnapshot({
@@ -121,13 +121,13 @@ export async function createVercelNetworkSandboxSession(
         abortSignal: effectiveSignal,
         onCreate: async sandbox => {
           await template.prepare({
-            session: createVercelSandboxSessionFromNativeSandbox(sandbox),
+            session: createKhulnasoftSandboxSessionFromNativeSandbox(sandbox),
             abortSignal: effectiveSignal,
           });
         },
       }),
   });
-  const liveSandbox = await withVercelSandboxAuthenticationError({
+  const liveSandbox = await withKhulnasoftSandboxAuthenticationError({
     settings,
     operation: () =>
       createLiveSandboxFromSnapshot({
@@ -136,11 +136,11 @@ export async function createVercelNetworkSandboxSession(
         liveName,
       }),
   });
-  return createVercelNetworkSandboxSessionFromNativeSandbox(liveSandbox);
+  return createKhulnasoftNetworkSandboxSessionFromNativeSandbox(liveSandbox);
 }
 
-export async function resumeVercelNetworkSandboxSession(
-  options: VercelNetworkSandboxSessionResumeOptions,
+export async function resumeKhulnasoftNetworkSandboxSession(
+  options: KhulnasoftNetworkSandboxSessionResumeOptions,
 ): Promise<HarnessV1NetworkSandboxSession> {
   const {
     sandboxId,
@@ -152,7 +152,7 @@ export async function resumeVercelNetworkSandboxSession(
   } = options;
   const effectiveSignal = abortSignal ?? signal;
   effectiveSignal?.throwIfAborted();
-  const sandbox = await withVercelSandboxAuthenticationError({
+  const sandbox = await withKhulnasoftSandboxAuthenticationError({
     settings: options,
     operation: () =>
       Sandbox.get({
@@ -162,19 +162,19 @@ export async function resumeVercelNetworkSandboxSession(
         ...(effectiveSignal ? { signal: effectiveSignal } : {}),
       }),
   });
-  return createVercelNetworkSandboxSessionFromNativeSandbox(sandbox);
+  return createKhulnasoftNetworkSandboxSessionFromNativeSandbox(sandbox);
 }
 
-export function createVercelSandboxSessionFromNativeSandbox(
-  nativeSandbox: VercelNativeSandboxSession,
+export function createKhulnasoftSandboxSessionFromNativeSandbox(
+  nativeSandbox: KhulnasoftNativeSandboxSession,
 ): SandboxSession {
-  return new VercelSandboxSession(nativeSandbox);
+  return new KhulnasoftSandboxSession(nativeSandbox);
 }
 
-export function createVercelNetworkSandboxSessionFromNativeSandbox(
-  nativeSandbox: VercelNativeSandboxSession,
+export function createKhulnasoftNetworkSandboxSessionFromNativeSandbox(
+  nativeSandbox: KhulnasoftNativeSandboxSession,
 ): HarnessV1NetworkSandboxSession {
-  return new VercelNetworkSandboxSession({
+  return new KhulnasoftNetworkSandboxSession({
     sandbox: nativeSandbox,
     ownsLifecycle: true,
   });

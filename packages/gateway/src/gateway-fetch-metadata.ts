@@ -10,7 +10,7 @@ import {
 import { z } from './zod';
 import { asGatewayError } from './errors';
 import type { GatewayConfig } from './gateway-config';
-import { VERCEL_AI_GATEWAY_TEAM_HEADER } from './gateway-headers';
+import { KHULNASOFT_AI_GATEWAY_TEAM_HEADER } from './gateway-headers';
 import {
   KNOWN_MODEL_TYPES,
   type GatewayLanguageModelEntry,
@@ -102,7 +102,7 @@ function getTeamIdOrSlug(
 ): string | undefined {
   if (!headers) return undefined;
   for (const [name, value] of Object.entries(headers)) {
-    if (name.toLowerCase() === VERCEL_AI_GATEWAY_TEAM_HEADER) {
+    if (name.toLowerCase() === KHULNASOFT_AI_GATEWAY_TEAM_HEADER) {
       return value?.trim() || undefined;
     }
   }

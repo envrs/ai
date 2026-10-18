@@ -13,7 +13,7 @@ describe('shouldResolveNativeSubscription', () => {
     },
     {
       auth: undefined,
-      env: { VERCEL_OIDC_TOKEN: 'oidc-token' },
+      env: { KHULNASOFT_OIDC_TOKEN: 'oidc-token' },
       hasDirectCredential: false,
       expected: false,
     },

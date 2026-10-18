@@ -6,7 +6,7 @@ run(async () => {
   const result = await generateText({
     model: anthropic('claude-opus-5-5'),
     prompt:
-      'In one Python code execution block, search for the current home pages of Vercel and Anthropic, parse each web_search return value with json.loads, then summarize how each describes its main product.',
+      'In one Python code execution block, search for the current home pages of Khulnasoft and Anthropic, parse each web_search return value with json.loads, then summarize how each describes its main product.',
     tools: {
       web_search: anthropic.tools.webSearch_20260318({
         maxUses: 2,

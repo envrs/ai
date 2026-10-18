@@ -13,7 +13,7 @@ npm i @ai-toolkit/harness-cline @ai-toolkit/harness @ai-toolkit/sandbox-khulnaso
 ```ts
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { createCline } from '@ai-toolkit/harness-cline';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import { tool } from 'ai';
 import { z } from 'zod/v4';
 
@@ -36,7 +36,7 @@ const agent = new HarnessAgent({
   },
 });
 
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
 });
 const session = await agent.createSession({ sandboxSession });
@@ -57,6 +57,6 @@ exposed ports. Its built-in tools operate on the sandbox from the host process.
 
 ## Authentication
 
-The default `auto` authentication mode uses `AI_GATEWAY_API_KEY` or `VERCEL_OIDC_TOKEN` when available and otherwise falls back to `CLINE_API_KEY`. Use `createCline({ auth: 'ai-gateway' })` or `createCline({ auth: 'direct' })` to select a mode explicitly, or pass an isolated authentication environment with `createCline({ auth: { CLINE_API_KEY: token } })`. `AI_GATEWAY_BASE_URL` and `CLINE_API_BASE_URL` configure their respective endpoints.
+The default `auto` authentication mode uses `AI_GATEWAY_API_KEY` or `KHULNASOFT_OIDC_TOKEN` when available and otherwise falls back to `CLINE_API_KEY`. Use `createCline({ auth: 'ai-gateway' })` or `createCline({ auth: 'direct' })` to select a mode explicitly, or pass an isolated authentication environment with `createCline({ auth: { CLINE_API_KEY: token } })`. `AI_GATEWAY_BASE_URL` and `CLINE_API_BASE_URL` configure their respective endpoints.
 
 See the [Cline harness documentation](https://ai-toolkit.dev/providers/ai-toolkit-harnesses/cline) for model configuration, reasoning, tools, skills, MCP, and session lifecycle details.

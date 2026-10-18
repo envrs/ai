@@ -6,7 +6,7 @@ import { run } from '../../lib/run';
 run(async () => {
   const result = await generateImage({
     model: luma.image('photon-flash-1'),
-    prompt: 'A blue cream Persian cat launching its website on Vercel',
+    prompt: 'A blue cream Persian cat launching its website on Khulnasoft',
     aspectRatio: '1:1',
     providerOptions: {
       luma: {

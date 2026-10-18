@@ -8,11 +8,11 @@ import {
 } from './gateway-realtime-auth';
 import { GatewayRealtimeModel } from './gateway-realtime-model';
 import { createGateway } from './gateway-provider';
-import { getVercelOidcToken } from './khulnasoft-environment';
+import { getKhulnasoftOidcToken } from './khulnasoft-environment';
 
 vi.mock('./khulnasoft-environment', () => ({
-  getVercelOidcToken: vi.fn(),
-  getVercelRequestId: vi.fn(),
+  getKhulnasoftOidcToken: vi.fn(),
+  getKhulnasoftRequestId: vi.fn(),
 }));
 
 const serverOnlyDescribe =
@@ -312,7 +312,7 @@ serverOnlyDescribe('gateway.experimental_realtime auth errors', () => {
   beforeEach(() => {
     previousApiKey = process.env.AI_GATEWAY_API_KEY;
     Reflect.deleteProperty(process.env, 'AI_GATEWAY_API_KEY');
-    vi.mocked(getVercelOidcToken).mockRejectedValue(
+    vi.mocked(getKhulnasoftOidcToken).mockRejectedValue(
       new Error('no oidc token available'),
     );
   });

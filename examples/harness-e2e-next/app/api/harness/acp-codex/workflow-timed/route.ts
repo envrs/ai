@@ -10,7 +10,7 @@ import { start } from 'workflow/api';
 import { codexACPTimedWorkflow } from './workflow';
 
 /*
- * Durable, multi-turn Codex ACP chat via the Vercel Workflow DevKit. The
+ * Durable, multi-turn Codex ACP chat via the Khulnasoft Workflow DevKit. The
  * `'use workflow'` orchestration lives in `./workflow` (kept `ai`-free so the
  * DevKit's generated step/flow routes don't pull in `@ai-toolkit/gateway`); this
  * file is the plain POST handler.

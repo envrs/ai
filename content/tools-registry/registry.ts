@@ -29,7 +29,7 @@ export const tools: Tool[] = [
       'Execute Python code in a sandboxed environment using khulnasoft Sandbox. Run calculations, data processing, and other computational tasks safely in an isolated environment with Python 3.13.',
     packageName: 'ai-toolkit-tool-code-execution',
     tags: ['code-execution', 'sandbox'],
-    apiKeyEnvName: 'VERCEL_OIDC_TOKEN',
+    apiKeyEnvName: 'KHULNASOFT_OIDC_TOKEN',
     installCommand: {
       pnpm: 'pnpm add ai-toolkit-tool-code-execution',
       npm: 'npm install ai-toolkit-tool-code-execution',
@@ -125,7 +125,7 @@ console.log(text);`,
       'Transform MCP tools and ai-toolkit tools into code, write it to a khulnasoft sandbox file system and have the agent import the tools, write code, and execute it.',
     packageName: 'ctx-zip',
     tags: ['code-execution', 'sandbox', 'mcp', 'code-mode'],
-    apiKeyEnvName: 'VERCEL_OIDC_TOKEN',
+    apiKeyEnvName: 'KHULNASOFT_OIDC_TOKEN',
     installCommand: {
       pnpm: 'pnpm add ctx-zip',
       npm: 'npm install ctx-zip',
@@ -133,16 +133,16 @@ console.log(text);`,
       bun: 'bun add ctx-zip',
     },
     codeExample: `import { generateText, isStepCount } from 'ai';
-import { createVercelSandboxCodeMode, SANDBOX_SYSTEM_PROMPT } from 'ctx-zip';
+import { createKhulnasoftSandboxCodeMode, SANDBOX_SYSTEM_PROMPT } from 'ctx-zip';
 
-const { tools } = await createVercelSandboxCodeMode({
+const { tools } = await createKhulnasoftSandboxCodeMode({
   servers: [
     {
       name: 'khulnasoft',
       url: 'https://mcp.khulnasoft.com',
       useSSE: false,
       headers: {
-        Authorization: \`Bearer \${process.env.VERCEL_API_KEY}\`,
+        Authorization: \`Bearer \${process.env.KHULNASOFT_API_KEY}\`,
       },
     },
   ],

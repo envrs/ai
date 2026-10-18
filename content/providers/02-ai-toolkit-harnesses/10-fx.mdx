@@ -36,14 +36,14 @@ import { createFx, fx } from '@ai-toolkit/harness-fx';
 ```ts
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { fx } from '@ai-toolkit/harness-fx';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
 const agent = new HarnessAgent({
   harness: fx,
   model: 'openai/gpt-5.6-luna',
 });
 
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),
@@ -125,14 +125,14 @@ version. These implementation details cannot be overridden through
 fx uses [khulnasoft AI Gateway authentication](https://fx.sh/docs/getting-started/authentication).
 Set one of these environment variables:
 
-- `VERCEL_OIDC_TOKEN`
+- `KHULNASOFT_OIDC_TOKEN`
 - `AI_GATEWAY_API_KEY`
 
 If no applicable credential environment variable is set, the adapter attempts
 to resolve a native subscription from the host system unless AI Gateway
 authentication is selected.
 
-fx prefers `VERCEL_OIDC_TOKEN` when both are available. The adapter brokers the
+fx prefers `KHULNASOFT_OIDC_TOKEN` when both are available. The adapter brokers the
 selected credential only to the configured Gateway origin when the sandbox
 supports request transformations. Other sandboxes retain direct credential
 forwarding.
@@ -166,7 +166,7 @@ fx runs inside the sandbox through `@ai-toolkit/harness-acp`. It requires a netw
 sandbox with at least one exposed port:
 
 ```ts
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),

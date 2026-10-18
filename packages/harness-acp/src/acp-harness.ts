@@ -119,7 +119,7 @@ const acpResumeStateSchema = z.object({
         ),
       providerMode: z.enum(['auto', 'direct', 'ai-gateway']).optional(),
       gatewayCredentialSource: z
-        .enum(['AI_GATEWAY_API_KEY', 'VERCEL_OIDC_TOKEN'])
+        .enum(['AI_GATEWAY_API_KEY', 'KHULNASOFT_OIDC_TOKEN'])
         .nullable()
         .optional(),
     })

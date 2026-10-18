@@ -8,7 +8,7 @@ import type {
   Sandbox,
 } from '@khulnasoft/sandbox';
 import { describe, expect, it, vi } from 'vitest';
-import { VercelNetworkPolicyManager } from './khulnasoft-network-policy-manager';
+import { KhulnasoftNetworkPolicyManager } from './khulnasoft-network-policy-manager';
 
 const credentialTransformation = {
   match: {
@@ -44,7 +44,7 @@ function makeManager({
     update: updateMock,
   } as unknown as Sandbox;
   return {
-    manager: new VercelNetworkPolicyManager({ sandbox }),
+    manager: new KhulnasoftNetworkPolicyManager({ sandbox }),
     update: updateMock,
   };
 }
@@ -81,7 +81,7 @@ function makeRedactedPolicy({
   };
 }
 
-describe('VercelNetworkPolicyManager', () => {
+describe('KhulnasoftNetworkPolicyManager', () => {
   it('replaces request transformations with setRequestTransformations', async () => {
     const { manager, update } = makeManager();
 

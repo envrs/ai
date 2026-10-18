@@ -1,10 +1,10 @@
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import { run } from '../../lib/run';
 import { sandboxAgent } from './sandbox-agent';
 import { printFullStream } from '../../lib/print-full-stream';
 
 run(async () => {
-  const sandboxSession = await createVercelNetworkSandboxSession({
+  const sandboxSession = await createKhulnasoftNetworkSandboxSession({
     timeout: 5 * 60 * 1000,
     runtime: 'node22',
   });

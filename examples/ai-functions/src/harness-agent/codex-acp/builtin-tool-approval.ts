@@ -1,5 +1,5 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import type { ToolApprovalRequestOutput } from 'ai';
 import { createCodexACP } from './_create';
 import { createToolApprovalResponseMessages } from '../../lib/harness-tool-approval';
@@ -11,7 +11,7 @@ run(async () => {
     harness: createCodexACP(),
     permissionMode: 'allow-reads',
   });
-  const sandboxSession = await createVercelNetworkSandboxSession({
+  const sandboxSession = await createKhulnasoftNetworkSandboxSession({
     runtime: 'node24',
     ports: [4000],
     timeout: 10 * 60 * 1000,

@@ -1,14 +1,14 @@
 export {
-  type VercelSandboxSettings,
-  createVercelSandbox,
-  VercelSandboxProvider,
+  type KhulnasoftSandboxSettings,
+  createKhulnasoftSandbox,
+  KhulnasoftSandboxProvider,
 } from './khulnasoft-legacy-sandbox-provider';
 export {
-  createVercelNetworkSandboxSession,
-  resumeVercelNetworkSandboxSession,
-  createVercelSandboxSessionFromNativeSandbox,
-  createVercelNetworkSandboxSessionFromNativeSandbox,
-  type VercelNativeSandboxSession,
-  type VercelNetworkSandboxSessionCreateOptions,
-  type VercelNetworkSandboxSessionResumeOptions,
+  createKhulnasoftNetworkSandboxSession,
+  resumeKhulnasoftNetworkSandboxSession,
+  createKhulnasoftSandboxSessionFromNativeSandbox,
+  createKhulnasoftNetworkSandboxSessionFromNativeSandbox,
+  type KhulnasoftNativeSandboxSession,
+  type KhulnasoftNetworkSandboxSessionCreateOptions,
+  type KhulnasoftNetworkSandboxSessionResumeOptions,
 } from './khulnasoft-sandbox';

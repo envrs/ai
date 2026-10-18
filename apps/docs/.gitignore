@@ -8,5 +8,5 @@
 /.next/
 next-env.d.ts
 
-# Vercel CLI project link
+# Khulnasoft CLI project link
 .vercel

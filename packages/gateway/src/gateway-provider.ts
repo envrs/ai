@@ -13,7 +13,7 @@ import { z } from './zod';
 import { asGatewayError, GatewayAuthenticationError } from './errors';
 import {
   GATEWAY_AUTH_METHOD_HEADER,
-  VERCEL_AI_GATEWAY_TEAM_HEADER,
+  KHULNASOFT_AI_GATEWAY_TEAM_HEADER,
 } from './gateway-headers';
 import { parseAuthMethod } from './errors/parse-auth-method';
 import {
@@ -53,7 +53,7 @@ import type { GatewayTranscriptionModelId } from './gateway-transcription-model-
 import type { GatewayRealtimeModelId } from './gateway-realtime-model-settings';
 import type { GatewayVideoModelId } from './gateway-video-model-settings';
 import { gatewayTools } from './gateway-tools';
-import { getVercelOidcToken, getVercelRequestId } from './khulnasoft-environment';
+import { getKhulnasoftOidcToken, getKhulnasoftRequestId } from './khulnasoft-environment';
 import type { GatewayModelId } from './gateway-language-model-settings';
 import type {
   EmbeddingModelV4,
@@ -340,7 +340,7 @@ export function createGateway(
         'ai-gateway-protocol-version': AI_GATEWAY_PROTOCOL_VERSION,
         [GATEWAY_AUTH_METHOD_HEADER]: auth.authMethod,
         ...(options.teamIdOrSlug != null
-          ? { [VERCEL_AI_GATEWAY_TEAM_HEADER]: options.teamIdOrSlug }
+          ? { [KHULNASOFT_AI_GATEWAY_TEAM_HEADER]: options.teamIdOrSlug }
           : {}),
         ...options.headers,
       },
@@ -423,23 +423,23 @@ export function createGateway(
   const createO11yHeaders = () => {
     const deploymentId = loadOptionalSetting({
       settingValue: undefined,
-      environmentVariableName: 'VERCEL_DEPLOYMENT_ID',
+      environmentVariableName: 'KHULNASOFT_DEPLOYMENT_ID',
     });
     const environment = loadOptionalSetting({
       settingValue: undefined,
-      environmentVariableName: 'VERCEL_ENV',
+      environmentVariableName: 'KHULNASOFT_ENV',
     });
     const region = loadOptionalSetting({
       settingValue: undefined,
-      environmentVariableName: 'VERCEL_REGION',
+      environmentVariableName: 'KHULNASOFT_REGION',
     });
     const projectId = loadOptionalSetting({
       settingValue: undefined,
-      environmentVariableName: 'VERCEL_PROJECT_ID',
+      environmentVariableName: 'KHULNASOFT_PROJECT_ID',
     });
 
     return async () => {
-      const requestId = await getVercelRequestId();
+      const requestId = await getKhulnasoftRequestId();
       return {
         ...(deploymentId && { 'ai-o11y-deployment-id': deploymentId }),
         ...(environment && { 'ai-o11y-environment': environment }),
@@ -712,7 +712,7 @@ export async function getGatewayAuthToken(
     };
   }
 
-  const oidcToken = await getVercelOidcToken();
+  const oidcToken = await getKhulnasoftOidcToken();
   return {
     token: oidcToken,
     authMethod: 'oidc',

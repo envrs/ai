@@ -60,7 +60,7 @@ describe('resolveCodexEnv', () => {
   it('appends /v1 to gateway base URLs for Codex', () => {
     const env = resolveCodexEnv('ai-gateway', {
       AI_GATEWAY_BASE_URL: 'https://gw.example',
-      VERCEL_OIDC_TOKEN: 'oidc-env',
+      KHULNASOFT_OIDC_TOKEN: 'oidc-env',
     });
     expect(env).toEqual({
       AI_GATEWAY_API_KEY: 'oidc-env',
@@ -73,7 +73,7 @@ describe('resolveCodexEnv', () => {
   it('preserves /v1 on gateway base URLs', () => {
     const env = resolveCodexEnv('ai-gateway', {
       AI_GATEWAY_BASE_URL: 'https://gw.example/v1',
-      VERCEL_OIDC_TOKEN: 'oidc-env',
+      KHULNASOFT_OIDC_TOKEN: 'oidc-env',
     });
     expect(env).toEqual({
       AI_GATEWAY_API_KEY: 'oidc-env',
@@ -93,8 +93,8 @@ describe('resolveCodexEnv', () => {
     });
   });
 
-  it('auto-detects gateway when VERCEL_OIDC_TOKEN is set', () => {
-    const env = resolveCodexEnv(undefined, { VERCEL_OIDC_TOKEN: 'oidc-auto' });
+  it('auto-detects gateway when KHULNASOFT_OIDC_TOKEN is set', () => {
+    const env = resolveCodexEnv(undefined, { KHULNASOFT_OIDC_TOKEN: 'oidc-auto' });
     expect(env).toEqual({
       AI_GATEWAY_API_KEY: 'oidc-auto',
       CODEX_API_KEY: 'oidc-auto',
@@ -184,7 +184,7 @@ describe('resolveCodexAuthenticationMode', () => {
   it('resolves ambient Gateway credentials to Gateway auth', () => {
     expect(
       resolveCodexAuthenticationMode(undefined, {
-        VERCEL_OIDC_TOKEN: 'oidc-token',
+        KHULNASOFT_OIDC_TOKEN: 'oidc-token',
       }),
     ).toBe('ai-gateway');
   });

@@ -51,7 +51,7 @@ export type CodexAuthenticationMode = HarnessV1Authentication;
  *
  *   1. An explicit authentication mode pins the selected route.
  *   2. Auto-detect from the host process env: gateway first
- *      (`AI_GATEWAY_API_KEY` / `VERCEL_OIDC_TOKEN`), then `CODEX_API_KEY` /
+ *      (`AI_GATEWAY_API_KEY` / `KHULNASOFT_OIDC_TOKEN`), then `CODEX_API_KEY` /
  *      `OPENAI_API_KEY`.
  */
 export function resolveCodexEnv(

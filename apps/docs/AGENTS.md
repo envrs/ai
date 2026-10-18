@@ -41,7 +41,7 @@ proxy negotiation); this app owns content, configuration, and thin adapters.
   every public docs family (`/docs`, `/providers`, `/cookbook`,
   `/resources/recipes`, and the `/v5`/`/v6` prefixes).
 - Absolute site URLs come from `lib/geistdocs/site-url.ts`
-  (`NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL`); a missing or malformed value
+  (`NEXT_PUBLIC_KHULNASOFT_PROJECT_PRODUCTION_URL`); a missing or malformed value
   is a deployment blocker, and localhost fallbacks must not ship in
   production metadata.
 - Run `pnpm validate:site` (tests + production build) after changing routes,

@@ -1,6 +1,6 @@
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { pi } from '@ai-toolkit/harness-pi';
-import { createVercelSandbox } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftSandbox } from '@ai-toolkit/sandbox-vercel';
 import type { InferUITools, UIMessage } from 'ai';
 import {
   aiSdkCodingSandboxBootstrapHash,
@@ -21,7 +21,7 @@ will exceed sandbox memory. When asked to do this, use the corresponding
 export const aiSdkCodingPiHarnessAgent = new HarnessAgent({
   harness: pi,
   instructions,
-  sandbox: createVercelSandbox({
+  sandbox: createKhulnasoftSandbox({
     runtime: 'node24',
   }),
   sandboxConfig: {

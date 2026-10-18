@@ -3,7 +3,7 @@ import type {
   HarnessV1QuestionsToolOutput,
 } from '@ai-toolkit/harness';
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import { createOpenCode } from './_create';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';
@@ -12,7 +12,7 @@ run(async () => {
   const agent = new HarnessAgent({
     harness: createOpenCode(),
   });
-  const sandboxSession = await createVercelNetworkSandboxSession({
+  const sandboxSession = await createKhulnasoftNetworkSandboxSession({
     runtime: 'node24',
     ports: [4000],
     timeout: 10 * 60 * 1000,

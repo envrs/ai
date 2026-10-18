@@ -87,8 +87,8 @@ describe('resolveACPProviderAuthentication', () => {
     });
   });
 
-  it('selects AI Gateway automatically for VERCEL_OIDC_TOKEN', () => {
-    expect(resolve({ env: { VERCEL_OIDC_TOKEN: 'oidc-token' } })).toEqual({
+  it('selects AI Gateway automatically for KHULNASOFT_OIDC_TOKEN', () => {
+    expect(resolve({ env: { KHULNASOFT_OIDC_TOKEN: 'oidc-token' } })).toEqual({
       providerAuthentication: { type: 'ai-gateway', env: gatewayEnv },
       env: {
         ai-toolkit_ACP_GATEWAY_API_KEY: 'oidc-token',
@@ -163,7 +163,7 @@ describe('resolveACPProviderAuthentication', () => {
 
   it('fails explicit Gateway selection without credentials', () => {
     expect(() => resolve({ mode: 'ai-gateway', env: {} })).toThrow(
-      'neither AI_GATEWAY_API_KEY nor VERCEL_OIDC_TOKEN is set',
+      'neither AI_GATEWAY_API_KEY nor KHULNASOFT_OIDC_TOKEN is set',
     );
   });
 });
@@ -217,7 +217,7 @@ describe('resolveACPProviderAuthenticationCompatibility', () => {
         gateway: { env: gatewayEnv },
       },
       env: {
-        VERCEL_OIDC_TOKEN: 'oidc-secret',
+        KHULNASOFT_OIDC_TOKEN: 'oidc-secret',
         AI_GATEWAY_BASE_URL: 'https://gateway.example',
       },
     });
@@ -230,7 +230,7 @@ describe('resolveACPProviderAuthenticationCompatibility', () => {
     });
     expect(oidc).toMatchObject({
       type: 'ai-gateway',
-      credentialSource: 'VERCEL_OIDC_TOKEN',
+      credentialSource: 'KHULNASOFT_OIDC_TOKEN',
     });
     expect(JSON.stringify(first)).not.toContain('first-secret');
     expect(JSON.stringify(oidc)).not.toContain('oidc-secret');
@@ -330,7 +330,7 @@ describe('resolveACPProviderAuthenticationCompatibility', () => {
           clientApp,
         },
         env: {
-          VERCEL_OIDC_TOKEN: 'different-source-secret',
+          KHULNASOFT_OIDC_TOKEN: 'different-source-secret',
         },
         compatibility,
       }),
@@ -381,7 +381,7 @@ describe('createACPAuthenticationProfileIdentity', () => {
         },
       },
       env: {
-        VERCEL_OIDC_TOKEN: 'resolved-oidc-secret',
+        KHULNASOFT_OIDC_TOKEN: 'resolved-oidc-secret',
       },
     });
     const identity = createACPAuthenticationProfileIdentity({
@@ -401,7 +401,7 @@ describe('createACPAuthenticationProfileIdentity', () => {
       acpMethodId: 'api-key',
       providerKind: 'ai-gateway',
       providerMode: 'ai-gateway',
-      gatewayCredentialSource: 'VERCEL_OIDC_TOKEN',
+      gatewayCredentialSource: 'KHULNASOFT_OIDC_TOKEN',
     });
     expect(serialized).not.toContain('resolved-oidc-secret');
     expect(serialized).not.toContain('authenticated-header-secret');

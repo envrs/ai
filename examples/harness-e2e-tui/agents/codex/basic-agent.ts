@@ -4,12 +4,12 @@ import {
   createTraceTreeReporter,
 } from '@ai-toolkit/harness/agent';
 import { codex } from '@ai-toolkit/harness-codex';
-import { createVercelSandbox } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftSandbox } from '@ai-toolkit/sandbox-vercel';
 import type { InferUITools, UIMessage } from 'ai';
 
 export const codexHarnessAgent = new HarnessAgent({
   harness: codex,
-  sandbox: createVercelSandbox({
+  sandbox: createKhulnasoftSandbox({
     runtime: 'node24',
     ports: [4000],
   }),

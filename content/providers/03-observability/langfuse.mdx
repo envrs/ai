@@ -69,7 +69,7 @@ Create or update your `instrumentation.ts` file:
 ```ts filename="instrumentation.ts"
 import { registerTelemetry } from 'ai';
 import { LangfuseSpanProcessor } from '@langfuse/otel';
-import { LangfuseVercelai-toolkitIntegration } from '@langfuse/khulnasoft-ai-toolkit';
+import { LangfuseKhulnasoftai-toolkitIntegration } from '@langfuse/khulnasoft-ai-toolkit';
 import { NodeSDK } from '@opentelemetry/sdk-node';
 
 export const langfuseSpanProcessor = new LangfuseSpanProcessor();
@@ -80,7 +80,7 @@ const sdk = new NodeSDK({
 
 sdk.start();
 
-registerTelemetry(new LangfuseVercelai-toolkitIntegration());
+registerTelemetry(new LangfuseKhulnasoftai-toolkitIntegration());
 ```
 
 If you stream responses from a serverless route, flush the span processor after the response is scheduled so traces are exported before the function exits.
@@ -88,13 +88,13 @@ If you stream responses from a serverless route, flush the span processor after 
 </Tab>
 <Tab>
 
-Add `LangfuseSpanProcessor` to your OpenTelemetry setup and register `LangfuseVercelai-toolkitIntegration` with the ai-toolkit:
+Add `LangfuseSpanProcessor` to your OpenTelemetry setup and register `LangfuseKhulnasoftai-toolkitIntegration` with the ai-toolkit:
 
 ```ts
 import { openai } from '@ai-toolkit/openai';
 import { registerTelemetry, generateText } from 'ai';
 import { LangfuseSpanProcessor } from '@langfuse/otel';
-import { LangfuseVercelai-toolkitIntegration } from '@langfuse/khulnasoft-ai-toolkit';
+import { LangfuseKhulnasoftai-toolkitIntegration } from '@langfuse/khulnasoft-ai-toolkit';
 import { NodeSDK } from '@opentelemetry/sdk-node';
 
 const sdk = new NodeSDK({
@@ -102,7 +102,7 @@ const sdk = new NodeSDK({
 });
 
 sdk.start();
-registerTelemetry(new LangfuseVercelai-toolkitIntegration());
+registerTelemetry(new LangfuseKhulnasoftai-toolkitIntegration());
 
 async function main() {
   const result = await generateText({

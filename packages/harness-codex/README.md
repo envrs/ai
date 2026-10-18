@@ -15,7 +15,7 @@ The bridge installs the Codex CLI inside the sandbox the first time the session 
 ```ts
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { createCodex } from '@ai-toolkit/harness-codex';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import { tool } from 'ai';
 import { z } from 'zod/v4';
 
@@ -58,7 +58,7 @@ const agent = new HarnessAgent({
   }),
 });
 
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),

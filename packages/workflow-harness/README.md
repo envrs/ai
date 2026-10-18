@@ -44,19 +44,19 @@ export async function timeSliceStep(
 
   const { agent } = await import('./agent');
   const {
-    createVercelNetworkSandboxSession,
-    resumeVercelNetworkSandboxSession,
+    createKhulnasoftNetworkSandboxSession,
+    resumeKhulnasoftNetworkSandboxSession,
   } = await import('@ai-toolkit/sandbox-khulnasoft');
   const sandboxId = `harness-${state.sessionId}`;
   const sandboxSession =
     state.resumeFrom == null && state.continueFrom == null
-      ? await createVercelNetworkSandboxSession({
+      ? await createKhulnasoftNetworkSandboxSession({
           sandboxId,
           runtime: 'node24',
           ports: [4000],
           template: await agent.getSandboxTemplate(),
         })
-      : await resumeVercelNetworkSandboxSession({ sandboxId });
+      : await resumeKhulnasoftNetworkSandboxSession({ sandboxId });
 
   return runHarnessAgentTimeSlice({ agent, state, sandboxSession });
 }
@@ -118,19 +118,19 @@ export async function agentStep(
 
   const { steppedAgent } = await import('./stepped-agent');
   const {
-    createVercelNetworkSandboxSession,
-    resumeVercelNetworkSandboxSession,
+    createKhulnasoftNetworkSandboxSession,
+    resumeKhulnasoftNetworkSandboxSession,
   } = await import('@ai-toolkit/sandbox-khulnasoft');
   const sandboxId = `harness-${state.sessionId}`;
   const sandboxSession =
     state.resumeFrom == null && state.continueFrom == null
-      ? await createVercelNetworkSandboxSession({
+      ? await createKhulnasoftNetworkSandboxSession({
           sandboxId,
           runtime: 'node24',
           ports: [4000],
           template: await steppedAgent.getSandboxTemplate(),
         })
-      : await resumeVercelNetworkSandboxSession({ sandboxId });
+      : await resumeKhulnasoftNetworkSandboxSession({ sandboxId });
 
   return runHarnessAgentStep({ agent: steppedAgent, state, sandboxSession });
 }

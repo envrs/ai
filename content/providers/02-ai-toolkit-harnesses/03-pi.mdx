@@ -32,14 +32,14 @@ import { pi, createPi } from '@ai-toolkit/harness-pi';
 ```ts
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { pi } from '@ai-toolkit/harness-pi';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
 const agent = new HarnessAgent({
   harness: pi,
   model: 'anthropic/claude-sonnet-4.6',
 });
 
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   template: await agent.getSandboxTemplate(),
 });
@@ -67,7 +67,7 @@ try {
 }
 ```
 
-To use this agent, ensure environment variables include `VERCEL_OIDC_TOKEN` for
+To use this agent, ensure environment variables include `KHULNASOFT_OIDC_TOKEN` for
 khulnasoft Sandbox, and one of the variables listed under [authentication](#authentication)
 for Pi.
 
@@ -201,7 +201,7 @@ The `auth` setting selects which credentials Pi reads from the host environment:
 - `anthropic`: use `ANTHROPIC_API_KEY` and the optional
   `ANTHROPIC_AUTH_TOKEN` and `ANTHROPIC_BASE_URL`.
 - `custom`: register all providers configured through environment variables.
-- `ai-gateway`: use `AI_GATEWAY_API_KEY` or `VERCEL_OIDC_TOKEN` and the
+- `ai-gateway`: use `AI_GATEWAY_API_KEY` or `KHULNASOFT_OIDC_TOKEN` and the
   optional `AI_GATEWAY_BASE_URL`.
 
 If no applicable credential environment variable is set, the adapter attempts
@@ -285,7 +285,7 @@ Pi needs a sandbox session but does not require exposed ports. You can create a
 khulnasoft network session or a local just-bash session:
 
 ```ts
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   template: await agent.getSandboxTemplate(),
 });

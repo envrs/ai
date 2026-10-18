@@ -11,7 +11,7 @@ import {
   createTraceTreeReporter,
 } from '@ai-toolkit/harness/agent';
 import { codex } from '@ai-toolkit/harness-codex';
-import { createVercelSandbox } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftSandbox } from '@ai-toolkit/sandbox-vercel';
 import type { InferUITools, UIMessage } from 'ai';
 
 export const weatherApprovalCodexHarnessAgent = new HarnessAgent({
@@ -24,7 +24,7 @@ export const weatherApprovalCodexHarnessAgent = new HarnessAgent({
   },
   // Codex harness currently only supports the default of "allow-all".
   // permissionMode: 'allow-edits',
-  sandbox: createVercelSandbox({
+  sandbox: createKhulnasoftSandbox({
     runtime: 'node24',
     ports: [4000],
   }),

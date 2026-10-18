@@ -1,8 +1,8 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import { createGitHubCopilot } from './_create';
 import {
-  createVercelNetworkSandboxSessionFromNativeSandbox,
-  createVercelSandboxSessionFromNativeSandbox,
+  createKhulnasoftNetworkSandboxSessionFromNativeSandbox,
+  createKhulnasoftSandboxSessionFromNativeSandbox,
 } from '@ai-toolkit/sandbox-vercel';
 import { Sandbox } from '@khulnasoft/sandbox';
 import { printFullStream } from '../../lib/print-full-stream';
@@ -16,7 +16,7 @@ run(async () => {
   });
 
   const sandboxSession =
-    createVercelNetworkSandboxSessionFromNativeSandbox(sandbox);
+    createKhulnasoftNetworkSandboxSessionFromNativeSandbox(sandbox);
   const portEndpoint = await sandboxSession.getPortEndpoint({
     port: 4000,
     protocol: 'ws',
@@ -28,7 +28,7 @@ run(async () => {
   let session: HarnessAgentSession | undefined;
   try {
     session = await agent.createSession({
-      sandboxSession: createVercelSandboxSessionFromNativeSandbox(sandbox),
+      sandboxSession: createKhulnasoftSandboxSessionFromNativeSandbox(sandbox),
     });
     const result = await agent.stream({
       session,

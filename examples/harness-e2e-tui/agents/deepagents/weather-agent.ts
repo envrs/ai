@@ -11,7 +11,7 @@ import {
   HarnessAgent,
 } from '@ai-toolkit/harness/agent';
 import { deepAgents } from '@ai-toolkit/harness-deepagents';
-import { createVercelSandbox } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftSandbox } from '@ai-toolkit/sandbox-vercel';
 import type { InferUITools, UIMessage } from 'ai';
 
 export const weatherDeepAgentsHarnessAgent = new HarnessAgent({
@@ -19,7 +19,7 @@ export const weatherDeepAgentsHarnessAgent = new HarnessAgent({
   instructions: weatherInstructions,
   skills: [weatherForecastSkill, weatherCodesSkill],
   tools: { get_weather: weatherTool },
-  sandbox: createVercelSandbox({
+  sandbox: createKhulnasoftSandbox({
     runtime: 'node24',
     ports: [4000],
   }),

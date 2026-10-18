@@ -10,7 +10,7 @@ import {
   parseJSON,
   type Experimental_SandboxSession,
 } from '@ai-toolkit/provider-utils';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 
 type HandoffPhase = 'start' | 'resume';
 
@@ -50,7 +50,7 @@ export function getACPHandoffArguments({
 }
 
 export function createACPHandoffSandbox({ sandboxId }: { sandboxId: string }) {
-  return createVercelNetworkSandboxSession({
+  return createKhulnasoftNetworkSandboxSession({
     sandboxId,
     runtime: 'node24',
     ports: [4000],

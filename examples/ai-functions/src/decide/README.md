@@ -27,7 +27,7 @@ from `examples/ai-functions`.
 
 | Provider          | Environment variable           |
 | ----------------- | ------------------------------ |
-| Vercel AI Gateway | `AI_GATEWAY_API_KEY`           |
+| Khulnasoft AI Gateway | `AI_GATEWAY_API_KEY`           |
 | TypeSafe AI       | `TYPESAFE_AI_API_KEY`          |
 | OpenAI            | `OPENAI_API_KEY`               |
 | Anthropic         | `ANTHROPIC_API_KEY`            |

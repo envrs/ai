@@ -288,7 +288,7 @@ export function createACPV1<TBuiltinTools extends ToolSet = {}>({
         ...new Set([
           ...(settings.credentialEnv ?? []),
           'AI_GATEWAY_API_KEY',
-          'VERCEL_OIDC_TOKEN',
+          'KHULNASOFT_OIDC_TOKEN',
         ]),
       ];
       const credentialForwardingEnvironmentVariables = [

@@ -23,7 +23,7 @@ run(async () => {
         model,
         tools,
         prompt:
-          'Use Google Search to find and summarize the most recent Vercel announcement with its source.',
+          'Use Google Search to find and summarize the most recent Khulnasoft announcement with its source.',
       },
     ],
   });

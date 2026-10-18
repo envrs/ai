@@ -9,11 +9,11 @@ import type { Sandbox, Command } from '@khulnasoft/sandbox';
 /**
  * `Experimental_SandboxSession` implementation backed by a `@khulnasoft/sandbox`
  * `Sandbox` instance. This is the tool-safe surface (file I/O, exec, spawn);
- * it is what `VercelNetworkSandboxSession.restricted()` returns and is not
+ * it is what `KhulnasoftNetworkSandboxSession.restricted()` returns and is not
  * constructed directly by consumers. The network sandbox session owns the
  * lifetime of the underlying sandbox.
  */
-export class VercelSandboxSession implements SandboxSession {
+export class KhulnasoftSandboxSession implements SandboxSession {
   constructor(protected readonly sandbox: Sandbox) {}
 
   get description(): string {

@@ -193,7 +193,7 @@ describe('createFx', () => {
           "version": "0.0.0-test",
         },
         "credentialEnv": [
-          "VERCEL_OIDC_TOKEN",
+          "KHULNASOFT_OIDC_TOKEN",
           "AI_GATEWAY_API_KEY",
           "ai-toolkit_FX_CHATGPT_ACCESS_TOKEN",
           "ai-toolkit_FX_CHATGPT_ACCOUNT_ID",
@@ -459,11 +459,11 @@ describe('createFx', () => {
     expect(
       settings.credentialBrokering?.({
         env: {
-          VERCEL_OIDC_TOKEN: 'oidc-secret',
+          KHULNASOFT_OIDC_TOKEN: 'oidc-secret',
           AI_GATEWAY_API_KEY: 'gateway-secret',
         },
         sandboxEnv: {
-          VERCEL_OIDC_TOKEN: 'sandbox-oidc-secret',
+          KHULNASOFT_OIDC_TOKEN: 'sandbox-oidc-secret',
           AI_GATEWAY_API_KEY: 'sandbox-gateway-secret',
         },
         headers: { 'x-tenant': 'acme' },
@@ -629,11 +629,11 @@ describe('createFx', () => {
         env: {
           AI_GATEWAY_API_KEY: 'explicit-gateway-key',
           AI_GATEWAY_BASE_URL: 'https://gateway.example/v1',
-          VERCEL_OIDC_TOKEN: 'ambient-oidc-token',
+          KHULNASOFT_OIDC_TOKEN: 'ambient-oidc-token',
         },
         sandboxEnv: {
           AI_GATEWAY_API_KEY: 'sandbox-explicit-gateway-key',
-          VERCEL_OIDC_TOKEN: 'sandbox-ambient-oidc-token',
+          KHULNASOFT_OIDC_TOKEN: 'sandbox-ambient-oidc-token',
         },
       }),
     ).toEqual([

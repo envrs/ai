@@ -4616,7 +4616,7 @@ describe('createACP', () => {
 
   it('resolves automatic provider authentication from the session-start environment', async () => {
     vi.stubEnv('AI_GATEWAY_API_KEY', '');
-    vi.stubEnv('VERCEL_OIDC_TOKEN', '');
+    vi.stubEnv('KHULNASOFT_OIDC_TOKEN', '');
     const spawns: Array<{
       command: string;
       env: Record<string, string | undefined>;

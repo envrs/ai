@@ -24,7 +24,7 @@ authentication:
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { createACP } from '@ai-toolkit/harness-acp';
 import { createCredentialRequestTransformation } from '@ai-toolkit/harness/utils';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
 const codexACP = createACP({
   harnessId: 'acp-codex',
@@ -75,7 +75,7 @@ const agent = new HarnessAgent({
   harness: codexACP,
 });
 
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),

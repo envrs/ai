@@ -1,11 +1,11 @@
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import { run } from '../lib/run';
 
 const echoHost = 'httpbin.org';
 const injectedHeaderValue = 'injected-outside-the-sandbox';
 
 run(async () => {
-  const session = await createVercelNetworkSandboxSession({
+  const session = await createKhulnasoftNetworkSandboxSession({
     runtime: 'node24',
     timeout: 10 * 60 * 1000,
     networkPolicy: 'deny-all',
@@ -14,11 +14,11 @@ run(async () => {
   try {
     if (session.addRequestTransformations == null) {
       throw new Error(
-        'Vercel Sandbox does not support request transformations.',
+        'Khulnasoft Sandbox does not support request transformations.',
       );
     }
     if (session.setNetworkPolicy == null) {
-      throw new Error('Vercel Sandbox does not support network policies.');
+      throw new Error('Khulnasoft Sandbox does not support network policies.');
     }
 
     await session.addRequestTransformations([

@@ -1,6 +1,6 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import { createGrokBuild } from './_create';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import { run } from '../../lib/run';
 
 const grokBuild = createGrokBuild();
@@ -12,7 +12,7 @@ run(async () => {
       'Answer every question in German, even when the user requests another language.',
   });
 
-  const sandboxSession = await createVercelNetworkSandboxSession({
+  const sandboxSession = await createKhulnasoftNetworkSandboxSession({
     runtime: 'node24',
     ports: [4000],
     timeout: 10 * 60 * 1000,

@@ -1,5 +1,5 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import { run } from '../../lib/run';
 import { createCline } from './_create';
 
@@ -9,7 +9,7 @@ run(async () => {
   const agent = new HarnessAgent({
     harness: createCline({ auth: 'direct' }),
   });
-  const sandboxSession = await createVercelNetworkSandboxSession({
+  const sandboxSession = await createKhulnasoftNetworkSandboxSession({
     runtime: 'node24',
     timeout: 10 * 60 * 1000,
     template: await agent.getSandboxTemplate(),

@@ -4,7 +4,7 @@ import {
   type HarnessV1NetworkSandboxSession,
 } from '@ai-toolkit/harness';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { createVercelSandbox } from './khulnasoft-legacy-sandbox-provider';
+import { createKhulnasoftSandbox } from './khulnasoft-legacy-sandbox-provider';
 
 const { createMock, getMock, getOrCreateMock } = vi.hoisted(() => ({
   createMock: vi.fn(),
@@ -99,12 +99,12 @@ async function captureError(promise: PromiseLike<unknown>): Promise<unknown> {
   throw new Error('Expected promise to reject');
 }
 
-describe('createVercelSandbox (wrap existing)', () => {
+describe('createKhulnasoftSandbox (wrap existing)', () => {
   it('produces a network sandbox session whose ports come from sandbox.routes', async () => {
     const { sandbox } = makeMockSandbox({
       routes: [{ port: 3000 }, { port: 4000 }],
     });
-    const provider = createVercelSandbox({ sandbox });
+    const provider = createKhulnasoftSandbox({ sandbox });
     const sandboxSession = await provider.createSession();
     expect(sandboxSession.ports).toEqual([3000, 4000]);
   });
@@ -117,7 +117,7 @@ describe('createVercelSandbox (wrap existing)', () => {
       stderr: async () => '',
     });
 
-    const sandboxSession = await createVercelSandbox({
+    const sandboxSession = await createKhulnasoftSandbox({
       sandbox,
     }).createSession();
     const result = await sandboxSession
@@ -128,13 +128,13 @@ describe('createVercelSandbox (wrap existing)', () => {
 
   it('stop is a no-op (caller owns lifecycle)', async () => {
     const { sandbox, spies } = makeMockSandbox();
-    await (await createVercelSandbox({ sandbox }).createSession()).stop();
+    await (await createKhulnasoftSandbox({ sandbox }).createSession()).stop();
     expect(spies.stop).not.toHaveBeenCalled();
   });
 
   it('destroy is a no-op (caller owns lifecycle)', async () => {
     const { sandbox, spies } = makeMockSandbox();
-    await (await createVercelSandbox({ sandbox }).createSession()).destroy();
+    await (await createKhulnasoftSandbox({ sandbox }).createSession()).destroy();
     expect(spies.stop).not.toHaveBeenCalled();
     expect(spies.delete).not.toHaveBeenCalled();
   });
@@ -146,7 +146,7 @@ describe('createVercelSandbox (wrap existing)', () => {
       });
       spies.domain.mockReturnValueOnce('https://sub.khulnasoft.run');
 
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       const endpoint = await handle.getPortEndpoint({ port: 3000 });
       expect(spies.domain).toHaveBeenCalledWith(3000);
       expect(endpoint).toEqual({ url: 'https://sub.khulnasoft.run/' });
@@ -155,7 +155,7 @@ describe('createVercelSandbox (wrap existing)', () => {
     it('upgrades ws to wss when domain is https', async () => {
       const { sandbox, spies } = makeMockSandbox();
       spies.domain.mockReturnValueOnce('https://sub.khulnasoft.run');
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       const endpoint = await handle.getPortEndpoint({
         port: 4000,
         protocol: 'ws',
@@ -166,7 +166,7 @@ describe('createVercelSandbox (wrap existing)', () => {
     it('keeps ws as ws when domain is http', async () => {
       const { sandbox, spies } = makeMockSandbox();
       spies.domain.mockReturnValueOnce('http://sub.khulnasoft.run');
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       const endpoint = await handle.getPortEndpoint({
         port: 4000,
         protocol: 'ws',
@@ -176,7 +176,7 @@ describe('createVercelSandbox (wrap existing)', () => {
 
     it('throws when the requested port is not in the sandbox routes', async () => {
       const { sandbox } = makeMockSandbox({ routes: [{ port: 4000 }] });
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       await expect(handle.getPortEndpoint({ port: 9999 })).rejects.toThrow(
         /Port 9999 is not exposed/,
       );
@@ -185,7 +185,7 @@ describe('createVercelSandbox (wrap existing)', () => {
     it('keeps getPortUrl as a compatibility wrapper', async () => {
       const { sandbox, spies } = makeMockSandbox();
       spies.domain.mockReturnValueOnce('https://sub.khulnasoft.run');
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
 
       await expect(
         handle.getPortUrl({ port: 4000, protocol: 'ws' }),
@@ -198,21 +198,21 @@ describe('createVercelSandbox (wrap existing)', () => {
       const { sandbox, spies } = makeMockSandbox({
         networkPolicy: 'deny-all',
       });
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       await handle.setNetworkPolicy!({ mode: 'allow-all' });
       expect(spies.update).toHaveBeenCalledWith({ networkPolicy: 'allow-all' });
     });
 
     it('maps deny-all', async () => {
       const { sandbox, spies } = makeMockSandbox();
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       await handle.setNetworkPolicy!({ mode: 'deny-all' });
       expect(spies.update).toHaveBeenCalledWith({ networkPolicy: 'deny-all' });
     });
 
     it('maps custom with allowedHosts to { allow: [...] }', async () => {
       const { sandbox, spies } = makeMockSandbox();
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       await handle.setNetworkPolicy!({
         mode: 'custom',
         allowedHosts: ['api.example.com', '*.npmjs.org'],
@@ -224,7 +224,7 @@ describe('createVercelSandbox (wrap existing)', () => {
 
     it('maps custom with allowedCIDRs to { subnets: { allow: [...] } }', async () => {
       const { sandbox, spies } = makeMockSandbox();
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       await handle.setNetworkPolicy!({
         mode: 'custom',
         allowedCIDRs: ['10.0.0.0/8'],
@@ -236,7 +236,7 @@ describe('createVercelSandbox (wrap existing)', () => {
 
     it('maps custom with allowedHosts + deniedCIDRs to combined shape', async () => {
       const { sandbox, spies } = makeMockSandbox();
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       await handle.setNetworkPolicy!({
         mode: 'custom',
         allowedHosts: ['api.example.com'],
@@ -252,7 +252,7 @@ describe('createVercelSandbox (wrap existing)', () => {
 
     it('maps custom with both allowedCIDRs + deniedCIDRs', async () => {
       const { sandbox, spies } = makeMockSandbox();
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       await handle.setNetworkPolicy!({
         mode: 'custom',
         allowedCIDRs: ['10.0.0.0/8'],
@@ -280,7 +280,7 @@ describe('createVercelSandbox (wrap existing)', () => {
 
     it('preserves allow-all when only request transformations are configured', async () => {
       const { sandbox, spies } = makeMockSandbox();
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       await getSetRequestTransformations(handle)([credentialTransformation]);
       expect(spies.update).toHaveBeenCalledWith({
         networkPolicy: {
@@ -308,7 +308,7 @@ describe('createVercelSandbox (wrap existing)', () => {
 
     it('groups several request transformations for the same host', async () => {
       const { sandbox, spies } = makeMockSandbox();
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       await getSetRequestTransformations(handle)([
         credentialTransformation,
         {
@@ -330,7 +330,7 @@ describe('createVercelSandbox (wrap existing)', () => {
 
     it('keeps access policy authoritative regardless of setter order', async () => {
       const { sandbox, spies } = makeMockSandbox();
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       await getSetRequestTransformations(handle)([credentialTransformation]);
       await handle.setNetworkPolicy!({
         mode: 'custom',
@@ -349,7 +349,7 @@ describe('createVercelSandbox (wrap existing)', () => {
       const { sandbox, spies } = makeMockSandbox({
         networkPolicy: { allow: ['registry.npmjs.org'] },
       });
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       await getSetRequestTransformations(handle)([credentialTransformation]);
       expect(spies.update).not.toHaveBeenCalled();
 
@@ -368,7 +368,7 @@ describe('createVercelSandbox (wrap existing)', () => {
 
     it('restores the access policy when request transformations are cleared', async () => {
       const { sandbox, spies } = makeMockSandbox();
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       await handle.setNetworkPolicy!({
         mode: 'custom',
         allowedHosts: ['registry.npmjs.org'],
@@ -385,7 +385,7 @@ describe('createVercelSandbox (wrap existing)', () => {
   describe('addRequestTransformations', () => {
     it('delegates additive transformations to the policy manager', async () => {
       const { sandbox, spies } = makeMockSandbox();
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
 
       await getAddRequestTransformations(handle)([
         {
@@ -412,7 +412,7 @@ describe('createVercelSandbox (wrap existing)', () => {
   describe('setPorts', () => {
     it('forwards the requested port list to sandbox.update', async () => {
       const { sandbox, spies } = makeMockSandbox();
-      const handle = await createVercelSandbox({ sandbox }).createSession();
+      const handle = await createKhulnasoftSandbox({ sandbox }).createSession();
       await handle.setPorts!([4000, 5000]);
       expect(spies.update).toHaveBeenCalledWith(
         { ports: [4000, 5000] },
@@ -422,7 +422,7 @@ describe('createVercelSandbox (wrap existing)', () => {
   });
 });
 
-describe('createVercelSandbox (create from scratch)', () => {
+describe('createKhulnasoftSandbox (create from scratch)', () => {
   beforeEach(() => {
     createMock.mockReset();
     getMock.mockReset();
@@ -439,7 +439,7 @@ describe('createVercelSandbox (create from scratch)', () => {
   });
 
   it('reports the opaque missing-auth path failure as sandbox authentication', async () => {
-    vi.stubEnv('VERCEL_OIDC_TOKEN', '');
+    vi.stubEnv('KHULNASOFT_OIDC_TOKEN', '');
     const cause = Object.assign(
       new TypeError(
         'The "path" argument must be of type string. Received undefined',
@@ -448,14 +448,14 @@ describe('createVercelSandbox (create from scratch)', () => {
     );
     createMock.mockRejectedValueOnce(cause);
 
-    const error = await captureError(createVercelSandbox({}).createSession());
+    const error = await captureError(createKhulnasoftSandbox({}).createSession());
 
     expect(HarnessSandboxAuthenticationError.isInstance(error)).toBe(true);
     if (!HarnessSandboxAuthenticationError.isInstance(error)) {
       throw new Error('Expected sandbox authentication error');
     }
     expect(error.message).toMatchInlineSnapshot(
-      `"khulnasoft Sandbox authentication failed. Set VERCEL_OIDC_TOKEN, or pass token, teamId, and projectId to createVercelSandbox(), then verify that they can access khulnasoft Sandbox."`,
+      `"khulnasoft Sandbox authentication failed. Set KHULNASOFT_OIDC_TOKEN, or pass token, teamId, and projectId to createKhulnasoftSandbox(), then verify that they can access khulnasoft Sandbox."`,
     );
     expect(error.sandboxProviderId).toBe('khulnasoft-sandbox');
     expect(error.cause).toBe(cause);
@@ -470,7 +470,7 @@ describe('createVercelSandbox (create from scratch)', () => {
     );
 
     const error = await captureError(
-      createVercelSandbox({}).resumeSession!({
+      createKhulnasoftSandbox({}).resumeSession!({
         sessionId: 'session-123',
       }),
     );
@@ -486,7 +486,7 @@ describe('createVercelSandbox (create from scratch)', () => {
     const cause = new Error('Sandbox service unavailable');
     createMock.mockRejectedValueOnce(cause);
 
-    const error = await captureError(createVercelSandbox({}).createSession());
+    const error = await captureError(createKhulnasoftSandbox({}).createSession());
 
     expect(error).toBe(cause);
   });
@@ -501,7 +501,7 @@ describe('createVercelSandbox (create from scratch)', () => {
     createMock.mockRejectedValueOnce(cause);
 
     const error = await captureError(
-      createVercelSandbox({
+      createKhulnasoftSandbox({
         token: 'token_test',
         teamId: 'team_test',
         projectId: 'prj_test',
@@ -515,7 +515,7 @@ describe('createVercelSandbox (create from scratch)', () => {
     const { sandbox } = makeMockSandbox();
     createMock.mockResolvedValueOnce(sandbox);
 
-    await createVercelSandbox({}).createSession();
+    await createKhulnasoftSandbox({}).createSession();
 
     expect(createMock).toHaveBeenCalledTimes(1);
     expect(createMock.mock.calls[0][0]).toMatchObject({
@@ -528,7 +528,7 @@ describe('createVercelSandbox (create from scratch)', () => {
     const { sandbox } = makeMockSandbox();
     createMock.mockResolvedValueOnce(sandbox);
 
-    await createVercelSandbox({
+    await createKhulnasoftSandbox({
       image: 'khulnasoft/sandbox/universal',
     }).createSession();
 
@@ -545,7 +545,7 @@ describe('createVercelSandbox (create from scratch)', () => {
     getOrCreateMock.mockResolvedValueOnce(template);
     createMock.mockResolvedValueOnce(fork);
 
-    await createVercelSandbox({
+    await createKhulnasoftSandbox({
       image: 'khulnasoft/sandbox/universal',
     }).createSession({
       identity: 'template-test',
@@ -568,7 +568,7 @@ describe('createVercelSandbox (create from scratch)', () => {
     Object.assign(template, { currentSnapshotId: 'snap_123' });
     getOrCreateMock.mockResolvedValue(template);
     createMock.mockResolvedValue(fork);
-    const provider = createVercelSandbox({ name: 'explicit-template' });
+    const provider = createKhulnasoftSandbox({ name: 'explicit-template' });
     const onFirstCreate = vi.fn(async () => {});
 
     await provider.createSession({
@@ -600,7 +600,7 @@ describe('createVercelSandbox (create from scratch)', () => {
     const { sandbox } = makeMockSandbox();
     createMock.mockResolvedValueOnce(sandbox);
 
-    await createVercelSandbox({
+    await createKhulnasoftSandbox({
       source: { type: 'snapshot', snapshotId: 'snap_123' },
     }).createSession();
 
@@ -614,7 +614,7 @@ describe('createVercelSandbox (create from scratch)', () => {
     const { sandbox } = makeMockSandbox();
     createMock.mockResolvedValueOnce(sandbox);
 
-    await createVercelSandbox({ timeout: 60_000 }).createSession();
+    await createKhulnasoftSandbox({ timeout: 60_000 }).createSession();
 
     expect(createMock.mock.calls[0][0]).toMatchObject({ timeout: 60_000 });
   });
@@ -631,7 +631,7 @@ describe('createVercelSandbox (create from scratch)', () => {
     });
     createMock.mockResolvedValueOnce(sandbox);
 
-    const handle = await createVercelSandbox({}).createSession();
+    const handle = await createKhulnasoftSandbox({}).createSession();
     await handle.destroy();
 
     expect(calls).toEqual(['stop', 'delete']);
@@ -647,7 +647,7 @@ describe('createVercelSandbox (create from scratch)', () => {
     });
     createMock.mockResolvedValueOnce(sandbox);
 
-    const handle = await createVercelSandbox({}).createSession();
+    const handle = await createKhulnasoftSandbox({}).createSession();
     await handle.destroy();
 
     expect(spies.stop).toHaveBeenCalledTimes(1);
@@ -659,7 +659,7 @@ describe('createVercelSandbox (create from scratch)', () => {
     getMock.mockResolvedValueOnce(sandbox);
     const abortController = new AbortController();
 
-    await createVercelSandbox({
+    await createKhulnasoftSandbox({
       token: 'token_test',
       teamId: 'team_test',
       projectId: 'prj_test',
@@ -690,7 +690,7 @@ describe('createVercelSandbox (create from scratch)', () => {
     createMock.mockResolvedValueOnce(fork);
     const abortController = new AbortController();
 
-    await createVercelSandbox({
+    await createKhulnasoftSandbox({
       token: 'token_test',
       teamId: 'team_test',
       projectId: 'prj_test',

@@ -15,13 +15,13 @@ Create a Cursor user API key and set `CURSOR_API_KEY`, or pass it directly with 
 ```ts
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { cursor } from '@ai-toolkit/harness-cursor';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
 const agent = new HarnessAgent({
   harness: cursor,
 });
 
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),

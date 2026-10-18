@@ -1,5 +1,5 @@
 /*
- * Verifies that access-token credentials configured on Vercel Sandbox survive
+ * Verifies that access-token credentials configured on Khulnasoft Sandbox survive
  * the HarnessAgent stop/resume lifecycle. No model turn is needed because the
  * credential lookup happens when the new agent instance resumes its sandbox.
  */
@@ -9,8 +9,8 @@ import {
 } from '@ai-toolkit/harness/agent';
 import { createDeepAgents } from './_create';
 import {
-  createVercelNetworkSandboxSession,
-  resumeVercelNetworkSandboxSession,
+  createKhulnasoftNetworkSandboxSession,
+  resumeKhulnasoftNetworkSandboxSession,
 } from '@ai-toolkit/sandbox-vercel';
 import { run } from '../../lib/run';
 
@@ -19,17 +19,17 @@ const deepAgents = createDeepAgents();
 run(async () => {
   process.exitCode = 1;
 
-  const token = process.env.VERCEL_TOKEN;
-  const teamId = process.env.VERCEL_TEAM_ID;
-  const projectId = process.env.VERCEL_PROJECT_ID;
+  const token = process.env.KHULNASOFT_TOKEN;
+  const teamId = process.env.KHULNASOFT_TEAM_ID;
+  const projectId = process.env.KHULNASOFT_PROJECT_ID;
   if (token == null || teamId == null || projectId == null) {
     throw new Error(
-      'VERCEL_TOKEN, VERCEL_TEAM_ID, and VERCEL_PROJECT_ID are required',
+      'KHULNASOFT_TOKEN, KHULNASOFT_TEAM_ID, and KHULNASOFT_PROJECT_ID are required',
     );
   }
 
   const sandboxName = `harness-${crypto.randomUUID()}`;
-  const sandboxSession = await createVercelNetworkSandboxSession({
+  const sandboxSession = await createKhulnasoftNetworkSandboxSession({
     sandboxId: sandboxName,
     token,
     teamId,
@@ -52,7 +52,7 @@ run(async () => {
     }
 
     {
-      activeSandboxSession = await resumeVercelNetworkSandboxSession({
+      activeSandboxSession = await resumeKhulnasoftNetworkSandboxSession({
         sandboxId: sandboxName,
         token,
         teamId,
@@ -70,7 +70,7 @@ run(async () => {
       await session.destroy();
     }
 
-    console.log('Successfully resumed the named Vercel Sandbox session.');
+    console.log('Successfully resumed the named Khulnasoft Sandbox session.');
     process.exitCode = 0;
   } finally {
     await activeSandboxSession.destroy();

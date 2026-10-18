@@ -81,7 +81,7 @@ export const LogoIconPerplexitySvg = createLogo(
   'Perplexity',
 );
 export const LogoIconZaiSvg = createLogo('LogoIconZaiSvg', 'Z.AI');
-export const LogoIconVercelSvg = createLogo('LogoIconVercelSvg', 'AI');
+export const LogoIconKhulnasoftSvg = createLogo('LogoIconKhulnasoftSvg', 'AI');
 export const LogoIconAngularSvg = createLogo('LogoIconAngularSvg', 'Angular');
 export const LogoIconNuxtSvg = createLogo('LogoIconNuxtSvg', 'Nuxt');
 export const LogoIconReactSvg = createLogo('LogoIconReactSvg', 'React');

@@ -14,7 +14,7 @@ import { GatewayVideoModel } from './gateway-video-model';
 import { GatewayRerankingModel } from './gateway-reranking-model';
 import { GatewaySpeechModel } from './gateway-speech-model';
 import { GatewayTranscriptionModel } from './gateway-transcription-model';
-import { getVercelOidcToken, getVercelRequestId } from './khulnasoft-environment';
+import { getKhulnasoftOidcToken, getKhulnasoftRequestId } from './khulnasoft-environment';
 import { resolve } from '@ai-toolkit/provider-utils';
 import { GatewayBatch } from './gateway-batch';
 import { GatewayLanguageModel } from './gateway-language-model';
@@ -86,8 +86,8 @@ vi.mock('./gateway-fetch-metadata', () => ({
 }));
 
 vi.mock('./khulnasoft-environment', () => ({
-  getVercelOidcToken: vi.fn(),
-  getVercelRequestId: vi.fn(),
+  getKhulnasoftOidcToken: vi.fn(),
+  getKhulnasoftRequestId: vi.fn(),
 }));
 
 vi.mock('./version', () => ({
@@ -252,8 +252,8 @@ function getGatewayRerankingModelInternalConfig(
 describe('GatewayProvider', () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    vi.mocked(getVercelOidcToken).mockResolvedValue('mock-oidc-token');
-    vi.mocked(getVercelRequestId).mockResolvedValue('mock-request-id');
+    vi.mocked(getKhulnasoftOidcToken).mockResolvedValue('mock-oidc-token');
+    vi.mocked(getKhulnasoftRequestId).mockResolvedValue('mock-request-id');
     // Set up default mock behavior for getAvailableModels and getCredits
     mockGetAvailableModels.mockReturnValue({ models: [] });
     mockGetCredits.mockReturnValue({ balance: '100.00', total_used: '50.00' });
@@ -361,7 +361,7 @@ describe('GatewayProvider', () => {
         'ai-gateway-auth-method': 'api-key',
         'user-agent': 'ai-toolkit-gateway/0.0.0-test',
       });
-      expect(getVercelOidcToken).not.toHaveBeenCalled();
+      expect(getKhulnasoftOidcToken).not.toHaveBeenCalled();
     });
 
     it('should use apiKey and teamIdOrSlug for non-language model requests', async () => {
@@ -384,7 +384,7 @@ describe('GatewayProvider', () => {
         'x-khulnasoft-ai-gateway-team': 'khulnasoft',
         'ai-gateway-auth-method': 'api-key',
       });
-      expect(getVercelOidcToken).not.toHaveBeenCalled();
+      expect(getKhulnasoftOidcToken).not.toHaveBeenCalled();
     });
 
     it('should pass teamIdOrSlug with URL-special characters as a header value', async () => {
@@ -783,12 +783,12 @@ describe('GatewayProvider', () => {
       const originalEnv = process.env;
       process.env = {
         ...originalEnv,
-        VERCEL_DEPLOYMENT_ID: 'test-deployment',
-        VERCEL_ENV: 'test',
-        VERCEL_REGION: 'iad1',
-        VERCEL_PROJECT_ID: 'prj_test123',
+        KHULNASOFT_DEPLOYMENT_ID: 'test-deployment',
+        KHULNASOFT_ENV: 'test',
+        KHULNASOFT_REGION: 'iad1',
+        KHULNASOFT_PROJECT_ID: 'prj_test123',
       };
-      vi.mocked(getVercelRequestId).mockResolvedValue('test-request-id');
+      vi.mocked(getKhulnasoftRequestId).mockResolvedValue('test-request-id');
 
       try {
         const provider = createGateway({
@@ -825,11 +825,11 @@ describe('GatewayProvider', () => {
     it('should not include undefined o11y headers', async () => {
       const originalEnv = process.env;
       process.env = { ...originalEnv };
-      process.env.VERCEL_DEPLOYMENT_ID = undefined;
-      process.env.VERCEL_ENV = undefined;
-      process.env.VERCEL_REGION = undefined;
+      process.env.KHULNASOFT_DEPLOYMENT_ID = undefined;
+      process.env.KHULNASOFT_ENV = undefined;
+      process.env.KHULNASOFT_REGION = undefined;
 
-      vi.mocked(getVercelRequestId).mockResolvedValue(undefined);
+      vi.mocked(getKhulnasoftRequestId).mockResolvedValue(undefined);
 
       try {
         const provider = createGateway({
@@ -978,8 +978,8 @@ describe('GatewayProvider', () => {
       // Reset the mocks
       vi.clearAllMocks();
 
-      // Mock getVercelOidcToken to ensure it's not called
-      vi.mocked(getVercelOidcToken).mockRejectedValue(
+      // Mock getKhulnasoftOidcToken to ensure it's not called
+      vi.mocked(getKhulnasoftOidcToken).mockRejectedValue(
         new Error('Should not be called'),
       );
 
@@ -1003,8 +1003,8 @@ describe('GatewayProvider', () => {
       expect(headers['ai-gateway-auth-method']).toBe('api-key');
       expect(headers['user-agent']).toBe('ai-toolkit-gateway/0.0.0-test');
 
-      // Verify getVercelOidcToken was never called
-      expect(getVercelOidcToken).not.toHaveBeenCalled();
+      // Verify getKhulnasoftOidcToken was never called
+      expect(getKhulnasoftOidcToken).not.toHaveBeenCalled();
     });
 
     it('should use apiKey and teamIdOrSlug for getAvailableModels', async () => {
@@ -1022,11 +1022,11 @@ describe('GatewayProvider', () => {
 
       expect(headers['authorization']).toBe('Bearer vca_test-token');
       expect(headers['x-khulnasoft-ai-gateway-team']).toBe('khulnasoft');
-      expect(getVercelOidcToken).not.toHaveBeenCalled();
+      expect(getKhulnasoftOidcToken).not.toHaveBeenCalled();
     });
 
     it('should use OIDC and teamIdOrSlug for getAvailableModels when no apiKey is configured', async () => {
-      vi.mocked(getVercelOidcToken).mockResolvedValue('oidc-token');
+      vi.mocked(getKhulnasoftOidcToken).mockResolvedValue('oidc-token');
 
       const testProvider = createGateway({ teamIdOrSlug: 'khulnasoft' });
 
@@ -1038,7 +1038,7 @@ describe('GatewayProvider', () => {
       expect(headers['authorization']).toBe('Bearer oidc-token');
       expect(headers['ai-gateway-auth-method']).toBe('oidc');
       expect(headers['x-khulnasoft-ai-gateway-team']).toBe('khulnasoft');
-      expect(getVercelOidcToken).toHaveBeenCalled();
+      expect(getKhulnasoftOidcToken).toHaveBeenCalled();
     });
   });
 
@@ -1169,9 +1169,9 @@ describe('GatewayProvider', () => {
 
           // Only set environment variables if they have actual values
           if (testCase.envOidcToken !== undefined) {
-            process.env.VERCEL_OIDC_TOKEN = testCase.envOidcToken;
+            process.env.KHULNASOFT_OIDC_TOKEN = testCase.envOidcToken;
           } else {
-            delete process.env.VERCEL_OIDC_TOKEN;
+            delete process.env.KHULNASOFT_OIDC_TOKEN;
           }
 
           if (testCase.envApiKey !== undefined) {
@@ -1182,11 +1182,11 @@ describe('GatewayProvider', () => {
 
           // Mock OIDC token behavior
           if (testCase.oidcTokenMock) {
-            vi.mocked(getVercelOidcToken).mockResolvedValue(
+            vi.mocked(getKhulnasoftOidcToken).mockResolvedValue(
               testCase.oidcTokenMock,
             );
           } else {
-            vi.mocked(getVercelOidcToken).mockRejectedValue(
+            vi.mocked(getKhulnasoftOidcToken).mockRejectedValue(
               new GatewayAuthenticationError({
                 message: 'OIDC token not available',
                 statusCode: 401,
@@ -1212,11 +1212,11 @@ describe('GatewayProvider', () => {
 
               // If we used options API key, OIDC should not be called
               if (testCase.optionsApiKey) {
-                expect(getVercelOidcToken).not.toHaveBeenCalled();
+                expect(getKhulnasoftOidcToken).not.toHaveBeenCalled();
               }
             } else if (testCase.expectedAuthMethod === 'oidc') {
               expect(result.token).toBe(testCase.oidcTokenMock);
-              expect(getVercelOidcToken).toHaveBeenCalled();
+              expect(getKhulnasoftOidcToken).toHaveBeenCalled();
             }
           } else {
             // Test failure cases - should throw when OIDC fails
@@ -1234,9 +1234,9 @@ describe('GatewayProvider', () => {
 
           // Only set environment variables if they have actual values
           if (testCase.envOidcToken !== undefined) {
-            process.env.VERCEL_OIDC_TOKEN = testCase.envOidcToken;
+            process.env.KHULNASOFT_OIDC_TOKEN = testCase.envOidcToken;
           } else {
-            delete process.env.VERCEL_OIDC_TOKEN;
+            delete process.env.KHULNASOFT_OIDC_TOKEN;
           }
 
           if (testCase.envApiKey !== undefined) {
@@ -1247,11 +1247,11 @@ describe('GatewayProvider', () => {
 
           // Mock OIDC token behavior
           if (testCase.oidcTokenMock) {
-            vi.mocked(getVercelOidcToken).mockResolvedValue(
+            vi.mocked(getKhulnasoftOidcToken).mockResolvedValue(
               testCase.oidcTokenMock,
             );
           } else {
-            vi.mocked(getVercelOidcToken).mockRejectedValue(
+            vi.mocked(getKhulnasoftOidcToken).mockRejectedValue(
               new GatewayAuthenticationError({
                 message: 'OIDC token not available',
                 statusCode: 401,
@@ -1286,15 +1286,15 @@ describe('GatewayProvider', () => {
             );
 
             // For OIDC tests, we need to verify the auth token function was called
-            // which is indirectly tested by checking if getVercelOidcToken was called
+            // which is indirectly tested by checking if getKhulnasoftOidcToken was called
             if (testCase.expectedAuthMethod === 'oidc') {
-              expect(getVercelOidcToken).toHaveBeenCalled();
+              expect(getKhulnasoftOidcToken).toHaveBeenCalled();
             } else if (
               testCase.expectedAuthMethod === 'api-key' &&
               testCase.optionsApiKey
             ) {
               // If we used options API key, OIDC should not be called
-              expect(getVercelOidcToken).not.toHaveBeenCalled();
+              expect(getKhulnasoftOidcToken).not.toHaveBeenCalled();
             }
           } else {
             // Test failure cases
@@ -1310,7 +1310,7 @@ describe('GatewayProvider', () => {
       it('should handle empty string environment variables as undefined', async () => {
         process.env = {
           ...originalEnv,
-          VERCEL_OIDC_TOKEN: '',
+          KHULNASOFT_OIDC_TOKEN: '',
           AI_GATEWAY_API_KEY: '',
         };
 
@@ -1318,7 +1318,7 @@ describe('GatewayProvider', () => {
           message: 'OIDC token not available',
           statusCode: 401,
         });
-        vi.mocked(getVercelOidcToken).mockRejectedValue(oidcError);
+        vi.mocked(getKhulnasoftOidcToken).mockRejectedValue(oidcError);
 
         await expect(getGatewayAuthToken({})).rejects.toThrow(oidcError);
       });
@@ -1326,7 +1326,7 @@ describe('GatewayProvider', () => {
       it('should handle whitespace-only environment variables', async () => {
         process.env = {
           ...originalEnv,
-          VERCEL_OIDC_TOKEN: '   ',
+          KHULNASOFT_OIDC_TOKEN: '   ',
           AI_GATEWAY_API_KEY: '\t\n ',
         };
 
@@ -1339,7 +1339,7 @@ describe('GatewayProvider', () => {
       it('should prioritize options.apiKey over all environment variables', async () => {
         process.env = {
           ...originalEnv,
-          VERCEL_OIDC_TOKEN: 'env-oidc-token',
+          KHULNASOFT_OIDC_TOKEN: 'env-oidc-token',
           AI_GATEWAY_API_KEY: 'env-api-key',
         };
 
@@ -1348,13 +1348,13 @@ describe('GatewayProvider', () => {
 
         expect(result.authMethod).toBe('api-key');
         expect(result.token).toBe(optionsApiKey);
-        expect(getVercelOidcToken).not.toHaveBeenCalled();
+        expect(getKhulnasoftOidcToken).not.toHaveBeenCalled();
       });
 
       it('should surface OIDC error as cause when authentication fails', async () => {
         process.env = {
           ...originalEnv,
-          VERCEL_OIDC_TOKEN: '',
+          KHULNASOFT_OIDC_TOKEN: '',
           AI_GATEWAY_API_KEY: '',
         };
 
@@ -1363,7 +1363,7 @@ describe('GatewayProvider', () => {
         const oidcError = new Error(
           'OIDC token generation failed: project not linked',
         );
-        vi.mocked(getVercelOidcToken).mockRejectedValue(oidcError);
+        vi.mocked(getKhulnasoftOidcToken).mockRejectedValue(oidcError);
 
         const provider = createGateway();
         provider('test-model');
@@ -1395,13 +1395,13 @@ describe('GatewayProvider', () => {
 
         expect(result.authMethod).toBe('api-key');
         expect(result.token).toBe(optionsApiKey);
-        expect(getVercelOidcToken).not.toHaveBeenCalled();
+        expect(getKhulnasoftOidcToken).not.toHaveBeenCalled();
       });
 
       it('should prefer AI_GATEWAY_API_KEY over OIDC token', async () => {
         process.env = {
           ...originalEnv,
-          VERCEL_OIDC_TOKEN: 'oidc-token',
+          KHULNASOFT_OIDC_TOKEN: 'oidc-token',
           AI_GATEWAY_API_KEY: 'env-api-key',
         };
 
@@ -1409,22 +1409,22 @@ describe('GatewayProvider', () => {
 
         expect(result.authMethod).toBe('api-key');
         expect(result.token).toBe('env-api-key');
-        expect(getVercelOidcToken).not.toHaveBeenCalled();
+        expect(getKhulnasoftOidcToken).not.toHaveBeenCalled();
       });
 
       it('should fall back to OIDC when no API keys are available', async () => {
         process.env = {
           ...originalEnv,
-          VERCEL_OIDC_TOKEN: 'oidc-token',
+          KHULNASOFT_OIDC_TOKEN: 'oidc-token',
         };
 
-        vi.mocked(getVercelOidcToken).mockResolvedValue('oidc-token');
+        vi.mocked(getKhulnasoftOidcToken).mockResolvedValue('oidc-token');
 
         const result = await getGatewayAuthToken({});
 
         expect(result.authMethod).toBe('oidc');
         expect(result.token).toBe('oidc-token');
-        expect(getVercelOidcToken).toHaveBeenCalled();
+        expect(getKhulnasoftOidcToken).toHaveBeenCalled();
       });
     });
 
@@ -1433,16 +1433,16 @@ describe('GatewayProvider', () => {
         // Simulate khulnasoft deployment environment
         process.env = {
           ...originalEnv,
-          VERCEL_OIDC_TOKEN: 'khulnasoft-deployment-oidc-token',
-          VERCEL_DEPLOYMENT_ID: 'dpl_12345',
-          VERCEL_ENV: 'production',
-          VERCEL_REGION: 'iad1',
+          KHULNASOFT_OIDC_TOKEN: 'khulnasoft-deployment-oidc-token',
+          KHULNASOFT_DEPLOYMENT_ID: 'dpl_12345',
+          KHULNASOFT_ENV: 'production',
+          KHULNASOFT_REGION: 'iad1',
         };
 
         // Explicitly remove AI_GATEWAY_API_KEY to force OIDC usage
         delete process.env.AI_GATEWAY_API_KEY;
 
-        vi.mocked(getVercelOidcToken).mockResolvedValue(
+        vi.mocked(getKhulnasoftOidcToken).mockResolvedValue(
           'khulnasoft-deployment-oidc-token',
         );
 
@@ -1457,7 +1457,7 @@ describe('GatewayProvider', () => {
           'Bearer khulnasoft-deployment-oidc-token',
         );
         expect(headers['ai-gateway-auth-method']).toBe('oidc');
-        expect(getVercelOidcToken).toHaveBeenCalled();
+        expect(getKhulnasoftOidcToken).toHaveBeenCalled();
       });
 
       it('should work in local development with API key', async () => {
@@ -1471,14 +1471,14 @@ describe('GatewayProvider', () => {
         const models = await provider.getAvailableModels();
 
         expect(models).toBeDefined();
-        expect(getVercelOidcToken).not.toHaveBeenCalled();
+        expect(getKhulnasoftOidcToken).not.toHaveBeenCalled();
       });
 
       it('should work with explicit API key override', async () => {
         // User provides explicit API key, should override everything
         process.env = {
           ...originalEnv,
-          VERCEL_OIDC_TOKEN: 'should-not-be-used',
+          KHULNASOFT_OIDC_TOKEN: 'should-not-be-used',
           AI_GATEWAY_API_KEY: 'should-not-be-used-either',
         };
 
@@ -1490,7 +1490,7 @@ describe('GatewayProvider', () => {
         const models = await provider.getAvailableModels();
 
         expect(models).toBeDefined();
-        expect(getVercelOidcToken).not.toHaveBeenCalled();
+        expect(getKhulnasoftOidcToken).not.toHaveBeenCalled();
       });
     });
   });
@@ -1551,14 +1551,14 @@ describe('GatewayProvider', () => {
     });
 
     it('should work with OIDC authentication in getCredits', async () => {
-      vi.mocked(getVercelOidcToken).mockResolvedValue('oidc-token');
+      vi.mocked(getKhulnasoftOidcToken).mockResolvedValue('oidc-token');
 
       const provider = createGateway();
 
       const credits = await provider.getCredits();
 
       expect(credits).toBeDefined();
-      expect(getVercelOidcToken).toHaveBeenCalled();
+      expect(getKhulnasoftOidcToken).toHaveBeenCalled();
     });
 
     it('should handle errors from the credits endpoint', async () => {
@@ -1707,7 +1707,7 @@ describe('GatewayProvider', () => {
     });
 
     it('should work with OIDC authentication in spend reports', async () => {
-      vi.mocked(getVercelOidcToken).mockResolvedValue('oidc-token');
+      vi.mocked(getKhulnasoftOidcToken).mockResolvedValue('oidc-token');
 
       const provider = createGateway();
 
@@ -1717,7 +1717,7 @@ describe('GatewayProvider', () => {
       });
 
       expect(report).toBeDefined();
-      expect(getVercelOidcToken).toHaveBeenCalled();
+      expect(getKhulnasoftOidcToken).toHaveBeenCalled();
     });
 
     it('should be available on the provider interface', () => {
@@ -1746,7 +1746,7 @@ describe('GatewayProvider', () => {
     });
 
     it('should work with OIDC authentication in generation info', async () => {
-      vi.mocked(getVercelOidcToken).mockResolvedValue('oidc-token');
+      vi.mocked(getKhulnasoftOidcToken).mockResolvedValue('oidc-token');
 
       const provider = createGateway();
 
@@ -1755,7 +1755,7 @@ describe('GatewayProvider', () => {
       });
 
       expect(generationInfo).toBeDefined();
-      expect(getVercelOidcToken).toHaveBeenCalled();
+      expect(getKhulnasoftOidcToken).toHaveBeenCalled();
     });
   });
 

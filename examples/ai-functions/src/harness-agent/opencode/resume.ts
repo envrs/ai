@@ -14,8 +14,8 @@ import {
 } from '@ai-toolkit/harness/agent';
 import { createOpenCode } from './_create';
 import {
-  createVercelNetworkSandboxSession,
-  resumeVercelNetworkSandboxSession,
+  createKhulnasoftNetworkSandboxSession,
+  resumeKhulnasoftNetworkSandboxSession,
 } from '@ai-toolkit/sandbox-vercel';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';
@@ -24,7 +24,7 @@ const openCode = createOpenCode();
 
 run(async () => {
   const sandboxName = `harness-${crypto.randomUUID()}`;
-  const sandboxSession = await createVercelNetworkSandboxSession({
+  const sandboxSession = await createKhulnasoftNetworkSandboxSession({
     sandboxId: sandboxName,
     runtime: 'node24',
     ports: [4000],
@@ -53,7 +53,7 @@ run(async () => {
 
     // Turn 2: a new agent resumes with the persisted state and reattached sandbox.
     {
-      activeSandboxSession = await resumeVercelNetworkSandboxSession({
+      activeSandboxSession = await resumeKhulnasoftNetworkSandboxSession({
         sandboxId: sandboxName,
       });
       const agent = new HarnessAgent({ harness: openCode });

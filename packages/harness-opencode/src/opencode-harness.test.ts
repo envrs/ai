@@ -566,7 +566,7 @@ describe('createOpenCode adapter', () => {
     );
     const environmentNames = [
       'AI_GATEWAY_API_KEY',
-      'VERCEL_OIDC_TOKEN',
+      'KHULNASOFT_OIDC_TOKEN',
       'GITLAB_TOKEN',
       'XDG_DATA_HOME',
     ] as const;
@@ -574,7 +574,7 @@ describe('createOpenCode adapter', () => {
       environmentNames.map(name => [name, process.env[name]]),
     );
     delete process.env.AI_GATEWAY_API_KEY;
-    delete process.env.VERCEL_OIDC_TOKEN;
+    delete process.env.KHULNASOFT_OIDC_TOKEN;
     delete process.env.GITLAB_TOKEN;
     process.env.XDG_DATA_HOME = dataDirectory;
     const originalFetch = globalThis.fetch;

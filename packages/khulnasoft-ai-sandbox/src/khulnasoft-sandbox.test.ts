@@ -1,10 +1,10 @@
 import type { NetworkPolicy, Sandbox } from '@khulnasoft/sandbox';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
-  createVercelNetworkSandboxSession,
-  createVercelNetworkSandboxSessionFromNativeSandbox,
-  createVercelSandboxSessionFromNativeSandbox,
-  resumeVercelNetworkSandboxSession,
+  createKhulnasoftNetworkSandboxSession,
+  createKhulnasoftNetworkSandboxSessionFromNativeSandbox,
+  createKhulnasoftSandboxSessionFromNativeSandbox,
+  resumeKhulnasoftNetworkSandboxSession,
 } from './khulnasoft-sandbox';
 
 describe('new khulnasoft sandbox sessions', () => {
@@ -14,9 +14,9 @@ describe('new khulnasoft sandbox sessions', () => {
 
   it('adapts basic and network sessions with explicit native lifecycle', async () => {
     const { sandbox, spies } = makeMockSandbox();
-    const basic = createVercelSandboxSessionFromNativeSandbox(sandbox);
+    const basic = createKhulnasoftSandboxSessionFromNativeSandbox(sandbox);
     expect('stop' in basic).toBe(false);
-    const adapted = createVercelNetworkSandboxSessionFromNativeSandbox(sandbox);
+    const adapted = createKhulnasoftNetworkSandboxSessionFromNativeSandbox(sandbox);
     await adapted.stop();
     await adapted.destroy();
     expect(spies.stop).toHaveBeenCalledTimes(2);
@@ -25,7 +25,7 @@ describe('new khulnasoft sandbox sessions', () => {
 
   it('rejects native sandbox inputs', async () => {
     await expect(
-      createVercelNetworkSandboxSession({
+      createKhulnasoftNetworkSandboxSession({
         sandbox: makeMockSandbox().sandbox,
       } as never),
     ).rejects.toThrow('FromNativeSandbox');
@@ -34,7 +34,7 @@ describe('new khulnasoft sandbox sessions', () => {
   it('creates a newly named sandbox without looking up that ID', async () => {
     const { sandbox } = makeMockSandbox();
     createMock.mockResolvedValue(sandbox);
-    const session = await createVercelNetworkSandboxSession({
+    const session = await createKhulnasoftNetworkSandboxSession({
       sandboxId: 'live-session',
       runtime: 'node24',
     });
@@ -48,7 +48,7 @@ describe('new khulnasoft sandbox sessions', () => {
 
   it('preserves native names and rejects a conflicting sandboxId', async () => {
     createMock.mockResolvedValue(makeMockSandbox().sandbox);
-    await createVercelNetworkSandboxSession({
+    await createKhulnasoftNetworkSandboxSession({
       name: 'same-name',
       sandboxId: 'same-name',
     });
@@ -57,7 +57,7 @@ describe('new khulnasoft sandbox sessions', () => {
     );
     createMock.mockClear();
     await expect(
-      createVercelNetworkSandboxSession({
+      createKhulnasoftNetworkSandboxSession({
         name: 'native-name',
         sandboxId: 'other-name',
       }),
@@ -69,7 +69,7 @@ describe('new khulnasoft sandbox sessions', () => {
     const conflict = new Error('sandbox name already exists');
     createMock.mockRejectedValueOnce(conflict);
     await expect(
-      createVercelNetworkSandboxSession({ sandboxId: 'already-exists' }),
+      createKhulnasoftNetworkSandboxSession({ sandboxId: 'already-exists' }),
     ).rejects.toBe(conflict);
     expect(getMock).not.toHaveBeenCalled();
     expect(getOrCreateMock).not.toHaveBeenCalled();
@@ -92,7 +92,7 @@ describe('new khulnasoft sandbox sessions', () => {
         expect(resume).toBe(true);
         return state === 'stopped' ? makeMockSandbox().sandbox : sandbox;
       });
-      const session = await resumeVercelNetworkSandboxSession({
+      const session = await resumeKhulnasoftNetworkSandboxSession({
         sandboxId: 'sbx_harness',
         token: 'token',
         teamId: 'team',
@@ -112,7 +112,7 @@ describe('new khulnasoft sandbox sessions', () => {
     }
     expect(createMock).not.toHaveBeenCalled();
     expect(getOrCreateMock).not.toHaveBeenCalled();
-    const session = await resumeVercelNetworkSandboxSession({
+    const session = await resumeKhulnasoftNetworkSandboxSession({
       sandboxId: 'sbx_harness',
     });
     await session.destroy();
@@ -124,12 +124,12 @@ describe('new khulnasoft sandbox sessions', () => {
     const notFound = new Error('sandbox not found');
     getMock.mockRejectedValueOnce(notFound);
     await expect(
-      resumeVercelNetworkSandboxSession({ sandboxId: 'missing' }),
+      resumeKhulnasoftNetworkSandboxSession({ sandboxId: 'missing' }),
     ).rejects.toBe(notFound);
     const controller = new AbortController();
     controller.abort();
     await expect(
-      resumeVercelNetworkSandboxSession({
+      resumeKhulnasoftNetworkSandboxSession({
         sandboxId: 'missing',
         abortSignal: controller.signal,
       }),
@@ -156,7 +156,7 @@ describe('new khulnasoft sandbox sessions', () => {
     createMock.mockResolvedValue(sandbox);
     const template = { identity: 'recipe-one', prepare };
     const create = (snapshotId: string, identity = template.identity) =>
-      createVercelNetworkSandboxSession({
+      createKhulnasoftNetworkSandboxSession({
         source: { type: 'snapshot', snapshotId },
         sandboxId: 'live-name',
         template: { identity, prepare },

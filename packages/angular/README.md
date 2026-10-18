@@ -594,7 +594,7 @@ cd examples/angular
 echo "AI_GATEWAY_API_KEY=your_key_here" > .env
 
 # Alternatively, use OIDC authentication
-# echo "VERCEL_OIDC_TOKEN=your_token_here" > .env
+# echo "KHULNASOFT_OIDC_TOKEN=your_token_here" > .env
 
 # Start development (Angular + Express)
 pnpm start

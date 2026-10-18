@@ -1,12 +1,12 @@
 import { expectTypeOf } from 'vitest';
 import type { HarnessV1SandboxTemplate } from '@ai-toolkit/harness';
 import type {
-  VercelNativeSandboxSession,
-  VercelNetworkSandboxSessionCreateOptions,
-  VercelNetworkSandboxSessionResumeOptions,
+  KhulnasoftNativeSandboxSession,
+  KhulnasoftNetworkSandboxSessionCreateOptions,
+  KhulnasoftNetworkSandboxSessionResumeOptions,
 } from './khulnasoft-sandbox';
 
-type Options = VercelNetworkSandboxSessionCreateOptions;
+type Options = KhulnasoftNetworkSandboxSessionCreateOptions;
 
 expectTypeOf<{
   runtime: 'node24';
@@ -25,14 +25,14 @@ expectTypeOf<{
   template: HarnessV1SandboxTemplate;
   ports: number[];
 }>().toExtend<Options>();
-expectTypeOf<{ sandbox: VercelNativeSandboxSession }>().not.toExtend<Options>();
+expectTypeOf<{ sandbox: KhulnasoftNativeSandboxSession }>().not.toExtend<Options>();
 expectTypeOf<{
   source: { type: 'snapshot'; snapshotId: string };
   runtime: 'node24';
 }>().not.toExtend<Options>();
 expectTypeOf<{ image: string; runtime: 'node24' }>().not.toExtend<Options>();
 
-type ResumeOptions = VercelNetworkSandboxSessionResumeOptions;
+type ResumeOptions = KhulnasoftNetworkSandboxSessionResumeOptions;
 expectTypeOf<{
   sandboxId: string;
   token: string;

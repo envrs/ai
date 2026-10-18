@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   GATEWAY_AUTH_METHOD_HEADER,
-  VERCEL_AI_GATEWAY_TEAM_HEADER,
+  KHULNASOFT_AI_GATEWAY_TEAM_HEADER,
 } from '../gateway-headers';
 import { parseAuthMethod } from './parse-auth-method';
 
@@ -11,7 +11,7 @@ describe('gateway headers', () => {
   });
 
   it('should export the correct khulnasoft AI Gateway team header name', () => {
-    expect(VERCEL_AI_GATEWAY_TEAM_HEADER).toBe('x-khulnasoft-ai-gateway-team');
+    expect(KHULNASOFT_AI_GATEWAY_TEAM_HEADER).toBe('x-khulnasoft-ai-gateway-team');
   });
 });
 

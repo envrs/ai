@@ -2,7 +2,7 @@ import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agen
 import { createGrokBuild } from './_create';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 
 const grokBuild = createGrokBuild({
   reasoningEffort: 'high',
@@ -13,7 +13,7 @@ run(async () => {
     harness: grokBuild,
   });
 
-  const sandboxSession = await createVercelNetworkSandboxSession({
+  const sandboxSession = await createKhulnasoftNetworkSandboxSession({
     runtime: 'node24',
     ports: [4000],
     timeout: 10 * 60 * 1000,

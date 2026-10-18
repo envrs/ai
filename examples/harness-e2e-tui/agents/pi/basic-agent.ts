@@ -4,12 +4,12 @@ import {
   createTraceTreeReporter,
 } from '@ai-toolkit/harness/agent';
 import { pi } from '@ai-toolkit/harness-pi';
-import { createVercelSandbox } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftSandbox } from '@ai-toolkit/sandbox-vercel';
 import type { InferUITools, UIMessage } from 'ai';
 
 export const piHarnessAgent = new HarnessAgent({
   harness: pi,
-  sandbox: createVercelSandbox({
+  sandbox: createKhulnasoftSandbox({
     runtime: 'node24',
   }),
   // Observability wired in code (dev/testing app) — see the claude-code basic

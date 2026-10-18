@@ -38,9 +38,9 @@ Live state belongs to `HarnessAgentSession`.
 Create a sandbox session separately and pass it to `agent.createSession()`:
 
 ```ts
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),
@@ -405,8 +405,8 @@ const resumeState = await loadResumeState({ chatId });
 const sandboxId = `chat-${chatId}`;
 
 const sandboxSession = resumeState
-  ? await resumeVercelNetworkSandboxSession({ sandboxId })
-  : await createVercelNetworkSandboxSession({
+  ? await resumeKhulnasoftNetworkSandboxSession({ sandboxId })
+  : await createKhulnasoftNetworkSandboxSession({
       sandboxId,
       ports: [4000],
       template: await agent.getSandboxTemplate(),
@@ -555,7 +555,7 @@ is known before sandbox creation. khulnasoft persists the prepared snapshot and
 creates a live sandbox from it; identical calls reuse that snapshot:
 
 ```ts
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),
@@ -584,7 +584,7 @@ const template = await createHarnessSandboxTemplate({
 });
 console.log(template?.identity);
 
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   source: { type: 'snapshot', snapshotId: baseSnapshotId },
   ports: [4000],
   template,
@@ -648,7 +648,7 @@ caller-owned sandbox.
 ```ts
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { claudeCode } from '@ai-toolkit/harness-claude-code';
-import { createVercelNetworkSandboxSessionFromNativeSandbox } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSessionFromNativeSandbox } from '@ai-toolkit/sandbox-khulnasoft';
 import { Sandbox } from '@khulnasoft/sandbox';
 
 const sandbox = await Sandbox.create({
@@ -656,7 +656,7 @@ const sandbox = await Sandbox.create({
   ports: [4000],
 });
 const sandboxSession =
-  createVercelNetworkSandboxSessionFromNativeSandbox(sandbox);
+  createKhulnasoftNetworkSandboxSessionFromNativeSandbox(sandbox);
 
 const agent = new HarnessAgent({ harness: claudeCode });
 const session = await agent.createSession({ sandboxSession });
@@ -694,8 +694,8 @@ because the basic session cannot resolve them.
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { createClaudeCode } from '@ai-toolkit/harness-claude-code';
 import {
-  createVercelNetworkSandboxSessionFromNativeSandbox,
-  createVercelSandboxSessionFromNativeSandbox,
+  createKhulnasoftNetworkSandboxSessionFromNativeSandbox,
+  createKhulnasoftSandboxSessionFromNativeSandbox,
 } from '@ai-toolkit/sandbox-khulnasoft';
 import { Sandbox } from '@khulnasoft/sandbox';
 
@@ -704,13 +704,13 @@ const sandbox = await Sandbox.create({
   ports: [4000],
 });
 const sandboxSession =
-  createVercelNetworkSandboxSessionFromNativeSandbox(sandbox);
+  createKhulnasoftNetworkSandboxSessionFromNativeSandbox(sandbox);
 const portEndpoint = await sandboxSession.getPortEndpoint({
   port: 4000,
   protocol: 'ws',
 });
 const restrictedSandboxSession =
-  createVercelSandboxSessionFromNativeSandbox(sandbox);
+  createKhulnasoftSandboxSessionFromNativeSandbox(sandbox);
 const claudeCode = createClaudeCode({ port: 4000, portEndpoint });
 
 const agent = new HarnessAgent({ harness: claudeCode });

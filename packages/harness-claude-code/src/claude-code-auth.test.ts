@@ -56,7 +56,7 @@ describe('resolveClaudeCodeEnv', () => {
       'ai-gateway',
       {
         AI_GATEWAY_BASE_URL: 'https://gw.example',
-        VERCEL_OIDC_TOKEN: 'oidc-env',
+        KHULNASOFT_OIDC_TOKEN: 'oidc-env',
       },
       { readApiKeyHelper: noHelper },
     );
@@ -78,10 +78,10 @@ describe('resolveClaudeCodeEnv', () => {
     expect(env.ANTHROPIC_API_KEY).toBe('gw-auto');
   });
 
-  it('auto-detects gateway when VERCEL_OIDC_TOKEN is set', () => {
+  it('auto-detects gateway when KHULNASOFT_OIDC_TOKEN is set', () => {
     const env = resolveClaudeCodeEnv(
       undefined,
-      { VERCEL_OIDC_TOKEN: 'oidc-auto' },
+      { KHULNASOFT_OIDC_TOKEN: 'oidc-auto' },
       { readApiKeyHelper: noHelper },
     );
     expect(env.AI_GATEWAY_API_KEY).toBe('oidc-auto');
@@ -331,7 +331,7 @@ describe('resolveClaudeCodeAuthenticationMode', () => {
   it('resolves ambient Gateway credentials to Gateway auth', () => {
     expect(
       resolveClaudeCodeAuthenticationMode(undefined, {
-        VERCEL_OIDC_TOKEN: 'oidc-token',
+        KHULNASOFT_OIDC_TOKEN: 'oidc-token',
       }),
     ).toBe('ai-gateway');
   });

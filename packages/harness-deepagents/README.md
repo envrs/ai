@@ -32,12 +32,12 @@ bootstrap directory via `pnpm` at startup.
 ```ts
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { deepAgents } from '@ai-toolkit/harness-deepagents';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
 const agent = new HarnessAgent({
   harness: deepAgents,
 });
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),

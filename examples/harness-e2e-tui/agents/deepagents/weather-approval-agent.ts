@@ -11,7 +11,7 @@ import {
   HarnessAgent,
 } from '@ai-toolkit/harness/agent';
 import { deepAgents } from '@ai-toolkit/harness-deepagents';
-import { createVercelSandbox } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftSandbox } from '@ai-toolkit/sandbox-vercel';
 import type { InferUITools, UIMessage } from 'ai';
 
 export const weatherApprovalDeepAgentsHarnessAgent = new HarnessAgent({
@@ -24,7 +24,7 @@ export const weatherApprovalDeepAgentsHarnessAgent = new HarnessAgent({
   toolApproval: {
     get_weather: 'user-approval',
   },
-  sandbox: createVercelSandbox({
+  sandbox: createKhulnasoftSandbox({
     runtime: 'node24',
     ports: [4000],
   }),

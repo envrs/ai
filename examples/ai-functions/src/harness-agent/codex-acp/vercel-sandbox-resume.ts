@@ -1,5 +1,5 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
-import { resumeVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { resumeKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import {
   createACPHandoffSandbox,
   getACPHandoffArguments,
@@ -20,10 +20,10 @@ run(async () => {
   });
   if (
     process.env.AI_GATEWAY_API_KEY == null &&
-    process.env.VERCEL_OIDC_TOKEN == null
+    process.env.KHULNASOFT_OIDC_TOKEN == null
   ) {
     throw new Error(
-      'This cold-resume example requires AI_GATEWAY_API_KEY or VERCEL_OIDC_TOKEN in each phase.',
+      'This cold-resume example requires AI_GATEWAY_API_KEY or KHULNASOFT_OIDC_TOKEN in each phase.',
     );
   }
 
@@ -52,7 +52,7 @@ run(async () => {
         process.env.CODEX_API_KEY,
         process.env.OPENAI_API_KEY,
         process.env.AI_GATEWAY_API_KEY,
-        process.env.VERCEL_OIDC_TOKEN,
+        process.env.KHULNASOFT_OIDC_TOKEN,
       ]) {
         if (
           secret != null &&
@@ -88,7 +88,7 @@ run(async () => {
   }
 
   const saved = await readACPResumeHandoffState({ statePath });
-  const sandboxSession = await resumeVercelNetworkSandboxSession({
+  const sandboxSession = await resumeKhulnasoftNetworkSandboxSession({
     sandboxId: saved.sandboxName,
   });
   let session: HarnessAgentSession | undefined;
@@ -115,7 +115,7 @@ run(async () => {
   }
   await removeACPHandoffState({ statePath });
   console.log(
-    'Verified cold ACP restoration in a replacement Vercel Sandbox process with freshly resolved Gateway credentials.',
+    'Verified cold ACP restoration in a replacement Khulnasoft Sandbox process with freshly resolved Gateway credentials.',
   );
   process.exit(0);
 });

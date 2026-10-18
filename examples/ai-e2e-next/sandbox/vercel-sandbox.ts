@@ -5,7 +5,7 @@ import {
   type Experimental_SandboxProcess,
 } from '@ai-toolkit/provider-utils';
 import { type Experimental_SandboxSession as SandboxSession } from 'ai';
-import type { Command, Sandbox as VercelSandboxSDK } from '@khulnasoft/sandbox';
+import type { Command, Sandbox as KhulnasoftSandboxSDK } from '@khulnasoft/sandbox';
 import {
   bytesToStream,
   collectStream,
@@ -14,21 +14,21 @@ import {
 
 const rootDirectory = '/vercel/sandbox';
 
-// Vercel Sandbox authenticates with a Vercel OIDC token.
+// Khulnasoft Sandbox authenticates with a Khulnasoft OIDC token.
 //
-// Deployed on Vercel:
-// 1. Open the project in the Vercel dashboard.
+// Deployed on Khulnasoft:
+// 1. Open the project in the Khulnasoft dashboard.
 // 2. Go to Settings > Security.
 // 3. Enable "Secure backend access with OIDC federation" and save.
 //
 // Local development:
 // 1. Run `vercel link`.
-// 2. Run `vercel env pull` to write VERCEL_OIDC_TOKEN to .env.local.
+// 2. Run `vercel env pull` to write KHULNASOFT_OIDC_TOKEN to .env.local.
 //
 // Without OIDC, @khulnasoft/sandbox reports a missing `x-vercel-oidc-token`
 // header when creating or retrieving sandboxes.
-export class VercelSandboxSession implements SandboxSession {
-  constructor(public readonly sandbox: VercelSandboxSDK) {}
+export class KhulnasoftSandboxSession implements SandboxSession {
+  constructor(public readonly sandbox: KhulnasoftSandboxSDK) {}
 
   private resolvePath(path: string): string {
     return isAbsolute(path) ? path : join(rootDirectory, path);
@@ -190,7 +190,7 @@ export class VercelSandboxSession implements SandboxSession {
   }
 
   get description() {
-    return `Vercel Sandbox: ${this.sandbox.name}\nRoot directory: ${rootDirectory}`;
+    return `Khulnasoft Sandbox: ${this.sandbox.name}\nRoot directory: ${rootDirectory}`;
   }
 }
 

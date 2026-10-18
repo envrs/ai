@@ -3,8 +3,8 @@ import {
   type HarnessAgentResumeSessionState,
 } from '@ai-toolkit/harness/agent';
 import {
-  createVercelNetworkSandboxSession,
-  resumeVercelNetworkSandboxSession,
+  createKhulnasoftNetworkSandboxSession,
+  resumeKhulnasoftNetworkSandboxSession,
 } from '@ai-toolkit/sandbox-vercel';
 import { createCursorACP } from './_create';
 import { printFullStream } from '../../lib/print-full-stream';
@@ -12,7 +12,7 @@ import { run } from '../../lib/run';
 
 run(async () => {
   const sandboxName = `harness-${crypto.randomUUID()}`;
-  const sandboxSession = await createVercelNetworkSandboxSession({
+  const sandboxSession = await createKhulnasoftNetworkSandboxSession({
     sandboxId: sandboxName,
     runtime: 'node24',
     ports: [4000],
@@ -38,7 +38,7 @@ run(async () => {
       resumeState = await session.stop();
     }
 
-    activeSandboxSession = await resumeVercelNetworkSandboxSession({
+    activeSandboxSession = await resumeKhulnasoftNetworkSandboxSession({
       sandboxId: sandboxName,
     });
     const agent = new HarnessAgent({

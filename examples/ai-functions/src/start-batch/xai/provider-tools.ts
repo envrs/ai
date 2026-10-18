@@ -23,7 +23,7 @@ run(async () => {
         model,
         tools,
         prompt:
-          'Search the web and summarize the most recent Vercel announcement with its source.',
+          'Search the web and summarize the most recent Khulnasoft announcement with its source.',
       },
     ],
   });

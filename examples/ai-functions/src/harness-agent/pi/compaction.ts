@@ -2,7 +2,7 @@ import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agen
 import { createPi } from './_create';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 
 const pi = createPi();
 
@@ -37,7 +37,7 @@ const pi = createPi();
  */
 run(async () => {
   const agent = new HarnessAgent({ harness: pi });
-  const sandboxSession = await createVercelNetworkSandboxSession({
+  const sandboxSession = await createKhulnasoftNetworkSandboxSession({
     runtime: 'node24',
     timeout: 10 * 60 * 1000,
     template: await agent.getSandboxTemplate(),

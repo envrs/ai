@@ -13,9 +13,9 @@ npm i @ai-toolkit/sandbox-khulnasoft
 ## Usage
 
 ```ts
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
-const networkSandboxSession = await createVercelNetworkSandboxSession({
+const networkSandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [3000],
 });
@@ -32,14 +32,14 @@ await networkSandboxSession.destroy();
 
 ### Use cases
 
-- Create a network sandbox session with `createVercelNetworkSandboxSession()` and pass it to `HarnessAgent.createSession({ sandboxSession })`. For reusable snapshots, pass `template: await agent.getSandboxTemplate()` to the creator function.
-- Set `sandboxId` to name a new sandbox, or persist the returned session's `id`. Creation never resumes an existing sandbox and a conflicting name fails; use `resumeVercelNetworkSandboxSession({ sandboxId })` to reattach.
+- Create a network sandbox session with `createKhulnasoftNetworkSandboxSession()` and pass it to `HarnessAgent.createSession({ sandboxSession })`. For reusable snapshots, pass `template: await agent.getSandboxTemplate()` to the creator function.
+- Set `sandboxId` to name a new sandbox, or persist the returned session's `id`. Creation never resumes an existing sandbox and a conflicting name fails; use `resumeKhulnasoftNetworkSandboxSession({ sandboxId })` to reattach.
 - Take a network sandbox session's process-restricted subset with `networkSandboxSession.restricted()` and use it with ai-toolkit tools that accept `experimental_sandbox`.
-- Adapt an existing native `Sandbox` with `createVercelSandboxSessionFromNativeSandbox(nativeSandbox)` and use it with ai-toolkit tools that accept `experimental_sandbox`.
+- Adapt an existing native `Sandbox` with `createKhulnasoftSandboxSessionFromNativeSandbox(nativeSandbox)` and use it with ai-toolkit tools that accept `experimental_sandbox`.
 
 ## Authentication
 
-khulnasoft Sandbox accepts `VERCEL_OIDC_TOKEN`, or explicit `token`, `teamId`, and `projectId` settings. For local OIDC authentication, link the application with `khulnasoft link`, run `khulnasoft env pull`, and load the generated `.env.local` before starting it.
+khulnasoft Sandbox accepts `KHULNASOFT_OIDC_TOKEN`, or explicit `token`, `teamId`, and `projectId` settings. For local OIDC authentication, link the application with `khulnasoft link`, run `khulnasoft env pull`, and load the generated `.env.local` before starting it.
 
 ## Request transformations and credential brokering
 

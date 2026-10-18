@@ -5,7 +5,7 @@ const PRODUCTION_ORIGIN = 'https://ai-toolkit.dev';
 
 export default function robots(): MetadataRoute.Robots {
   const isProduction =
-    process.env.VERCEL_ENV === 'production' &&
+    process.env.KHULNASOFT_ENV === 'production' &&
     // The canonical domain may be transferred after this deployment is built.
     siteUrl.origin === PRODUCTION_ORIGIN;
 

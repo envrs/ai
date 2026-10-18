@@ -11,7 +11,7 @@ import {
   createTraceTreeReporter,
 } from '@ai-toolkit/harness/agent';
 import { pi } from '@ai-toolkit/harness-pi';
-import { createVercelSandbox } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftSandbox } from '@ai-toolkit/sandbox-vercel';
 import type { InferUITools, UIMessage } from 'ai';
 
 export const weatherPiHarnessAgent = new HarnessAgent({
@@ -19,7 +19,7 @@ export const weatherPiHarnessAgent = new HarnessAgent({
   instructions: weatherInstructions,
   skills: [weatherForecastSkill, weatherCodesSkill],
   tools: { get_weather: weatherTool },
-  sandbox: createVercelSandbox({
+  sandbox: createKhulnasoftSandbox({
     runtime: 'node24',
   }),
   sandboxConfig: {

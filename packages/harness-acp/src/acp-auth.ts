@@ -25,7 +25,7 @@ type ACPAuthResolutionOptions = {
   readonly clientApp: ACPClientApp;
 };
 
-type ACPGatewayCredentialSource = 'AI_GATEWAY_API_KEY' | 'VERCEL_OIDC_TOKEN';
+type ACPGatewayCredentialSource = 'AI_GATEWAY_API_KEY' | 'KHULNASOFT_OIDC_TOKEN';
 
 export type ACPProviderAuthenticationCompatibility =
   | {
@@ -47,7 +47,7 @@ export type ACPAuthenticationProfileIdentity = {
   readonly providerMode?: 'auto' | 'direct' | 'ai-gateway';
   readonly gatewayCredentialSource?:
     | 'AI_GATEWAY_API_KEY'
-    | 'VERCEL_OIDC_TOKEN'
+    | 'KHULNASOFT_OIDC_TOKEN'
     | null;
 };
 
@@ -148,7 +148,7 @@ export function resolveACPProviderAuthentication({
   }
   if (apiKey == null) {
     throw new Error(
-      'AI Gateway authentication was selected, but neither AI_GATEWAY_API_KEY nor VERCEL_OIDC_TOKEN is set.',
+      'AI Gateway authentication was selected, but neither AI_GATEWAY_API_KEY nor KHULNASOFT_OIDC_TOKEN is set.',
     );
   }
 
@@ -235,8 +235,8 @@ function resolveGatewayCredentialSource({
 }): ACPGatewayCredentialSource | null {
   return env.AI_GATEWAY_API_KEY
     ? 'AI_GATEWAY_API_KEY'
-    : env.VERCEL_OIDC_TOKEN
-      ? 'VERCEL_OIDC_TOKEN'
+    : env.KHULNASOFT_OIDC_TOKEN
+      ? 'KHULNASOFT_OIDC_TOKEN'
       : null;
 }
 
@@ -251,9 +251,9 @@ function resolveGatewayCredential({
   switch (credentialSource) {
     case 'AI_GATEWAY_API_KEY':
       return env.AI_GATEWAY_API_KEY == null ? undefined : gatewayFromEnv.apiKey;
-    case 'VERCEL_OIDC_TOKEN':
+    case 'KHULNASOFT_OIDC_TOKEN':
       return getAiGatewayAuthFromEnv({
-        env: { VERCEL_OIDC_TOKEN: env.VERCEL_OIDC_TOKEN },
+        env: { KHULNASOFT_OIDC_TOKEN: env.KHULNASOFT_OIDC_TOKEN },
       }).apiKey;
     case null:
       return undefined;

@@ -23,8 +23,8 @@ export default function ChatOpenAIShell() {
     <div className="flex flex-col py-24 mx-auto w-full max-w-4xl stretch">
       <h1 className="mb-2 text-xl font-bold text-black">OpenAI Shell Tool</h1>
       <h2 className="pb-2 mb-4 border-b text-black">
-        Note: This example requires a Vercel OIDC Token to run commands with
-        Vercel Sandbox
+        Note: This example requires a Khulnasoft OIDC Token to run commands with
+        Khulnasoft Sandbox
       </h2>
 
       {messages.map(message => (

@@ -15,9 +15,9 @@ let moduleId = 0;
 
 async function robotsWithEnv(overrides = {}) {
   const env = {
-    VERCEL_ENV: 'production',
-    VERCEL_PROJECT_PRODUCTION_URL: 'ai-toolkit-docs.vercel.sh',
-    NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: 'ai-toolkit.dev',
+    KHULNASOFT_ENV: 'production',
+    KHULNASOFT_PROJECT_PRODUCTION_URL: 'ai-toolkit-docs.vercel.sh',
+    NEXT_PUBLIC_KHULNASOFT_PROJECT_PRODUCTION_URL: 'ai-toolkit.dev',
     ...overrides,
   };
   const previous = Object.fromEntries(
@@ -55,7 +55,7 @@ test('production allows indexing before the canonical domain is transferred', as
 
 test('production allows indexing after the canonical domain is transferred', async () => {
   assert.deepEqual(
-    await robotsWithEnv({ VERCEL_PROJECT_PRODUCTION_URL: 'ai-toolkit.dev' }),
+    await robotsWithEnv({ KHULNASOFT_PROJECT_PRODUCTION_URL: 'ai-toolkit.dev' }),
     indexable,
   );
 });
@@ -63,15 +63,15 @@ test('production allows indexing after the canonical domain is transferred', asy
 test('the canonical URL can include its HTTPS scheme', async () => {
   assert.deepEqual(
     await robotsWithEnv({
-      NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: 'https://ai-toolkit.dev',
+      NEXT_PUBLIC_KHULNASOFT_PROJECT_PRODUCTION_URL: 'https://ai-toolkit.dev',
     }),
     indexable,
   );
 });
 
 test('non-production environments remain blocked with the production canonical URL', async () => {
-  for (const VERCEL_ENV of ['preview', 'development', undefined]) {
-    assert.deepEqual(await robotsWithEnv({ VERCEL_ENV }), blocked);
+  for (const KHULNASOFT_ENV of ['preview', 'development', undefined]) {
+    assert.deepEqual(await robotsWithEnv({ KHULNASOFT_ENV }), blocked);
   }
 });
 
@@ -84,8 +84,8 @@ test('production remains blocked without the expected canonical origin', async (
   ]) {
     assert.deepEqual(
       await robotsWithEnv({
-        VERCEL_PROJECT_PRODUCTION_URL: 'ai-toolkit.dev',
-        NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: canonicalUrl,
+        KHULNASOFT_PROJECT_PRODUCTION_URL: 'ai-toolkit.dev',
+        NEXT_PUBLIC_KHULNASOFT_PROJECT_PRODUCTION_URL: canonicalUrl,
       }),
       blocked,
     );

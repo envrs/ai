@@ -8,7 +8,7 @@ const blockedDomain = 'wikipedia.org';
 run(async () => {
   const result = await generateText({
     model: openai.responses('gpt-6-luna'),
-    prompt: 'What is the Vercel AI SDK? Use web search and cite your sources.',
+    prompt: 'What is the Khulnasoft AI SDK? Use web search and cite your sources.',
     tools: {
       web_search: openai.tools.webSearch({
         filters: {

@@ -13,7 +13,7 @@ description: Trace and monitor your ai-toolkit application with Respan
 
 ## Setup
 
-The ai-toolkit supports tracing via OpenTelemetry. With the `VercelAIInstrumentor` from `@respan/instrumentation-khulnasoft`, traces are exported to Respan automatically.
+The ai-toolkit supports tracing via OpenTelemetry. With the `KhulnasoftAIInstrumentor` from `@respan/instrumentation-khulnasoft`, traces are exported to Respan automatically.
 
 ### Install
 
@@ -39,12 +39,12 @@ Create `instrumentation.ts` at the root of your Next.js project:
 
 ```ts filename="instrumentation.ts"
 import { Respan } from '@respan/respan';
-import { VercelAIInstrumentor } from '@respan/instrumentation-khulnasoft';
+import { KhulnasoftAIInstrumentor } from '@respan/instrumentation-khulnasoft';
 
 export async function register() {
   const respan = new Respan({
     apiKey: process.env.RESPAN_API_KEY,
-    instrumentations: [new VercelAIInstrumentor()],
+    instrumentations: [new KhulnasoftAIInstrumentor()],
   });
   await respan.initialize();
 }
@@ -70,11 +70,11 @@ Initialize Respan at the top of your handler or entry point:
 
 ```ts
 import { Respan } from '@respan/respan';
-import { VercelAIInstrumentor } from '@respan/instrumentation-khulnasoft';
+import { KhulnasoftAIInstrumentor } from '@respan/instrumentation-khulnasoft';
 
 const respan = new Respan({
   apiKey: process.env.RESPAN_API_KEY,
-  instrumentations: [new VercelAIInstrumentor()],
+  instrumentations: [new KhulnasoftAIInstrumentor()],
 });
 await respan.initialize();
 ```

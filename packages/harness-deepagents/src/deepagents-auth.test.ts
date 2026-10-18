@@ -64,7 +64,7 @@ describe('resolveDeepAgentsEnv', () => {
 
   it('falls back to ambient OIDC token as the gateway key', () => {
     const env = resolveDeepAgentsEnv({
-      processEnv: { VERCEL_OIDC_TOKEN: 'oidc-token' },
+      processEnv: { KHULNASOFT_OIDC_TOKEN: 'oidc-token' },
     });
     expect(env.AI_GATEWAY_API_KEY).toBe('oidc-token');
   });
@@ -156,7 +156,7 @@ describe('resolveDeepAgentsAuthenticationMode', () => {
   it('resolves ambient Gateway credentials to Gateway auth', () => {
     expect(
       resolveDeepAgentsAuthenticationMode({
-        processEnv: { VERCEL_OIDC_TOKEN: 'oidc-token' },
+        processEnv: { KHULNASOFT_OIDC_TOKEN: 'oidc-token' },
       }),
     ).toBe('ai-gateway');
   });

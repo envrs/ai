@@ -36,14 +36,14 @@ import { openCode, createOpenCode } from '@ai-toolkit/harness-opencode';
 ```ts
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { openCode } from '@ai-toolkit/harness-opencode';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
 const agent = new HarnessAgent({
   harness: openCode,
   model: 'anthropic/claude-sonnet-4-6',
 });
 
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),
@@ -72,7 +72,7 @@ try {
 }
 ```
 
-To use this agent, ensure environment variables include `VERCEL_OIDC_TOKEN` for
+To use this agent, ensure environment variables include `KHULNASOFT_OIDC_TOKEN` for
 khulnasoft Sandbox, and one of the variables listed under [authentication](#authentication)
 for OpenCode.
 
@@ -153,7 +153,7 @@ Supported environment variables:
 
 - `AI_GATEWAY_API_KEY`
 - `AI_GATEWAY_BASE_URL`
-- `VERCEL_OIDC_TOKEN`
+- `KHULNASOFT_OIDC_TOKEN`
 - `ANTHROPIC_API_KEY`
 - `ANTHROPIC_AUTH_TOKEN`
 - `ANTHROPIC_BASE_URL`
@@ -195,7 +195,7 @@ OpenCode requires a network sandbox with at least one exposed port,
 e.g. `@ai-toolkit/sandbox-khulnasoft`:
 
 ```ts
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),

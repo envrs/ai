@@ -1,7 +1,7 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import {
-  createVercelNetworkSandboxSessionFromNativeSandbox,
-  createVercelSandboxSessionFromNativeSandbox,
+  createKhulnasoftNetworkSandboxSessionFromNativeSandbox,
+  createKhulnasoftSandboxSessionFromNativeSandbox,
 } from '@ai-toolkit/sandbox-vercel';
 import { Sandbox } from '@khulnasoft/sandbox';
 import { createCodexACP } from './_create';
@@ -15,7 +15,7 @@ run(async () => {
     timeout: 10 * 60 * 1000,
   });
   const sandboxSession =
-    createVercelNetworkSandboxSessionFromNativeSandbox(sandbox);
+    createKhulnasoftNetworkSandboxSessionFromNativeSandbox(sandbox);
   const portEndpoint = await sandboxSession.getPortEndpoint({
     port: 4000,
     protocol: 'ws',
@@ -27,7 +27,7 @@ run(async () => {
   let session: HarnessAgentSession | undefined;
   try {
     session = await agent.createSession({
-      sandboxSession: createVercelSandboxSessionFromNativeSandbox(sandbox),
+      sandboxSession: createKhulnasoftSandboxSessionFromNativeSandbox(sandbox),
     });
     const result = await agent.stream({
       session,

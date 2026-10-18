@@ -1,5 +1,5 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
-import { resumeVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { resumeKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
 import {
   createACPHandoffSandbox,
   getACPHandoffArguments,
@@ -80,7 +80,7 @@ run(async () => {
   }
 
   const saved = await readACPResumeHandoffState({ statePath });
-  const sandboxSession = await resumeVercelNetworkSandboxSession({
+  const sandboxSession = await resumeKhulnasoftNetworkSandboxSession({
     sandboxId: saved.sandboxName,
   });
   let session: HarnessAgentSession | undefined;
@@ -107,7 +107,7 @@ run(async () => {
   }
   await removeACPHandoffState({ statePath });
   console.log(
-    'Verified cold ACP restoration in a replacement Vercel Sandbox process with a freshly brokered Cursor credential.',
+    'Verified cold ACP restoration in a replacement Khulnasoft Sandbox process with a freshly brokered Cursor credential.',
   );
   process.exit(0);
 });

@@ -2,15 +2,15 @@ import { streamText } from 'ai';
 import { gateway } from '@ai-toolkit/gateway';
 import { run } from '../../lib/run';
 
-// An integration test for Vercel AI Gateway provider authentication. There are
+// An integration test for Khulnasoft AI Gateway provider authentication. There are
 // two authentication methods: OIDC and API key. Proper testing requires that
 // the developer has set a valid OIDC token and API key in the
 // `examples/ai-functions/.env` file (or otherwise in the environment somehow).
 
 const VALID_OIDC_TOKEN = (() => {
-  const token = process.env.VERCEL_OIDC_TOKEN;
+  const token = process.env.KHULNASOFT_OIDC_TOKEN;
   if (!token) {
-    throw new Error('VERCEL_OIDC_TOKEN environment variable is required');
+    throw new Error('KHULNASOFT_OIDC_TOKEN environment variable is required');
   }
   return token;
 })();
@@ -29,7 +29,7 @@ const testScenarios = [
   {
     name: 'no auth at all',
     setupEnv: () => {
-      delete process.env.VERCEL_OIDC_TOKEN;
+      delete process.env.KHULNASOFT_OIDC_TOKEN;
       delete process.env.AI_GATEWAY_API_KEY;
     },
     expectSuccess: false,
@@ -37,7 +37,7 @@ const testScenarios = [
   {
     name: 'valid oidc, invalid api key',
     setupEnv: () => {
-      process.env.VERCEL_OIDC_TOKEN = VALID_OIDC_TOKEN;
+      process.env.KHULNASOFT_OIDC_TOKEN = VALID_OIDC_TOKEN;
       process.env.AI_GATEWAY_API_KEY = INVALID_API_KEY;
     },
     expectSuccess: false,
@@ -45,7 +45,7 @@ const testScenarios = [
   {
     name: 'invalid oidc, valid api key',
     setupEnv: () => {
-      process.env.VERCEL_OIDC_TOKEN = INVALID_OIDC_TOKEN;
+      process.env.KHULNASOFT_OIDC_TOKEN = INVALID_OIDC_TOKEN;
       process.env.AI_GATEWAY_API_KEY = VALID_API_KEY;
     },
     expectSuccess: true,
@@ -54,7 +54,7 @@ const testScenarios = [
   {
     name: 'no oidc, invalid api key',
     setupEnv: () => {
-      delete process.env.VERCEL_OIDC_TOKEN;
+      delete process.env.KHULNASOFT_OIDC_TOKEN;
       process.env.AI_GATEWAY_API_KEY = INVALID_API_KEY;
     },
     expectSuccess: false,
@@ -62,7 +62,7 @@ const testScenarios = [
   {
     name: 'no oidc, valid api key',
     setupEnv: () => {
-      delete process.env.VERCEL_OIDC_TOKEN;
+      delete process.env.KHULNASOFT_OIDC_TOKEN;
       process.env.AI_GATEWAY_API_KEY = VALID_API_KEY;
     },
     expectSuccess: true,
@@ -71,7 +71,7 @@ const testScenarios = [
   {
     name: 'valid oidc, valid api key',
     setupEnv: () => {
-      process.env.VERCEL_OIDC_TOKEN = VALID_OIDC_TOKEN;
+      process.env.KHULNASOFT_OIDC_TOKEN = VALID_OIDC_TOKEN;
       process.env.AI_GATEWAY_API_KEY = VALID_API_KEY;
     },
     expectSuccess: true,
@@ -80,7 +80,7 @@ const testScenarios = [
   {
     name: 'valid oidc, no api key',
     setupEnv: () => {
-      process.env.VERCEL_OIDC_TOKEN = VALID_OIDC_TOKEN;
+      process.env.KHULNASOFT_OIDC_TOKEN = VALID_OIDC_TOKEN;
       delete process.env.AI_GATEWAY_API_KEY;
     },
     expectSuccess: true,
@@ -89,7 +89,7 @@ const testScenarios = [
   {
     name: 'invalid oidc, no api key',
     setupEnv: () => {
-      process.env.VERCEL_OIDC_TOKEN = INVALID_OIDC_TOKEN;
+      process.env.KHULNASOFT_OIDC_TOKEN = INVALID_OIDC_TOKEN;
       delete process.env.AI_GATEWAY_API_KEY;
     },
     expectSuccess: false,
@@ -97,7 +97,7 @@ const testScenarios = [
   {
     name: 'invalid oidc, invalid api key',
     setupEnv: () => {
-      process.env.VERCEL_OIDC_TOKEN = INVALID_OIDC_TOKEN;
+      process.env.KHULNASOFT_OIDC_TOKEN = INVALID_OIDC_TOKEN;
       process.env.AI_GATEWAY_API_KEY = INVALID_API_KEY;
     },
     expectSuccess: false,

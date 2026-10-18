@@ -5,7 +5,7 @@ import {
   type Experimental_SandboxProcess,
 } from '@ai-toolkit/provider-utils';
 import { type Experimental_SandboxSession as SandboxSession } from 'ai';
-import type { Command, Sandbox as VercelSandboxSDK } from '@khulnasoft/sandbox';
+import type { Command, Sandbox as KhulnasoftSandboxSDK } from '@khulnasoft/sandbox';
 import {
   bytesToStream,
   collectStream,
@@ -14,10 +14,10 @@ import {
 
 const rootDirectory = '/vercel/sandbox';
 
-export class VercelSandboxSession implements SandboxSession {
+export class KhulnasoftSandboxSession implements SandboxSession {
   constructor(
     public readonly sandbox: Awaited<
-      ReturnType<typeof VercelSandboxSDK.create>
+      ReturnType<typeof KhulnasoftSandboxSDK.create>
     >,
   ) {}
 
@@ -181,7 +181,7 @@ export class VercelSandboxSession implements SandboxSession {
   }
 
   get description() {
-    return `Vercel Sandbox name: ${this.sandbox.name}\nRoot directory: ${rootDirectory}`;
+    return `Khulnasoft Sandbox name: ${this.sandbox.name}\nRoot directory: ${rootDirectory}`;
   }
 }
 

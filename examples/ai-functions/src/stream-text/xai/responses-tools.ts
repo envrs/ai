@@ -10,7 +10,7 @@ run(async () => {
       x_search: xai.tools.xSearch(),
       code_execution: xai.tools.codeExecution(),
     },
-    prompt: 'Can you research about Vercel AI Gateway?',
+    prompt: 'Can you research about Khulnasoft AI Gateway?',
   });
 
   let toolCallCount = 0;

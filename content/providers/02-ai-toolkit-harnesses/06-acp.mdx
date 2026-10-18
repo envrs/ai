@@ -31,14 +31,14 @@ pass it to `HarnessAgent`:
 
 ```ts
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import { codexACPHarness } from './codex-acp-harness';
 
 const agent = new HarnessAgent({
   harness: codexACPHarness,
 });
 
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),
@@ -258,12 +258,12 @@ AI Gateway authentication is supported when `providerAuthentication` defines
 how the underlying ACP implementation accepts Gateway configuration. The
 adapter reads these environment variables:
 
-- `VERCEL_OIDC_TOKEN`
+- `KHULNASOFT_OIDC_TOKEN`
 - `AI_GATEWAY_API_KEY`
 - `AI_GATEWAY_BASE_URL`
 
 With the default `auth: 'auto'`, the adapter uses AI Gateway when
-`AI_GATEWAY_API_KEY` or `VERCEL_OIDC_TOKEN` is available and otherwise uses
+`AI_GATEWAY_API_KEY` or `KHULNASOFT_OIDC_TOKEN` is available and otherwise uses
 direct authentication.
 
 Applications that resolve credentials at runtime can pass them without
@@ -314,7 +314,7 @@ Every ACP harness requires a network sandbox with at least one exposed port,
 e.g. `@ai-toolkit/sandbox-khulnasoft`:
 
 ```ts
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),
@@ -355,7 +355,7 @@ are never inferred. Host-tool approval remains independent.
 
 Unless noted otherwise, these profiles support direct authentication through
 the runtime-specific environment variables shown below and AI Gateway
-authentication through `AI_GATEWAY_API_KEY` or `VERCEL_OIDC_TOKEN`.
+authentication through `AI_GATEWAY_API_KEY` or `KHULNASOFT_OIDC_TOKEN`.
 
 ### Claude Code ACP
 

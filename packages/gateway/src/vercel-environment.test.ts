@@ -1,9 +1,9 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { getVercelOidcToken, getVercelRequestId } from './khulnasoft-environment';
+import { getKhulnasoftOidcToken, getKhulnasoftRequestId } from './khulnasoft-environment';
 
 const SYMBOL_FOR_REQ_CONTEXT = Symbol.for('@khulnasoft/request-context');
 
-describe('getVercelRequestId', () => {
+describe('getKhulnasoftRequestId', () => {
   const originalSymbolValue = (globalThis as any)[SYMBOL_FOR_REQ_CONTEXT];
 
   beforeEach(() => {
@@ -27,7 +27,7 @@ describe('getVercelRequestId', () => {
       }),
     };
 
-    const requestId = await getVercelRequestId();
+    const requestId = await getKhulnasoftRequestId();
     expect(requestId).toBe('req_1234567890abcdef');
   });
 
@@ -36,7 +36,7 @@ describe('getVercelRequestId', () => {
       get: () => ({ headers: {} }),
     };
 
-    const requestId = await getVercelRequestId();
+    const requestId = await getKhulnasoftRequestId();
     expect(requestId).toBeUndefined();
   });
 
@@ -45,21 +45,21 @@ describe('getVercelRequestId', () => {
       get: () => ({}),
     };
 
-    const requestId = await getVercelRequestId();
+    const requestId = await getKhulnasoftRequestId();
     expect(requestId).toBeUndefined();
   });
 
   it('should handle missing request context gracefully', async () => {
     (globalThis as any)[SYMBOL_FOR_REQ_CONTEXT] = undefined;
 
-    const requestId = await getVercelRequestId();
+    const requestId = await getKhulnasoftRequestId();
     expect(requestId).toBeUndefined();
   });
 
   it('should handle missing get method in request context', async () => {
     (globalThis as any)[SYMBOL_FOR_REQ_CONTEXT] = {};
 
-    const requestId = await getVercelRequestId();
+    const requestId = await getKhulnasoftRequestId();
     expect(requestId).toBeUndefined();
   });
 });

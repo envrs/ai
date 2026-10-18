@@ -15,7 +15,7 @@ npm i ai zod @ai-toolkit/harness @ai-toolkit/harness-claude-code @ai-toolkit/san
 ```ts
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { claudeCode } from '@ai-toolkit/harness-claude-code';
-import { createVercelNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import { tool } from 'ai';
 import { z } from 'zod/v4';
 
@@ -54,7 +54,7 @@ const agent = new HarnessAgent({
   },
 });
 
-const sandboxSession = await createVercelNetworkSandboxSession({
+const sandboxSession = await createKhulnasoftNetworkSandboxSession({
   runtime: 'node24',
   ports: [4000],
   template: await agent.getSandboxTemplate(),

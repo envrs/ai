@@ -7,34 +7,34 @@ import {
 } from '@ai-toolkit/harness';
 import type { Experimental_SandboxSession as SandboxSession } from '@ai-toolkit/provider-utils';
 import type { Sandbox } from '@khulnasoft/sandbox';
-import { VercelNetworkPolicyManager } from './khulnasoft-network-policy-manager';
-import { VercelSandboxSession } from './khulnasoft-sandbox-session';
+import { KhulnasoftNetworkPolicyManager } from './khulnasoft-network-policy-manager';
+import { KhulnasoftSandboxSession } from './khulnasoft-sandbox-session';
 
-const VERCEL_PROVIDER_ID = 'khulnasoft-sandbox';
+const KHULNASOFT_PROVIDER_ID = 'khulnasoft-sandbox';
 
 /**
  * `HarnessV1NetworkSandboxSession` backed by a `@khulnasoft/sandbox` `Sandbox`. The
  * native adaptation and sandbox creation functions return one of these. It
- * extends {@link VercelSandboxSession} with ports, lifecycle, and network
+ * extends {@link KhulnasoftSandboxSession} with ports, lifecycle, and network
  * policy. Explicit `stop()` and `destroy()` calls delegate to the native
  * sandbox unless the session was wrapped through the compatibility provider's
  * existing-sandbox path, where those calls are intentionally no-ops.
  */
-export class VercelNetworkSandboxSession
-  extends VercelSandboxSession
+export class KhulnasoftNetworkSandboxSession
+  extends KhulnasoftSandboxSession
   implements HarnessV1NetworkSandboxSession
 {
   readonly id: string;
   readonly defaultWorkingDirectory: string;
   private readonly ownsLifecycle: boolean;
-  readonly #networkPolicyManager: VercelNetworkPolicyManager;
+  readonly #networkPolicyManager: KhulnasoftNetworkPolicyManager;
 
   constructor(input: { sandbox: Sandbox; ownsLifecycle: boolean }) {
     super(input.sandbox);
     this.ownsLifecycle = input.ownsLifecycle;
     this.id = input.sandbox.name;
     this.defaultWorkingDirectory = input.sandbox.currentSession().cwd;
-    this.#networkPolicyManager = new VercelNetworkPolicyManager({
+    this.#networkPolicyManager = new KhulnasoftNetworkPolicyManager({
       sandbox: input.sandbox,
     });
   }
@@ -44,7 +44,7 @@ export class VercelNetworkSandboxSession
   }
 
   restricted(): SandboxSession {
-    return new VercelSandboxSession(this.sandbox);
+    return new KhulnasoftSandboxSession(this.sandbox);
   }
 
   getPortEndpoint = async (options: {
@@ -54,7 +54,7 @@ export class VercelNetworkSandboxSession
     const exposedPorts = this.ports;
     if (!exposedPorts.includes(options.port)) {
       throw new HarnessCapabilityUnsupportedError({
-        harnessId: VERCEL_PROVIDER_ID,
+        harnessId: KHULNASOFT_PROVIDER_ID,
         message: `Port ${options.port} is not exposed on this sandbox. Exposed ports: [${exposedPorts.join(', ')}].`,
       });
     }

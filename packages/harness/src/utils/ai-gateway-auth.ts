@@ -9,7 +9,7 @@ export function getAiGatewayAuthFromEnv({
   baseUrl: string;
 } {
   return {
-    apiKey: env.AI_GATEWAY_API_KEY || env.VERCEL_OIDC_TOKEN || undefined,
+    apiKey: env.AI_GATEWAY_API_KEY || env.KHULNASOFT_OIDC_TOKEN || undefined,
     baseUrl: env.AI_GATEWAY_BASE_URL ?? DEFAULT_AI_GATEWAY_BASE_URL,
   };
 }

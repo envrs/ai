@@ -100,8 +100,8 @@ you do not derive one, persist the returned `sandboxSession.id` separately.
 ```ts filename='app/api/chat/session-store.ts'
 import type { HarnessAgentResumeSessionState } from '@ai-toolkit/harness/agent';
 import {
-  createVercelNetworkSandboxSession,
-  resumeVercelNetworkSandboxSession,
+  createKhulnasoftNetworkSandboxSession,
+  resumeKhulnasoftNetworkSandboxSession,
 } from '@ai-toolkit/sandbox-khulnasoft';
 
 const states: Record<string, HarnessAgentResumeSessionState | undefined> = {};
@@ -116,8 +116,8 @@ export async function resumeOrCreateSession({
   const resumeFrom = states[chatId];
   const sandboxId = `harness-${chatId}`;
   const sandboxSession = resumeFrom
-    ? await resumeVercelNetworkSandboxSession({ sandboxId })
-    : await createVercelNetworkSandboxSession({
+    ? await resumeKhulnasoftNetworkSandboxSession({ sandboxId })
+    : await createKhulnasoftNetworkSandboxSession({
         sandboxId,
         runtime: 'node24',
         ports: [4000],

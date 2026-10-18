@@ -1,5 +1,5 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
-import { createVercelNetworkSandboxSessionFromNativeSandbox } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSessionFromNativeSandbox } from '@ai-toolkit/sandbox-vercel';
 import { Sandbox } from '@khulnasoft/sandbox';
 import { createCodexACP } from './_create';
 import { printFullStream } from '../../lib/print-full-stream';
@@ -15,7 +15,7 @@ run(async () => {
     harness: createCodexACP(),
   });
   const sandboxSession =
-    createVercelNetworkSandboxSessionFromNativeSandbox(sandbox);
+    createKhulnasoftNetworkSandboxSessionFromNativeSandbox(sandbox);
 
   let session: HarnessAgentSession | undefined;
   try {

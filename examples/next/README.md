@@ -29,7 +29,7 @@ cp examples/next/.env.local.example examples/next/.env.local
 Then set these values in `examples/next/.env.local`:
 
 - `AI_GATEWAY_API_KEY`: authenticates requests to the AI Gateway. A
-  `VERCEL_OIDC_TOKEN` can be used instead.
+  `KHULNASOFT_OIDC_TOKEN` can be used instead.
 - `REDIS_URL`: connects `resumable-stream` to Redis.
 
 ## Run locally

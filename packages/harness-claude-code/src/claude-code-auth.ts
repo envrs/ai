@@ -78,7 +78,7 @@ export type ClaudeCodeAuthenticationMode = HarnessV1Authentication;
  *
  *   1. An explicit authentication mode pins the selected route.
  *   2. Auto-detect from the host process env: gateway first
- *      (`AI_GATEWAY_API_KEY` / `VERCEL_OIDC_TOKEN`), then direct
+ *      (`AI_GATEWAY_API_KEY` / `KHULNASOFT_OIDC_TOKEN`), then direct
  *      (`ANTHROPIC_API_KEY` / `ANTHROPIC_AUTH_TOKEN`).
  */
 export type ResolveClaudeCodeEnvOptions = {

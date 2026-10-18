@@ -21,7 +21,7 @@ function clearAmbientProviderCredentials() {
       key.endsWith('_API_KEY') ||
       key.endsWith('_BASE_URL') ||
       key === 'ANTHROPIC_AUTH_TOKEN' ||
-      key === 'VERCEL_OIDC_TOKEN'
+      key === 'KHULNASOFT_OIDC_TOKEN'
     ) {
       vi.stubEnv(key, undefined);
     }
@@ -89,7 +89,7 @@ describe('resolvePiEnv', () => {
       resolvePiEnv({
         options: {
           AI_GATEWAY_BASE_URL: 'https://gw.example',
-          VERCEL_OIDC_TOKEN: 'oidc-env',
+          KHULNASOFT_OIDC_TOKEN: 'oidc-env',
         },
         env: {},
       }),
@@ -130,11 +130,11 @@ describe('resolvePiEnv', () => {
     });
   });
 
-  it('falls back to ambient VERCEL_OIDC_TOKEN', () => {
+  it('falls back to ambient KHULNASOFT_OIDC_TOKEN', () => {
     expect(
       resolvePiEnv({
         options: undefined,
-        env: { VERCEL_OIDC_TOKEN: 'oidc' },
+        env: { KHULNASOFT_OIDC_TOKEN: 'oidc' },
       }),
     ).toEqual({
       AI_GATEWAY_API_KEY: 'oidc',
@@ -600,7 +600,7 @@ describe('registerPiProviders', () => {
 
   it('registers nothing when ai-gateway mode has no gateway credentials', async () => {
     vi.stubEnv('AI_GATEWAY_API_KEY', '');
-    vi.stubEnv('VERCEL_OIDC_TOKEN', '');
+    vi.stubEnv('KHULNASOFT_OIDC_TOKEN', '');
     vi.stubEnv('OPENAI_API_KEY', 'sk-oai');
 
     const resolvedEnv = resolvePiEnv({
@@ -651,7 +651,7 @@ describe('registerPiProviders', () => {
     vi.stubEnv('MISTRAL_API_KEY', 'mk');
     vi.stubEnv('MISTRAL_BASE_URL', 'https://api.mistral.example');
     vi.stubEnv('AI_GATEWAY_API_KEY', '');
-    vi.stubEnv('VERCEL_OIDC_TOKEN', '');
+    vi.stubEnv('KHULNASOFT_OIDC_TOKEN', '');
 
     const resolvedEnv = resolvePiEnv({
       options: 'auto',

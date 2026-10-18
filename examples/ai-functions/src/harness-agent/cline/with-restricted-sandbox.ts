@@ -1,8 +1,8 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import { createCline } from './_create';
 import {
-  createVercelNetworkSandboxSessionFromNativeSandbox,
-  createVercelSandboxSessionFromNativeSandbox,
+  createKhulnasoftNetworkSandboxSessionFromNativeSandbox,
+  createKhulnasoftSandboxSessionFromNativeSandbox,
 } from '@ai-toolkit/sandbox-vercel';
 import { Sandbox } from '@khulnasoft/sandbox';
 import { printFullStream } from '../../lib/print-full-stream';
@@ -21,13 +21,13 @@ run(async () => {
   });
 
   const sandboxSession =
-    createVercelNetworkSandboxSessionFromNativeSandbox(sandbox);
+    createKhulnasoftNetworkSandboxSessionFromNativeSandbox(sandbox);
 
   let exitCode = 0;
   let session: HarnessAgentSession | undefined;
   try {
     session = await agent.createSession({
-      sandboxSession: createVercelSandboxSessionFromNativeSandbox(sandbox),
+      sandboxSession: createKhulnasoftSandboxSessionFromNativeSandbox(sandbox),
     });
     const result = await agent.stream({
       session,

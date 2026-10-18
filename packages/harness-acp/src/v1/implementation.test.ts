@@ -627,7 +627,7 @@ describe('ACP implementation', () => {
       identity({
         providerAuthentication: {
           ...environmentGateway,
-          credentialSource: 'VERCEL_OIDC_TOKEN',
+          credentialSource: 'KHULNASOFT_OIDC_TOKEN',
         },
       }),
     ).not.toBe(gatewayIdentity);

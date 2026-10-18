@@ -4,8 +4,8 @@ import {
 } from '@ai-toolkit/harness/agent';
 import { createDeepAgents } from './_create';
 import {
-  createVercelNetworkSandboxSession,
-  resumeVercelNetworkSandboxSession,
+  createKhulnasoftNetworkSandboxSession,
+  resumeKhulnasoftNetworkSandboxSession,
 } from '@ai-toolkit/sandbox-vercel';
 import { mintBridgeToken } from '../../lib/mint-bridge-token';
 import { printFullStream } from '../../lib/print-full-stream';
@@ -17,7 +17,7 @@ import { run } from '../../lib/run';
 run(async () => {
   const harness = createDeepAgents({ mintBridgeToken });
   const sandboxName = `harness-${crypto.randomUUID()}`;
-  const sandboxSession = await createVercelNetworkSandboxSession({
+  const sandboxSession = await createKhulnasoftNetworkSandboxSession({
     sandboxId: sandboxName,
     runtime: 'node24',
     ports: [4000],
@@ -44,7 +44,7 @@ run(async () => {
     }
 
     {
-      activeSandboxSession = await resumeVercelNetworkSandboxSession({
+      activeSandboxSession = await resumeKhulnasoftNetworkSandboxSession({
         sandboxId: sandboxName,
       });
       const agent = new HarnessAgent({ harness });

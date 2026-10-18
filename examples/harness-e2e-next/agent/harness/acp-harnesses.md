@@ -4,7 +4,7 @@ These examples keep runtime-specific ACP configuration next to the consuming
 application. Each runtime has one `createACP` profile that declares its direct
 credential environment variables and its AI Gateway configuration:
 
-- `AI_GATEWAY_API_KEY` or `VERCEL_OIDC_TOKEN` selects AI Gateway automatically
+- `AI_GATEWAY_API_KEY` or `KHULNASOFT_OIDC_TOKEN` selects AI Gateway automatically
   and `AI_GATEWAY_BASE_URL` overrides its endpoint.
 - Without either Gateway credential, the profile forwards only the runtime's
   configured direct credentials.
