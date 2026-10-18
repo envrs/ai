@@ -1,10 +1,10 @@
-import { ai-toolkitError } from './ai-toolkit-error';
+import { AIToolkitError } from './ai-toolkit-error';
 
 const name = 'AI_TooManyEmbeddingValuesForCallError';
 const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class TooManyEmbeddingValuesForCallError extends ai-toolkitError {
+export class TooManyEmbeddingValuesForCallError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly provider: string;
@@ -35,6 +35,6 @@ export class TooManyEmbeddingValuesForCallError extends ai-toolkitError {
   static isInstance(
     error: unknown,
   ): error is TooManyEmbeddingValuesForCallError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

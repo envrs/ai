@@ -48,7 +48,7 @@ it('infers aliases and returns v4 decision models', () => {
   registry.decisionModel('missing|route');
   // @ts-expect-error - wrong separator
   registry.decisionModel('custom:route');
-  globalThis.ai-toolkit_DEFAULT_PROVIDER = provider;
+  globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = provider;
 });
 
 it('preserves question and Choice inference for string models and reused readonly questions', async () => {

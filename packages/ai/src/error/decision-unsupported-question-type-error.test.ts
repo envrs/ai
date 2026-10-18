@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
-  ai-toolkitError,
+  AIToolkitError,
   Experimental_DecisionUnsupportedQuestionTypeError as DecisionUnsupportedQuestionTypeError,
 } from './index';
 
@@ -16,7 +16,7 @@ describe('DecisionUnsupportedQuestionTypeError', () => {
     const error = new DecisionUnsupportedQuestionTypeError(options);
 
     expect(error).toBeInstanceOf(Error);
-    expect(ai-toolkitError.isInstance(error)).toBe(true);
+    expect(AIToolkitError.isInstance(error)).toBe(true);
     expect(DecisionUnsupportedQuestionTypeError.isInstance(error)).toBe(true);
     expect(error).toMatchObject({
       ...options,

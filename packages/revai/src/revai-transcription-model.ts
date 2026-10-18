@@ -1,5 +1,5 @@
 import {
-  ai-toolkitError,
+  AIToolkitError,
   type TranscriptionModelV4,
   type SharedV4Warning,
 } from '@ai-toolkit/provider';
@@ -158,7 +158,7 @@ export class RevaiTranscriptionModel implements TranscriptionModelV4 {
     });
 
     if (submissionResponse.status === 'failed') {
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         message: 'Failed to submit transcription job to Rev.ai',
         name: 'TranscriptionJobSubmissionFailed',
         cause: submissionResponse,
@@ -174,7 +174,7 @@ export class RevaiTranscriptionModel implements TranscriptionModelV4 {
     while (jobResponse.status !== 'transcribed') {
       // Check if we've exceeded the timeout
       if (Date.now() - startTime > timeoutMs) {
-        throw new ai-toolkitError({
+        throw new AIToolkitError({
           message: 'Transcription job polling timed out',
           name: 'TranscriptionJobPollingTimedOut',
           cause: submissionResponse,
@@ -200,7 +200,7 @@ export class RevaiTranscriptionModel implements TranscriptionModelV4 {
       jobResponse = pollingResult.value;
 
       if (jobResponse.status === 'failed') {
-        throw new ai-toolkitError({
+        throw new AIToolkitError({
           message: 'Transcription job failed',
           name: 'TranscriptionJobFailed',
           cause: jobResponse,

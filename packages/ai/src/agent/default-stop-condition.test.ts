@@ -32,7 +32,7 @@ describe.each([
 
   beforeEach(() => {
     logger.mockClear();
-    vi.stubGlobal('ai-toolkit_LOG_WARNINGS', logger);
+    vi.stubGlobal('AI_TOOLKIT_LOG_WARNINGS', logger);
     finishAtStep = Infinity;
 
     function response(step: number): LanguageModelV4GenerateResult {
@@ -191,7 +191,7 @@ describe.each([
   });
 
   it('respects disabled warning logging', async () => {
-    vi.stubGlobal('ai-toolkit_LOG_WARNINGS', false);
+    vi.stubGlobal('AI_TOOLKIT_LOG_WARNINGS', false);
     const consoleWarn = vi.spyOn(console, 'warn').mockImplementation(() => {});
     try {
       expect(await run()).toHaveLength(limit);

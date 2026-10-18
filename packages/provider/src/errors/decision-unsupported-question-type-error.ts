@@ -1,4 +1,4 @@
-import { ai-toolkitError } from './ai-toolkit-error';
+import { AIToolkitError } from './ai-toolkit-error';
 
 const name = 'AI_DecisionUnsupportedQuestionTypeError';
 const marker = `khulnasoft.ai.error.${name}`;
@@ -7,7 +7,7 @@ const symbol = Symbol.for(marker);
 /**
  * A decision model does not support the type of a requested question.
  */
-export class DecisionUnsupportedQuestionTypeError extends ai-toolkitError {
+export class DecisionUnsupportedQuestionTypeError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly questionId: string;
@@ -39,6 +39,6 @@ export class DecisionUnsupportedQuestionTypeError extends ai-toolkitError {
   static isInstance(
     error: unknown,
   ): error is DecisionUnsupportedQuestionTypeError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

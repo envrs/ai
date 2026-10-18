@@ -1,4 +1,4 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 
 const name = 'AI_MCPClientOAuthError';
 const marker = `khulnasoft.ai.error.${name}`;
@@ -7,7 +7,7 @@ const symbol = Symbol.for(marker);
 /**
  * An error occurred with the MCP client within the OAuth flow.
  */
-export class MCPClientOAuthError extends ai-toolkitError {
+export class MCPClientOAuthError extends AIToolkitError {
   private readonly [symbol] = true;
 
   constructor({
@@ -23,7 +23,7 @@ export class MCPClientOAuthError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is MCPClientOAuthError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }
 export class ServerError extends MCPClientOAuthError {
@@ -56,7 +56,7 @@ export class AuthorizationServerMismatchError extends MCPClientOAuthError {
   }
 
   static isInstance(error: unknown): error is AuthorizationServerMismatchError {
-    return ai-toolkitError.hasMarker(error, mismatchMarker);
+    return AIToolkitError.hasMarker(error, mismatchMarker);
   }
 }
 

@@ -1,10 +1,10 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 
 const name = 'AI_InvalidArgumentError';
 const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class InvalidArgumentError extends ai-toolkitError {
+export class InvalidArgumentError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly parameter: string;
@@ -29,6 +29,6 @@ export class InvalidArgumentError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is InvalidArgumentError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

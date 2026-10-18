@@ -1,4 +1,4 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 import { createProviderStreamError } from '@ai-toolkit/provider-utils';
 import { describe, expect, it } from 'vitest';
 import { StreamProviderError } from '../error/stream-provider-error';
@@ -221,7 +221,7 @@ describe('normalizeStreamProviderError', () => {
       message: 'existing SDK error',
     };
 
-    expect(ai-toolkitError.isInstance(error)).toBe(true);
+    expect(AIToolkitError.isInstance(error)).toBe(true);
     expect(normalizeStreamProviderError(error)).toBe(error);
   });
 

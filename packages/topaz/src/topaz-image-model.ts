@@ -1,5 +1,5 @@
 import {
-  ai-toolkitError,
+  AIToolkitError,
   InvalidArgumentError,
   InvalidResponseDataError,
   type ImageModelV4,
@@ -334,7 +334,7 @@ export class TopazImageModel implements ImageModelV4 {
       }
 
       if (status.status === 'Failed' || status.status === 'Cancelled') {
-        throw new ai-toolkitError({
+        throw new AIToolkitError({
           name: 'TOPAZ_IMAGE_ENHANCEMENT_FAILED',
           message: `Topaz image enhancement ${status.status.toLowerCase()} for process ${processId}.`,
         });
@@ -342,7 +342,7 @@ export class TopazImageModel implements ImageModelV4 {
 
       if (Date.now() + pollIntervalMillis > deadline) {
         await this.cancelQuietly(processId, headers ?? {});
-        throw new ai-toolkitError({
+        throw new AIToolkitError({
           name: 'TOPAZ_IMAGE_ENHANCEMENT_TIMEOUT',
           message:
             `Topaz image enhancement did not finish within ${pollTimeoutMillis}ms ` +

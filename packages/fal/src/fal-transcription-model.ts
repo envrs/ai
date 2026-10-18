@@ -1,5 +1,5 @@
 import {
-  ai-toolkitError,
+  AIToolkitError,
   type TranscriptionModelV4,
   type SharedV4Warning,
 } from '@ai-toolkit/provider';
@@ -197,7 +197,7 @@ export class FalTranscriptionModel implements TranscriptionModelV4 {
 
       // Check if we've exceeded the timeout
       if (Date.now() - startTime > timeoutMs) {
-        throw new ai-toolkitError({
+        throw new AIToolkitError({
           message: 'Transcription request timed out after 60 seconds',
           name: 'TranscriptionRequestTimedOut',
           cause: response,

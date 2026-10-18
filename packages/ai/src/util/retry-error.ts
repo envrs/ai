@@ -1,4 +1,4 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 
 const name = 'AI_RetryError';
 const marker = `khulnasoft.ai.error.${name}`;
@@ -9,7 +9,7 @@ export type RetryErrorReason =
   | 'errorNotRetryable'
   | 'abort';
 
-export class RetryError extends ai-toolkitError {
+export class RetryError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   // note: property order determines debugging output
@@ -36,6 +36,6 @@ export class RetryError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is RetryError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

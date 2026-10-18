@@ -127,7 +127,7 @@ describe('string model ids', () => {
   const videoModel = new MockVideoModelV4();
 
   beforeEach(() => {
-    globalThis.ai-toolkit_DEFAULT_PROVIDER = customProvider({
+    globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = customProvider({
       languageModels: { language: languageModel },
       embeddingModels: { embedding: embeddingModel },
       imageModels: { image: imageModel },
@@ -139,7 +139,7 @@ describe('string model ids', () => {
   });
 
   afterEach(() => {
-    delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
+    delete globalThis.AI_TOOLKIT_DEFAULT_PROVIDER;
   });
 
   it('should resolve string model ids through the global default provider', () => {

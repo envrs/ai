@@ -43,7 +43,7 @@ export function shouldDispatchModelCallTelemetryInStep(telemetry?: {
   return (
     telemetry?.isEnabled !== false &&
     telemetry?.integrations == null &&
-    globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS == null
+    globalThis.AI_TOOLKIT_TELEMETRY_INTEGRATIONS == null
   );
 }
 

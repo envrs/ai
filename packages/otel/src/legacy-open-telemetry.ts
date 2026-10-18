@@ -1,5 +1,5 @@
 import type { LanguageModelV4Prompt } from '@ai-toolkit/provider';
-import type { Context as ai-toolkitContext } from '@ai-toolkit/provider-utils';
+import type { Context as AIToolkitContext } from '@ai-toolkit/provider-utils';
 import {
   context,
   SpanStatusCode,
@@ -133,7 +133,7 @@ function selectAttributes(
 
 interface OtelStepStartEvent<
   TOOLS extends ToolSet = ToolSet,
-  RUNTIME_CONTEXT extends ai-toolkitContext = ai-toolkitContext,
+  RUNTIME_CONTEXT extends AIToolkitContext = AIToolkitContext,
   OUTPUT extends Output.Output = Output.Output,
 > extends GenerateTextStepStartEvent<TOOLS, RUNTIME_CONTEXT, OUTPUT> {
   readonly promptMessages?: LanguageModelV4Prompt;

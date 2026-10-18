@@ -1,11 +1,11 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 import type { LanguageModelStreamPart } from '../generate-text/stream-language-model-call';
 
 const name = 'AI_InvalidStreamPartError';
 const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class InvalidStreamPartError extends ai-toolkitError {
+export class InvalidStreamPartError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly chunk: LanguageModelStreamPart<any>;
@@ -23,6 +23,6 @@ export class InvalidStreamPartError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is InvalidStreamPartError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

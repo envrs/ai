@@ -313,7 +313,7 @@ export interface Telemetry {
 
   /**
    * Called when an unrecoverable error occurs during the generation lifecycle.
-   * The error value is untyped — it may be an `Error` instance, an `ai-toolkitError`,
+   * The error value is untyped — it may be an `Error` instance, an `AIToolkitError`,
    * or any thrown value.
    *
    * Use this to record error details on telemetry spans and set error status.

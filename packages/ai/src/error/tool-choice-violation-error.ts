@@ -1,5 +1,5 @@
 import {
-  ai-toolkitError,
+  AIToolkitError,
   type LanguageModelV4Content,
   type LanguageModelV4ToolChoice,
 } from '@ai-toolkit/provider';
@@ -17,7 +17,7 @@ type EnforcedToolChoice = Extract<
 /**
  * Thrown when a model response does not satisfy an enforced tool choice.
  */
-export class ToolChoiceViolationError extends ai-toolkitError {
+export class ToolChoiceViolationError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   /**
@@ -75,6 +75,6 @@ export class ToolChoiceViolationError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is ToolChoiceViolationError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

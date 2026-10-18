@@ -1,10 +1,10 @@
-import { ai-toolkitError } from './ai-toolkit-error';
+import { AIToolkitError } from './ai-toolkit-error';
 
 const name = 'AI_NoSuchModelError';
 const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class NoSuchModelError extends ai-toolkitError {
+export class NoSuchModelError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly modelId: string;
@@ -48,6 +48,6 @@ export class NoSuchModelError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is NoSuchModelError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

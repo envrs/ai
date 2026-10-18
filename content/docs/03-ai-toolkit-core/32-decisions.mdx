@@ -192,7 +192,7 @@ provider once at application startup:
 
 ```ts
 // Using the registry above, expose an alias through a custom provider:
-globalThis.ai-toolkit_DEFAULT_PROVIDER = customProvider({
+globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = customProvider({
   decisionModels: { native: registry.decisionModel('triage:native') },
 });
 

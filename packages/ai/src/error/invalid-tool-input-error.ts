@@ -1,10 +1,10 @@
-import { ai-toolkitError, getErrorMessage } from '@ai-toolkit/provider';
+import { AIToolkitError, getErrorMessage } from '@ai-toolkit/provider';
 
 const name = 'AI_InvalidToolInputError';
 const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class InvalidToolInputError extends ai-toolkitError {
+export class InvalidToolInputError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly toolName: string;
@@ -28,6 +28,6 @@ export class InvalidToolInputError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is InvalidToolInputError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

@@ -1,4 +1,4 @@
-import { ai-toolkitError, InvalidResponseDataError } from '@ai-toolkit/provider';
+import { AIToolkitError, InvalidResponseDataError } from '@ai-toolkit/provider';
 import { describe, expect, it } from 'vitest';
 import { DefaultGeneratedAudioFile } from './generated-audio-file';
 
@@ -15,7 +15,7 @@ describe('DefaultGeneratedAudioFile', () => {
       thrownError = error;
     }
 
-    expect(ai-toolkitError.isInstance(thrownError)).toBe(true);
+    expect(AIToolkitError.isInstance(thrownError)).toBe(true);
     expect(InvalidResponseDataError.isInstance(thrownError)).toBe(true);
     expect(thrownError).toMatchObject({
       name: 'AI_InvalidResponseDataError',

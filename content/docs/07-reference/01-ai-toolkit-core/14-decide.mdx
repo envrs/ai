@@ -68,7 +68,7 @@ Neither partial results nor missing probability synthesis are supported.
 Use `registry.decisionModel('provider:model')` or
 `customProvider({ decisionModels: { alias: model } }).decisionModel('alias')`
 to resolve models. Strings passed directly to `experimental_decide` use
-`globalThis.ai-toolkit_DEFAULT_PROVIDER.decisionModel(id)` when a default provider is
+`globalThis.AI_TOOLKIT_DEFAULT_PROVIDER.decisionModel(id)` when a default provider is
 configured, or Gateway when no default provider is configured.
 
 Resolution errors use the existing `NoSuchModelError` and `NoSuchProviderError`

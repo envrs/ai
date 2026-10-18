@@ -1,5 +1,5 @@
 import {
-  ai-toolkitError,
+  AIToolkitError,
   APICallError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4OperationStartResult as VideoModelV4OperationStartResult,
@@ -241,7 +241,7 @@ export class FalVideoModel implements VideoModelV4 {
 
     const responseUrl = queueResponse.response_url;
     if (!responseUrl) {
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         name: 'FAL_VIDEO_GENERATION_ERROR',
         message: 'No response URL returned from queue endpoint',
       });
@@ -324,7 +324,7 @@ export class FalVideoModel implements VideoModelV4 {
     const videoUrl = response.video?.url;
 
     if (!videoUrl || !response.video) {
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         name: 'FAL_VIDEO_GENERATION_ERROR',
         message: 'No video URL in response',
       });

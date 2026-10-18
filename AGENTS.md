@@ -171,16 +171,16 @@ This ensures your changes don't introduce type errors across the codebase, inclu
 
 ## Error Pattern
 
-Errors extend `ai-toolkitError` from `@ai-toolkit/provider` and use a marker pattern for `instanceof` checks:
+Errors extend `AIToolkitError` from `@ai-toolkit/provider` and use a marker pattern for `instanceof` checks:
 
 ```typescript
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 
 const name = 'AI_MyError';
 const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class MyError extends ai-toolkitError {
+export class MyError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   constructor({ message, cause }: { message: string; cause?: unknown }) {
@@ -188,7 +188,7 @@ export class MyError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is MyError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }
 ```

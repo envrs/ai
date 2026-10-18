@@ -1,5 +1,5 @@
 import {
-  ai-toolkitError,
+  AIToolkitError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4CallOptions as VideoModelV4CallOptions,
   type Experimental_VideoModelV4File as VideoModelV4File,
@@ -377,7 +377,7 @@ export class ByteDanceVideoModel implements VideoModelV4 {
     const taskId = createResponse.id;
 
     if (!taskId) {
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         name: 'BYTEDANCE_VIDEO_GENERATION_ERROR',
         message: 'No task ID returned from API',
       });
@@ -420,7 +420,7 @@ export class ByteDanceVideoModel implements VideoModelV4 {
       const videoUrl = statusResponse.content?.video_url;
 
       if (!videoUrl) {
-        throw new ai-toolkitError({
+        throw new AIToolkitError({
           name: 'BYTEDANCE_VIDEO_GENERATION_ERROR',
           message: `No video URL in response. Task ID: ${taskId}`,
         });

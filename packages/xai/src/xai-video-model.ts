@@ -1,5 +1,5 @@
 import {
-  ai-toolkitError,
+  AIToolkitError,
   APICallError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4CallOptions as VideoModelV4CallOptions,
@@ -606,7 +606,7 @@ export class XaiVideoModel implements VideoModelV4 {
 
     const requestId = createResponse.request_id;
     if (!requestId) {
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         name: 'XAI_VIDEO_GENERATION_ERROR',
         message: `No request_id returned from xAI API.`,
       });

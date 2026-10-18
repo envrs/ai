@@ -727,7 +727,7 @@ describe('experimental_streamTranslate', () => {
   });
 
   it('should throw when a string model cannot be resolved', () => {
-    globalThis.ai-toolkit_DEFAULT_PROVIDER = {
+    globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = {
       specificationVersion: 'v4' as const,
       languageModel: () => {
         throw new Error('not implemented');
@@ -752,7 +752,7 @@ describe('experimental_streamTranslate', () => {
         'The default provider does not support speech translation models.',
       );
     } finally {
-      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
+      delete globalThis.AI_TOOLKIT_DEFAULT_PROVIDER;
     }
   });
 });

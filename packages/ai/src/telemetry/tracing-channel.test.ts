@@ -169,7 +169,7 @@ async function collectTracingChannelParentage(
 
 describe.runIf(isNodeRuntime())('telemetry tracing channel publisher', () => {
   beforeEach(() => {
-    globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = undefined;
+    globalThis.AI_TOOLKIT_TELEMETRY_INTEGRATIONS = undefined;
   });
 
   it('does not trace callback-only lifecycle events', async () => {

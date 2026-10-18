@@ -1,4 +1,4 @@
-import { ai-toolkitError } from './ai-toolkit-error';
+import { AIToolkitError } from './ai-toolkit-error';
 import { getErrorMessage } from './get-error-message';
 
 const name = 'AI_TypeValidationError';
@@ -22,7 +22,7 @@ export interface TypeValidationContext {
   entityId?: string;
 }
 
-export class TypeValidationError extends ai-toolkitError {
+export class TypeValidationError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly value: unknown;
@@ -70,7 +70,7 @@ export class TypeValidationError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is TypeValidationError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 
   /**

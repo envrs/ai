@@ -1,6 +1,6 @@
 /**
  * Symbol used for identifying ai-toolkit Error instances.
- * Enables checking if an error is an instance of ai-toolkitError across package versions.
+ * Enables checking if an error is an instance of AIToolkitError across package versions.
  */
 const marker = 'khulnasoft.ai.error';
 const symbol = Symbol.for(marker);
@@ -9,7 +9,7 @@ const symbol = Symbol.for(marker);
  * Custom error class for ai-toolkit related errors.
  * @extends Error
  */
-export class ai-toolkitError extends Error {
+export class AIToolkitError extends Error {
   private readonly [symbol] = true; // used in isInstance
 
   /**
@@ -45,8 +45,8 @@ export class ai-toolkitError extends Error {
    * @param {unknown} error - The error to check.
    * @returns {boolean} True if the error is an ai-toolkit Error, false otherwise.
    */
-  static isInstance(error: unknown): error is ai-toolkitError {
-    return ai-toolkitError.hasMarker(error, marker);
+  static isInstance(error: unknown): error is AIToolkitError {
+    return AIToolkitError.hasMarker(error, marker);
   }
 
   protected static hasMarker(error: unknown, marker: string): boolean {

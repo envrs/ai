@@ -61,7 +61,7 @@ describe('custom decision models', () => {
   });
 
   it('resolves string aliases through the configured default provider', () => {
-    vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', new DecisionTestProvider());
+    vi.stubGlobal('AI_TOOLKIT_DEFAULT_PROVIDER', new DecisionTestProvider());
     const provider = customProvider({
       decisionModels: { alias: 'model:version' },
     });
@@ -274,7 +274,7 @@ describe('decision model resolution', () => {
   )(
     'decides through Gateway using a model $resolution with $name state when no default provider is configured',
     async ({ resolution, state, expectedStateParts }) => {
-      vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', undefined);
+      vi.stubGlobal('AI_TOOLKIT_DEFAULT_PROVIDER', undefined);
       vi.stubEnv('AI_GATEWAY_API_KEY', 'test-api-key');
       const modelId = 'typesafe-ai/jev';
       const questions = {
@@ -309,7 +309,7 @@ describe('decision model resolution', () => {
   );
 
   it('requires an explicitly configured default provider to support decision', () => {
-    vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', new MockProviderV4());
+    vi.stubGlobal('AI_TOOLKIT_DEFAULT_PROVIDER', new MockProviderV4());
     expect(() => resolveDecisionModel('typesafe-ai/jev')).toThrow(
       'The default provider does not support decision models.',
     );
@@ -323,7 +323,7 @@ describe('decision model resolution', () => {
     } as unknown as DecisionMockModelV4;
     const provider = customProvider({ decisionModels: { invalid } });
     const registry = createProviderRegistry({ provider });
-    vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', registry);
+    vi.stubGlobal('AI_TOOLKIT_DEFAULT_PROVIDER', registry);
     for (const resolve of [
       () => resolveDecisionModel(invalid),
       () => provider.decisionModel('invalid'),
@@ -338,7 +338,7 @@ describe('decision model resolution', () => {
       modelId: 'missing',
       modelType: 'decisionModel',
     });
-    vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', {
+    vi.stubGlobal('AI_TOOLKIT_DEFAULT_PROVIDER', {
       decisionModel() {
         throw error;
       },
@@ -347,7 +347,7 @@ describe('decision model resolution', () => {
   });
 
   it('reports missing models returned by the default provider', () => {
-    vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', {
+    vi.stubGlobal('AI_TOOLKIT_DEFAULT_PROVIDER', {
       decisionModel: () => undefined,
     });
     expect(() => resolveDecisionModel('missing')).toThrow(
@@ -369,7 +369,7 @@ describe('decision model resolution', () => {
       const provider = customProvider({
         decisionModels: { route: new DecisionMockModelV4({ doDecide }) },
       });
-      vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', provider);
+      vi.stubGlobal('AI_TOOLKIT_DEFAULT_PROVIDER', provider);
       const questions = {
         route: {
           type: 'choice',
@@ -414,7 +414,7 @@ describe('decision model resolution', () => {
         }),
       },
     });
-    vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', provider);
+    vi.stubGlobal('AI_TOOLKIT_DEFAULT_PROVIDER', provider);
     await expect(
       decide({
         model: 'choice',

@@ -1,5 +1,5 @@
 import type { SharedV4ProviderReference } from '../shared/v4/shared-v4-provider-reference';
-import { ai-toolkitError } from './ai-toolkit-error';
+import { AIToolkitError } from './ai-toolkit-error';
 
 const name = 'AI_NoSuchProviderReferenceError';
 const marker = `khulnasoft.ai.error.${name}`;
@@ -9,7 +9,7 @@ const symbol = Symbol.for(marker);
  * Thrown when a provider reference cannot be resolved because the specified
  * provider is not found in the provider reference mapping.
  */
-export class NoSuchProviderReferenceError extends ai-toolkitError {
+export class NoSuchProviderReferenceError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly provider: string;
@@ -30,6 +30,6 @@ export class NoSuchProviderReferenceError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is NoSuchProviderReferenceError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

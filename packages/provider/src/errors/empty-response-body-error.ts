@@ -1,10 +1,10 @@
-import { ai-toolkitError } from './ai-toolkit-error';
+import { AIToolkitError } from './ai-toolkit-error';
 
 const name = 'AI_EmptyResponseBodyError';
 const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class EmptyResponseBodyError extends ai-toolkitError {
+export class EmptyResponseBodyError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   constructor({ message = 'Empty response body' }: { message?: string } = {}) {
@@ -12,6 +12,6 @@ export class EmptyResponseBodyError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is EmptyResponseBodyError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

@@ -4,11 +4,11 @@ import type { Telemetry } from './telemetry/telemetry';
 
 // Each installed copy contributes its own types without conflicting with other
 // versions. This is a type-only key; no symbol is created at runtime.
-declare const ai-toolkitGlobalsKey: unique symbol;
+declare const aiToolkitGlobalsKey: unique symbol;
 
 declare global {
-  interface ai-toolkitGlobalTypes {
-    [ai-toolkitGlobalsKey]: {
+  interface AIToolkitGlobalTypes {
+    [aiToolkitGlobalsKey]: {
       provider: ProviderV4 | ProviderV3 | ProviderV2;
       logWarnings: LogWarningsFunction;
       telemetry: Telemetry;
@@ -25,8 +25,8 @@ declare global {
    *
    * @see https://ai-toolkit.dev/docs/ai-toolkit-core/provider-management#global-provider-configuration
    */
-  var ai-toolkit_DEFAULT_PROVIDER:
-    | ai-toolkitGlobalTypes[keyof ai-toolkitGlobalTypes]['provider']
+  var AI_TOOLKIT_DEFAULT_PROVIDER:
+    | AIToolkitGlobalTypes[keyof AIToolkitGlobalTypes]['provider']
     | undefined;
 
   /**
@@ -37,8 +37,8 @@ declare global {
    *
    * If set to false, no warnings are logged.
    */
-  var ai-toolkit_LOG_WARNINGS:
-    | ai-toolkitGlobalTypes[keyof ai-toolkitGlobalTypes]['logWarnings']
+  var AI_TOOLKIT_LOG_WARNINGS:
+    | AIToolkitGlobalTypes[keyof AIToolkitGlobalTypes]['logWarnings']
     | undefined
     | false;
 
@@ -51,7 +51,7 @@ declare global {
    * Prefer using `registerTelemetry()` from `'ai'` instead of
    * assigning this directly.
    */
-  var ai-toolkit_TELEMETRY_INTEGRATIONS:
-    | Array<ai-toolkitGlobalTypes[keyof ai-toolkitGlobalTypes]['telemetry']>
+  var AI_TOOLKIT_TELEMETRY_INTEGRATIONS:
+    | Array<AIToolkitGlobalTypes[keyof AIToolkitGlobalTypes]['telemetry']>
     | undefined;
 }

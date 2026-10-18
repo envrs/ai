@@ -91,7 +91,7 @@ export function resolveSpeechTranslationModel(
   if (typeof model === 'string') {
     // Use raw global provider because speechTranslationModel is experimental
     // and not part of the ProviderV4 interface
-    const provider = globalThis.ai-toolkit_DEFAULT_PROVIDER ?? gateway;
+    const provider = globalThis.AI_TOOLKIT_DEFAULT_PROVIDER ?? gateway;
     // TODO ai-toolkit v7
     // @ts-expect-error - speechTranslationModel support is experimental
     const speechTranslationModel = provider.speechTranslationModel;
@@ -160,7 +160,7 @@ export function resolveVideoModel(
   if (typeof model === 'string') {
     // Use raw global provider because videoModel is experimental
     // and not part of the ProviderV4 interface
-    const provider = globalThis.ai-toolkit_DEFAULT_PROVIDER ?? gateway;
+    const provider = globalThis.AI_TOOLKIT_DEFAULT_PROVIDER ?? gateway;
     // TODO ai-toolkit v7
     // @ts-expect-error - videoModel support is experimental
     const videoModel = provider.videoModel;
@@ -220,7 +220,7 @@ export function resolveRerankingModel(model: RerankingModel): RerankingModelV4 {
 export function resolveDecisionModel(model: DecisionModel): DecisionModelV4 {
   if (typeof model === 'string') {
     // Use the original provider so experimental methods and their receiver survive.
-    const provider = (globalThis.ai-toolkit_DEFAULT_PROVIDER ??
+    const provider = (globalThis.AI_TOOLKIT_DEFAULT_PROVIDER ??
       gateway) as DecisionProvider;
 
     const factory:
@@ -232,7 +232,7 @@ export function resolveDecisionModel(model: DecisionModel): DecisionModelV4 {
         modelType: 'decisionModel',
         message:
           'The default provider does not support decision models. ' +
-          'Pass a decision model instance or configure ai-toolkit_DEFAULT_PROVIDER with a decisionModel method.',
+          'Pass a decision model instance or configure AI_TOOLKIT_DEFAULT_PROVIDER with a decisionModel method.',
       });
     }
 
@@ -269,7 +269,7 @@ export function resolveDecisionModel(model: DecisionModel): DecisionModelV4 {
 }
 
 function getGlobalProvider(): ProviderV4 {
-  const provider = globalThis.ai-toolkit_DEFAULT_PROVIDER ?? gateway;
+  const provider = globalThis.AI_TOOLKIT_DEFAULT_PROVIDER ?? gateway;
   return asProviderV4(provider);
 }
 

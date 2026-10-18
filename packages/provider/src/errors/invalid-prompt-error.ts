@@ -1,4 +1,4 @@
-import { ai-toolkitError } from './ai-toolkit-error';
+import { AIToolkitError } from './ai-toolkit-error';
 
 const name = 'AI_InvalidPromptError';
 const marker = `khulnasoft.ai.error.${name}`;
@@ -8,7 +8,7 @@ const symbol = Symbol.for(marker);
  * A prompt is invalid. This error should be thrown by providers when they cannot
  * process a prompt.
  */
-export class InvalidPromptError extends ai-toolkitError {
+export class InvalidPromptError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly prompt: unknown;
@@ -28,6 +28,6 @@ export class InvalidPromptError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is InvalidPromptError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

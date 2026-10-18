@@ -251,7 +251,7 @@ describe('startBatch', () => {
         return { batchId: 'batch-123', status: 'pending', warnings: [] };
       },
     });
-    globalThis.ai-toolkit_DEFAULT_PROVIDER = Object.assign(new MockProviderV4(), {
+    globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = Object.assign(new MockProviderV4(), {
       experimental_batch: () => batchApi,
     });
 
@@ -267,7 +267,7 @@ describe('startBatch', () => {
         ],
       });
     } finally {
-      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
+      delete globalThis.AI_TOOLKIT_DEFAULT_PROVIDER;
     }
 
     expect(calls[0]).toMatchObject({
@@ -474,7 +474,7 @@ describe('startBatch', () => {
 
   it('logs request warnings with the request model', async () => {
     const warningLogger = vi.fn();
-    globalThis.ai-toolkit_LOG_WARNINGS = warningLogger;
+    globalThis.AI_TOOLKIT_LOG_WARNINGS = warningLogger;
     const batchApi = createMockBatchApi({
       doStartBatch: async () => ({
         batchId: 'batch-123',
@@ -513,7 +513,7 @@ describe('startBatch', () => {
         model: 'override-model',
       });
     } finally {
-      delete globalThis.ai-toolkit_LOG_WARNINGS;
+      delete globalThis.AI_TOOLKIT_LOG_WARNINGS;
     }
   });
 

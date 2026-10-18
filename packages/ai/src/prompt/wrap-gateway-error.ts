@@ -1,5 +1,5 @@
 import { GatewayAuthenticationError } from '@ai-toolkit/gateway';
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 
 export function wrapGatewayError(error: unknown): unknown {
   if (!GatewayAuthenticationError.isInstance(error)) return error;
@@ -8,7 +8,7 @@ export function wrapGatewayError(error: unknown): unknown {
   const moreInfoURL = 'https://ai-toolkit.dev/unauthenticated-ai-gateway';
 
   if (isProductionEnv) {
-    return new ai-toolkitError({
+    return new AIToolkitError({
       name: 'GatewayError',
       message: `Unauthenticated. Configure AI_GATEWAY_API_KEY or use a provider module. Learn more: ${moreInfoURL}`,
     });

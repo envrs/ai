@@ -1,5 +1,5 @@
 import {
-  ai-toolkitError,
+  AIToolkitError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4CallOptions as VideoModelV4CallOptions,
   type Experimental_VideoModelV4File as VideoModelV4File,
@@ -277,7 +277,7 @@ export class GoogleVertexVideoModel implements VideoModelV4 {
   } {
     const response = finalOperation.response;
     if (!response?.videos || response.videos.length === 0) {
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         name: 'VERTEX_VIDEO_GENERATION_ERROR',
         message: `No videos in response. Response: ${JSON.stringify(finalOperation)}`,
       });
@@ -316,7 +316,7 @@ export class GoogleVertexVideoModel implements VideoModelV4 {
     }
 
     if (videos.length === 0) {
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         name: 'VERTEX_VIDEO_GENERATION_ERROR',
         message: 'No valid videos in response',
       });
@@ -371,7 +371,7 @@ export class GoogleVertexVideoModel implements VideoModelV4 {
 
     const operationName = operation.name;
     if (!operationName) {
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         name: 'VERTEX_VIDEO_GENERATION_ERROR',
         message: 'No operation name returned from API',
       });

@@ -1,4 +1,4 @@
-import { ai-toolkitError } from './ai-toolkit-error';
+import { AIToolkitError } from './ai-toolkit-error';
 
 const name = 'AI_DecisionRefusalError';
 const marker = `khulnasoft.ai.error.${name}`;
@@ -7,7 +7,7 @@ const symbol = Symbol.for(marker);
 /**
  * A decision model declined to answer one or more questions.
  */
-export class DecisionRefusalError extends ai-toolkitError {
+export class DecisionRefusalError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly questionIds: string[];
@@ -33,6 +33,6 @@ export class DecisionRefusalError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is DecisionRefusalError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

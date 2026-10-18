@@ -24,16 +24,16 @@ describe('logWarnings', () => {
     mockConsoleInfo.mockClear();
     mockProcessEmitWarning.mockClear();
     resetLogWarningsState();
-    delete globalThis.ai-toolkit_LOG_WARNINGS;
+    delete globalThis.AI_TOOLKIT_LOG_WARNINGS;
   });
 
   afterEach(() => {
-    delete globalThis.ai-toolkit_LOG_WARNINGS;
+    delete globalThis.AI_TOOLKIT_LOG_WARNINGS;
   });
 
-  describe('when ai-toolkit_LOG_WARNINGS is false', () => {
+  describe('when AI_TOOLKIT_LOG_WARNINGS is false', () => {
     beforeEach(() => {
-      globalThis.ai-toolkit_LOG_WARNINGS = false;
+      globalThis.AI_TOOLKIT_LOG_WARNINGS = false;
     });
 
     it('should not log any warnings (single)', () => {
@@ -85,10 +85,10 @@ describe('logWarnings', () => {
     });
   });
 
-  describe('when ai-toolkit_LOG_WARNINGS is a custom function', () => {
+  describe('when AI_TOOLKIT_LOG_WARNINGS is a custom function', () => {
     it('should call the custom function with warning options', () => {
       const customLogger = vi.fn();
-      globalThis.ai-toolkit_LOG_WARNINGS = customLogger;
+      globalThis.AI_TOOLKIT_LOG_WARNINGS = customLogger;
 
       const warnings: Warning[] = [
         {
@@ -108,7 +108,7 @@ describe('logWarnings', () => {
 
     it('should call the custom function with multiple warnings', () => {
       const customLogger = vi.fn();
-      globalThis.ai-toolkit_LOG_WARNINGS = customLogger;
+      globalThis.AI_TOOLKIT_LOG_WARNINGS = customLogger;
 
       const warnings: Warning[] = [
         {
@@ -133,7 +133,7 @@ describe('logWarnings', () => {
 
     it('should not call the custom function with empty warnings array', () => {
       const customLogger = vi.fn();
-      globalThis.ai-toolkit_LOG_WARNINGS = customLogger;
+      globalThis.AI_TOOLKIT_LOG_WARNINGS = customLogger;
 
       const warnings: Warning[] = [];
 
@@ -145,7 +145,7 @@ describe('logWarnings', () => {
     });
   });
 
-  describe('when ai-toolkit_LOG_WARNINGS is unset/undefined (default behavior)', () => {
+  describe('when AI_TOOLKIT_LOG_WARNINGS is unset/undefined (default behavior)', () => {
     it('should emit the information note and warning via process.emitWarning without logging to stdout', () => {
       const warning: SharedV4Warning = {
         type: 'other',
@@ -333,9 +333,9 @@ describe('logWarnings', () => {
     });
   });
 
-  describe('when ai-toolkit_LOG_WARNINGS is undefined (explicitly set)', () => {
+  describe('when AI_TOOLKIT_LOG_WARNINGS is undefined (explicitly set)', () => {
     beforeEach(() => {
-      globalThis.ai-toolkit_LOG_WARNINGS = undefined;
+      globalThis.AI_TOOLKIT_LOG_WARNINGS = undefined;
     });
 
     it('should use default behavior and emit via process.emitWarning', () => {
@@ -414,10 +414,10 @@ describe('logWarnings', () => {
     });
 
     it('does not consume codes while warnings are disabled', () => {
-      globalThis.ai-toolkit_LOG_WARNINGS = false;
+      globalThis.AI_TOOLKIT_LOG_WARNINGS = false;
       logWarnings({ warnings: [warning] });
       expect(mockProcessEmitWarning).not.toHaveBeenCalled();
-      delete globalThis.ai-toolkit_LOG_WARNINGS;
+      delete globalThis.AI_TOOLKIT_LOG_WARNINGS;
       logWarnings({ warnings: [warning] });
       expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
     });
@@ -426,7 +426,7 @@ describe('logWarnings', () => {
       const options = { warnings: [warning, warning] };
       logWarnings(options);
       const logger = vi.fn();
-      globalThis.ai-toolkit_LOG_WARNINGS = logger;
+      globalThis.AI_TOOLKIT_LOG_WARNINGS = logger;
       logWarnings(options);
       logWarnings(options);
       expect(logger).toHaveBeenCalledTimes(2);
@@ -435,10 +435,10 @@ describe('logWarnings', () => {
     });
 
     it('does not consume codes while using a custom logger', () => {
-      globalThis.ai-toolkit_LOG_WARNINGS = vi.fn<LogWarningsFunction>();
+      globalThis.AI_TOOLKIT_LOG_WARNINGS = vi.fn<LogWarningsFunction>();
       logWarnings({ warnings: [warning] });
       expect(mockProcessEmitWarning).not.toHaveBeenCalled();
-      delete globalThis.ai-toolkit_LOG_WARNINGS;
+      delete globalThis.AI_TOOLKIT_LOG_WARNINGS;
       logWarnings({ warnings: [warning] });
       expect(mockProcessEmitWarning).toHaveBeenCalledTimes(2);
     });
@@ -505,7 +505,7 @@ describe('logWarnings', () => {
 
     it('should not display information note when using custom logger', () => {
       const customLogger = vi.fn();
-      globalThis.ai-toolkit_LOG_WARNINGS = customLogger;
+      globalThis.AI_TOOLKIT_LOG_WARNINGS = customLogger;
 
       logWarnings({
         warnings: [{ type: 'other', message: 'Message' } as SharedV4Warning],
@@ -517,8 +517,8 @@ describe('logWarnings', () => {
       expect(customLogger).toHaveBeenCalledOnce();
     });
 
-    it('should not display information note when ai-toolkit_LOG_WARNINGS is false', () => {
-      globalThis.ai-toolkit_LOG_WARNINGS = false;
+    it('should not display information note when AI_TOOLKIT_LOG_WARNINGS is false', () => {
+      globalThis.AI_TOOLKIT_LOG_WARNINGS = false;
 
       logWarnings({
         warnings: [

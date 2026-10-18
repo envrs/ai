@@ -1,11 +1,11 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 import type { UIMessage } from '../ui/ui-messages';
 
 const name = 'AI_MessageConversionError';
 const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class MessageConversionError extends ai-toolkitError {
+export class MessageConversionError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly originalMessage: Omit<UIMessage, 'id'>;
@@ -23,6 +23,6 @@ export class MessageConversionError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is MessageConversionError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

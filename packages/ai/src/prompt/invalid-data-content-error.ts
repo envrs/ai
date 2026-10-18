@@ -1,10 +1,10 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 
 const name = 'AI_InvalidDataContentError';
 const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class InvalidDataContentError extends ai-toolkitError {
+export class InvalidDataContentError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly content: unknown;
@@ -24,6 +24,6 @@ export class InvalidDataContentError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is InvalidDataContentError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

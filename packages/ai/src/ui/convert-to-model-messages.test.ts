@@ -40,11 +40,11 @@ async function recordAssistantMessageFromChunks<
 
 describe('convertToModelMessages', () => {
   beforeEach(() => {
-    globalThis.ai-toolkit_LOG_WARNINGS = false;
+    globalThis.AI_TOOLKIT_LOG_WARNINGS = false;
   });
 
   afterEach(() => {
-    delete globalThis.ai-toolkit_LOG_WARNINGS;
+    delete globalThis.AI_TOOLKIT_LOG_WARNINGS;
   });
 
   describe('system message', () => {
@@ -941,7 +941,7 @@ describe('convertToModelMessages', () => {
 
       it('should handle assistant message with tool output error that has raw input', async () => {
         const warningLogger = vi.fn();
-        globalThis.ai-toolkit_LOG_WARNINGS = warningLogger;
+        globalThis.AI_TOOLKIT_LOG_WARNINGS = warningLogger;
 
         const result = await convertToModelMessages([
           {

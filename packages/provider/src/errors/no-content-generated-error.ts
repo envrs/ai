@@ -1,4 +1,4 @@
-import { ai-toolkitError } from './ai-toolkit-error';
+import { AIToolkitError } from './ai-toolkit-error';
 
 const name = 'AI_NoContentGeneratedError';
 const marker = `khulnasoft.ai.error.${name}`;
@@ -7,7 +7,7 @@ const symbol = Symbol.for(marker);
 /**
  * Thrown when the AI provider fails to generate any content.
  */
-export class NoContentGeneratedError extends ai-toolkitError {
+export class NoContentGeneratedError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   constructor({
@@ -17,6 +17,6 @@ export class NoContentGeneratedError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is NoContentGeneratedError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

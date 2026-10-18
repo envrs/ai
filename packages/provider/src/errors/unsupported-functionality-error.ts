@@ -1,10 +1,10 @@
-import { ai-toolkitError } from './ai-toolkit-error';
+import { AIToolkitError } from './ai-toolkit-error';
 
 const name = 'AI_UnsupportedFunctionalityError';
 const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class UnsupportedFunctionalityError extends ai-toolkitError {
+export class UnsupportedFunctionalityError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly functionality: string;
@@ -21,6 +21,6 @@ export class UnsupportedFunctionalityError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is UnsupportedFunctionalityError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

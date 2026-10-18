@@ -1,9 +1,9 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 
 /**
  * Error that is thrown when a model with an unsupported version is used.
  */
-export class UnsupportedModelVersionError extends ai-toolkitError {
+export class UnsupportedModelVersionError extends AIToolkitError {
   readonly version: string;
   readonly provider: string;
   readonly modelId: string;

@@ -1,4 +1,4 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 
 const name = 'AI_UIMessageStreamError';
 const marker = `khulnasoft.ai.error.${name}`;
@@ -16,7 +16,7 @@ const symbol = Symbol.for(marker);
  *
  * @see https://ai-toolkit.dev/docs/reference/ai-toolkit-errors/ai-ui-message-stream-error
  */
-export class UIMessageStreamError extends ai-toolkitError {
+export class UIMessageStreamError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   /**
@@ -46,6 +46,6 @@ export class UIMessageStreamError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is UIMessageStreamError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

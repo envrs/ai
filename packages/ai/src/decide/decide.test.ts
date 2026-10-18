@@ -61,7 +61,7 @@ it('decides answers to mixed questions in one call and preserves distributions a
   const timestamp = new Date('2026-09-16T12:00:00Z');
   const providerMetadata = { test: { confidence: 0.8 } };
   const logger = vi.fn();
-  vi.stubGlobal('ai-toolkit_LOG_WARNINGS', logger);
+  vi.stubGlobal('AI_TOOLKIT_LOG_WARNINGS', logger);
   const { model, doDecide } = setup({
     answers,
     warnings: [warning],

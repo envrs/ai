@@ -417,7 +417,7 @@ export function getBatchResults<TOOLS extends ToolSet>({
 }
 
 function resolveBatchApi(provider?: BatchProvider): BatchV4 {
-  provider ??= asProviderV4(globalThis.ai-toolkit_DEFAULT_PROVIDER ?? gateway);
+  provider ??= asProviderV4(globalThis.AI_TOOLKIT_DEFAULT_PROVIDER ?? gateway);
 
   if (isBatchApi(provider)) {
     return provider;

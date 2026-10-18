@@ -1,5 +1,5 @@
 import {
-  ai-toolkitError,
+  AIToolkitError,
   type FilesV4,
   type FilesV4UploadFileCallOptions,
   type FilesV4UploadFileResult,
@@ -101,7 +101,7 @@ export class GoogleFiles implements FilesV4 {
 
     if (!initResponse.ok) {
       const errorBody = await initResponse.text();
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         name: 'GOOGLE_FILES_UPLOAD_ERROR',
         message: `Failed to initiate resumable upload: ${initResponse.status} ${errorBody}`,
       });
@@ -109,7 +109,7 @@ export class GoogleFiles implements FilesV4 {
 
     const uploadUrl = initResponse.headers.get('x-goog-upload-url');
     if (!uploadUrl) {
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         name: 'GOOGLE_FILES_UPLOAD_ERROR',
         message: 'No upload URL returned from initiation request',
       });
@@ -127,7 +127,7 @@ export class GoogleFiles implements FilesV4 {
 
     if (!uploadResponse.ok) {
       const errorBody = await uploadResponse.text();
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         name: 'GOOGLE_FILES_UPLOAD_ERROR',
         message: `Failed to upload file data: ${uploadResponse.status} ${errorBody}`,
       });
@@ -145,7 +145,7 @@ export class GoogleFiles implements FilesV4 {
 
     while (file.state === 'PROCESSING') {
       if (Date.now() - startTime > pollTimeoutMs) {
-        throw new ai-toolkitError({
+        throw new AIToolkitError({
           name: 'GOOGLE_FILES_UPLOAD_TIMEOUT',
           message: `File processing timed out after ${pollTimeoutMs}ms`,
         });
@@ -175,7 +175,7 @@ export class GoogleFiles implements FilesV4 {
     }
 
     if (file.state === 'FAILED') {
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         name: 'GOOGLE_FILES_UPLOAD_FAILED',
         message: `File processing failed for ${file.name}`,
       });

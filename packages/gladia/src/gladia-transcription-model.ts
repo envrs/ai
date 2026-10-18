@@ -1,5 +1,5 @@
 import {
-  ai-toolkitError,
+  AIToolkitError,
   type TranscriptionModelV4,
   type SharedV4Warning,
 } from '@ai-toolkit/provider';
@@ -264,7 +264,7 @@ export class GladiaTranscriptionModel implements TranscriptionModelV4 {
     while (true) {
       // Check if we've exceeded the timeout
       if (Date.now() - startTime > timeoutMs) {
-        throw new ai-toolkitError({
+        throw new AIToolkitError({
           message: 'Transcription job polling timed out',
           name: 'TranscriptionJobPollingTimedOut',
           cause: transcriptionResult,
@@ -294,7 +294,7 @@ export class GladiaTranscriptionModel implements TranscriptionModelV4 {
       }
 
       if (transcriptionResult.status === 'error') {
-        throw new ai-toolkitError({
+        throw new AIToolkitError({
           message: 'Transcription job failed',
           name: 'TranscriptionJobFailed',
           cause: transcriptionResult,
@@ -306,7 +306,7 @@ export class GladiaTranscriptionModel implements TranscriptionModelV4 {
     }
 
     if (!transcriptionResult.result) {
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         message: 'Transcription result is empty',
         name: 'TranscriptionResultEmpty',
         cause: transcriptionResult,

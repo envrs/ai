@@ -119,7 +119,7 @@ describe('resolveLanguageModel', () => {
 
   describe('when a string is provided and the global default provider is set', () => {
     beforeEach(() => {
-      globalThis.ai-toolkit_DEFAULT_PROVIDER = customProvider({
+      globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = customProvider({
         languageModels: {
           'test-model-id': new MockLanguageModelV4({
             provider: 'global-test-provider',
@@ -130,7 +130,7 @@ describe('resolveLanguageModel', () => {
     });
 
     afterEach(() => {
-      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
+      delete globalThis.AI_TOOLKIT_DEFAULT_PROVIDER;
     });
 
     it('should return a language model from the global default provider', () => {
@@ -209,7 +209,7 @@ describe('resolveEmbeddingModel', () => {
 
   describe('when a string is provided and the global default provider is set', () => {
     beforeEach(() => {
-      globalThis.ai-toolkit_DEFAULT_PROVIDER = customProvider({
+      globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = customProvider({
         embeddingModels: {
           'test-model-id': new MockEmbeddingModelV4({
             provider: 'global-test-provider',
@@ -220,7 +220,7 @@ describe('resolveEmbeddingModel', () => {
     });
 
     afterEach(() => {
-      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
+      delete globalThis.AI_TOOLKIT_DEFAULT_PROVIDER;
     });
 
     it('should return a embedding model from the global default provider', () => {
@@ -286,7 +286,7 @@ describe('resolveSpeechModel', () => {
 
   describe('when a string is provided and the global default provider is set', () => {
     beforeEach(() => {
-      globalThis.ai-toolkit_DEFAULT_PROVIDER = customProvider({
+      globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = customProvider({
         speechModels: {
           'test-model-id': new MockSpeechModelV4({
             provider: 'global-test-provider',
@@ -297,7 +297,7 @@ describe('resolveSpeechModel', () => {
     });
 
     afterEach(() => {
-      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
+      delete globalThis.AI_TOOLKIT_DEFAULT_PROVIDER;
     });
 
     it('should return a speech model from the global default provider', () => {
@@ -310,7 +310,7 @@ describe('resolveSpeechModel', () => {
 
   describe('when a string is provided and the default provider does not support speech models', () => {
     beforeEach(() => {
-      globalThis.ai-toolkit_DEFAULT_PROVIDER = {
+      globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = {
         specificationVersion: 'v4' as const,
         languageModel: () => {
           throw new Error('not implemented');
@@ -325,7 +325,7 @@ describe('resolveSpeechModel', () => {
     });
 
     afterEach(() => {
-      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
+      delete globalThis.AI_TOOLKIT_DEFAULT_PROVIDER;
     });
 
     it('should return undefined', () => {
@@ -400,7 +400,7 @@ describe('resolveTranscriptionModel', () => {
 
   describe('when a string is provided and the global default provider is set', () => {
     beforeEach(() => {
-      globalThis.ai-toolkit_DEFAULT_PROVIDER = customProvider({
+      globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = customProvider({
         transcriptionModels: {
           'test-model-id': new MockTranscriptionModelV4({
             provider: 'global-test-provider',
@@ -411,7 +411,7 @@ describe('resolveTranscriptionModel', () => {
     });
 
     afterEach(() => {
-      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
+      delete globalThis.AI_TOOLKIT_DEFAULT_PROVIDER;
     });
 
     it('should return a transcription model from the global default provider', () => {
@@ -424,7 +424,7 @@ describe('resolveTranscriptionModel', () => {
 
   describe('when a string is provided and the default provider does not support transcription models', () => {
     beforeEach(() => {
-      globalThis.ai-toolkit_DEFAULT_PROVIDER = {
+      globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = {
         specificationVersion: 'v4' as const,
         languageModel: () => {
           throw new Error('not implemented');
@@ -439,7 +439,7 @@ describe('resolveTranscriptionModel', () => {
     });
 
     afterEach(() => {
-      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
+      delete globalThis.AI_TOOLKIT_DEFAULT_PROVIDER;
     });
 
     it('should return undefined', () => {
@@ -501,7 +501,7 @@ describe('resolveImageModel', () => {
 
   describe('when a string is provided and the global default provider is set', () => {
     beforeEach(() => {
-      globalThis.ai-toolkit_DEFAULT_PROVIDER = customProvider({
+      globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = customProvider({
         imageModels: {
           'test-model-id': resolveImageModel(
             new MockImageModelV2({
@@ -514,7 +514,7 @@ describe('resolveImageModel', () => {
     });
 
     afterEach(() => {
-      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
+      delete globalThis.AI_TOOLKIT_DEFAULT_PROVIDER;
     });
 
     it('should return an image model from the global default provider', () => {
@@ -581,7 +581,7 @@ describe('resolveVideoModel', () => {
 
   describe('when a string is provided and the global default provider is set', () => {
     beforeEach(() => {
-      globalThis.ai-toolkit_DEFAULT_PROVIDER = customProvider({
+      globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = customProvider({
         videoModels: {
           'test-model-id': new MockVideoModelV4({
             provider: 'global-test-provider',
@@ -592,7 +592,7 @@ describe('resolveVideoModel', () => {
     });
 
     afterEach(() => {
-      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
+      delete globalThis.AI_TOOLKIT_DEFAULT_PROVIDER;
     });
 
     it('should return a video model from the global default provider', () => {
@@ -605,7 +605,7 @@ describe('resolveVideoModel', () => {
 
   describe('when a string is provided and the provider does not support video models', () => {
     beforeEach(() => {
-      globalThis.ai-toolkit_DEFAULT_PROVIDER = {
+      globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = {
         specificationVersion: 'v4' as const,
         languageModel: () => {
           throw new Error('not implemented');
@@ -620,7 +620,7 @@ describe('resolveVideoModel', () => {
     });
 
     afterEach(() => {
-      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
+      delete globalThis.AI_TOOLKIT_DEFAULT_PROVIDER;
     });
 
     it('should throw an error', () => {
@@ -707,7 +707,7 @@ describe('resolveRerankingModel', () => {
 
   describe('when a string is provided and the global default provider is set', () => {
     beforeEach(() => {
-      globalThis.ai-toolkit_DEFAULT_PROVIDER = customProvider({
+      globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = customProvider({
         rerankingModels: {
           'test-model-id': new MockRerankingModelV4({
             provider: 'global-test-provider',
@@ -718,7 +718,7 @@ describe('resolveRerankingModel', () => {
     });
 
     afterEach(() => {
-      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
+      delete globalThis.AI_TOOLKIT_DEFAULT_PROVIDER;
     });
 
     it('should return a reranking model from the global default provider', () => {
@@ -731,7 +731,7 @@ describe('resolveRerankingModel', () => {
 
   describe('when a string is provided and the provider does not support reranking models', () => {
     beforeEach(() => {
-      globalThis.ai-toolkit_DEFAULT_PROVIDER = {
+      globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = {
         specificationVersion: 'v4' as const,
         languageModel: () => {
           throw new Error('not implemented');
@@ -746,7 +746,7 @@ describe('resolveRerankingModel', () => {
     });
 
     afterEach(() => {
-      delete globalThis.ai-toolkit_DEFAULT_PROVIDER;
+      delete globalThis.AI_TOOLKIT_DEFAULT_PROVIDER;
     });
 
     it('should throw an error', () => {

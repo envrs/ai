@@ -1,7 +1,7 @@
 import { Experimental_DecisionUnsupportedQuestionTypeError } from '@ai-toolkit/provider';
 
 export {
-  ai-toolkitError,
+  AIToolkitError,
   APICallError,
   EmptyResponseBodyError,
   Experimental_DecisionRefusalError,

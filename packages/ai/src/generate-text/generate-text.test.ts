@@ -14051,7 +14051,7 @@ describe('generateText', () => {
 
   describe('telemetry integrations', () => {
     afterEach(() => {
-      globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = undefined;
+      globalThis.AI_TOOLKIT_TELEMETRY_INTEGRATIONS = undefined;
     });
 
     it('should call per-call integration listeners for all lifecycle events', async () => {
@@ -14117,7 +14117,7 @@ describe('generateText', () => {
     it('should call globally registered integration listeners', async () => {
       const events: string[] = [];
 
-      globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = [
+      globalThis.AI_TOOLKIT_TELEMETRY_INTEGRATIONS = [
         {
           onStart: async () => {
             events.push('global-onStart');
@@ -14151,7 +14151,7 @@ describe('generateText', () => {
     it('should only call per-call integrations when both global and per-call integrations are provided', async () => {
       const events: string[] = [];
 
-      globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = [
+      globalThis.AI_TOOLKIT_TELEMETRY_INTEGRATIONS = [
         {
           onStart: async () => {
             events.push('global');

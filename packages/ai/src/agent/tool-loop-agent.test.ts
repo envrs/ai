@@ -3544,7 +3544,7 @@ describe('ToolLoopAgent', () => {
 
   describe('telemetry integrations', () => {
     afterEach(() => {
-      globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = undefined;
+      globalThis.AI_TOOLKIT_TELEMETRY_INTEGRATIONS = undefined;
     });
 
     describe('generate', () => {
@@ -3650,7 +3650,7 @@ describe('ToolLoopAgent', () => {
       it('should call globally registered integration listeners', async () => {
         const events: string[] = [];
 
-        globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = [
+        globalThis.AI_TOOLKIT_TELEMETRY_INTEGRATIONS = [
           {
             onStart: async () => {
               events.push('global-onStart');
@@ -3944,7 +3944,7 @@ describe('ToolLoopAgent', () => {
       it('should call globally registered integration listeners', async () => {
         const events: string[] = [];
 
-        globalThis.ai-toolkit_TELEMETRY_INTEGRATIONS = [
+        globalThis.AI_TOOLKIT_TELEMETRY_INTEGRATIONS = [
           {
             onStart: async () => {
               events.push('global-onStart');

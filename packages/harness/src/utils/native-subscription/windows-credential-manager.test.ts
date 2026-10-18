@@ -37,7 +37,7 @@ describe('readWindowsCredentialManagerPassword', () => {
         '-NonInteractive',
         '-Command',
         expect.stringContaining(
-          '[ai-toolkitCredentialManager]::Read($env:ai-toolkit_WINDOWS_CREDENTIAL_MANAGER_TARGET)',
+          '[AIToolkitCredentialManager]::Read($env:ai-toolkit_WINDOWS_CREDENTIAL_MANAGER_TARGET)',
         ),
       ],
       {

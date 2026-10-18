@@ -42,11 +42,11 @@ describe('processUIMessageStream', () => {
   beforeEach(() => {
     writeCalls = [];
     state = undefined;
-    globalThis.ai-toolkit_LOG_WARNINGS = false;
+    globalThis.AI_TOOLKIT_LOG_WARNINGS = false;
   });
 
   afterEach(() => {
-    delete globalThis.ai-toolkit_LOG_WARNINGS;
+    delete globalThis.AI_TOOLKIT_LOG_WARNINGS;
   });
 
   const runUpdateMessageJob = async (
@@ -6954,7 +6954,7 @@ describe('processUIMessageStream', () => {
 
     beforeEach(async () => {
       warningLogger.mockClear();
-      globalThis.ai-toolkit_LOG_WARNINGS = warningLogger;
+      globalThis.AI_TOOLKIT_LOG_WARNINGS = warningLogger;
 
       const stream = createUIMessageStream([
         {
@@ -7172,7 +7172,7 @@ describe('processUIMessageStream', () => {
       'clears raw input on $name',
       async ({ chunk: terminalChunk }) => {
         const warningLogger = vi.fn();
-        globalThis.ai-toolkit_LOG_WARNINGS = warningLogger;
+        globalThis.AI_TOOLKIT_LOG_WARNINGS = warningLogger;
 
         const stream = createUIMessageStream([
           { type: 'start' },

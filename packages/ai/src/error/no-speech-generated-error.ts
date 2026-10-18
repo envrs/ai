@@ -1,4 +1,4 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 import type { SpeechModelResponseMetadata } from '../types/speech-model-response-metadata';
 
 const name = 'AI_NoSpeechGeneratedError';
@@ -8,7 +8,7 @@ const symbol = Symbol.for(marker);
 /**
  * Error that is thrown when no speech audio was generated.
  */
-export class NoSpeechGeneratedError extends ai-toolkitError {
+export class NoSpeechGeneratedError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly responses: Array<SpeechModelResponseMetadata>;
@@ -23,6 +23,6 @@ export class NoSpeechGeneratedError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is NoSpeechGeneratedError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

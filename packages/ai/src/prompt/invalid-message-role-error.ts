@@ -1,10 +1,10 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 
 const name = 'AI_InvalidMessageRoleError';
 const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class InvalidMessageRoleError extends ai-toolkitError {
+export class InvalidMessageRoleError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly role: string;
@@ -22,6 +22,6 @@ export class InvalidMessageRoleError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is InvalidMessageRoleError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

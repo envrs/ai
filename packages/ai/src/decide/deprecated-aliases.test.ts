@@ -59,7 +59,7 @@ it('keeps the function alias and accepts existing model implementations', async 
 
 it('resolves deprecated provider factories through default, custom, and registry access', async () => {
   const legacy = new LegacyProvider();
-  vi.stubGlobal('ai-toolkit_DEFAULT_PROVIDER', legacy);
+  vi.stubGlobal('AI_TOOLKIT_DEFAULT_PROVIDER', legacy);
   const registry = createProviderRegistry({ legacy }, { separator: '|' });
   const custom = customProvider({ fallbackProvider: legacy });
   const aliases = customProvider({
@@ -104,7 +104,7 @@ it('prefers new model maps and factories and supports direct deprecated model ca
     ).answers,
   ).toEqual(result.answers);
   vi.stubGlobal(
-    'ai-toolkit_DEFAULT_PROVIDER',
+    'AI_TOOLKIT_DEFAULT_PROVIDER',
     Object.assign(new MockProviderV4(), {
       decisionModel: () => model,
       evaluationModel: deprecated,

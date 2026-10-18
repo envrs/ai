@@ -38,7 +38,7 @@ if (!result.success) {
 For backward compatibility, validation still accepts `rawInput` on tool parts
 in the `output-error` state. When a defined `rawInput` value is found,
 `safeValidateUIMessages` emits an ai-toolkit deprecation warning through
-`ai-toolkit_LOG_WARNINGS`.
+`AI_TOOLKIT_LOG_WARNINGS`.
 
 Migrate persisted messages to store tool arguments in `input` and remove
 `rawInput`. For backward compatibility, conversion uses `rawInput` as a

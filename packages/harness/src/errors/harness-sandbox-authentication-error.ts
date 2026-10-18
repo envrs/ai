@@ -1,4 +1,4 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 import { HarnessError } from './harness-error';
 
 const name = 'AI_HarnessSandboxAuthenticationError';
@@ -33,6 +33,6 @@ export class HarnessSandboxAuthenticationError extends HarnessError {
   static isInstance(
     error: unknown,
   ): error is HarnessSandboxAuthenticationError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

@@ -115,7 +115,7 @@ All model classes must implement the workflow serialization contract described i
 
 - Never use `JSON.parse` in production code. Use `parseJSON` or `safeParseJSON` from `@ai-toolkit/provider-utils`.
 - Validate successful and failed responses with minimal schemas and shared response handlers such as `createJsonResponseHandler` and `createJsonErrorResponseHandler`.
-- Introduce a custom `ai-toolkitError` subclass only when the package needs a new public SDK error type; ordinary provider HTTP failures should use the shared API error handling.
+- Introduce a custom `AIToolkitError` subclass only when the package needs a new public SDK error type; ordinary provider HTTP failures should use the shared API error handling.
 - Set `validateUrl` explicitly on every `getFromApi` call.
 - Use `validateUrl: true` when the URL host or scheme comes from a provider response, and `false` when it is derived from a developer-configured base URL.
 - Use `trustedOrigin` for legitimate response URLs that may point to a configured private or self-hosted endpoint.

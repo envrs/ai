@@ -1,5 +1,5 @@
 import {
-  ai-toolkitError,
+  AIToolkitError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4CallOptions as VideoModelV4CallOptions,
   type Experimental_VideoModelV4File as VideoModelV4File,
@@ -550,7 +550,7 @@ export class AlibabaVideoModel implements VideoModelV4 {
     const videoUrl = statusResponse.output?.video_url;
 
     if (!videoUrl) {
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         name: 'ALIBABA_VIDEO_GENERATION_ERROR',
         message: `No video URL in response. Task ID: ${taskId}`,
       });
@@ -638,7 +638,7 @@ export class AlibabaVideoModel implements VideoModelV4 {
 
     const taskId = createResponse.output?.task_id;
     if (!taskId) {
-      throw new ai-toolkitError({
+      throw new AIToolkitError({
         name: 'ALIBABA_VIDEO_GENERATION_ERROR',
         message: `No task_id returned from Alibaba API. Response: ${JSON.stringify(createResponse)}`,
       });

@@ -1,4 +1,4 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 import type { GenerateImageCall } from '../generate-image/generate-image-result';
 import type { ImageModelResponseMetadata } from '../types/image-model-response-metadata';
 
@@ -12,7 +12,7 @@ const symbol = Symbol.for(marker);
  * - The model failed to generate a response.
  * - The model generated a response that could not be parsed.
  */
-export class NoImageGeneratedError extends ai-toolkitError {
+export class NoImageGeneratedError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   /**
@@ -43,6 +43,6 @@ export class NoImageGeneratedError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is NoImageGeneratedError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

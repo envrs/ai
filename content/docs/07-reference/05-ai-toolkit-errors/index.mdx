@@ -29,11 +29,11 @@ import { APICallError, InvalidResponseDataError } from '@ai-toolkit/provider';
 ## Migrating to Typed Error Handling
 
 Replace message matching or an unconditionally generic `catch` block with the
-most specific static `isInstance` guard available. Check `ai-toolkitError` last when
+most specific static `isInstance` guard available. Check `AIToolkitError` last when
 you need a fallback for any ai-toolkit error:
 
 ```typescript
-import { ai-toolkitError, APICallError, generateText } from 'ai';
+import { AIToolkitError, APICallError, generateText } from 'ai';
 
 try {
   await generateText({
@@ -46,7 +46,7 @@ try {
     return;
   }
 
-  if (ai-toolkitError.isInstance(error)) {
+  if (AIToolkitError.isInstance(error)) {
     console.error('ai-toolkit error:', error.name);
     return;
   }
@@ -81,7 +81,7 @@ versions are loaded.
 
 ### Base Error
 
-- `ai-toolkitError`: Base class and broad type guard for ai-toolkit errors.
+- `AIToolkitError`: Base class and broad type guard for ai-toolkit errors.
 
 ### Provider Requests and Responses
 

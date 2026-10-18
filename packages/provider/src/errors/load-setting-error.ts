@@ -1,10 +1,10 @@
-import { ai-toolkitError } from './ai-toolkit-error';
+import { AIToolkitError } from './ai-toolkit-error';
 
 const name = 'AI_LoadSettingError';
 const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class LoadSettingError extends ai-toolkitError {
+export class LoadSettingError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   constructor({ message }: { message: string }) {
@@ -12,6 +12,6 @@ export class LoadSettingError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is LoadSettingError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

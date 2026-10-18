@@ -1,4 +1,4 @@
-import { ai-toolkitError, NoSuchModelError } from '@ai-toolkit/provider';
+import { AIToolkitError, NoSuchModelError } from '@ai-toolkit/provider';
 
 const name = 'AI_NoSuchProviderError';
 const marker = `khulnasoft.ai.error.${name}`;
@@ -40,6 +40,6 @@ export class NoSuchProviderError extends NoSuchModelError {
   }
 
   static isInstance(error: unknown): error is NoSuchProviderError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

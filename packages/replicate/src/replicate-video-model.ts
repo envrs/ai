@@ -1,5 +1,5 @@
 import {
-  ai-toolkitError,
+  AIToolkitError,
   type Experimental_VideoModelV4 as VideoModelV4,
   type Experimental_VideoModelV4OperationStartResult as VideoModelV4OperationStartResult,
   type Experimental_VideoModelV4OperationStatusResult as VideoModelV4OperationStatusResult,
@@ -277,7 +277,7 @@ export class ReplicateVideoModel implements VideoModelV4 {
 
     if (prediction.status === 'succeeded') {
       if (!prediction.output) {
-        throw new ai-toolkitError({
+        throw new AIToolkitError({
           name: 'REPLICATE_VIDEO_GENERATION_ERROR',
           message: 'No video URL in response',
         });

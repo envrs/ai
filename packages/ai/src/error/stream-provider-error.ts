@@ -1,4 +1,4 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 
 const name = 'AI_StreamProviderError';
 const marker = `khulnasoft.ai.error.${name}`;
@@ -7,7 +7,7 @@ const symbol = Symbol.for(marker);
 /**
  * Error reported by a provider after a model response stream has started.
  */
-export class StreamProviderError extends ai-toolkitError {
+export class StreamProviderError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   /**
@@ -63,7 +63,7 @@ export class StreamProviderError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is StreamProviderError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }
 

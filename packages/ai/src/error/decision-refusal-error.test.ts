@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
-  ai-toolkitError,
+  AIToolkitError,
   Experimental_DecisionRefusalError as DecisionRefusalError,
 } from './index';
 
@@ -15,7 +15,7 @@ describe('DecisionRefusalError', () => {
     const error = new DecisionRefusalError(options);
 
     expect(error).toBeInstanceOf(Error);
-    expect(ai-toolkitError.isInstance(error)).toBe(true);
+    expect(AIToolkitError.isInstance(error)).toBe(true);
     expect(DecisionRefusalError.isInstance(error)).toBe(true);
     expect(error).toMatchObject({
       ...options,

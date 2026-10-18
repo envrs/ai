@@ -1,10 +1,10 @@
-import { ai-toolkitError } from '@ai-toolkit/provider';
+import { AIToolkitError } from '@ai-toolkit/provider';
 
 const name = 'AI_MissingToolResultsError';
 const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class MissingToolResultsError extends ai-toolkitError {
+export class MissingToolResultsError extends AIToolkitError {
   private readonly [symbol] = true;
 
   readonly toolCallIds: string[];
@@ -23,6 +23,6 @@ export class MissingToolResultsError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is MissingToolResultsError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }

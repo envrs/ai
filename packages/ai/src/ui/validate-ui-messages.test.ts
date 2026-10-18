@@ -18,11 +18,11 @@ import {
 
 describe('validateUIMessages', () => {
   beforeEach(() => {
-    globalThis.ai-toolkit_LOG_WARNINGS = false;
+    globalThis.AI_TOOLKIT_LOG_WARNINGS = false;
   });
 
   afterEach(() => {
-    delete globalThis.ai-toolkit_LOG_WARNINGS;
+    delete globalThis.AI_TOOLKIT_LOG_WARNINGS;
   });
 
   describe('parameter validation', () => {
@@ -1014,7 +1014,7 @@ describe('validateUIMessages', () => {
 
     it('should validate a dynamic tool part in output-error state when input key is absent', async () => {
       const warningLogger = vi.fn();
-      globalThis.ai-toolkit_LOG_WARNINGS = warningLogger;
+      globalThis.AI_TOOLKIT_LOG_WARNINGS = warningLogger;
 
       const messages = [
         {
@@ -1878,7 +1878,7 @@ describe('validateUIMessages', () => {
 
     it('should preserve rawInput when state is output-error', async () => {
       const warningLogger = vi.fn();
-      globalThis.ai-toolkit_LOG_WARNINGS = warningLogger;
+      globalThis.AI_TOOLKIT_LOG_WARNINGS = warningLogger;
 
       const inputMessages = [
         {

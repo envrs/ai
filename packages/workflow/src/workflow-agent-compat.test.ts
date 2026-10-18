@@ -2515,7 +2515,7 @@ describe('WorkflowAgent (ToolLoopAgent compat)', () => {
 
   describe('telemetry integrations', () => {
     afterEach(() => {
-      (globalThis as any).ai-toolkit_TELEMETRY_INTEGRATIONS = undefined;
+      (globalThis as any).AI_TOOLKIT_TELEMETRY_INTEGRATIONS = undefined;
     });
 
     describe('stream', () => {
@@ -2654,7 +2654,7 @@ describe('WorkflowAgent (ToolLoopAgent compat)', () => {
       it('should call globally registered integration listeners', async () => {
         const events: string[] = [];
 
-        (globalThis as any).ai-toolkit_TELEMETRY_INTEGRATIONS = [
+        (globalThis as any).AI_TOOLKIT_TELEMETRY_INTEGRATIONS = [
           {
             onStart: async () => {
               events.push('global-onStart');

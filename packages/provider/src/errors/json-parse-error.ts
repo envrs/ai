@@ -1,11 +1,11 @@
-import { ai-toolkitError } from './ai-toolkit-error';
+import { AIToolkitError } from './ai-toolkit-error';
 import { getErrorMessage } from './get-error-message';
 
 const name = 'AI_JSONParseError';
 const marker = `khulnasoft.ai.error.${name}`;
 const symbol = Symbol.for(marker);
 
-export class JSONParseError extends ai-toolkitError {
+export class JSONParseError extends AIToolkitError {
   private readonly [symbol] = true; // used in isInstance
 
   readonly text: string;
@@ -24,6 +24,6 @@ export class JSONParseError extends ai-toolkitError {
   }
 
   static isInstance(error: unknown): error is JSONParseError {
-    return ai-toolkitError.hasMarker(error, marker);
+    return AIToolkitError.hasMarker(error, marker);
   }
 }
