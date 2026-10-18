@@ -11,7 +11,7 @@ import { createCline } from './_create';
 import {
   createKhulnasoftNetworkSandboxSession,
   resumeKhulnasoftNetworkSandboxSession,
-} from '@ai-toolkit/sandbox-vercel';
+} from '@ai-toolkit/sandbox-khulnasoft';
 import { run } from '../../lib/run';
 
 const cline = createCline();

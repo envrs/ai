@@ -1,7 +1,7 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import { createCline } from './_create';
 import { run } from '../../lib/run';
-import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
 const cline = createCline();
 

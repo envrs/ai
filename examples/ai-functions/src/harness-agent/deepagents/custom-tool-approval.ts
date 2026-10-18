@@ -1,6 +1,6 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
 import { createDeepAgents } from './_create';
-import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import { tool, type ToolApprovalRequestOutput } from 'ai';
 import { z } from 'zod';
 import { createToolApprovalResponseMessages } from '../../lib/harness-tool-approval';

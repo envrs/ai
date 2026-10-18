@@ -1,5 +1,5 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
-import { createKhulnasoftNetworkSandboxSessionFromNativeSandbox } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSessionFromNativeSandbox } from '@ai-toolkit/sandbox-khulnasoft';
 import { Sandbox } from '@khulnasoft/sandbox';
 import { createCursorACP } from './_create';
 import { printFullStream } from '../../lib/print-full-stream';

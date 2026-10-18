@@ -6,7 +6,7 @@ import { createDeepAgents } from './_create';
 import {
   createKhulnasoftNetworkSandboxSession,
   resumeKhulnasoftNetworkSandboxSession,
-} from '@ai-toolkit/sandbox-vercel';
+} from '@ai-toolkit/sandbox-khulnasoft';
 import { mintBridgeToken } from '../../lib/mint-bridge-token';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

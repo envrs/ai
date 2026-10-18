@@ -11,7 +11,7 @@ import {
   createTraceTreeReporter,
 } from '@ai-toolkit/harness/agent';
 import { claudeCode } from '@ai-toolkit/harness-claude-code';
-import { createKhulnasoftSandbox } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftSandbox } from '@ai-toolkit/sandbox-khulnasoft';
 import type { InferUITools, UIMessage } from 'ai';
 
 export const weatherClaudeCodeHarnessAgent = new HarnessAgent({

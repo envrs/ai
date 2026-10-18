@@ -2,7 +2,7 @@ import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agen
 import {
   createKhulnasoftNetworkSandboxSessionFromNativeSandbox,
   createKhulnasoftSandboxSessionFromNativeSandbox,
-} from '@ai-toolkit/sandbox-vercel';
+} from '@ai-toolkit/sandbox-khulnasoft';
 import { Sandbox } from '@khulnasoft/sandbox';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

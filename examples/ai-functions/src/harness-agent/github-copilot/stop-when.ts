@@ -1,6 +1,6 @@
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
 import { createGitHubCopilot } from './_create';
-import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import { isStepCount } from 'ai';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

@@ -5,7 +5,7 @@ import {
   type HarnessAgentAdapter,
   type HarnessAgentSandboxConfig,
 } from '@ai-toolkit/harness/agent';
-import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import { createClaudeCode } from './claude-code/_create';
 import { createCline } from './cline/_create';
 import { createCodex } from './codex/_create';

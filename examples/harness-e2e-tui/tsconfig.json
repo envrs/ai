@@ -53,7 +53,7 @@
       "path": "../../packages/harness-pi"
     },
     {
-      "path": "../../packages/sandbox-vercel"
+      "path": "../../packages/sandbox-khulnasoft"
     },
     {
       "path": "../../packages/tui"

@@ -2,7 +2,7 @@ import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agen
 import { createGitHubCopilot, getGitHubCopilotExampleModel } from './_create';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';
-import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
 const githubCopilot = createGitHubCopilot({ reasoningEffort: 'high' });
 

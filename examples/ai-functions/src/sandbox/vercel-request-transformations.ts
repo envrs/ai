@@ -1,4 +1,4 @@
-import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import { run } from '../lib/run';
 
 const echoHost = 'httpbin.org';

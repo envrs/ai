@@ -1,5 +1,5 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
-import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import type { ToolApprovalRequestOutput } from 'ai';
 import { createCodexACP } from './_create';
 import { createToolApprovalResponseMessages } from '../../lib/harness-tool-approval';

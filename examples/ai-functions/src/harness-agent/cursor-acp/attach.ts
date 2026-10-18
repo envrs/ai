@@ -13,7 +13,7 @@ import {
 import {
   createKhulnasoftNetworkSandboxSession,
   resumeKhulnasoftNetworkSandboxSession,
-} from '@ai-toolkit/sandbox-vercel';
+} from '@ai-toolkit/sandbox-khulnasoft';
 import { createCursorACP } from './_create';
 import { mintBridgeToken } from '../../lib/mint-bridge-token';
 import { printFullStream } from '../../lib/print-full-stream';

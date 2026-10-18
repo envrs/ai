@@ -7,7 +7,7 @@ import type {
 import {
   createKhulnasoftNetworkSandboxSession,
   resumeKhulnasoftNetworkSandboxSession,
-} from '@ai-toolkit/sandbox-vercel';
+} from '@ai-toolkit/sandbox-khulnasoft';
 
 export async function acquireHarnessSandboxSession({
   agent,

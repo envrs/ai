@@ -5,7 +5,7 @@ import {
 import {
   createKhulnasoftNetworkSandboxSession,
   resumeKhulnasoftNetworkSandboxSession,
-} from '@ai-toolkit/sandbox-vercel';
+} from '@ai-toolkit/sandbox-khulnasoft';
 import { createCodexACP } from './_create';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

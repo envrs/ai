@@ -11,7 +11,7 @@ import {
   createTraceTreeReporter,
 } from '@ai-toolkit/harness/agent';
 import { codex } from '@ai-toolkit/harness-codex';
-import { createKhulnasoftSandbox } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftSandbox } from '@ai-toolkit/sandbox-khulnasoft';
 import type { InferUITools, UIMessage } from 'ai';
 
 export const weatherApprovalCodexHarnessAgent = new HarnessAgent({

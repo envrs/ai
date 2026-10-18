@@ -3,7 +3,7 @@ import type {
   HarnessV1QuestionsToolOutput,
 } from '@ai-toolkit/harness';
 import { HarnessAgent } from '@ai-toolkit/harness/agent';
-import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import { createClaudeCode } from './_create';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';

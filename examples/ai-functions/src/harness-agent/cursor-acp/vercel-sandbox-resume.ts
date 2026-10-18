@@ -1,5 +1,5 @@
 import { HarnessAgent, type HarnessAgentSession } from '@ai-toolkit/harness/agent';
-import { resumeKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { resumeKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 import {
   createACPHandoffSandbox,
   getACPHandoffArguments,

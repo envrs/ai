@@ -4,7 +4,7 @@ import type { ToolApprovalRequestOutput } from 'ai';
 import { printFullStream } from '../../lib/print-full-stream';
 import { run } from '../../lib/run';
 import { createToolApprovalResponseMessages } from '../../lib/harness-tool-approval';
-import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
 const grokBuild = createGrokBuild();
 

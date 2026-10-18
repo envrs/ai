@@ -10,7 +10,7 @@ import {
   parseJSON,
   type Experimental_SandboxSession,
 } from '@ai-toolkit/provider-utils';
-import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-vercel';
+import { createKhulnasoftNetworkSandboxSession } from '@ai-toolkit/sandbox-khulnasoft';
 
 type HandoffPhase = 'start' | 'resume';
 
