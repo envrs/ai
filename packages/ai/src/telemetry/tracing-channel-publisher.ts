@@ -1,7 +1,7 @@
 import type * as diagnosticsChannelModule from 'node:diagnostics_channel';
 import type * as asyncHooksModule from 'node:async_hooks';
 import {
-  ai-toolkit_TELEMETRY_TRACING_CHANNEL,
+  AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL,
   type TelemetryTracingChannelMessage,
 } from './tracing-channel';
 import { isNodeRuntime } from '../util/is-node-runtime';
@@ -69,7 +69,7 @@ export async function runWithTracingChannelSpan<T>(
 ): Promise<T> {
   const diagnosticsChannel = await loadDiagnosticsChannel();
   const tracingChannel = diagnosticsChannel?.tracingChannel?.(
-    ai-toolkit_TELEMETRY_TRACING_CHANNEL,
+    AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL,
   );
 
   if (tracingChannel == null || tracingChannel.hasSubscribers === false) {
@@ -145,7 +145,7 @@ export function openTelemetryChannelSpanContext({
   );
   const asyncHooks = loadBuiltinModule<AsyncHooks>('node:async_hooks');
   const tracingChannel = diagnosticsChannel?.tracingChannel?.(
-    ai-toolkit_TELEMETRY_TRACING_CHANNEL,
+    AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL,
   );
 
   if (

@@ -905,7 +905,7 @@ No behavior changes beyond the rename. You can migrate incrementally — mixed u
 
 The telemetry integration callback for individual reranking model calls has been renamed from `onRerankFinish` to `onRerankEnd`.
 
-This also applies to the `type` field emitted on `ai-toolkit_TELEMETRY_TRACING_CHANNEL`: tracing-channel subscribers now receive `onRerankEnd` instead of `onRerankFinish`.
+This also applies to the `type` field emitted on `AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL`: tracing-channel subscribers now receive `onRerankEnd` instead of `onRerankFinish`.
 
 Update telemetry integrations and tracing-channel subscribers to use `onRerankEnd`.
 
@@ -933,7 +933,7 @@ const telemetry: Telemetry = {
 
 The telemetry integration callback for individual embedding model calls has been renamed from `onEmbedFinish` to `onEmbedEnd`.
 
-This also applies to the `type` field emitted on `ai-toolkit_TELEMETRY_TRACING_CHANNEL`: tracing-channel subscribers now receive `onEmbedEnd` instead of `onEmbedFinish`.
+This also applies to the `type` field emitted on `AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL`: tracing-channel subscribers now receive `onEmbedEnd` instead of `onEmbedFinish`.
 
 Update telemetry integrations and tracing-channel subscribers to use `onEmbedEnd`.
 

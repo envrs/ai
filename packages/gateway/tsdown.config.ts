@@ -4,6 +4,7 @@ import { tsdownBaseConfig } from '../../tools/tsdown-config.mts';
 
 export default defineConfig(
   mergeConfig(tsdownBaseConfig, {
+    entry: ['src/index.ts', 'src/index.browser.ts'],
     define: {
       __PACKAGE_VERSION__: JSON.stringify(
         (await import('./package.json', { with: { type: 'json' } })).default

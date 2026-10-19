@@ -552,7 +552,7 @@ export function createOpenCode(
                 accessToken: subscriptionAccessToken,
               }),
             }),
-        ai-toolkit_HARNESS_CLIENT_APP: OPENCODE_CLIENT_APP,
+        'ai-toolkit_HARNESS_CLIENT_APP': OPENCODE_CLIENT_APP,
         BRIDGE_CHANNEL_TOKEN: token,
         BRIDGE_WS_PORT: String(port),
         ...(respawnStrategy === 'replay'

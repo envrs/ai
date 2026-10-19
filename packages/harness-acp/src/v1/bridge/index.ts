@@ -796,8 +796,8 @@ async function authenticate({
 }
 
 function resolveClientApp(): ACPClientApp {
-  const name = processEnv.ai-toolkit_ACP_CLIENT_APP_NAME;
-  const version = processEnv.ai-toolkit_ACP_CLIENT_APP_VERSION;
+  const name = processEnv['ai-toolkit_ACP_CLIENT_APP_NAME'];
+  const version = processEnv['ai-toolkit_ACP_CLIENT_APP_VERSION'];
   if (name == null || version == null) {
     throw new Error('ACP client app values were not supplied to the bridge.');
   }
@@ -809,8 +809,8 @@ function resolveGatewayValues({
 }: {
   clientApp: ACPClientApp;
 }): ACPGatewayValues {
-  const apiKey = processEnv.ai-toolkit_ACP_GATEWAY_API_KEY;
-  const baseUrl = processEnv.ai-toolkit_ACP_GATEWAY_BASE_URL;
+  const apiKey = processEnv['ai-toolkit_ACP_GATEWAY_API_KEY'];
+  const baseUrl = processEnv['ai-toolkit_ACP_GATEWAY_BASE_URL'];
   if (apiKey == null || baseUrl == null) {
     throw new Error(
       'AI Gateway profile values were not supplied to the ACP bridge.',

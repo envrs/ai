@@ -11,7 +11,7 @@ import {
   InMemorySpanExporter,
   SimpleSpanProcessor,
 } from '@opentelemetry/sdk-trace-base';
-import { ai-toolkit_TELEMETRY_TRACING_CHANNEL, registerTelemetry } from 'ai';
+import { AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL, registerTelemetry } from 'ai';
 import { tracingChannel } from 'node:diagnostics_channel';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { start } from 'workflow/api';
@@ -47,7 +47,7 @@ registerTelemetry(new OpenTelemetry(), {
   },
 });
 
-tracingChannel(ai-toolkit_TELEMETRY_TRACING_CHANNEL).subscribe({
+tracingChannel(AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL).subscribe({
   start: message =>
     void tracingChannelEvents.push((message as { type: string }).type),
   end: () => {},

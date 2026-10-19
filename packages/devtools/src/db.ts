@@ -8,8 +8,8 @@ const DEVTOOLS_DB_FILE = 'generations.json';
 const MAX_DB_BYTES = 100 * 1024 * 1024; // 100 MB
 const DB_DIR = path.join(process.cwd(), DEVTOOLS_DB_DIR);
 const DB_PATH = path.join(DB_DIR, DEVTOOLS_DB_FILE);
-const DEVTOOLS_PORT = process.env.ai-toolkit_DEVTOOLS_PORT
-  ? parseInt(process.env.ai-toolkit_DEVTOOLS_PORT)
+const DEVTOOLS_PORT = process.env['ai-toolkit_DEVTOOLS_PORT']
+  ? parseInt(process.env['ai-toolkit_DEVTOOLS_PORT'])
   : 4983;
 
 /**

@@ -1,6 +1,6 @@
 import type { API, ASTPath } from 'jscodeshift';
 
-export const ai-toolkit_CODEMOD_ERROR_PREFIX = 'FIXME(@ai-toolkit-upgrade-v5): ';
+export const AI_TOOLKIT_CODEMOD_ERROR_PREFIX = 'FIXME(@ai-toolkit-upgrade-v5): ';
 
 function existsComment(
   comments: ASTPath<any>['node']['comments'],

@@ -22,7 +22,7 @@ const bridgeStateDir = requireArg({
   value: args.bridgeStateDir,
   name: '--bridge-state-dir',
 });
-const HARNESS_CLIENT_APP = procEnv.ai-toolkit_HARNESS_CLIENT_APP;
+const HARNESS_CLIENT_APP = procEnv['ai-toolkit_HARNESS_CLIENT_APP'];
 
 const threadState: { id: string | undefined } = { id: undefined };
 const appServer = createCodexAppServerRuntime();

@@ -447,7 +447,7 @@ describe('createCodex adapter', () => {
     expect(spawns).toEqual([
       `node '/home/khulnasoft-sandbox/.ai-toolkit-harness/.harness-bootstrap/codex/bridge.mjs' --workdir '/khulnasoft/sandbox/codex-s1; env > /tmp/workdir-leak #' --bridge-state-dir '${sessionStateDir}/bridge'`,
     ]);
-    expect(spawnEnvs.at(0)?.ai-toolkit_HARNESS_CLIENT_APP).toBe(
+    expect(spawnEnvs.at(0)?.['ai-toolkit_HARNESS_CLIENT_APP']).toBe(
       'ai-toolkit-harness-codex/0.0.0-test',
     );
     expect(spawnEnvs.at(0)?.BRIDGE_CHANNEL_TOKEN).toMatch(/^[a-f0-9]{64}$/);

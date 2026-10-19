@@ -562,12 +562,12 @@ describe('createFx', () => {
     expect(
       settings.credentialBrokering?.({
         env: {
-          ai-toolkit_FX_CHATGPT_ACCESS_TOKEN: accessToken,
-          ai-toolkit_FX_CHATGPT_ACCOUNT_ID: 'account-1',
+          'ai-toolkit_FX_CHATGPT_ACCESS_TOKEN': accessToken,
+          'ai-toolkit_FX_CHATGPT_ACCOUNT_ID': 'account-1',
         },
         sandboxEnv: {
-          ai-toolkit_FX_CHATGPT_ACCESS_TOKEN: 'sandbox-access',
-          ai-toolkit_FX_CHATGPT_ACCOUNT_ID: 'sandbox-account',
+          'ai-toolkit_FX_CHATGPT_ACCESS_TOKEN': 'sandbox-access',
+          'ai-toolkit_FX_CHATGPT_ACCOUNT_ID': 'sandbox-account',
         },
       }),
     ).toEqual([
@@ -599,12 +599,12 @@ describe('createFx', () => {
 
     const files = settings.authenticationFiles?.({
       env: {
-        ai-toolkit_FX_CHATGPT_ACCESS_TOKEN: accessToken,
-        ai-toolkit_FX_CHATGPT_ACCOUNT_ID: 'account-1',
+        'ai-toolkit_FX_CHATGPT_ACCESS_TOKEN': accessToken,
+        'ai-toolkit_FX_CHATGPT_ACCOUNT_ID': 'account-1',
       },
       sandboxEnv: {
-        ai-toolkit_FX_CHATGPT_ACCESS_TOKEN: 'sandbox-access',
-        ai-toolkit_FX_CHATGPT_ACCOUNT_ID: 'sandbox-account',
+        'ai-toolkit_FX_CHATGPT_ACCESS_TOKEN': 'sandbox-access',
+        'ai-toolkit_FX_CHATGPT_ACCOUNT_ID': 'sandbox-account',
       },
       credentialBrokeringAvailable: true,
     });

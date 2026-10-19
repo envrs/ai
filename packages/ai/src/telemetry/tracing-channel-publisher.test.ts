@@ -1,6 +1,6 @@
 import * as diagnosticsChannel from 'node:diagnostics_channel';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { ai-toolkit_TELEMETRY_TRACING_CHANNEL } from './tracing-channel';
+import { AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL } from './tracing-channel';
 import {
   openTelemetryChannelSpanContext,
   runWithTracingChannelSpan,
@@ -36,7 +36,7 @@ describe.runIf(runningOnNode)(
         error() {},
       };
       const channel = diagnosticsChannel.tracingChannel(
-        ai-toolkit_TELEMETRY_TRACING_CHANNEL,
+        AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL,
       );
       channel.subscribe(subscribers);
       return () => channel.unsubscribe(subscribers);

@@ -37,7 +37,7 @@ import {
 } from './persistent-memory-saver';
 import { createBuiltinToolFilteringMiddleware } from './tool-filtering';
 
-const HARNESS_CLIENT_APP = procEnv.ai-toolkit_HARNESS_CLIENT_APP;
+const HARNESS_CLIENT_APP = procEnv['ai-toolkit_HARNESS_CLIENT_APP'];
 
 function parseArgs(rawArgs: string[]): Record<string, string> {
   const out: Record<string, string> = {};

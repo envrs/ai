@@ -125,7 +125,7 @@ const TOOL_KIND: Readonly<Record<string, 'readonly' | 'edit' | 'bash'>> = {
   skill: 'edit',
   todowrite: 'edit',
 };
-const HARNESS_CLIENT_APP = procEnv.ai-toolkit_HARNESS_CLIENT_APP;
+const HARNESS_CLIENT_APP = procEnv['ai-toolkit_HARNESS_CLIENT_APP'];
 
 const args = parseArgs(argv.slice(2));
 const workdir = args.workdir ?? emitFatal('Missing --workdir argument.');

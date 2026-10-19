@@ -939,7 +939,7 @@ describe('createACP', () => {
     ]);
     expect(spawns[0]!.env.PROVIDER_API_KEY).toBe('ephemeral-PROVIDER_API_KEY');
     expect(spawns[0]!.env.PROVIDER_BASE_URL).toBe('https://gateway.example/v1');
-    expect(spawns[0]!.env.ai-toolkit_ACP_GATEWAY_API_KEY).toBeUndefined();
+    expect(spawns[0]!.env['ai-toolkit_ACP_GATEWAY_API_KEY']).toBeUndefined();
     expect(JSON.stringify(spawns[0]!.env)).not.toContain('gateway-secret');
     await expect(
       safeParseJSON({
@@ -1065,7 +1065,7 @@ describe('createACP', () => {
     expect(spawns[0]!.env.RUNTIME_PROVIDER_API_KEY).toBe(
       sandboxCredentialEnvironment.RUNTIME_PROVIDER_API_KEY,
     );
-    expect(spawns[0]!.env.ai-toolkit_ACP_GATEWAY_API_KEY).toBeUndefined();
+    expect(spawns[0]!.env['ai-toolkit_ACP_GATEWAY_API_KEY']).toBeUndefined();
     expect(JSON.stringify(spawns[0]!.env)).not.toContain('gateway-secret');
 
     await session.doDestroy();
@@ -1388,7 +1388,7 @@ describe('createACP', () => {
     expect(spawns[0]!.env.RUNTIME_PROVIDER_API_KEY).toBe(
       'ephemeral-gateway-credential',
     );
-    expect(spawns[0]!.env.ai-toolkit_ACP_GATEWAY_API_KEY).toBeUndefined();
+    expect(spawns[0]!.env['ai-toolkit_ACP_GATEWAY_API_KEY']).toBeUndefined();
     await expect(
       safeParseJSON({
         text: spawns[0]!.env[ACP_BRIDGE_CONFIGURATION_ENV]!,
@@ -2029,9 +2029,9 @@ describe('createACP', () => {
     expect(spawns[0].env.CODEX_API_KEY).toBe('test-key');
     expect(spawns[0].env.BRIDGE_CHANNEL_TOKEN).toMatch(/^[a-f0-9]{64}$/);
     expect(spawns[0].env.BRIDGE_CHANNEL_TOKEN).not.toBe('test-key');
-    expect(spawns[0].env.ai-toolkit_ACP_GATEWAY_API_KEY).toBeUndefined();
-    expect(spawns[0].env.ai-toolkit_ACP_CLIENT_APP_NAME).toBe('ai-toolkit-harness-acp');
-    expect(spawns[0].env.ai-toolkit_ACP_CLIENT_APP_VERSION).toBe('0.0.0-test');
+    expect(spawns[0].env['ai-toolkit_ACP_GATEWAY_API_KEY']).toBeUndefined();
+    expect(spawns[0].env['ai-toolkit_ACP_CLIENT_APP_NAME']).toBe('ai-toolkit-harness-acp');
+    expect(spawns[0].env['ai-toolkit_ACP_CLIENT_APP_VERSION']).toBe('0.0.0-test');
     expect(stop).not.toHaveBeenCalled();
 
     await session.doDestroy();
@@ -3024,16 +3024,16 @@ describe('createACP', () => {
         },
       },
     });
-    expect(spawns[1]?.env.ai-toolkit_ACP_GATEWAY_API_KEY).toBe(
+    expect(spawns[1]?.env['ai-toolkit_ACP_GATEWAY_API_KEY']).toBe(
       'gateway-key-after-stop',
     );
-    expect(spawns[1]?.env.ai-toolkit_ACP_GATEWAY_BASE_URL).toBe(
+    expect(spawns[1]?.env['ai-toolkit_ACP_GATEWAY_BASE_URL']).toBe(
       'https://gateway.example/custom',
     );
-    expect(spawns[1]?.env.ai-toolkit_ACP_CLIENT_APP_NAME).toBe(
+    expect(spawns[1]?.env['ai-toolkit_ACP_CLIENT_APP_NAME']).toBe(
       'ai-toolkit-harness-acp',
     );
-    expect(spawns[1]?.env.ai-toolkit_ACP_CLIENT_APP_VERSION).toBe('0.0.0-test');
+    expect(spawns[1]?.env['ai-toolkit_ACP_CLIENT_APP_VERSION']).toBe('0.0.0-test');
     expect(writes).toHaveLength(writeCount);
 
     emitColdRestoration({
@@ -3699,7 +3699,7 @@ describe('createACP', () => {
       continueFrom,
     });
     expect(spawns).toHaveLength(2);
-    expect(spawns[1]!.env.ai-toolkit_ACP_GATEWAY_API_KEY).toBe(
+    expect(spawns[1]!.env['ai-toolkit_ACP_GATEWAY_API_KEY']).toBe(
       'gateway-secret-after',
     );
     expect(spawns[1]!.env.BRIDGE_REPLAY_FROM_DISK).toBeUndefined();
@@ -4602,12 +4602,12 @@ describe('createACP', () => {
       sessionWorkDir: '/workspace/user-project',
     });
 
-    expect(spawns[0].env.ai-toolkit_ACP_GATEWAY_API_KEY).toBe('gateway-key');
-    expect(spawns[0].env.ai-toolkit_ACP_GATEWAY_BASE_URL).toBe(
+    expect(spawns[0].env['ai-toolkit_ACP_GATEWAY_API_KEY']).toBe('gateway-key');
+    expect(spawns[0].env['ai-toolkit_ACP_GATEWAY_BASE_URL']).toBe(
       'https://gateway.example/custom',
     );
-    expect(spawns[0].env.ai-toolkit_ACP_CLIENT_APP_NAME).toBe('custom-client');
-    expect(spawns[0].env.ai-toolkit_ACP_CLIENT_APP_VERSION).toBe('1.2.3');
+    expect(spawns[0].env['ai-toolkit_ACP_CLIENT_APP_NAME']).toBe('custom-client');
+    expect(spawns[0].env['ai-toolkit_ACP_CLIENT_APP_VERSION']).toBe('1.2.3');
     expect(spawns[0].env.BRIDGE_CHANNEL_TOKEN).not.toBe('gateway-key');
     expect(spawns[0].env.CODEX_API_KEY).toBeUndefined();
 
@@ -4646,8 +4646,8 @@ describe('createACP', () => {
       sessionWorkDir: '/workspace/user-project',
     });
 
-    expect(spawns[0]!.env.ai-toolkit_ACP_GATEWAY_API_KEY).toBe('late-gateway-key');
-    expect(spawns[0]!.env.ai-toolkit_ACP_GATEWAY_BASE_URL).toBe(
+    expect(spawns[0]!.env['ai-toolkit_ACP_GATEWAY_API_KEY']).toBe('late-gateway-key');
+    expect(spawns[0]!.env['ai-toolkit_ACP_GATEWAY_BASE_URL']).toBe(
       'https://gateway.example/late',
     );
     expect(
@@ -4714,7 +4714,7 @@ describe('createACP', () => {
     });
     expect(spawns[0].env.PROVIDER_API_KEY).toBe('direct-secret');
     expect(spawns[0].env.PROVIDER_BASE_URL).toBe('https://provider.example');
-    expect(spawns[0].env.ai-toolkit_ACP_GATEWAY_API_KEY).toBe('gateway-secret');
+    expect(spawns[0].env['ai-toolkit_ACP_GATEWAY_API_KEY']).toBe('gateway-secret');
 
     const lifecycleState = await session.doStop();
     expect(JSON.stringify(lifecycleState)).not.toContain('direct-secret');
@@ -4761,7 +4761,7 @@ describe('createACP', () => {
     });
 
     expect(spawns[0].env.PROVIDER_API_KEY).toBe('direct-profile-secret');
-    expect(spawns[0].env.ai-toolkit_ACP_GATEWAY_API_KEY).toBeUndefined();
+    expect(spawns[0].env['ai-toolkit_ACP_GATEWAY_API_KEY']).toBeUndefined();
 
     const lifecycleState = await session.doStop();
     const serialized = JSON.stringify(lifecycleState);

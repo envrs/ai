@@ -45,7 +45,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 //   ai-toolkit_DEVTOOLS_DEV=false → use production mode (serve built client)
 //
 // If the flag is unset, default to production mode.
-const devEnv = process.env.ai-toolkit_DEVTOOLS_DEV;
+const devEnv = process.env['ai-toolkit_DEVTOOLS_DEV'];
 const isDevMode = devEnv !== undefined && devEnv !== 'false' && devEnv !== '0';
 // __dirname points at packages/devtools/src/viewer, so ../.. is the package root.
 const projectRoot = path.resolve(__dirname, '../..');
@@ -364,8 +364,8 @@ const isDirectRun =
   process.argv[1]?.endsWith('/server.js');
 
 if (isDirectRun) {
-  const port = process.env.ai-toolkit_DEVTOOLS_PORT
-    ? parseInt(process.env.ai-toolkit_DEVTOOLS_PORT)
+  const port = process.env['ai-toolkit_DEVTOOLS_PORT']
+    ? parseInt(process.env['ai-toolkit_DEVTOOLS_PORT'])
     : 4983;
   startViewer(port);
 }

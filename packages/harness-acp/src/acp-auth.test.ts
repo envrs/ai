@@ -62,8 +62,8 @@ describe('resolveACPProviderAuthentication', () => {
     ).toEqual({
       providerAuthentication: undefined,
       env: {
-        ai-toolkit_ACP_CLIENT_APP_NAME: clientApp.name,
-        ai-toolkit_ACP_CLIENT_APP_VERSION: clientApp.version,
+        'ai-toolkit_ACP_CLIENT_APP_NAME': clientApp.name,
+        'ai-toolkit_ACP_CLIENT_APP_VERSION': clientApp.version,
       },
     });
   });
@@ -79,10 +79,10 @@ describe('resolveACPProviderAuthentication', () => {
     ).toEqual({
       providerAuthentication: { type: 'ai-gateway', env: gatewayEnv },
       env: {
-        ai-toolkit_ACP_GATEWAY_API_KEY: 'gateway-key',
-        ai-toolkit_ACP_GATEWAY_BASE_URL: 'https://gateway.example',
-        ai-toolkit_ACP_CLIENT_APP_NAME: clientApp.name,
-        ai-toolkit_ACP_CLIENT_APP_VERSION: clientApp.version,
+        'ai-toolkit_ACP_GATEWAY_API_KEY': 'gateway-key',
+        'ai-toolkit_ACP_GATEWAY_BASE_URL': 'https://gateway.example',
+        'ai-toolkit_ACP_CLIENT_APP_NAME': clientApp.name,
+        'ai-toolkit_ACP_CLIENT_APP_VERSION': clientApp.version,
       },
     });
   });
@@ -91,10 +91,10 @@ describe('resolveACPProviderAuthentication', () => {
     expect(resolve({ env: { KHULNASOFT_OIDC_TOKEN: 'oidc-token' } })).toEqual({
       providerAuthentication: { type: 'ai-gateway', env: gatewayEnv },
       env: {
-        ai-toolkit_ACP_GATEWAY_API_KEY: 'oidc-token',
-        ai-toolkit_ACP_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
-        ai-toolkit_ACP_CLIENT_APP_NAME: clientApp.name,
-        ai-toolkit_ACP_CLIENT_APP_VERSION: clientApp.version,
+        'ai-toolkit_ACP_GATEWAY_API_KEY': 'oidc-token',
+        'ai-toolkit_ACP_GATEWAY_BASE_URL': 'https://ai-gateway.khulnasoft.sh',
+        'ai-toolkit_ACP_CLIENT_APP_NAME': clientApp.name,
+        'ai-toolkit_ACP_CLIENT_APP_VERSION': clientApp.version,
       },
     });
   });
@@ -103,8 +103,8 @@ describe('resolveACPProviderAuthentication', () => {
     expect(resolve({ env: { DIRECT_PROVIDER_KEY: 'direct-key' } })).toEqual({
       providerAuthentication: { type: 'direct' },
       env: {
-        ai-toolkit_ACP_CLIENT_APP_NAME: clientApp.name,
-        ai-toolkit_ACP_CLIENT_APP_VERSION: clientApp.version,
+        'ai-toolkit_ACP_CLIENT_APP_NAME': clientApp.name,
+        'ai-toolkit_ACP_CLIENT_APP_VERSION': clientApp.version,
       },
     });
   });
@@ -118,8 +118,8 @@ describe('resolveACPProviderAuthentication', () => {
     ).toEqual({
       providerAuthentication: { type: 'direct' },
       env: {
-        ai-toolkit_ACP_CLIENT_APP_NAME: clientApp.name,
-        ai-toolkit_ACP_CLIENT_APP_VERSION: clientApp.version,
+        'ai-toolkit_ACP_CLIENT_APP_NAME': clientApp.name,
+        'ai-toolkit_ACP_CLIENT_APP_VERSION': clientApp.version,
       },
     });
   });
@@ -134,10 +134,10 @@ describe('resolveACPProviderAuthentication', () => {
         },
       }).env,
     ).toEqual({
-      ai-toolkit_ACP_GATEWAY_API_KEY: 'ambient-gateway-key',
-      ai-toolkit_ACP_GATEWAY_BASE_URL: 'https://configured.example',
-      ai-toolkit_ACP_CLIENT_APP_NAME: clientApp.name,
-      ai-toolkit_ACP_CLIENT_APP_VERSION: clientApp.version,
+      'ai-toolkit_ACP_GATEWAY_API_KEY': 'ambient-gateway-key',
+      'ai-toolkit_ACP_GATEWAY_BASE_URL': 'https://configured.example',
+      'ai-toolkit_ACP_CLIENT_APP_NAME': clientApp.name,
+      'ai-toolkit_ACP_CLIENT_APP_VERSION': clientApp.version,
     });
   });
 
@@ -153,10 +153,10 @@ describe('resolveACPProviderAuthentication', () => {
         env,
       }).env,
     ).toEqual({
-      ai-toolkit_ACP_GATEWAY_API_KEY: 'explicit-gateway-key',
-      ai-toolkit_ACP_GATEWAY_BASE_URL: 'https://explicit.example',
-      ai-toolkit_ACP_CLIENT_APP_NAME: clientApp.name,
-      ai-toolkit_ACP_CLIENT_APP_VERSION: clientApp.version,
+      'ai-toolkit_ACP_GATEWAY_API_KEY': 'explicit-gateway-key',
+      'ai-toolkit_ACP_GATEWAY_BASE_URL': 'https://explicit.example',
+      'ai-toolkit_ACP_CLIENT_APP_NAME': clientApp.name,
+      'ai-toolkit_ACP_CLIENT_APP_VERSION': clientApp.version,
     });
     expect(env).toEqual({ AI_GATEWAY_API_KEY: 'ambient-gateway-key' });
   });
@@ -184,10 +184,10 @@ describe('resolveACPEnv', () => {
         env: { AI_GATEWAY_API_KEY: 'gateway-key' },
       }),
     ).toEqual({
-      ai-toolkit_ACP_GATEWAY_API_KEY: 'gateway-key',
-      ai-toolkit_ACP_GATEWAY_BASE_URL: 'https://ai-gateway.khulnasoft.sh',
-      ai-toolkit_ACP_CLIENT_APP_NAME: clientApp.name,
-      ai-toolkit_ACP_CLIENT_APP_VERSION: clientApp.version,
+      'ai-toolkit_ACP_GATEWAY_API_KEY': 'gateway-key',
+      'ai-toolkit_ACP_GATEWAY_BASE_URL': 'https://ai-gateway.khulnasoft.sh',
+      'ai-toolkit_ACP_CLIENT_APP_NAME': clientApp.name,
+      'ai-toolkit_ACP_CLIENT_APP_VERSION': clientApp.version,
     });
   });
 });
@@ -315,10 +315,10 @@ describe('resolveACPProviderAuthenticationCompatibility', () => {
     ).toEqual({
       providerAuthentication: { type: 'ai-gateway', env: gatewayEnv },
       env: {
-        ai-toolkit_ACP_GATEWAY_API_KEY: 'rotated-secret',
-        ai-toolkit_ACP_GATEWAY_BASE_URL: 'https://first.example',
-        ai-toolkit_ACP_CLIENT_APP_NAME: clientApp.name,
-        ai-toolkit_ACP_CLIENT_APP_VERSION: clientApp.version,
+        'ai-toolkit_ACP_GATEWAY_API_KEY': 'rotated-secret',
+        'ai-toolkit_ACP_GATEWAY_BASE_URL': 'https://first.example',
+        'ai-toolkit_ACP_CLIENT_APP_NAME': clientApp.name,
+        'ai-toolkit_ACP_CLIENT_APP_VERSION': clientApp.version,
       },
     });
     expect(() =>
@@ -361,8 +361,8 @@ describe('resolveACPProviderAuthenticationCompatibility', () => {
     ).toEqual({
       providerAuthentication: { type: 'direct' },
       env: {
-        ai-toolkit_ACP_CLIENT_APP_NAME: clientApp.name,
-        ai-toolkit_ACP_CLIENT_APP_VERSION: clientApp.version,
+        'ai-toolkit_ACP_CLIENT_APP_NAME': clientApp.name,
+        'ai-toolkit_ACP_CLIENT_APP_VERSION': clientApp.version,
       },
     });
   });

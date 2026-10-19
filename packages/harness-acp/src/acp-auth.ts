@@ -102,8 +102,8 @@ export function resolveACPProviderAuthentication({
   readonly env: Record<string, string>;
 } {
   const clientAppEnv = {
-    ai-toolkit_ACP_CLIENT_APP_NAME: auth.clientApp.name,
-    ai-toolkit_ACP_CLIENT_APP_VERSION: auth.clientApp.version,
+    'ai-toolkit_ACP_CLIENT_APP_NAME': auth.clientApp.name,
+    'ai-toolkit_ACP_CLIENT_APP_VERSION': auth.clientApp.version,
   };
   const resolvedEnv = resolveACPAuthenticationEnvironment({
     auth: auth.mode,
@@ -161,8 +161,8 @@ export function resolveACPProviderAuthentication({
           : providerAuthentication.gateway.env,
     },
     env: {
-      ai-toolkit_ACP_GATEWAY_API_KEY: apiKey,
-      ai-toolkit_ACP_GATEWAY_BASE_URL: gateway.baseUrl,
+      'ai-toolkit_ACP_GATEWAY_API_KEY': apiKey,
+      'ai-toolkit_ACP_GATEWAY_BASE_URL': gateway.baseUrl,
       ...clientAppEnv,
     },
   };

@@ -39,6 +39,7 @@
     "./package.json": "./package.json",
     ".": {
       "types": "./dist/index.d.ts",
+      "browser": "./dist/index.browser.js",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     }

@@ -882,7 +882,7 @@ describe('createOpenCode adapter', () => {
     expect(spawns.at(-1)?.env).not.toHaveProperty('XDG_CACHE_HOME');
     expect(spawns.at(-1)?.env).not.toHaveProperty('XDG_DATA_HOME');
     expect(spawns.at(-1)?.env).not.toHaveProperty('XDG_STATE_HOME');
-    expect(spawns.at(-1)?.env.ai-toolkit_HARNESS_CLIENT_APP).toBe(
+    expect(spawns.at(-1)?.env['ai-toolkit_HARNESS_CLIENT_APP']).toBe(
       'ai-toolkit-harness-opencode/0.0.0-test',
     );
     expect(spawns.at(-1)?.env.BRIDGE_CHANNEL_TOKEN).toMatch(/^[a-f0-9]{64}$/);

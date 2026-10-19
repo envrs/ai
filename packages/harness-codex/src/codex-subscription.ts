@@ -472,9 +472,9 @@ public static class CodexCredentialManager {
         input: value,
         env: {
           ...process.env,
-          ai-toolkit_CODEX_CREDENTIAL_SOURCE: source,
-          ai-toolkit_CODEX_CREDENTIAL_TARGET: `${account}.${service}`,
-          ai-toolkit_CODEX_CREDENTIAL_USER: account,
+          'ai-toolkit_CODEX_CREDENTIAL_SOURCE': source,
+          'ai-toolkit_CODEX_CREDENTIAL_TARGET': `${account}.${service}`,
+          'ai-toolkit_CODEX_CREDENTIAL_USER': account,
         },
       });
     },

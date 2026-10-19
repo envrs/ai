@@ -43,9 +43,9 @@ describe('readWindowsCredentialManagerPassword', () => {
       {
         env: {
           ...process.env,
-          ai-toolkit_WINDOWS_CREDENTIAL_MANAGER_SOURCE:
+          'ai-toolkit_WINDOWS_CREDENTIAL_MANAGER_SOURCE':
             expect.stringContaining('CredReadW'),
-          ai-toolkit_WINDOWS_CREDENTIAL_MANAGER_TARGET: 'account.service',
+          'ai-toolkit_WINDOWS_CREDENTIAL_MANAGER_TARGET': 'account.service',
         },
         windowsHide: true,
       },

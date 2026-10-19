@@ -48,8 +48,8 @@ describe('resolveFxSubscriptionEnvironment', () => {
       }),
     ).resolves.toEqual({
       OPENAI_API_KEY: 'unused-api-key',
-      ai-toolkit_FX_CHATGPT_ACCESS_TOKEN: accessToken,
-      ai-toolkit_FX_CHATGPT_ACCOUNT_ID: 'account-1',
+      'ai-toolkit_FX_CHATGPT_ACCESS_TOKEN': accessToken,
+      'ai-toolkit_FX_CHATGPT_ACCOUNT_ID': 'account-1',
     });
   });
 });
@@ -64,8 +64,8 @@ describe('readFxSubscriptions', () => {
     });
 
     await expect(readFxSubscriptions({ homeDirectory })).resolves.toEqual({
-      ai-toolkit_FX_CHATGPT_ACCESS_TOKEN: accessToken,
-      ai-toolkit_FX_CHATGPT_ACCOUNT_ID: 'account-1',
+      'ai-toolkit_FX_CHATGPT_ACCESS_TOKEN': accessToken,
+      'ai-toolkit_FX_CHATGPT_ACCOUNT_ID': 'account-1',
     });
   });
 
@@ -100,8 +100,8 @@ describe('readFxSubscriptions', () => {
     await expect(
       readFxSubscriptions({ homeDirectory, fetch }),
     ).resolves.toEqual({
-      ai-toolkit_FX_GROK_ACCESS_TOKEN: 'new-access',
-      ai-toolkit_FX_GROK_ACCOUNT_ID: 'account-1',
+      'ai-toolkit_FX_GROK_ACCESS_TOKEN': 'new-access',
+      'ai-toolkit_FX_GROK_ACCOUNT_ID': 'account-1',
     });
     expect(fetch).toHaveBeenNthCalledWith(
       1,
@@ -182,14 +182,14 @@ describe('fx sandbox subscription records', () => {
     });
     const files = createFxSubscriptionAuthenticationFiles({
       env: {
-        ai-toolkit_FX_CHATGPT_ACCESS_TOKEN: hostAccessToken,
-        ai-toolkit_FX_CHATGPT_ACCOUNT_ID: 'account-1',
-        ai-toolkit_FX_GROK_ACCESS_TOKEN: 'grok-host-access',
-        ai-toolkit_FX_GROK_ACCOUNT_ID: 'account-2',
+        'ai-toolkit_FX_CHATGPT_ACCESS_TOKEN': hostAccessToken,
+        'ai-toolkit_FX_CHATGPT_ACCOUNT_ID': 'account-1',
+        'ai-toolkit_FX_GROK_ACCESS_TOKEN': 'grok-host-access',
+        'ai-toolkit_FX_GROK_ACCOUNT_ID': 'account-2',
       },
       sandboxEnv: {
-        ai-toolkit_FX_CHATGPT_ACCESS_TOKEN: 'chatgpt-placeholder',
-        ai-toolkit_FX_GROK_ACCESS_TOKEN: 'grok-placeholder',
+        'ai-toolkit_FX_CHATGPT_ACCESS_TOKEN': 'chatgpt-placeholder',
+        'ai-toolkit_FX_GROK_ACCESS_TOKEN': 'grok-placeholder',
       },
       credentialBrokeringAvailable: true,
     });
@@ -231,11 +231,11 @@ describe('fx sandbox subscription records', () => {
       accountId: 'account-1',
     });
     const env = {
-      ai-toolkit_FX_CHATGPT_ACCESS_TOKEN: hostAccessToken,
-      ai-toolkit_FX_CHATGPT_ACCOUNT_ID: 'account-1',
+      'ai-toolkit_FX_CHATGPT_ACCESS_TOKEN': hostAccessToken,
+      'ai-toolkit_FX_CHATGPT_ACCOUNT_ID': 'account-1',
     };
     const sandboxEnv = {
-      ai-toolkit_FX_CHATGPT_ACCESS_TOKEN: 'chatgpt-placeholder',
+      'ai-toolkit_FX_CHATGPT_ACCESS_TOKEN': 'chatgpt-placeholder',
     };
     const files = createFxSubscriptionAuthenticationFiles({
       env,

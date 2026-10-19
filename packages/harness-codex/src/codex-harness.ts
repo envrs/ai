@@ -479,7 +479,7 @@ export function createCodex(
       }
       const env = {
         ...forwardedAuthEnvironment,
-        ai-toolkit_HARNESS_CLIENT_APP: CODEX_CLIENT_APP,
+        'ai-toolkit_HARNESS_CLIENT_APP': CODEX_CLIENT_APP,
         BRIDGE_CHANNEL_TOKEN: token,
         BRIDGE_WS_PORT: String(port),
         ...(respawnStrategy === 'replay'

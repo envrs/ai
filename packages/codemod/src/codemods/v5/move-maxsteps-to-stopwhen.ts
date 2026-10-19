@@ -1,6 +1,6 @@
 import { createTransformer } from '../lib/create-transformer';
 import {
-  ai-toolkit_CODEMOD_ERROR_PREFIX,
+  AI_TOOLKIT_CODEMOD_ERROR_PREFIX,
   insertCommentOnce,
 } from '../lib/add-comment';
 
@@ -73,7 +73,7 @@ export default createTransformer((fileInfo, api, options, context) => {
       'The maxSteps parameter has been removed from useChat. You should now use server-side `stopWhen` conditions for multi-step tool execution control. https://ai-toolkit.dev/docs/migration-guides/migration-guide-5-0#maxsteps-removal';
     context.messages.push(`Not Implemented ${fileInfo.path}: ${message}`);
 
-    insertCommentOnce(property, j, `${ai-toolkit_CODEMOD_ERROR_PREFIX}${message}`);
+    insertCommentOnce(property, j, `${AI_TOOLKIT_CODEMOD_ERROR_PREFIX}${message}`);
     context.hasChanges = true;
   }
 

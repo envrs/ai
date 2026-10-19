@@ -255,7 +255,7 @@ describe('createDeepAgents', () => {
       sandboxSession: fakeSandboxSession({ spawnEnvs, spawns }),
     } as unknown as Parameters<typeof harness.doStart>[0]);
 
-    expect(spawnEnvs.at(0)?.ai-toolkit_HARNESS_CLIENT_APP).toBe(
+    expect(spawnEnvs.at(0)?.['ai-toolkit_HARNESS_CLIENT_APP']).toBe(
       'ai-toolkit-harness-deepagents/0.0.0-test',
     );
     expect(spawnEnvs.at(0)?.BRIDGE_CHANNEL_TOKEN).toMatch(/^[a-f0-9]{64}$/);

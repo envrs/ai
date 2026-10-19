@@ -17,7 +17,7 @@ import { MockRerankingModelV4 } from '../test/mock-reranking-model-v4';
 import { DecisionMockModelV4 } from '../test/decision-mock-model-v4';
 import { createTelemetryDispatcher } from './create-telemetry-dispatcher';
 import {
-  ai-toolkit_TELEMETRY_TRACING_CHANNEL,
+  AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL,
   type TelemetryTracingChannelMessage,
 } from './tracing-channel';
 import { isNodeRuntime } from '../util/is-node-runtime';
@@ -42,7 +42,7 @@ async function collectTracingChannelStartMessages(
   };
 
   const tracingChannel = diagnosticsChannel.tracingChannel(
-    ai-toolkit_TELEMETRY_TRACING_CHANNEL,
+    AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL,
   );
   const subscribers = {
     start: subscriber,
@@ -70,7 +70,7 @@ async function collectTracingChannelEventSequence(
   const store = new AsyncLocalStorage<TelemetryTracingChannelMessage>();
 
   const tracingChannel = diagnosticsChannel.tracingChannel(
-    ai-toolkit_TELEMETRY_TRACING_CHANNEL,
+    AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL,
   );
   const subscribers = {
     start() {},
@@ -108,7 +108,7 @@ async function collectTracingChannelAsyncEndMessages(
   const messages: TelemetryTracingChannelAsyncEndMessage[] = [];
 
   const tracingChannel = diagnosticsChannel.tracingChannel(
-    ai-toolkit_TELEMETRY_TRACING_CHANNEL,
+    AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL,
   );
   const subscribers = {
     start() {},
@@ -138,7 +138,7 @@ async function collectTracingChannelParentage(
   const store = new AsyncLocalStorage<TelemetryTracingChannelMessage>();
 
   const tracingChannel = diagnosticsChannel.tracingChannel(
-    ai-toolkit_TELEMETRY_TRACING_CHANNEL,
+    AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL,
   );
   const subscribers = {
     start() {},
@@ -235,7 +235,7 @@ describe.runIf(isNodeRuntime())('telemetry tracing channel publisher', () => {
   it('propagates language model execution context through async work', async () => {
     const store = new AsyncLocalStorage<TelemetryTracingChannelMessage>();
     const tracingChannel = diagnosticsChannel.tracingChannel(
-      ai-toolkit_TELEMETRY_TRACING_CHANNEL,
+      AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL,
     );
     const subscribers = {
       start() {},
@@ -294,7 +294,7 @@ describe.runIf(isNodeRuntime())('telemetry tracing channel publisher', () => {
   it('propagates tool execution context through async work', async () => {
     const store = new AsyncLocalStorage<TelemetryTracingChannelMessage>();
     const tracingChannel = diagnosticsChannel.tracingChannel(
-      ai-toolkit_TELEMETRY_TRACING_CHANNEL,
+      AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL,
     );
     const subscribers = {
       start() {},

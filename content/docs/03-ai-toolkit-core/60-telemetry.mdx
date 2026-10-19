@@ -295,11 +295,11 @@ context across provider calls and tool executions.
 ```ts
 import { tracingChannel } from 'node:diagnostics_channel';
 import {
-  ai-toolkit_TELEMETRY_TRACING_CHANNEL,
+  AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL,
   type TelemetryTracingChannelMessage,
 } from 'ai';
 
-tracingChannel(ai-toolkit_TELEMETRY_TRACING_CHANNEL).subscribe({
+tracingChannel(AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL).subscribe({
   start(message) {
     const telemetryMessage = message as TelemetryTracingChannelMessage;
 

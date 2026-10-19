@@ -1,4 +1,4 @@
-export const ai-toolkit_TELEMETRY_TRACING_CHANNEL = 'ai:telemetry';
+export const AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL = 'ai:telemetry';
 
 export type TelemetryTracingEventType =
   | 'generateText'
