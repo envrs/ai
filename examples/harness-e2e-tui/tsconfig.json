@@ -53,7 +53,7 @@
       "path": "../../packages/harness-pi"
     },
     {
-      "path": "../../packages/sandbox-khulnasoft"
+      "path": "../../packages/khulnasoft-ai-sandbox"
     },
     {
       "path": "../../packages/tui"
