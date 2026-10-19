@@ -6,6 +6,9 @@
 // authentication flow, so they are excluded here. `createGateway` and
 // `gateway` throw at runtime when used outside of a Node.js server.
 
+import type { GatewayDecisionModelId } from './gateway-decision-model-settings';
+import type { DecisionFallbackCondition } from './gateway-provider-options';
+
 export type { GatewayDecisionModelId } from './gateway-decision-model-settings';
 export type { GatewayEmbeddingModelId } from './gateway-embedding-model-settings';
 export type { GatewayImageModelId } from './gateway-image-model-settings';
