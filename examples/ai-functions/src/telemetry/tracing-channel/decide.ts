@@ -1,13 +1,13 @@
 import { typeSafeAi } from '@ai-toolkit/typesafe-ai';
 import { tracingChannel } from 'node:diagnostics_channel';
 import {
-  AI_SDK_TELEMETRY_TRACING_CHANNEL,
+  AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL,
   experimental_decide,
   type TelemetryTracingChannelMessage,
 } from 'ai';
 import { run } from '../../lib/run';
 
-tracingChannel(AI_SDK_TELEMETRY_TRACING_CHANNEL).subscribe({
+tracingChannel(AI_TOOLKIT_TELEMETRY_TRACING_CHANNEL).subscribe({
   start(message) {
     const telemetry = message as TelemetryTracingChannelMessage;
 

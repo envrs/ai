@@ -3,7 +3,7 @@ import { customProvider, experimental_decide } from 'ai';
 import { run } from '../../lib/run';
 
 // Configure once at application startup; this also affects other AI SDK functions.
-globalThis.AI_SDK_DEFAULT_PROVIDER = customProvider({
+globalThis.AI_TOOLKIT_DEFAULT_PROVIDER = customProvider({
   decisionModels: { compact: openai.decisionModel('gpt-6-luna') },
   fallbackProvider: openai,
 });
